@@ -16,4 +16,6 @@ export class App {
   name = 'Angular';
 }
 
+let test = 1
+
 bootstrapApplication(App);
