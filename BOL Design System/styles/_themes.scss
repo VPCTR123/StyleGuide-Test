@@ -1,0 +1,292 @@
+//imports
+@use "variables" as v;
+
+
+
+//mixins (color schemes)
+@mixin textcolor($c: pink) {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    strong,
+    i,
+    em,
+    mark,
+    small,
+    del,
+    ins,
+    sub,
+    sup,
+    .icon{
+        color: $c;
+    }
+
+}
+
+@mixin theme($theme: default) {
+
+    //default null all colors to prevent error
+    //and indicate if no theme is applied
+
+
+    $base: null;
+    $baseInv: null;
+    $base33: null;
+    $base66: null;
+    $base25: null;
+    $base50: null;
+    $base75: null;
+    $base10: null;
+    $base15: null;
+    $base85: null;
+    $base90: null;
+    $userColor: null;
+
+    $baseAlt: null;
+    $basegray: null;
+
+    $darkgray: null;
+    $highlight: null;
+
+    $lightgray: null;
+    $mediumgray: null;
+    $primary: null;
+    $secondary: null;
+    // $overlay: null;
+
+
+    //default theme color binding
+
+    @if $theme==default {
+        $base: v.$base;
+        $baseInv: v.$baseInv;
+        $base33: v.$base33;
+        $base66: v.$base66;
+        $base25: v.$base25;
+        $base50: v.$base50;
+        $base75: v.$base75;
+        $base10: v.$base10;
+        $base15: v.$base15;
+        $base85: v.$base85;
+        $base90: v.$base90;
+        $userColor: var(--userColor);
+
+        $basegray: v.$basegray;
+        $baseAlt: v.$baseAlt;
+        $darkgray: v.$darkgray;
+        $highlight: v.$highlight;
+
+        $lightgray: v.$lightgray;
+        $mediumgray: v.$mediumgray;
+        // $overlay: v.$overlay;
+        $primary: v.$primary;
+        $secondary: v.$secondary;
+
+
+
+    }
+
+    .page-content {
+        background-color: $base;
+    }
+
+    [class*='foco-'][class$='R'] {
+        background-image: linear-gradient(to left, $base, transparent);
+    }
+
+    [class*='foco-'][class$='L'] {
+        background-image: linear-gradient(to right, $base, transparent);
+    }
+
+    .drawer-handle {
+
+        background-color: $base90;
+        box-shadow: 0px 2px 3px 0px $base66;
+
+        &:hover {
+            background-color: $base85;
+        }
+
+        &:active {
+            transition-property: background-color .2s;
+            background-color: $base90;
+        }
+
+        &>input:checked+.icon {
+            transition-property: color .2s;
+            color: $highlight;
+        }
+    }
+
+    .nav,
+    nav {
+        transition: background-color 1s, box-shadow .25s;
+
+
+        background-color: $base90;
+        @include textcolor($base10);
+
+        &.scrolled {
+            background-color: $base;
+            box-shadow: 0px 2px 1rem 0px $base25;
+        }
+    }
+    footer{
+        background-color: $base;
+    }
+    .div-highlight{
+        background-color: $highlight;
+        @include textcolor($base);
+    }
+    .div-base90{
+background-color: $base90;
+    }
+    hr {
+        border-color: $base85;
+    }
+.hr-highlight{
+    border-color: $highlight;
+}
+.hr-base90{
+    border-color: $base90;
+} 
+// button {
+    //     transition: background-color .2s;
+    //     background-color: $highlight;
+
+    //     &:hover {
+    //         transition: background-color .1s;
+    //         @include textcolor($base);
+    //         background-color: color-mix(in srgb, $highlight 75%, $baseAlt 25%);
+
+    //     }
+
+    //     &:active {
+
+    //         background-color: color-mix(in srgb, $highlight 55%, $baseAlt 45%);
+    //     }
+    // }
+    .but-base {
+        background-color: $base;
+        @include textcolor($base33);
+
+        &:hover {
+            background-color: $highlight;
+            @include textcolor($base);
+         
+        }
+
+        &:active {
+            background-color: color-mix(in srgb, $highlight, $baseInv);
+            @include textcolor($base);
+        }
+
+    }
+    .but-secondary{
+
+        background-color: $base75;
+        @include textcolor($base10);
+
+        &:hover {
+            background-color: color-mix(in srgb, $base75 75%, $baseInv);
+            @include textcolor($base);
+         
+        }
+
+        &:active {
+            background-color: color-mix(in srgb, $base75, $baseInv);
+            @include textcolor($base);
+        }
+
+    }
+
+    button.user-color {
+        background-color: $userColor;
+        @include textcolor($base);
+        &:hover{
+            background-color: color-mix(in srgb, $userColor 80%, $baseInv 20%);
+        }
+        &:active{
+            background-color: color-mix(in srgb, $userColor 60%, $baseInv 40%);
+        }
+    }
+
+    .card {
+        border-color: $base75;
+        background-color: $base;
+        @include textcolor($base15);
+    }
+
+    .thumb {
+        background-color: rgb(94, 205, 142);
+        @include textcolor($base);
+    }
+
+    // .drawer-handle:nth-of-type(even) {
+    //     background-color: $base90;
+
+    // }
+
+    .selector {
+
+        background-color: $base;
+
+        &:hover {
+            background-color: $primary;
+        }
+    }
+
+    .ring {
+        outline-color: $primary;
+    }
+
+    // .ring {
+    //     outline-color: $highlight;
+    // }
+
+    // .card {
+    //     background-color: $base;
+    //     border-color: $lightgray;
+
+    //     @include textcolor($darkgray);
+    // }
+
+    // .thumb {
+    //     color: $base;
+    // }
+
+    // .but-base {
+    //     background-color: $base;
+    //     color: $darkgray;
+
+    //     &:hover {
+    //         background-color: $highlight;
+    //         color: $base;
+    //     }
+
+    //     &:active {
+    //         
+    //         color: $base;
+    //     }
+    // }
+
+
+    //IMPORTANT 
+    .icon:before {
+        color: inherit;
+    }
+
+
+}
+
+//classes - used to bind class name to theme in mixin
+//blank results in default theme
+.theme-default {
+    @include theme();
+}

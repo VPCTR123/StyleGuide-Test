@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Update Info</title>
+
+</head>
+
+<!-- apply theme to link-nostyle body -->
+
+<body class="theme-default">
+    <div class = "spacer spa-sm"></div>
+    <div class="user-name">ROR</div>
+    <nav
+        class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr gap gap-sm ">
+
+
+        <!-- left wrapper -->
+        <div class="flex fle-centerVr gap ">
+            <a href="../Pages/applist.html">
+                <span class="icon ico-sm ico-PLACEHOLDER"></span>
+                <span class="icon ico-sm ico-PLACEHOLDER"></span>
+            </a>
+            <div class="flex gap">
+                <span class="icon ico-sm ico-PLACEHOLDER"></span>
+                <h5>Update Info</h5>
+            </div>
+
+
+        </div>
+
+        <!-- right wrapper -->
+        <div class="flex gap">
+            <div class="wrapper-button-popup-pair">
+                <button class="but-highlight user-color but-circle" title="User Profile"
+                    onclick="togglePopup(event, 'AAA')">
+                    <h3 class="user-first-initial"></h3>
+                </button>
+                <div class=overlay id="overlay AAA"></div>
+                <div id="target AAA" class="popup pop-dropdown right-edge to-left margin mar-mdVr">
+
+                    <div class="menu men-sm pill pil-sm">
+                        <header class="menu-header menh-xs ">
+                            <h4>User</h4>
+
+                        </header>
+                        <hr class="margin mar-xsHr">
+
+                        <div class="padding pad-xs">
+                            <h4><span>User Name</span></h4>
+                            <div class="spacer spa-xs"></div>
+                            <p><b>Last Seen:</b><br>
+                                <time>Month DDth, YYYY</time><br>
+                                <time>HH:MM:SS AM</time>
+                            </p>
+                        </div>
+                        <hr class="hr-sm">
+                        <ul>
+                            <li><a class="selector padding pad-xsHr" href="updateinfo.html">Update Info</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                            <hr>
+                        </ul>
+
+                        <footer class="menu-footer menf-xs"></footer>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-button-popup-pair">
+                <button class="but-secondary ghost but-circle" title="User Profile" onclick="togglePopup(event, 'BBB')">
+                    <h3>⋮</h3>
+                </button>
+                <div class=overlay id="overlay BBB"></div>
+                <div id="target BBB" class="popup right-edge to-left margin mar-mdVr">
+                    <div class="menu men-sm pill pil-sm">
+                        <header class="menu-header menh-xs">
+                            <h4>Options</h4>
+
+                        </header>
+                        <hr class="margin mar-xsHr">
+                        <div class=men-content>
+                            <ul>
+                                <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                                <hr>
+                                <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                                <hr>
+                                <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                                <hr>
+                                <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                                <hr>
+                                <li><a class="selector padding pad-xsHr">Sample Link</a></li>
+                                <hr>
+                            </ul>
+                        </div>
+                        <footer class="menu-footer menf-xs"></footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="focus-overlay">
+        <div class="foco-mdL"></div>
+        <div class="foco-mdR"></div>
+    </div>
+    <div class="page-content">
+
+        <form class="padding pad-sm margin mar-xlB" action="formdebug.html" method="GET">
+            <h2 class="text-align texa-c margin mar-mdT">Update Info</h2>
+            <hr class="margin mar-mdT mar-lgB">
+            <div class="focus foc-sm margin mar-autoHr card padding pad-lg pill">
+                <div class="flex fle-column gap">
+                    <h4 class="text-align texa-c">Contact Information</h4>
+                    <hr class="margin mar-mdB">
+                    <div>
+                        <label for="updateInfo-phoneCommercial">
+                            <p class="text-wrap texw-nowrap">
+                                Commercial Phone: </p>
+                        </label>
+                        <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
+                    </div>
+                    <div class="flex w100p gap">
+                        <input class="w25p" type="tel" name="Commercial Phone Extension"
+                            id="updateInfo-phoneCommercial-ext" title="Extension" placeholder="Ext.">
+                        <input class="w100p" type="tel" name="Commercial Phone" id="updateInfo-phoneCommercial">
+                    </div>
+                    <label for="updateInfo-phoneDSN">
+                        <p>DSN Phone:</p>
+                    </label>
+                    <input type="tel" name="DSN Phone" id="updateInfo-phoneDSN">
+                    <label for="updateInfo-emailPrimary">
+                        <p>
+                            Primary Email:
+                        </p>
+                    </label>
+                    <input type="email" name="Primary Email" id="updateInfo-emailPrimary">
+                    <label for="updateInfo-emailSecondary">
+                        <p>
+                            Secondary Email:
+                        </p>
+                    </label>
+                    <input type="email" name="Primary Email" id="updateInfo-emailSecondary">
+                    <h4 class="text-align texa-c margin mar-lgT">Command Information</h4>
+                    <hr class="margin mar-mdB">
+                    <label for="updateInfo-organization/command">
+                        <p>Organization / Command:</p>
+                    </label>
+                    <input type="text" name="Organization/Command" id="updateInfo-organization/command">
+                    <label for="updateInfo-billetTitle">
+                        <p>Billet Title:</p>
+                    </label>
+                    <input type="text" name="Billet Title" id="updateInfo-billetTitle">
+                    <div class="flex gap margin mar-xlT">
+                        <button class="w100p pill pil-xs" type="reset">Clear All</button>
+                        <button class="w100p pill pil-xs" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+    <footer>
+        <hr class="hr-sm hr-base90">
+        <div class="flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
+            <div class=" margin mar-autoHr mar-smVr">
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <b>Title</b>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        Subtitle Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <b>Title</b>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        Subtitle Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+            </div>
+
+            <div class=" margin mar-autoHr mar-smVr">
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <b>Title</b>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        Subtitle Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <b>Title</b>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        Subtitle Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+            </div>
+
+            <div class=" margin mar-autoHr mar-smVr">
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <b>User</b>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        <a href="caclogin.html">End Session</a>
+                        <br>
+                        <a href="updateinfo.html">Update Info</a>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <b>Title</b>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        Subtitle Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="div-base90 flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
+            <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c ">
+                <a class="text-wrap texw-nowrap margin mar-smHr">NCIS Tips</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">24/7 Suicide Prevention</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">Safe Helpline</a>
+            </div>
+            <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c">
+                <a class="text-wrap texw-nowrap margin mar-smHr">For Official Use Only</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">Privacy Policy</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">Accessibility/Section 508</a>
+            </div>
+            <div class=" text-align  margin mar-autoHr mar-mdVr texa-c">
+                <p>5720 Integrity Drive Millington, TN 38055-0000</p>
+            </div>
+        </div>
+        <div class="div-base90 text-align texa-c padding pad-mdVr">
+            <p>Version: 1.00.00.00</p>
+        </div>
+    </footer>
+</body>
+
+
+<!-- toggle dropdown -->
+<script src="../js/toggles/togglePopup.js"></script>
+
+<!-- toggle Active class -->
+<script src="../js/toggles/toggleActive.js"></script>
+
+<!-- scroll Fx -->
+<script src="../js/toggles/scrollFx.js"></script>
+
+<!-- user color -->
+<script src="../js/colors/userColor.js"></script>
+
+</html>
+
+ <!-- 
+
+// <br>
+// <div class="flex fle-wrap gap gap-md">
+//     <div>
+//         <label for="updateInfo-phoneCommercial"><p class = "text-wrap texw-nowrap">
+//        Commercial Phone: </p></label>
+//         <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
+//     </div>
+//     <div class=" flex fle-space-between gap">
+//         <input class = "w25p" type="tel" name="Commercial Phone Extension" id="updateInfo-phoneCommercial-ext"
+//             title="Extension" placeholder="Ext.">
+//         <input class = "w100p"  type="tel" name="Commercial Phone" id="updateInfo-phoneCommercial">
+//     </div>
+// </div>
+// <div class="flex fle-end gap gap-md">
+//     <label for="updateInfo-phoneDSN">DSN Phone</label>
+//     <div class="content con-md">
+//         <input type="tel" name="DSN Phone" id="updateInfo-phoneDSN">
+//     </div>
+// </div>
+// <label for="updateInfo-emailPrimary">Primary Email</label>
+// <input type="email" name="Primary Email" id="updateInfo-emailPrimary">
+// <br>
+// Command Information
+// <br>
+// <label for="updateInfo-organization/command">Organization / Command</label>
+// <input type="text" name="Organization/Command" id="updateInfo-organization/command">
+// <br>
+// <label for="updateInfo-billetTitle">Billet Title</label>
+// <input type="text" name="Billet Title" id="updateInfo-billetTitle">
+// <br>
+// <button type="submit">Submit</button>
+// <button type="reset">Clear All</button> -->
+ <!-- 
+// <div class="flex fle-wrap fle-centerHr gap gap-md">
+//     <label for="updateInfo-phoneCommercial">
+//         <p class="text-wrap texw-nowrap">
+//             Commercial Phone: </p>
+//     </label>
+//     <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
+
+//     <div class=" flex fle-space-between gap">
+//         <input class="w25p" type="tel" name="Commercial Phone Extension"
+//             id="updateInfo-phoneCommercial-ext" title="Extension" placeholder="Ext.">
+//         <input class="w100p" type="tel" name="Commercial Phone" id="updateInfo-phoneCommercial">
+//     </div>
+// </div>
+// <div class="flex fle-wrap fle-centerHr gap gap-md">
+//     <div class="flex fle-end gap gap-md">
+//         <label for="updateInfo-phoneDSN"><p class="text-wrap texw-nowrap">DSN Phone:</p></label>
+
+//             <input class = "w100p" type="tel" name="DSN Phone" id="updateInfo-phoneDSN">
+
+//     </div>
+// </div> -->
+
+<!-- 
+
+
+<div class="grid gri-fix gri-sm gri-justify-center gap margin mar-autoHr focus foc-md">
+    <div>
+        <label for="updateInfo-phoneCommercial">
+            <p class="text-wrap texw-nowrap text-align texa-r">
+                Commercial Phone: </p>
+        </label>
+        <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
+    </div>
+    <div class="flex gap">
+        <input class="w25p" type="tel" name="Commercial Phone Extension" id="updateInfo-phoneCommercial-ext"
+            title="Extension" placeholder="Ext.">
+        <input class="w100p" type="tel" name="Commercial Phone" id="updateInfo-phoneCommercial">
+    </div>
+
+</div> -->
+
+
+<!-- <div class="testd">
+
+    <div class="red testc margin mar-autoHr">
+        <div class="flex fle-column gap">
+            <div class="testb gap">
+                <p class="yellow ">lorsdsf dfsadfe</p>
+                <div class="cell  cel-sm blue ">sss</div>
+            </div>
+
+            <div class="testb gap">
+                <p class="yellow">lor asdf asdf asdf asdf sdfdfe</p>
+                <div class="cell cel-sm blue">sss</div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div> -->

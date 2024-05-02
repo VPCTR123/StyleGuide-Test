@@ -1,0 +1,322 @@
+//** Body Component - A (div) container that behaves in various ways, used to hold content.
+.content {
+
+
+    //** Scroll Behavior
+    &.con-scrollY {
+        overflow-y: scroll;
+    }
+
+    &.con-scrollY-auto {
+        overflow-y: auto;
+    }
+
+    &.con-scrollX {
+        overflow-y: scroll;
+    }
+
+    &.con-scrollX-auto {
+        overflow-y: auto;
+    }
+
+    &.con-100pHr {
+        width: 100%;
+    }
+
+    &.con-100pVr {
+        height: 100%;
+    }
+
+    &.con-10pHr {
+        width: 10%;
+    }
+
+    &.con-10pVr {
+        height: 10%;
+    }
+
+    &.con-15pHr {
+        width: 15%;
+    }
+
+    &.con-15pVr {
+        height: 15%;
+    }
+
+    &.con-25pHr {
+        width: 25%;
+    }
+
+    &.con-25pVr {
+        height: 25%;
+    }
+
+    &.con-33pHr {
+        width: 33%;
+    }
+}
+
+
+//** Vertical Spacing Component (div)
+.spacer {
+    //** Default
+    height: 5rem;
+
+    //** Variant
+    &.spa-xxs {
+        height: 1rem;
+    }
+
+    &.spa-xs {
+        height: 2rem;
+    }
+
+    &.spa-sm {
+        height: 3rem;
+    }
+
+    &.spa-md {
+        height: 4rem;
+    }
+
+    &.spa-lg {
+        height: 5rem;
+    }
+
+    &.spa-xl {
+        height: 6rem;
+    }
+
+    &.spa-xl {
+        height: 7rem;
+    }
+}
+
+//** Content Component - This (div) keeps footer at the bottom of the page. 
+//** (Footer is placed IN body OUT of content)
+.page-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+//** Grid Component - (div)
+.grid {
+
+    display: grid;
+
+    &.gri-justify-center {
+        justify-content: center;
+    }
+
+    //** Grid CUSTOM variant - Only used for applist cards
+    &.gri-c-applist {
+        // justify-content: center;
+        grid-template-columns: repeat(auto-fill, 14rem);
+    }
+
+    &.gri-xxs {
+        // grid-template-columns: repeat(auto-fill, 5rem);
+        grid-template-columns: repeat(auto-fill, 3.125rem);
+    }
+
+    &.gri-xs {
+        // grid-template-columns: repeat(auto-fill, 13rem);
+        grid-template-columns: repeat(auto-fill, 6.25rem);
+    }
+
+    &.gri-sm {
+        // grid-template-columns: repeat(auto-fill, 20rem);
+        grid-template-columns: repeat(auto-fill, 12.5rem);
+    }
+
+    &.gri-md {
+        // grid-template-columns: repeat(auto-fill, 30rem);
+        grid-template-columns: repeat(auto-fill, 25rem);
+    }
+
+    &.gri-lg {
+        // grid-template-columns: repeat(auto-fill, 40rem);
+        grid-template-columns: repeat(auto-fill, 37.5rem);
+    }
+
+    &.gri-xl {
+        // grid-template-columns: repeat(auto-fill, 65rem);
+        grid-template-columns: repeat(auto-fill, 50rem);
+
+    }
+
+    &.gri-xxl {
+        // grid-template-columns: repeat(auto-fill, 80rem);
+        grid-template-columns: repeat(auto-fill, 75rem);
+
+    }
+
+    &.gri-full {
+        grid-template-columns: repeat(auto-fill, 100%);
+    }
+
+    &.gri-halves {
+        grid-template-columns: repeat(auto-fill, 50%);
+    }
+
+    &.gri-thirds {
+        grid-template-columns: repeat(auto-fill, 33.33%);
+    }
+
+    &.gri-quarters {
+        grid-template-columns: repeat(auto-fill, 25%);
+    }
+
+    &.gri-fifths {
+        grid-template-columns: repeat(auto-fill, 20%);
+    }
+
+    &.gri-sixths {
+        grid-template-columns: repeat(auto-fill, 16.6666666667%);
+    }
+
+    &.gri-sevenths {
+        grid-template-columns: repeat(auto-fill, 14.2857142857%);
+    }
+
+    &.gri-eighths {
+        grid-template-columns: repeat(auto-fill, 12.5%);
+    }
+
+    &.gri-nineths {
+        grid-template-columns: repeat(auto-fill, 11.1111111111%);
+    }
+
+    &.gri-tenths {
+        grid-template-columns: repeat(auto-fill, 10%);
+    }
+
+
+}
+
+.focus {
+    max-width: 50rem;
+
+    &.foc-xxs {
+        // max-width: 10rem;
+        max-width: 6.25rem;
+    }
+
+    &.foc-xs {
+        // max-width: 20rem;
+        max-width: 12.5rem;
+    }
+
+    &.foc-sm {
+        // max-width: 30rem;
+        max-width: 25rem;
+    }
+
+    &.foc-md {
+        // max-width: 60rem;
+        max-width: 50rem;
+    }
+
+    &.foc-lg {
+        // max-width: 70rem;
+        max-width: 75rem;
+    }
+
+    &.foc-xl {
+        // max-width: 80rem;
+        max-width: 100rem;
+    }
+
+    &.foc-xxl {
+        // max-width: 115rem;
+        max-width: 150rem;
+    }
+}
+
+.padding-focus {
+    &.padf-mdMin {
+        --padfMin: 5rem;
+    }
+
+    &.padf-lgL {
+        padding-left: max(var(--padfMin), calc((100vw - 70rem) / 2));
+    }
+}
+
+//designed to match size of grid cells correspondingly 
+.cell {
+    &.cel-xxs {
+        width: 3.125rem;
+    }
+
+    &.cel-xs {
+        width: 6.25rem;
+    }
+
+    &.cel-sm {
+        width: 12.5rem;
+
+    }
+
+    &.cel-md {
+        width: 25rem;
+
+    }
+
+    &.cel-lg {
+        width: 37.5rem;
+
+    }
+
+    &.cel-xl {
+        width: 50rem;
+
+    }
+
+    &.cel-xxl {
+        width: 75rem;
+
+    }
+}
+
+.text-align {
+    &.texa-r {
+        text-align: right;
+
+    }
+
+    &.texa-c {
+        text-align: center;
+
+    }
+
+}
+
+.text-wrap {
+    text-wrap: wrap;
+
+    &.texw-wrap {
+        text-wrap: wrap;
+    }
+
+    &.texw-nowrap {
+        text-wrap: nowrap !important;
+    }
+}
+
+.w25p {
+    width: 25%;
+}
+
+.w50p {
+    width: 50%;
+}
+
+.w75p {
+    width: 75%;
+}
+
+.w100p {
+    width: 100%;
+}

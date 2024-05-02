@@ -1,0 +1,89 @@
+//** Button Component Base (.button or button)
+.button,
+button, .link-as-button {
+
+    text-wrap: nowrap;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 0 .5rem;
+    height: var(--buttonH);
+    line-height: var(--buttonH);
+
+    //** Button Variant Circle
+    &.but-circle {
+        width: var(--buttonH);
+        min-width: var(--buttonH);
+        border-radius: 100%;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    //** Button Variant Square
+    &.but-square {
+        width: var(--buttonH);
+        min-width: var(--buttonH);
+        border-radius: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    //** Button Variants (Height)
+    &.but-xs {
+        --buttonH: .5rem;
+    }
+
+    &.but-sm {
+        --buttonH: 1rem;
+    }
+
+    &.but-md {
+        --buttonH: 2rem;
+    }
+
+    &.but-lg {
+        --buttonH: 4rem;
+    }
+
+    &.but-xl {
+        --buttonH: 6rem;
+    }
+ 
+
+}
+
+//needs changing
+.home-button {
+    transition: .4s;
+    font-size: medium;
+    text-wrap: nowrap;
+    text-decoration: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+
+    margin: 0 -.5rem;
+    height: 100%;
+    padding: 0 .75rem 0 .5rem;
+    gap: .25rem;
+
+    & .fa-house {
+        transition: .4s;
+    }
+
+    &:hover {
+        & .fa-caret-left {
+            transition: color .4s;
+            transition: .3s;
+            transform: translateX(-.1rem);
+        }
+    }
+}
+.link-as-button{
+    text-decoration: none;
+}

@@ -1,0 +1,123 @@
+//** Popup Component - The (div) popup is used to wrap any component you would like to show / hide
+//**                   When using onclick="toggleActive('specific-name')">
+
+//** The popup is generally given the id: "target specific-name" That is; "target" + space + the specific name
+//** given to bind this element with the button that toggles it.
+
+//** Popups have no content by default and cannot be seen. 
+//** Apply .pop-debug to debug.
+.popup {
+
+    //** Basic Properties
+    position: absolute;
+
+    //** Limits content from breaking screen borders
+    max-height: 90vh;
+    max-width: 90vw;
+
+    //** The popup content MUST be flex to allow dynamic positioning
+    //** To avoid flex behavior, wrap child content in blank div.
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    z-index: 100;
+
+    //** Modal Variant, centers content.
+    &.pop-center {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    //** Debug Class - Remove before release
+    &.pop-debug {
+        background-color: red;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    //** The class toggled by JS to make this all function.
+    &.visible {
+        visibility: visible;
+    }
+}
+
+//** Overlay Component - The (div) overlay is an option part of the popup family.
+//** It functions as a standard overlay.
+.overlay {
+    //** General properties
+    z-index: 99;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+
+    background-color: black;
+    opacity: 50%;
+    display: none;
+
+    //** Toggled using JS
+    &.visible {
+        display: block;
+    }
+
+    //** extra-light -> extra-dark variants.
+    &.ove-xl {
+        opacity: 15%;
+    }
+
+    &.ove-lg {
+        opacity: 30%;
+    }
+
+    &.ove-md {
+        opacity: 50%;
+    }
+
+    &.ove-dk {
+        opacity: 70%;
+    }
+
+    &.ove-xd {
+        opacity: 85%;
+    }
+}
+
+.focus-overlay {
+    pointer-events: none;
+    position: fixed;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+
+    & .foco-xsL,
+    .foco-xsR {}
+
+    & .foco-smL,
+    .foco-smR {}
+
+
+    & .foco-mdL,
+    .foco-mdR {
+        pointer-events: all;
+        width: calc(calc(100% - 65rem)/2);
+
+    }
+
+    & .foco-lgL,
+    .foco-lgR {
+        pointer-events: all;
+        width: calc(calc(100% - 75rem)/2);
+
+    }
+
+
+    & .foco-xlL,
+    .foco-xlR {}
+
+
+}
