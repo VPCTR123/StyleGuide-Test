@@ -1,0 +1,84 @@
+//** Drawer Component - A (div) container that opens and closes vertically when given an "active" class.
+.drawer {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s cubic-bezier(0, 1, 0, 1);
+
+    //** Drawer Open State (Does not require dra- prefix, as this state is used with many classes.)
+    &.active {
+        max-height: 999rem;
+        transition: max-height 1s ease-in-out;
+    }
+}
+
+//** Drawer Handle Component - A (label) bar that appears to open and close when clicked. (Paired with .drawer). 
+.drawer-handle {
+    user-select: none;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    height: 2rem;
+
+    //** Handle Height Variants 
+    &.drah-xxs {
+        height: 1rem;
+    }
+    &.drah-xs {
+        height: 2rem;
+    }
+
+    &.drah-sm {
+        height: 3rem;
+    }
+
+    &.drah-md {
+        height: 4rem;
+    }
+
+    &.drah-lg {
+        height: 5rem;
+    }
+
+    &.drah-xl {
+        height: 6rem;
+    }
+    &.drah-xxl {
+        height: 7rem;
+    }
+    //** Hide visibilty of first child checkbox.
+    //** Rotates Carret icon when checked.
+    &>input {
+        display: none;
+
+        //** (span)
+        &:checked+.icon {
+
+            transform: rotate(-90deg);
+            transform-origin: center;
+        }
+    }
+
+    //** Animates rotation of carret icon.
+    .icon {
+        transition: .2s;
+    }
+
+    //** Custom Variant (Only use on applist drawer handle)
+
+    
+
+    // @media screen and (max-width: 1118px) {
+    //     padding-left: calc((100% - 55rem) / 2);
+    // }
+
+    // @media screen and (max-width: 894px) {
+    //     padding-left: calc((100% - 41rem) / 2);
+    // }
+
+    // @media screen and (max-width: 670px) {
+    //     padding-left: calc((100% - 27rem) / 2);
+    // }
+
+}
+
+

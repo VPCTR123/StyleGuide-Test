@@ -1,0 +1,838 @@
+//** Fade In / Out Modifier. (Apply fade class to allow)
+//** Use JS or other methods to toggle classes which show and hide element with a short transition.
+.fade {
+    //** Default
+    transition: 0;
+
+    //** Fade out
+    .fad-out {
+        transition: .5s;
+        opacity: 0;
+    }
+
+    //** Fade in
+    .fad-in {
+        transition: .5s;
+        opacity: 100;
+    }
+}
+
+//** User Select Modifier
+.select {
+    //** Default
+    user-select: auto;
+
+    //** Variants
+    &.sel-none {
+        user-select: none;
+    }
+}
+
+.disabled{
+    pointer-events: none;
+}
+//** Border Radius Modifier
+.pill {
+    //** Default
+    border-radius: 1.5rem;
+
+    //** Disable
+    &.no-pill {
+        border-radius: 0;
+    }
+
+    //** Full or circle
+    &.pil-circle,
+    &.pil-full {
+        border-radius: 100%;
+    }
+
+    //** Variant Sizes
+    &.pil-xxs {
+        border-radius: .25rem;
+    }
+
+    &.pil-xs {
+        border-radius: .5rem;
+    }
+
+    &.pil-sm {
+        border-radius: 1rem;
+    }
+
+    &.pil-md {
+        border-radius: 1.5rem;
+    }
+
+    &.pil-lg {
+        border-radius: 2rem;
+    }
+
+    &.pil-xl {
+        border-radius: 3rem;
+    }
+}
+
+// Ring Modifier - Adds a highlighting border when mouse hovered.
+.ring {
+    outline-offset: .15rem;
+    transition: .05s;
+    outline-color: black;
+
+    &:focus-within {
+        outline: .2rem solid;
+    }
+
+    &:hover {
+
+        outline: .2rem solid;
+    }
+
+    //Temporarily disabled
+
+    // &:active {
+    //     outline-offset: .35rem;
+    //     outline: 0rem solid;
+    // }
+
+}
+
+//** Display Modifiers
+.display {
+    //** Default Block
+    display: block;
+
+    //** Display Variants
+    &.dis-grid {
+        display: grid;
+    }
+
+    &.dis-block {
+        display: block;
+    }
+
+    &.dis-inline-block {
+        display: inline-block;
+    }
+
+}
+
+.float {
+    &.flo-right {
+        float: right;
+    }
+}
+
+//** Flex Modifier
+.flex {
+
+    //** Default Flex
+    display: flex;
+
+    //** Variants
+    &.fle-rowreverse {
+        flex-direction: row-reverse;
+    }
+// &.fle-smCol{
+//     @media (max-width: 30rem) {
+//         flex-direction: column;
+//     }
+// }
+    &.fle-column {
+        flex-direction: column;
+    }
+
+    &.fle-space-between {
+        justify-content: space-between;
+    }
+
+    &.fle-centerHr {
+
+        justify-content: center;
+    }
+
+    &.fle-start {
+        justify-content: flex-start;
+
+    }
+    &.fle-align-start{
+        align-items: start;
+    }
+    &.fle-end {
+        justify-content: flex-end;
+    }
+
+    &.fle-one {
+        flex: 1;
+    }
+
+    &.fle-centerVr {
+        align-items: center;
+    }
+
+    &.fle-baseline {
+        align-items: baseline;
+    }
+
+    &.fle-wrap {
+        flex-wrap: wrap;
+    }
+
+    &.fle-nowrap {
+        flex-wrap: nowrap;
+    }
+}
+
+//** Position Modifiers
+.position {
+    //** Default Static
+    position: static;
+
+    //** Variants
+    &.pos-fixed {
+        position: fixed;
+    }
+
+    &.pos-sticky {
+        position: sticky;
+    }
+
+    &.pos-relative {
+        position: relative;
+    }
+
+    &.pos-absolute {
+        position: absolute;
+    }
+
+}
+
+//** Position Adjusteres
+//** Align with right edge
+.right-edge {
+    left: 100%;
+
+    //** Points to left
+    &.to-left {
+        left: auto;
+        right: 0;
+    }
+}
+
+//** Align left edge
+.left-edge {
+    right: 100%;
+
+    //** points to right
+    &.to-right {
+        right: auto;
+        left: 0;
+    }
+}
+
+//** Padding Modifier Component 
+.padding {
+
+    //** Size Variants - Use global variables to prevent inconsistencies.
+    &.pad-xxs {
+        padding: var(--padXxs);
+    }
+
+    &.pad-xs {
+        padding: var(--padXs);
+    }
+
+    &.pad-sm {
+        padding: var(--padSm);
+    }
+
+    &.pad-md {
+        padding: var(--padMd);
+    }
+
+    &.pad-lg {
+        padding: var(--padLg);
+    }
+
+    &.pad-xl {
+        padding: var(--padXl);
+    }
+
+    &.pad-xxl {
+        padding: var(--padXxl);
+    }
+
+    //** Apply padding by side
+    //** Top
+    &.pad-xxsT {
+        padding-top: var(--padXxs);
+    }
+
+    &.pad-xsT {
+        padding-top: var(--padXs);
+    }
+
+    &.pad-smT {
+        padding-top: var(--padSm);
+    }
+
+    &.pad-mdT {
+        padding-top: var(--padMd);
+    }
+
+    &.pad-lgT {
+        padding-top: var(--padLg);
+    }
+
+    &.pad-xlT {
+        padding-top: var(--padXl);
+    }
+
+    &.pad-xxlT {
+        padding-top: var(--padXxl);
+    }
+
+    //** Right
+    &.pad-xxsR {
+        padding-right: var(--padXxs);
+    }
+
+    &.pad-xsR {
+        padding-right: var(--padXs);
+    }
+
+    &.pad-smR {
+        padding-right: var(--padSm);
+    }
+
+    &.pad-mdR {
+        padding-right: var(--padMd);
+    }
+
+    &.pad-lgR {
+        padding-right: var(--padLg);
+    }
+
+    &.pad-xlR {
+        padding-right: var(--padXl);
+    }
+
+    &.pad-xxlR {
+        padding-right: var(--padXxl);
+    }
+
+    //** Bottom
+    &.pad-xxsB {
+        padding-bottom: var(--padXxs);
+    }
+
+    &.pad-xsB {
+        padding-bottom: var(--padXs);
+    }
+
+    &.pad-smB {
+        padding-bottom: var(--padSm);
+    }
+
+    &.pad-mdB {
+        padding-bottom: var(--padMd);
+    }
+
+    &.pad-lgB {
+        padding-bottom: var(--padLg);
+    }
+
+    &.pad-xlB {
+        padding-bottom: var(--padXl);
+    }
+
+    &.pad-xxlB {
+        padding-bottom: var(--padXxl);
+    }
+
+    //** Left
+    &.pad-xxsL {
+        padding-left: var(--padXxs);
+    }
+
+    &.pad-xsL {
+        padding-left: var(--padXs);
+    }
+
+    &.pad-smL {
+        padding-left: var(--padSm);
+    }
+
+    &.pad-mdL {
+        padding-left: var(--padMd);
+    }
+
+    &.pad-lgL {
+        padding-left: var(--padLg);
+    }
+
+    &.pad-xlL {
+        padding-left: var(--padXl);
+    }
+
+    &.pad-xxlL {
+        padding-left: var(--padXxl);
+    }
+
+    //** Apply Specific Padding to horizontal axis.
+    &.pad-xxsHr {
+        padding-left: var(--padXxs);
+        padding-right: var(--padXxs);
+    }
+
+    &.pad-xsHr {
+        padding-left: var(--padXs);
+        padding-right: var(--padXs);
+    }
+
+    &.pad-smHr {
+        padding-left: var(--padSm);
+        padding-right: var(--padSm);
+    }
+
+    &.pad-mdHr {
+        padding-left: var(--padMd);
+        padding-right: var(--padMd);
+    }
+
+    &.pad-lgHr {
+        padding-left: var(--padLg);
+        padding-right: var(--padLg);
+    }
+
+    &.pad-xlHr {
+        padding-left: var(--padXl);
+        padding-right: var(--padXl);
+    }
+
+    &.pad-xxlHr {
+        padding-left: var(--padXxl);
+        padding-right: var(--padXxl);
+    }
+
+    //** Apply specific padding to vertical axsis.
+    &.pad-xxsVr {
+        padding-top: var(--padXxs);
+        padding-bottom: var(--padXxs);
+    }
+
+    &.pad-xsVr {
+        padding-top: var(--padXs);
+        padding-bottom: var(--padXs);
+    }
+
+    &.pad-smVr {
+        padding-top: var(--padSm);
+        padding-bottom: var(--padSm);
+    }
+
+    &.pad-mdVr {
+        padding-top: var(--padMd);
+        padding-bottom: var(--padMd);
+    }
+
+    &.pad-lgVr {
+        padding-top: var(--padLg);
+        padding-bottom: var(--padLg);
+    }
+
+    &.pad-xlVr {
+        padding-top: var(--padXl);
+        padding-bottom: var(--padXl);
+    }
+
+    &.pad-xxlVr {
+        padding-top: var(--padXxl);
+        padding-bottom: var(--padXxl);
+    }
+
+    //** Remove Padding by side
+    &.pad-noneT {
+        padding-top: 0;
+    }
+
+    &.pad-noneR {
+        padding-right: 0;
+    }
+
+    &.pad-noneB {
+        padding-bottom: 0;
+    }
+
+    &.pad-noneL {
+        padding-left: 0;
+    }
+
+    //** Remove Padding Horizontally
+    &.pad-noneHr {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    //** Remove Padding Vertically
+    &.pad-noneVr {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &.pad-xsNav {
+        padding-top: 1rem;
+    }
+
+    &.pad-smNav {
+        padding-top: 2rem;
+    }
+
+    &.pad-mdNav{
+        padding-top: 3rem;
+    }
+
+    &.pad-lgNav {
+        padding-top: 4rem;
+    }
+
+    &.pad-xlNav {
+        padding-top: 5rem;
+    }
+}
+
+//** Margin Modifier Component 
+.margin {
+
+    //** Size Variants - Use global variables to prevent inconsistencies.
+    &.mar-xxs {
+        margin: var(--marXxs);
+    }
+
+    &.mar-xs {
+        margin: var(--marXs);
+    }
+
+    &.mar-sm {
+        margin: var(--marSm);
+    }
+
+    &.mar-md {
+        margin: var(--marMd);
+    }
+
+    &.mar-lg {
+        margin: var(--marLg);
+    }
+
+    &.mar-xl {
+        margin: var(--marXl);
+    }
+
+    &.mar-xxl {
+        margin: var(--marXxl);
+    }
+
+    //** Apply margin by side
+    //** Top
+    &.mar-xxsT {
+        margin-top: var(--marXxs);
+    }
+
+    &.mar-xsT {
+        margin-top: var(--marXs);
+    }
+
+    &.mar-smT {
+        margin-top: var(--marSm);
+    }
+
+    &.mar-mdT {
+        margin-top: var(--marMd);
+    }
+
+    &.mar-lgT {
+        margin-top: var(--marLg);
+    }
+
+    &.mar-xlT {
+        margin-top: var(--marXl);
+    }
+
+    &.mar-xxlT {
+        margin-top: var(--marXxl);
+    }
+
+    //** Right
+    &.mar-xxsR {
+        margin-right: var(--marXxs);
+    }
+
+    &.mar-xsR {
+        margin-right: var(--marXs);
+    }
+
+    &.mar-smR {
+        margin-right: var(--marSm);
+    }
+
+    &.mar-mdR {
+        margin-right: var(--marMd);
+    }
+
+    &.mar-lgR {
+        margin-right: var(--marLg);
+    }
+
+    &.mar-xlR {
+        margin-right: var(--marXl);
+    }
+
+    &.mar-xxlR {
+        margin-right: var(--marXxl);
+    }
+
+    //** Bottom
+    &.mar-xxsB {
+        margin-bottom: var(--marXxs);
+    }
+
+    &.mar-xsB {
+        margin-bottom: var(--marXs);
+    }
+
+    &.mar-smB {
+        margin-bottom: var(--marSm);
+    }
+
+    &.mar-mdB {
+        margin-bottom: var(--marMd);
+    }
+
+    &.mar-lgB {
+        margin-bottom: var(--marLg);
+    }
+
+    &.mar-xlB {
+        margin-bottom: var(--marXl);
+    }
+
+    &.mar-xxlB {
+        margin-bottom: var(--marXxl);
+    }
+
+    //** Left   
+    &.mar-xxsL {
+        margin-left: var(--marXxs);
+    }
+
+    &.mar-xsL {
+        margin-left: var(--marXs);
+    }
+
+    &.mar-smL {
+        margin-left: var(--marSm);
+    }
+
+    &.mar-mdL {
+        margin-left: var(--marMd);
+    }
+
+    &.mar-lgL {
+        margin-left: var(--marLg);
+    }
+
+    &.mar-xlL {
+        margin-left: var(--marXl);
+    }
+
+    &.mar-xxlL {
+        margin-left: var(--marXxl);
+    }
+
+    //** Apply Specific margin to horizontal axis.
+    &.mar-xxsHr {
+        margin-left: var(--marXxs);
+        margin-right: var(--marXxs);
+    }
+
+    &.mar-xsHr {
+        margin-left: var(--marXs);
+        margin-right: var(--marXs);
+    }
+
+    &.mar-smHr {
+        margin-left: var(--marSm);
+        margin-right: var(--marSm);
+    }
+
+    &.mar-mdHr {
+        margin-left: var(--marMd);
+        margin-right: var(--marMd);
+    }
+
+    &.mar-lgHr {
+        margin-left: var(--marLg);
+        margin-right: var(--marLg);
+    }
+
+    &.mar-xlHr {
+        margin-left: var(--marXl);
+        margin-right: var(--marXl);
+    }
+
+    &.mar-xxlHr {
+        margin-left: var(--marXxl);
+        margin-right: var(--marXxl);
+    }
+
+    //** Apply specific margin to vertical axsis.
+    &.mar-xxsVr {
+        margin-top: var(--marXxs);
+        margin-bottom: var(--marXxs);
+    }
+
+    &.mar-xsVr {
+        margin-top: var(--marXs);
+        margin-bottom: var(--marXs);
+    }
+
+    &.mar-smVr {
+        margin-top: var(--marSm);
+        margin-bottom: var(--marSm);
+    }
+
+    &.mar-mdVr {
+        margin-top: var(--marMd);
+        margin-bottom: var(--marMd);
+    }
+
+    &.mar-lgVr {
+        margin-top: var(--marLg);
+        margin-bottom: var(--marLg);
+    }
+
+    &.mar-xlVr {
+        margin-top: var(--marXl);
+        margin-bottom: var(--marXl);
+    }
+
+    &.mar-xxlVr {
+        margin-top: var(--marXxl);
+        margin-bottom: var(--marXxl);
+    }
+
+    //** Remove margin by side
+    &.mar-noneT {
+        margin-top: 0;
+    }
+
+    &.mar-noneR {
+        margin-right: 0;
+    }
+
+    &.mar-noneB {
+        margin-bottom: 0;
+    }
+
+    &.mar-noneL {
+        margin-left: 0;
+    }
+
+    //** Remove margin Horizontally
+    &.mar-noneHr {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    //** Remove margin Vertically
+    &.mar-noneVr {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    //** Auto 
+    &.mar-auto {
+        margin: auto;
+    }
+
+    //** Auto Horizontal
+    &.mar-autoHr {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    //** Auto Vertical
+    &.mar-autoVr {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    //** Auto Cardinal
+    &.mar-autoT {
+        margin-top: auto;
+    }
+
+    &.mar-autoR {
+        margin-right: auto;
+    }
+
+    &.mar-autoB {
+        margin-bottom: auto;
+    }
+
+    &.mar-autoL {
+        margin-left: auto;
+    }
+
+}
+
+//** Gap Modifier
+.gap {
+    gap: .5rem;
+    &.gap-xxs {
+        // gap: 1px;
+        gap: .25rem;
+    }
+    &.gap-xs {
+        // gap: 1px;
+        gap: .5rem;
+    }
+
+    &.gap-sm {
+        // gap: .5rem;
+        gap: .75rem;
+    }
+
+    &.gap-md {
+        // gap: 1rem;
+        gap: 1rem;
+    }
+
+    &.gap-lg {
+        // gap: 5rem;
+        gap: 3rem;
+    }
+
+    &.gap-xl {
+        // gap: 10rem;
+        gap: 5rem;
+    }
+    &.gap-xxl {
+        // gap: 10rem;
+        gap: 10rem;
+    }
+}
+
+//** Cursor Behavior
+.cursor {
+    cursor: default;
+
+    &.cur-pointer {
+        cursor: pointer;
+    }
+}
+
+.ghost:not(:hover) {
+
+    background-color: hsla(0, 0, 0, 0) !important;
+}

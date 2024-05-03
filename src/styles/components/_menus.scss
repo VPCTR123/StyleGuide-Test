@@ -1,0 +1,147 @@
+//** Menu Component - A (div) frame that pairs with different components to create a variety of different menu styles.
+.menu {
+    //** Max width prevents modal style menus from exceeding the bounds of the monitor.
+    max-width: 90vw;
+    //** Max height calc also stops very long text bodies from extending forever,
+    //** eventually forcing scroll. 
+    max-height: calc(min(90vh, 100rem));
+
+    //** Basic properties
+    background-color: white;
+    box-shadow: 0 0.1rem .8rem -0.3rem;
+    overflow: hidden;
+
+    //** Width Variants 
+    &.men-xxs {
+        width: 2rem;
+    }
+
+    &.men-xs {
+        width: 7.5rem;
+    }
+
+    &.men-sm {
+        width: 13.5rem;
+
+    }
+
+    &.men-md {
+        width: 30rem;
+
+    }
+
+    &.men-lg {
+        width: 40rem;
+
+    }
+
+    &.men-xl {
+        width: 60rem;
+
+    }
+
+    &.men-xxl {
+        width: 100rem;
+
+    }
+
+    &.men-full {
+        width: 100%;
+    }
+}
+
+//** Menu Footer Component - A (div) footer that complements the style of a menu and its size by adding proportional padding.
+.menu-footer {
+
+    //** Variants
+    &.menf-xxs {
+        padding: var(--padXxs);
+    }
+
+    &.menf-xs {
+        padding: var(--padXs);
+    }
+
+    &.menf-sm {
+        padding: var(--padSm);
+    }
+
+    &.menf-md {
+        padding: var(--padMd);
+    }
+
+    &.menf-lg {
+        padding: var(--padLg);
+    }
+
+    &.menf-xl {
+        padding: var(--padXl);
+    }
+
+    &.menf-xxl {
+        padding: var(--padXxl);
+    }
+}
+
+//** Menu Header Component - A (div) header that complements the style of a menu and its size by adding proportional padding.
+.menu-header {
+
+    //** Variants
+    &.menh-xxs {
+        padding: var(--padXxs);
+    }
+
+    &.menh-xs {
+        padding: var(--padXs);
+    }
+
+    &.menh-sm {
+        padding: var(--padSm);
+    }
+
+    &.menh-md {
+        padding: var(--padMd);
+    }
+
+    &.menh-lg {
+        padding: var(--padLg);
+    }
+
+    &.menh-xl {
+        padding: var(--padXl);
+    }
+
+    &.menh-xxl {
+        padding: var(--padXxl);
+    }
+}
+
+//** By default, menu footer and header have display flex, and flex wrap.
+.menu-footer,
+.menu-header {
+    display: flex;
+    flex-wrap: wrap;
+    user-select: none;
+}
+//** OUT DATED COMMENT SELECORS ARE NOW CLASSED IN A TAG
+//** Selector Component - A (ul) list made of <a> tags, used in menus as links. 
+//**                      Ideally, each <li> is separated by an <hr>
+//**                      Override base padding on <a> tags to match padding style on menu.
+
+//** Later, there will be non-link buttons as well.
+
+
+.selector{
+    user-select: none;
+    background-color: lightgray;
+    list-style: none;
+    font-size: 0.8125rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        text-decoration: none;
+        display: block;
+        height: 2rem;
+        line-height: 2rem;
+
+}
