@@ -271,7 +271,7 @@ footer, .footer {
 
 @font-face {
   font-family: "abcd";
-  src: url("../../fonts/icon packs/test pack/abba.eot") format("embedded-opentype"), url("../../fonts/icon packs/test pack/abba.ttf") format("truetype"), url("../../fonts/icon packs/test pack/abba.woff") format("woff"), url("../../fonts/icon packs/test pack/abba.svg") format("svg");
+  src: url("../fonts/icon packs/test pack/abba.eot") format("embedded-opentype"), url("../fonts/icon packs/test pack/abba.ttf") format("truetype"), url("../fonts/icon packs/test pack/abba.woff") format("woff"), url("../fonts/icon packs/test pack/abba.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
