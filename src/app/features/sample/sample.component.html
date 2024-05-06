@@ -1,0 +1,40 @@
+<div class="padding pad-sm">
+  <div class="flex fle-space-between">
+    <div class="cell cel-md">
+      <div class="content con-scrollY-auto margin mar-sm">
+        <ng-content select=".docs"> </ng-content>
+      </div>
+    </div>
+    <div class="cell cel-xl">
+      <div class="content con-scrollY">
+        <div class="flex fle-space-between">
+          <button
+            (click)="copyTextToClipboard('html')"
+            class="button btn-secondary"
+            style="background-color: whitesmoke"
+          >
+            <i class="fa fa-clone"></i>
+          </button>
+          <div class="overflow-auto relative whitespace-nowrap z-20">
+            <button
+              class="button"
+              [ngClass]="{ 'but-secondary': showHtml }"
+              (click)="showHtml = true; highlight()"
+            >
+              Html
+            </button>
+            <button
+              class="button"
+              [ngClass]="{ 'but-secondary': !showHtml }"
+              (click)="showHtml = false; highlight()"
+            >
+              Typescript
+            </button>
+          </div>
+        </div>
+        <ng-content *ngIf="showHtml" select=".html"> </ng-content>
+        <ng-content *ngIf="!showHtml" select=".typescript"> </ng-content>
+      </div>
+    </div>
+  </div>
+</div>

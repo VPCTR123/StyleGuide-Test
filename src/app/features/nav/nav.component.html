@@ -1,0 +1,27 @@
+<aside>
+    <div class="icon-input-container margin mar-xxsL">
+        <input type="text" [(ngModel)]="search" class="icon-input pill" placeholder="Search">
+        <span class="icon"><i class="fa fa-search"></i></span> <!-- Replace with your desired icon -->
+    </div>
+  <div class="content">
+    <div class="menu men-sm " >
+      <header class="menu-header menh-xs">
+        <h4>{{title()}}</h4>
+      </header>
+      <hr class="margin mar-xsHr" />
+      <div class="men-content content content con-scrollY" [ngClass]="{'fill-view': fillView() == true}" >
+        <ul>
+            <div *ngFor="let link of filteredLinks()">
+          <li >
+            <a [ngClass]="{'selected':link.link == selected()}" class="selector padding pad-xsHr" (click)="navigate.emit(link.link)"
+              >{{link.name}}</a
+            >
+          </li>
+          <hr />              
+          </div>
+        </ul>
+      </div>
+      <footer class="menu-footer menf-xs"></footer>
+    </div>
+  </div>
+</aside>

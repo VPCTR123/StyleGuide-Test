@@ -1,0 +1,99 @@
+<div class="page-content">
+  <div class="flex ">
+    <app-nav [title]="'Components'" [links]="links" (navigate)="selected = $event" [selected]="selected" [fillView]="true">
+    </app-nav>
+
+    <ng-container [ngSwitch]="selected"  >
+      <app-sample *ngSwitchCase="'navigation'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Navigation</div>
+            <div class="description">Container for navigation content</div>
+            <div class="example flex fle-centerHr"><app-nav [title]="'Sample Nav'" [links]="links" >
+            </app-nav></div>
+            <div class="bestpractice">Component is paired with a ng-container and a ngSwitchCase when the navigate event sends link</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight">&lt;app-nav [title]="'Sample Nav'" [links]="links" (navigate)="layout = $event"&gt;
+&lt;/app-nav&gt;
+            
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+           
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'buttons'">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Buttons</div>
+            <div class="description">A button initiates an instantaneous action. </div>
+            <div class="example flex fle-centerHr">
+              <div class="w25p flex fle-column gap gap-sm">
+              <h3>Button</h3>
+              <button class="button">Click</button>
+              <h3>Button Small</h3>
+              <button class="button but-sm">Click</button>
+              <h3>Button Circle</h3>
+              <button class="button but-circle">Click</button>
+              <h3>Button Secondary</h3>
+              <button class="button but-secondary">Click</button>
+              </div>
+            </div>
+            <div class="bestpractice">When buttons are instantly recognizable and easy to understand, an app tends to feel intuitive and well designed.
+
+              Make buttons easy for people to use. It’s essential to include enough space around a button so that people can visually distinguish it from surrounding components and content. Giving a button enough space is also critical for helping people select or activate it, regardless of the method of input they use. As a general rule, a button needs a hit region of at least 60x60 pt — to ensure that people can select it easily, whether they use a fingertip or a pointer.</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]="findSample('buttons') | sanitizeHtml"></span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'cards'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Cards</div>
+            <div class="description">A container with a border. </div>
+            <div class="example flex fle-centerHr">
+              <div class=" flex fle-column gap gap-sm">
+                <h3>Card</h3>
+                <div class="card"><div style="width: 100; height: 30px;"></div></div>
+                <h3>Card Pill</h3>
+                <div class="card pill"><div style="width: 100; height: 30px;"></div></div>
+                <h3>Card Title</h3>
+                <div class="card pill pil-xs">
+                  <Header> Header</Header>
+                  <hr>
+                  <div style="width: 100; height: 30px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bestpractice">Cards are good for popups and grouping similar elements</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('cards') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+    </ng-container>
+  </div>
+</div>
+
