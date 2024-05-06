@@ -15,9 +15,4 @@ export class CardComponent {
 
   //@Output() popupClicked = new EventEmitter();
 
-  togglePopup($event: any, str: string)
-  {
-
-  }
-
 }
