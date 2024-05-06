@@ -5,7 +5,7 @@
 //** Import font families. 
 @font-face {
   //** Local name for font family.
-  font-family: 'abcd';
+  font-family: 'test';
   //** Alternate font imports for different browswer compatibilities. 
   src: url('../../fonts/icon packs/test pack/abba.eot') format('embedded-opentype'),
     url('../../fonts/icon packs/test pack/abba.ttf') format('truetype'),
@@ -16,11 +16,24 @@
   font-display: block;
 }
 
+@font-face {
+  //** Local name for font family.
+  font-family: 'earlypack';
+  //** Alternate font imports for different browswer compatibilities. 
+  src: url('../../fonts/icon packs/earlyIconPack/earlyiconpack.eot') format('embedded-opentype'),
+    url('../../fonts/icon packs/earlyIconPack/earlyiconpack.ttf') format('truetype'),
+    url('../../fonts/icon packs/earlyIconPack/earlyiconpack.woff') format('woff'),
+    url('../../fonts/icon packs/earlyIconPack/earlyiconpack.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 .icon {
-  
+
   //** use !important to prevent issues with browser extensions that change fonts.
-  font-family: 'abcd' !important;
-  
+  // font-family: 'test' !important;
+  font-family: 'earlypack' !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -35,22 +48,28 @@
   font-size: 3rem;
 
   //** Icon Sizes.
-  &.ico-xs{
+  &.ico-xs {
     font-size: .5rem;
   }
-  &.ico-sm{
+
+  &.ico-sm {
     font-size: 1rem;
   }
-  &.ico-md{
+
+  &.ico-md {
     font-size: 3rem;
   }
-  &.ico-lg{
+
+  &.ico-lg {
     font-size: 5rem;
   }
-  &.ico-xl{
+
+  &.ico-xl {
     font-size: 7rem;
   }
 
+  speak: never;
+  color: gray;
 }
 
 //** Place Holder Icon
@@ -59,4 +78,41 @@
   speak: never;
   content: "\e900";
   color: gray;
+}
+
+//early pack icons
+.ico-carret-d:before {
+  content: "\e900";
+}
+
+.ico-carret-l:before {
+  content: "\e901";
+}
+
+.ico-carret-r:before {
+  content: "\e902";
+}
+
+.ico-carret-u:before {
+  content: "\e903";
+}
+
+.ico-closeX:before {
+  content: "\e904";
+}
+
+.ico-ellipse-hr:before {
+  content: "\e905";
+}
+
+.ico-ellipse-vr:before {
+  content: "\e906";
+}
+
+.ico-home:before {
+  content: "\e907";
+}
+
+.ico-th:before {
+  content: "\e908";
 }

@@ -51,3 +51,7 @@ const userFirstInitialElements = document.querySelectorAll('.user-first-initial'
 userFirstInitialElements.forEach(userFirstInitialElement => {
     userFirstInitialElement.textContent = firstLetter;
 });
+const userFullNameElements = document.querySelectorAll('.user-full-name');
+userFullNameElements.forEach(userFullNameElement => {
+    userFullNameElement.textContent = userName;
+});

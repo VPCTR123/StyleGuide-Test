@@ -55,7 +55,7 @@
     top: 0;
     left: 0;
 
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     opacity: 50%;
     display: none;
 
@@ -65,25 +65,25 @@
     }
 
     //** extra-light -> extra-dark variants.
-    &.ove-xl {
-        opacity: 15%;
-    }
+    // &.ove-xl {
+    //     opacity: 15%;
+    // }
 
-    &.ove-lg {
-        opacity: 30%;
-    }
+    // &.ove-lg {
+    //     opacity: 30%;
+    // }
 
-    &.ove-md {
-        opacity: 50%;
-    }
+    // &.ove-md {
+    //     opacity: 50%;
+    // }
 
-    &.ove-dk {
-        opacity: 70%;
-    }
+    // &.ove-dk {
+    //     opacity: 70%;
+    // }
 
-    &.ove-xd {
-        opacity: 85%;
-    }
+    // &.ove-xd {
+    //     opacity: 85%;
+    // }
 }
 
 .focus-overlay {

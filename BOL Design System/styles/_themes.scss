@@ -1,7 +1,11 @@
-//imports
-@use "variables" as v;
-
-
+//functions
+@function invert-lightness($fcolor) {
+    $h: hue($fcolor);
+    $s: saturation($fcolor);
+    $l: lightness($fcolor);
+    $invL: 100% - $l;
+    @return hsl($h, $s, $invL);
+}
 
 //mixins (color schemes)
 @mixin textcolor($c: pink) {
@@ -23,7 +27,8 @@
     ins,
     sub,
     sup,
-    .icon{
+    time,
+    .icon {
         color: $c;
     }
 
@@ -34,64 +39,46 @@
     //default null all colors to prevent error
     //and indicate if no theme is applied
 
-
     $base: null;
-    $baseInv: null;
-    $base33: null;
-    $base66: null;
-    $base25: null;
-    $base50: null;
-    $base75: null;
-    $base10: null;
-    $base15: null;
-    $base85: null;
-    $base90: null;
-    $userColor: null;
-
-    $baseAlt: null;
-    $basegray: null;
-
-    $darkgray: null;
-    $highlight: null;
-
-    $lightgray: null;
-    $mediumgray: null;
     $primary: null;
-    $secondary: null;
-    // $overlay: null;
-
-
-    //default theme color binding
 
     @if $theme==default {
-        $base: v.$base;
-        $baseInv: v.$baseInv;
-        $base33: v.$base33;
-        $base66: v.$base66;
-        $base25: v.$base25;
-        $base50: v.$base50;
-        $base75: v.$base75;
-        $base10: v.$base10;
-        $base15: v.$base15;
-        $base85: v.$base85;
-        $base90: v.$base90;
-        $userColor: var(--userColor);
+        $base: hsl(0, 0%, 100%);
 
-        $basegray: v.$basegray;
-        $baseAlt: v.$baseAlt;
-        $darkgray: v.$darkgray;
-        $highlight: v.$highlight;
-
-        $lightgray: v.$lightgray;
-        $mediumgray: v.$mediumgray;
-        // $overlay: v.$overlay;
-        $primary: v.$primary;
-        $secondary: v.$secondary;
-
-
-
+        $primary: hsl(213, 100%, 64%);
     }
 
+    @if $theme==dark {
+        $base: hsl(0, 0%, 3%);
+
+        $primary: hsl(266, 57%, 49%);
+    }
+   
+    $baseInv: invert-lightness($base);
+    $base33: color-mix(in srgb, $base 33%, $baseInv 66%);
+    $base66: color-mix(in srgb, $base 66%, $baseInv 33%);
+    $base25: color-mix(in srgb, $base 25%, $baseInv 75%);
+    $base50: color-mix(in srgb, $base 50%, $baseInv 50%);
+    $base75: color-mix(in srgb, $base 75%, $baseInv 25%);
+    $base10: color-mix(in srgb, $base 10%, $baseInv 90%);
+    $base15: color-mix(in srgb, $base 15%, $baseInv 85%);
+    $base85: color-mix(in srgb, $base 85%, $baseInv 15%);
+    $base90: color-mix(in srgb, $base 90%, $baseInv 10%);
+
+
+
+
+
+    $userColor: null;
+    $userColor: var(--userColor);
+
+    @include textcolor($baseInv);
+    a{
+        color: $primary;
+    }
+    .spacer{
+        opacity: 0 !important;
+    }
     .page-content {
         background-color: $base;
     }
@@ -104,10 +91,13 @@
         background-image: linear-gradient(to right, $base, transparent);
     }
 
-    .drawer-handle {
+    .overlay {
+        background-color: $base50;
+    }
 
+    .drawer-handle {
         background-color: $base90;
-        box-shadow: 0px 2px 3px 0px $base66;
+        box-shadow: 0px 2px .15rem 0px rgba(0, 0, 0, 0.228);
 
         &:hover {
             background-color: $base85;
@@ -120,7 +110,7 @@
 
         &>input:checked+.icon {
             transition-property: color .2s;
-            color: $highlight;
+            color: $primary;
         }
     }
 
@@ -129,66 +119,68 @@
         transition: background-color 1s, box-shadow .25s;
 
 
-        background-color: $base90;
+        background-color: $base85;
         @include textcolor($base10);
-
+      
         &.scrolled {
             background-color: $base;
-            box-shadow: 0px 2px 1rem 0px $base25;
+          
+            box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
         }
     }
-    footer{
+    &.theme-dark{
+        .nav,
+        nav {
+            &.scrolled{
+background-color: $base90;
+            }
+        }
+    }
+    footer {
         background-color: $base;
     }
-    .div-highlight{
-        background-color: $highlight;
+
+    .div-highlight {
+        background-color: $primary;
         @include textcolor($base);
     }
-    .div-base90{
-background-color: $base90;
+
+    .div-base90 {
+        background-color: $base90;
     }
+
     hr {
         border-color: $base85;
     }
-.hr-highlight{
-    border-color: $highlight;
-}
-.hr-base90{
-    border-color: $base90;
-} 
-// button {
-    //     transition: background-color .2s;
-    //     background-color: $highlight;
 
-    //     &:hover {
-    //         transition: background-color .1s;
-    //         @include textcolor($base);
-    //         background-color: color-mix(in srgb, $highlight 75%, $baseAlt 25%);
+    .hr-highlight {
+        border-color: $primary;
+    }
 
-    //     }
-
-    //     &:active {
-
-    //         background-color: color-mix(in srgb, $highlight 55%, $baseAlt 45%);
-    //     }
-    // }
+    .hr-base90 {
+        border-color: $base90;
+    }
+    .ico-color{
+        color: rgb(83, 83, 69) !important;
+    }
     .but-base {
         background-color: $base;
         @include textcolor($base33);
 
         &:hover {
-            background-color: $highlight;
+            background-color: $primary;
             @include textcolor($base);
-         
+
         }
 
         &:active {
-            background-color: color-mix(in srgb, $highlight, $baseInv);
+            background-color: color-mix(in srgb, $primary, $baseInv);
             @include textcolor($base);
         }
 
     }
-    .but-secondary{
+
+    .but-secondary {
 
         background-color: $base75;
         @include textcolor($base10);
@@ -196,7 +188,7 @@ background-color: $base90;
         &:hover {
             background-color: color-mix(in srgb, $base75 75%, $baseInv);
             @include textcolor($base);
-         
+
         }
 
         &:active {
@@ -205,14 +197,33 @@ background-color: $base90;
         }
 
     }
+    .but-primary {
 
+        background-color: $primary;
+        @include textcolor($base10);
+
+        &:hover {
+            background-color: color-mix(in srgb, $primary 75%, $baseInv);
+            @include textcolor($base);
+
+        }
+
+        &:active {
+            background-color: color-mix(in srgb, $primary, $baseInv);
+            @include textcolor($base);
+        }
+
+    }
+    
     button.user-color {
         background-color: $userColor;
-        @include textcolor($base);
-        &:hover{
+        @include textcolor(white);
+
+        &:hover {
             background-color: color-mix(in srgb, $userColor 80%, $baseInv 20%);
         }
-        &:active{
+
+        &:active {
             background-color: color-mix(in srgb, $userColor 60%, $baseInv 40%);
         }
     }
@@ -223,15 +234,16 @@ background-color: $base90;
         @include textcolor($base15);
     }
 
+
     .thumb {
         background-color: rgb(94, 205, 142);
         @include textcolor($base);
     }
 
-    // .drawer-handle:nth-of-type(even) {
-    //     background-color: $base90;
-
-    // }
+    .menu {
+        background-color: $base;
+        box-shadow: 0 0.1rem .8rem -0.3rem black;
+    }
 
     .selector {
 
@@ -241,40 +253,22 @@ background-color: $base90;
             background-color: $primary;
         }
     }
-
+  
+    .toggle {
+        background-color: $base85;
+        &>span {
+            background-color: $base;
+        }
+        input[type="checkbox"]:checked+span {
+            background-color: $primary;
+        }
+        
+    }
+   
     .ring {
         outline-color: $primary;
     }
 
-    // .ring {
-    //     outline-color: $highlight;
-    // }
-
-    // .card {
-    //     background-color: $base;
-    //     border-color: $lightgray;
-
-    //     @include textcolor($darkgray);
-    // }
-
-    // .thumb {
-    //     color: $base;
-    // }
-
-    // .but-base {
-    //     background-color: $base;
-    //     color: $darkgray;
-
-    //     &:hover {
-    //         background-color: $highlight;
-    //         color: $base;
-    //     }
-
-    //     &:active {
-    //         
-    //         color: $base;
-    //     }
-    // }
 
 
     //IMPORTANT 
@@ -289,4 +283,8 @@ background-color: $base90;
 //blank results in default theme
 .theme-default {
     @include theme();
+}
+
+.theme-dark {
+    @include theme(dark);
 }

@@ -59,6 +59,7 @@
 
 //** Vertical Spacing Component (div)
 .spacer {
+   
     //** Default
     height: 5rem;
 
@@ -246,6 +247,7 @@
 
 //designed to match size of grid cells correspondingly 
 .cell {
+
     &.cel-xxs {
         width: 3.125rem;
     }
@@ -319,4 +321,7 @@
 
 .w100p {
     width: 100%;
+}
+.h100p{
+    height: 100%;
 }
