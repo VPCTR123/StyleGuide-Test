@@ -1,0 +1,21 @@
+.icon-input-container {
+    position: relative;
+}
+.icon-input {
+    padding-left: 35px; /* Adjust as needed */
+}
+.icon {
+    position: absolute;
+    left: 10px; /* Adjust to position the icon */
+    top: 50%; /* Vertically center the icon */
+    transform: translateY(-50%);
+    font-size:small
+}
+
+.selected {
+    background-color: hsl(213, 70%, 73%);
+}
+
+.fill-view {
+    height: 95vh;
+}
