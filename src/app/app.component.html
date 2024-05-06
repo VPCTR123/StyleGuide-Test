@@ -6,4 +6,11 @@
 
   
   
+  <app-card
+    title="Not a Test Name"
+    (popupClicked)="toggleEmission()"
+  ></app-card>
+  <span>Emission Toggled: </span>
+  <span *ngIf="emission == true">On</span>
+  <span *ngIf="emission == false">Off</span>
 </div>
