@@ -234,7 +234,7 @@
         max-width: 150rem;
     }
 }
-
+//needs attention 
 .padding-focus {
     &.padf-mdMin {
         --padfMin: 5rem;
@@ -242,6 +242,15 @@
 
     &.padf-lgL {
         padding-left: max(var(--padfMin), calc((100vw - 70rem) / 2));
+    }
+    &.padf-xxlL {
+        padding-left: max(var(--padfMin), calc((100vw - 150rem) / 2));
+    }
+    &.padf-xsL {
+        padding-left: max(var(--padfMin), calc((100vw - 12.5rem) / 2));
+    }
+    &.padf-mdL {
+        padding-left: max(var(--padfMin), calc((100vw - 50rem) / 2));
     }
 }
 

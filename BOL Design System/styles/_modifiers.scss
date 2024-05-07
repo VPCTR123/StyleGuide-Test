@@ -16,7 +16,10 @@
         opacity: 100;
     }
 }
+.hide-bg{
 
+    background-color: hsla(0, 0, 0, 0) !important;
+}
 //** User Select Modifier
 .select {
     //** Default
@@ -836,3 +839,6 @@
 
     background-color: hsla(0, 0, 0, 0) !important;
 }
+// .max-height{
+//     max-height: 60vh !important;
+// }

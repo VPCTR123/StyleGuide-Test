@@ -55,7 +55,11 @@ button,
         --buttonH: 6rem;
     }
 
-
+    &.disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+ 
 }
 
 //needs changing

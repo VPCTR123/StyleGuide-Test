@@ -20,10 +20,10 @@
   //** Local name for font family.
   font-family: 'earlypack';
   //** Alternate font imports for different browswer compatibilities. 
-  src: url('../../fonts/icon packs/earlyIconPack/earlyiconpack.eot') format('embedded-opentype'),
-    url('../../fonts/icon packs/earlyIconPack/earlyiconpack.ttf') format('truetype'),
-    url('../../fonts/icon packs/earlyIconPack/earlyiconpack.woff') format('woff'),
-    url('../../fonts/icon packs/earlyIconPack/earlyiconpack.svg') format('svg');
+  src: url('../fonts/icon packs/earlyIconPack/earlyiconpack.eot') format('embedded-opentype'),
+    url('../fonts/icon packs/earlyIconPack/earlyiconpack.ttf') format('truetype'),
+    url('../fonts/icon packs/earlyIconPack/earlyiconpack.woff') format('woff'),
+    url('../fonts/icon packs/earlyIconPack/earlyiconpack.svg') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -49,23 +49,28 @@
 
   //** Icon Sizes.
   &.ico-xs {
-    font-size: .5rem;
+    font-size: .75rem;
+    line-height: .75rem;
   }
 
   &.ico-sm {
     font-size: 1rem;
+    line-height: 1rem;
   }
 
   &.ico-md {
     font-size: 3rem;
+    line-height: 3rem;
   }
 
   &.ico-lg {
     font-size: 5rem;
+    line-height: 5rem;
   }
 
   &.ico-xl {
     font-size: 7rem;
+    line-height: 7rem;
   }
 
   speak: never;

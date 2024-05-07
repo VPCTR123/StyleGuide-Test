@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../styles/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    <title>Update Info</title>
+    <title>Help</title>
 
 </head>
 
@@ -17,16 +17,14 @@
 <body class="theme-default">
     <div class="spacer spa-sm"></div>
     <div class="user-name">Richard Murray</div>
-    <nav
-        class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr pad-noneL gap gap-sm ">
+    <nav class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr pad-noneL gap gap-sm ">
 
 
         <!-- left wrapper -->
         <div class="flex gap gap-xs fle-centerVr h100p">
-
+      
             <!-- home button -->
-            <a href="../Pages/applist.html"
-                class="link link-nostyle but-primary ghost h100p flex fle-centerVr gap padding pad-sm">
+            <a href="../Pages/applist.html" class="link link-nostyle but-primary ghost h100p flex fle-centerVr gap padding pad-sm">
                 <span class="icon ico-xs ico-carret-l"></span>
                 <span class="icon ico-sm ico-home"></span>
             </a>
@@ -90,7 +88,7 @@
                         <hr class="margin mar-xsHr">
                         <div class=men-content>
                             <ul>
-                                <li><a href="../Pages/help.html" class="selector padding pad-xsHr">Help</a></li>
+                                <li><a href = "../Pages/help.html" class="selector padding pad-xsHr">Help</a></li>
                                 <hr>
                                 <li><a class="selector padding pad-xsHr">Contact</a></li>
                                 <hr>
@@ -111,68 +109,140 @@
             </div>
         </div>
     </nav>
-    <div class="focus-overlay">
-        <div class="foco-mdL"></div>
-        <div class="foco-mdR"></div>
-    </div>
-    <div class="page-content">
+    <div class=page-content>
+        <!-- global nav -->
 
-        <form class="padding pad-sm margin mar-xlB" action="formdebug.html" method="GET">
-            <h2 class="text-align texa-c margin mar-mdT">Update Info</h2>
-            <hr class="margin mar-mdT mar-lgB">
-            <div class="focus foc-sm margin mar-autoHr card padding pad-lg pill">
-                <div class="flex fle-column gap">
-                    <h4 class="text-align texa-c">Contact Information</h4>
-                    <hr class="margin mar-mdB">
-                    <div>
-                        <label for="updateInfo-phoneCommercial">
-                            <p class="text-wrap texw-nowrap">
-                                Commercial Phone: </p>
-                        </label>
-                        <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
-                    </div>
-                    <div class="flex w100p gap">
-                        <input class="w25p pill ring padding pad-xsL" type="tel" name="Commercial Phone Extension"
-                            id="updateInfo-phoneCommercial-ext" title="Extension" placeholder="Ext.">
-                        <input class="w100p pill ring padding pad-xsL" type="tel" name="Commercial Phone"
-                            id="updateInfo-phoneCommercial">
-                    </div>
-                    <label for="updateInfo-phoneDSN">
-                        <p>DSN Phone:</p>
-                    </label>
-                    <input class="pill ring padding pad-xsL" type="tel" name="DSN Phone" id="updateInfo-phoneDSN">
-                    <label for="updateInfo-emailPrimary">
-                        <p>
-                            Primary Email:
-                        </p>
-                    </label>
-                    <input class="pill ring padding pad-xsL" type="email" name="Primary Email" id="updateInfo-emailPrimary">
-                    <label for="updateInfo-emailSecondary">
-                        <p>
-                            Secondary Email:
-                        </p>
-                    </label>
-                    <input class="pill ring padding pad-xsL" type="email" name="Primary Email" id="updateInfo-emailSecondary">
-                    <h4 class="text-align texa-c margin mar-lgT">Command Information</h4>
-                    <hr class="margin mar-mdB">
-                    <label for="updateInfo-organization/command">
-                        <p>Organization / Command:</p>
-                    </label>
-                    <input class="pill ring padding pad-xsL" type="text" name="Organization/Command"
-                        id="updateInfo-organization/command">
-                    <label for="updateInfo-billetTitle">
-                        <p>Billet Title:</p>
-                    </label>
-                    <input class="pill ring padding pad-xsL" type="text" name="Billet Title" id="updateInfo-billetTitle">
-                    <div class="flex gap margin mar-xlT">
-                        <button class="w100p pill pil-xs but-warn" type="reset">Clear All</button>
-                        <button class="w100p pill pil-xs but-primary" type="submit">Submit</button>
-                    </div>
-                </div>
+        <hr>
+        <div class="overlay" id="overlay appOnePopup"></div>
+        <div class="focus-overlay">
+            <div class="foco-lgL"></div>
+            <div class="foco-lgR"></div>
+        </div>
+
+        <h2 class="text-align texa-c margin mar-lgT">Frequently Asked Questions</h2>
+        <hr class="margin mar-mdT mar-lgB">
+        <div class="focus foc-md margin mar-autoHr">
+            <p>Welcome to our Frequently Asked Questions section. Here, we address common queries to provide you with
+                swift answers and clarity. If you don't find what you're looking for, feel free to reach out to our
+                support team.</p>
+            <br>
+            <a href = "">Contact Support</a>
+        </div>
+        <div class="spacer spa-md"></div>
+        <!-- link-nostyle body app list -->
+        <label class="drawer-handle drah-md gap gap-sm padding-focus padf-mdL padf-mdMin" for="drawerOne">
+            <input type="checkbox" checked id="drawerOne" onclick="toggleActive('drawerOne')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h3>Q: Example Question</h3>
+        </label>
+        <div class="drawer dra-mdH" id="target-drawerOne">
+            <div class="focus foc-md margin mar-autoHr mar-lgVr padding pad-xlHr">
+                <h2>A: Sample Answer</h2>
+                <div class="spacer spa-sm"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                    necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
+                    officiis repudiandae. Earum, minus dolor.</p>
             </div>
-        </form>
+
+
+
+        </div>
+        <hr>
+        <label class="drawer-handle drah-md  gap gap-sm padding-focus padf-mdL padf-mdMin" for="drawerTwo">
+            <input type="checkbox" checked id="drawerTwo" onclick="toggleActive('drawerTwo')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h3>Q: Example Question</h3>
+        </label>
+        <div class="drawer dra-mdH" id="target-drawerTwo">
+            <div class="focus foc-md margin mar-autoHr mar-lgVr  padding pad-xlHr">
+                <h2>A: Sample Answer</h2>
+                <div class="spacer spa-sm"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                    necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
+                    officiis repudiandae. Earum, minus dolor.</p>
+            </div>
+
+
+
+        </div>
+
+        <hr>
+        <label class="drawer-handle drah-md  gap gap-sm padding-focus padf-mdL padf-mdMin" for="drawerThree">
+            <input type="checkbox" checked id="drawerThree" onclick="toggleActive('drawerThree')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h3>Q: Example Question</h3>
+        </label>
+        <div class="drawer dra-mdH" id="target-drawerThree">
+            <div class="focus foc-md margin mar-autoHr mar-lgVr  padding pad-xlHr">
+                <h2>A: Sample Answer</h2>
+                <div class="spacer spa-sm"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                    necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
+                    officiis repudiandae. Earum, minus dolor.</p>
+            </div>
+
+
+
+        </div>
+        <hr>
+        <label class="drawer-handle drah-md  gap gap-sm padding-focus padf-mdL padf-mdMin" for="drawerFour">
+            <input type="checkbox" checked id="drawerFour" onclick="toggleActive('drawerFour')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h3>Q: Example Question</h3>
+        </label>
+        <div class="drawer dra-mdH" id="target-drawerFour">
+            <div class="focus foc-md margin mar-autoHr mar-lgVr  padding pad-xlHr">
+                <h2>A: Sample Answer</h2>
+                <div class="spacer spa-sm"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                    necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
+                    officiis repudiandae. Earum, minus dolor.</p>
+            </div>
+
+
+
+        </div>
+        <hr>
+        <label class="drawer-handle drah-md  gap gap-sm padding-focus padf-mdL padf-mdMin" for="drawerFive">
+            <input type="checkbox" checked id="drawerFive" onclick="toggleActive('drawerFive')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h3>Q: Example Question</h3>
+        </label>
+        <div class="drawer dra-mdH" id="target-drawerFive">
+            <div class="focus foc-md margin mar-autoHr mar-lgVr  padding pad-xlHr">
+                <h2>A: Sample Answer</h2>
+                <div class="spacer spa-sm"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                    necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
+                    officiis repudiandae. Earum, minus dolor.</p>
+            </div>
+
+
+
+        </div>
+        <hr>
+        <label class="drawer-handle drah-md  gap gap-sm padding-focus padf-mdL padf-mdMin" for="drawerSix">
+            <input type="checkbox" checked id="drawerSix" onclick="toggleActive('drawerSix')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h3>Q: Example Question</h3>
+        </label>
+        <div class="drawer dra-mdH" id="target-drawerSix">
+            <div class="focus foc-md margin mar-autoHr mar-lgVr  padding pad-xlHr">
+                <h2>A: Sample Answer</h2>
+                <div class="spacer spa-sm"></div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                    necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
+                    officiis repudiandae. Earum, minus dolor.</p>
+            </div>
+
+
+
+        </div>
+        <div class="spacer spa-lg"></div>
+    </div>
 
     </div>
+    <hr>
 
     <footer>
         <hr class="hr-sm hr-base90">
@@ -275,6 +345,8 @@
         </div>
     </footer>
 </body>
+
+
 <script src="../js/toggles/togglePopup.js"></script>
 
 <!-- toggle Active class -->
@@ -291,6 +363,5 @@
 
 
 <!-- app tile color -->
-<script src="../js/colors/appTileColor.js"></script>
-
+<script src =  "../js/colors/appTileColor.js"></script>
 </html>

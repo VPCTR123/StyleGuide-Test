@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-<!-- test -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -13,54 +13,55 @@
 </head>
 
 <!-- apply theme to link-nostyle body -->
-<div class="popup pop-center" id="target appOnePopup">
 
-    <div class="menu men-md pill pil-sm flex fle-column">
-        <header class="menu-header menh-md flex fle-space-between fle-centerVr">
-            <h4>App Details</h4>
-            <button class="but-base but-md but-circle" id="close appOnePopup"><span
-                    class="icon ico-sm ico-closeX "></span></button>
+<body class="theme-default">
+    <div class="popup pop-center" id="target appOnePopup">
 
-        </header>
-        <hr class="margin mar-mdHr">
+        <div class="menu men-md pill pil-sm flex fle-column">
+            <header class="menu-header menh-md flex fle-space-between fle-centerVr">
+                <h4>App Details</h4>
+                <button class="but-base but-md but-circle" id="close appOnePopup"><span
+                        class="icon ico-sm ico-closeX "></span></button>
 
-        <div class="link-nostyle content con-scrollY-auto padding pad-lgHr pad-mdVr">
+            </header>
+            <hr class="margin mar-mdHr">
 
-            <div class="flex fle-centerVr gap gap-sm">
+            <div class="link-nostyle content con-scrollY-auto padding pad-lgHr pad-mdVr">
 
-                <span class="icon ico-md ico-th ico-color"></span>
-                <div>
-                    <h4>App Title</h4>
-                    <h4>Sub Heading</h4>
+                <div class="flex fle-centerVr gap gap-sm">
+
+                    <span class="icon ico-md ico-th ico-color"></span>
+                    <div>
+                        <h4>App Title</h4>
+                        <h4>Sub Heading</h4>
+                    </div>
+
                 </div>
+
+                <p class="margin mar-md mar-noneHr">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint quis repellendus nam
+                    ipsam autem aspernatur quaerat, est delectus. Id consequuntur, fugit similique quibusdam dicta
+                    dolorum velit corporis alias quae! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Necessitatibus tempore exercitationem ex distinctio esse dolor corporis numquam nesciunt
+                    consectetur! Ullam unde distinctio repellat ab quos. Earum error porro laboriosam iste?
+
+                </p>
+
 
             </div>
 
-            <p class="margin mar-md mar-noneHr">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint quis repellendus nam
-                ipsam autem aspernatur quaerat, est delectus. Id consequuntur, fugit similique quibusdam dicta
-                dolorum velit corporis alias quae! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Necessitatibus tempore exercitationem ex distinctio esse dolor corporis numquam nesciunt
-                consectetur! Ullam unde distinctio repellat ab quos. Earum error porro laboriosam iste?
+            <hr class="margin mar-mdHr">
 
-            </p>
+            <footer class=" menu-footer menf-md flex fle-end gap gap-sm ">
+                <button class="but-square but-secondary pill pil-xs">A</button>
+                <button class="but-square but-secondary  pill pil-xs ">B</button>
+                <button class="pill pil-xs but-primary  padding pad-mdHr">Launch App</button>
 
+            </footer>
 
         </div>
 
-        <hr class="margin mar-mdHr">
-
-        <footer class=" menu-footer menf-md flex fle-end gap gap-sm ">
-            <button class="but-square but-secondary pill pil-xs">A</button>
-            <button class="but-square but-secondary  pill pil-xs ">B</button>
-            <button class="pill pil-xs but-primary  padding pad-mdHr">Launch App</button>
-
-        </footer>
-
     </div>
-
-</div>
-<body class="theme-default">
     <div class="spacer spa-sm"></div>
     <div class="user-name">Richard Murray</div>
     <nav
@@ -76,6 +77,7 @@
                 <h5>App List</h5>
             </div>
         </div>
+
 
         <!-- right wrapper -->
         <div class="flex gap">
@@ -130,7 +132,7 @@
                         <hr class="margin mar-xsHr">
                         <div class=men-content>
                             <ul>
-                                <li><a class="selector padding pad-xsHr">Help</a></li>
+                                <li><a href="../Pages/help.html" class="selector padding pad-xsHr">Help</a></li>
                                 <hr>
                                 <li><a class="selector padding pad-xsHr">Contact</a></li>
                                 <hr>
@@ -171,10 +173,10 @@
         </label>
         <div class="drawer dra-mdH active" id="target-drawerOne">
 
-          
+
 
             <div class="grid gri-sm gap gap-md gri-justify-center focus foc-lg margin mar-lgVr mar-autoHr">
-
+                <!-- correct card!!!! -->
                 <div class=" card car-xsH pill pill-sm ring flex position pos-relative fle-centerVr fle-rowreverse">
 
                     <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
@@ -182,11 +184,14 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
-                        <h5>ADMITS v4</h5>
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr ">
+                        <div class="margin mar-lgL cell cel-xs">
+                            <h5>ADMITS v4</h5>
+                        </div>
+
                     </a>
 
-                    <button class="but-base but-circle margin mar-smR" onclick="togglePopup(event, 'appOnePopup')"><span
+                    <button class="but-base but-circle margin mar-smR position pos-absolute" onclick="togglePopup(event, 'appOnePopup')"><span
                             class="icon ico-sm ico-ellipse-vr"></span></button>
                 </div>
                 <div class=" card car-xsH pill pill-sm ring flex position pos-relative fle-centerVr fle-rowreverse">
@@ -196,7 +201,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Advancements & Selection Boards</h5>
                     </a>
 
@@ -210,7 +215,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Application (FORMAN) Status</h5>
                     </a>
 
@@ -224,7 +229,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>ARPR & ASOSH Online</h5>
                     </a>
 
@@ -238,7 +243,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>BOL Helpdesk</h5>
                     </a>
 
@@ -252,7 +257,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>CCA / FITREP / Eval Reports</h5>
                     </a>
 
@@ -266,7 +271,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>CO/XO/CMC Advancements & Sel. Board Verification</h5>
                     </a>
 
@@ -280,7 +285,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Configuration Management</h5>
                     </a>
 
@@ -294,7 +299,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>CWAY - Sailor Self-Service</h5>
                     </a>
 
@@ -308,7 +313,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>E-Submission</h5>
                     </a>
 
@@ -322,7 +327,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>eNavFit Program</h5>
                     </a>
 
@@ -336,7 +341,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>ERC</h5>
                     </a>
 
@@ -350,7 +355,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>ESSBD <br>(Submit letter to SelBoard)</h5>
                     </a>
 
@@ -364,7 +369,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Exchanges Of Duty (SWAPS)</h5>
                     </a>
 
@@ -381,7 +386,7 @@
         </label>
         <div class="drawer dra-mdH active" id="target-drawerTwo">
 
-      
+
 
             <div class="grid gri-sm gap gap-md gri-justify-center focus foc-lg margin mar-lgVr mar-autoHr">
                 <div class=" card car-xsH pill pill-sm ring flex position pos-relative fle-centerVr fle-rowreverse">
@@ -391,7 +396,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>FAQs and workarounds for Offline BOL Applications</h5>
                     </a>
 
@@ -406,7 +411,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>FLAG FITREPS</h5>
                     </a>
 
@@ -420,7 +425,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>FMDS</h5>
                     </a>
 
@@ -434,7 +439,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>ID Lookup</h5>
                     </a>
 
@@ -449,7 +454,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Individual Medical Rediness <br> (IMR) Status</h5>
                     </a>
 
@@ -463,7 +468,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>JMT</h5>
                     </a>
 
@@ -477,7 +482,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>JOIN</h5>
                     </a>
 
@@ -492,7 +497,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>JOIN DNA Review</h5>
                     </a>
 
@@ -507,7 +512,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Military Locator System</h5>
                     </a>
 
@@ -521,7 +526,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Name Change</h5>
                     </a>
 
@@ -535,7 +540,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Naval Register</h5>
                     </a>
 
@@ -549,7 +554,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>NavPers Legacy and PERSTEMPO</h5>
                     </a>
 
@@ -563,7 +568,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Navy Personel Command Document Services</h5>
                     </a>
 
@@ -577,7 +582,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>NMCMPS</h5>
                     </a>
 
@@ -611,7 +616,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>NDAWS</h5>
                     </a>
 
@@ -625,7 +630,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>ODC, OSR, <br> PSR, ESR</h5>
                     </a>
 
@@ -640,7 +645,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Officer Performance Tracking System</h5>
                     </a>
 
@@ -654,7 +659,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Officer Photo</h5>
                     </a>
 
@@ -669,7 +674,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>OPCM Active</h5>
                     </a>
 
@@ -684,7 +689,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>OPCM Reserve</h5>
                     </a>
 
@@ -699,7 +704,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>OMPF Admin Access</h5>
                     </a>
 
@@ -713,7 +718,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>OMPF Command View</h5>
                     </a>
 
@@ -728,7 +733,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>OMPF My Record</h5>
                     </a>
 
@@ -743,7 +748,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>OMPF SAAR</h5>
                     </a>
 
@@ -758,7 +763,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Overseas / Remote / GSA </h5>
                     </a>
 
@@ -773,7 +778,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Overseas Tour Extension Incentive Program</h5>
                     </a>
 
@@ -788,7 +793,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Permanent & Temporary Disability Request</h5>
                     </a>
 
@@ -803,7 +808,7 @@
                     </div>
 
                     <a href=""
-                        class="link-nostyle select sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
+                        class="link-nostyle select w100p h100p  sel-none position pos-absolute flex fle-centerVr margin mar-lgR cell cel-xs">
                         <h5>Personnel Action Request 13067</h5>
                     </a>
 
@@ -840,7 +845,7 @@
 
                         <b><a href="">Messages</a></b>
 
-                        <b><a href="">Help</a></b>
+                        <b><a href="../Pages/help.html">Help</a></b>
                     </div>
                 </div>
 
@@ -857,8 +862,8 @@
                             1-800-951-NAVY
                         </p>
                         <b><a href="mailto:Bupers07_IT_EOC.FCT@navy.mil">
-                            Bupers07_IT_EOC.FCT<br>@navy.mil
-                        </a></b>
+                                Bupers07_IT_EOC.FCT<br>@navy.mil
+                            </a></b>
 
                     </div>
                 </div>
@@ -885,8 +890,8 @@
                     <hr class="margin mar-smHr">
                     <div class="cell cel-sm padding pad-xsVr">
                         <b><a href="caclogin.html">End Session</a>
-                        <br>
-                        <a href="updateinfo.html">Update Info</a></b>
+                            <br>
+                            <a href="updateinfo.html">Update Info</a></b>
                     </div>
                 </div>
                 <div class="flex">
@@ -941,5 +946,6 @@
 
 
 <!-- app tile color -->
-<script src =  "../js/colors/appTileColor.js"></script>
+<script src="../js/colors/appTileColor.js"></script>
+
 </html>
