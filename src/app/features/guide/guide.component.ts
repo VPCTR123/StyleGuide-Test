@@ -22,7 +22,7 @@ export class GuideComponent {
     {name:"Buttons",link:"buttons", sample:'Button\n<button class="button">Click</button>\nButton Small\n<button class="button but-sm">Click</button>\nButton Circle\n<button class="button but-circle">Click</button>\nButton Secondary\n<button class="button but-secondary">Click</button>'}, 
     {name:"Cards",link:"cards", sample:'<div class="card"><div>'},        
     {name:"Second",link:"second"}, 
-    {name:"Drawers",link:"drawers", sample:'Drawer\n<app-drawer\nid="Drawer-Example1"\ndisplayName="Example Name"\n(toggled)="drawerToggled(\'Drawer-Example1\')"></app-drawer>'}
+    {name:"Drawers",link:"drawers", sample:'Drawer\n<app-drawer (toggled)="toggleTrigger($event)" displayName="Drawer Name">\n\t<div class="padding pad-smHr">\n\t\t<p>Put</p>\n\t\t<p>Content</p>\n\t\t<p>Here</p>\n\t</div>\n</app-drawer>'}
   ]
 
   public findSample(link:string): string{
@@ -30,9 +30,16 @@ export class GuideComponent {
     return result;
   }
 
-  public toggled()
+
+  // Example function for consuming the Drawer toggle emitter
+  public toggled($event:any)
   {
-    console.warn("Toggled");
+    let toggleEvent = {
+      state: $event.state,
+      name: $event.displayName
+    }
+
+    console.warn(toggleEvent.name + " Toggled to: " + toggleEvent.state);
   }
 
 }

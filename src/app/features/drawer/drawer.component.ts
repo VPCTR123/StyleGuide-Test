@@ -11,10 +11,23 @@ import { FormsModule } from '@angular/forms';
 })
 export class DrawerComponent {
 
-  showIcon = input<boolean>(false);
+  // Cant get this to work but it'd be nice
+  // to have stuff like this
+  //showIcon = input<boolean>(false);
   displayName = input<string>("DefaultName");
-  toggled = output<boolean>();
+  
+  //state = true => Open
+  //state = false => closed
+  toggled = output<{state: boolean, displayName: string}>();
 
   public open:boolean = true;
+
+   handleToggled()
+  {
+    this.toggled.emit({
+      state: this.open,
+      displayName: this.displayName()
+    });
+  }
 
 }

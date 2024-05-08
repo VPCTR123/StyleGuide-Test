@@ -70,7 +70,7 @@
           <app-docs>
             <div class="title">Cards</div>
             <div class="description">A container with a border. </div>
-            <div class="example">
+            <div class="example w25p">
               <div class=" flex fle-column gap gap-sm">
                 <h3>Card</h3>
                 <div class="card">
@@ -108,14 +108,17 @@
         <div class="docs">
           <app-docs>
             <div class="title">Drawers</div>
-            <div class="description"> A togglable Header that hides and shows its contents. </div>
+            <div class="description">
+              <p>
+                A togglable label "Handle" that hides and shows its contents. Any content placed within the tag of the app-drawer will be shown and hidden by clicking the "handle".
+              </p>
+              <p>
+                The Drawer emits a signal when it's toggled to be used if you need to do some things on the parent component when its shown or hidden. (Such as loading large amounts of data as needed)
+              </p>
+            </div>
             <div class="example">
-              <div >
-                <h3>Drawer</h3>
-                <app-drawer
-                [showIcon]="false"
-                (toggled)="toggled()"
-                displayName="Example Name">
+              <h3>Drawer</h3>
+              <app-drawer (toggled)="toggled($event)" displayName="Long Drawer">
                 <div class="padding pad-smHr">
                   <p>Data1</p>
                   <p>Data2</p>
@@ -124,9 +127,27 @@
                   <p>Data5</p>
                 </div>
               </app-drawer>
+
+              <h3>Shorter Drawer With Inputs</h3>
+              <div class="w50p">
+                <app-drawer (toggled)="toggled($event)" displayName="Short Drawer">
+                  <div class="grid gri-halves padding pad-smVr pad-smHr w75p">
+                    <p class="padding pad-smVr">Name:</p>
+                    <input type="text" placeholder="John Doe" class="pill">
+                    <p class="padding pad-smVr">Addr:</p>
+                    <input type="text" placeholder="J123 Main Str" class="pill">
+                    <p class="padding pad-mdVr">State:</p>
+                    <input type="text" placeholder="DC" class="pill">
+                    <p class="padding pad-smVr">Zip:</p>
+                    <input type="text" placeholder="12345" class="pill">
+                    <p class="padding pad-smVr">Rank:</p>
+                    <input type="text" placeholder="LCpl" class="pill">
+                  </div>
+                </app-drawer>
               </div>
             </div>
-            <div class="bestpractice">Drawers are best used when you have a lot of data or fields you want organized and hideable</div>
+            <div class="bestpractice">Drawers are best used when you have a lot of data or fields you want organized and
+              make hideable</div>
           </app-docs>
         </div>
         <div class="html">
