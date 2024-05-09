@@ -10,7 +10,7 @@
           <app-docs>
             <div class="title">Navigation</div>
             <div class="description">Container for navigation content</div>
-            <div class="example flex fle-centerHr"><app-nav [title]="'Sample Nav'" [links]="links">
+            <div class="example flex fle-centerHr padding pad-smVr"><app-nav [title]="'Sample Nav'" [links]="links">
               </app-nav></div>
             <div class="bestpractice">Component is paired with a ng-container and a ngSwitchCase when the navigate event
               sends link</div>
@@ -129,8 +129,8 @@
             <div class="example">
               <h3>Default Drawer Example</h3>
               <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
-                drawer_handle="padding pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
-                <div class="padding pad-smHr">
+                drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                <div class="padding pad-smVr pad-smHr">
                   <p>Data1</p>
                   <p>Data2</p>
                   <p>Data3</p>
@@ -142,17 +142,17 @@
               <h3>Shorter Drawer With Inputs</h3>
               <div class="focus foc-sm">
                 <app-drawer (toggled)="toggled($event)" displayName="Short Drawer"
-                  drawer_handle="padding pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
-                  <div class="grid gri-halves padding pad-smVr pad-smHr w75p">
-                    <p class="padding pad-smVr">Name:</p>
+                  drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                  <div class="grid gri-halves padding pad-smVr pad-smVr pad-smHr w75p">
+                    <p class="padding pad-smVr pad-smVr">Name:</p>
                     <input type="text" placeholder="John Doe" class="pill">
-                    <p class="padding pad-smVr">Addr:</p>
+                    <p class="padding pad-smVr pad-smVr">Addr:</p>
                     <input type="text" placeholder="J123 Main Str" class="pill">
-                    <p class="padding pad-mdVr">State:</p>
+                    <p class="padding pad-smVr pad-mdVr">State:</p>
                     <input type="text" placeholder="DC" class="pill">
-                    <p class="padding pad-smVr">Zip:</p>
+                    <p class="padding pad-smVr pad-smVr">Zip:</p>
                     <input type="text" placeholder="12345" class="pill">
-                    <p class="padding pad-smVr">Rank:</p>
+                    <p class="padding pad-smVr pad-smVr">Rank:</p>
                     <input type="text" placeholder="LCpl" class="pill">
                   </div>
                 </app-drawer>
@@ -165,6 +165,123 @@
         <div class="html">
           <pre><code  class="language-xml highlight"><span [innerHtml]=" 
               findSample('drawers') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'icons'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Icons</div>
+            <div class="description">A page to display all the icons. </div>
+            <div class="example">
+              <div class=" flex fle-column gap gap-sm">
+                <h3>Icons</h3>
+                <div class="grid gri-thirds">
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Up Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-u"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-u</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Right Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-r"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-r</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Down Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-d"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-d</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Left Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-l"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-l</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Close X</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-closeX"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-closeX</p>
+                  </div>
+                  
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Vertical Ellipsis/Kebab Menu</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-ellipse-vr"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-ellipse-vr</p>
+                  </div>
+                  
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Horizontal Ellipsis/Meatalls Menu</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-ellipse-hr"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-ellipse-hr</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Home</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-home"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-home</p>
+                  </div>
+                  
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Bento Menu</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-th"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-th</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestpractice">Use icons to help UI navigation remain as intuitive as possible. (Icon of X for close, Down arrow/right arrow to indicate a dropdown to toggle)</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('icons') | sanitizeHtml">
               
             </span>
           </code></pre>

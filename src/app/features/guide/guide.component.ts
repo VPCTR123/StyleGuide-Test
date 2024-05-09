@@ -23,7 +23,7 @@ export class GuideComponent {
     {name:"Cards",link:"cards", sample:'<div class="card"><div>'},        
     {name:"Second",link:"second"}, 
     {name:"Drawers",link:"drawers", sample:'Drawer\n<app-drawer (toggled)="toggleTrigger($event)" displayName="Drawer Name">\n\t<div class="padding pad-smHr">\n\t\t<p>Put</p>\n\t\t<p>Content</p>\n\t\t<p>Here</p>\n\t</div>\n</app-drawer>'},
-    {name:"Icons",link:"icons"}
+    {name:"Icons",link:"icons", sample:'<p class="icon ico-md ico-carret-u"></p>'}
   ]
 
   public findSample(link:string): string{
