@@ -110,15 +110,26 @@
             <div class="title">Drawers</div>
             <div class="description">
               <p>
-                A togglable label "Handle" that hides and shows its contents. Any content placed within the tag of the app-drawer will be shown and hidden by clicking the "handle".
+                A togglable label "Handle" that hides and shows its contents. Any content placed within the tag of the
+                app-drawer will be shown and hidden by clicking the "handle". Classes will need to be applied to the
+                inputs, as the app-draw by default only has the required classes for functionality.
               </p>
               <p>
-                The Drawer emits a signal when it's toggled to be used if you need to do some things on the parent component when its shown or hidden. (Such as loading large amounts of data as needed)
+                Inputs:
+                <br>
+                displayName - Name to display on the handle
+                <br>
+                drawer_handle, drawer, icon - style clases to apply to the 3 aspects of the Draw component.
+              </p>
+              <p>
+                The Drawer emits a signal when it's toggled to be used if you need to do some things on the parent
+                component when its shown or hidden. (Such as loading large amounts of data as needed)
               </p>
             </div>
             <div class="example">
-              <h3>Drawer</h3>
-              <app-drawer (toggled)="toggled($event)" displayName="Long Drawer">
+              <h3>Default Drawer Example</h3>
+              <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
+                drawer_handle="padding pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
                 <div class="padding pad-smHr">
                   <p>Data1</p>
                   <p>Data2</p>
@@ -129,8 +140,9 @@
               </app-drawer>
 
               <h3>Shorter Drawer With Inputs</h3>
-              <div class="w50p">
-                <app-drawer (toggled)="toggled($event)" displayName="Short Drawer">
+              <div class="focus foc-sm">
+                <app-drawer (toggled)="toggled($event)" displayName="Short Drawer"
+                  drawer_handle="padding pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
                   <div class="grid gri-halves padding pad-smVr pad-smHr w75p">
                     <p class="padding pad-smVr">Name:</p>
                     <input type="text" placeholder="John Doe" class="pill">

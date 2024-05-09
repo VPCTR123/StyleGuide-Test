@@ -22,7 +22,8 @@ export class GuideComponent {
     {name:"Buttons",link:"buttons", sample:'Button\n<button class="button">Click</button>\nButton Small\n<button class="button but-sm">Click</button>\nButton Circle\n<button class="button but-circle">Click</button>\nButton Secondary\n<button class="button but-secondary">Click</button>'}, 
     {name:"Cards",link:"cards", sample:'<div class="card"><div>'},        
     {name:"Second",link:"second"}, 
-    {name:"Drawers",link:"drawers", sample:'Drawer\n<app-drawer (toggled)="toggleTrigger($event)" displayName="Drawer Name">\n\t<div class="padding pad-smHr">\n\t\t<p>Put</p>\n\t\t<p>Content</p>\n\t\t<p>Here</p>\n\t</div>\n</app-drawer>'}
+    {name:"Drawers",link:"drawers", sample:'Drawer\n<app-drawer (toggled)="toggleTrigger($event)" displayName="Drawer Name">\n\t<div class="padding pad-smHr">\n\t\t<p>Put</p>\n\t\t<p>Content</p>\n\t\t<p>Here</p>\n\t</div>\n</app-drawer>'},
+    {name:"Icons",link:"icons"}
   ]
 
   public findSample(link:string): string{

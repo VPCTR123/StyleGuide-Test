@@ -1,8 +1,8 @@
-<label class="drawer-handle gap gap-lg" for="Drawer" (click)="open=!open;handleToggled()">
+<label class="drawer-handle" class="{{drawer_handle()}}" for="Drawer" (click)="open=!open;handleToggled()">
     <input type="checkbox" name="Drawer" [(ngModel)]="!open">
-        <span class="icon ico-sm ico-carret-d"></span>
+        <span class="icon" class="{{icon()}}"></span>
     <h5>{{displayName()}}</h5>
 </label>
-<div class="drawer" [ngClass]="{'active':open == true}" id="target-Drawer">
+<div class="drawer" class="{{drawer()}}" [ngClass]="{'active':open == true}" id="target-Drawer">
     <ng-content></ng-content>
 </div>

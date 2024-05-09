@@ -14,7 +14,15 @@ export class DrawerComponent {
   // Cant get this to work but it'd be nice
   // to have stuff like this
   //showIcon = input<boolean>(false);
-  displayName = input<string>("DefaultName");
+
+  drawer_handle = input<string>("");
+
+  drawer = input<string>("");
+
+  icon = input<string>("");
+
+
+  displayName = input<string>("");
   
   //state = true => Open
   //state = false => closed
