@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()"
+                      [formValue]="formValue()"
+                      [suite]="suite"
+                      [validationConfig]="validationConfig"
+                      (validChange)="formValid.set($event || false)"
+                      (formValueChange)="setFormValue($event)">
+                <div class="form--horizontal-split">
+                  <div scControlWrapper>
+                    <label>
+                      <span>First Name</span>
+                      <input type="text" [ngModel]="vm.firstName" name="firstName"/>
+                    </label>
+                  </div>
+                  <div scControlWrapper>
+                    <label>
+                      <span>Last Name</span>
+                      <input type="text" [ngModel]="vm.lastName" name="lastName"/>
+                    </label>
+                  </div>
+                </div>                       
+                </form>              
+              <p>Valid: {{vm | json}}</p>

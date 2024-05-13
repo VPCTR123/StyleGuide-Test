@@ -65,6 +65,32 @@
           </code></pre>
         </div>
       </app-sample>
+      <app-sample *ngSwitchCase="'input'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Input</div>
+            <div class="description">Text input with validation messages. </div>
+            <div class="example w25p">
+              <div class=" flex fle-column gap gap-sm">
+                <app-forms></app-forms>
+              </div>
+            </div>
+            <div class="bestpractice">Cards are good for popups and grouping similar elements</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('cards') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
       <app-sample *ngSwitchCase="'cards'" class="w100p">
         <div class="docs">
           <app-docs>
