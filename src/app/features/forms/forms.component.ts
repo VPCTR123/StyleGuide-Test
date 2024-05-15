@@ -41,10 +41,15 @@ export class FormsComponent implements AfterViewChecked  {
     return {
       formValue: this.formValue(),
       formValid: this.formValid(),
-      emergencyContactDisabled: (this.formValue().age || 0) >= 18,            
+      password: this.formValue().passwords?.password,
+      confirmPassword: this.formValue().passwords?.confirmPassword,
+      age: this.formValue().age,
+      emergencyContactDisabled: (this.formValue().age || 0) >= 18,   
+      emergencyContact: this.formValue().emergencyContact,    
       firstName: this.formValue().firstName,
       lastName: this.formValue().lastName,
-      loading: this.loading()
+      loading: this.loading(),
+      email: this.formValue().email
     }
   });
 

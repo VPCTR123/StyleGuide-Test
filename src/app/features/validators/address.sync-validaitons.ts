@@ -1,4 +1,5 @@
-import { create, enforce, omitWhen, only, staticSuite, test } from 'vest';
+import { create, enforce, mode, omitWhen, only, staticSuite, test } from 'vest';
+import 'vest/enforce/email';
 import { Address } from '../../models/address';
 
 export function addressValidations(model: Address | undefined, field: string): void {
@@ -25,7 +26,7 @@ export function addressValidations(model: Address | undefined, field: string): v
   test('state', 'State is required', () => {
     enforce(model?.state).isNotBlank();
   });
-  
+
 
   test('postalCode', 'Postal Code is required', () => {
     enforce(model?.postalCode).isNotBlank();
@@ -39,7 +40,7 @@ export const createPurchaseValidationSuite = () => {
     (model: FormModel, field: string) => {
       only(field);
 
-      console.log('vest', field);      
+      console.log('vest', field);
 
       test('firstName', 'First name is required', () => {
         enforce(model.firstName).isNotBlank();
@@ -48,17 +49,50 @@ export const createPurchaseValidationSuite = () => {
       test('lastName', 'Last name is required', () => {
         enforce(model.lastName).isNotBlank();
       });
+
+      test('email', 'A valid EMail is required', () => {
+        enforce(model.email).isEmail();
+      });
+
+      test('age', 'Age is required', () => {
+        enforce(model.age).isNotBlank();
+        enforce(model.age).isNumeric();
+        enforce(model.age).isPositive();
+      });
+
+      omitWhen(((model.age || 0)>=18), () => {
+        test('emergencyContact', 'Emergency Contact is required if you are under the age of 18', () => {
+          enforce(model.emergencyContact).isNotBlank();
+        });
+      });
+
+      test('passwords.password', 'Password is required', () => {
+        enforce(model.passwords?.password).isNotBlank();
+      });
+
+      // test('passwords', 'Passwords must match', () => {
+      //   enforce(model.passwords?.password).equals(model.passwords?.confirmPassword);
+      // });
+
+      // omitWhen(!model.passwords?.password || !model.passwords?.confirmPassword, () => {
+      //   test('passwords', 'Passwords must match', () => {
+      //     enforce(model.passwords?.password).equals(model.passwords?.confirmPassword);
+      //   });
+      // });
     }
-   ) }
+  )
+}
 
 
-   export type FormModel = Partial<{
-    userId: string;
-    firstName: string;
-    lastName: string;
-    age: number;
-    emergencyContact: string;
-    passwords: Partial<{
-      password: string;
-      confirmPassword?: string;
-    }>;}>
+export type FormModel = Partial<{
+  userId: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  age: number;
+  emergencyContact: string;
+  passwords: Partial<{
+    password: string;
+    confirmPassword?: string;
+  }>;
+}>

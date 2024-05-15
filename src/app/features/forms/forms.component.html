@@ -1,22 +1,51 @@
-<form (ngSubmit)="onSubmit()"
-                      [formValue]="formValue()"
-                      [suite]="suite"
-                      [validationConfig]="validationConfig"
-                      (validChange)="formValid.set($event || false)"
-                      (formValueChange)="setFormValue($event)">
-                <div class="form--horizontal-split">
-                  <div scControlWrapper>
-                    <label>
-                      <span>First Name</span>
-                      <input type="text" [ngModel]="vm.firstName" name="firstName"/>
-                    </label>
-                  </div>
-                  <div scControlWrapper>
-                    <label>
-                      <span>Last Name</span>
-                      <input type="text" [ngModel]="vm.lastName" name="lastName"/>
-                    </label>
-                  </div>
-                </div>                       
-                </form>              
-              <p>Valid: {{vm | json}}</p>
+<form (ngSubmit)="onSubmit()" [formValue]="formValue()" [suite]="suite" [validationConfig]="validationConfig"
+  (validChange)="formValid.set($event || false)" (formValueChange)="setFormValue($event)">
+  <div class="form--horizontal-split">
+    <div scControlWrapper>
+      <label class="margin mar-smT">
+        <span>First Name</span>
+        <input type="text" [ngModel]="vm.firstName" name="firstName" />
+      </label>
+    </div>
+    <div scControlWrapper>
+      <label class="margin mar-smT">
+        <span>Last Name</span>
+        <input type="text" [ngModel]="vm.lastName" name="lastName" />
+      </label>
+    </div>
+    <div scControlWrapper>
+      <label class="margin mar-smT">
+        <span>EMail Address</span>
+        <input type="text" [ngModel]="vm.email" name="email" />
+      </label>
+    </div>
+    <div scControlWrapper>
+      <div scControlWrapper>
+        <label class="margin mar-smT">
+          <span>Password</span>
+          <input type="text" [ngModel]="vm.password" name="password" />
+        </label>
+      </div>
+      <div scControlWrapper>
+        <label class="margin mar-smT">
+          <span>Confirm Password</span>
+          <input type="text" [ngModel]="vm.confirmPassword" name="confirmPassword" />
+        </label>
+      </div>
+    </div>
+    <div scControlWrapper>
+      <label class="margin mar-smT">
+        <span>Age</span>
+        <input type="text" [ngModel]="vm.age" name="age" />
+      </label>
+    </div>
+    <div scControlWrapper>
+      <label class="margin mar-smT">
+        <span>Emergency Contact</span>
+        <input type="text" [ngModel]="vm.emergencyContact" name="emergencyContact" />
+        <small>(Emergency Contact only required for minors)</small>
+      </label>
+    </div>
+  </div>
+</form>
+<p>Valid: {{vm | json}}</p>
