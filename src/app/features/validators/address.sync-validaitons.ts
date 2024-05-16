@@ -66,19 +66,15 @@ export const createPurchaseValidationSuite = () => {
         });
       });
 
-      test('passwords.password', 'Password is required', () => {
-        enforce(model.passwords?.password).isNotBlank();
+      test('password', 'Password is required', () => {
+        enforce(model.password).isNotBlank();
       });
 
-      // test('passwords', 'Passwords must match', () => {
-      //   enforce(model.passwords?.password).equals(model.passwords?.confirmPassword);
-      // });
-
-      // omitWhen(!model.passwords?.password || !model.passwords?.confirmPassword, () => {
-      //   test('passwords', 'Passwords must match', () => {
-      //     enforce(model.passwords?.password).equals(model.passwords?.confirmPassword);
-      //   });
-      // });
+      omitWhen(!model.password || !model.confirmPassword, () => {
+        test('confirmPassword', 'Passwords must match', () => {
+          enforce(model.password).equals(model.confirmPassword);
+        });
+      });
     }
   )
 }
@@ -91,8 +87,6 @@ export type FormModel = Partial<{
   email: string;
   age: number;
   emergencyContact: string;
-  passwords: Partial<{
-    password: string;
-    confirmPassword?: string;
-  }>;
+  password: string;
+  confirmPassword?: string;
 }>

@@ -29,11 +29,14 @@ export class FormsComponent implements AfterViewChecked  {
     this.changeDetectorRef.detectChanges();
   }
 
+
+  // If im understanding this correctly, when age is changed, it runs emergencyContact validators,
+  // or it is supposed to at least
   protected readonly validationConfig: {
     [key: string]: string[];
   } = {
       'age': ['emergencyContact'],
-      'passwords.password': ['passwords.confirmPassword'],
+      'password': ['confirmPassword'],
       'gender': ['genderOther']
     };
 
@@ -41,8 +44,8 @@ export class FormsComponent implements AfterViewChecked  {
     return {
       formValue: this.formValue(),
       formValid: this.formValid(),
-      password: this.formValue().passwords?.password,
-      confirmPassword: this.formValue().passwords?.confirmPassword,
+      password: this.formValue().password,
+      confirmPassword: this.formValue().confirmPassword,
       age: this.formValue().age,
       emergencyContactDisabled: (this.formValue().age || 0) >= 18,   
       emergencyContact: this.formValue().emergencyContact,    
