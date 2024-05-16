@@ -3,7 +3,7 @@
   --thumbH: .5rem;
   --thumbX: 50%;
   --thumbY: 50%;
-  --buttonH: 2rem;
+  --buttonW: 2rem;
   --padXxs: .25rem;
   --padXs: .5rem;
   --padSm: .75rem;
@@ -19,6 +19,13 @@
   --marLg: 3rem;
   --marXl: 5rem;
   --marXxl: 10rem;
+  --celXxs: 6rem;
+  --celXs: 9rem;
+  --celSm: 13rem;
+  --celMd: 25rem;
+  --celLg: 37rem;
+  --celXl: 50rem;
+  --celXxl: 75rem;
   --userColor: red;
 }
 
@@ -30,62 +37,62 @@ button,
   background-color: black;
   color: white;
   cursor: pointer;
-  padding: 0 0.5rem;
-  height: var(--buttonH);
+  overflow: hidden;
+  width: var(--buttonW);
   line-height: var(--buttonH);
-}
-.button.but-circle,
-button.but-circle,
-.link-as-button.but-circle {
-  width: var(--buttonH);
-  min-width: var(--buttonH);
-  border-radius: 100%;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.button.but-square,
-button.but-square,
-.link-as-button.but-square {
-  width: var(--buttonH);
-  min-width: var(--buttonH);
-  border-radius: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.button.but-xs,
-button.but-xs,
-.link-as-button.but-xs {
-  --buttonH: .5rem;
-}
-.button.but-sm,
-button.but-sm,
-.link-as-button.but-sm {
-  --buttonH: 1rem;
-}
-.button.but-md,
-button.but-md,
-.link-as-button.but-md {
-  --buttonH: 2rem;
-}
-.button.but-lg,
-button.but-lg,
-.link-as-button.but-lg {
-  --buttonH: 4rem;
-}
-.button.but-xl,
-button.but-xl,
-.link-as-button.but-xl {
-  --buttonH: 6rem;
 }
 .button.disabled,
 button.disabled,
 .link-as-button.disabled {
   pointer-events: none;
   cursor: not-allowed;
+}
+.button.but-xxs,
+button.but-xxs,
+.link-as-button.but-xxs {
+  --buttonW: 2rem;
+}
+.button.but-xs,
+button.but-xs,
+.link-as-button.but-xs {
+  --buttonW: 4rem;
+}
+.button.but-sm,
+button.but-sm,
+.link-as-button.but-sm {
+  --buttonW: 6rem;
+}
+.button.but-md,
+button.but-md,
+.link-as-button.but-md {
+  --buttonW: 8rem;
+}
+.button.but-lg,
+button.but-lg,
+.link-as-button.but-lg {
+  --buttonW: 10rem;
+}
+.button.but-xl,
+button.but-xl,
+.link-as-button.but-xl {
+  --buttonW: 12rem;
+}
+.button.but-xxl,
+button.but-xxl,
+.link-as-button.but-xxl {
+  --buttonW: 14rem;
+}
+.button.but-circle,
+button.but-circle,
+.link-as-button.but-circle {
+  height: var(--buttonW);
+  border-radius: 100%;
+}
+.button.but-square,
+button.but-square,
+.link-as-button.but-square {
+  height: var(--buttonW);
+  border-radius: 0%;
 }
 
 .home-button {
@@ -144,35 +151,47 @@ button.disabled,
   overflow: hidden;
   position: relative;
 }
+.card.car-xxs {
+  width: var(--celXxs);
+}
 .card.car-xs {
-  width: 6.25rem;
+  width: var(--celXs);
 }
 .card.car-sm {
-  width: 13rem;
+  width: var(--celSm);
 }
 .card.car-md {
-  width: 18rem;
+  width: var(--celMd);
 }
 .card.car-lg {
-  width: 25rem;
+  width: var(--celLg);
 }
 .card.car-xl {
-  width: 40rem;
+  width: var(--celXl);
 }
-.card.car-xsH {
-  height: 6.25rem;
+.card.car-xxl {
+  width: var(--celXxl);
 }
-.card.car-smH {
-  height: 13rem;
+.card.car-xxsVr {
+  height: var(--celXxs);
 }
-.card.car-mdH {
-  height: 18rem;
+.card.car-xsVr {
+  height: var(--celXs);
 }
-.card.car-lgH {
-  height: 25rem;
+.card.car-smVr {
+  height: var(--celSm);
 }
-.card.car-xlH {
-  height: 40rem;
+.card.car-mdVr {
+  height: var(--celMd);
+}
+.card.car-lgVr {
+  height: var(--celLg);
+}
+.card.car-xlVr {
+  height: var(--celXl);
+}
+.card.car-xxlVr {
+  width: var(--celXxl);
 }
 
 .thumb {
@@ -335,23 +354,18 @@ footer, .footer {
 }
 .icon.ico-xs {
   font-size: 0.75rem;
-  line-height: 0.75rem;
 }
 .icon.ico-sm {
   font-size: 1rem;
-  line-height: 1rem;
 }
 .icon.ico-md {
   font-size: 3rem;
-  line-height: 3rem;
 }
 .icon.ico-lg {
   font-size: 5rem;
-  line-height: 5rem;
 }
 .icon.ico-xl {
   font-size: 7rem;
-  line-height: 7rem;
 }
 
 .ico-PLACEHOLDER:before {
@@ -416,46 +430,6 @@ input[type=search] {
   border-width: 1px;
 }
 
-.content.con-scrollY {
-  overflow-y: scroll;
-}
-.content.con-scrollY-auto {
-  overflow-y: auto;
-}
-.content.con-scrollX {
-  overflow-y: scroll;
-}
-.content.con-scrollX-auto {
-  overflow-y: auto;
-}
-.content.con-100pHr {
-  width: 100%;
-}
-.content.con-100pVr {
-  height: 100%;
-}
-.content.con-10pHr {
-  width: 10%;
-}
-.content.con-10pVr {
-  height: 10%;
-}
-.content.con-15pHr {
-  width: 15%;
-}
-.content.con-15pVr {
-  height: 15%;
-}
-.content.con-25pHr {
-  width: 25%;
-}
-.content.con-25pVr {
-  height: 25%;
-}
-.content.con-33pHr {
-  width: 33%;
-}
-
 .spacer {
   height: 5rem;
 }
@@ -490,32 +464,29 @@ input[type=search] {
 .grid {
   display: grid;
 }
-.grid.gri-justify-center {
+.grid.gri-justifyContent-center {
   justify-content: center;
 }
-.grid.gri-c-applist {
-  grid-template-columns: repeat(auto-fill, 14rem);
-}
 .grid.gri-xxs {
-  grid-template-columns: repeat(auto-fill, 3.125rem);
+  grid-template-columns: repeat(auto-fill, var(--celXxs));
 }
 .grid.gri-xs {
-  grid-template-columns: repeat(auto-fill, 6.25rem);
+  grid-template-columns: repeat(auto-fill, var(--celXs));
 }
 .grid.gri-sm {
-  grid-template-columns: repeat(auto-fill, 12.5rem);
+  grid-template-columns: repeat(auto-fill, var(--celSm));
 }
 .grid.gri-md {
-  grid-template-columns: repeat(auto-fill, 25rem);
+  grid-template-columns: repeat(auto-fill, var(--celMd));
 }
 .grid.gri-lg {
-  grid-template-columns: repeat(auto-fill, 37.5rem);
+  grid-template-columns: repeat(auto-fill, var(--celLg));
 }
 .grid.gri-xl {
-  grid-template-columns: repeat(auto-fill, 50rem);
+  grid-template-columns: repeat(auto-fill, var(--celXl));
 }
 .grid.gri-xxl {
-  grid-template-columns: repeat(auto-fill, 75rem);
+  grid-template-columns: repeat(auto-fill, var(--celXxl));
 }
 .grid.gri-full {
   grid-template-columns: repeat(auto-fill, 100%);
@@ -546,106 +517,6 @@ input[type=search] {
 }
 .grid.gri-tenths {
   grid-template-columns: repeat(auto-fill, 10%);
-}
-
-.focus {
-  max-width: 50rem;
-}
-.focus.foc-xxs {
-  max-width: 6.25rem;
-}
-.focus.foc-xs {
-  max-width: 12.5rem;
-}
-.focus.foc-sm {
-  max-width: 25rem;
-}
-.focus.foc-md {
-  max-width: 50rem;
-}
-.focus.foc-lg {
-  max-width: 75rem;
-}
-.focus.foc-xl {
-  max-width: 100rem;
-}
-.focus.foc-xxl {
-  max-width: 150rem;
-}
-
-.padding-focus.padf-mdMin {
-  --padfMin: 5rem;
-}
-.padding-focus.padf-lgL {
-  padding-left: max(var(--padfMin), (100vw - 70rem) / 2);
-}
-.padding-focus.padf-xxlL {
-  padding-left: max(var(--padfMin), (100vw - 150rem) / 2);
-}
-.padding-focus.padf-xsL {
-  padding-left: max(var(--padfMin), (100vw - 12.5rem) / 2);
-}
-.padding-focus.padf-mdL {
-  padding-left: max(var(--padfMin), (100vw - 50rem) / 2);
-}
-
-.cell.cel-xxs {
-  width: 3.125rem;
-}
-.cell.cel-xs {
-  width: 6.25rem;
-}
-.cell.cel-sm {
-  width: 12.5rem;
-}
-.cell.cel-md {
-  width: 25rem;
-}
-.cell.cel-lg {
-  width: 37.5rem;
-}
-.cell.cel-xl {
-  width: 50rem;
-}
-.cell.cel-xxl {
-  width: 75rem;
-}
-
-.text-align.texa-r {
-  text-align: right;
-}
-.text-align.texa-c {
-  text-align: center;
-}
-
-.text-wrap {
-  text-wrap: wrap;
-}
-.text-wrap.texw-wrap {
-  text-wrap: wrap;
-}
-.text-wrap.texw-nowrap {
-  text-wrap: nowrap !important;
-}
-
-.w25p {
-  width: 25%;
-}
-
-.w50p {
-  width: 50%;
-}
-
-.w75p {
-  width: 75%;
-}
-
-.w100p {
-  width: 100%;
-}
-
-.h100p {
-  height: 100%;
 }
 
 hr,
@@ -723,18 +594,48 @@ hr.hr-xl,
   display: flex;
   justify-content: space-between;
 }
+.focus-overlay .foco-xxsL,
+.focus-overlay .foco-xxsR {
+  pointer-events: none;
+  width: calc((100% - var(--celXxs) * 2) / 2);
+}
+.focus-overlay .foco-xsL,
+.focus-overlay .foco-xsR {
+  pointer-events: none;
+  width: calc((100% - var(--celXs) * 2) / 2);
+}
+.focus-overlay .foco-smL,
+.focus-overlay .foco-smR {
+  pointer-events: none;
+  width: calc((100% - var(--celSm) * 2) / 2);
+}
 .focus-overlay .foco-mdL,
 .focus-overlay .foco-mdR {
-  pointer-events: all;
-  width: calc((100% - 65rem) / 2);
+  pointer-events: none;
+  width: calc((100% - var(--celMd) * 2) / 2);
 }
 .focus-overlay .foco-lgL,
 .focus-overlay .foco-lgR {
-  pointer-events: all;
-  width: calc((100% - 75rem) / 2);
+  pointer-events: none;
+  width: calc((100% - var(--celLg) * 2) / 2);
 }
+.focus-overlay .foco-xlL,
+.focus-overlay .foco-xlR {
+  pointer-events: none;
+  width: calc((100% - var(--celXl) * 2) / 2);
+}
+.focus-overlay .foco-xxlL,
+.focus-overlay .foco-xxlR {
+  pointer-events: none;
+  width: calc((100% - var(--celXxl) * 2) / 2);
+}
+
 .link-nostyle {
   text-decoration: none;
+}
+
+.word-break.worB-breakAll {
+  word-break: break-all;
 }
 
 .menu {
@@ -744,81 +645,49 @@ hr.hr-xl,
   overflow: hidden;
 }
 .menu.men-xxs {
-  width: 2rem;
+  width: var(--celXxs);
 }
 .menu.men-xs {
-  width: 7.5rem;
+  width: var(--celXs);
 }
 .menu.men-sm {
-  width: 13.5rem;
+  width: var(--celSm);
 }
 .menu.men-md {
-  width: 30rem;
+  width: var(--celMd);
 }
 .menu.men-lg {
-  width: 40rem;
+  width: var(--celLg);
 }
 .menu.men-xl {
-  width: 60rem;
+  width: var(--celXl);
 }
 .menu.men-xxl {
-  width: 100rem;
+  width: var(--celXxl);
 }
-.menu.men-full {
-  width: 100%;
+.menu.men-xxsVr {
+  height: var(--celXxs);
 }
-
-.menu-footer.menf-xxs {
-  padding: var(--padXxs);
+.menu.men-xsVr {
+  height: var(--celXs);
 }
-.menu-footer.menf-xs {
-  padding: var(--padXs);
+.menu.men-smVr {
+  height: var(--celSm);
 }
-.menu-footer.menf-sm {
-  padding: var(--padSm);
+.menu.men-mdVr {
+  height: var(--celMd);
 }
-.menu-footer.menf-md {
-  padding: var(--padMd);
+.menu.men-lgVr {
+  height: var(--celLg);
 }
-.menu-footer.menf-lg {
-  padding: var(--padLg);
+.menu.men-xlVr {
+  height: var(--celXl);
 }
-.menu-footer.menf-xl {
-  padding: var(--padXl);
+.menu.men-xxlVr {
+  height: var(--celXxl);
 }
-.menu-footer.menf-xxl {
-  padding: var(--padXxl);
-}
-
-.menu-header.menh-xxs {
-  padding: var(--padXxs);
-}
-.menu-header.menh-xs {
-  padding: var(--padXs);
-}
-.menu-header.menh-sm {
-  padding: var(--padSm);
-}
-.menu-header.menh-md {
-  padding: var(--padMd);
-}
-.menu-header.menh-lg {
-  padding: var(--padLg);
-}
-.menu-header.menh-xl {
-  padding: var(--padXl);
-}
-.menu-header.menh-xxl {
-  padding: var(--padXxl);
-}
-
-.menu-footer,
-.menu-header {
-  display: flex;
-  flex-wrap: wrap;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+.menu.men-fullVr {
+  height: 100%;
 }
 
 .selector {
@@ -831,7 +700,7 @@ hr.hr-xl,
   padding-left: 1rem;
   padding-right: 1rem;
   text-decoration: none;
-  display: block;
+  display: flex;
   height: 2rem;
   line-height: 2rem;
 }
@@ -904,119 +773,474 @@ nav.nav-main {
   align-items: inherit;
 }
 
-.red {
-  background-color: red !important;
+.cell.cel-xxs {
+  width: var(--celXxs);
+}
+.cell.cel-xs {
+  width: var(--celXs);
+}
+.cell.cel-sm {
+  width: var(--celSm);
+}
+.cell.cel-md {
+  width: var(--celMd);
+}
+.cell.cel-lg {
+  width: var(--celLg);
+}
+.cell.cel-xl {
+  width: var(--celXl);
+}
+.cell.cel-xxl {
+  width: var(--celXxl);
 }
 
-.redd {
-  color: red;
+.cursor {
+  cursor: default;
+}
+.cursor.cur-pointer {
+  cursor: pointer;
 }
 
-.yellow {
-  background-color: yellow !important;
+.content.con-scrollY {
+  overflow-y: scroll;
 }
-
-.ofh {
-  overflow: hidden;
+.content.con-scrollY-auto {
+  overflow-y: auto;
 }
-
-.blue {
-  background-color: blue;
+.content.con-scrollX {
+  overflow-y: scroll;
 }
-
-.testa {
-  display: inline-block;
-  background-color: green;
-  padding: 2rem;
+.content.con-scrollX-auto {
+  overflow-y: auto;
 }
-
-.testb {
-  background-color: teal;
-  display: inline-flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.content.con-xxsMax {
+  max-width: calc(var(--celXxs) * 2);
 }
-
-.testc {
-  display: inline-flex;
-  justify-content: center;
+.content.con-xsMax {
+  max-width: calc(var(--celXs) * 2);
 }
-
-.testd {
-  flex-direction: column;
-  display: flex;
-  align-items: center;
+.content.con-smMax {
+  max-width: calc(var(--celSm) * 2);
 }
-
-.fade {
-  transition: 0;
+.content.con-mdMax {
+  max-width: calc(var(--celMd) * 2);
 }
-.fade .fad-out {
-  transition: 0.5s;
-  opacity: 0;
+.content.con-lgMax {
+  max-width: calc(var(--celLg) * 2);
 }
-.fade .fad-in {
-  transition: 0.5s;
-  opacity: 100;
+.content.con-xlMax {
+  max-width: calc(var(--celXl) * 2);
 }
-
-.hide-bg {
-  background-color: hsla(0, 0%, 0%, 0) !important;
+.content.con-xxlMax {
+  max-width: calc(var(--celXxl) * 2);
 }
-
-.select {
-  -webkit-user-select: auto;
-     -moz-user-select: auto;
-          user-select: auto;
+.content.con-xxs {
+  width: calc(var(--celXxs) * 2);
 }
-.select.sel-none {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+.content.con-xs {
+  width: calc(var(--celXs) * 2);
+}
+.content.con-sm {
+  width: calc(var(--celSm) * 2);
+}
+.content.con-md {
+  width: calc(var(--celMd) * 2);
+}
+.content.con-lg {
+  width: calc(var(--celLg) * 2);
+}
+.content.con-xl {
+  width: calc(var(--celXl) * 2);
+}
+.content.con-xxl {
+  width: calc(var(--celXxl) * 2);
+}
+.content.con-100pMax {
+  max-width: 100%;
+}
+.content.con-90pMax {
+  max-width: 90%;
+}
+.content.con-80pMax {
+  max-width: 80%;
+}
+.content.con-70pMax {
+  max-width: 70%;
+}
+.content.con-60pMax {
+  max-width: 60%;
+}
+.content.con-50pMax {
+  max-width: 50%;
+}
+.content.con-40pMax {
+  max-width: 40%;
+}
+.content.con-30pMax {
+  max-width: 30%;
+}
+.content.con-20pMax {
+  max-width: 20%;
+}
+.content.con-10pMax {
+  max-width: 10%;
+}
+.content.con-25pMax {
+  max-width: 25%;
+}
+.content.con-75pMax {
+  max-width: 75%;
+}
+.content.con-33pMax {
+  max-width: 33.33333%;
+}
+.content.con-66pMax {
+  max-width: 66.66666%;
+}
+.content.con-full {
+  width: 100%;
+  height: 100%;
+}
+.content.con-100p {
+  width: 100%;
+}
+.content.con-90p {
+  width: 90%;
+}
+.content.con-80p {
+  width: 80%;
+}
+.content.con-70p {
+  width: 70%;
+}
+.content.con-60p {
+  width: 60%;
+}
+.content.con-50p {
+  width: 50%;
+}
+.content.con-40p {
+  width: 40%;
+}
+.content.con-30p {
+  width: 30%;
+}
+.content.con-20p {
+  width: 20%;
+}
+.content.con-10p {
+  width: 10%;
+}
+.content.con-25p {
+  width: 25%;
+}
+.content.con-75p {
+  width: 75%;
+}
+.content.con-33p {
+  width: 33.33333%;
+}
+.content.con-66p {
+  width: 66.66666%;
+}
+.content.con-100vwMax {
+  max-width: 100vw;
+}
+.content.con-90vwMax {
+  max-width: 90vw;
+}
+.content.con-80vwMax {
+  max-width: 80vw;
+}
+.content.con-70vwMax {
+  max-width: 70vw;
+}
+.content.con-60vwMax {
+  max-width: 60vw;
+}
+.content.con-50vwMax {
+  max-width: 50vw;
+}
+.content.con-40vwMax {
+  max-width: 40vw;
+}
+.content.con-30vwMax {
+  max-width: 30vw;
+}
+.content.con-20vwMax {
+  max-width: 20vw;
+}
+.content.con-10vwMax {
+  max-width: 10vw;
+}
+.content.con-25vwMax {
+  max-width: 25vw;
+}
+.content.con-75vwMax {
+  max-width: 75vw;
+}
+.content.con-33vwMax {
+  max-width: 33.33333vw;
+}
+.content.con-66vwMax {
+  max-width: 66.66666vw;
+}
+.content.con-100vw {
+  width: 100vw;
+}
+.content.con-90vw {
+  width: 90vw;
+}
+.content.con-80vw {
+  width: 80vw;
+}
+.content.con-70vw {
+  width: 70vw;
+}
+.content.con-60vw {
+  width: 60vw;
+}
+.content.con-50vw {
+  width: 50vw;
+}
+.content.con-40vw {
+  width: 40vw;
+}
+.content.con-30vw {
+  width: 30vw;
+}
+.content.con-20vw {
+  width: 20vw;
+}
+.content.con-10vw {
+  width: 10vw;
+}
+.content.con-25vw {
+  width: 25vw;
+}
+.content.con-75vw {
+  width: 75vw;
+}
+.content.con-33vw {
+  width: 33.33333vw;
+}
+.content.con-66vw {
+  width: 66.66666vw;
+}
+.content.con-xxsMaxVr {
+  max-height: calc(var(--celXxs) * 2);
+}
+.content.con-xsMaxVr {
+  max-height: calc(var(--celXs) * 2);
+}
+.content.con-smMaxVr {
+  max-height: calc(var(--celSm) * 2);
+}
+.content.con-mdMaxVr {
+  max-height: calc(var(--celMd) * 2);
+}
+.content.con-lgMaxVr {
+  max-height: calc(var(--celLg) * 2);
+}
+.content.con-xlMaxVr {
+  max-height: calc(var(--celXl) * 2);
+}
+.content.con-xxlMaxVr {
+  max-height: calc(var(--celXxl) * 2);
+}
+.content.con-xxsVr {
+  height: calc(var(--celXxs) * 2);
+}
+.content.con-xsVr {
+  height: calc(var(--celXs) * 2);
+}
+.content.con-smVr {
+  height: calc(var(--celSm) * 2);
+}
+.content.con-mdVr {
+  height: calc(var(--celMd) * 2);
+}
+.content.con-lgVr {
+  height: calc(var(--celLg) * 2);
+}
+.content.con-xlVr {
+  height: calc(var(--celXl) * 2);
+}
+.content.con-xxlVr {
+  height: calc(var(--celXxl) * 2);
+}
+.content.con-100pMaxVr {
+  max-height: 100%;
+}
+.content.con-90pMaxVr {
+  max-height: 90%;
+}
+.content.con-80pMaxVr {
+  max-height: 80%;
+}
+.content.con-70pMaxVr {
+  max-height: 70%;
+}
+.content.con-60pMaxVr {
+  max-height: 60%;
+}
+.content.con-50pMaxVr {
+  max-height: 50%;
+}
+.content.con-40pMaxVr {
+  max-height: 40%;
+}
+.content.con-30pMaxVr {
+  max-height: 30%;
+}
+.content.con-20pMaxVr {
+  max-height: 20%;
+}
+.content.con-10pMaxVr {
+  max-height: 10%;
+}
+.content.con-25pMaxVr {
+  max-height: 25%;
+}
+.content.con-75pMaxVr {
+  max-height: 75%;
+}
+.content.con-33pMaxVr {
+  max-height: 33.33333%;
+}
+.content.con-66pMaxVr {
+  max-height: 66.66666%;
+}
+.content.con-100pVr {
+  height: 100%;
+}
+.content.con-90pVr {
+  height: 90%;
+}
+.content.con-80pVr {
+  height: 80%;
+}
+.content.con-70pVr {
+  height: 70%;
+}
+.content.con-60pVr {
+  height: 60%;
+}
+.content.con-50pVr {
+  height: 50%;
+}
+.content.con-40pVr {
+  height: 40%;
+}
+.content.con-30pVr {
+  height: 30%;
+}
+.content.con-20pVr {
+  height: 20%;
+}
+.content.con-10pVr {
+  height: 10%;
+}
+.content.con-25pVr {
+  height: 25%;
+}
+.content.con-75pVr {
+  height: 75%;
+}
+.content.con-33pVr {
+  height: 33.33333%;
+}
+.content.con-66pVr {
+  height: 66.66666%;
+}
+.content.con-100vhMax {
+  max-height: 100vh;
+}
+.content.con-90vhMax {
+  max-height: 90vh;
+}
+.content.con-80vhMax {
+  max-height: 80vh;
+}
+.content.con-70vhMax {
+  max-height: 70vh;
+}
+.content.con-60vhMax {
+  max-height: 60vh;
+}
+.content.con-50vhMax {
+  max-height: 50vh;
+}
+.content.con-40vhMax {
+  max-height: 40vh;
+}
+.content.con-30vhMax {
+  max-height: 30vh;
+}
+.content.con-20vhMax {
+  max-height: 20vh;
+}
+.content.con-10vhMax {
+  max-height: 10vh;
+}
+.content.con-25vhMax {
+  max-height: 25vh;
+}
+.content.con-75vhMax {
+  max-height: 75vh;
+}
+.content.con-33vhMax {
+  max-height: 33.33333vh;
+}
+.content.con-66vhMax {
+  max-height: 66.66666vh;
+}
+.content.con-100vh {
+  height: 100vh;
+}
+.content.con-90vh {
+  height: 90vh;
+}
+.content.con-80vh {
+  height: 80vh;
+}
+.content.con-70vh {
+  height: 70vh;
+}
+.content.con-60vh {
+  height: 60vh;
+}
+.content.con-50vh {
+  height: 50vh;
+}
+.content.con-40vh {
+  height: 40vh;
+}
+.content.con-30vh {
+  height: 30vh;
+}
+.content.con-20vh {
+  height: 20vh;
+}
+.content.con-10vh {
+  height: 10vh;
+}
+.content.con-25vh {
+  width: 25vh;
+}
+.content.con-75vh {
+  width: 75vh;
+}
+.content.con-33vh {
+  width: 33.33333vh;
+}
+.content.con-66vh {
+  width: 66.66666vh;
 }
 
 .disabled {
   pointer-events: none;
-}
-
-.pill {
-  border-radius: 1.5rem;
-}
-.pill.no-pill {
-  border-radius: 0;
-}
-.pill.pil-circle, .pill.pil-full {
-  border-radius: 100%;
-}
-.pill.pil-xxs {
-  border-radius: 0.25rem;
-}
-.pill.pil-xs {
-  border-radius: 0.5rem;
-}
-.pill.pil-sm {
-  border-radius: 1rem;
-}
-.pill.pil-md {
-  border-radius: 1.5rem;
-}
-.pill.pil-lg {
-  border-radius: 2rem;
-}
-.pill.pil-xl {
-  border-radius: 3rem;
-}
-
-.ring {
-  outline-offset: 0.15rem;
-  transition: 0.05s;
-  outline-color: black;
-}
-.ring:focus-within {
-  outline: 0.2rem solid;
-}
-.ring:hover {
-  outline: 0.2rem solid;
 }
 
 .display {
@@ -1032,8 +1256,32 @@ nav.nav-main {
   display: inline-block;
 }
 
-.float.flo-right {
-  float: right;
+.edge-left {
+  right: 100%;
+}
+.edge-left.to-right {
+  right: auto;
+  left: 0;
+}
+
+.edge-right {
+  left: 100%;
+}
+.edge-right.to-left {
+  left: auto;
+  right: 0;
+}
+
+.fade {
+  transition: 0;
+}
+.fade .fad-out {
+  transition: 0.5s;
+  opacity: 0;
+}
+.fade .fad-in {
+  transition: 0.5s;
+  opacity: 100;
 }
 
 .flex {
@@ -1069,240 +1317,261 @@ nav.nav-main {
 .flex.fle-baseline {
   align-items: baseline;
 }
+.flex.fle-alignItems-baseline {
+  align-items: baseline;
+}
+.flex.fle-alignItems-center {
+  align-items: center;
+}
+.flex.fle-alignItems-end {
+  align-items: end;
+}
+.flex.fle-alignItems-start {
+  align-items: start;
+}
+.flex.fle-alignItems-inherit {
+  align-items: inherit;
+}
+.flex.fle-alignItems-stretch {
+  align-items: stretch;
+}
+.flex.fle-alignContent-baseline {
+  align-content: baseline;
+}
+.flex.fle-alignContent-center {
+  align-content: center;
+}
+.flex.fle-alignContent-end {
+  align-content: end;
+}
+.flex.fle-alignContent-start {
+  align-content: start;
+}
+.flex.fle-alignContent-inherit {
+  align-content: inherit;
+}
+.flex.fle-alignContent-stretch {
+  align-content: stretch;
+}
+.flex.fle-alignContent-spaceBetween {
+  align-content: space-between;
+}
+.flex.fle-alignContent-spaceAround {
+  align-content: space-around;
+}
+.flex.fle-alignContent-spaceEvenly {
+  align-content: space-evenly;
+}
+.flex.fle-alignSelf-baseline {
+  align-self: baseline;
+}
+.flex.fle-alignSelf-center {
+  align-self: center;
+}
+.flex.fle-alignSelf-flexEnd {
+  align-self: flex-end;
+}
+.flex.fle-alignSelf-selfEnd {
+  align-self: self-end;
+}
+.flex.fle-alignSelf-flexStart {
+  align-self: flex-start;
+}
+.flex.fle-alignSelf-selfStart {
+  align-self: self-start;
+}
+.flex.fle-alignSelf-stretch {
+  align-self: stretch;
+}
+.flex.fle-basis-xxs {
+  flex-basis: 3.125rem;
+}
+.flex.fle-basis-xs {
+  flex-basis: 6.25rem;
+}
+.flex.fle-basis-sm {
+  flex-basis: 12.5rem;
+}
+.flex.fle-basis-md {
+  flex-basis: 25rem;
+}
+.flex.fle-basis-lg {
+  flex-basis: 37.5rem;
+}
+.flex.fle-basis-xl {
+  flex-basis: 50rem;
+}
+.flex.fle-basis-xxl {
+  flex-basis: 75rem;
+}
+.flex.fle-direction-column {
+  flex-direction: column;
+}
+.flex.fle-direction-columnReverse {
+  flex-direction: column-reverse;
+}
+.flex.fle-direction-row {
+  flex-direction: row;
+}
+.flex.fle-direction-rowReverse {
+  flex-direction: row-reverse;
+}
+.flex.fle-direction-inherit {
+  flex-direction: inherit;
+}
+.flex.fle-flow-row {
+  flex-flow: row;
+}
+.flex.fle-flow-rowReverse {
+  flex-flow: row-reverse;
+}
+.flex.fle-flow-column {
+  flex-flow: column;
+}
+.flex.fle-flow-columnReverse {
+  flex-flow: column-reverse;
+}
+.flex.fle-flow-wrap {
+  flex-flow: wrap;
+}
+.flex.fle-flow-nowrap {
+  flex-flow: nowrap;
+}
+.flex.fle-flow-wrapReverse {
+  flex-flow: wrap-reverse;
+}
+.flex.flex-grow-one {
+  flex-grow: 1;
+}
+.flex.flex-grow-two {
+  flex-grow: 2;
+}
+.flex.flex-grow-three {
+  flex-grow: 3;
+}
+.flex.flex-grow-four {
+  flex-grow: 4;
+}
+.flex.flex-grow-five {
+  flex-grow: 5;
+}
+.flex.flex-grow-six {
+  flex-grow: 6;
+}
+.flex.flex-grow-seven {
+  flex-grow: 7;
+}
+.flex.flex-grow-eight {
+  flex-grow: 8;
+}
+.flex.flex-grow-nine {
+  flex-grow: 9;
+}
+.flex.flex-grow-ten {
+  flex-grow: 10;
+}
+.flex.flex-shrink-one {
+  flex-shrink: 1;
+}
+.flex.flex-shrink-two {
+  flex-shrink: 2;
+}
+.flex.flex-shrink-three {
+  flex-shrink: 3;
+}
+.flex.flex-shrink-four {
+  flex-shrink: 4;
+}
+.flex.flex-shrink-five {
+  flex-shrink: 5;
+}
+.flex.flex-shrink-six {
+  flex-shrink: 6;
+}
+.flex.flex-shrink-seven {
+  flex-shrink: 7;
+}
+.flex.flex-shrink-eight {
+  flex-shrink: 8;
+}
+.flex.flex-shrink-nine {
+  flex-shrink: 9;
+}
+.flex.flex-shrink-ten {
+  flex-shrink: 10;
+}
 .flex.fle-wrap {
   flex-wrap: wrap;
+}
+.flex.fle-wrapReverse {
+  flex-wrap: wrap-reverse;
 }
 .flex.fle-nowrap {
   flex-wrap: nowrap;
 }
-
-.position {
-  position: static;
+.flex.fle-justifyContent-baseline {
+  justify-content: baseline;
 }
-.position.pos-fixed {
-  position: fixed;
+.flex.fle-justifyContent-center {
+  justify-content: center;
 }
-.position.pos-sticky {
-  position: sticky;
+.flex.fle-justifyContent-end {
+  justify-content: end;
 }
-.position.pos-relative {
-  position: relative;
+.flex.fle-justifyContent-start {
+  justify-content: start;
 }
-.position.pos-absolute {
-  position: absolute;
+.flex.fle-justifyContent-inherit {
+  justify-content: inherit;
 }
-
-.right-edge {
-  left: 100%;
+.flex.fle-justifyContent-stretch {
+  justify-content: stretch;
 }
-.right-edge.to-left {
-  left: auto;
-  right: 0;
+.flex.fle-justifyContent-spaceBetween {
+  justify-content: space-between;
 }
-
-.left-edge {
-  right: 100%;
+.flex.fle-justifyContent-spaceAround {
+  justify-content: space-around;
 }
-.left-edge.to-right {
-  right: auto;
-  left: 0;
+.flex.fle-justifyContent-spaceEvenly {
+  justify-content: space-evenly;
 }
 
-.padding.pad-xxs {
-  padding: var(--padXxs);
+.float.flo-right {
+  float: right;
 }
-.padding.pad-xs {
-  padding: var(--padXs);
+
+.gap {
+  gap: 0.5rem;
 }
-.padding.pad-sm {
-  padding: var(--padSm);
+.gap.gap-xxs {
+  gap: 0.25rem;
 }
-.padding.pad-md {
-  padding: var(--padMd);
+.gap.gap-xs {
+  gap: 0.5rem;
 }
-.padding.pad-lg {
-  padding: var(--padLg);
+.gap.gap-sm {
+  gap: 0.75rem;
 }
-.padding.pad-xl {
-  padding: var(--padXl);
+.gap.gap-md {
+  gap: 1rem;
 }
-.padding.pad-xxl {
-  padding: var(--padXxl);
+.gap.gap-lg {
+  gap: 3rem;
 }
-.padding.pad-xxsT {
-  padding-top: var(--padXxs);
+.gap.gap-xl {
+  gap: 5rem;
 }
-.padding.pad-xsT {
-  padding-top: var(--padXs);
+.gap.gap-xxl {
+  gap: 10rem;
 }
-.padding.pad-smT {
-  padding-top: var(--padSm);
+
+.ghost:not(:hover) {
+  background-color: hsla(0, 0%, 0%, 0) !important;
 }
-.padding.pad-mdT {
-  padding-top: var(--padMd);
-}
-.padding.pad-lgT {
-  padding-top: var(--padLg);
-}
-.padding.pad-xlT {
-  padding-top: var(--padXl);
-}
-.padding.pad-xxlT {
-  padding-top: var(--padXxl);
-}
-.padding.pad-xxsR {
-  padding-right: var(--padXxs);
-}
-.padding.pad-xsR {
-  padding-right: var(--padXs);
-}
-.padding.pad-smR {
-  padding-right: var(--padSm);
-}
-.padding.pad-mdR {
-  padding-right: var(--padMd);
-}
-.padding.pad-lgR {
-  padding-right: var(--padLg);
-}
-.padding.pad-xlR {
-  padding-right: var(--padXl);
-}
-.padding.pad-xxlR {
-  padding-right: var(--padXxl);
-}
-.padding.pad-xxsB {
-  padding-bottom: var(--padXxs);
-}
-.padding.pad-xsB {
-  padding-bottom: var(--padXs);
-}
-.padding.pad-smB {
-  padding-bottom: var(--padSm);
-}
-.padding.pad-mdB {
-  padding-bottom: var(--padMd);
-}
-.padding.pad-lgB {
-  padding-bottom: var(--padLg);
-}
-.padding.pad-xlB {
-  padding-bottom: var(--padXl);
-}
-.padding.pad-xxlB {
-  padding-bottom: var(--padXxl);
-}
-.padding.pad-xxsL {
-  padding-left: var(--padXxs);
-}
-.padding.pad-xsL {
-  padding-left: var(--padXs);
-}
-.padding.pad-smL {
-  padding-left: var(--padSm);
-}
-.padding.pad-mdL {
-  padding-left: var(--padMd);
-}
-.padding.pad-lgL {
-  padding-left: var(--padLg);
-}
-.padding.pad-xlL {
-  padding-left: var(--padXl);
-}
-.padding.pad-xxlL {
-  padding-left: var(--padXxl);
-}
-.padding.pad-xxsHr {
-  padding-left: var(--padXxs);
-  padding-right: var(--padXxs);
-}
-.padding.pad-xsHr {
-  padding-left: var(--padXs);
-  padding-right: var(--padXs);
-}
-.padding.pad-smHr {
-  padding-left: var(--padSm);
-  padding-right: var(--padSm);
-}
-.padding.pad-mdHr {
-  padding-left: var(--padMd);
-  padding-right: var(--padMd);
-}
-.padding.pad-lgHr {
-  padding-left: var(--padLg);
-  padding-right: var(--padLg);
-}
-.padding.pad-xlHr {
-  padding-left: var(--padXl);
-  padding-right: var(--padXl);
-}
-.padding.pad-xxlHr {
-  padding-left: var(--padXxl);
-  padding-right: var(--padXxl);
-}
-.padding.pad-xxsVr {
-  padding-top: var(--padXxs);
-  padding-bottom: var(--padXxs);
-}
-.padding.pad-xsVr {
-  padding-top: var(--padXs);
-  padding-bottom: var(--padXs);
-}
-.padding.pad-smVr {
-  padding-top: var(--padSm);
-  padding-bottom: var(--padSm);
-}
-.padding.pad-mdVr {
-  padding-top: var(--padMd);
-  padding-bottom: var(--padMd);
-}
-.padding.pad-lgVr {
-  padding-top: var(--padLg);
-  padding-bottom: var(--padLg);
-}
-.padding.pad-xlVr {
-  padding-top: var(--padXl);
-  padding-bottom: var(--padXl);
-}
-.padding.pad-xxlVr {
-  padding-top: var(--padXxl);
-  padding-bottom: var(--padXxl);
-}
-.padding.pad-noneT {
-  padding-top: 0;
-}
-.padding.pad-noneR {
-  padding-right: 0;
-}
-.padding.pad-noneB {
-  padding-bottom: 0;
-}
-.padding.pad-noneL {
-  padding-left: 0;
-}
-.padding.pad-noneHr {
-  padding-left: 0;
-  padding-right: 0;
-}
-.padding.pad-noneVr {
-  padding-left: 0;
-  padding-right: 0;
-}
-.padding.pad-xsNav {
-  padding-top: 1rem;
-}
-.padding.pad-smNav {
-  padding-top: 2rem;
-}
-.padding.pad-mdNav {
-  padding-top: 3rem;
-}
-.padding.pad-lgNav {
-  padding-top: 4rem;
-}
-.padding.pad-xlNav {
-  padding-top: 5rem;
+
+.hide-bg {
+  background-color: hsla(0, 0%, 0%, 0) !important;
 }
 
 .margin.mar-xxs {
@@ -1510,40 +1779,364 @@ nav.nav-main {
   margin-left: auto;
 }
 
-.gap {
-  gap: 0.5rem;
+.padding.pad-xxs {
+  padding: var(--padXxs);
 }
-.gap.gap-xxs {
-  gap: 0.25rem;
+.padding.pad-xs {
+  padding: var(--padXs);
 }
-.gap.gap-xs {
-  gap: 0.5rem;
+.padding.pad-sm {
+  padding: var(--padSm);
 }
-.gap.gap-sm {
-  gap: 0.75rem;
+.padding.pad-md {
+  padding: var(--padMd);
 }
-.gap.gap-md {
-  gap: 1rem;
+.padding.pad-lg {
+  padding: var(--padLg);
 }
-.gap.gap-lg {
-  gap: 3rem;
+.padding.pad-xl {
+  padding: var(--padXl);
 }
-.gap.gap-xl {
-  gap: 5rem;
+.padding.pad-xxl {
+  padding: var(--padXxl);
 }
-.gap.gap-xxl {
-  gap: 10rem;
+.padding.pad-xxsT {
+  padding-top: var(--padXxs);
+}
+.padding.pad-xsT {
+  padding-top: var(--padXs);
+}
+.padding.pad-smT {
+  padding-top: var(--padSm);
+}
+.padding.pad-mdT {
+  padding-top: var(--padMd);
+}
+.padding.pad-lgT {
+  padding-top: var(--padLg);
+}
+.padding.pad-xlT {
+  padding-top: var(--padXl);
+}
+.padding.pad-xxlT {
+  padding-top: var(--padXxl);
+}
+.padding.pad-xxsR {
+  padding-right: var(--padXxs);
+}
+.padding.pad-xsR {
+  padding-right: var(--padXs);
+}
+.padding.pad-smR {
+  padding-right: var(--padSm);
+}
+.padding.pad-mdR {
+  padding-right: var(--padMd);
+}
+.padding.pad-lgR {
+  padding-right: var(--padLg);
+}
+.padding.pad-xlR {
+  padding-right: var(--padXl);
+}
+.padding.pad-xxlR {
+  padding-right: var(--padXxl);
+}
+.padding.pad-xxsB {
+  padding-bottom: var(--padXxs);
+}
+.padding.pad-xsB {
+  padding-bottom: var(--padXs);
+}
+.padding.pad-smB {
+  padding-bottom: var(--padSm);
+}
+.padding.pad-mdB {
+  padding-bottom: var(--padMd);
+}
+.padding.pad-lgB {
+  padding-bottom: var(--padLg);
+}
+.padding.pad-xlB {
+  padding-bottom: var(--padXl);
+}
+.padding.pad-xxlB {
+  padding-bottom: var(--padXxl);
+}
+.padding.pad-xxsL {
+  padding-left: var(--padXxs);
+}
+.padding.pad-xsL {
+  padding-left: var(--padXs);
+}
+.padding.pad-smL {
+  padding-left: var(--padSm);
+}
+.padding.pad-mdL {
+  padding-left: var(--padMd);
+}
+.padding.pad-lgL {
+  padding-left: var(--padLg);
+}
+.padding.pad-xlL {
+  padding-left: var(--padXl);
+}
+.padding.pad-xxlL {
+  padding-left: var(--padXxl);
+}
+.padding.pad-xxsHr {
+  padding-left: var(--padXxs);
+  padding-right: var(--padXxs);
+}
+.padding.pad-xsHr {
+  padding-left: var(--padXs);
+  padding-right: var(--padXs);
+}
+.padding.pad-smHr {
+  padding-left: var(--padSm);
+  padding-right: var(--padSm);
+}
+.padding.pad-mdHr {
+  padding-left: var(--padMd);
+  padding-right: var(--padMd);
+}
+.padding.pad-lgHr {
+  padding-left: var(--padLg);
+  padding-right: var(--padLg);
+}
+.padding.pad-xlHr {
+  padding-left: var(--padXl);
+  padding-right: var(--padXl);
+}
+.padding.pad-xxlHr {
+  padding-left: var(--padXxl);
+  padding-right: var(--padXxl);
+}
+.padding.pad-xxsVr {
+  padding-top: var(--padXxs);
+  padding-bottom: var(--padXxs);
+}
+.padding.pad-xsVr {
+  padding-top: var(--padXs);
+  padding-bottom: var(--padXs);
+}
+.padding.pad-smVr {
+  padding-top: var(--padSm);
+  padding-bottom: var(--padSm);
+}
+.padding.pad-mdVr {
+  padding-top: var(--padMd);
+  padding-bottom: var(--padMd);
+}
+.padding.pad-lgVr {
+  padding-top: var(--padLg);
+  padding-bottom: var(--padLg);
+}
+.padding.pad-xlVr {
+  padding-top: var(--padXl);
+  padding-bottom: var(--padXl);
+}
+.padding.pad-xxlVr {
+  padding-top: var(--padXxl);
+  padding-bottom: var(--padXxl);
+}
+.padding.pad-noneT {
+  padding-top: 0;
+}
+.padding.pad-noneR {
+  padding-right: 0;
+}
+.padding.pad-noneB {
+  padding-bottom: 0;
+}
+.padding.pad-noneL {
+  padding-left: 0;
+}
+.padding.pad-noneHr {
+  padding-left: 0;
+  padding-right: 0;
+}
+.padding.pad-noneVr {
+  padding-left: 0;
+  padding-right: 0;
+}
+.padding.pad-xsNav {
+  padding-top: 1rem;
+}
+.padding.pad-smNav {
+  padding-top: 2rem;
+}
+.padding.pad-mdNav {
+  padding-top: 3rem;
+}
+.padding.pad-lgNav {
+  padding-top: 4rem;
+}
+.padding.pad-xlNav {
+  padding-top: 5rem;
 }
 
-.cursor {
-  cursor: default;
+.padding-focus.padf-xxsMinHr {
+  --padfMin: var(--padXxs);
 }
-.cursor.cur-pointer {
-  cursor: pointer;
+.padding-focus.padf-xsMinHr {
+  --padfMin: var(--padXs);
+}
+.padding-focus.padf-smMinHr {
+  --padfMin: var(--padSm);
+}
+.padding-focus.padf-mdMinHr {
+  --padfMin: var(--padMd);
+}
+.padding-focus.padf-lgMinHr {
+  --padfMin: var(--padLg);
+}
+.padding-focus.padf-xlMinHr {
+  --padfMin: var(--padXl);
+}
+.padding-focus.padf-xxlMinHr {
+  --padfMin: var(--padXxl);
+}
+.padding-focus.padf-xxsHr {
+  padding-left: max(var(--padfMin), (100% - var(--celXxs) * 2) / 2);
+}
+.padding-focus.padf-xsHr {
+  padding-left: max(var(--padfMin), (100% - var(--celXs) * 2) / 2);
+}
+.padding-focus.padf-smHr {
+  padding-left: max(var(--padfMin), (100% - var(--celSm) * 2) / 2);
+}
+.padding-focus.padf-mdHr {
+  padding-left: max(var(--padfMin), (100% - var(--celMd) * 2) / 2);
+}
+.padding-focus.padf-lgHr {
+  padding-left: max(var(--padfMin), (100% - var(--celLg) * 2) / 2);
+}
+.padding-focus.padf-xlHr {
+  padding-left: max(var(--padfMin), (100% - var(--celXl) * 2) / 2);
+}
+.padding-focus.padf-xxlHr {
+  padding-left: max(var(--padfMin), (100% - var(--celXxl) * 2) / 2);
 }
 
-.ghost:not(:hover) {
-  background-color: hsla(0, 0%, 0%, 0) !important;
+.pill {
+  border-radius: 1.5rem;
+}
+.pill.no-pill {
+  border-radius: 0;
+}
+.pill.pil-circle, .pill.pil-full {
+  border-radius: 100%;
+}
+.pill.pil-xxs {
+  border-radius: 0.25rem;
+}
+.pill.pil-xs {
+  border-radius: 0.5rem;
+}
+.pill.pil-sm {
+  border-radius: 1rem;
+}
+.pill.pil-md {
+  border-radius: 1.5rem;
+}
+.pill.pil-lg {
+  border-radius: 2rem;
+}
+.pill.pil-xl {
+  border-radius: 3rem;
+}
+
+.position {
+  position: static;
+}
+.position.pos-fixed {
+  position: fixed;
+}
+.position.pos-sticky {
+  position: sticky;
+}
+.position.pos-relative {
+  position: relative;
+}
+.position.pos-absolute {
+  position: absolute;
+}
+
+.ring {
+  outline-offset: 0.15rem;
+  transition: 0.05s;
+  outline-color: black;
+}
+.ring:focus-within {
+  outline: 0.2rem solid;
+}
+.ring:hover {
+  outline: 0.2rem solid;
+}
+
+.text-select {
+  -webkit-user-select: auto;
+     -moz-user-select: auto;
+          user-select: auto;
+}
+.text-select.texs-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.text-align.texa-r {
+  text-align: right;
+}
+.text-align.texa-c {
+  text-align: center;
+}
+
+.text-wrap {
+  text-wrap: wrap;
+}
+.text-wrap.texw-wrap {
+  text-wrap: wrap;
+}
+.text-wrap.texw-nowrap {
+  text-wrap: nowrap !important;
+}
+
+.w25p {
+  width: 25%;
+}
+
+.w50p {
+  width: 50%;
+}
+
+.w75p {
+  width: 75%;
+}
+
+.w100p {
+  width: 100%;
+}
+
+.h100p {
+  height: 100%;
+}
+
+.red {
+  background-color: red !important;
+}
+
+.redd {
+  color: red;
+}
+
+.yellow {
+  background-color: yellow !important;
+}
+
+.blue {
+  background-color: blue !important;
 }
 
 .theme-default h1,
@@ -1703,444 +2296,444 @@ nav.nav-main {
 .theme-default .ico-color {
   color: rgb(83, 83, 69) !important;
 }
-.theme-default .but-base {
+.theme-default button.base {
   background-color: hsl(0, 0%, 100%);
 }
-.theme-default .but-base h1,
-.theme-default .but-base h2,
-.theme-default .but-base h3,
-.theme-default .but-base h4,
-.theme-default .but-base h5,
-.theme-default .but-base h6,
-.theme-default .but-base p,
-.theme-default .but-base a,
-.theme-default .but-base strong,
-.theme-default .but-base i,
-.theme-default .but-base em,
-.theme-default .but-base mark,
-.theme-default .but-base small,
-.theme-default .but-base del,
-.theme-default .but-base ins,
-.theme-default .but-base sub,
-.theme-default .but-base sup,
-.theme-default .but-base time,
-.theme-default .but-base .icon,
-.theme-default .but-base button {
+.theme-default button.base h1,
+.theme-default button.base h2,
+.theme-default button.base h3,
+.theme-default button.base h4,
+.theme-default button.base h5,
+.theme-default button.base h6,
+.theme-default button.base p,
+.theme-default button.base a,
+.theme-default button.base strong,
+.theme-default button.base i,
+.theme-default button.base em,
+.theme-default button.base mark,
+.theme-default button.base small,
+.theme-default button.base del,
+.theme-default button.base ins,
+.theme-default button.base sub,
+.theme-default button.base sup,
+.theme-default button.base time,
+.theme-default button.base .icon,
+.theme-default button.base button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
 }
-.theme-default .but-base:hover {
+.theme-default button.base:hover {
   background-color: hsl(213, 100%, 64%);
 }
-.theme-default .but-base:hover h1,
-.theme-default .but-base:hover h2,
-.theme-default .but-base:hover h3,
-.theme-default .but-base:hover h4,
-.theme-default .but-base:hover h5,
-.theme-default .but-base:hover h6,
-.theme-default .but-base:hover p,
-.theme-default .but-base:hover a,
-.theme-default .but-base:hover strong,
-.theme-default .but-base:hover i,
-.theme-default .but-base:hover em,
-.theme-default .but-base:hover mark,
-.theme-default .but-base:hover small,
-.theme-default .but-base:hover del,
-.theme-default .but-base:hover ins,
-.theme-default .but-base:hover sub,
-.theme-default .but-base:hover sup,
-.theme-default .but-base:hover time,
-.theme-default .but-base:hover .icon,
-.theme-default .but-base:hover button {
+.theme-default button.base:hover h1,
+.theme-default button.base:hover h2,
+.theme-default button.base:hover h3,
+.theme-default button.base:hover h4,
+.theme-default button.base:hover h5,
+.theme-default button.base:hover h6,
+.theme-default button.base:hover p,
+.theme-default button.base:hover a,
+.theme-default button.base:hover strong,
+.theme-default button.base:hover i,
+.theme-default button.base:hover em,
+.theme-default button.base:hover mark,
+.theme-default button.base:hover small,
+.theme-default button.base:hover del,
+.theme-default button.base:hover ins,
+.theme-default button.base:hover sub,
+.theme-default button.base:hover sup,
+.theme-default button.base:hover time,
+.theme-default button.base:hover .icon,
+.theme-default button.base:hover button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-base:active {
+.theme-default button.base:active {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%), hsl(0, 0%, 0%));
 }
-.theme-default .but-base:active h1,
-.theme-default .but-base:active h2,
-.theme-default .but-base:active h3,
-.theme-default .but-base:active h4,
-.theme-default .but-base:active h5,
-.theme-default .but-base:active h6,
-.theme-default .but-base:active p,
-.theme-default .but-base:active a,
-.theme-default .but-base:active strong,
-.theme-default .but-base:active i,
-.theme-default .but-base:active em,
-.theme-default .but-base:active mark,
-.theme-default .but-base:active small,
-.theme-default .but-base:active del,
-.theme-default .but-base:active ins,
-.theme-default .but-base:active sub,
-.theme-default .but-base:active sup,
-.theme-default .but-base:active time,
-.theme-default .but-base:active .icon,
-.theme-default .but-base:active button {
+.theme-default button.base:active h1,
+.theme-default button.base:active h2,
+.theme-default button.base:active h3,
+.theme-default button.base:active h4,
+.theme-default button.base:active h5,
+.theme-default button.base:active h6,
+.theme-default button.base:active p,
+.theme-default button.base:active a,
+.theme-default button.base:active strong,
+.theme-default button.base:active i,
+.theme-default button.base:active em,
+.theme-default button.base:active mark,
+.theme-default button.base:active small,
+.theme-default button.base:active del,
+.theme-default button.base:active ins,
+.theme-default button.base:active sub,
+.theme-default button.base:active sup,
+.theme-default button.base:active time,
+.theme-default button.base:active .icon,
+.theme-default button.base:active button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-secondary {
+.theme-default button.secondary {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
 }
-.theme-default .but-secondary h1,
-.theme-default .but-secondary h2,
-.theme-default .but-secondary h3,
-.theme-default .but-secondary h4,
-.theme-default .but-secondary h5,
-.theme-default .but-secondary h6,
-.theme-default .but-secondary p,
-.theme-default .but-secondary a,
-.theme-default .but-secondary strong,
-.theme-default .but-secondary i,
-.theme-default .but-secondary em,
-.theme-default .but-secondary mark,
-.theme-default .but-secondary small,
-.theme-default .but-secondary del,
-.theme-default .but-secondary ins,
-.theme-default .but-secondary sub,
-.theme-default .but-secondary sup,
-.theme-default .but-secondary time,
-.theme-default .but-secondary .icon,
-.theme-default .but-secondary button {
+.theme-default button.secondary h1,
+.theme-default button.secondary h2,
+.theme-default button.secondary h3,
+.theme-default button.secondary h4,
+.theme-default button.secondary h5,
+.theme-default button.secondary h6,
+.theme-default button.secondary p,
+.theme-default button.secondary a,
+.theme-default button.secondary strong,
+.theme-default button.secondary i,
+.theme-default button.secondary em,
+.theme-default button.secondary mark,
+.theme-default button.secondary small,
+.theme-default button.secondary del,
+.theme-default button.secondary ins,
+.theme-default button.secondary sub,
+.theme-default button.secondary sup,
+.theme-default button.secondary time,
+.theme-default button.secondary .icon,
+.theme-default button.secondary button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
-.theme-default .but-secondary:hover {
+.theme-default button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%) 75%, hsl(0, 0%, 0%));
 }
-.theme-default .but-secondary:hover h1,
-.theme-default .but-secondary:hover h2,
-.theme-default .but-secondary:hover h3,
-.theme-default .but-secondary:hover h4,
-.theme-default .but-secondary:hover h5,
-.theme-default .but-secondary:hover h6,
-.theme-default .but-secondary:hover p,
-.theme-default .but-secondary:hover a,
-.theme-default .but-secondary:hover strong,
-.theme-default .but-secondary:hover i,
-.theme-default .but-secondary:hover em,
-.theme-default .but-secondary:hover mark,
-.theme-default .but-secondary:hover small,
-.theme-default .but-secondary:hover del,
-.theme-default .but-secondary:hover ins,
-.theme-default .but-secondary:hover sub,
-.theme-default .but-secondary:hover sup,
-.theme-default .but-secondary:hover time,
-.theme-default .but-secondary:hover .icon,
-.theme-default .but-secondary:hover button {
+.theme-default button.secondary:hover h1,
+.theme-default button.secondary:hover h2,
+.theme-default button.secondary:hover h3,
+.theme-default button.secondary:hover h4,
+.theme-default button.secondary:hover h5,
+.theme-default button.secondary:hover h6,
+.theme-default button.secondary:hover p,
+.theme-default button.secondary:hover a,
+.theme-default button.secondary:hover strong,
+.theme-default button.secondary:hover i,
+.theme-default button.secondary:hover em,
+.theme-default button.secondary:hover mark,
+.theme-default button.secondary:hover small,
+.theme-default button.secondary:hover del,
+.theme-default button.secondary:hover ins,
+.theme-default button.secondary:hover sub,
+.theme-default button.secondary:hover sup,
+.theme-default button.secondary:hover time,
+.theme-default button.secondary:hover .icon,
+.theme-default button.secondary:hover button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-secondary:active {
+.theme-default button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%), hsl(0, 0%, 0%));
 }
-.theme-default .but-secondary:active h1,
-.theme-default .but-secondary:active h2,
-.theme-default .but-secondary:active h3,
-.theme-default .but-secondary:active h4,
-.theme-default .but-secondary:active h5,
-.theme-default .but-secondary:active h6,
-.theme-default .but-secondary:active p,
-.theme-default .but-secondary:active a,
-.theme-default .but-secondary:active strong,
-.theme-default .but-secondary:active i,
-.theme-default .but-secondary:active em,
-.theme-default .but-secondary:active mark,
-.theme-default .but-secondary:active small,
-.theme-default .but-secondary:active del,
-.theme-default .but-secondary:active ins,
-.theme-default .but-secondary:active sub,
-.theme-default .but-secondary:active sup,
-.theme-default .but-secondary:active time,
-.theme-default .but-secondary:active .icon,
-.theme-default .but-secondary:active button {
+.theme-default button.secondary:active h1,
+.theme-default button.secondary:active h2,
+.theme-default button.secondary:active h3,
+.theme-default button.secondary:active h4,
+.theme-default button.secondary:active h5,
+.theme-default button.secondary:active h6,
+.theme-default button.secondary:active p,
+.theme-default button.secondary:active a,
+.theme-default button.secondary:active strong,
+.theme-default button.secondary:active i,
+.theme-default button.secondary:active em,
+.theme-default button.secondary:active mark,
+.theme-default button.secondary:active small,
+.theme-default button.secondary:active del,
+.theme-default button.secondary:active ins,
+.theme-default button.secondary:active sub,
+.theme-default button.secondary:active sup,
+.theme-default button.secondary:active time,
+.theme-default button.secondary:active .icon,
+.theme-default button.secondary:active button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-warn,
-.theme-default .but-warn.link-as-button {
-  background-color: hsl(39, 76%, 49%);
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
-}
-.theme-default .but-warn h1,
-.theme-default .but-warn h2,
-.theme-default .but-warn h3,
-.theme-default .but-warn h4,
-.theme-default .but-warn h5,
-.theme-default .but-warn h6,
-.theme-default .but-warn p,
-.theme-default .but-warn a,
-.theme-default .but-warn strong,
-.theme-default .but-warn i,
-.theme-default .but-warn em,
-.theme-default .but-warn mark,
-.theme-default .but-warn small,
-.theme-default .but-warn del,
-.theme-default .but-warn ins,
-.theme-default .but-warn sub,
-.theme-default .but-warn sup,
-.theme-default .but-warn time,
-.theme-default .but-warn .icon,
-.theme-default .but-warn button,
-.theme-default .but-warn.link-as-button h1,
-.theme-default .but-warn.link-as-button h2,
-.theme-default .but-warn.link-as-button h3,
-.theme-default .but-warn.link-as-button h4,
-.theme-default .but-warn.link-as-button h5,
-.theme-default .but-warn.link-as-button h6,
-.theme-default .but-warn.link-as-button p,
-.theme-default .but-warn.link-as-button a,
-.theme-default .but-warn.link-as-button strong,
-.theme-default .but-warn.link-as-button i,
-.theme-default .but-warn.link-as-button em,
-.theme-default .but-warn.link-as-button mark,
-.theme-default .but-warn.link-as-button small,
-.theme-default .but-warn.link-as-button del,
-.theme-default .but-warn.link-as-button ins,
-.theme-default .but-warn.link-as-button sub,
-.theme-default .but-warn.link-as-button sup,
-.theme-default .but-warn.link-as-button time,
-.theme-default .but-warn.link-as-button .icon,
-.theme-default .but-warn.link-as-button button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
-}
-.theme-default .but-warn:hover,
-.theme-default .but-warn.link-as-button:hover {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 0%));
-  color: hsl(0, 0%, 100%);
-}
-.theme-default .but-warn:hover h1,
-.theme-default .but-warn:hover h2,
-.theme-default .but-warn:hover h3,
-.theme-default .but-warn:hover h4,
-.theme-default .but-warn:hover h5,
-.theme-default .but-warn:hover h6,
-.theme-default .but-warn:hover p,
-.theme-default .but-warn:hover a,
-.theme-default .but-warn:hover strong,
-.theme-default .but-warn:hover i,
-.theme-default .but-warn:hover em,
-.theme-default .but-warn:hover mark,
-.theme-default .but-warn:hover small,
-.theme-default .but-warn:hover del,
-.theme-default .but-warn:hover ins,
-.theme-default .but-warn:hover sub,
-.theme-default .but-warn:hover sup,
-.theme-default .but-warn:hover time,
-.theme-default .but-warn:hover .icon,
-.theme-default .but-warn:hover button,
-.theme-default .but-warn.link-as-button:hover h1,
-.theme-default .but-warn.link-as-button:hover h2,
-.theme-default .but-warn.link-as-button:hover h3,
-.theme-default .but-warn.link-as-button:hover h4,
-.theme-default .but-warn.link-as-button:hover h5,
-.theme-default .but-warn.link-as-button:hover h6,
-.theme-default .but-warn.link-as-button:hover p,
-.theme-default .but-warn.link-as-button:hover a,
-.theme-default .but-warn.link-as-button:hover strong,
-.theme-default .but-warn.link-as-button:hover i,
-.theme-default .but-warn.link-as-button:hover em,
-.theme-default .but-warn.link-as-button:hover mark,
-.theme-default .but-warn.link-as-button:hover small,
-.theme-default .but-warn.link-as-button:hover del,
-.theme-default .but-warn.link-as-button:hover ins,
-.theme-default .but-warn.link-as-button:hover sub,
-.theme-default .but-warn.link-as-button:hover sup,
-.theme-default .but-warn.link-as-button:hover time,
-.theme-default .but-warn.link-as-button:hover .icon,
-.theme-default .but-warn.link-as-button:hover button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
-}
-.theme-default .but-warn:active,
-.theme-default .but-warn.link-as-button:active {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 0%));
-  color: hsl(0, 0%, 100%);
-}
-.theme-default .but-warn:active h1,
-.theme-default .but-warn:active h2,
-.theme-default .but-warn:active h3,
-.theme-default .but-warn:active h4,
-.theme-default .but-warn:active h5,
-.theme-default .but-warn:active h6,
-.theme-default .but-warn:active p,
-.theme-default .but-warn:active a,
-.theme-default .but-warn:active strong,
-.theme-default .but-warn:active i,
-.theme-default .but-warn:active em,
-.theme-default .but-warn:active mark,
-.theme-default .but-warn:active small,
-.theme-default .but-warn:active del,
-.theme-default .but-warn:active ins,
-.theme-default .but-warn:active sub,
-.theme-default .but-warn:active sup,
-.theme-default .but-warn:active time,
-.theme-default .but-warn:active .icon,
-.theme-default .but-warn:active button,
-.theme-default .but-warn.link-as-button:active h1,
-.theme-default .but-warn.link-as-button:active h2,
-.theme-default .but-warn.link-as-button:active h3,
-.theme-default .but-warn.link-as-button:active h4,
-.theme-default .but-warn.link-as-button:active h5,
-.theme-default .but-warn.link-as-button:active h6,
-.theme-default .but-warn.link-as-button:active p,
-.theme-default .but-warn.link-as-button:active a,
-.theme-default .but-warn.link-as-button:active strong,
-.theme-default .but-warn.link-as-button:active i,
-.theme-default .but-warn.link-as-button:active em,
-.theme-default .but-warn.link-as-button:active mark,
-.theme-default .but-warn.link-as-button:active small,
-.theme-default .but-warn.link-as-button:active del,
-.theme-default .but-warn.link-as-button:active ins,
-.theme-default .but-warn.link-as-button:active sub,
-.theme-default .but-warn.link-as-button:active sup,
-.theme-default .but-warn.link-as-button:active time,
-.theme-default .but-warn.link-as-button:active .icon,
-.theme-default .but-warn.link-as-button:active button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
-}
-.theme-default .but-warn.disabled,
-.theme-default .but-warn.link-as-button.disabled {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
-}
-.theme-default .but-primary,
-.theme-default .but-primary.link-as-button {
+.theme-default button.primary,
+.theme-default button .primary.link-as-button {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%) 55%, hsl(0, 0%, 100%));
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
-.theme-default .but-primary h1,
-.theme-default .but-primary h2,
-.theme-default .but-primary h3,
-.theme-default .but-primary h4,
-.theme-default .but-primary h5,
-.theme-default .but-primary h6,
-.theme-default .but-primary p,
-.theme-default .but-primary a,
-.theme-default .but-primary strong,
-.theme-default .but-primary i,
-.theme-default .but-primary em,
-.theme-default .but-primary mark,
-.theme-default .but-primary small,
-.theme-default .but-primary del,
-.theme-default .but-primary ins,
-.theme-default .but-primary sub,
-.theme-default .but-primary sup,
-.theme-default .but-primary time,
-.theme-default .but-primary .icon,
-.theme-default .but-primary button,
-.theme-default .but-primary.link-as-button h1,
-.theme-default .but-primary.link-as-button h2,
-.theme-default .but-primary.link-as-button h3,
-.theme-default .but-primary.link-as-button h4,
-.theme-default .but-primary.link-as-button h5,
-.theme-default .but-primary.link-as-button h6,
-.theme-default .but-primary.link-as-button p,
-.theme-default .but-primary.link-as-button a,
-.theme-default .but-primary.link-as-button strong,
-.theme-default .but-primary.link-as-button i,
-.theme-default .but-primary.link-as-button em,
-.theme-default .but-primary.link-as-button mark,
-.theme-default .but-primary.link-as-button small,
-.theme-default .but-primary.link-as-button del,
-.theme-default .but-primary.link-as-button ins,
-.theme-default .but-primary.link-as-button sub,
-.theme-default .but-primary.link-as-button sup,
-.theme-default .but-primary.link-as-button time,
-.theme-default .but-primary.link-as-button .icon,
-.theme-default .but-primary.link-as-button button {
+.theme-default button.primary h1,
+.theme-default button.primary h2,
+.theme-default button.primary h3,
+.theme-default button.primary h4,
+.theme-default button.primary h5,
+.theme-default button.primary h6,
+.theme-default button.primary p,
+.theme-default button.primary a,
+.theme-default button.primary strong,
+.theme-default button.primary i,
+.theme-default button.primary em,
+.theme-default button.primary mark,
+.theme-default button.primary small,
+.theme-default button.primary del,
+.theme-default button.primary ins,
+.theme-default button.primary sub,
+.theme-default button.primary sup,
+.theme-default button.primary time,
+.theme-default button.primary .icon,
+.theme-default button.primary button,
+.theme-default button .primary.link-as-button h1,
+.theme-default button .primary.link-as-button h2,
+.theme-default button .primary.link-as-button h3,
+.theme-default button .primary.link-as-button h4,
+.theme-default button .primary.link-as-button h5,
+.theme-default button .primary.link-as-button h6,
+.theme-default button .primary.link-as-button p,
+.theme-default button .primary.link-as-button a,
+.theme-default button .primary.link-as-button strong,
+.theme-default button .primary.link-as-button i,
+.theme-default button .primary.link-as-button em,
+.theme-default button .primary.link-as-button mark,
+.theme-default button .primary.link-as-button small,
+.theme-default button .primary.link-as-button del,
+.theme-default button .primary.link-as-button ins,
+.theme-default button .primary.link-as-button sub,
+.theme-default button .primary.link-as-button sup,
+.theme-default button .primary.link-as-button time,
+.theme-default button .primary.link-as-button .icon,
+.theme-default button .primary.link-as-button button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
-.theme-default .but-primary:hover,
-.theme-default .but-primary.link-as-button:hover {
+.theme-default button.primary:hover,
+.theme-default button .primary.link-as-button:hover {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%) 75%, hsl(0, 0%, 0%));
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-primary:hover h1,
-.theme-default .but-primary:hover h2,
-.theme-default .but-primary:hover h3,
-.theme-default .but-primary:hover h4,
-.theme-default .but-primary:hover h5,
-.theme-default .but-primary:hover h6,
-.theme-default .but-primary:hover p,
-.theme-default .but-primary:hover a,
-.theme-default .but-primary:hover strong,
-.theme-default .but-primary:hover i,
-.theme-default .but-primary:hover em,
-.theme-default .but-primary:hover mark,
-.theme-default .but-primary:hover small,
-.theme-default .but-primary:hover del,
-.theme-default .but-primary:hover ins,
-.theme-default .but-primary:hover sub,
-.theme-default .but-primary:hover sup,
-.theme-default .but-primary:hover time,
-.theme-default .but-primary:hover .icon,
-.theme-default .but-primary:hover button,
-.theme-default .but-primary.link-as-button:hover h1,
-.theme-default .but-primary.link-as-button:hover h2,
-.theme-default .but-primary.link-as-button:hover h3,
-.theme-default .but-primary.link-as-button:hover h4,
-.theme-default .but-primary.link-as-button:hover h5,
-.theme-default .but-primary.link-as-button:hover h6,
-.theme-default .but-primary.link-as-button:hover p,
-.theme-default .but-primary.link-as-button:hover a,
-.theme-default .but-primary.link-as-button:hover strong,
-.theme-default .but-primary.link-as-button:hover i,
-.theme-default .but-primary.link-as-button:hover em,
-.theme-default .but-primary.link-as-button:hover mark,
-.theme-default .but-primary.link-as-button:hover small,
-.theme-default .but-primary.link-as-button:hover del,
-.theme-default .but-primary.link-as-button:hover ins,
-.theme-default .but-primary.link-as-button:hover sub,
-.theme-default .but-primary.link-as-button:hover sup,
-.theme-default .but-primary.link-as-button:hover time,
-.theme-default .but-primary.link-as-button:hover .icon,
-.theme-default .but-primary.link-as-button:hover button {
+.theme-default button.primary:hover h1,
+.theme-default button.primary:hover h2,
+.theme-default button.primary:hover h3,
+.theme-default button.primary:hover h4,
+.theme-default button.primary:hover h5,
+.theme-default button.primary:hover h6,
+.theme-default button.primary:hover p,
+.theme-default button.primary:hover a,
+.theme-default button.primary:hover strong,
+.theme-default button.primary:hover i,
+.theme-default button.primary:hover em,
+.theme-default button.primary:hover mark,
+.theme-default button.primary:hover small,
+.theme-default button.primary:hover del,
+.theme-default button.primary:hover ins,
+.theme-default button.primary:hover sub,
+.theme-default button.primary:hover sup,
+.theme-default button.primary:hover time,
+.theme-default button.primary:hover .icon,
+.theme-default button.primary:hover button,
+.theme-default button .primary.link-as-button:hover h1,
+.theme-default button .primary.link-as-button:hover h2,
+.theme-default button .primary.link-as-button:hover h3,
+.theme-default button .primary.link-as-button:hover h4,
+.theme-default button .primary.link-as-button:hover h5,
+.theme-default button .primary.link-as-button:hover h6,
+.theme-default button .primary.link-as-button:hover p,
+.theme-default button .primary.link-as-button:hover a,
+.theme-default button .primary.link-as-button:hover strong,
+.theme-default button .primary.link-as-button:hover i,
+.theme-default button .primary.link-as-button:hover em,
+.theme-default button .primary.link-as-button:hover mark,
+.theme-default button .primary.link-as-button:hover small,
+.theme-default button .primary.link-as-button:hover del,
+.theme-default button .primary.link-as-button:hover ins,
+.theme-default button .primary.link-as-button:hover sub,
+.theme-default button .primary.link-as-button:hover sup,
+.theme-default button .primary.link-as-button:hover time,
+.theme-default button .primary.link-as-button:hover .icon,
+.theme-default button .primary.link-as-button:hover button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-primary:active,
-.theme-default .but-primary.link-as-button:active {
+.theme-default button.primary:active,
+.theme-default button .primary.link-as-button:active {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%), hsl(0, 0%, 0%));
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-primary:active h1,
-.theme-default .but-primary:active h2,
-.theme-default .but-primary:active h3,
-.theme-default .but-primary:active h4,
-.theme-default .but-primary:active h5,
-.theme-default .but-primary:active h6,
-.theme-default .but-primary:active p,
-.theme-default .but-primary:active a,
-.theme-default .but-primary:active strong,
-.theme-default .but-primary:active i,
-.theme-default .but-primary:active em,
-.theme-default .but-primary:active mark,
-.theme-default .but-primary:active small,
-.theme-default .but-primary:active del,
-.theme-default .but-primary:active ins,
-.theme-default .but-primary:active sub,
-.theme-default .but-primary:active sup,
-.theme-default .but-primary:active time,
-.theme-default .but-primary:active .icon,
-.theme-default .but-primary:active button,
-.theme-default .but-primary.link-as-button:active h1,
-.theme-default .but-primary.link-as-button:active h2,
-.theme-default .but-primary.link-as-button:active h3,
-.theme-default .but-primary.link-as-button:active h4,
-.theme-default .but-primary.link-as-button:active h5,
-.theme-default .but-primary.link-as-button:active h6,
-.theme-default .but-primary.link-as-button:active p,
-.theme-default .but-primary.link-as-button:active a,
-.theme-default .but-primary.link-as-button:active strong,
-.theme-default .but-primary.link-as-button:active i,
-.theme-default .but-primary.link-as-button:active em,
-.theme-default .but-primary.link-as-button:active mark,
-.theme-default .but-primary.link-as-button:active small,
-.theme-default .but-primary.link-as-button:active del,
-.theme-default .but-primary.link-as-button:active ins,
-.theme-default .but-primary.link-as-button:active sub,
-.theme-default .but-primary.link-as-button:active sup,
-.theme-default .but-primary.link-as-button:active time,
-.theme-default .but-primary.link-as-button:active .icon,
-.theme-default .but-primary.link-as-button:active button {
+.theme-default button.primary:active h1,
+.theme-default button.primary:active h2,
+.theme-default button.primary:active h3,
+.theme-default button.primary:active h4,
+.theme-default button.primary:active h5,
+.theme-default button.primary:active h6,
+.theme-default button.primary:active p,
+.theme-default button.primary:active a,
+.theme-default button.primary:active strong,
+.theme-default button.primary:active i,
+.theme-default button.primary:active em,
+.theme-default button.primary:active mark,
+.theme-default button.primary:active small,
+.theme-default button.primary:active del,
+.theme-default button.primary:active ins,
+.theme-default button.primary:active sub,
+.theme-default button.primary:active sup,
+.theme-default button.primary:active time,
+.theme-default button.primary:active .icon,
+.theme-default button.primary:active button,
+.theme-default button .primary.link-as-button:active h1,
+.theme-default button .primary.link-as-button:active h2,
+.theme-default button .primary.link-as-button:active h3,
+.theme-default button .primary.link-as-button:active h4,
+.theme-default button .primary.link-as-button:active h5,
+.theme-default button .primary.link-as-button:active h6,
+.theme-default button .primary.link-as-button:active p,
+.theme-default button .primary.link-as-button:active a,
+.theme-default button .primary.link-as-button:active strong,
+.theme-default button .primary.link-as-button:active i,
+.theme-default button .primary.link-as-button:active em,
+.theme-default button .primary.link-as-button:active mark,
+.theme-default button .primary.link-as-button:active small,
+.theme-default button .primary.link-as-button:active del,
+.theme-default button .primary.link-as-button:active ins,
+.theme-default button .primary.link-as-button:active sub,
+.theme-default button .primary.link-as-button:active sup,
+.theme-default button .primary.link-as-button:active time,
+.theme-default button .primary.link-as-button:active .icon,
+.theme-default button .primary.link-as-button:active button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default .but-primary.disabled,
-.theme-default .but-primary.link-as-button.disabled {
+.theme-default button.primary.disabled,
+.theme-default button .primary.link-as-button.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default button.warn,
+.theme-default button .warn.link-as-button {
+  background-color: hsl(39, 76%, 49%);
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+}
+.theme-default button.warn h1,
+.theme-default button.warn h2,
+.theme-default button.warn h3,
+.theme-default button.warn h4,
+.theme-default button.warn h5,
+.theme-default button.warn h6,
+.theme-default button.warn p,
+.theme-default button.warn a,
+.theme-default button.warn strong,
+.theme-default button.warn i,
+.theme-default button.warn em,
+.theme-default button.warn mark,
+.theme-default button.warn small,
+.theme-default button.warn del,
+.theme-default button.warn ins,
+.theme-default button.warn sub,
+.theme-default button.warn sup,
+.theme-default button.warn time,
+.theme-default button.warn .icon,
+.theme-default button.warn button,
+.theme-default button .warn.link-as-button h1,
+.theme-default button .warn.link-as-button h2,
+.theme-default button .warn.link-as-button h3,
+.theme-default button .warn.link-as-button h4,
+.theme-default button .warn.link-as-button h5,
+.theme-default button .warn.link-as-button h6,
+.theme-default button .warn.link-as-button p,
+.theme-default button .warn.link-as-button a,
+.theme-default button .warn.link-as-button strong,
+.theme-default button .warn.link-as-button i,
+.theme-default button .warn.link-as-button em,
+.theme-default button .warn.link-as-button mark,
+.theme-default button .warn.link-as-button small,
+.theme-default button .warn.link-as-button del,
+.theme-default button .warn.link-as-button ins,
+.theme-default button .warn.link-as-button sub,
+.theme-default button .warn.link-as-button sup,
+.theme-default button .warn.link-as-button time,
+.theme-default button .warn.link-as-button .icon,
+.theme-default button .warn.link-as-button button {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+}
+.theme-default button.warn:hover,
+.theme-default button .warn.link-as-button:hover {
+  background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 0%));
+  color: hsl(0, 0%, 100%);
+}
+.theme-default button.warn:hover h1,
+.theme-default button.warn:hover h2,
+.theme-default button.warn:hover h3,
+.theme-default button.warn:hover h4,
+.theme-default button.warn:hover h5,
+.theme-default button.warn:hover h6,
+.theme-default button.warn:hover p,
+.theme-default button.warn:hover a,
+.theme-default button.warn:hover strong,
+.theme-default button.warn:hover i,
+.theme-default button.warn:hover em,
+.theme-default button.warn:hover mark,
+.theme-default button.warn:hover small,
+.theme-default button.warn:hover del,
+.theme-default button.warn:hover ins,
+.theme-default button.warn:hover sub,
+.theme-default button.warn:hover sup,
+.theme-default button.warn:hover time,
+.theme-default button.warn:hover .icon,
+.theme-default button.warn:hover button,
+.theme-default button .warn.link-as-button:hover h1,
+.theme-default button .warn.link-as-button:hover h2,
+.theme-default button .warn.link-as-button:hover h3,
+.theme-default button .warn.link-as-button:hover h4,
+.theme-default button .warn.link-as-button:hover h5,
+.theme-default button .warn.link-as-button:hover h6,
+.theme-default button .warn.link-as-button:hover p,
+.theme-default button .warn.link-as-button:hover a,
+.theme-default button .warn.link-as-button:hover strong,
+.theme-default button .warn.link-as-button:hover i,
+.theme-default button .warn.link-as-button:hover em,
+.theme-default button .warn.link-as-button:hover mark,
+.theme-default button .warn.link-as-button:hover small,
+.theme-default button .warn.link-as-button:hover del,
+.theme-default button .warn.link-as-button:hover ins,
+.theme-default button .warn.link-as-button:hover sub,
+.theme-default button .warn.link-as-button:hover sup,
+.theme-default button .warn.link-as-button:hover time,
+.theme-default button .warn.link-as-button:hover .icon,
+.theme-default button .warn.link-as-button:hover button {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+}
+.theme-default button.warn:active,
+.theme-default button .warn.link-as-button:active {
+  background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 0%));
+  color: hsl(0, 0%, 100%);
+}
+.theme-default button.warn:active h1,
+.theme-default button.warn:active h2,
+.theme-default button.warn:active h3,
+.theme-default button.warn:active h4,
+.theme-default button.warn:active h5,
+.theme-default button.warn:active h6,
+.theme-default button.warn:active p,
+.theme-default button.warn:active a,
+.theme-default button.warn:active strong,
+.theme-default button.warn:active i,
+.theme-default button.warn:active em,
+.theme-default button.warn:active mark,
+.theme-default button.warn:active small,
+.theme-default button.warn:active del,
+.theme-default button.warn:active ins,
+.theme-default button.warn:active sub,
+.theme-default button.warn:active sup,
+.theme-default button.warn:active time,
+.theme-default button.warn:active .icon,
+.theme-default button.warn:active button,
+.theme-default button .warn.link-as-button:active h1,
+.theme-default button .warn.link-as-button:active h2,
+.theme-default button .warn.link-as-button:active h3,
+.theme-default button .warn.link-as-button:active h4,
+.theme-default button .warn.link-as-button:active h5,
+.theme-default button .warn.link-as-button:active h6,
+.theme-default button .warn.link-as-button:active p,
+.theme-default button .warn.link-as-button:active a,
+.theme-default button .warn.link-as-button:active strong,
+.theme-default button .warn.link-as-button:active i,
+.theme-default button .warn.link-as-button:active em,
+.theme-default button .warn.link-as-button:active mark,
+.theme-default button .warn.link-as-button:active small,
+.theme-default button .warn.link-as-button:active del,
+.theme-default button .warn.link-as-button:active ins,
+.theme-default button .warn.link-as-button:active sub,
+.theme-default button .warn.link-as-button:active sup,
+.theme-default button .warn.link-as-button:active time,
+.theme-default button .warn.link-as-button:active .icon,
+.theme-default button .warn.link-as-button:active button {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+}
+.theme-default button.warn.disabled,
+.theme-default button .warn.link-as-button.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
 }
 .theme-default button.user-color {
@@ -2408,444 +3001,444 @@ nav.nav-main {
 .theme-dark .ico-color {
   color: rgb(83, 83, 69) !important;
 }
-.theme-dark .but-base {
+.theme-dark button.base {
   background-color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-base h1,
-.theme-dark .but-base h2,
-.theme-dark .but-base h3,
-.theme-dark .but-base h4,
-.theme-dark .but-base h5,
-.theme-dark .but-base h6,
-.theme-dark .but-base p,
-.theme-dark .but-base a,
-.theme-dark .but-base strong,
-.theme-dark .but-base i,
-.theme-dark .but-base em,
-.theme-dark .but-base mark,
-.theme-dark .but-base small,
-.theme-dark .but-base del,
-.theme-dark .but-base ins,
-.theme-dark .but-base sub,
-.theme-dark .but-base sup,
-.theme-dark .but-base time,
-.theme-dark .but-base .icon,
-.theme-dark .but-base button {
+.theme-dark button.base h1,
+.theme-dark button.base h2,
+.theme-dark button.base h3,
+.theme-dark button.base h4,
+.theme-dark button.base h5,
+.theme-dark button.base h6,
+.theme-dark button.base p,
+.theme-dark button.base a,
+.theme-dark button.base strong,
+.theme-dark button.base i,
+.theme-dark button.base em,
+.theme-dark button.base mark,
+.theme-dark button.base small,
+.theme-dark button.base del,
+.theme-dark button.base ins,
+.theme-dark button.base sub,
+.theme-dark button.base sup,
+.theme-dark button.base time,
+.theme-dark button.base .icon,
+.theme-dark button.base button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
 }
-.theme-dark .but-base:hover {
+.theme-dark button.base:hover {
   background-color: hsl(266, 57%, 49%);
 }
-.theme-dark .but-base:hover h1,
-.theme-dark .but-base:hover h2,
-.theme-dark .but-base:hover h3,
-.theme-dark .but-base:hover h4,
-.theme-dark .but-base:hover h5,
-.theme-dark .but-base:hover h6,
-.theme-dark .but-base:hover p,
-.theme-dark .but-base:hover a,
-.theme-dark .but-base:hover strong,
-.theme-dark .but-base:hover i,
-.theme-dark .but-base:hover em,
-.theme-dark .but-base:hover mark,
-.theme-dark .but-base:hover small,
-.theme-dark .but-base:hover del,
-.theme-dark .but-base:hover ins,
-.theme-dark .but-base:hover sub,
-.theme-dark .but-base:hover sup,
-.theme-dark .but-base:hover time,
-.theme-dark .but-base:hover .icon,
-.theme-dark .but-base:hover button {
+.theme-dark button.base:hover h1,
+.theme-dark button.base:hover h2,
+.theme-dark button.base:hover h3,
+.theme-dark button.base:hover h4,
+.theme-dark button.base:hover h5,
+.theme-dark button.base:hover h6,
+.theme-dark button.base:hover p,
+.theme-dark button.base:hover a,
+.theme-dark button.base:hover strong,
+.theme-dark button.base:hover i,
+.theme-dark button.base:hover em,
+.theme-dark button.base:hover mark,
+.theme-dark button.base:hover small,
+.theme-dark button.base:hover del,
+.theme-dark button.base:hover ins,
+.theme-dark button.base:hover sub,
+.theme-dark button.base:hover sup,
+.theme-dark button.base:hover time,
+.theme-dark button.base:hover .icon,
+.theme-dark button.base:hover button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-base:active {
+.theme-dark button.base:active {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%), hsl(0, 0%, 97%));
 }
-.theme-dark .but-base:active h1,
-.theme-dark .but-base:active h2,
-.theme-dark .but-base:active h3,
-.theme-dark .but-base:active h4,
-.theme-dark .but-base:active h5,
-.theme-dark .but-base:active h6,
-.theme-dark .but-base:active p,
-.theme-dark .but-base:active a,
-.theme-dark .but-base:active strong,
-.theme-dark .but-base:active i,
-.theme-dark .but-base:active em,
-.theme-dark .but-base:active mark,
-.theme-dark .but-base:active small,
-.theme-dark .but-base:active del,
-.theme-dark .but-base:active ins,
-.theme-dark .but-base:active sub,
-.theme-dark .but-base:active sup,
-.theme-dark .but-base:active time,
-.theme-dark .but-base:active .icon,
-.theme-dark .but-base:active button {
+.theme-dark button.base:active h1,
+.theme-dark button.base:active h2,
+.theme-dark button.base:active h3,
+.theme-dark button.base:active h4,
+.theme-dark button.base:active h5,
+.theme-dark button.base:active h6,
+.theme-dark button.base:active p,
+.theme-dark button.base:active a,
+.theme-dark button.base:active strong,
+.theme-dark button.base:active i,
+.theme-dark button.base:active em,
+.theme-dark button.base:active mark,
+.theme-dark button.base:active small,
+.theme-dark button.base:active del,
+.theme-dark button.base:active ins,
+.theme-dark button.base:active sub,
+.theme-dark button.base:active sup,
+.theme-dark button.base:active time,
+.theme-dark button.base:active .icon,
+.theme-dark button.base:active button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-secondary {
+.theme-dark button.secondary {
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
 }
-.theme-dark .but-secondary h1,
-.theme-dark .but-secondary h2,
-.theme-dark .but-secondary h3,
-.theme-dark .but-secondary h4,
-.theme-dark .but-secondary h5,
-.theme-dark .but-secondary h6,
-.theme-dark .but-secondary p,
-.theme-dark .but-secondary a,
-.theme-dark .but-secondary strong,
-.theme-dark .but-secondary i,
-.theme-dark .but-secondary em,
-.theme-dark .but-secondary mark,
-.theme-dark .but-secondary small,
-.theme-dark .but-secondary del,
-.theme-dark .but-secondary ins,
-.theme-dark .but-secondary sub,
-.theme-dark .but-secondary sup,
-.theme-dark .but-secondary time,
-.theme-dark .but-secondary .icon,
-.theme-dark .but-secondary button {
+.theme-dark button.secondary h1,
+.theme-dark button.secondary h2,
+.theme-dark button.secondary h3,
+.theme-dark button.secondary h4,
+.theme-dark button.secondary h5,
+.theme-dark button.secondary h6,
+.theme-dark button.secondary p,
+.theme-dark button.secondary a,
+.theme-dark button.secondary strong,
+.theme-dark button.secondary i,
+.theme-dark button.secondary em,
+.theme-dark button.secondary mark,
+.theme-dark button.secondary small,
+.theme-dark button.secondary del,
+.theme-dark button.secondary ins,
+.theme-dark button.secondary sub,
+.theme-dark button.secondary sup,
+.theme-dark button.secondary time,
+.theme-dark button.secondary .icon,
+.theme-dark button.secondary button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
-.theme-dark .but-secondary:hover {
+.theme-dark button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%) 75%, hsl(0, 0%, 97%));
 }
-.theme-dark .but-secondary:hover h1,
-.theme-dark .but-secondary:hover h2,
-.theme-dark .but-secondary:hover h3,
-.theme-dark .but-secondary:hover h4,
-.theme-dark .but-secondary:hover h5,
-.theme-dark .but-secondary:hover h6,
-.theme-dark .but-secondary:hover p,
-.theme-dark .but-secondary:hover a,
-.theme-dark .but-secondary:hover strong,
-.theme-dark .but-secondary:hover i,
-.theme-dark .but-secondary:hover em,
-.theme-dark .but-secondary:hover mark,
-.theme-dark .but-secondary:hover small,
-.theme-dark .but-secondary:hover del,
-.theme-dark .but-secondary:hover ins,
-.theme-dark .but-secondary:hover sub,
-.theme-dark .but-secondary:hover sup,
-.theme-dark .but-secondary:hover time,
-.theme-dark .but-secondary:hover .icon,
-.theme-dark .but-secondary:hover button {
+.theme-dark button.secondary:hover h1,
+.theme-dark button.secondary:hover h2,
+.theme-dark button.secondary:hover h3,
+.theme-dark button.secondary:hover h4,
+.theme-dark button.secondary:hover h5,
+.theme-dark button.secondary:hover h6,
+.theme-dark button.secondary:hover p,
+.theme-dark button.secondary:hover a,
+.theme-dark button.secondary:hover strong,
+.theme-dark button.secondary:hover i,
+.theme-dark button.secondary:hover em,
+.theme-dark button.secondary:hover mark,
+.theme-dark button.secondary:hover small,
+.theme-dark button.secondary:hover del,
+.theme-dark button.secondary:hover ins,
+.theme-dark button.secondary:hover sub,
+.theme-dark button.secondary:hover sup,
+.theme-dark button.secondary:hover time,
+.theme-dark button.secondary:hover .icon,
+.theme-dark button.secondary:hover button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-secondary:active {
+.theme-dark button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%), hsl(0, 0%, 97%));
 }
-.theme-dark .but-secondary:active h1,
-.theme-dark .but-secondary:active h2,
-.theme-dark .but-secondary:active h3,
-.theme-dark .but-secondary:active h4,
-.theme-dark .but-secondary:active h5,
-.theme-dark .but-secondary:active h6,
-.theme-dark .but-secondary:active p,
-.theme-dark .but-secondary:active a,
-.theme-dark .but-secondary:active strong,
-.theme-dark .but-secondary:active i,
-.theme-dark .but-secondary:active em,
-.theme-dark .but-secondary:active mark,
-.theme-dark .but-secondary:active small,
-.theme-dark .but-secondary:active del,
-.theme-dark .but-secondary:active ins,
-.theme-dark .but-secondary:active sub,
-.theme-dark .but-secondary:active sup,
-.theme-dark .but-secondary:active time,
-.theme-dark .but-secondary:active .icon,
-.theme-dark .but-secondary:active button {
+.theme-dark button.secondary:active h1,
+.theme-dark button.secondary:active h2,
+.theme-dark button.secondary:active h3,
+.theme-dark button.secondary:active h4,
+.theme-dark button.secondary:active h5,
+.theme-dark button.secondary:active h6,
+.theme-dark button.secondary:active p,
+.theme-dark button.secondary:active a,
+.theme-dark button.secondary:active strong,
+.theme-dark button.secondary:active i,
+.theme-dark button.secondary:active em,
+.theme-dark button.secondary:active mark,
+.theme-dark button.secondary:active small,
+.theme-dark button.secondary:active del,
+.theme-dark button.secondary:active ins,
+.theme-dark button.secondary:active sub,
+.theme-dark button.secondary:active sup,
+.theme-dark button.secondary:active time,
+.theme-dark button.secondary:active .icon,
+.theme-dark button.secondary:active button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-warn,
-.theme-dark .but-warn.link-as-button {
-  background-color: hsl(39, 76%, 49%);
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
-}
-.theme-dark .but-warn h1,
-.theme-dark .but-warn h2,
-.theme-dark .but-warn h3,
-.theme-dark .but-warn h4,
-.theme-dark .but-warn h5,
-.theme-dark .but-warn h6,
-.theme-dark .but-warn p,
-.theme-dark .but-warn a,
-.theme-dark .but-warn strong,
-.theme-dark .but-warn i,
-.theme-dark .but-warn em,
-.theme-dark .but-warn mark,
-.theme-dark .but-warn small,
-.theme-dark .but-warn del,
-.theme-dark .but-warn ins,
-.theme-dark .but-warn sub,
-.theme-dark .but-warn sup,
-.theme-dark .but-warn time,
-.theme-dark .but-warn .icon,
-.theme-dark .but-warn button,
-.theme-dark .but-warn.link-as-button h1,
-.theme-dark .but-warn.link-as-button h2,
-.theme-dark .but-warn.link-as-button h3,
-.theme-dark .but-warn.link-as-button h4,
-.theme-dark .but-warn.link-as-button h5,
-.theme-dark .but-warn.link-as-button h6,
-.theme-dark .but-warn.link-as-button p,
-.theme-dark .but-warn.link-as-button a,
-.theme-dark .but-warn.link-as-button strong,
-.theme-dark .but-warn.link-as-button i,
-.theme-dark .but-warn.link-as-button em,
-.theme-dark .but-warn.link-as-button mark,
-.theme-dark .but-warn.link-as-button small,
-.theme-dark .but-warn.link-as-button del,
-.theme-dark .but-warn.link-as-button ins,
-.theme-dark .but-warn.link-as-button sub,
-.theme-dark .but-warn.link-as-button sup,
-.theme-dark .but-warn.link-as-button time,
-.theme-dark .but-warn.link-as-button .icon,
-.theme-dark .but-warn.link-as-button button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
-}
-.theme-dark .but-warn:hover,
-.theme-dark .but-warn.link-as-button:hover {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 97%));
-  color: hsl(0, 0%, 3%);
-}
-.theme-dark .but-warn:hover h1,
-.theme-dark .but-warn:hover h2,
-.theme-dark .but-warn:hover h3,
-.theme-dark .but-warn:hover h4,
-.theme-dark .but-warn:hover h5,
-.theme-dark .but-warn:hover h6,
-.theme-dark .but-warn:hover p,
-.theme-dark .but-warn:hover a,
-.theme-dark .but-warn:hover strong,
-.theme-dark .but-warn:hover i,
-.theme-dark .but-warn:hover em,
-.theme-dark .but-warn:hover mark,
-.theme-dark .but-warn:hover small,
-.theme-dark .but-warn:hover del,
-.theme-dark .but-warn:hover ins,
-.theme-dark .but-warn:hover sub,
-.theme-dark .but-warn:hover sup,
-.theme-dark .but-warn:hover time,
-.theme-dark .but-warn:hover .icon,
-.theme-dark .but-warn:hover button,
-.theme-dark .but-warn.link-as-button:hover h1,
-.theme-dark .but-warn.link-as-button:hover h2,
-.theme-dark .but-warn.link-as-button:hover h3,
-.theme-dark .but-warn.link-as-button:hover h4,
-.theme-dark .but-warn.link-as-button:hover h5,
-.theme-dark .but-warn.link-as-button:hover h6,
-.theme-dark .but-warn.link-as-button:hover p,
-.theme-dark .but-warn.link-as-button:hover a,
-.theme-dark .but-warn.link-as-button:hover strong,
-.theme-dark .but-warn.link-as-button:hover i,
-.theme-dark .but-warn.link-as-button:hover em,
-.theme-dark .but-warn.link-as-button:hover mark,
-.theme-dark .but-warn.link-as-button:hover small,
-.theme-dark .but-warn.link-as-button:hover del,
-.theme-dark .but-warn.link-as-button:hover ins,
-.theme-dark .but-warn.link-as-button:hover sub,
-.theme-dark .but-warn.link-as-button:hover sup,
-.theme-dark .but-warn.link-as-button:hover time,
-.theme-dark .but-warn.link-as-button:hover .icon,
-.theme-dark .but-warn.link-as-button:hover button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
-}
-.theme-dark .but-warn:active,
-.theme-dark .but-warn.link-as-button:active {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 97%));
-  color: hsl(0, 0%, 3%);
-}
-.theme-dark .but-warn:active h1,
-.theme-dark .but-warn:active h2,
-.theme-dark .but-warn:active h3,
-.theme-dark .but-warn:active h4,
-.theme-dark .but-warn:active h5,
-.theme-dark .but-warn:active h6,
-.theme-dark .but-warn:active p,
-.theme-dark .but-warn:active a,
-.theme-dark .but-warn:active strong,
-.theme-dark .but-warn:active i,
-.theme-dark .but-warn:active em,
-.theme-dark .but-warn:active mark,
-.theme-dark .but-warn:active small,
-.theme-dark .but-warn:active del,
-.theme-dark .but-warn:active ins,
-.theme-dark .but-warn:active sub,
-.theme-dark .but-warn:active sup,
-.theme-dark .but-warn:active time,
-.theme-dark .but-warn:active .icon,
-.theme-dark .but-warn:active button,
-.theme-dark .but-warn.link-as-button:active h1,
-.theme-dark .but-warn.link-as-button:active h2,
-.theme-dark .but-warn.link-as-button:active h3,
-.theme-dark .but-warn.link-as-button:active h4,
-.theme-dark .but-warn.link-as-button:active h5,
-.theme-dark .but-warn.link-as-button:active h6,
-.theme-dark .but-warn.link-as-button:active p,
-.theme-dark .but-warn.link-as-button:active a,
-.theme-dark .but-warn.link-as-button:active strong,
-.theme-dark .but-warn.link-as-button:active i,
-.theme-dark .but-warn.link-as-button:active em,
-.theme-dark .but-warn.link-as-button:active mark,
-.theme-dark .but-warn.link-as-button:active small,
-.theme-dark .but-warn.link-as-button:active del,
-.theme-dark .but-warn.link-as-button:active ins,
-.theme-dark .but-warn.link-as-button:active sub,
-.theme-dark .but-warn.link-as-button:active sup,
-.theme-dark .but-warn.link-as-button:active time,
-.theme-dark .but-warn.link-as-button:active .icon,
-.theme-dark .but-warn.link-as-button:active button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
-}
-.theme-dark .but-warn.disabled,
-.theme-dark .but-warn.link-as-button.disabled {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
-}
-.theme-dark .but-primary,
-.theme-dark .but-primary.link-as-button {
+.theme-dark button.primary,
+.theme-dark button .primary.link-as-button {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%) 55%, hsl(0, 0%, 3%));
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
-.theme-dark .but-primary h1,
-.theme-dark .but-primary h2,
-.theme-dark .but-primary h3,
-.theme-dark .but-primary h4,
-.theme-dark .but-primary h5,
-.theme-dark .but-primary h6,
-.theme-dark .but-primary p,
-.theme-dark .but-primary a,
-.theme-dark .but-primary strong,
-.theme-dark .but-primary i,
-.theme-dark .but-primary em,
-.theme-dark .but-primary mark,
-.theme-dark .but-primary small,
-.theme-dark .but-primary del,
-.theme-dark .but-primary ins,
-.theme-dark .but-primary sub,
-.theme-dark .but-primary sup,
-.theme-dark .but-primary time,
-.theme-dark .but-primary .icon,
-.theme-dark .but-primary button,
-.theme-dark .but-primary.link-as-button h1,
-.theme-dark .but-primary.link-as-button h2,
-.theme-dark .but-primary.link-as-button h3,
-.theme-dark .but-primary.link-as-button h4,
-.theme-dark .but-primary.link-as-button h5,
-.theme-dark .but-primary.link-as-button h6,
-.theme-dark .but-primary.link-as-button p,
-.theme-dark .but-primary.link-as-button a,
-.theme-dark .but-primary.link-as-button strong,
-.theme-dark .but-primary.link-as-button i,
-.theme-dark .but-primary.link-as-button em,
-.theme-dark .but-primary.link-as-button mark,
-.theme-dark .but-primary.link-as-button small,
-.theme-dark .but-primary.link-as-button del,
-.theme-dark .but-primary.link-as-button ins,
-.theme-dark .but-primary.link-as-button sub,
-.theme-dark .but-primary.link-as-button sup,
-.theme-dark .but-primary.link-as-button time,
-.theme-dark .but-primary.link-as-button .icon,
-.theme-dark .but-primary.link-as-button button {
+.theme-dark button.primary h1,
+.theme-dark button.primary h2,
+.theme-dark button.primary h3,
+.theme-dark button.primary h4,
+.theme-dark button.primary h5,
+.theme-dark button.primary h6,
+.theme-dark button.primary p,
+.theme-dark button.primary a,
+.theme-dark button.primary strong,
+.theme-dark button.primary i,
+.theme-dark button.primary em,
+.theme-dark button.primary mark,
+.theme-dark button.primary small,
+.theme-dark button.primary del,
+.theme-dark button.primary ins,
+.theme-dark button.primary sub,
+.theme-dark button.primary sup,
+.theme-dark button.primary time,
+.theme-dark button.primary .icon,
+.theme-dark button.primary button,
+.theme-dark button .primary.link-as-button h1,
+.theme-dark button .primary.link-as-button h2,
+.theme-dark button .primary.link-as-button h3,
+.theme-dark button .primary.link-as-button h4,
+.theme-dark button .primary.link-as-button h5,
+.theme-dark button .primary.link-as-button h6,
+.theme-dark button .primary.link-as-button p,
+.theme-dark button .primary.link-as-button a,
+.theme-dark button .primary.link-as-button strong,
+.theme-dark button .primary.link-as-button i,
+.theme-dark button .primary.link-as-button em,
+.theme-dark button .primary.link-as-button mark,
+.theme-dark button .primary.link-as-button small,
+.theme-dark button .primary.link-as-button del,
+.theme-dark button .primary.link-as-button ins,
+.theme-dark button .primary.link-as-button sub,
+.theme-dark button .primary.link-as-button sup,
+.theme-dark button .primary.link-as-button time,
+.theme-dark button .primary.link-as-button .icon,
+.theme-dark button .primary.link-as-button button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
-.theme-dark .but-primary:hover,
-.theme-dark .but-primary.link-as-button:hover {
+.theme-dark button.primary:hover,
+.theme-dark button .primary.link-as-button:hover {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%) 75%, hsl(0, 0%, 97%));
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-primary:hover h1,
-.theme-dark .but-primary:hover h2,
-.theme-dark .but-primary:hover h3,
-.theme-dark .but-primary:hover h4,
-.theme-dark .but-primary:hover h5,
-.theme-dark .but-primary:hover h6,
-.theme-dark .but-primary:hover p,
-.theme-dark .but-primary:hover a,
-.theme-dark .but-primary:hover strong,
-.theme-dark .but-primary:hover i,
-.theme-dark .but-primary:hover em,
-.theme-dark .but-primary:hover mark,
-.theme-dark .but-primary:hover small,
-.theme-dark .but-primary:hover del,
-.theme-dark .but-primary:hover ins,
-.theme-dark .but-primary:hover sub,
-.theme-dark .but-primary:hover sup,
-.theme-dark .but-primary:hover time,
-.theme-dark .but-primary:hover .icon,
-.theme-dark .but-primary:hover button,
-.theme-dark .but-primary.link-as-button:hover h1,
-.theme-dark .but-primary.link-as-button:hover h2,
-.theme-dark .but-primary.link-as-button:hover h3,
-.theme-dark .but-primary.link-as-button:hover h4,
-.theme-dark .but-primary.link-as-button:hover h5,
-.theme-dark .but-primary.link-as-button:hover h6,
-.theme-dark .but-primary.link-as-button:hover p,
-.theme-dark .but-primary.link-as-button:hover a,
-.theme-dark .but-primary.link-as-button:hover strong,
-.theme-dark .but-primary.link-as-button:hover i,
-.theme-dark .but-primary.link-as-button:hover em,
-.theme-dark .but-primary.link-as-button:hover mark,
-.theme-dark .but-primary.link-as-button:hover small,
-.theme-dark .but-primary.link-as-button:hover del,
-.theme-dark .but-primary.link-as-button:hover ins,
-.theme-dark .but-primary.link-as-button:hover sub,
-.theme-dark .but-primary.link-as-button:hover sup,
-.theme-dark .but-primary.link-as-button:hover time,
-.theme-dark .but-primary.link-as-button:hover .icon,
-.theme-dark .but-primary.link-as-button:hover button {
+.theme-dark button.primary:hover h1,
+.theme-dark button.primary:hover h2,
+.theme-dark button.primary:hover h3,
+.theme-dark button.primary:hover h4,
+.theme-dark button.primary:hover h5,
+.theme-dark button.primary:hover h6,
+.theme-dark button.primary:hover p,
+.theme-dark button.primary:hover a,
+.theme-dark button.primary:hover strong,
+.theme-dark button.primary:hover i,
+.theme-dark button.primary:hover em,
+.theme-dark button.primary:hover mark,
+.theme-dark button.primary:hover small,
+.theme-dark button.primary:hover del,
+.theme-dark button.primary:hover ins,
+.theme-dark button.primary:hover sub,
+.theme-dark button.primary:hover sup,
+.theme-dark button.primary:hover time,
+.theme-dark button.primary:hover .icon,
+.theme-dark button.primary:hover button,
+.theme-dark button .primary.link-as-button:hover h1,
+.theme-dark button .primary.link-as-button:hover h2,
+.theme-dark button .primary.link-as-button:hover h3,
+.theme-dark button .primary.link-as-button:hover h4,
+.theme-dark button .primary.link-as-button:hover h5,
+.theme-dark button .primary.link-as-button:hover h6,
+.theme-dark button .primary.link-as-button:hover p,
+.theme-dark button .primary.link-as-button:hover a,
+.theme-dark button .primary.link-as-button:hover strong,
+.theme-dark button .primary.link-as-button:hover i,
+.theme-dark button .primary.link-as-button:hover em,
+.theme-dark button .primary.link-as-button:hover mark,
+.theme-dark button .primary.link-as-button:hover small,
+.theme-dark button .primary.link-as-button:hover del,
+.theme-dark button .primary.link-as-button:hover ins,
+.theme-dark button .primary.link-as-button:hover sub,
+.theme-dark button .primary.link-as-button:hover sup,
+.theme-dark button .primary.link-as-button:hover time,
+.theme-dark button .primary.link-as-button:hover .icon,
+.theme-dark button .primary.link-as-button:hover button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-primary:active,
-.theme-dark .but-primary.link-as-button:active {
+.theme-dark button.primary:active,
+.theme-dark button .primary.link-as-button:active {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%), hsl(0, 0%, 97%));
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-primary:active h1,
-.theme-dark .but-primary:active h2,
-.theme-dark .but-primary:active h3,
-.theme-dark .but-primary:active h4,
-.theme-dark .but-primary:active h5,
-.theme-dark .but-primary:active h6,
-.theme-dark .but-primary:active p,
-.theme-dark .but-primary:active a,
-.theme-dark .but-primary:active strong,
-.theme-dark .but-primary:active i,
-.theme-dark .but-primary:active em,
-.theme-dark .but-primary:active mark,
-.theme-dark .but-primary:active small,
-.theme-dark .but-primary:active del,
-.theme-dark .but-primary:active ins,
-.theme-dark .but-primary:active sub,
-.theme-dark .but-primary:active sup,
-.theme-dark .but-primary:active time,
-.theme-dark .but-primary:active .icon,
-.theme-dark .but-primary:active button,
-.theme-dark .but-primary.link-as-button:active h1,
-.theme-dark .but-primary.link-as-button:active h2,
-.theme-dark .but-primary.link-as-button:active h3,
-.theme-dark .but-primary.link-as-button:active h4,
-.theme-dark .but-primary.link-as-button:active h5,
-.theme-dark .but-primary.link-as-button:active h6,
-.theme-dark .but-primary.link-as-button:active p,
-.theme-dark .but-primary.link-as-button:active a,
-.theme-dark .but-primary.link-as-button:active strong,
-.theme-dark .but-primary.link-as-button:active i,
-.theme-dark .but-primary.link-as-button:active em,
-.theme-dark .but-primary.link-as-button:active mark,
-.theme-dark .but-primary.link-as-button:active small,
-.theme-dark .but-primary.link-as-button:active del,
-.theme-dark .but-primary.link-as-button:active ins,
-.theme-dark .but-primary.link-as-button:active sub,
-.theme-dark .but-primary.link-as-button:active sup,
-.theme-dark .but-primary.link-as-button:active time,
-.theme-dark .but-primary.link-as-button:active .icon,
-.theme-dark .but-primary.link-as-button:active button {
+.theme-dark button.primary:active h1,
+.theme-dark button.primary:active h2,
+.theme-dark button.primary:active h3,
+.theme-dark button.primary:active h4,
+.theme-dark button.primary:active h5,
+.theme-dark button.primary:active h6,
+.theme-dark button.primary:active p,
+.theme-dark button.primary:active a,
+.theme-dark button.primary:active strong,
+.theme-dark button.primary:active i,
+.theme-dark button.primary:active em,
+.theme-dark button.primary:active mark,
+.theme-dark button.primary:active small,
+.theme-dark button.primary:active del,
+.theme-dark button.primary:active ins,
+.theme-dark button.primary:active sub,
+.theme-dark button.primary:active sup,
+.theme-dark button.primary:active time,
+.theme-dark button.primary:active .icon,
+.theme-dark button.primary:active button,
+.theme-dark button .primary.link-as-button:active h1,
+.theme-dark button .primary.link-as-button:active h2,
+.theme-dark button .primary.link-as-button:active h3,
+.theme-dark button .primary.link-as-button:active h4,
+.theme-dark button .primary.link-as-button:active h5,
+.theme-dark button .primary.link-as-button:active h6,
+.theme-dark button .primary.link-as-button:active p,
+.theme-dark button .primary.link-as-button:active a,
+.theme-dark button .primary.link-as-button:active strong,
+.theme-dark button .primary.link-as-button:active i,
+.theme-dark button .primary.link-as-button:active em,
+.theme-dark button .primary.link-as-button:active mark,
+.theme-dark button .primary.link-as-button:active small,
+.theme-dark button .primary.link-as-button:active del,
+.theme-dark button .primary.link-as-button:active ins,
+.theme-dark button .primary.link-as-button:active sub,
+.theme-dark button .primary.link-as-button:active sup,
+.theme-dark button .primary.link-as-button:active time,
+.theme-dark button .primary.link-as-button:active .icon,
+.theme-dark button .primary.link-as-button:active button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark .but-primary.disabled,
-.theme-dark .but-primary.link-as-button.disabled {
+.theme-dark button.primary.disabled,
+.theme-dark button .primary.link-as-button.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
+}
+.theme-dark button.warn,
+.theme-dark button .warn.link-as-button {
+  background-color: hsl(39, 76%, 49%);
+  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+}
+.theme-dark button.warn h1,
+.theme-dark button.warn h2,
+.theme-dark button.warn h3,
+.theme-dark button.warn h4,
+.theme-dark button.warn h5,
+.theme-dark button.warn h6,
+.theme-dark button.warn p,
+.theme-dark button.warn a,
+.theme-dark button.warn strong,
+.theme-dark button.warn i,
+.theme-dark button.warn em,
+.theme-dark button.warn mark,
+.theme-dark button.warn small,
+.theme-dark button.warn del,
+.theme-dark button.warn ins,
+.theme-dark button.warn sub,
+.theme-dark button.warn sup,
+.theme-dark button.warn time,
+.theme-dark button.warn .icon,
+.theme-dark button.warn button,
+.theme-dark button .warn.link-as-button h1,
+.theme-dark button .warn.link-as-button h2,
+.theme-dark button .warn.link-as-button h3,
+.theme-dark button .warn.link-as-button h4,
+.theme-dark button .warn.link-as-button h5,
+.theme-dark button .warn.link-as-button h6,
+.theme-dark button .warn.link-as-button p,
+.theme-dark button .warn.link-as-button a,
+.theme-dark button .warn.link-as-button strong,
+.theme-dark button .warn.link-as-button i,
+.theme-dark button .warn.link-as-button em,
+.theme-dark button .warn.link-as-button mark,
+.theme-dark button .warn.link-as-button small,
+.theme-dark button .warn.link-as-button del,
+.theme-dark button .warn.link-as-button ins,
+.theme-dark button .warn.link-as-button sub,
+.theme-dark button .warn.link-as-button sup,
+.theme-dark button .warn.link-as-button time,
+.theme-dark button .warn.link-as-button .icon,
+.theme-dark button .warn.link-as-button button {
+  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+}
+.theme-dark button.warn:hover,
+.theme-dark button .warn.link-as-button:hover {
+  background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 97%));
+  color: hsl(0, 0%, 3%);
+}
+.theme-dark button.warn:hover h1,
+.theme-dark button.warn:hover h2,
+.theme-dark button.warn:hover h3,
+.theme-dark button.warn:hover h4,
+.theme-dark button.warn:hover h5,
+.theme-dark button.warn:hover h6,
+.theme-dark button.warn:hover p,
+.theme-dark button.warn:hover a,
+.theme-dark button.warn:hover strong,
+.theme-dark button.warn:hover i,
+.theme-dark button.warn:hover em,
+.theme-dark button.warn:hover mark,
+.theme-dark button.warn:hover small,
+.theme-dark button.warn:hover del,
+.theme-dark button.warn:hover ins,
+.theme-dark button.warn:hover sub,
+.theme-dark button.warn:hover sup,
+.theme-dark button.warn:hover time,
+.theme-dark button.warn:hover .icon,
+.theme-dark button.warn:hover button,
+.theme-dark button .warn.link-as-button:hover h1,
+.theme-dark button .warn.link-as-button:hover h2,
+.theme-dark button .warn.link-as-button:hover h3,
+.theme-dark button .warn.link-as-button:hover h4,
+.theme-dark button .warn.link-as-button:hover h5,
+.theme-dark button .warn.link-as-button:hover h6,
+.theme-dark button .warn.link-as-button:hover p,
+.theme-dark button .warn.link-as-button:hover a,
+.theme-dark button .warn.link-as-button:hover strong,
+.theme-dark button .warn.link-as-button:hover i,
+.theme-dark button .warn.link-as-button:hover em,
+.theme-dark button .warn.link-as-button:hover mark,
+.theme-dark button .warn.link-as-button:hover small,
+.theme-dark button .warn.link-as-button:hover del,
+.theme-dark button .warn.link-as-button:hover ins,
+.theme-dark button .warn.link-as-button:hover sub,
+.theme-dark button .warn.link-as-button:hover sup,
+.theme-dark button .warn.link-as-button:hover time,
+.theme-dark button .warn.link-as-button:hover .icon,
+.theme-dark button .warn.link-as-button:hover button {
+  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+}
+.theme-dark button.warn:active,
+.theme-dark button .warn.link-as-button:active {
+  background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 97%));
+  color: hsl(0, 0%, 3%);
+}
+.theme-dark button.warn:active h1,
+.theme-dark button.warn:active h2,
+.theme-dark button.warn:active h3,
+.theme-dark button.warn:active h4,
+.theme-dark button.warn:active h5,
+.theme-dark button.warn:active h6,
+.theme-dark button.warn:active p,
+.theme-dark button.warn:active a,
+.theme-dark button.warn:active strong,
+.theme-dark button.warn:active i,
+.theme-dark button.warn:active em,
+.theme-dark button.warn:active mark,
+.theme-dark button.warn:active small,
+.theme-dark button.warn:active del,
+.theme-dark button.warn:active ins,
+.theme-dark button.warn:active sub,
+.theme-dark button.warn:active sup,
+.theme-dark button.warn:active time,
+.theme-dark button.warn:active .icon,
+.theme-dark button.warn:active button,
+.theme-dark button .warn.link-as-button:active h1,
+.theme-dark button .warn.link-as-button:active h2,
+.theme-dark button .warn.link-as-button:active h3,
+.theme-dark button .warn.link-as-button:active h4,
+.theme-dark button .warn.link-as-button:active h5,
+.theme-dark button .warn.link-as-button:active h6,
+.theme-dark button .warn.link-as-button:active p,
+.theme-dark button .warn.link-as-button:active a,
+.theme-dark button .warn.link-as-button:active strong,
+.theme-dark button .warn.link-as-button:active i,
+.theme-dark button .warn.link-as-button:active em,
+.theme-dark button .warn.link-as-button:active mark,
+.theme-dark button .warn.link-as-button:active small,
+.theme-dark button .warn.link-as-button:active del,
+.theme-dark button .warn.link-as-button:active ins,
+.theme-dark button .warn.link-as-button:active sub,
+.theme-dark button .warn.link-as-button:active sup,
+.theme-dark button .warn.link-as-button:active time,
+.theme-dark button .warn.link-as-button:active .icon,
+.theme-dark button .warn.link-as-button:active button {
+  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+}
+.theme-dark button.warn.disabled,
+.theme-dark button .warn.link-as-button.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
 }
 .theme-dark button.user-color {

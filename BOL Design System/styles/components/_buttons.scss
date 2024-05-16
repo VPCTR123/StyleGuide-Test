@@ -8,58 +8,53 @@ button,
     background-color: black;
     color: white;
     cursor: pointer;
-    padding: 0 .5rem;
-    height: var(--buttonH);
-    line-height: var(--buttonH);
-
-    //** Button Variant Circle
-    &.but-circle {
-        width: var(--buttonH);
-        min-width: var(--buttonH);
-        border-radius: 100%;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    //** Button Variant Square
-    &.but-square {
-        width: var(--buttonH);
-        min-width: var(--buttonH);
-        border-radius: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    //** Button Variants (Height)
-    &.but-xs {
-        --buttonH: .5rem;
-    }
-
-    &.but-sm {
-        --buttonH: 1rem;
-    }
-
-    &.but-md {
-        --buttonH: 2rem;
-    }
-
-    &.but-lg {
-        --buttonH: 4rem;
-    }
-
-    &.but-xl {
-        --buttonH: 6rem;
-    }
+    overflow: hidden;
 
     &.disabled {
         pointer-events: none;
         cursor: not-allowed;
     }
- 
+
+    &.but-xxs {
+        --buttonW: 2rem;
+    }
+
+    &.but-xs {
+        --buttonW: 4rem;
+    }
+
+    &.but-sm {
+        --buttonW: 6rem;
+    }
+
+    &.but-md {
+        --buttonW: 8rem;
+    }
+
+    &.but-lg {
+        --buttonW: 10rem;
+    }
+
+    &.but-xl {
+        --buttonW: 12rem;
+    }
+
+    &.but-xxl {
+        --buttonW: 14rem;
+    }
+
+    width: var(--buttonW);
+    line-height: var(--buttonH);
+
+    &.but-circle {
+        height: var(--buttonW);
+        border-radius: 100%;
+    }
+
+    &.but-square {
+        height: var(--buttonW);
+        border-radius: 0%;
+    }
 }
 
 //needs changing

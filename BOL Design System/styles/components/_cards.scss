@@ -7,45 +7,61 @@
     position: relative;
 
     //** Card Width Variants
+    &.car-xxs {
+        width: var(--celXxs);
+    }
+
     &.car-xs {
-        width: 6.25rem;
+        width: var(--celXs);
     }
 
     &.car-sm {
-        width: 13rem;
+        width: var(--celSm);
     }
 
     &.car-md {
-        width: 18rem;
+        width: var(--celMd);
     }
 
     &.car-lg {
-        width: 25rem;
+        width: var(--celLg);
     }
 
     &.car-xl {
-        width: 40rem;
+        width: var(--celXl);
+    }
+
+    &.car-xxl {
+        width: var(--celXxl);
     }
 
     //** Card Height Variants
-    &.car-xsH {
-        height: 6.25rem;
+    &.car-xxsVr {
+        height: var(--celXxs);
     }
 
-    &.car-smH {
-        height: 13rem;
+    &.car-xsVr {
+        height: var(--celXs);
     }
 
-    &.car-mdH {
-        height: 18rem;
+    &.car-smVr {
+        height: var(--celSm);
     }
 
-    &.car-lgH {
-        height: 25rem;
+    &.car-mdVr {
+        height: var(--celMd);
     }
 
-    &.car-xlH {
-        height: 40rem;
+    &.car-lgVr {
+        height: var(--celLg);
+    }
+
+    &.car-xlVr {
+        height: var(--celXl);
+    }
+
+    &.car-xxlVr {
+        width: var(--celXxl);
     }
 }
 
@@ -144,7 +160,3 @@
         --thumbY: 100%;
     }
 }
-
-
-
-

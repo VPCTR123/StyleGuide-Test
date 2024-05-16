@@ -8,140 +8,82 @@
 
     //** Basic properties
     background-color: white;
- 
+
     overflow: hidden;
 
     //** Width Variants 
     &.men-xxs {
-        width: 2rem;
+        width: var(--celXxs);
     }
 
     &.men-xs {
-        width: 7.5rem;
+        width: var(--celXs);
     }
 
     &.men-sm {
-        width: 13.5rem;
-
+        width: var(--celSm);
     }
 
     &.men-md {
-        width: 30rem;
-
+        width: var(--celMd);
     }
 
     &.men-lg {
-        width: 40rem;
-
+        width: var(--celLg);
     }
 
     &.men-xl {
-        width: 60rem;
-
+        width: var(--celXl);
     }
 
     &.men-xxl {
-        width: 100rem;
-
+        width: var(--celXxl);
+    }
+    &.men-xxsVr {
+        height: var(--celXxs);
     }
 
-    &.men-full {
-        width: 100%;
-    }
-}
-
-//** Menu Footer Component - A (div) footer that complements the style of a menu and its size by adding proportional padding.
-.menu-footer {
-
-    //** Variants
-    &.menf-xxs {
-        padding: var(--padXxs);
+    &.men-xsVr {
+        height: var(--celXs);
     }
 
-    &.menf-xs {
-        padding: var(--padXs);
+    &.men-smVr {
+        height: var(--celSm);
     }
 
-    &.menf-sm {
-        padding: var(--padSm);
+    &.men-mdVr {
+        height: var(--celMd);
     }
 
-    &.menf-md {
-        padding: var(--padMd);
+    &.men-lgVr {
+        height: var(--celLg);
     }
 
-    &.menf-lg {
-        padding: var(--padLg);
+    &.men-xlVr {
+        height: var(--celXl);
     }
 
-    &.menf-xl {
-        padding: var(--padXl);
+    &.men-xxlVr {
+       height: var(--celXxl);
     }
 
-    &.menf-xxl {
-        padding: var(--padXxl);
+    &.men-fullVr {
+        height: 100%;
     }
 }
 
-//** Menu Header Component - A (div) header that complements the style of a menu and its size by adding proportional padding.
-.menu-header {
-
-    //** Variants
-    &.menh-xxs {
-        padding: var(--padXxs);
-    }
-
-    &.menh-xs {
-        padding: var(--padXs);
-    }
-
-    &.menh-sm {
-        padding: var(--padSm);
-    }
-
-    &.menh-md {
-        padding: var(--padMd);
-    }
-
-    &.menh-lg {
-        padding: var(--padLg);
-    }
-
-    &.menh-xl {
-        padding: var(--padXl);
-    }
-
-    &.menh-xxl {
-        padding: var(--padXxl);
-    }
-}
-
-//** By default, menu footer and header have display flex, and flex wrap.
-.menu-footer,
-.menu-header {
-    display: flex;
-    flex-wrap: wrap;
-    user-select: none;
-}
-//** OUT DATED COMMENT SELECORS ARE NOW CLASSED IN A TAG
-//** Selector Component - A (ul) list made of <a> tags, used in menus as links. 
-//**                      Ideally, each <li> is separated by an <hr>
-//**                      Override base padding on <a> tags to match padding style on menu.
-
-//** Later, there will be non-link buttons as well.
-
-
-.selector{
+.selector {
     user-select: none;
     background-color: lightgray;
     list-style: none;
     font-size: 0.8125rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 
-        text-decoration: none;
-        display: block;
-        height: 2rem;
-        line-height: 2rem;
+    text-decoration: none;
+    display: flex;
+
+    height: 2rem;
+    line-height: 2rem;
 
 }

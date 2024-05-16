@@ -19,3 +19,8 @@ a {}
 .link-nostyle{
     text-decoration: none;
 }
+.word-break{
+    &.worB-breakAll{
+        word-break: break-all;
+    }
+}

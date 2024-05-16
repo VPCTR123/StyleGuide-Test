@@ -177,86 +177,95 @@
         color: rgb(83, 83, 69) !important;
     }
 
-    .but-base {
-        background-color: $base;
-        @include textcolor($base33);
+    button {
+        &.base {
+            background-color: $base;
+            @include textcolor($base33);
 
-        &:hover {
-            background-color: $primary;
-            @include textcolor($base);
+            &:hover {
+                background-color: $primary;
+                @include textcolor($base);
 
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $primary, $baseInv);
+                @include textcolor($base);
+            }
         }
 
-        &:active {
-            background-color: color-mix(in srgb, $primary, $baseInv);
-            @include textcolor($base);
-        }
+        &.secondary {
 
-    }
-
-    .but-secondary {
-
-        background-color: $base75;
-        @include textcolor($base10);
-
-        &:hover {
-            background-color: color-mix(in srgb, $base75 75%, $baseInv);
-            @include textcolor($base);
-
-        }
-
-        &:active {
-            background-color: color-mix(in srgb, $base75, $baseInv);
-            @include textcolor($base);
-        }
-
-    }
-
-    .but-warn,
-    .but-warn.link-as-button {
-        background-color: $warn;
-        @include textcolor($base10);
-        color: $base10;
-        &:hover {
-            background-color: color-mix(in srgb, $warn 75%, $baseInv);
+            background-color: $base75;
             @include textcolor($base10);
-            color: $base;
+
+            &:hover {
+                background-color: color-mix(in srgb, $base75 75%, $baseInv);
+                @include textcolor($base);
+
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $base75, $baseInv);
+                @include textcolor($base);
+            }
+
         }
 
-        &:active {
-            background-color: color-mix(in srgb, $warn, $baseInv);
+        &.primary,
+        .primary.link-as-button {
+
+            background-color: color-mix(in srgb, $primary 55%, $base);
             @include textcolor($base10);
-            color: $base;
-        }
+            color: $base10;
 
-        &.disabled {
-            background-color: $base50;
+            &:hover {
+                background-color: color-mix(in srgb, $primary 75%, $baseInv);
+                @include textcolor($base);
+                color: $base;
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $primary, $baseInv);
+                @include textcolor($base);
+                color: $base;
+            }
+
+            &.disabled {
+                background-color: $base50;
+            }
+
+        }
+        &.warn,
+        .warn.link-as-button {
+            background-color: $warn;
+            @include textcolor($base10);
+            color: $base10;
+    
+            &:hover {
+                background-color: color-mix(in srgb, $warn 75%, $baseInv);
+                @include textcolor($base10);
+                color: $base;
+            }
+    
+            &:active {
+                background-color: color-mix(in srgb, $warn, $baseInv);
+                @include textcolor($base10);
+                color: $base;
+            }
+    
+            &.disabled {
+                background-color: $base50;
+            }
         }
     }
 
-    .but-primary,
-    .but-primary.link-as-button {
 
-        background-color: color-mix(in srgb, $primary 55%, $base);
-        @include textcolor($base10);
-        color: $base10;
-        &:hover {
-            background-color: color-mix(in srgb, $primary 75%, $baseInv);
-            @include textcolor($base);
-            color: $base;
-        }
 
-        &:active {
-            background-color: color-mix(in srgb, $primary, $baseInv);
-            @include textcolor($base);
-            color: $base;
-        }
 
-        &.disabled {
-            background-color: $base50;
-        }
+   
 
-    }
+
 
     button.user-color {
         background-color: $userColor;

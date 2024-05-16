@@ -64,28 +64,9 @@
         display: block;
     }
 
-    //** extra-light -> extra-dark variants.
-    // &.ove-xl {
-    //     opacity: 15%;
-    // }
-
-    // &.ove-lg {
-    //     opacity: 30%;
-    // }
-
-    // &.ove-md {
-    //     opacity: 50%;
-    // }
-
-    // &.ove-dk {
-    //     opacity: 70%;
-    // }
-
-    // &.ove-xd {
-    //     opacity: 85%;
-    // }
 }
 
+// needs attention - matches content max width and creates gradient that fades out around it (if centered)
 .focus-overlay {
     pointer-events: none;
     position: fixed;
@@ -94,30 +75,52 @@
     display: flex;
     justify-content: space-between;
 
+    & .foco-xxsL,
+    .foco-xxsR {
+        pointer-events: none;
+        width: calc(calc(100% - calc(var(--celXxs) * 2))/2);
+    }
+
     & .foco-xsL,
-    .foco-xsR {}
+    .foco-xsR {
+        pointer-events: none;
+        width: calc(calc(100% - calc(var(--celXs) * 2))/2);
+    }
 
     & .foco-smL,
-    .foco-smR {}
+    .foco-smR {
+        pointer-events: none;
+        width: calc(calc(100% - calc(var(--celSm) * 2))/2);
+    }
 
 
     & .foco-mdL,
     .foco-mdR {
-        pointer-events: all;
-        width: calc(calc(100% - 65rem)/2);
+        pointer-events: none;
+        width: calc(calc(100% - calc(var(--celMd) * 2))/2);
 
     }
 
     & .foco-lgL,
     .foco-lgR {
-        pointer-events: all;
-        width: calc(calc(100% - 75rem)/2);
+        pointer-events: none;
+        width: calc(calc(100% - calc(var(--celLg) * 2))/2);
 
     }
 
 
     & .foco-xlL,
-    .foco-xlR {}
+    .foco-xlR {
+        pointer-events: none;
+        width: calc(calc(100% - calc(var(--celXl) * 2))/2);
+    }
 
 
+    & .foco-xxlL,
+    .foco-xxlR {
+        pointer-events: none;
+        width: calc(calc(100% - calc(var(--celXxl) * 2))/2);
+    }
+
+    
 }

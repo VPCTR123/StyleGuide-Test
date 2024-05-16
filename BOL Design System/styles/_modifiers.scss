@@ -1,103 +1,682 @@
-//** Fade In / Out Modifier. (Apply fade class to allow)
-//** Use JS or other methods to toggle classes which show and hide element with a short transition.
-.fade {
-    //** Default
-    transition: 0;
+//designed to match size of grid cells correspondingly 
+.cell {
 
-    //** Fade out
-    .fad-out {
-        transition: .5s;
-        opacity: 0;
+    &.cel-xxs {
+        width: var(--celXxs);
     }
 
-    //** Fade in
-    .fad-in {
-        transition: .5s;
-        opacity: 100;
+    &.cel-xs {
+        width: var(--celXs);
+    }
+
+    &.cel-sm {
+        width: var(--celSm);
+    }
+
+    &.cel-md {
+        width: var(--celMd);
+    }
+
+    &.cel-lg {
+        width: var(--celLg);
+    }
+
+    &.cel-xl {
+        width: var(--celXl);
+    }
+
+    &.cel-xxl {
+        width: var(--celXxl);
     }
 }
-.hide-bg{
 
-    background-color: hsla(0, 0, 0, 0) !important;
-}
-//** User Select Modifier
-.select {
-    //** Default
-    user-select: auto;
+//** Cursor Behavior
+.cursor {
+    cursor: default;
 
-    //** Variants
-    &.sel-none {
-        user-select: none;
+    &.cur-pointer {
+        cursor: pointer;
     }
 }
 
-.disabled{
+//** Body Component - A (div) container that behaves in various ways, used to hold content.
+.content {
+
+
+    //** Scroll Behavior
+    &.con-scrollY {
+        overflow-y: scroll;
+    }
+
+    &.con-scrollY-auto {
+        overflow-y: auto;
+    }
+
+    &.con-scrollX {
+        overflow-y: scroll;
+    }
+
+    &.con-scrollX-auto {
+        overflow-y: auto;
+    }
+
+    //max width
+    &.con-xxsMax {
+        max-width: calc(var(--celXxs)*2);
+    }
+
+    &.con-xsMax {
+        max-width: calc(var(--celXs)*2);
+    }
+
+    &.con-smMax {
+        max-width: calc(var(--celSm)*2);
+    }
+
+    &.con-mdMax {
+        max-width: calc(var(--celMd)*2);
+    }
+
+    &.con-lgMax {
+        max-width: calc(var(--celLg)*2);
+    }
+
+    &.con-xlMax {
+        max-width: calc(var(--celXl)*2);
+    }
+
+    &.con-xxlMax {
+        max-width: calc(var(--celXxl)*2);
+    }
+
+    //width
+    &.con-xxs {
+        width: calc(var(--celXxs)*2);
+    }
+
+    &.con-xs {
+        width: calc(var(--celXs)*2);
+    }
+
+    &.con-sm {
+        width: calc(var(--celSm)*2);
+    }
+
+    &.con-md {
+        width: calc(var(--celMd)*2);
+    }
+
+    &.con-lg {
+        width: calc(var(--celLg)*2);
+    }
+
+    &.con-xl {
+        width: calc(var(--celXl)*2);
+    }
+
+    &.con-xxl {
+        width: calc(var(--celXxl)*2);
+    }
+
+    //max width percent tens
+    &.con-100pMax {
+        max-width: 100%;
+    }
+
+    &.con-90pMax {
+        max-width: 90%;
+    }
+
+    &.con-80pMax {
+        max-width: 80%;
+    }
+
+    &.con-70pMax {
+        max-width: 70%;
+    }
+
+    &.con-60pMax {
+        max-width: 60%;
+    }
+
+    &.con-50pMax {
+        max-width: 50%;
+    }
+
+    &.con-40pMax {
+        max-width: 40%;
+    }
+
+    &.con-30pMax {
+        max-width: 30%;
+    }
+
+    &.con-20pMax {
+        max-width: 20%;
+    }
+
+    &.con-10pMax {
+        max-width: 10%;
+    }
+
+    //max width percent quarters
+    &.con-25pMax {
+        max-width: 25%;
+    }
+
+    &.con-75pMax {
+        max-width: 75%;
+    }
+
+    //max width percent thirds
+    &.con-33pMax {
+        max-width: 33.33333%;
+    }
+
+    &.con-66pMax {
+        max-width: 66.66666%;
+    }
+
+    //100% both ways
+    &.con-full{
+        width: 100%;
+        height: 100%;
+    }
+
+
+    //width percent tens
+    &.con-100p {
+        width: 100%;
+    }
+
+    &.con-90p {
+        width: 90%;
+    }
+
+    &.con-80p {
+        width: 80%;
+    }
+
+    &.con-70p {
+        width: 70%;
+    }
+
+    &.con-60p {
+        width: 60%;
+    }
+
+    &.con-50p {
+        width: 50%;
+    }
+
+    &.con-40p {
+        width: 40%;
+    }
+
+    &.con-30p {
+        width: 30%;
+    }
+
+    &.con-20p {
+        width: 20%;
+    }
+
+    &.con-10p {
+        width: 10%;
+    }
+
+    //max width percent quarters
+    &.con-25p {
+        width: 25%;
+    }
+
+    &.con-75p {
+        width: 75%;
+    }
+
+    //max width percent thirds
+    &.con-33p {
+        width: 33.33333%;
+    }
+
+    &.con-66p {
+        width: 66.66666%;
+    }
+
+    //max width vw 10s
+    &.con-100vwMax {
+        max-width: 100vw;
+    }
+
+    &.con-90vwMax {
+        max-width: 90vw;
+    }
+
+    &.con-80vwMax {
+        max-width: 80vw;
+    }
+
+    &.con-70vwMax {
+        max-width: 70vw;
+    }
+
+    &.con-60vwMax {
+        max-width: 60vw;
+    }
+
+    &.con-50vwMax {
+        max-width: 50vw;
+    }
+
+    &.con-40vwMax {
+        max-width: 40vw;
+    }
+
+    &.con-30vwMax {
+        max-width: 30vw;
+    }
+
+    &.con-20vwMax {
+        max-width: 20vw;
+    }
+
+    &.con-10vwMax {
+        max-width: 10vw;
+    }
+
+    //max width vw quarters
+    &.con-25vwMax {
+        max-width: 25vw;
+    }
+
+    &.con-75vwMax {
+        max-width: 75vw;
+    }
+
+
+    //max width vw thirds
+    &.con-33vwMax {
+        max-width: 33.33333vw;
+    }
+
+    &.con-66vwMax {
+        max-width: 66.66666vw;
+    }
+
+
+    //width vw 10s
+    &.con-100vw {
+        width: 100vw;
+    }
+
+    &.con-90vw {
+        width: 90vw;
+    }
+
+    &.con-80vw {
+        width: 80vw;
+    }
+
+    &.con-70vw {
+        width: 70vw;
+    }
+
+    &.con-60vw {
+        width: 60vw;
+    }
+
+    &.con-50vw {
+        width: 50vw;
+    }
+
+    &.con-40vw {
+        width: 40vw;
+    }
+
+    &.con-30vw {
+        width: 30vw;
+    }
+
+    &.con-20vw {
+        width: 20vw;
+    }
+
+    &.con-10vw {
+        width: 10vw;
+    }
+
+    //width vw quarters
+    &.con-25vw {
+        width: 25vw;
+    }
+
+    &.con-75vw {
+        width: 75vw;
+    }
+
+
+    //width vw thirds
+    &.con-33vw {
+        width: 33.33333vw;
+    }
+
+    &.con-66vw {
+        width: 66.66666vw;
+    }
+
+
+
+    //heights
+
+
+    //max height
+    &.con-xxsMaxVr {
+        max-height: calc(var(--celXxs)*2);
+    }
+
+    &.con-xsMaxVr {
+        max-height: calc(var(--celXs)*2);
+    }
+
+    &.con-smMaxVr {
+        max-height: calc(var(--celSm)*2);
+    }
+
+    &.con-mdMaxVr {
+        max-height: calc(var(--celMd)*2);
+    }
+
+    &.con-lgMaxVr {
+        max-height: calc(var(--celLg)*2);
+    }
+
+    &.con-xlMaxVr {
+        max-height: calc(var(--celXl)*2);
+    }
+
+    &.con-xxlMaxVr {
+        max-height: calc(var(--celXxl)*2);
+    }
+
+    //height
+    &.con-xxsVr {
+        height: calc(var(--celXxs)*2);
+    }
+
+    &.con-xsVr {
+        height: calc(var(--celXs)*2);
+    }
+
+    &.con-smVr {
+        height: calc(var(--celSm)*2);
+    }
+
+    &.con-mdVr {
+        height: calc(var(--celMd)*2);
+    }
+
+    &.con-lgVr {
+        height: calc(var(--celLg)*2);
+    }
+
+    &.con-xlVr {
+        height: calc(var(--celXl)*2);
+    }
+
+    &.con-xxlVr {
+        height: calc(var(--celXxl)*2);
+    }
+
+    //max height percent tens
+    &.con-100pMaxVr {
+        max-height: 100%;
+    }
+
+    &.con-90pMaxVr {
+        max-height: 90%;
+    }
+
+    &.con-80pMaxVr {
+        max-height: 80%;
+    }
+
+    &.con-70pMaxVr {
+        max-height: 70%;
+    }
+
+    &.con-60pMaxVr {
+        max-height: 60%;
+    }
+
+    &.con-50pMaxVr {
+        max-height: 50%;
+    }
+
+    &.con-40pMaxVr {
+        max-height: 40%;
+    }
+
+    &.con-30pMaxVr {
+        max-height: 30%;
+    }
+
+    &.con-20pMaxVr {
+        max-height: 20%;
+    }
+
+    &.con-10pMaxVr {
+        max-height: 10%;
+    }
+
+    //max height percent quarters
+    &.con-25pMaxVr {
+        max-height: 25%;
+    }
+
+    &.con-75pMaxVr {
+        max-height: 75%;
+    }
+
+    //max height percent thirds
+    &.con-33pMaxVr {
+        max-height: 33.33333%;
+    }
+
+    &.con-66pMaxVr {
+        max-height: 66.66666%;
+    }
+
+
+
+    //height percent tens
+    &.con-100pVr {
+        height: 100%;
+    }
+
+    &.con-90pVr {
+        height: 90%;
+    }
+
+    &.con-80pVr {
+        height: 80%;
+    }
+
+    &.con-70pVr {
+        height: 70%;
+    }
+
+    &.con-60pVr {
+        height: 60%;
+    }
+
+    &.con-50pVr {
+        height: 50%;
+    }
+
+    &.con-40pVr {
+        height: 40%;
+    }
+
+    &.con-30pVr {
+        height: 30%;
+    }
+
+    &.con-20pVr {
+        height: 20%;
+    }
+
+    &.con-10pVr {
+        height: 10%;
+    }
+
+    //max height percent quarters
+    &.con-25pVr {
+        height: 25%;
+    }
+
+    &.con-75pVr {
+        height: 75%;
+    }
+
+    //max height percent thirds
+    &.con-33pVr {
+        height: 33.33333%;
+    }
+
+    &.con-66pVr {
+        height: 66.66666%;
+    }
+
+    //max height vh 10s
+    &.con-100vhMax {
+        max-height: 100vh;
+    }
+
+    &.con-90vhMax {
+        max-height: 90vh;
+    }
+
+    &.con-80vhMax {
+        max-height: 80vh;
+    }
+
+    &.con-70vhMax {
+        max-height: 70vh;
+    }
+
+    &.con-60vhMax {
+        max-height: 60vh;
+    }
+
+    &.con-50vhMax {
+        max-height: 50vh;
+    }
+
+    &.con-40vhMax {
+        max-height: 40vh;
+    }
+
+    &.con-30vhMax {
+        max-height: 30vh;
+    }
+
+    &.con-20vhMax {
+        max-height: 20vh;
+    }
+
+    &.con-10vhMax {
+        max-height: 10vh;
+    }
+
+    //max height vh quarters
+    &.con-25vhMax{
+        max-height: 25vh;
+    }
+
+    &.con-75vhMax {
+        max-height: 75vh;
+    }
+
+
+    //max height vh thirds
+    &.con-33vhMax {
+        max-height: 33.33333vh;
+    }
+
+    &.con-66vhMax {
+        max-height: 66.66666vh;
+    }
+
+
+    //height vw 10s
+    &.con-100vh {
+        height: 100vh;
+    }
+
+    &.con-90vh {
+        height: 90vh;
+    }
+
+    &.con-80vh {
+        height: 80vh;
+    }
+
+    &.con-70vh {
+        height: 70vh;
+    }
+
+    &.con-60vh {
+        height: 60vh;
+    }
+
+    &.con-50vh {
+        height: 50vh;
+    }
+
+    &.con-40vh {
+        height: 40vh;
+    }
+
+    &.con-30vh {
+        height: 30vh;
+    }
+
+    &.con-20vh {
+        height: 20vh;
+    }
+
+    &.con-10vh {
+        height: 10vh;
+    }
+
+    //height vh quarters
+    &.con-25vh {
+        width: 25vh;
+    }
+
+    &.con-75vh {
+        width: 75vh;
+    }
+
+
+    //width vh thirds
+    &.con-33vh {
+        width: 33.33333vh;
+    }
+
+    &.con-66vh {
+        width: 66.66666vh;
+    }
+
+
+
+
+
+}
+
+//needs attention
+.disabled {
     pointer-events: none;
-}
-//** Border Radius Modifier
-.pill {
-    //** Default
-    border-radius: 1.5rem;
-
-    //** Disable
-    &.no-pill {
-        border-radius: 0;
-    }
-
-    //** Full or circle
-    &.pil-circle,
-    &.pil-full {
-        border-radius: 100%;
-    }
-
-    //** Variant Sizes
-    &.pil-xxs {
-        border-radius: .25rem;
-    }
-
-    &.pil-xs {
-        border-radius: .5rem;
-    }
-
-    &.pil-sm {
-        border-radius: 1rem;
-    }
-
-    &.pil-md {
-        border-radius: 1.5rem;
-    }
-
-    &.pil-lg {
-        border-radius: 2rem;
-    }
-
-    &.pil-xl {
-        border-radius: 3rem;
-    }
-}
-
-// Ring Modifier - Adds a highlighting border when mouse hovered.
-.ring {
-    outline-offset: .15rem;
-    transition: .05s;
-    outline-color: black;
-
-    &:focus-within {
-        outline: .2rem solid;
-    }
-
-    &:hover {
-
-        outline: .2rem solid;
-    }
-
-    //Temporarily disabled
-
-    // &:active {
-    //     outline-offset: .35rem;
-    //     outline: 0rem solid;
-    // }
-
 }
 
 //** Display Modifiers
@@ -120,9 +699,45 @@
 
 }
 
-.float {
-    &.flo-right {
-        float: right;
+//** Align left edge
+.edge-left {
+    right: 100%;
+
+    //** points to right
+    &.to-right {
+        right: auto;
+        left: 0;
+    }
+}
+
+//** Position Adjusteres
+//** Align with right edge
+.edge-right {
+    left: 100%;
+
+    //** Points to left
+    &.to-left {
+        left: auto;
+        right: 0;
+    }
+}
+
+//** Fade In / Out Modifier. (Apply fade class to allow)
+//** Use JS or other methods to toggle classes which show and hide element with a short transition.
+.fade {
+    //** Default
+    transition: 0;
+
+    //** Fade out
+    .fad-out {
+        transition: .5s;
+        opacity: 0;
+    }
+
+    //** Fade in
+    .fad-in {
+        transition: .5s;
+        opacity: 100;
     }
 }
 
@@ -132,15 +747,11 @@
     //** Default Flex
     display: flex;
 
-    //** Variants
+    //** Variants LEGACY NEEDS TO BE REMOVED
     &.fle-rowreverse {
         flex-direction: row-reverse;
     }
-// &.fle-smCol{
-//     @media (max-width: 30rem) {
-//         flex-direction: column;
-//     }
-// }
+
     &.fle-column {
         flex-direction: column;
     }
@@ -158,9 +769,11 @@
         justify-content: flex-start;
 
     }
-    &.fle-align-start{
+
+    &.fle-align-start {
         align-items: start;
     }
+
     &.fle-end {
         justify-content: flex-end;
     }
@@ -177,330 +790,357 @@
         align-items: baseline;
     }
 
+    //UPDATED NAMING
+
+    &.fle-alignItems-baseline {
+        align-items: baseline;
+    }
+
+    &.fle-alignItems-center {
+        align-items: center;
+    }
+
+    &.fle-alignItems-end {
+        align-items: end;
+    }
+
+    &.fle-alignItems-start {
+        align-items: start;
+    }
+
+    &.fle-alignItems-inherit {
+        align-items: inherit;
+    }
+
+    &.fle-alignItems-stretch {
+        align-items: stretch;
+    }
+
+    &.fle-alignContent-baseline {
+        align-content: baseline;
+    }
+
+    &.fle-alignContent-center {
+        align-content: center;
+    }
+
+    &.fle-alignContent-end {
+        align-content: end;
+    }
+
+    &.fle-alignContent-start {
+        align-content: start;
+    }
+
+    &.fle-alignContent-inherit {
+        align-content: inherit;
+    }
+
+    &.fle-alignContent-stretch {
+        align-content: stretch;
+    }
+
+    &.fle-alignContent-spaceBetween {
+        align-content: space-between;
+    }
+
+    &.fle-alignContent-spaceAround {
+        align-content: space-around;
+    }
+
+    &.fle-alignContent-spaceEvenly {
+        align-content: space-evenly;
+    }
+
+    &.fle-alignSelf-baseline {
+        align-self: baseline;
+    }
+
+    &.fle-alignSelf-center {
+        align-self: center;
+    }
+
+    &.fle-alignSelf-flexEnd {
+        align-self: flex-end;
+    }
+
+    &.fle-alignSelf-selfEnd {
+        align-self: self-end;
+    }
+
+    &.fle-alignSelf-flexStart {
+        align-self: flex-start;
+    }
+
+    &.fle-alignSelf-selfStart {
+        align-self: self-start;
+    }
+
+    &.fle-alignSelf-stretch {
+        align-self: stretch;
+    }
+
+    &.fle-basis-xxs {
+        flex-basis: 3.125rem;
+    }
+
+    &.fle-basis-xs {
+        flex-basis: 6.25rem;
+    }
+
+    &.fle-basis-sm {
+        flex-basis: 12.5rem;
+    }
+
+    &.fle-basis-md {
+        flex-basis: 25rem;
+    }
+
+    &.fle-basis-lg {
+        flex-basis: 37.5rem;
+    }
+
+    &.fle-basis-xl {
+        flex-basis: 50rem;
+    }
+
+    &.fle-basis-xxl {
+        flex-basis: 75rem;
+    }
+
+    &.fle-direction-column {
+        flex-direction: column;
+    }
+
+    &.fle-direction-columnReverse {
+        flex-direction: column-reverse;
+    }
+
+    &.fle-direction-row {
+        flex-direction: row;
+    }
+
+    &.fle-direction-rowReverse {
+        flex-direction: row-reverse;
+    }
+
+    &.fle-direction-inherit {
+        flex-direction: inherit;
+    }
+
+    &.fle-flow-row {
+        flex-flow: row;
+    }
+
+    &.fle-flow-rowReverse {
+        flex-flow: row-reverse;
+    }
+
+    &.fle-flow-column {
+        flex-flow: column;
+    }
+
+    &.fle-flow-columnReverse {
+        flex-flow: column-reverse;
+    }
+
+    &.fle-flow-wrap {
+        flex-flow: wrap;
+    }
+
+    &.fle-flow-nowrap {
+        flex-flow: nowrap;
+    }
+
+    &.fle-flow-wrapReverse {
+        flex-flow: wrap-reverse;
+    }
+
+    &.flex-grow-one {
+        flex-grow: 1;
+    }
+
+    &.flex-grow-two {
+        flex-grow: 2;
+    }
+
+    &.flex-grow-three {
+        flex-grow: 3;
+    }
+
+    &.flex-grow-four {
+        flex-grow: 4;
+    }
+
+    &.flex-grow-five {
+        flex-grow: 5;
+    }
+
+    &.flex-grow-six {
+        flex-grow: 6;
+    }
+
+    &.flex-grow-seven {
+        flex-grow: 7;
+    }
+
+    &.flex-grow-eight {
+        flex-grow: 8;
+    }
+
+    &.flex-grow-nine {
+        flex-grow: 9;
+    }
+
+    &.flex-grow-ten {
+        flex-grow: 10;
+    }
+
+    &.flex-shrink-one {
+        flex-shrink: 1;
+    }
+
+    &.flex-shrink-two {
+        flex-shrink: 2;
+    }
+
+    &.flex-shrink-three {
+        flex-shrink: 3;
+    }
+
+    &.flex-shrink-four {
+        flex-shrink: 4;
+    }
+
+    &.flex-shrink-five {
+        flex-shrink: 5;
+    }
+
+    &.flex-shrink-six {
+        flex-shrink: 6;
+    }
+
+    &.flex-shrink-seven {
+        flex-shrink: 7;
+    }
+
+    &.flex-shrink-eight {
+        flex-shrink: 8;
+    }
+
+    &.flex-shrink-nine {
+        flex-shrink: 9;
+    }
+
+    &.flex-shrink-ten {
+        flex-shrink: 10;
+    }
+
     &.fle-wrap {
         flex-wrap: wrap;
+    }
+
+    &.fle-wrapReverse {
+        flex-wrap: wrap-reverse;
     }
 
     &.fle-nowrap {
         flex-wrap: nowrap;
     }
-}
 
-//** Position Modifiers
-.position {
-    //** Default Static
-    position: static;
-
-    //** Variants
-    &.pos-fixed {
-        position: fixed;
+    &.fle-justifyContent-baseline {
+        justify-content: baseline;
     }
 
-    &.pos-sticky {
-        position: sticky;
+    &.fle-justifyContent-center {
+        justify-content: center;
     }
 
-    &.pos-relative {
-        position: relative;
+    &.fle-justifyContent-end {
+        justify-content: end;
     }
 
-    &.pos-absolute {
-        position: absolute;
+    &.fle-justifyContent-start {
+        justify-content: start;
     }
 
-}
-
-//** Position Adjusteres
-//** Align with right edge
-.right-edge {
-    left: 100%;
-
-    //** Points to left
-    &.to-left {
-        left: auto;
-        right: 0;
+    &.fle-justifyContent-inherit {
+        justify-content: inherit;
     }
-}
 
-//** Align left edge
-.left-edge {
-    right: 100%;
+    &.fle-justifyContent-stretch {
+        justify-content: stretch;
+    }
 
-    //** points to right
-    &.to-right {
-        right: auto;
-        left: 0;
+    &.fle-justifyContent-spaceBetween {
+        justify-content: space-between;
+    }
+
+    &.fle-justifyContent-spaceAround {
+        justify-content: space-around;
+    }
+
+    &.fle-justifyContent-spaceEvenly {
+        justify-content: space-evenly;
     }
 }
 
-//** Padding Modifier Component 
-.padding {
-
-    //** Size Variants - Use global variables to prevent inconsistencies.
-    &.pad-xxs {
-        padding: var(--padXxs);
+.float {
+    &.flo-right {
+        float: right;
     }
+}
 
-    &.pad-xs {
-        padding: var(--padXs);
-    }
+//** Gap Modifier
+.gap {
+    gap: .5rem;
 
-    &.pad-sm {
-        padding: var(--padSm);
-    }
-
-    &.pad-md {
-        padding: var(--padMd);
+    &.gap-xxs {
+        // gap: 1px;
+        gap: .25rem;
     }
 
-    &.pad-lg {
-        padding: var(--padLg);
+    &.gap-xs {
+        // gap: 1px;
+        gap: .5rem;
     }
 
-    &.pad-xl {
-        padding: var(--padXl);
+    &.gap-sm {
+        // gap: .5rem;
+        gap: .75rem;
     }
 
-    &.pad-xxl {
-        padding: var(--padXxl);
+    &.gap-md {
+        // gap: 1rem;
+        gap: 1rem;
     }
 
-    //** Apply padding by side
-    //** Top
-    &.pad-xxsT {
-        padding-top: var(--padXxs);
+    &.gap-lg {
+        // gap: 5rem;
+        gap: 3rem;
     }
 
-    &.pad-xsT {
-        padding-top: var(--padXs);
+    &.gap-xl {
+        // gap: 10rem;
+        gap: 5rem;
     }
 
-    &.pad-smT {
-        padding-top: var(--padSm);
+    &.gap-xxl {
+        // gap: 10rem;
+        gap: 10rem;
     }
+}
 
-    &.pad-mdT {
-        padding-top: var(--padMd);
-    }
+//** A ghost element will only show its Background when on hover. Good for certain buttons.
+.ghost:not(:hover) {
 
-    &.pad-lgT {
-        padding-top: var(--padLg);
-    }
+    background-color: hsla(0, 0, 0, 0) !important;
+}
 
-    &.pad-xlT {
-        padding-top: var(--padXl);
-    }
+//needs attention
+.hide-bg {
 
-    &.pad-xxlT {
-        padding-top: var(--padXxl);
-    }
-
-    //** Right
-    &.pad-xxsR {
-        padding-right: var(--padXxs);
-    }
-
-    &.pad-xsR {
-        padding-right: var(--padXs);
-    }
-
-    &.pad-smR {
-        padding-right: var(--padSm);
-    }
-
-    &.pad-mdR {
-        padding-right: var(--padMd);
-    }
-
-    &.pad-lgR {
-        padding-right: var(--padLg);
-    }
-
-    &.pad-xlR {
-        padding-right: var(--padXl);
-    }
-
-    &.pad-xxlR {
-        padding-right: var(--padXxl);
-    }
-
-    //** Bottom
-    &.pad-xxsB {
-        padding-bottom: var(--padXxs);
-    }
-
-    &.pad-xsB {
-        padding-bottom: var(--padXs);
-    }
-
-    &.pad-smB {
-        padding-bottom: var(--padSm);
-    }
-
-    &.pad-mdB {
-        padding-bottom: var(--padMd);
-    }
-
-    &.pad-lgB {
-        padding-bottom: var(--padLg);
-    }
-
-    &.pad-xlB {
-        padding-bottom: var(--padXl);
-    }
-
-    &.pad-xxlB {
-        padding-bottom: var(--padXxl);
-    }
-
-    //** Left
-    &.pad-xxsL {
-        padding-left: var(--padXxs);
-    }
-
-    &.pad-xsL {
-        padding-left: var(--padXs);
-    }
-
-    &.pad-smL {
-        padding-left: var(--padSm);
-    }
-
-    &.pad-mdL {
-        padding-left: var(--padMd);
-    }
-
-    &.pad-lgL {
-        padding-left: var(--padLg);
-    }
-
-    &.pad-xlL {
-        padding-left: var(--padXl);
-    }
-
-    &.pad-xxlL {
-        padding-left: var(--padXxl);
-    }
-
-    //** Apply Specific Padding to horizontal axis.
-    &.pad-xxsHr {
-        padding-left: var(--padXxs);
-        padding-right: var(--padXxs);
-    }
-
-    &.pad-xsHr {
-        padding-left: var(--padXs);
-        padding-right: var(--padXs);
-    }
-
-    &.pad-smHr {
-        padding-left: var(--padSm);
-        padding-right: var(--padSm);
-    }
-
-    &.pad-mdHr {
-        padding-left: var(--padMd);
-        padding-right: var(--padMd);
-    }
-
-    &.pad-lgHr {
-        padding-left: var(--padLg);
-        padding-right: var(--padLg);
-    }
-
-    &.pad-xlHr {
-        padding-left: var(--padXl);
-        padding-right: var(--padXl);
-    }
-
-    &.pad-xxlHr {
-        padding-left: var(--padXxl);
-        padding-right: var(--padXxl);
-    }
-
-    //** Apply specific padding to vertical axsis.
-    &.pad-xxsVr {
-        padding-top: var(--padXxs);
-        padding-bottom: var(--padXxs);
-    }
-
-    &.pad-xsVr {
-        padding-top: var(--padXs);
-        padding-bottom: var(--padXs);
-    }
-
-    &.pad-smVr {
-        padding-top: var(--padSm);
-        padding-bottom: var(--padSm);
-    }
-
-    &.pad-mdVr {
-        padding-top: var(--padMd);
-        padding-bottom: var(--padMd);
-    }
-
-    &.pad-lgVr {
-        padding-top: var(--padLg);
-        padding-bottom: var(--padLg);
-    }
-
-    &.pad-xlVr {
-        padding-top: var(--padXl);
-        padding-bottom: var(--padXl);
-    }
-
-    &.pad-xxlVr {
-        padding-top: var(--padXxl);
-        padding-bottom: var(--padXxl);
-    }
-
-    //** Remove Padding by side
-    &.pad-noneT {
-        padding-top: 0;
-    }
-
-    &.pad-noneR {
-        padding-right: 0;
-    }
-
-    &.pad-noneB {
-        padding-bottom: 0;
-    }
-
-    &.pad-noneL {
-        padding-left: 0;
-    }
-
-    //** Remove Padding Horizontally
-    &.pad-noneHr {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    //** Remove Padding Vertically
-    &.pad-noneVr {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    &.pad-xsNav {
-        padding-top: 1rem;
-    }
-
-    &.pad-smNav {
-        padding-top: 2rem;
-    }
-
-    &.pad-mdNav{
-        padding-top: 3rem;
-    }
-
-    &.pad-lgNav {
-        padding-top: 4rem;
-    }
-
-    &.pad-xlNav {
-        padding-top: 5rem;
-    }
+    background-color: hsla(0, 0, 0, 0) !important;
 }
 
 //** Margin Modifier Component 
@@ -789,56 +1429,481 @@
 
 }
 
-//** Gap Modifier
-.gap {
-    gap: .5rem;
-    &.gap-xxs {
-        // gap: 1px;
-        gap: .25rem;
-    }
-    &.gap-xs {
-        // gap: 1px;
-        gap: .5rem;
+//** Padding Modifier Component 
+.padding {
+
+    //** Size Variants - Use global variables to prevent inconsistencies.
+    &.pad-xxs {
+        padding: var(--padXxs);
     }
 
-    &.gap-sm {
-        // gap: .5rem;
-        gap: .75rem;
+    &.pad-xs {
+        padding: var(--padXs);
     }
 
-    &.gap-md {
-        // gap: 1rem;
-        gap: 1rem;
+    &.pad-sm {
+        padding: var(--padSm);
     }
 
-    &.gap-lg {
-        // gap: 5rem;
-        gap: 3rem;
+    &.pad-md {
+        padding: var(--padMd);
     }
 
-    &.gap-xl {
-        // gap: 10rem;
-        gap: 5rem;
+    &.pad-lg {
+        padding: var(--padLg);
     }
-    &.gap-xxl {
-        // gap: 10rem;
-        gap: 10rem;
+
+    &.pad-xl {
+        padding: var(--padXl);
+    }
+
+    &.pad-xxl {
+        padding: var(--padXxl);
+    }
+
+    //** Apply padding by side
+    //** Top
+    &.pad-xxsT {
+        padding-top: var(--padXxs);
+    }
+
+    &.pad-xsT {
+        padding-top: var(--padXs);
+    }
+
+    &.pad-smT {
+        padding-top: var(--padSm);
+    }
+
+    &.pad-mdT {
+        padding-top: var(--padMd);
+    }
+
+    &.pad-lgT {
+        padding-top: var(--padLg);
+    }
+
+    &.pad-xlT {
+        padding-top: var(--padXl);
+    }
+
+    &.pad-xxlT {
+        padding-top: var(--padXxl);
+    }
+
+    //** Right
+    &.pad-xxsR {
+        padding-right: var(--padXxs);
+    }
+
+    &.pad-xsR {
+        padding-right: var(--padXs);
+    }
+
+    &.pad-smR {
+        padding-right: var(--padSm);
+    }
+
+    &.pad-mdR {
+        padding-right: var(--padMd);
+    }
+
+    &.pad-lgR {
+        padding-right: var(--padLg);
+    }
+
+    &.pad-xlR {
+        padding-right: var(--padXl);
+    }
+
+    &.pad-xxlR {
+        padding-right: var(--padXxl);
+    }
+
+    //** Bottom
+    &.pad-xxsB {
+        padding-bottom: var(--padXxs);
+    }
+
+    &.pad-xsB {
+        padding-bottom: var(--padXs);
+    }
+
+    &.pad-smB {
+        padding-bottom: var(--padSm);
+    }
+
+    &.pad-mdB {
+        padding-bottom: var(--padMd);
+    }
+
+    &.pad-lgB {
+        padding-bottom: var(--padLg);
+    }
+
+    &.pad-xlB {
+        padding-bottom: var(--padXl);
+    }
+
+    &.pad-xxlB {
+        padding-bottom: var(--padXxl);
+    }
+
+    //** Left
+    &.pad-xxsL {
+        padding-left: var(--padXxs);
+    }
+
+    &.pad-xsL {
+        padding-left: var(--padXs);
+    }
+
+    &.pad-smL {
+        padding-left: var(--padSm);
+    }
+
+    &.pad-mdL {
+        padding-left: var(--padMd);
+    }
+
+    &.pad-lgL {
+        padding-left: var(--padLg);
+    }
+
+    &.pad-xlL {
+        padding-left: var(--padXl);
+    }
+
+    &.pad-xxlL {
+        padding-left: var(--padXxl);
+    }
+
+    //** Apply Specific Padding to horizontal axis.
+    &.pad-xxsHr {
+        padding-left: var(--padXxs);
+        padding-right: var(--padXxs);
+    }
+
+    &.pad-xsHr {
+        padding-left: var(--padXs);
+        padding-right: var(--padXs);
+    }
+
+    &.pad-smHr {
+        padding-left: var(--padSm);
+        padding-right: var(--padSm);
+    }
+
+    &.pad-mdHr {
+        padding-left: var(--padMd);
+        padding-right: var(--padMd);
+    }
+
+    &.pad-lgHr {
+        padding-left: var(--padLg);
+        padding-right: var(--padLg);
+    }
+
+    &.pad-xlHr {
+        padding-left: var(--padXl);
+        padding-right: var(--padXl);
+    }
+
+    &.pad-xxlHr {
+        padding-left: var(--padXxl);
+        padding-right: var(--padXxl);
+    }
+
+    //** Apply specific padding to vertical axsis.
+    &.pad-xxsVr {
+        padding-top: var(--padXxs);
+        padding-bottom: var(--padXxs);
+    }
+
+    &.pad-xsVr {
+        padding-top: var(--padXs);
+        padding-bottom: var(--padXs);
+    }
+
+    &.pad-smVr {
+        padding-top: var(--padSm);
+        padding-bottom: var(--padSm);
+    }
+
+    &.pad-mdVr {
+        padding-top: var(--padMd);
+        padding-bottom: var(--padMd);
+    }
+
+    &.pad-lgVr {
+        padding-top: var(--padLg);
+        padding-bottom: var(--padLg);
+    }
+
+    &.pad-xlVr {
+        padding-top: var(--padXl);
+        padding-bottom: var(--padXl);
+    }
+
+    &.pad-xxlVr {
+        padding-top: var(--padXxl);
+        padding-bottom: var(--padXxl);
+    }
+
+    //** Remove Padding by side
+    &.pad-noneT {
+        padding-top: 0;
+    }
+
+    &.pad-noneR {
+        padding-right: 0;
+    }
+
+    &.pad-noneB {
+        padding-bottom: 0;
+    }
+
+    &.pad-noneL {
+        padding-left: 0;
+    }
+
+    //** Remove Padding Horizontally
+    &.pad-noneHr {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    //** Remove Padding Vertically
+    &.pad-noneVr {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &.pad-xsNav {
+        padding-top: 1rem;
+    }
+
+    &.pad-smNav {
+        padding-top: 2rem;
+    }
+
+    &.pad-mdNav {
+        padding-top: 3rem;
+    }
+
+    &.pad-lgNav {
+        padding-top: 4rem;
+    }
+
+    &.pad-xlNav {
+        padding-top: 5rem;
     }
 }
 
-//** Cursor Behavior
-.cursor {
-    cursor: default;
+//**Used to emulate max width but with padding - works well with focus overlay
+.padding-focus {
+    &.padf-xxsMinHr {
+        --padfMin: var(--padXxs);
+    }
 
-    &.cur-pointer {
-        cursor: pointer;
+    &.padf-xsMinHr {
+        --padfMin: var(--padXs);
+    }
+
+    &.padf-smMinHr {
+        --padfMin: var(--padSm);
+    }
+
+    &.padf-mdMinHr {
+        --padfMin: var(--padMd);
+    }
+
+    &.padf-lgMinHr {
+        --padfMin: var(--padLg);
+    }
+
+    &.padf-xlMinHr {
+        --padfMin: var(--padXl);
+    }
+
+    &.padf-xxlMinHr {
+        --padfMin: var(--padXxl);
+    }
+
+
+    &.padf-xxsHr {
+        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXxs) * 2)) / 2));
+    }
+
+    &.padf-xsHr {
+        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXs) * 2)) / 2));
+    }
+
+    &.padf-smHr {
+        padding-left: max(var(--padfMin), calc((100% - calc(var(--celSm) * 2)) / 2));
+    }
+
+    &.padf-mdHr {
+        padding-left: max(var(--padfMin), calc((100% - calc(var(--celMd) * 2)) / 2));
+    }
+
+    &.padf-lgHr {
+        padding-left: max(var(--padfMin), calc((100% - calc(var(--celLg) * 2)) / 2));
+    }
+
+    &.padf-xlHr {
+        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXl) * 2)) / 2));
+    }
+
+    &.padf-xxlHr {
+        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXxl) * 2)) / 2));
     }
 }
 
-.ghost:not(:hover) {
+//** Border Radius Modifier
+.pill {
+    //** Default
+    border-radius: 1.5rem;
 
-    background-color: hsla(0, 0, 0, 0) !important;
+    //** Disable
+    &.no-pill {
+        border-radius: 0;
+    }
+
+    //** Full or circle
+    &.pil-circle,
+    &.pil-full {
+        border-radius: 100%;
+    }
+
+    //** Variant Sizes
+    &.pil-xxs {
+        border-radius: .25rem;
+    }
+
+    &.pil-xs {
+        border-radius: .5rem;
+    }
+
+    &.pil-sm {
+        border-radius: 1rem;
+    }
+
+    &.pil-md {
+        border-radius: 1.5rem;
+    }
+
+    &.pil-lg {
+        border-radius: 2rem;
+    }
+
+    &.pil-xl {
+        border-radius: 3rem;
+    }
 }
-// .max-height{
-//     max-height: 60vh !important;
-// }
+
+//** Position Modifiers
+.position {
+    //** Default Static
+    position: static;
+
+    //** Variants
+    &.pos-fixed {
+        position: fixed;
+    }
+
+    &.pos-sticky {
+        position: sticky;
+    }
+
+    &.pos-relative {
+        position: relative;
+    }
+
+    &.pos-absolute {
+        position: absolute;
+    }
+
+}
+
+//** Ring Modifier - Adds a highlighting border when mouse hovered.
+.ring {
+    outline-offset: .15rem;
+    transition: .05s;
+    outline-color: black;
+
+    &:focus-within {
+        outline: .2rem solid;
+    }
+
+    &:hover {
+
+        outline: .2rem solid;
+    }
+
+    //Temporarily disabled
+
+    // &:active {
+    //     outline-offset: .35rem;
+    //     outline: 0rem solid;
+    // }
+
+}
+
+//** User Select Modifier
+.text-select {
+    //** Default
+    user-select: auto;
+
+    //** Variants
+    &.texs-none {
+        user-select: none;
+    }
+}
+
+//** Text Align
+.text-align {
+    &.texa-r {
+        text-align: right;
+
+    }
+
+    &.texa-c {
+        text-align: center;
+
+    }
+
+}
+
+//** Text Wrap
+.text-wrap {
+    text-wrap: wrap;
+
+    &.texw-wrap {
+        text-wrap: wrap;
+    }
+
+    &.texw-nowrap {
+        text-wrap: nowrap !important;
+    }
+}
+
+.w25p {
+    width: 25%;
+}
+
+.w50p {
+    width: 50%;
+}
+
+.w75p {
+    width: 75%;
+}
+
+.w100p {
+    width: 100%;
+}
+
+.h100p {
+    height: 100%;
+}

@@ -5,7 +5,8 @@
     --thumbX: 50%;
     --thumbY: 50%;
 
-    --buttonH: 2rem;
+    //this variable is used to allow for button circle 
+    --buttonW: 2rem;
 
     --padXxs: .25rem;
     --padXs: .5rem;
@@ -15,6 +16,7 @@
     --padXl: 5rem;
     --padXxl:10rem;
 
+    // A flexible variable used to set min padding in an equation 
     --padfMin: 1rem;
 
     --marXxs: .25rem;
@@ -24,6 +26,14 @@
     --marLg: 3rem;
     --marXl: 5rem;
     --marXxl: 10rem;
+
+    --celXxs: 6rem;
+    --celXs: 9rem;
+    --celSm: 13rem;
+    --celMd: 25rem;
+    --celLg: 37rem;
+    --celXl: 50rem;
+    --celXxl: 75rem;
 
     --userColor: red;
 
