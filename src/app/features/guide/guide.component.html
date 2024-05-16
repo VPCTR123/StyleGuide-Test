@@ -1,17 +1,19 @@
 <div class="page-content">
   <div class="flex ">
-    <app-nav [title]="'Components'" [links]="links" (navigate)="selected = $event" [selected]="selected" [fillView]="true">
+    <app-nav [title]="'Components'" [links]="links" (navigate)="selected = $event" [selected]="selected"
+      [fillView]="true">
     </app-nav>
 
-    <ng-container [ngSwitch]="selected"  >
+    <ng-container [ngSwitch]="selected">
       <app-sample *ngSwitchCase="'navigation'" class="w100p">
         <div class="docs">
           <app-docs>
             <div class="title">Navigation</div>
             <div class="description">Container for navigation content</div>
-            <div class="example flex fle-centerHr"><app-nav [title]="'Sample Nav'" [links]="links" >
-            </app-nav></div>
-            <div class="bestpractice">Component is paired with a ng-container and a ngSwitchCase when the navigate event sends link</div>
+            <div class="example flex fle-centerHr padding pad-smVr"><app-nav [title]="'Sample Nav'" [links]="links">
+              </app-nav></div>
+            <div class="bestpractice">Component is paired with a ng-container and a ngSwitchCase when the navigate event
+              sends link</div>
           </app-docs>
         </div>
         <div class="html">
@@ -28,28 +30,59 @@
       </app-sample>
       <app-sample *ngSwitchCase="'buttons'">
         <div class="docs">
-          <app-docs>
+          <app-docs class="felx ">
             <div class="title">Buttons</div>
             <div class="description">A button initiates an instantaneous action. </div>
-            <div class="example flex fle-centerHr">
+            <div class="example">
               <div class="w25p flex fle-column gap gap-sm">
-              <h3>Button</h3>
-              <button class="button">Click</button>
-              <h3>Button Small</h3>
-              <button class="button but-sm">Click</button>
-              <h3>Button Circle</h3>
-              <button class="button but-circle">Click</button>
-              <h3>Button Secondary</h3>
-              <button class="button but-secondary">Click</button>
+                <h3>Button</h3>
+                <button class="button">Click</button>
+                <h3>Button Small</h3>
+                <button class="button but-sm">Click</button>
+                <h3>Button Circle</h3>
+                <button class="button but-circle">Click</button>
+                <h3>Button Secondary</h3>
+                <button class="button but-secondary">Click</button>
               </div>
             </div>
-            <div class="bestpractice">When buttons are instantly recognizable and easy to understand, an app tends to feel intuitive and well designed.
+            <div class="bestpractice">When buttons are instantly recognizable and easy to understand, an app tends to
+              feel intuitive and well designed.
 
-              Make buttons easy for people to use. It’s essential to include enough space around a button so that people can visually distinguish it from surrounding components and content. Giving a button enough space is also critical for helping people select or activate it, regardless of the method of input they use. As a general rule, a button needs a hit region of at least 60x60 pt — to ensure that people can select it easily, whether they use a fingertip or a pointer.</div>
+              Make buttons easy for people to use. It’s essential to include enough space around a button so that people
+              can visually distinguish it from surrounding components and content. Giving a button enough space is also
+              critical for helping people select or activate it, regardless of the method of input they use. As a
+              general rule, a button needs a hit region of at least 60x60 pt — to ensure that people can select it
+              easily, whether they use a fingertip or a pointer.</div>
           </app-docs>
         </div>
         <div class="html">
           <pre><code  class="language-xml highlight"><span [innerHtml]="findSample('buttons') | sanitizeHtml"></span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'input'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Input</div>
+            <div class="description">Text input with validation messages. Uses Vest validation. </div>
+            <div class="example w25p">
+              <div class=" flex fle-column gap gap-sm">
+                <app-forms></app-forms>
+              </div>
+            </div>
+            <div class="bestpractice">Inputs are used to get user input :)</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('input') | sanitizeHtml">
+              
+            </span>
           </code></pre>
         </div>
         <div class="typescript">
@@ -63,12 +96,16 @@
           <app-docs>
             <div class="title">Cards</div>
             <div class="description">A container with a border. </div>
-            <div class="example flex fle-centerHr">
+            <div class="example w25p">
               <div class=" flex fle-column gap gap-sm">
                 <h3>Card</h3>
-                <div class="card"><div style="width: 100; height: 30px;"></div></div>
+                <div class="card">
+                  <div style="width: 100; height: 30px;"></div>
+                </div>
                 <h3>Card Pill</h3>
-                <div class="card pill"><div style="width: 100; height: 30px;"></div></div>
+                <div class="card pill">
+                  <div style="width: 100; height: 30px;"></div>
+                </div>
                 <h3>Card Title</h3>
                 <div class="card pill pil-xs">
                   <Header> Header</Header>
@@ -93,7 +130,194 @@
           </code></pre>
         </div>
       </app-sample>
+      <app-sample *ngSwitchCase="'drawers'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Drawers</div>
+            <div class="description">
+              <p>
+                A togglable label "Handle" that hides and shows its contents. Any content placed within the tag of the
+                app-drawer will be shown and hidden by clicking the "handle". Classes will need to be applied to the
+                inputs, as the app-draw by default only has the required classes for functionality.
+              </p>
+              <p>
+                Inputs:
+                <br>
+                displayName - Name to display on the handle
+                <br>
+                drawer_handle, drawer, icon - style clases to apply to the 3 aspects of the Draw component.
+              </p>
+              <p>
+                The Drawer emits a signal when it's toggled to be used if you need to do some things on the parent
+                component when its shown or hidden. (Such as loading large amounts of data as needed)
+              </p>
+            </div>
+            <div class="example">
+              <h3>Default Drawer Example</h3>
+              <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
+                drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                <div class="padding pad-smVr pad-smHr">
+                  <p>Data1</p>
+                  <p>Data2</p>
+                  <p>Data3</p>
+                  <p>Data4</p>
+                  <p>Data5</p>
+                </div>
+              </app-drawer>
+
+              <h3>Shorter Drawer With Inputs</h3>
+              <div class="focus foc-sm">
+                <app-drawer (toggled)="toggled($event)" displayName="Short Drawer"
+                  drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                  <div class="grid gri-halves padding pad-smVr pad-smVr pad-smHr w75p">
+                    <p class="padding pad-smVr pad-smVr">Name:</p>
+                    <input type="text" placeholder="John Doe" class="pill">
+                    <p class="padding pad-smVr pad-smVr">Addr:</p>
+                    <input type="text" placeholder="J123 Main Str" class="pill">
+                    <p class="padding pad-smVr pad-mdVr">State:</p>
+                    <input type="text" placeholder="DC" class="pill">
+                    <p class="padding pad-smVr pad-smVr">Zip:</p>
+                    <input type="text" placeholder="12345" class="pill">
+                    <p class="padding pad-smVr pad-smVr">Rank:</p>
+                    <input type="text" placeholder="LCpl" class="pill">
+                  </div>
+                </app-drawer>
+              </div>
+            </div>
+            <div class="bestpractice">Drawers are best used when you have a lot of data or fields you want organized and
+              make hideable</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('drawers') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'icons'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Icons</div>
+            <div class="description">A page to display all the icons. </div>
+            <div class="example">
+              <div class=" flex fle-column gap gap-sm">
+                <h3>Icons</h3>
+                <div class="grid gri-thirds">
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Up Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-u"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-u</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Right Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-r"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-r</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Down Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-d"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-d</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Left Arrow</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-carret-l"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-carret-l</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Close X</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-closeX"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-closeX</p>
+                  </div>
+                  
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Vertical Ellipsis/Kebab Menu</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-ellipse-vr"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-ellipse-vr</p>
+                  </div>
+                  
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Horizontal Ellipsis/Meatalls Menu</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-ellipse-hr"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-ellipse-hr</p>
+                  </div>
+
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Home</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-home"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-home</p>
+                  </div>
+                  
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>Bento Menu</p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p class="icon ico-md ico-th"></p>
+                  </div>
+                  <div class="bordered flex fle-centerVr fle-centerHr padding pad-smVr">
+                    <p>ico-th</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestpractice">Use icons to help UI navigation remain as intuitive as possible. (Icon of X for close, Down arrow/right arrow to indicate a dropdown to toggle)</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('icons') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
     </ng-container>
   </div>
 </div>
-

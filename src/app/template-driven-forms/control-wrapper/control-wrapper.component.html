@@ -1,0 +1,9 @@
+<div class="input-wrapper__content">
+    <ng-content></ng-content>
+  </div>
+  <div class="input-wrapper__errors">
+    <ul style="list-style-type: none;" [hidden]="!invalid">
+      <li *ngFor="let error of errors">{{error}}</li>
+    </ul>
+  </div>
+  
