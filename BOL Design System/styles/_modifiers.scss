@@ -178,7 +178,7 @@
     }
 
     //100% both ways
-    &.con-full{
+    &.con-full {
         width: 100%;
         height: 100%;
     }
@@ -589,7 +589,7 @@
     }
 
     //max height vh quarters
-    &.con-25vhMax{
+    &.con-25vhMax {
         max-height: 25vh;
     }
 
@@ -1135,6 +1135,9 @@
 .ghost:not(:hover) {
 
     background-color: hsla(0, 0, 0, 0) !important;
+    &.gho-transXxs{
+        transition: background-color .1s;
+    }
 }
 
 //needs attention

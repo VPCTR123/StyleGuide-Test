@@ -17,17 +17,18 @@
 <body class="theme-default">
     <div class="spacer spa-sm"></div>
     <div class="user-name">Richard Murray</div>
-    <nav class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr pad-noneL gap gap-sm ">
+    <nav
+        class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr pad-noneL gap gap-sm">
 
 
         <!-- left wrapper -->
         <div class="flex gap gap-xs fle-centerVr h100p">
-      
+
             <!-- home button -->
-            <a href="../Pages/applist.html" class="link link-nostyle but-primary ghost h100p flex fle-centerVr gap padding pad-sm">
+            <button class="but-xxs primary ghost flex fle-alignItems-center fle-justifyContent-center fle-alignSelf-stretch gap padding pad-xsHr">
                 <span class="icon ico-xs ico-carret-l"></span>
                 <span class="icon ico-sm ico-home"></span>
-            </a>
+            </button>
             <div class="flex gap">
 
                 <span class="icon ico-sm ico-th"></span>
@@ -46,7 +47,7 @@
                 <div id="target AAA" class="popup pop-dropdown edge-right to-left margin mar-mdVr">
 
                     <div class="menu men-sm pill pil-sm padding pad-smB">
-                        <header class = "padding pad-xs">
+                        <header class="padding pad-xs">
                             <h4>User</h4>
 
                         </header>
@@ -73,8 +74,8 @@
                 </div>
             </div>
             <div class="wrapper-button-popup-pair">
-                <button class="but-secondary ghost but-circle" title="User Profile" onclick="togglePopup(event, 'BBB')">
-                    <h3>⋮</h3>
+                <button class="secondary ghost but-circle" title="User Profile" onclick="togglePopup(event, 'BBB')">
+                    <span class="icon ico-sm ico-ellipsis-vr"></span>
                 </button>
                 <div class=overlay id="overlay BBB"></div>
                 <div id="target BBB" class="popup edge-right to-left margin mar-mdVr">
@@ -109,7 +110,7 @@
     <div class=page-content>
         <!-- global nav -->
 
-        <hr>
+      
         <div class="overlay" id="overlay appOnePopup"></div>
         <div class="focus-overlay">
             <div class="foco-lgL"></div>
@@ -123,7 +124,7 @@
                 swift answers and clarity. If you don't find what you're looking for, feel free to reach out to our
                 support team.</p>
             <br>
-            <a href = "">Contact Support</a>
+            <a href="">Contact Support</a>
         </div>
         <div class="spacer spa-md"></div>
         <!-- link-nostyle body app list -->
@@ -360,5 +361,6 @@
 
 
 <!-- app tile color -->
-<script src =  "../js/colors/appTileColor.js"></script>
+<script src="../js/colors/appTileColor.js"></script>
+
 </html>
