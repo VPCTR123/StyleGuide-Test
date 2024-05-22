@@ -17,15 +17,15 @@
           </button>
           <div class="overflow-auto relative whitespace-nowrap z-20">
             <button
-              class="button"
-              [ngClass]="{ 'but-secondary': showHtml }"
+              class="button secondary"
+              [ngClass]="{ 'primary': showHtml }"
               (click)="showHtml = true; highlight()"
             >
               Html
             </button>
             <button
-              class="button"
-              [ngClass]="{ 'but-secondary': !showHtml }"
+              class="button secondary"
+              [ngClass]="{ 'primary': !showHtml }"
               (click)="showHtml = false; highlight()"
             >
               Typescript

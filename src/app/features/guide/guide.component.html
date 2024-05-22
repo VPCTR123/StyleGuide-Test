@@ -28,27 +28,27 @@
           </code></pre>
         </div>
       </app-sample>
-      <app-sample *ngSwitchCase="'buttons'">
+      <app-sample *ngSwitchCase="'buttons'" class="w100p">
         <div class="docs">
-          <app-docs class="felx ">
+          <app-docs>
             <div class="title">Buttons</div>
-            <div class="description">A button initiates an instantaneous action. </div>
+            <div class="description">A button initiates an instantaneous action. Here are some examples. </div>
             <div class="example">
-              <div class="w25p flex fle-column gap gap-sm">
-                <h3>Button</h3>
-                <button class="button">Click</button>
-                <h3>Button Small</h3>
-                <button class="button but-sm">Click</button>
-                <h3>Button Circle</h3>
-                <button class="button but-circle">Click</button>
-                <h3>Button Secondary</h3>
-                <button class="button but-secondary">Click</button>
+              <div class="gap gap-sm">
+                <h3>Primary Button</h3>
+                <button class="button but-md primary pill pil-xs">Confirm</button>
+                <h3>Basic Button</h3>
+                <button class="button secondary but-sm pill pil-xs">Click</button>
+                <h3>Small Button</h3>
+                <button class="button but-xs secondary pill pil-xs">Click</button>
+                <h3>Circle Button</h3>
+                <button class="button but-circle secondary">Click</button>
               </div>
             </div>
             <div class="bestpractice">When buttons are instantly recognizable and easy to understand, an app tends to
               feel intuitive and well designed.
 
-              Make buttons easy for people to use. It’s essential to include enough space around a button so that people
+              Make buttons easy for people to use. It's essential to include enough space around a button so that people
               can visually distinguish it from surrounding components and content. Giving a button enough space is also
               critical for helping people select or activate it, regardless of the method of input they use. As a
               general rule, a button needs a hit region of at least 60x60 pt — to ensure that people can select it
@@ -157,11 +157,10 @@
               <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
                 drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
                 <div class="padding pad-smVr pad-smHr">
-                  <p>Data1</p>
-                  <p>Data2</p>
-                  <p>Data3</p>
-                  <p>Data4</p>
-                  <p>Data5</p>
+                  <div class="card pill pil-sm w25p"><span class="flex fle-centerHr">Short Card</span></div>
+                  <div class="card pill pil-sm w50p"><span class="flex fle-centerHr">Medium Card</span></div>
+                  <div class="card pill pil-sm w75p"><span class="flex fle-centerHr">Long Card</span></div>
+                  <div class="card pill pil-sm w100p"><span class="flex fle-centerHr">Full card</span></div>
                 </div>
               </app-drawer>
 
@@ -170,16 +169,7 @@
                 <app-drawer (toggled)="toggled($event)" displayName="Short Drawer"
                   drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
                   <div class="grid gri-halves padding pad-smVr pad-smVr pad-smHr w75p">
-                    <p class="padding pad-smVr pad-smVr">Name:</p>
-                    <input type="text" placeholder="John Doe" class="pill">
-                    <p class="padding pad-smVr pad-smVr">Addr:</p>
-                    <input type="text" placeholder="J123 Main Str" class="pill">
-                    <p class="padding pad-smVr pad-mdVr">State:</p>
-                    <input type="text" placeholder="DC" class="pill">
-                    <p class="padding pad-smVr pad-smVr">Zip:</p>
-                    <input type="text" placeholder="12345" class="pill">
-                    <p class="padding pad-smVr pad-smVr">Rank:</p>
-                    <input type="text" placeholder="LCpl" class="pill">
+                    <app-forms></app-forms>
                   </div>
                 </app-drawer>
               </div>
@@ -257,10 +247,10 @@
                       <p class="icon ico-md ico-closeX"></p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p class="icon ico-md ico-ellipse-vr"></p>
+                      <p class="icon ico-md ico-ellipsis-vr"></p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p class="icon ico-md ico-ellipse-hr"></p>
+                      <p class="icon ico-md ico-ellipsis-hr"></p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
                       <p class="icon ico-md ico-home"></p>
@@ -287,10 +277,10 @@
                       <p>ico-closeX</p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p>ico-ellipse-vr</p>
+                      <p>ico-ellipsis-vr</p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p>ico-ellipse-hr</p>
+                      <p>ico-ellipsis-hr</p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
                       <p>ico-home</p>
