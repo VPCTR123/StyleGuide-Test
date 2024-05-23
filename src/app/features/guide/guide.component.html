@@ -154,18 +154,20 @@
             </div>
             <div class="example">
               <h3>Default Drawer Example</h3>
-              <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
-                drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
-                <div class="padding pad-smVr pad-smHr">
-                  <div class="card pill pil-sm w25p"><span class="flex fle-centerHr">Short Card</span></div>
-                  <div class="card pill pil-sm w50p"><span class="flex fle-centerHr">Medium Card</span></div>
-                  <div class="card pill pil-sm w75p"><span class="flex fle-centerHr">Long Card</span></div>
-                  <div class="card pill pil-sm w100p"><span class="flex fle-centerHr">Full card</span></div>
-                </div>
-              </app-drawer>
+              <div class="margin mar-mdB">
+                <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
+                  drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                  <div class="padding pad-smVr pad-smHr">
+                    <div class="card pill pil-sm w25p"><span class="flex fle-centerHr">Short Card</span></div>
+                    <div class="card pill pil-sm w50p"><span class="flex fle-centerHr">Medium Card</span></div>
+                    <div class="card pill pil-sm w75p"><span class="flex fle-centerHr">Long Card</span></div>
+                    <div class="card pill pil-sm w100p"><span class="flex fle-centerHr">Full card</span></div>
+                  </div>
+                </app-drawer>
+              </div>
 
               <h3>Shorter Drawer With Inputs</h3>
-              <div class="focus foc-sm">
+              <div class="w50p">
                 <app-drawer (toggled)="toggled($event)" displayName="Short Drawer"
                   drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
                   <div class="grid gri-halves padding pad-smVr pad-smVr pad-smHr w75p">
@@ -229,7 +231,7 @@
                       <p>Squares</p>
                     </div>
                   </div>
-                  
+
                   <div class="flex fle-column">
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
                       <p class="icon ico-md ico-carret-u"></p>
@@ -295,7 +297,8 @@
 
               </div>
             </div>
-            <div class="bestpractice">Use icons to help UI navigation remain as intuitive as possible. (Icon of X for close, Down arrow/right arrow to indicate a dropdown to toggle)</div>
+            <div class="bestpractice">Use icons to help UI navigation remain as intuitive as possible. (Icon of X for
+              close, Down arrow/right arrow to indicate a dropdown to toggle)</div>
           </app-docs>
         </div>
         <div class="html">
@@ -303,6 +306,127 @@
               findSample('icons') | sanitizeHtml">
               
             </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'grids'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Grids</div>
+            <div class="description">Grids are used to organize parts of page into evenly spaced areas.</div>
+            <div class="example">
+              <div class="gap gap-sm">
+                <h3>Small/Thin Grid (Its reactive)</h3>
+                <div class="grid gri-sm">
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    <p>This is a grid. The columns can be made thinner or wider, but it will always fit the cells of the
+                      grid in as few rows as possible, and if the view gets smaller it will move the cells onto lower
+                      rows to accommodate the shorter area. Buttons are added as an example for spacing and margins.
+                    </p>
+                    <button class="button but-md primary pill pil-xs margin mar-xsT mar-smHr">Confirm</button>
+                    <button class="button secondary but-sm pill pil-xs margin mar-xsT mar-smHr">Deny</button>
+
+                  </div>
+                  <div class="card car-lgVr padding pad-smHr margin mar-sm">
+                    <div class="grid gri-xs">
+
+                      <div
+                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
+
+                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                          <span class="icon ico-sm ico-th"></span>
+                        </div>
+
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                          <h5>Lorem</h5>
+                        </div>
+                      </div>
+                      <div
+                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
+
+                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                          <span class="icon ico-sm ico-th"></span>
+                        </div>
+
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                          <h5>Ipsum</h5>
+                        </div>
+                      </div>
+                      <div
+                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
+
+                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                          <span class="icon ico-sm ico-th"></span>
+                        </div>
+
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                          <h5>Dolor</h5>
+                        </div>
+                      </div>
+                      <div
+                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
+
+                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                          <span class="icon ico-sm ico-th"></span>
+                        </div>
+
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                          <h5>Sit</h5>
+                        </div>
+                      </div>
+                      <div
+                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
+
+                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                          <span class="icon ico-sm ico-th"></span>
+                        </div>
+
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                          <h5>Amet</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card car-smVr car-lgHr padding pad-md margin mar-sm">
+                    The Grid contains these "cards" and the cards can have differing heights to display a
+                    wide range of components, the grid will keep them alligned at the top. This one is the shortest.
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    <app-drawer (toggled)="toggled($event)" displayName="Question?"
+                      drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                      <div class="padding pad-smVr pad-smHr">
+                        <span class="flex fle-centerHr">This very well could be your answer.</span>
+                      </div>
+                    </app-drawer>
+                    <app-drawer (toggled)="toggled($event)" displayName="Tips&Tricks"
+                      drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                      <div class="padding pad-smVr pad-smHr">
+                        <span class="flex fle-centerHr">This would be the place you could place those.</span>
+                      </div>
+                    </app-drawer>
+                    <app-drawer (toggled)="toggled($event)" displayName="Last Example"
+                      drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                      <div class="padding pad-smVr pad-smHr">
+                        <span class="flex fle-centerHr">Just trying to fill the space.</span>
+                      </div>
+                    </app-drawer>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestpractice">
+              Use grids when you want to display multiple elements on the same page, and keep them evently spaced and
+              grouped regardless of the window size.
+            </div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]="findSample('tables') | sanitizeHtml"></span>
           </code></pre>
         </div>
         <div class="typescript">
