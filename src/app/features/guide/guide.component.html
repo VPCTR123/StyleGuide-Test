@@ -60,7 +60,7 @@
           </code></pre>
         </div>
         <div class="typescript">
-          <pre><code  class="language-typescript highlight">
+          <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('buttons')"></span>
             
           </code></pre>
         </div>
@@ -112,6 +112,8 @@
                   <hr>
                   <div style="width: 100; height: 30px;"></div>
                 </div>
+                <h3>Card Component</h3>
+                <app-card title="Title!"></app-card>
               </div>
             </div>
             <div class="bestpractice">Cards are good for popups and grouping similar elements</div>
@@ -318,10 +320,13 @@
         <div class="docs">
           <app-docs>
             <div class="title">Grids</div>
-            <div class="description">Grids are used to organize parts of page into evenly spaced areas.</div>
+            <div class="description">Grids are used to organize parts of page into evenly spaced areas. They can be used
+              as fixed column numbers (Split the div in halves, thirds, etc) or they can be used in fixed column widths,
+              and always keep the content displayed in the fewest number of rows that will fit horizontally.</div>
             <div class="example">
               <div class="gap gap-sm">
                 <h3>Small/Thin Grid (Its reactive)</h3>
+
                 <div class="grid gri-sm">
                   <div class="card car-mdVr padding pad-md margin mar-sm">
                     <p>This is a grid. The columns can be made thinner or wider, but it will always fit the cells of the
@@ -334,62 +339,11 @@
                   </div>
                   <div class="card car-lgVr padding pad-smHr margin mar-sm">
                     <div class="grid gri-xs">
-
-                      <div
-                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
-
-                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
-                          <span class="icon ico-sm ico-th"></span>
-                        </div>
-
-                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
-                          <h5>Lorem</h5>
-                        </div>
-                      </div>
-                      <div
-                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
-
-                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
-                          <span class="icon ico-sm ico-th"></span>
-                        </div>
-
-                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
-                          <h5>Ipsum</h5>
-                        </div>
-                      </div>
-                      <div
-                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
-
-                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
-                          <span class="icon ico-sm ico-th"></span>
-                        </div>
-
-                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
-                          <h5>Dolor</h5>
-                        </div>
-                      </div>
-                      <div
-                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
-
-                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
-                          <span class="icon ico-sm ico-th"></span>
-                        </div>
-
-                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
-                          <h5>Sit</h5>
-                        </div>
-                      </div>
-                      <div
-                        class=" card car-xxsVr car-xs pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-xsVr">
-
-                        <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
-                          <span class="icon ico-sm ico-th"></span>
-                        </div>
-
-                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
-                          <h5>Amet</h5>
-                        </div>
-                      </div>
+                      <app-card class="margin mar-xsVr" title="Lorem"></app-card>
+                      <app-card class="margin mar-xsVr" title="Ipsum"></app-card>
+                      <app-card class="margin mar-xsVr" title="Dolor"></app-card>
+                      <app-card class="margin mar-xsVr" title="Sit"></app-card>
+                      <app-card class="margin mar-xsVr" title="Amet"></app-card>
                     </div>
                   </div>
                   <div class="card car-smVr car-lgHr padding pad-md margin mar-sm">
@@ -406,7 +360,7 @@
                     <app-drawer (toggled)="toggled($event)" displayName="Tips&Tricks"
                       drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
                       <div class="padding pad-smVr pad-smHr">
-                        <span class="flex fle-centerHr">This would be the place you could place those.</span>
+                        <span class="flex fle-centerHr">Check the console! I announce when I open and close.</span>
                       </div>
                     </app-drawer>
                     <app-drawer (toggled)="toggled($event)" displayName="Last Example"
@@ -415,6 +369,24 @@
                         <span class="flex fle-centerHr">Just trying to fill the space.</span>
                       </div>
                     </app-drawer>
+                  </div>
+                </div>
+                <h3 class="margin mar-mdT">Fixed Half Grid</h3>
+                <div class="grid gri-halves">
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    This grid uses the "gri-halves" class, which means it divides the div that contains it into 2
+                    halves, and then displays the divs it contains in this order, 2 columns per row, and as many rows as
+                    needed.
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    no matter how small the view or containing div gets, it will always be in halves, the grid width
+                    will become smaller to accommodate, unlike the grid above.
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    (Literally anything can go here!)
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    (Literally anything can go here!)
                   </div>
                 </div>
               </div>
@@ -426,7 +398,7 @@
           </app-docs>
         </div>
         <div class="html">
-          <pre><code  class="language-xml highlight"><span [innerHtml]="findSample('tables') | sanitizeHtml"></span>
+          <pre><code  class="language-xml highlight"><span [innerHtml]="findSample('grids') | sanitizeHtml"></span>
           </code></pre>
         </div>
         <div class="typescript">

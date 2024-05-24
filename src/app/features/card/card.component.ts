@@ -10,7 +10,7 @@ import { Component, EventEmitter, Input, Output, model, ModelSignal, input, outp
 export class CardComponent {
   
   title = input<string>("")
-  popupClicked = output();
+  cardClicked = output();
   //@Input() title: string = "Test Name";
 
   //@Output() popupClicked = new EventEmitter();
