@@ -1,6 +1,6 @@
 <div class="padding pad-sm">
   <div class="flex fle-space-between">
-    <div class="cell cel-xl">
+    <div class="cell cel-xxl">
       <div class="content con-scrollY-auto margin mar-sm">
         <ng-content select=".docs"> </ng-content>
       </div>
@@ -17,15 +17,15 @@
           </button>
           <div class="overflow-auto relative whitespace-nowrap z-20">
             <button
-              class="button"
-              [ngClass]="{ 'but-secondary': showHtml }"
+              class="button secondary"
+              [ngClass]="{ 'primary': showHtml }"
               (click)="showHtml = true; highlight()"
             >
               Html
             </button>
             <button
-              class="button"
-              [ngClass]="{ 'but-secondary': !showHtml }"
+              class="button secondary"
+              [ngClass]="{ 'primary': !showHtml }"
               (click)="showHtml = false; highlight()"
             >
               Typescript

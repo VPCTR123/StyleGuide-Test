@@ -28,27 +28,27 @@
           </code></pre>
         </div>
       </app-sample>
-      <app-sample *ngSwitchCase="'buttons'">
+      <app-sample *ngSwitchCase="'buttons'" class="w100p">
         <div class="docs">
-          <app-docs class="felx ">
+          <app-docs>
             <div class="title">Buttons</div>
-            <div class="description">A button initiates an instantaneous action. </div>
+            <div class="description">A button initiates an instantaneous action. Here are some examples. </div>
             <div class="example">
-              <div class="w25p flex fle-column gap gap-sm">
-                <h3>Button</h3>
-                <button class="button">Click</button>
-                <h3>Button Small</h3>
-                <button class="button but-sm">Click</button>
-                <h3>Button Circle</h3>
-                <button class="button but-circle">Click</button>
-                <h3>Button Secondary</h3>
-                <button class="button but-secondary">Click</button>
+              <div class="gap gap-sm">
+                <h3>Primary Button</h3>
+                <button class="button but-md primary pill pil-xs">Confirm</button>
+                <h3>Basic Button</h3>
+                <button class="button secondary but-sm pill pil-xs">Click</button>
+                <h3>Small Button</h3>
+                <button class="button but-xs secondary pill pil-xs">Click</button>
+                <h3>Circle Button</h3>
+                <button class="button but-circle secondary">Click</button>
               </div>
             </div>
             <div class="bestpractice">When buttons are instantly recognizable and easy to understand, an app tends to
               feel intuitive and well designed.
 
-              Make buttons easy for people to use. It’s essential to include enough space around a button so that people
+              Make buttons easy for people to use. It's essential to include enough space around a button so that people
               can visually distinguish it from surrounding components and content. Giving a button enough space is also
               critical for helping people select or activate it, regardless of the method of input they use. As a
               general rule, a button needs a hit region of at least 60x60 pt — to ensure that people can select it
@@ -60,7 +60,7 @@
           </code></pre>
         </div>
         <div class="typescript">
-          <pre><code  class="language-typescript highlight">
+          <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('buttons')"></span>
             
           </code></pre>
         </div>
@@ -112,6 +112,8 @@
                   <hr>
                   <div style="width: 100; height: 30px;"></div>
                 </div>
+                <h3>Card Component</h3>
+                <app-card title="Title!"></app-card>
               </div>
             </div>
             <div class="bestpractice">Cards are good for popups and grouping similar elements</div>
@@ -154,32 +156,24 @@
             </div>
             <div class="example">
               <h3>Default Drawer Example</h3>
-              <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
-                drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
-                <div class="padding pad-smVr pad-smHr">
-                  <p>Data1</p>
-                  <p>Data2</p>
-                  <p>Data3</p>
-                  <p>Data4</p>
-                  <p>Data5</p>
-                </div>
-              </app-drawer>
+              <div class="margin mar-mdB">
+                <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
+                  drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                  <div class="padding pad-smVr pad-smHr">
+                    <div class="card pill pil-sm w25p"><span class="flex fle-centerHr">Short Card</span></div>
+                    <div class="card pill pil-sm w50p"><span class="flex fle-centerHr">Medium Card</span></div>
+                    <div class="card pill pil-sm w75p"><span class="flex fle-centerHr">Long Card</span></div>
+                    <div class="card pill pil-sm w100p"><span class="flex fle-centerHr">Full card</span></div>
+                  </div>
+                </app-drawer>
+              </div>
 
               <h3>Shorter Drawer With Inputs</h3>
-              <div class="focus foc-sm">
+              <div class="w50p">
                 <app-drawer (toggled)="toggled($event)" displayName="Short Drawer"
                   drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
                   <div class="grid gri-halves padding pad-smVr pad-smVr pad-smHr w75p">
-                    <p class="padding pad-smVr pad-smVr">Name:</p>
-                    <input type="text" placeholder="John Doe" class="pill">
-                    <p class="padding pad-smVr pad-smVr">Addr:</p>
-                    <input type="text" placeholder="J123 Main Str" class="pill">
-                    <p class="padding pad-smVr pad-mdVr">State:</p>
-                    <input type="text" placeholder="DC" class="pill">
-                    <p class="padding pad-smVr pad-smVr">Zip:</p>
-                    <input type="text" placeholder="12345" class="pill">
-                    <p class="padding pad-smVr pad-smVr">Rank:</p>
-                    <input type="text" placeholder="LCpl" class="pill">
+                    <app-forms></app-forms>
                   </div>
                 </app-drawer>
               </div>
@@ -239,7 +233,7 @@
                       <p>Squares</p>
                     </div>
                   </div>
-                  
+
                   <div class="flex fle-column">
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
                       <p class="icon ico-md ico-carret-u"></p>
@@ -257,10 +251,10 @@
                       <p class="icon ico-md ico-closeX"></p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p class="icon ico-md ico-ellipse-vr"></p>
+                      <p class="icon ico-md ico-ellipsis-vr"></p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p class="icon ico-md ico-ellipse-hr"></p>
+                      <p class="icon ico-md ico-ellipsis-hr"></p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
                       <p class="icon ico-md ico-home"></p>
@@ -287,10 +281,10 @@
                       <p>ico-closeX</p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p>ico-ellipse-vr</p>
+                      <p>ico-ellipsis-vr</p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
-                      <p>ico-ellipse-hr</p>
+                      <p>ico-ellipsis-hr</p>
                     </div>
                     <div class="card car-sm car-xxsVr flex fle-centerVr fle-centerHr padding pad-smVr">
                       <p>ico-home</p>
@@ -305,7 +299,8 @@
 
               </div>
             </div>
-            <div class="bestpractice">Use icons to help UI navigation remain as intuitive as possible. (Icon of X for close, Down arrow/right arrow to indicate a dropdown to toggle)</div>
+            <div class="bestpractice">Use icons to help UI navigation remain as intuitive as possible. (Icon of X for
+              close, Down arrow/right arrow to indicate a dropdown to toggle)</div>
           </app-docs>
         </div>
         <div class="html">
@@ -313,6 +308,97 @@
               findSample('icons') | sanitizeHtml">
               
             </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'grids'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Grids</div>
+            <div class="description">Grids are used to organize parts of page into evenly spaced areas. They can be used
+              as fixed column numbers (Split the div in halves, thirds, etc) or they can be used in fixed column widths,
+              and always keep the content displayed in the fewest number of rows that will fit horizontally.</div>
+            <div class="example">
+              <div class="gap gap-sm">
+                <h3>Small/Thin Grid (Its reactive)</h3>
+
+                <div class="grid gri-sm">
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    <p>This is a grid. The columns can be made thinner or wider, but it will always fit the cells of the
+                      grid in as few rows as possible, and if the view gets smaller it will move the cells onto lower
+                      rows to accommodate the shorter area. Buttons are added as an example for spacing and margins.
+                    </p>
+                    <button class="button but-md primary pill pil-xs margin mar-xsT mar-smHr">Confirm</button>
+                    <button class="button secondary but-sm pill pil-xs margin mar-xsT mar-smHr">Deny</button>
+
+                  </div>
+                  <div class="card car-lgVr padding pad-smHr margin mar-sm">
+                    <div class="grid gri-xs">
+                      <app-card class="margin mar-xsVr" title="Lorem"></app-card>
+                      <app-card class="margin mar-xsVr" title="Ipsum"></app-card>
+                      <app-card class="margin mar-xsVr" title="Dolor"></app-card>
+                      <app-card class="margin mar-xsVr" title="Sit"></app-card>
+                      <app-card class="margin mar-xsVr" title="Amet"></app-card>
+                    </div>
+                  </div>
+                  <div class="card car-smVr car-lgHr padding pad-md margin mar-sm">
+                    The Grid contains these "cards" and the cards can have differing heights to display a
+                    wide range of components, the grid will keep them alligned at the top. This one is the shortest.
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    <app-drawer (toggled)="toggled($event)" displayName="Question?"
+                      drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                      <div class="padding pad-smVr pad-smHr">
+                        <span class="flex fle-centerHr">This very well could be your answer.</span>
+                      </div>
+                    </app-drawer>
+                    <app-drawer (toggled)="toggled($event)" displayName="Tips&Tricks"
+                      drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                      <div class="padding pad-smVr pad-smHr">
+                        <span class="flex fle-centerHr">Check the console! I announce when I open and close.</span>
+                      </div>
+                    </app-drawer>
+                    <app-drawer (toggled)="toggled($event)" displayName="Last Example"
+                      drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+                      <div class="padding pad-smVr pad-smHr">
+                        <span class="flex fle-centerHr">Just trying to fill the space.</span>
+                      </div>
+                    </app-drawer>
+                  </div>
+                </div>
+                <h3 class="margin mar-mdT">Fixed Half Grid</h3>
+                <div class="grid gri-halves">
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    This grid uses the "gri-halves" class, which means it divides the div that contains it into 2
+                    halves, and then displays the divs it contains in this order, 2 columns per row, and as many rows as
+                    needed.
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    no matter how small the view or containing div gets, it will always be in halves, the grid width
+                    will become smaller to accommodate, unlike the grid above.
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    (Literally anything can go here!)
+                  </div>
+                  <div class="card car-mdVr padding pad-md margin mar-sm">
+                    (Literally anything can go here!)
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestpractice">
+              Use grids when you want to display multiple elements on the same page, and keep them evently spaced and
+              grouped regardless of the window size.
+            </div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]="findSample('grids') | sanitizeHtml"></span>
           </code></pre>
         </div>
         <div class="typescript">

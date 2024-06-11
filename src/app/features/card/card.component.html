@@ -1,16 +1,17 @@
-<div class=" card car-xsH pill pill-sm ring flex fle-centerVr fle-rowreverse">
+<div class="card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
 
-    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColor-Sample2">
-        <span class="icon ico-sm ico-PLACEHOLDER"></span>
+    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+        <span class="icon ico-sm ico-th"></span>
     </div>
 
-    <a href=""  
-        class="link-nostyle select sel-none padding pad-lgHr position pos-absolute flex fle-centerVr">
-        <h5>{{title()}}</h5>
+    <a href=""
+        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+            <h5>{{title()}}</h5>
+        </div>
     </a>
 
-    <button class="but-base but-circle position pos-absolute margin mar-smR"
-        (click) = "popupClicked.emit()"><span
-            class="icon ico-sm ico-PLACEHOLDER"></span></button>
-
+    <button class="base but-circle margin mar-smR position pos-absolute"
+        (click) = "cardClicked.emit()"><span
+            class="icon ico-sm ico-ellipsis-vr"></span></button>
 </div>
