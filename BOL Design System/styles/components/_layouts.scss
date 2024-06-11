@@ -1,4 +1,4 @@
-
+@import "../variables";
 //** Vertical Spacing Component (div)
 .spacer {
 
@@ -54,38 +54,38 @@
 
     &.gri-xxs {
         // grid-template-columns: repeat(auto-fill, 5rem);
-        grid-template-columns: repeat(auto-fill, var(--celXxs));
+        grid-template-columns: repeat(auto-fill, $celXxs);
     }
 
     &.gri-xs {
         // grid-template-columns: repeat(auto-fill, 13rem);
-        grid-template-columns: repeat(auto-fill, var(--celXs));
+        grid-template-columns: repeat(auto-fill, $celXs);
     }
 
     &.gri-sm {
         // grid-template-columns: repeat(auto-fill, 20rem);
-        grid-template-columns: repeat(auto-fill, var(--celSm));
+        grid-template-columns: repeat(auto-fill, $celSm);
     }
 
     &.gri-md {
         // grid-template-columns: repeat(auto-fill, 30rem);
-        grid-template-columns: repeat(auto-fill, var(--celMd));
+        grid-template-columns: repeat(auto-fill, $celMd);
     }
 
     &.gri-lg {
         // grid-template-columns: repeat(auto-fill, 40rem);
-        grid-template-columns: repeat(auto-fill, var(--celLg));
+        grid-template-columns: repeat(auto-fill, $celLg);
     }
 
     &.gri-xl {
         // grid-template-columns: repeat(auto-fill, 65rem);
-        grid-template-columns: repeat(auto-fill, var(--celXl));
+        grid-template-columns: repeat(auto-fill, $celXl);
 
     }
 
     &.gri-xxl {
         // grid-template-columns: repeat(auto-fill, 80rem);
-        grid-template-columns: repeat(auto-fill, var(--celXxl));
+        grid-template-columns: repeat(auto-fill, $celXxl);
     }
 
     &.gri-full {

@@ -1,3 +1,4 @@
+@import "../variables";
 //** Menu Component - A (div) frame that pairs with different components to create a variety of different menu styles.
 .menu {
     //** Max width prevents modal style menus from exceeding the bounds of the monitor.
@@ -13,58 +14,58 @@
 
     //** Width Variants 
     &.men-xxs {
-        width: var(--celXxs);
+        width: $celXxs;
     }
 
     &.men-xs {
-        width: var(--celXs);
+        width: $celXs;
     }
 
     &.men-sm {
-        width: var(--celSm);
+        width: $celSm;
     }
 
     &.men-md {
-        width: var(--celMd);
+        width: $celMd;
     }
 
     &.men-lg {
-        width: var(--celLg);
+        width: $celLg;
     }
 
     &.men-xl {
-        width: var(--celXl);
+        width: $celXl;
     }
 
     &.men-xxl {
-        width: var(--celXxl);
+        width: $celXxl;
     }
     &.men-xxsVr {
-        height: var(--celXxs);
+        height: $celXxs;
     }
 
     &.men-xsVr {
-        height: var(--celXs);
+        height: $celXs;
     }
 
     &.men-smVr {
-        height: var(--celSm);
+        height: $celSm;
     }
 
     &.men-mdVr {
-        height: var(--celMd);
+        height: $celMd;
     }
 
     &.men-lgVr {
-        height: var(--celLg);
+        height: $celLg;
     }
 
     &.men-xlVr {
-        height: var(--celXl);
+        height: $celXl;
     }
 
     &.men-xxlVr {
-       height: var(--celXxl);
+       height: $celXxl;
     }
 
     &.men-fullVr {

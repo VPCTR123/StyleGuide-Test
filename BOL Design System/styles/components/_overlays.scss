@@ -1,3 +1,4 @@
+@import "../variables";
 //** Popup Component - The (div) popup is used to wrap any component you would like to show / hide
 //**                   When using onclick="toggleActive('specific-name')">
 
@@ -78,33 +79,33 @@
     & .foco-xxsL,
     .foco-xxsR {
         pointer-events: none;
-        width: calc(calc(100% - calc(var(--celXxs) * 2))/2);
+        width: calc(calc(100% - calc($celXxs * 2))/2);
     }
 
     & .foco-xsL,
     .foco-xsR {
         pointer-events: none;
-        width: calc(calc(100% - calc(var(--celXs) * 2))/2);
+        width: calc(calc(100% - calc($celXs * 2))/2);
     }
 
     & .foco-smL,
     .foco-smR {
         pointer-events: none;
-        width: calc(calc(100% - calc(var(--celSm) * 2))/2);
+        width: calc(calc(100% - calc($celSm * 2))/2);
     }
 
 
     & .foco-mdL,
     .foco-mdR {
         pointer-events: none;
-        width: calc(calc(100% - calc(var(--celMd) * 2))/2);
+        width: calc(calc(100% - calc($celMd * 2))/2);
 
     }
 
     & .foco-lgL,
     .foco-lgR {
         pointer-events: none;
-        width: calc(calc(100% - calc(var(--celLg) * 2))/2);
+        width: calc(calc(100% - calc($celLg * 2))/2);
 
     }
 
@@ -112,14 +113,14 @@
     & .foco-xlL,
     .foco-xlR {
         pointer-events: none;
-        width: calc(calc(100% - calc(var(--celXl) * 2))/2);
+        width: calc(calc(100% - calc($celXl * 2))/2);
     }
 
 
     & .foco-xxlL,
     .foco-xxlR {
         pointer-events: none;
-        width: calc(calc(100% - calc(var(--celXxl) * 2))/2);
+        width: calc(calc(100% - calc($celXxl * 2))/2);
     }
 
     

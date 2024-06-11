@@ -1,32 +1,94 @@
-//designed to match size of grid cells correspondingly 
+@import "variables";
+
+//** Fundamental unit for many systems
+//**designed to match size of grid cells correspondingly 
 .cell {
 
     &.cel-xxs {
-        width: var(--celXxs);
+        width: $celXxs;
     }
 
     &.cel-xs {
-        width: var(--celXs);
+        width: $celXs;
     }
 
     &.cel-sm {
-        width: var(--celSm);
+        width: $celSm;
     }
 
     &.cel-md {
-        width: var(--celMd);
+        width: $celMd;
+        
     }
 
     &.cel-lg {
-        width: var(--celLg);
+        width: $celLg;
     }
 
     &.cel-xl {
-        width: var(--celXl);
+        width: $celXl;
     }
 
     &.cel-xxl {
-        width: var(--celXxl);
+        width: $celXxl;
+    }
+
+
+    &.cel-xxsMin {
+        min-width: $celXxs;
+    }
+
+    &.cel-xsMin {
+        min-width: $celXs;
+    }
+
+    &.cel-smMin {
+        min-width: $celSm;
+    }
+
+    &.cel-mdMin {
+        min-width: $celMd;
+    }
+
+    &.cel-lgMin {
+        min-width: $celLg;
+    }
+
+    &.cel-xlMin {
+        min-width: $celXl;
+    }
+
+    &.cel-xxlMin {
+        min-width: $celXxl;
+    }
+
+
+    &.cel-xxsMax {
+        max-width: $celXxs;
+    }
+
+    &.cel-xsMax {
+        max-width: $celXs;
+    }
+
+    &.cel-smMax {
+        max-width: $celSm;
+    }
+
+    &.cel-mdMax {
+        max-width: $celMd;
+    }
+
+    &.cel-lgMax {
+        max-width: $celLg;
+    }
+
+    &.cel-xlMax {
+        max-width: $celXl;
+    }
+
+    &.cel-xxlMax {
+        max-width: $celXxl;
     }
 }
 
@@ -62,67 +124,67 @@
 
     //max width
     &.con-xxsMax {
-        max-width: calc(var(--celXxs)*2);
+        max-width: calc($celXxs*2);
     }
 
     &.con-xsMax {
-        max-width: calc(var(--celXs)*2);
+        max-width: calc($celXs*2);
     }
 
     &.con-smMax {
-        max-width: calc(var(--celSm)*2);
+        max-width: calc($celSm*2);
     }
 
     &.con-mdMax {
-        max-width: calc(var(--celMd)*2);
+        max-width: calc($celMd*2);
     }
 
     &.con-lgMax {
-        max-width: calc(var(--celLg)*2);
+        max-width: calc($celLg*2);
     }
 
     &.con-xlMax {
-        max-width: calc(var(--celXl)*2);
+        max-width: calc($celXl*2);
     }
 
     &.con-xxlMax {
-        max-width: calc(var(--celXxl)*2);
+        max-width: calc($celXxl*2);
     }
 
     //width
     &.con-xxs {
-        width: calc(var(--celXxs)*2);
+        width: calc($celXxs*2);
     }
 
     &.con-xs {
-        width: calc(var(--celXs)*2);
+        width: calc($celXs*2);
     }
 
     &.con-sm {
-        width: calc(var(--celSm)*2);
+        width: calc($celSm*2);
     }
 
     &.con-md {
-        width: calc(var(--celMd)*2);
+        width: calc($celMd*2);
     }
 
     &.con-lg {
-        width: calc(var(--celLg)*2);
+        width: calc($celLg*2);
     }
 
     &.con-xl {
-        width: calc(var(--celXl)*2);
+        width: calc($celXl*2);
     }
 
     &.con-xxl {
-        width: calc(var(--celXxl)*2);
+        width: calc($celXxl*2);
     }
 
     //max width percent tens
     &.con-100pMax {
         max-width: 100%;
     }
-
+ 
     &.con-90pMax {
         max-width: 90%;
     }
@@ -371,60 +433,61 @@
 
     //max height
     &.con-xxsMaxVr {
-        max-height: calc(var(--celXxs)*2);
+        max-height: calc($celXxs*2);
     }
 
     &.con-xsMaxVr {
-        max-height: calc(var(--celXs)*2);
+        max-height: calc($celXs*2);
     }
 
     &.con-smMaxVr {
-        max-height: calc(var(--celSm)*2);
+        max-height: calc($celSm*2);
     }
 
     &.con-mdMaxVr {
-        max-height: calc(var(--celMd)*2);
+        max-height: calc($celMd*2);
     }
 
     &.con-lgMaxVr {
-        max-height: calc(var(--celLg)*2);
+        max-height: calc($celLg*2);
     }
 
     &.con-xlMaxVr {
-        max-height: calc(var(--celXl)*2);
+        max-height: calc($celXl*2);
     }
 
     &.con-xxlMaxVr {
-        max-height: calc(var(--celXxl)*2);
+        max-height: calc($celXxl*2);
     }
 
     //height
     &.con-xxsVr {
-        height: calc(var(--celXxs)*2);
+        height: calc($celXxs*2);
     }
 
     &.con-xsVr {
-        height: calc(var(--celXs)*2);
+        height: calc($celXs*2);
     }
 
     &.con-smVr {
-        height: calc(var(--celSm)*2);
+        height: calc($celSm*2);
     }
 
     &.con-mdVr {
-        height: calc(var(--celMd)*2);
+        height: calc($celMd*2);
+        height: 10rem !important;
     }
 
     &.con-lgVr {
-        height: calc(var(--celLg)*2);
+        height: calc($celLg*2);
     }
 
     &.con-xlVr {
-        height: calc(var(--celXl)*2);
+        height: calc($celXl*2);
     }
 
     &.con-xxlVr {
-        height: calc(var(--celXxl)*2);
+        height: calc($celXxl*2);
     }
 
     //max height percent tens
@@ -790,6 +853,7 @@
         align-items: baseline;
     }
 
+
     //UPDATED NAMING
 
     &.fle-alignItems-baseline {
@@ -806,6 +870,10 @@
 
     &.fle-alignItems-start {
         align-items: start;
+    }
+
+    &.fle-alignItems-flexStart {
+        align-items: flex-start;
     }
 
     &.fle-alignItems-inherit {
@@ -956,86 +1024,6 @@
         flex-flow: wrap-reverse;
     }
 
-    &.flex-grow-one {
-        flex-grow: 1;
-    }
-
-    &.flex-grow-two {
-        flex-grow: 2;
-    }
-
-    &.flex-grow-three {
-        flex-grow: 3;
-    }
-
-    &.flex-grow-four {
-        flex-grow: 4;
-    }
-
-    &.flex-grow-five {
-        flex-grow: 5;
-    }
-
-    &.flex-grow-six {
-        flex-grow: 6;
-    }
-
-    &.flex-grow-seven {
-        flex-grow: 7;
-    }
-
-    &.flex-grow-eight {
-        flex-grow: 8;
-    }
-
-    &.flex-grow-nine {
-        flex-grow: 9;
-    }
-
-    &.flex-grow-ten {
-        flex-grow: 10;
-    }
-
-    &.flex-shrink-one {
-        flex-shrink: 1;
-    }
-
-    &.flex-shrink-two {
-        flex-shrink: 2;
-    }
-
-    &.flex-shrink-three {
-        flex-shrink: 3;
-    }
-
-    &.flex-shrink-four {
-        flex-shrink: 4;
-    }
-
-    &.flex-shrink-five {
-        flex-shrink: 5;
-    }
-
-    &.flex-shrink-six {
-        flex-shrink: 6;
-    }
-
-    &.flex-shrink-seven {
-        flex-shrink: 7;
-    }
-
-    &.flex-shrink-eight {
-        flex-shrink: 8;
-    }
-
-    &.flex-shrink-nine {
-        flex-shrink: 9;
-    }
-
-    &.flex-shrink-ten {
-        flex-shrink: 10;
-    }
-
     &.fle-wrap {
         flex-wrap: wrap;
     }
@@ -1093,41 +1081,41 @@
 
 //** Gap Modifier
 .gap {
-    gap: .5rem;
+    gap: $gap;
 
     &.gap-xxs {
-        // gap: 1px;
-        gap: .25rem;
+
+        gap: $gapXxs;
     }
 
     &.gap-xs {
-        // gap: 1px;
-        gap: .5rem;
+
+        gap: $gapXs;
     }
 
     &.gap-sm {
-        // gap: .5rem;
-        gap: .75rem;
+
+        gap: $gapSm;
     }
 
     &.gap-md {
-        // gap: 1rem;
-        gap: 1rem;
+
+        gap: $gapMd;
     }
 
     &.gap-lg {
-        // gap: 5rem;
-        gap: 3rem;
+
+        gap: $gapLg;
     }
 
     &.gap-xl {
-        // gap: 10rem;
-        gap: 5rem;
+
+        gap: $gapXl;
     }
 
     &.gap-xxl {
-        // gap: 10rem;
-        gap: 10rem;
+
+        gap: $gapXxl;
     }
 }
 
@@ -1135,8 +1123,88 @@
 .ghost:not(:hover) {
 
     background-color: hsla(0, 0, 0, 0) !important;
-    &.gho-transXxs{
+
+    &.gho-transXxs {
         transition: background-color .1s;
+    }
+}
+
+//** Flex Grow
+.grow {
+    &.gro-one {
+        flex-grow: 1;
+    }
+
+    &.gro-two {
+        flex-grow: 2;
+    }
+
+    &.gro-three {
+        flex-grow: 3;
+    }
+
+    &.gro-four {
+        flex-grow: 4;
+    }
+
+    &.gro-five {
+        flex-grow: 5;
+    }
+
+    &.gro-six {
+        flex-grow: 6;
+    }
+
+    &.gro-seven {
+        flex-grow: 7;
+    }
+
+    &.gro-eight {
+        flex-grow: 8;
+    }
+
+    &.gro-nine {
+        flex-grow: 9;
+    }
+
+    &.gro-ten {
+        flex-grow: 10;
+    }
+
+    &.gro-half {
+        flex-grow: .5;
+    }
+
+    .gro-third {
+        flex-grow: .33333;
+    }
+
+    .gro-quarter {
+        flex-grow: .25;
+    }
+
+    .gro-fifth {
+        flex-grow: .2;
+    }
+
+    .gro-sixth {
+        flex-grow: .166666;
+    }
+
+    .gro-seventh {
+        flex-grow: .143;
+    }
+
+    .gro-eighth {
+        flex-grow: .125;
+    }
+
+    .gro-ninth {
+        flex-grow: .1111;
+    }
+
+    .gro-tenth {
+        flex-grow: .1;
     }
 }
 
@@ -1144,6 +1212,64 @@
 .hide-bg {
 
     background-color: hsla(0, 0, 0, 0) !important;
+}
+
+.magic-wrapper {
+    container: magic / inline-size;
+}
+
+$magic-classes: mag-xxs, mag-xs, mag-sm, mag-md, mag-lg, mag-xl, mag-xxl;
+$magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
+
+@for $j from 1 through length($magic-classes) {
+    $class: nth($magic-classes, $j);
+    $var: nth($magic-vars, $j);
+
+    @for $i from 1 through 8 {
+        @if $i ==1 {
+            @container magic (max-width: calc(#{$var} * 2)) {
+                .#{$class} {
+                    max-width: #{$var};
+                }
+            }
+        }
+
+        @else if $i ==8 {
+            @container magic (min-width: calc(#{$var} * #{$i})) {
+                .#{$class} {
+                    max-width: calc(#{$var} * #{$i});
+                }
+            }
+        }
+
+        @else {
+            @container magic (width > calc(#{$var} * #{$i})) and (max-width: calc(#{$var} * #{ $i + 1})) {
+                .#{$class} {
+                    max-width: calc(#{$var} * #{$i});
+                }
+            }
+        }
+
+        @for $max from 1 through 8 {
+            .mag-#{$max}Max {
+                @if $i >$max {
+                    @container magic (width > calc(#{$var} * #{$max})) {
+                        .#{$class} {
+                            max-width: calc(#{$var} * #{$max});
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.magic {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 //** Margin Modifier Component 
@@ -1735,31 +1861,31 @@
 
 
     &.padf-xxsHr {
-        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXxs) * 2)) / 2));
+        padding-left: max(var(--padfMin), calc((100% - calc($celXxs * 2)) / 2));
     }
 
     &.padf-xsHr {
-        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXs) * 2)) / 2));
+        padding-left: max(var(--padfMin), calc((100% - calc($celXs * 2)) / 2));
     }
 
     &.padf-smHr {
-        padding-left: max(var(--padfMin), calc((100% - calc(var(--celSm) * 2)) / 2));
+        padding-left: max(var(--padfMin), calc((100% - calc($celSm * 2)) / 2));
     }
 
     &.padf-mdHr {
-        padding-left: max(var(--padfMin), calc((100% - calc(var(--celMd) * 2)) / 2));
+        padding-left: max(var(--padfMin), calc((100% - calc($celMd * 2)) / 2));
     }
 
     &.padf-lgHr {
-        padding-left: max(var(--padfMin), calc((100% - calc(var(--celLg) * 2)) / 2));
+        padding-left: max(var(--padfMin), calc((100% - calc($celLg * 2)) / 2));
     }
 
     &.padf-xlHr {
-        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXl) * 2)) / 2));
+        padding-left: max(var(--padfMin), calc((100% - calc($celXl * 2)) / 2));
     }
 
     &.padf-xxlHr {
-        padding-left: max(var(--padfMin), calc((100% - calc(var(--celXxl) * 2)) / 2));
+        padding-left: max(var(--padfMin), calc((100% - calc($celXxl * 2)) / 2));
     }
 }
 
@@ -1853,6 +1979,85 @@
 
 }
 
+//** Flex Shink
+.shrink {
+    &.shr-one {
+        flex-shrink: 1;
+    }
+
+    &.shr-two {
+        flex-shrink: 2;
+    }
+
+    &.shr-three {
+        flex-shrink: 3;
+    }
+
+    &.shr-four {
+        flex-shrink: 4;
+    }
+
+    &.shr-five {
+        flex-shrink: 5;
+    }
+
+    &.shr-six {
+        flex-shrink: 6;
+    }
+
+    &.shr-seven {
+        flex-shrink: 7;
+    }
+
+    &.shr-eight {
+        flex-shrink: 8;
+    }
+
+    &.shr-nine {
+        flex-shrink: 9;
+    }
+
+    &.shr-ten {
+        flex-shrink: 10;
+    }
+
+    &.shr-half {
+        flex-shrink: .5;
+    }
+
+    .shr-third {
+        flex-shrink: .33333;
+    }
+
+    .shr-quarter {
+        flex-shrink: .25;
+    }
+
+    .shr-fifth {
+        flex-shrink: .2;
+    }
+
+    .shr-sixth {
+        flex-shrink: .166666;
+    }
+
+    .shr-seventh {
+        flex-shrink: .143;
+    }
+
+    .shr-eighth {
+        flex-shrink: .125;
+    }
+
+    .shr-ninth {
+        flex-shrink: .1111;
+    }
+
+    .shr-tenth {
+        flex-shrink: .1;
+    }
+}
+
 //** User Select Modifier
 .text-select {
     //** Default
@@ -1889,24 +2094,4 @@
     &.texw-nowrap {
         text-wrap: nowrap !important;
     }
-}
-
-.w25p {
-    width: 25%;
-}
-
-.w50p {
-    width: 50%;
-}
-
-.w75p {
-    width: 75%;
-}
-
-.w100p {
-    width: 100%;
-}
-
-.h100p {
-    height: 100%;
 }

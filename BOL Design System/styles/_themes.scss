@@ -55,6 +55,8 @@
         $primary: hsl(266, 57%, 49%);
     }
 
+    $success:  hsl(129, 67%, 41%);
+
     $baseInv: invert-lightness($base);
     $base33: color-mix(in srgb, $base 33%, $baseInv 66%);
     $base66: color-mix(in srgb, $base 66%, $baseInv 33%);
@@ -129,7 +131,7 @@
 
 
         background-color: $base85;
-        @include textcolor($base10);
+       color: $base10;
 
         &.scrolled {
             background-color: $base;
@@ -163,6 +165,9 @@
     .base{
         background-color: $base;
     }
+    .base-color{
+        color: $base;
+    }
     .base10{
         background-color: $base10;
     }
@@ -192,6 +197,9 @@
     }
     .baseInv{
         background-color: $baseInv;
+    }
+    .success{
+        background-color: $success;
     }
     hr {
         border-color: $base85;
@@ -315,7 +323,7 @@
     .card {
         border-color: $base75;
         background-color: $base;
-        @include textcolor($base15);
+        // @include textcolor($base15);
     }
 
 

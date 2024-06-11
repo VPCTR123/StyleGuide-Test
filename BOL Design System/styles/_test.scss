@@ -6,10 +6,105 @@
     color: red;
 }
 
+.green {
+    background-color: green;
+}
+
 .yellow {
     background-color: yellow !important;
 }
 
 .blue {
     background-color: blue !important;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.box {
+    width: 30rem;
+
+}
+
+.max100 {
+    max-width: 100%;
+}
+
+.magicwrap {
+    container: magic / inline-size;
+    border: .1rem solid rgb(0, 0, 0) !important;
+
+
+}
+
+.bordered-test {
+    border: 3px solid red;
+}
+
+.gggg {
+    background-color: green;
+}
+
+.testabs {
+    position: absolute;
+}
+
+.testrel {
+    position: relative;
+}
+
+.magicchild {
+    background-color: yellow;
+}
+
+@container magic (max-width: 60rem) {
+    .magicchild {
+        max-width: 30rem;
+    }
+}
+
+.vvv {
+    position: relative;
+    overflow: hidden;
+}
+
+.bbb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: -1;
+
+}
+
+
+//limit class 
+//min class
+
+
+
+
+
+//** LEGACY 
+.w25p {
+    width: 25%;
+}
+
+.w50p {
+    width: 50%;
+}
+
+.w75p {
+    width: 75%;
+}
+
+.w100p {
+    width: 100%;
+}
+
+.h100p {
+    height: 100%;
 }

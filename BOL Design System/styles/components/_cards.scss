@@ -1,3 +1,4 @@
+@import "../variables";
 //** Card Component Base - A (div) basic container for content.
 .card {
 
@@ -8,60 +9,63 @@
 
     //** Card Width Variants
     &.car-xxs {
-        width: var(--celXxs);
+        width: $celXxs;
     }
 
     &.car-xs {
-        width: var(--celXs);
+        width: $celXs;
     }
 
     &.car-sm {
-        width: var(--celSm);
+        width: $celSm;
     }
 
     &.car-md {
-        width: var(--celMd);
+        width: $celMd;
     }
 
     &.car-lg {
-        width: var(--celLg);
+        width: $celLg;
     }
 
     &.car-xl {
-        width: var(--celXl);
+        width: $celXl;
     }
 
     &.car-xxl {
-        width: var(--celXxl);
+        width: $celXxl;
     }
 
     //** Card Height Variants
     &.car-xxsVr {
-        height: var(--celXxs);
+        height: $celXxs;
     }
 
     &.car-xsVr {
-        height: var(--celXs);
+        height: $celXs;
     }
 
     &.car-smVr {
-        height: var(--celSm);
+        height: $celSm;
     }
 
     &.car-mdVr {
-        height: var(--celMd);
+        height: $celMd;
     }
 
     &.car-lgVr {
-        height: var(--celLg);
+        height: $celLg;
     }
 
     &.car-xlVr {
-        height: var(--celXl);
+        height: $celXl;
     }
 
     &.car-xxlVr {
-        width: var(--celXxl);
+        width: $celXxl;
+    }
+    &.car-borderless{
+        border: none;
     }
 }
 
