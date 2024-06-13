@@ -190,7 +190,7 @@
           </code></pre>
         </div>
         <div class="typescript">
-          <pre><code  class="language-typescript highlight">
+          <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('drawers')"></span>
             
           </code></pre>
         </div>
@@ -403,6 +403,74 @@
         </div>
         <div class="typescript">
           <pre><code  class="language-typescript highlight">
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'popups'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Pop-Ups</div>
+            <div class="description">Popup description </div>
+            <div class="example">
+              <div class="gap gap-sm">
+                <h3>Example Popup</h3>
+                <button class="button but-md primary pill pil-xs" (click)="this.showExampleDialog = true">Show Popup</button>
+                <p>{{this.showExampleDialog}}</p>
+                <app-popup *ngIf="showExampleDialog"
+                (closePopup)="cancelClicked()">
+                  <div class="title">
+                    App Details
+                  </div>
+                  <div class="body-icon-header">
+                    <span class="icon ico-md ico-th ico-color"></span>
+                  </div>
+                  <div class="body-header">
+                    Header
+                  </div>
+                  <div class="body-sub-header">
+                    SubHeader
+                  </div>
+                  <div class="body">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint quis repellendus nam
+                    ipsam autem aspernatur quaerat, est delectus. Id consequuntur, fugit similique quibusdam dicta
+                    dolorum velit corporis alias quae! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Necessitatibus tempore exercitationem ex distinctio esse dolor corporis numquam nesciunt
+                    consectetur! Ullam unde distinctio repellat ab quos. Earum error porro laboriosam iste?
+                  </div>
+                  <div class="foot padding pad-sm flex fle-end gap gap-sm">
+                    <button class="but-square secondary pill pil-xs" (click)="cancelClicked()">A</button>
+                    <button class="but-square secondary  pill pil-xs" (click)="cancelClicked()">B</button>
+                    <button class=" but-md primary padding pad-mdHr pill pil-xs" (click)="confirmClicked()">Launch App</button>
+                  </div>
+                </app-popup>
+                <h3>Confrmation Popup</h3>
+                <button class="button but-md primary pill pil-xs" (click)="this.showConfirmDialog = true">Show Confirm</button>
+                <p>{{this.showConfirmDialog}}</p>
+                <app-popup *ngIf="showConfirmDialog"
+                (closePopup)="cancelClicked()">
+                  <div class="title">
+                    Confirmation
+                  </div>
+                  <div class="body">
+                    Are you sure about that?
+                  </div>
+                  <div class="foot padding pad-sm flex fle-centerHr gap gap-sm">
+                    <button class="but-md secondary pill pil-xs" (click)="cancelClicked()">No</button>
+                    <button class=" but-md primary padding pad-mdHr pill pil-xs" (click)="confirmClicked()">Yes</button>
+                  </div>
+                </app-popup>
+              </div>
+            </div>
+            <div class="bestpractice">Popup best practices</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]="findSample('popups') | sanitizeHtml"></span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('popups')"></span>
             
           </code></pre>
         </div>
