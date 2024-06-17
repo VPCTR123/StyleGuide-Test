@@ -1229,7 +1229,7 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
         @if $i ==1 {
             @container magic (max-width: calc(#{$var} * 2)) {
                 .#{$class} {
-                    max-width: #{$var};
+                  width: #{$var};
                 }
             }
         }
@@ -1238,6 +1238,7 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
             @container magic (min-width: calc(#{$var} * #{$i})) {
                 .#{$class} {
                     max-width: calc(#{$var} * #{$i});
+                  
                 }
             }
         }
@@ -1245,7 +1246,8 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
         @else {
             @container magic (width > calc(#{$var} * #{$i})) and (max-width: calc(#{$var} * #{ $i + 1})) {
                 .#{$class} {
-                    max-width: calc(#{$var} * #{$i});
+                  width: calc(#{$var} * #{$i});
+                    
                 }
             }
         }
@@ -1255,7 +1257,8 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
                 @if $i >$max {
                     @container magic (width > calc(#{$var} * #{$max})) {
                         .#{$class} {
-                            max-width: calc(#{$var} * #{$max});
+                           width: calc(#{$var} * #{$max});
+                    
                         }
                     }
                 }
@@ -1264,8 +1267,14 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
     }
 }
 
+// @container magic (max-width: 100vw) {
+//     .left-fade, .right-fade{
 
+//         background-color: red !important;
+//     }
+// }
 .magic {
+    background-color: red;
     margin-left: auto;
     margin-right: auto;
     display: flex;
