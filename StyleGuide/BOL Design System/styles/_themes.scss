@@ -93,12 +93,7 @@
     .page-content {
         background-color: $base;
     }
-    .left-fade{
-        background-image: linear-gradient(to right, $base, transparent);
-    }
-    .right-fade{
-        background-image: linear-gradient(to left, $base, transparent);
-    }
+
     [class*='foco-'][class$='R'] {
         background-image: linear-gradient(to left, $base, transparent);
     }

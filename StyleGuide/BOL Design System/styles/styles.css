@@ -381,38 +381,6 @@ footer, .footer {
   content: "\e908";
 }
 
-.circle {
-  border-radius: 100%;
-}
-.circle.cir-xxs {
-  width: 0.5rem;
-  height: 0.5rem;
-}
-.circle.cir-xs {
-  width: 1rem;
-  height: 1rem;
-}
-.circle.cir-sm {
-  width: 2rem;
-  height: 2rem;
-}
-.circle.cir-md {
-  width: 3rem;
-  height: 3rem;
-}
-.circle.cir-lg {
-  width: 4rem;
-  height: 4rem;
-}
-.circle.cir-xl {
-  width: 5rem;
-  height: 5rem;
-}
-.circle.cir-xxl {
-  width: 6rem;
-  height: 6rem;
-}
-
 .background-image {
   position: fixed;
   top: 0;
@@ -681,10 +649,6 @@ hr.hr-xl,
 .focus-overlay .foco-xxlR {
   pointer-events: none;
   width: calc((100% - 150rem) / 2);
-}
-
-.left-fade, .right-fade {
-  flex-grow: 1;
 }
 
 .link-nostyle {
@@ -1732,162 +1696,162 @@ nav.nav-main {
 
 @container magic (max-width: calc(6rem * 2)) {
   .mag-xxs {
-    width: 6rem;
+    max-width: 6rem;
   }
 }
 @container magic (width > calc(6rem * 2)) and (max-width: calc(6rem * 3)) {
   .mag-xxs {
-    width: calc(6rem * 2);
+    max-width: calc(6rem * 2);
   }
 }
 @container magic (width > calc(6rem * 1)) {
   .mag-1Max .mag-xxs {
-    width: calc(6rem * 1);
+    max-width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 3)) and (max-width: calc(6rem * 4)) {
   .mag-xxs {
-    width: calc(6rem * 3);
+    max-width: calc(6rem * 3);
   }
 }
 @container magic (width > calc(6rem * 1)) {
   .mag-1Max .mag-xxs {
-    width: calc(6rem * 1);
+    max-width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
   .mag-2Max .mag-xxs {
-    width: calc(6rem * 2);
+    max-width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 4)) and (max-width: calc(6rem * 5)) {
   .mag-xxs {
-    width: calc(6rem * 4);
+    max-width: calc(6rem * 4);
   }
 }
 @container magic (width > calc(6rem * 1)) {
   .mag-1Max .mag-xxs {
-    width: calc(6rem * 1);
+    max-width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
   .mag-2Max .mag-xxs {
-    width: calc(6rem * 2);
+    max-width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
   .mag-3Max .mag-xxs {
-    width: calc(6rem * 3);
+    max-width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 5)) and (max-width: calc(6rem * 6)) {
   .mag-xxs {
-    width: calc(6rem * 5);
+    max-width: calc(6rem * 5);
   }
 }
 @container magic (width > calc(6rem * 1)) {
   .mag-1Max .mag-xxs {
-    width: calc(6rem * 1);
+    max-width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
   .mag-2Max .mag-xxs {
-    width: calc(6rem * 2);
+    max-width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
   .mag-3Max .mag-xxs {
-    width: calc(6rem * 3);
+    max-width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
   .mag-4Max .mag-xxs {
-    width: calc(6rem * 4);
+    max-width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 6)) and (max-width: calc(6rem * 7)) {
   .mag-xxs {
-    width: calc(6rem * 6);
+    max-width: calc(6rem * 6);
   }
 }
 @container magic (width > calc(6rem * 1)) {
   .mag-1Max .mag-xxs {
-    width: calc(6rem * 1);
+    max-width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
   .mag-2Max .mag-xxs {
-    width: calc(6rem * 2);
+    max-width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
   .mag-3Max .mag-xxs {
-    width: calc(6rem * 3);
+    max-width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
   .mag-4Max .mag-xxs {
-    width: calc(6rem * 4);
+    max-width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 5)) {
   .mag-5Max .mag-xxs {
-    width: calc(6rem * 5);
+    max-width: calc(6rem * 5);
   }
 }
 
 @container magic (width > calc(6rem * 7)) and (max-width: calc(6rem * 8)) {
   .mag-xxs {
-    width: calc(6rem * 7);
+    max-width: calc(6rem * 7);
   }
 }
 @container magic (width > calc(6rem * 1)) {
   .mag-1Max .mag-xxs {
-    width: calc(6rem * 1);
+    max-width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
   .mag-2Max .mag-xxs {
-    width: calc(6rem * 2);
+    max-width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
   .mag-3Max .mag-xxs {
-    width: calc(6rem * 3);
+    max-width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
   .mag-4Max .mag-xxs {
-    width: calc(6rem * 4);
+    max-width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 5)) {
   .mag-5Max .mag-xxs {
-    width: calc(6rem * 5);
+    max-width: calc(6rem * 5);
   }
 }
 
 @container magic (width > calc(6rem * 6)) {
   .mag-6Max .mag-xxs {
-    width: calc(6rem * 6);
+    max-width: calc(6rem * 6);
   }
 }
 
@@ -1898,204 +1862,204 @@ nav.nav-main {
 }
 @container magic (width > calc(6rem * 1)) {
   .mag-1Max .mag-xxs {
-    width: calc(6rem * 1);
+    max-width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
   .mag-2Max .mag-xxs {
-    width: calc(6rem * 2);
+    max-width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
   .mag-3Max .mag-xxs {
-    width: calc(6rem * 3);
+    max-width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
   .mag-4Max .mag-xxs {
-    width: calc(6rem * 4);
+    max-width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 5)) {
   .mag-5Max .mag-xxs {
-    width: calc(6rem * 5);
+    max-width: calc(6rem * 5);
   }
 }
 
 @container magic (width > calc(6rem * 6)) {
   .mag-6Max .mag-xxs {
-    width: calc(6rem * 6);
+    max-width: calc(6rem * 6);
   }
 }
 
 @container magic (width > calc(6rem * 7)) {
   .mag-7Max .mag-xxs {
-    width: calc(6rem * 7);
+    max-width: calc(6rem * 7);
   }
 }
 
 @container magic (max-width: calc(9rem * 2)) {
   .mag-xs {
-    width: 9rem;
+    max-width: 9rem;
   }
 }
 @container magic (width > calc(9rem * 2)) and (max-width: calc(9rem * 3)) {
   .mag-xs {
-    width: calc(9rem * 2);
+    max-width: calc(9rem * 2);
   }
 }
 @container magic (width > calc(9rem * 1)) {
   .mag-1Max .mag-xs {
-    width: calc(9rem * 1);
+    max-width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 3)) and (max-width: calc(9rem * 4)) {
   .mag-xs {
-    width: calc(9rem * 3);
+    max-width: calc(9rem * 3);
   }
 }
 @container magic (width > calc(9rem * 1)) {
   .mag-1Max .mag-xs {
-    width: calc(9rem * 1);
+    max-width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
   .mag-2Max .mag-xs {
-    width: calc(9rem * 2);
+    max-width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 4)) and (max-width: calc(9rem * 5)) {
   .mag-xs {
-    width: calc(9rem * 4);
+    max-width: calc(9rem * 4);
   }
 }
 @container magic (width > calc(9rem * 1)) {
   .mag-1Max .mag-xs {
-    width: calc(9rem * 1);
+    max-width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
   .mag-2Max .mag-xs {
-    width: calc(9rem * 2);
+    max-width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
   .mag-3Max .mag-xs {
-    width: calc(9rem * 3);
+    max-width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 5)) and (max-width: calc(9rem * 6)) {
   .mag-xs {
-    width: calc(9rem * 5);
+    max-width: calc(9rem * 5);
   }
 }
 @container magic (width > calc(9rem * 1)) {
   .mag-1Max .mag-xs {
-    width: calc(9rem * 1);
+    max-width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
   .mag-2Max .mag-xs {
-    width: calc(9rem * 2);
+    max-width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
   .mag-3Max .mag-xs {
-    width: calc(9rem * 3);
+    max-width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
   .mag-4Max .mag-xs {
-    width: calc(9rem * 4);
+    max-width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 6)) and (max-width: calc(9rem * 7)) {
   .mag-xs {
-    width: calc(9rem * 6);
+    max-width: calc(9rem * 6);
   }
 }
 @container magic (width > calc(9rem * 1)) {
   .mag-1Max .mag-xs {
-    width: calc(9rem * 1);
+    max-width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
   .mag-2Max .mag-xs {
-    width: calc(9rem * 2);
+    max-width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
   .mag-3Max .mag-xs {
-    width: calc(9rem * 3);
+    max-width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
   .mag-4Max .mag-xs {
-    width: calc(9rem * 4);
+    max-width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 5)) {
   .mag-5Max .mag-xs {
-    width: calc(9rem * 5);
+    max-width: calc(9rem * 5);
   }
 }
 
 @container magic (width > calc(9rem * 7)) and (max-width: calc(9rem * 8)) {
   .mag-xs {
-    width: calc(9rem * 7);
+    max-width: calc(9rem * 7);
   }
 }
 @container magic (width > calc(9rem * 1)) {
   .mag-1Max .mag-xs {
-    width: calc(9rem * 1);
+    max-width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
   .mag-2Max .mag-xs {
-    width: calc(9rem * 2);
+    max-width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
   .mag-3Max .mag-xs {
-    width: calc(9rem * 3);
+    max-width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
   .mag-4Max .mag-xs {
-    width: calc(9rem * 4);
+    max-width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 5)) {
   .mag-5Max .mag-xs {
-    width: calc(9rem * 5);
+    max-width: calc(9rem * 5);
   }
 }
 
 @container magic (width > calc(9rem * 6)) {
   .mag-6Max .mag-xs {
-    width: calc(9rem * 6);
+    max-width: calc(9rem * 6);
   }
 }
 
@@ -2106,204 +2070,204 @@ nav.nav-main {
 }
 @container magic (width > calc(9rem * 1)) {
   .mag-1Max .mag-xs {
-    width: calc(9rem * 1);
+    max-width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
   .mag-2Max .mag-xs {
-    width: calc(9rem * 2);
+    max-width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
   .mag-3Max .mag-xs {
-    width: calc(9rem * 3);
+    max-width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
   .mag-4Max .mag-xs {
-    width: calc(9rem * 4);
+    max-width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 5)) {
   .mag-5Max .mag-xs {
-    width: calc(9rem * 5);
+    max-width: calc(9rem * 5);
   }
 }
 
 @container magic (width > calc(9rem * 6)) {
   .mag-6Max .mag-xs {
-    width: calc(9rem * 6);
+    max-width: calc(9rem * 6);
   }
 }
 
 @container magic (width > calc(9rem * 7)) {
   .mag-7Max .mag-xs {
-    width: calc(9rem * 7);
+    max-width: calc(9rem * 7);
   }
 }
 
 @container magic (max-width: calc(13rem * 2)) {
   .mag-sm {
-    width: 13rem;
+    max-width: 13rem;
   }
 }
 @container magic (width > calc(13rem * 2)) and (max-width: calc(13rem * 3)) {
   .mag-sm {
-    width: calc(13rem * 2);
+    max-width: calc(13rem * 2);
   }
 }
 @container magic (width > calc(13rem * 1)) {
   .mag-1Max .mag-sm {
-    width: calc(13rem * 1);
+    max-width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 3)) and (max-width: calc(13rem * 4)) {
   .mag-sm {
-    width: calc(13rem * 3);
+    max-width: calc(13rem * 3);
   }
 }
 @container magic (width > calc(13rem * 1)) {
   .mag-1Max .mag-sm {
-    width: calc(13rem * 1);
+    max-width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
   .mag-2Max .mag-sm {
-    width: calc(13rem * 2);
+    max-width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 4)) and (max-width: calc(13rem * 5)) {
   .mag-sm {
-    width: calc(13rem * 4);
+    max-width: calc(13rem * 4);
   }
 }
 @container magic (width > calc(13rem * 1)) {
   .mag-1Max .mag-sm {
-    width: calc(13rem * 1);
+    max-width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
   .mag-2Max .mag-sm {
-    width: calc(13rem * 2);
+    max-width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
   .mag-3Max .mag-sm {
-    width: calc(13rem * 3);
+    max-width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 5)) and (max-width: calc(13rem * 6)) {
   .mag-sm {
-    width: calc(13rem * 5);
+    max-width: calc(13rem * 5);
   }
 }
 @container magic (width > calc(13rem * 1)) {
   .mag-1Max .mag-sm {
-    width: calc(13rem * 1);
+    max-width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
   .mag-2Max .mag-sm {
-    width: calc(13rem * 2);
+    max-width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
   .mag-3Max .mag-sm {
-    width: calc(13rem * 3);
+    max-width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
   .mag-4Max .mag-sm {
-    width: calc(13rem * 4);
+    max-width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 6)) and (max-width: calc(13rem * 7)) {
   .mag-sm {
-    width: calc(13rem * 6);
+    max-width: calc(13rem * 6);
   }
 }
 @container magic (width > calc(13rem * 1)) {
   .mag-1Max .mag-sm {
-    width: calc(13rem * 1);
+    max-width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
   .mag-2Max .mag-sm {
-    width: calc(13rem * 2);
+    max-width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
   .mag-3Max .mag-sm {
-    width: calc(13rem * 3);
+    max-width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
   .mag-4Max .mag-sm {
-    width: calc(13rem * 4);
+    max-width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 5)) {
   .mag-5Max .mag-sm {
-    width: calc(13rem * 5);
+    max-width: calc(13rem * 5);
   }
 }
 
 @container magic (width > calc(13rem * 7)) and (max-width: calc(13rem * 8)) {
   .mag-sm {
-    width: calc(13rem * 7);
+    max-width: calc(13rem * 7);
   }
 }
 @container magic (width > calc(13rem * 1)) {
   .mag-1Max .mag-sm {
-    width: calc(13rem * 1);
+    max-width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
   .mag-2Max .mag-sm {
-    width: calc(13rem * 2);
+    max-width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
   .mag-3Max .mag-sm {
-    width: calc(13rem * 3);
+    max-width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
   .mag-4Max .mag-sm {
-    width: calc(13rem * 4);
+    max-width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 5)) {
   .mag-5Max .mag-sm {
-    width: calc(13rem * 5);
+    max-width: calc(13rem * 5);
   }
 }
 
 @container magic (width > calc(13rem * 6)) {
   .mag-6Max .mag-sm {
-    width: calc(13rem * 6);
+    max-width: calc(13rem * 6);
   }
 }
 
@@ -2314,204 +2278,204 @@ nav.nav-main {
 }
 @container magic (width > calc(13rem * 1)) {
   .mag-1Max .mag-sm {
-    width: calc(13rem * 1);
+    max-width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
   .mag-2Max .mag-sm {
-    width: calc(13rem * 2);
+    max-width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
   .mag-3Max .mag-sm {
-    width: calc(13rem * 3);
+    max-width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
   .mag-4Max .mag-sm {
-    width: calc(13rem * 4);
+    max-width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 5)) {
   .mag-5Max .mag-sm {
-    width: calc(13rem * 5);
+    max-width: calc(13rem * 5);
   }
 }
 
 @container magic (width > calc(13rem * 6)) {
   .mag-6Max .mag-sm {
-    width: calc(13rem * 6);
+    max-width: calc(13rem * 6);
   }
 }
 
 @container magic (width > calc(13rem * 7)) {
   .mag-7Max .mag-sm {
-    width: calc(13rem * 7);
+    max-width: calc(13rem * 7);
   }
 }
 
 @container magic (max-width: calc(25rem * 2)) {
   .mag-md {
-    width: 25rem;
+    max-width: 25rem;
   }
 }
 @container magic (width > calc(25rem * 2)) and (max-width: calc(25rem * 3)) {
   .mag-md {
-    width: calc(25rem * 2);
+    max-width: calc(25rem * 2);
   }
 }
 @container magic (width > calc(25rem * 1)) {
   .mag-1Max .mag-md {
-    width: calc(25rem * 1);
+    max-width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 3)) and (max-width: calc(25rem * 4)) {
   .mag-md {
-    width: calc(25rem * 3);
+    max-width: calc(25rem * 3);
   }
 }
 @container magic (width > calc(25rem * 1)) {
   .mag-1Max .mag-md {
-    width: calc(25rem * 1);
+    max-width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
   .mag-2Max .mag-md {
-    width: calc(25rem * 2);
+    max-width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 4)) and (max-width: calc(25rem * 5)) {
   .mag-md {
-    width: calc(25rem * 4);
+    max-width: calc(25rem * 4);
   }
 }
 @container magic (width > calc(25rem * 1)) {
   .mag-1Max .mag-md {
-    width: calc(25rem * 1);
+    max-width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
   .mag-2Max .mag-md {
-    width: calc(25rem * 2);
+    max-width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
   .mag-3Max .mag-md {
-    width: calc(25rem * 3);
+    max-width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 5)) and (max-width: calc(25rem * 6)) {
   .mag-md {
-    width: calc(25rem * 5);
+    max-width: calc(25rem * 5);
   }
 }
 @container magic (width > calc(25rem * 1)) {
   .mag-1Max .mag-md {
-    width: calc(25rem * 1);
+    max-width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
   .mag-2Max .mag-md {
-    width: calc(25rem * 2);
+    max-width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
   .mag-3Max .mag-md {
-    width: calc(25rem * 3);
+    max-width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
   .mag-4Max .mag-md {
-    width: calc(25rem * 4);
+    max-width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 6)) and (max-width: calc(25rem * 7)) {
   .mag-md {
-    width: calc(25rem * 6);
+    max-width: calc(25rem * 6);
   }
 }
 @container magic (width > calc(25rem * 1)) {
   .mag-1Max .mag-md {
-    width: calc(25rem * 1);
+    max-width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
   .mag-2Max .mag-md {
-    width: calc(25rem * 2);
+    max-width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
   .mag-3Max .mag-md {
-    width: calc(25rem * 3);
+    max-width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
   .mag-4Max .mag-md {
-    width: calc(25rem * 4);
+    max-width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 5)) {
   .mag-5Max .mag-md {
-    width: calc(25rem * 5);
+    max-width: calc(25rem * 5);
   }
 }
 
 @container magic (width > calc(25rem * 7)) and (max-width: calc(25rem * 8)) {
   .mag-md {
-    width: calc(25rem * 7);
+    max-width: calc(25rem * 7);
   }
 }
 @container magic (width > calc(25rem * 1)) {
   .mag-1Max .mag-md {
-    width: calc(25rem * 1);
+    max-width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
   .mag-2Max .mag-md {
-    width: calc(25rem * 2);
+    max-width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
   .mag-3Max .mag-md {
-    width: calc(25rem * 3);
+    max-width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
   .mag-4Max .mag-md {
-    width: calc(25rem * 4);
+    max-width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 5)) {
   .mag-5Max .mag-md {
-    width: calc(25rem * 5);
+    max-width: calc(25rem * 5);
   }
 }
 
 @container magic (width > calc(25rem * 6)) {
   .mag-6Max .mag-md {
-    width: calc(25rem * 6);
+    max-width: calc(25rem * 6);
   }
 }
 
@@ -2522,204 +2486,204 @@ nav.nav-main {
 }
 @container magic (width > calc(25rem * 1)) {
   .mag-1Max .mag-md {
-    width: calc(25rem * 1);
+    max-width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
   .mag-2Max .mag-md {
-    width: calc(25rem * 2);
+    max-width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
   .mag-3Max .mag-md {
-    width: calc(25rem * 3);
+    max-width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
   .mag-4Max .mag-md {
-    width: calc(25rem * 4);
+    max-width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 5)) {
   .mag-5Max .mag-md {
-    width: calc(25rem * 5);
+    max-width: calc(25rem * 5);
   }
 }
 
 @container magic (width > calc(25rem * 6)) {
   .mag-6Max .mag-md {
-    width: calc(25rem * 6);
+    max-width: calc(25rem * 6);
   }
 }
 
 @container magic (width > calc(25rem * 7)) {
   .mag-7Max .mag-md {
-    width: calc(25rem * 7);
+    max-width: calc(25rem * 7);
   }
 }
 
 @container magic (max-width: calc(37rem * 2)) {
   .mag-lg {
-    width: 37rem;
+    max-width: 37rem;
   }
 }
 @container magic (width > calc(37rem * 2)) and (max-width: calc(37rem * 3)) {
   .mag-lg {
-    width: calc(37rem * 2);
+    max-width: calc(37rem * 2);
   }
 }
 @container magic (width > calc(37rem * 1)) {
   .mag-1Max .mag-lg {
-    width: calc(37rem * 1);
+    max-width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 3)) and (max-width: calc(37rem * 4)) {
   .mag-lg {
-    width: calc(37rem * 3);
+    max-width: calc(37rem * 3);
   }
 }
 @container magic (width > calc(37rem * 1)) {
   .mag-1Max .mag-lg {
-    width: calc(37rem * 1);
+    max-width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
   .mag-2Max .mag-lg {
-    width: calc(37rem * 2);
+    max-width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 4)) and (max-width: calc(37rem * 5)) {
   .mag-lg {
-    width: calc(37rem * 4);
+    max-width: calc(37rem * 4);
   }
 }
 @container magic (width > calc(37rem * 1)) {
   .mag-1Max .mag-lg {
-    width: calc(37rem * 1);
+    max-width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
   .mag-2Max .mag-lg {
-    width: calc(37rem * 2);
+    max-width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
   .mag-3Max .mag-lg {
-    width: calc(37rem * 3);
+    max-width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 5)) and (max-width: calc(37rem * 6)) {
   .mag-lg {
-    width: calc(37rem * 5);
+    max-width: calc(37rem * 5);
   }
 }
 @container magic (width > calc(37rem * 1)) {
   .mag-1Max .mag-lg {
-    width: calc(37rem * 1);
+    max-width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
   .mag-2Max .mag-lg {
-    width: calc(37rem * 2);
+    max-width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
   .mag-3Max .mag-lg {
-    width: calc(37rem * 3);
+    max-width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
   .mag-4Max .mag-lg {
-    width: calc(37rem * 4);
+    max-width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 6)) and (max-width: calc(37rem * 7)) {
   .mag-lg {
-    width: calc(37rem * 6);
+    max-width: calc(37rem * 6);
   }
 }
 @container magic (width > calc(37rem * 1)) {
   .mag-1Max .mag-lg {
-    width: calc(37rem * 1);
+    max-width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
   .mag-2Max .mag-lg {
-    width: calc(37rem * 2);
+    max-width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
   .mag-3Max .mag-lg {
-    width: calc(37rem * 3);
+    max-width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
   .mag-4Max .mag-lg {
-    width: calc(37rem * 4);
+    max-width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 5)) {
   .mag-5Max .mag-lg {
-    width: calc(37rem * 5);
+    max-width: calc(37rem * 5);
   }
 }
 
 @container magic (width > calc(37rem * 7)) and (max-width: calc(37rem * 8)) {
   .mag-lg {
-    width: calc(37rem * 7);
+    max-width: calc(37rem * 7);
   }
 }
 @container magic (width > calc(37rem * 1)) {
   .mag-1Max .mag-lg {
-    width: calc(37rem * 1);
+    max-width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
   .mag-2Max .mag-lg {
-    width: calc(37rem * 2);
+    max-width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
   .mag-3Max .mag-lg {
-    width: calc(37rem * 3);
+    max-width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
   .mag-4Max .mag-lg {
-    width: calc(37rem * 4);
+    max-width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 5)) {
   .mag-5Max .mag-lg {
-    width: calc(37rem * 5);
+    max-width: calc(37rem * 5);
   }
 }
 
 @container magic (width > calc(37rem * 6)) {
   .mag-6Max .mag-lg {
-    width: calc(37rem * 6);
+    max-width: calc(37rem * 6);
   }
 }
 
@@ -2730,204 +2694,204 @@ nav.nav-main {
 }
 @container magic (width > calc(37rem * 1)) {
   .mag-1Max .mag-lg {
-    width: calc(37rem * 1);
+    max-width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
   .mag-2Max .mag-lg {
-    width: calc(37rem * 2);
+    max-width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
   .mag-3Max .mag-lg {
-    width: calc(37rem * 3);
+    max-width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
   .mag-4Max .mag-lg {
-    width: calc(37rem * 4);
+    max-width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 5)) {
   .mag-5Max .mag-lg {
-    width: calc(37rem * 5);
+    max-width: calc(37rem * 5);
   }
 }
 
 @container magic (width > calc(37rem * 6)) {
   .mag-6Max .mag-lg {
-    width: calc(37rem * 6);
+    max-width: calc(37rem * 6);
   }
 }
 
 @container magic (width > calc(37rem * 7)) {
   .mag-7Max .mag-lg {
-    width: calc(37rem * 7);
+    max-width: calc(37rem * 7);
   }
 }
 
 @container magic (max-width: calc(50rem * 2)) {
   .mag-xl {
-    width: 50rem;
+    max-width: 50rem;
   }
 }
 @container magic (width > calc(50rem * 2)) and (max-width: calc(50rem * 3)) {
   .mag-xl {
-    width: calc(50rem * 2);
+    max-width: calc(50rem * 2);
   }
 }
 @container magic (width > calc(50rem * 1)) {
   .mag-1Max .mag-xl {
-    width: calc(50rem * 1);
+    max-width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 3)) and (max-width: calc(50rem * 4)) {
   .mag-xl {
-    width: calc(50rem * 3);
+    max-width: calc(50rem * 3);
   }
 }
 @container magic (width > calc(50rem * 1)) {
   .mag-1Max .mag-xl {
-    width: calc(50rem * 1);
+    max-width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
   .mag-2Max .mag-xl {
-    width: calc(50rem * 2);
+    max-width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 4)) and (max-width: calc(50rem * 5)) {
   .mag-xl {
-    width: calc(50rem * 4);
+    max-width: calc(50rem * 4);
   }
 }
 @container magic (width > calc(50rem * 1)) {
   .mag-1Max .mag-xl {
-    width: calc(50rem * 1);
+    max-width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
   .mag-2Max .mag-xl {
-    width: calc(50rem * 2);
+    max-width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
   .mag-3Max .mag-xl {
-    width: calc(50rem * 3);
+    max-width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 5)) and (max-width: calc(50rem * 6)) {
   .mag-xl {
-    width: calc(50rem * 5);
+    max-width: calc(50rem * 5);
   }
 }
 @container magic (width > calc(50rem * 1)) {
   .mag-1Max .mag-xl {
-    width: calc(50rem * 1);
+    max-width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
   .mag-2Max .mag-xl {
-    width: calc(50rem * 2);
+    max-width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
   .mag-3Max .mag-xl {
-    width: calc(50rem * 3);
+    max-width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
   .mag-4Max .mag-xl {
-    width: calc(50rem * 4);
+    max-width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 6)) and (max-width: calc(50rem * 7)) {
   .mag-xl {
-    width: calc(50rem * 6);
+    max-width: calc(50rem * 6);
   }
 }
 @container magic (width > calc(50rem * 1)) {
   .mag-1Max .mag-xl {
-    width: calc(50rem * 1);
+    max-width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
   .mag-2Max .mag-xl {
-    width: calc(50rem * 2);
+    max-width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
   .mag-3Max .mag-xl {
-    width: calc(50rem * 3);
+    max-width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
   .mag-4Max .mag-xl {
-    width: calc(50rem * 4);
+    max-width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 5)) {
   .mag-5Max .mag-xl {
-    width: calc(50rem * 5);
+    max-width: calc(50rem * 5);
   }
 }
 
 @container magic (width > calc(50rem * 7)) and (max-width: calc(50rem * 8)) {
   .mag-xl {
-    width: calc(50rem * 7);
+    max-width: calc(50rem * 7);
   }
 }
 @container magic (width > calc(50rem * 1)) {
   .mag-1Max .mag-xl {
-    width: calc(50rem * 1);
+    max-width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
   .mag-2Max .mag-xl {
-    width: calc(50rem * 2);
+    max-width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
   .mag-3Max .mag-xl {
-    width: calc(50rem * 3);
+    max-width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
   .mag-4Max .mag-xl {
-    width: calc(50rem * 4);
+    max-width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 5)) {
   .mag-5Max .mag-xl {
-    width: calc(50rem * 5);
+    max-width: calc(50rem * 5);
   }
 }
 
 @container magic (width > calc(50rem * 6)) {
   .mag-6Max .mag-xl {
-    width: calc(50rem * 6);
+    max-width: calc(50rem * 6);
   }
 }
 
@@ -2938,204 +2902,204 @@ nav.nav-main {
 }
 @container magic (width > calc(50rem * 1)) {
   .mag-1Max .mag-xl {
-    width: calc(50rem * 1);
+    max-width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
   .mag-2Max .mag-xl {
-    width: calc(50rem * 2);
+    max-width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
   .mag-3Max .mag-xl {
-    width: calc(50rem * 3);
+    max-width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
   .mag-4Max .mag-xl {
-    width: calc(50rem * 4);
+    max-width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 5)) {
   .mag-5Max .mag-xl {
-    width: calc(50rem * 5);
+    max-width: calc(50rem * 5);
   }
 }
 
 @container magic (width > calc(50rem * 6)) {
   .mag-6Max .mag-xl {
-    width: calc(50rem * 6);
+    max-width: calc(50rem * 6);
   }
 }
 
 @container magic (width > calc(50rem * 7)) {
   .mag-7Max .mag-xl {
-    width: calc(50rem * 7);
+    max-width: calc(50rem * 7);
   }
 }
 
 @container magic (max-width: calc(75rem * 2)) {
   .mag-xxl {
-    width: 75rem;
+    max-width: 75rem;
   }
 }
 @container magic (width > calc(75rem * 2)) and (max-width: calc(75rem * 3)) {
   .mag-xxl {
-    width: calc(75rem * 2);
+    max-width: calc(75rem * 2);
   }
 }
 @container magic (width > calc(75rem * 1)) {
   .mag-1Max .mag-xxl {
-    width: calc(75rem * 1);
+    max-width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 3)) and (max-width: calc(75rem * 4)) {
   .mag-xxl {
-    width: calc(75rem * 3);
+    max-width: calc(75rem * 3);
   }
 }
 @container magic (width > calc(75rem * 1)) {
   .mag-1Max .mag-xxl {
-    width: calc(75rem * 1);
+    max-width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
   .mag-2Max .mag-xxl {
-    width: calc(75rem * 2);
+    max-width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 4)) and (max-width: calc(75rem * 5)) {
   .mag-xxl {
-    width: calc(75rem * 4);
+    max-width: calc(75rem * 4);
   }
 }
 @container magic (width > calc(75rem * 1)) {
   .mag-1Max .mag-xxl {
-    width: calc(75rem * 1);
+    max-width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
   .mag-2Max .mag-xxl {
-    width: calc(75rem * 2);
+    max-width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
   .mag-3Max .mag-xxl {
-    width: calc(75rem * 3);
+    max-width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 5)) and (max-width: calc(75rem * 6)) {
   .mag-xxl {
-    width: calc(75rem * 5);
+    max-width: calc(75rem * 5);
   }
 }
 @container magic (width > calc(75rem * 1)) {
   .mag-1Max .mag-xxl {
-    width: calc(75rem * 1);
+    max-width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
   .mag-2Max .mag-xxl {
-    width: calc(75rem * 2);
+    max-width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
   .mag-3Max .mag-xxl {
-    width: calc(75rem * 3);
+    max-width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
   .mag-4Max .mag-xxl {
-    width: calc(75rem * 4);
+    max-width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 6)) and (max-width: calc(75rem * 7)) {
   .mag-xxl {
-    width: calc(75rem * 6);
+    max-width: calc(75rem * 6);
   }
 }
 @container magic (width > calc(75rem * 1)) {
   .mag-1Max .mag-xxl {
-    width: calc(75rem * 1);
+    max-width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
   .mag-2Max .mag-xxl {
-    width: calc(75rem * 2);
+    max-width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
   .mag-3Max .mag-xxl {
-    width: calc(75rem * 3);
+    max-width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
   .mag-4Max .mag-xxl {
-    width: calc(75rem * 4);
+    max-width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 5)) {
   .mag-5Max .mag-xxl {
-    width: calc(75rem * 5);
+    max-width: calc(75rem * 5);
   }
 }
 
 @container magic (width > calc(75rem * 7)) and (max-width: calc(75rem * 8)) {
   .mag-xxl {
-    width: calc(75rem * 7);
+    max-width: calc(75rem * 7);
   }
 }
 @container magic (width > calc(75rem * 1)) {
   .mag-1Max .mag-xxl {
-    width: calc(75rem * 1);
+    max-width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
   .mag-2Max .mag-xxl {
-    width: calc(75rem * 2);
+    max-width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
   .mag-3Max .mag-xxl {
-    width: calc(75rem * 3);
+    max-width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
   .mag-4Max .mag-xxl {
-    width: calc(75rem * 4);
+    max-width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 5)) {
   .mag-5Max .mag-xxl {
-    width: calc(75rem * 5);
+    max-width: calc(75rem * 5);
   }
 }
 
 @container magic (width > calc(75rem * 6)) {
   .mag-6Max .mag-xxl {
-    width: calc(75rem * 6);
+    max-width: calc(75rem * 6);
   }
 }
 
@@ -3146,48 +3110,47 @@ nav.nav-main {
 }
 @container magic (width > calc(75rem * 1)) {
   .mag-1Max .mag-xxl {
-    width: calc(75rem * 1);
+    max-width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
   .mag-2Max .mag-xxl {
-    width: calc(75rem * 2);
+    max-width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
   .mag-3Max .mag-xxl {
-    width: calc(75rem * 3);
+    max-width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
   .mag-4Max .mag-xxl {
-    width: calc(75rem * 4);
+    max-width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 5)) {
   .mag-5Max .mag-xxl {
-    width: calc(75rem * 5);
+    max-width: calc(75rem * 5);
   }
 }
 
 @container magic (width > calc(75rem * 6)) {
   .mag-6Max .mag-xxl {
-    width: calc(75rem * 6);
+    max-width: calc(75rem * 6);
   }
 }
 
 @container magic (width > calc(75rem * 7)) {
   .mag-7Max .mag-xxl {
-    width: calc(75rem * 7);
+    max-width: calc(75rem * 7);
   }
 }
 
 .magic {
-  background-color: red;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -3809,12 +3772,6 @@ nav.nav-main {
   width: 30rem;
 }
 
-.testth {
-  height: 100%;
-  width: 3rem;
-  left: 0;
-}
-
 .max100 {
   max-width: 100%;
 }
@@ -3916,12 +3873,6 @@ nav.nav-main {
 }
 .theme-default .page-content {
   background-color: hsl(0, 0%, 100%);
-}
-.theme-default .left-fade {
-  background-image: linear-gradient(to right, hsl(0, 0%, 100%), transparent);
-}
-.theme-default .right-fade {
-  background-image: linear-gradient(to left, hsl(0, 0%, 100%), transparent);
 }
 .theme-default [class*=foco-][class$=R] {
   background-image: linear-gradient(to left, hsl(0, 0%, 100%), transparent);
@@ -4603,12 +4554,6 @@ nav.nav-main {
 }
 .theme-dark .page-content {
   background-color: hsl(0, 0%, 3%);
-}
-.theme-dark .left-fade {
-  background-image: linear-gradient(to right, hsl(0, 0%, 3%), transparent);
-}
-.theme-dark .right-fade {
-  background-image: linear-gradient(to left, hsl(0, 0%, 3%), transparent);
 }
 .theme-dark [class*=foco-][class$=R] {
   background-image: linear-gradient(to left, hsl(0, 0%, 3%), transparent);
