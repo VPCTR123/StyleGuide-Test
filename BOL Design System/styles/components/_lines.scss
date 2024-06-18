@@ -1,0 +1,29 @@
+//** Horizontal Rule Component. (hr)
+hr,
+.hr {
+border-style:solid;
+border-width: 0.0625rem;
+border-color: black;
+    
+    //** Horizontal Rule Variants.    
+    &.hr-xs {
+       border-width: 0.0625rem;
+    }
+
+    &.hr-sm {
+        border-width: .25rem;
+    }
+
+    &.hr-md {
+        border-width: .5rem;
+    }
+
+    &.hr-lg {
+        border-width: .75rem;
+    }
+
+    &.hr-xl {
+        border-width: 1rem;
+    }
+
+}

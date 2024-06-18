@@ -1,0 +1,61 @@
+//** Navigation Component, basic - A (div) container for navigation content.
+.navigation,
+nav {
+
+
+    //default height, as well as positioning data incase of fixed nav.
+    height: 3rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: white;
+    
+    //** Fixed Nav variant
+    &.nav-fixed {
+        position: fixed;
+    }
+
+    //** Size Variants
+    &.nav-xxs {
+        height: 1rem;
+    }
+    &.nav-xs {
+        height: 2rem;
+    }
+
+    &.nav-sm {
+        height: 3rem;
+    }
+
+    &.nav-md {
+        height: 4rem;
+    }
+
+    &.nav-lg {
+        height: 5rem;
+    }
+
+    &.nav-xl {
+        height: 6rem;
+    }
+    
+    &.nav-xxl {
+        height: 7rem;
+    }
+    //** Standard for main nav.
+    &.nav-main {
+        z-index: 50;
+        position: fixed;
+    }
+ 
+}
+
+//** A container that saves time when building navs by inheriting common properties. 
+//** Not required.
+.nav-container {
+    gap: inherit;
+    height: inherit;
+    display: inherit;
+    align-items: inherit;
+}

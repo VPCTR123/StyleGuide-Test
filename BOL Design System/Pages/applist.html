@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>App List</title>
+
+</head>
+
+<!-- apply theme to link-nostyle body -->
+
+<body class="theme-default">
+    <div class="popup pop-center" id="target appOnePopup">
+
+        <div class="menu men-lg pill pil-sm flex fle-column">
+            <header class="padding pad-sm flex fle-space-between fle-centerVr">
+                <h4>App Details</h4>
+                <button class="but-xxs secondary ghost but-circle" id="close appOnePopup"><span
+                        class="icon ico-sm ico-closeX "></span></button>
+
+            </header>
+            <hr class="margin mar-mdHr">
+
+            <div class="link-nostyle content con-scrollY-auto padding pad-lgHr pad-mdVr">
+
+                <div class="flex fle-centerVr gap gap-sm">
+
+                    <span class="icon ico-md ico-th ico-color"></span>
+                    <div>
+                        <h4>App Title</h4>
+                        <h4>Sub Heading</h4>
+                    </div>
+
+                </div>
+
+                <p class="margin mar-md mar-noneHr">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio sint quis repellendus nam
+                    ipsam autem aspernatur quaerat, est delectus. Id consequuntur, fugit similique quibusdam dicta
+                    dolorum velit corporis alias quae! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Necessitatibus tempore exercitationem ex distinctio esse dolor corporis numquam nesciunt
+                    consectetur! Ullam unde distinctio repellat ab quos. Earum error porro laboriosam iste?
+
+                </p>
+
+
+            </div>
+
+            <hr class="margin mar-mdHr">
+
+            <footer class=" padding pad-sm flex fle-end gap gap-sm ">
+                <button class="but-square secondary pill pil-xs">A</button>
+                <button class="but-square secondary  pill pil-xs ">B</button>
+                <button class=" but-md primary padding pad-mdHr pill pil-xs">Launch App</button>
+
+            </footer>
+
+        </div>
+
+    </div>
+    <div class="spacer spa-sm"></div>
+    <div class="user-name">Richard Murray</div>
+    <nav
+        class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr gap gap-sm ">
+
+
+        <!-- left wrapper -->
+        <div class="flex gap fle-centerVr">
+
+            <!-- home button -->
+            <div class="flex gap">
+                <span class="icon ico-sm ico-home"></span>
+                <h5>App List</h5>
+            </div>
+        </div>
+
+
+        <!-- right wrapper -->
+        <div class="flex gap">
+            <div class="wrapper-button-popup-pair">
+                <button class="highlight user-color but-circle" title="User Profile"
+                    onclick="togglePopup(event, 'AAA')">
+                    <h3 class="user-first-initial"></h3>
+                </button>
+                <div class=overlay id="overlay AAA"></div>
+                <div id="target AAA" class="popup pop-dropdown edge-right to-left margin mar-mdVr">
+
+                    <div class="menu men-sm pill pil-sm padding pad-smB">
+                        <header class="padding pad-xs">
+                            <h4>User</h4>
+
+                        </header>
+                        <hr class="margin mar-xsHr">
+
+                        <div class="padding pad-xs">
+                            <h4 class="user-full-name"></h4>
+                            <br>
+                            <p><b>Last Seen:</b><br>
+                                <time>Month DDth, YYYY</time><br>
+                                <time>HH:MM:SS AM</time>
+                            </p>
+                        </div>
+                        <hr class="hr-sm">
+                        <ul>
+                            <li><a class="selector padding pad-xsHr">Messages</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr" href="updateinfo.html">Update Info</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr" href="caclogin.html">Log Out</a></li>
+                            <hr>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="wrapper-button-popup-pair">
+                <button class="secondary ghost but-circle" title="User Profile" onclick="togglePopup(event, 'BBB')">
+                    <span class = "icon ico-sm ico-ellipsis-vr"></span>
+                </button>
+                <div class=overlay id="overlay BBB"></div>
+                <div id="target BBB" class="popup edge-right to-left margin mar-mdVr">
+                    <div class="menu men-sm pill pil-sm padding pad-smB">
+                        <header class="padding pad-xs">
+                            <h4>Options</h4>
+
+                        </header>
+                        <hr class="margin mar-xsHr">
+                        <div class=men-content>
+                            <ul>
+                                <li><a href="../Pages/help.html" class="selector padding pad-xsHr">Help</a></li>
+                                <hr>
+                                <li><a class="selector padding pad-xsHr">Contact</a></li>
+                                <hr>
+                                <li><label for="toggleDarkMode"
+                                        class="selector flex fle-space-between fle-centerVr padding pad-xsHr">
+                                        <p>Dark Mode</p>
+                                        <div class="toggle pill"><input type="checkbox" id="toggleDarkMode"
+                                                onclick="toggleDarkMode()"><span class="pill"></span></div>
+                                    </label>
+                                </li>
+
+                                <hr>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class=page-content>
+        <!-- global nav -->
+
+        <hr>
+        <div class="overlay" id="overlay appOnePopup"></div>
+        <div class="focus-overlay">
+            <div class="foco-lgL"></div>
+            <div class="foco-lgR"></div>
+        </div>
+
+
+
+        <!-- link-nostyle body app list -->
+        <label class="drawer-handle drah-mdH gap gap-sm padding-focus padf-lgHr padf-lgMinHr" for="drawerOne">
+            <input type="checkbox" id="drawerOne" onclick="toggleActive('drawerOne')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h5>Group Title</h5>
+        </label>
+        <div class="drawer dra-mdH active" id="target-drawerOne">
+
+
+
+            <div class="grid gri-sm gap gap-md gri-justifyContent-center content con-lgMax margin mar-lgVr mar-autoHr">
+                <!-- correct card!!!! -->
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr ">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>ADMITS v4</h5>
+                        </div>
+
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Advancements & Selection Boards</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Application (FORMAN) Status</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>ARPR & ASOSH Online</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>BOL Helpdesk</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>CCA / FITREP / Eval Reports</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>CO/XO/CMC Advancements & Sel. Board Verification</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Configuration Management</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>CWAY - Sailor Self-Service</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>E-Submission</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>eNavFit Program</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>ERC</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>ESSBD <br>(Submit letter to SelBoard)</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Exchanges Of Duty (SWAPS)</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <label class="drawer-handle drah-mdH  gap gap-sm padding-focus padf-lgHr padf-lgMinHr" for="drawerTwo">
+            <input type="checkbox" id="drawerTwo" onclick="toggleActive('drawerTwo')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h5>Group Title</h5>
+        </label>
+        <div class="drawer dra-mdH active" id="target-drawerTwo">
+
+
+
+            <div class="grid gri-sm gap gap-md gri-justifyContent-center content con-lgMax margin mar-lgVr mar-autoHr">
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>FAQs and workarounds for Offline BOL Applications</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>FLAG FITREPS</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>FMDS</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>ID Lookup</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Individual Medical Rediness <br> (IMR) Status</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>JMT</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>JOIN</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>JOIN DNA Review</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Military Locator System</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Name Change</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Naval Register</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>NavPers Legacy and PERSTEMPO</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Navy Personel Command Document Services</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>NMCMPS</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <hr>
+        <label class="drawer-handle drah-mdH  gap gap-sm padding-focus padf-lgHr padf-lgMinHr" for="drawerThree">
+            <input type="checkbox" id="drawerThree" onclick="toggleActive('drawerThree')">
+            <span class="icon ico-sm ico-carret-d"></span>
+            <h5>Group Title</h5>
+        </label>
+        <div class="drawer dra-mdH active" id="target-drawerThree">
+
+
+            <div class="grid gri-sm gap gap-md gri-justifyContent-center content con-lgMax margin mar-lgVr mar-autoHr">
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>NDAWS</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>ODC, OSR, <br> PSR, ESR</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Officer Performance Tracking System</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Officer Photo</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>OPCM Active</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>OPCM Reserve</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>OMPF Admin Access</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>OMPF Command View</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>OMPF My Record</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>OMPF SAAR</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Overseas / Remote / GSA </h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Overseas Tour Extension Incentive Program</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Permanent & Temporary Disability Request</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+                <div class=" card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
+                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                        <span class="icon ico-sm ico-th"></span>
+                    </div>
+
+                    <a href=""
+                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                            <h5>Personnel Action Request 13067</h5>
+                        </div>
+                    </a>
+
+                    <button class="base but-circle margin mar-smR position pos-absolute"
+                        onclick="togglePopup(event, 'appOnePopup')"><span
+                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="spacer spa-lg"></div>
+    </div>
+
+    </div>
+    <hr>
+
+    <footer>
+        <hr class="hr-sm hr-base90">
+        <div class="flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
+            <div class=" margin mar-autoHr mar-smVr">
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr position pos-relative">
+                        <div class="position pos-absolute flex gap gap-sm edge-right to-left">
+
+
+                            <h1>BUPERS <br> ONLINE</h1>
+                            <img src="../assets/Seal_of_the_Bureau_of_Naval_Personnel.png" style="height: 6rem;">
+                        </div>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="flex fle-centerHr gap fle-column cell cel-sm padding pad-xsVr">
+                        <b><a href="applist.html">Application List</a></b>
+
+                        <b><a href="">Messages</a></b>
+
+                        <b><a href="../Pages/help.html">Help</a></b>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class=" margin mar-autoHr mar-smVr">
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <h4>Help Desk</h4>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        <p>
+                            1-800-951-NAVY
+                        </p>
+                        <b><a href="mailto:Bupers07_IT_EOC.FCT@navy.mil">
+                                Bupers07_IT_EOC.FCT<br>@navy.mil
+                            </a></b>
+
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <h4>Hours</h4>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        <p>
+                            Monday - Friday <br>
+                            0600 - 1700 Central
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class=" margin mar-autoHr mar-smVr">
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <h4>User</h4>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        <b><a href="caclogin.html">End Session</a>
+                            <br>
+                            <a href="updateinfo.html">Update Info</a></b>
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
+                        <h4>Last Seen</h4>
+                    </div>
+                    <hr class="margin mar-smHr">
+                    <div class="cell cel-sm padding pad-xsVr">
+                        <time>Month DDth, YYYY</time><br>
+                        <time>HH:MM:SS AM</time>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="div-base90 flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
+            <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c ">
+                <a class="text-wrap texw-nowrap margin mar-smHr">NCIS Tips</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">24/7 Suicide Prevention</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">Safe Helpline</a>
+            </div>
+            <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c">
+                <a class="text-wrap texw-nowrap margin mar-smHr">For Official Use Only</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">Privacy Policy</a>
+                <a class="text-wrap texw-nowrap margin mar-smHr">Accessibility/Section 508</a>
+            </div>
+            <div class=" text-align  margin mar-autoHr mar-mdVr texa-c">
+                <p>5720 Integrity Drive Millington, TN 38055-0000</p>
+            </div>
+        </div>
+        <div class="div-base90 text-align texa-c padding pad-mdVr">
+            <p>Version: 1.00.00.00</p>
+        </div>
+    </footer>
+</body>
+
+
+<!-- toggle dropdown -->
+<script src="../js/toggles/togglePopup.js"></script>
+
+<!-- toggle Active class -->
+<script src="../js/toggles/toggleActive.js"></script>
+
+<!-- scroll Fx -->
+<script src="../js/toggles/scrollFx.js"></script>
+
+<!-- user color -->
+<script src="../js/colors/userColor.js"></script>
+
+<!-- dark mode -->
+<script src="../js/toggles/toggleDarkMode.js"></script>
+
+
+<!-- app tile color -->
+<script src="../js/colors/appTileColor.js"></script>
+
+</html>

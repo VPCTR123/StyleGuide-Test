@@ -1,5 +1,7 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+#STYLEGUIDE
+
 # Compiled output
 StyleGuide/dist
 StyleGuide/tmp
@@ -40,3 +42,47 @@ StyleGuide/typings
 # System files
 StyleGuide/.DS_Store
 StyleGuide/Thumbs.db
+
+
+#BAMRewrite
+
+# Compiled output
+BAM_Rewrite/dist
+BAM_Rewrite/tmp
+BAM_Rewrite/out-tsc
+BAM_Rewrite/bazel-out
+
+# Node
+BAM_Rewrite/node_modules
+BAM_Rewrite/npm-debug.log
+BAM_Rewrite/yarn-error.log
+
+# IDEs and editors
+BAM_Rewrite/.idea/
+BAM_Rewrite/.project
+BAM_Rewrite/.classpath
+BAM_Rewrite/.c9/
+BAM_Rewrite/*.launch
+BAM_Rewrite/.settings/
+BAM_Rewrite/*.sublime-workspace
+
+# Visual Studio Code
+BAM_Rewrite/.vscode/*
+BAM_Rewrite/!.vscode/settings.json
+BAM_Rewrite/!.vscode/tasks.json
+BAM_Rewrite/!.vscode/launch.json
+BAM_Rewrite/!.vscode/extensions.json
+BAM_Rewrite/.history/*
+
+# Miscellaneous
+BAM_Rewrite/.angular/cache
+BAM_Rewrite/.sass-cache/
+BAM_Rewrite/connect.lock
+BAM_Rewrite/coverage
+BAM_Rewrite/libpeerconnection.log
+BAM_Rewrite/testem.log
+BAM_Rewrite/typings
+
+# System files
+BAM_Rewrite/.DS_Store
+BAM_Rewrite/Thumbs.db

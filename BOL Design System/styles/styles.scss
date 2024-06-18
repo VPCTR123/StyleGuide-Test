@@ -1,0 +1,179 @@
+//Notes For Devs:
+//
+//----------------Class Naming System----------------
+//
+// Base Class: "example"
+// Modifier Class: "exa" (Uses first three letters of base class)
+// 
+// Base Class with two words: "example-class"
+// Modifier Class: "exaC" (Uses first three letters of first word, and first letter of second)
+//
+// If the html tag is the same as the base class, the base class may be omitted. 
+// Example: <button> does not need a button class
+//
+// -------Note on Hr and Vr
+// Only classes that apply a property too ALL sides by default must specify Hr, otherwise, by default
+// width will be implied over height. For example:
+// Padding pad-sm applies small padding to ALL sides, so pad-mdHr is required to change ONLY horizontal axis.
+// Card car-sm only sizes the card horizontally, as vertical size is determined by content, therefor, Hr is not required.
+// if you run into inconsistencies please report them to: richard.v.murray3.ctr@us.navy.mil
+// 
+// -------Size modifiers: 
+// !Sizes vary based on context!
+// ("example" base class -> "exa" modifier class)
+// exa-xxs (extra extra small)
+// exa-xs (extra small)
+// exa-sm (small)
+// exa-md (medium)
+// exa-lg (large)
+// exa-xl (extra large)
+// exa-xxl (extra extra large)
+// exa-none (none - only applies to certain types)
+// exa-full (100% - only applies to certain types)
+//
+// -------Size in percent:
+// exa-100p (100% horizontal)
+// exa-100pVr (100% vertical)
+// 
+// percents avail in 10s (10-100), quarters (25, 75), and thirds (33, 66).
+//
+// --------Size in Vw or Vh (viewport width and viewport height)
+// exa-100vw (100 viewport width)
+// exa-100vh (100 viewport height) !vw does not require Vr tag as height is implied by the unit!
+//
+// Vw & Vh avail in 10s (10-100), quarters (25, 75), and thirds (33, 66).
+//
+//
+// --------Specifying max width or max height:
+//
+// exa-100pMax
+// exa-100pMaxVr
+// exa-50vwMax
+// exa-50vhMax 
+//
+// As you can see, max goes after the unit, but before the Vr modifier. This may be confusing at times but just remember,
+// vh is a UNIT identifier. 
+// 
+// -------Directional Modifiers:
+// ("example" base class -> "exa" modifier class -> "md" sample size modifier)
+// exa-mdT (Top)
+// exa-mdR (Right)
+// exa-mdB (Bottom)
+// exa-mdL (Left)
+// exa-mdHr [Horizontal (left and right)]
+// exa-mdVr [Vertical (top and bottom)]
+//
+// -------Absolute Positioning Modifiers (Rare):
+// edge-left (Align with left edge of relative parent)
+// edge-right (Align with right edge of relative parent)
+// to-left (Point left relative to edge - must be paired with left or right edge class.)
+// to-right (Point right relative to edge - must be paired with left or right edge class.)
+//
+// ("example" base class -> "exa" modifier class)
+// !Currently only used on thumb class!
+// ex-tl (Top Left)
+// ex-tm (Top Middle)
+// exa-tr (Top Right)
+// exa-ml (Middle Left)
+// exa-c (Center)
+// exa-mr (Middle Right)
+// exa-bl (Bottom Left)
+// exa-bm (Bottom Middle)
+// exa br (Bottom Right)
+
+
+// End notes
+
+
+//PRE
+@use 'variables' as v;
+@use 'presets';
+
+
+//COMPONENTS
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/dropdowns';
+@use 'components/footers';
+@use 'components/icons';
+@use 'components/images';
+@use 'components/inputs';
+@use 'components/layouts';
+@use 'components/lines';
+@use 'components/overlays';
+@use 'components/searchboxes';
+@use 'components/text';
+@use 'components/menus';
+@use 'components/wrappers';
+@use 'components/navigations';
+
+//POST
+@use 'modifiers';
+@use 'test';
+@use 'themes' as th;
+
+
+
+//ROOT
+:root {
+
+    //Temporary solution?
+    font-size: 16px;
+
+    @media screen and (max-width: 450px) {
+        font-size: 12px;
+    }
+
+    @media screen and (max-width: 345px) {
+        font-size: 10px;
+    }
+}
+
+//GLOBAL PROPERTIES
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    overflow-y: scroll;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
+}
+
+.user-name {
+    display: none;
+}
+
+
+//TO DO ------------------------
+//transitions vars
+//w1-10 h1-10 manual overrides
+//themes
+
+// DONE GRID SIZE PRESETS BASED ON REM WIDTh
+// DONE stacking context of overlay - possibly remove global overlay for relative one
+// DONE z index with button related to overlay needs to be higher and so do all other buttons of that type? 
+// DONE Figure out what "wrapper" and preset naming convention works best so it can be used on popups in diferent contexts
+// DONE Username letter generation for profile icon / make username variable
+// DONE fix homebutton code 
+// ??? change drawer icon class identifier when icons are fixed
+// DONE padding-left: calc((100% - (calc(floor(100% / 7rem) * 7rem))) * 2); RANDOM IDEA
+// DONE correct naming convention for vertical horizontal etc 
+// DONE (DELETED) remake presets
+// DONE sizes to content
+// DONE remove focus (still keep focus overlay and padding focus)
+// DONE unify variables for sizing
+// DONE add all content size options vw, percent etc
+// DONE make button sizes refer to height and width
+
+// colors dont need prefix they can be nested in colors
+//------------------------------
