@@ -12,25 +12,25 @@ StyleGuide/npm-debug.log
 StyleGuide/yarn-error.log
 
 # IDEs and editors
-StyleGuide/idea/
-StyleGuide/project
-StyleGuide/classpath
-StyleGuide/c9/
-StyleGuide/launch
-StyleGuide/settings/
-StyleGuide/sublime-workspace
+StyleGuide/.idea/
+StyleGuide/.project
+StyleGuide/.classpath
+StyleGuide/.c9/
+StyleGuide/*.launch
+StyleGuide/.settings/
+StyleGuide/*.sublime-workspace
 
 # Visual Studio Code
-StyleGuide/vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-StyleGuide/history/*
+StyleGuide/.vscode/*
+StyleGuide/!.vscode/settings.json
+StyleGuide/!.vscode/tasks.json
+StyleGuide/!.vscode/launch.json
+StyleGuide/!.vscode/extensions.json
+StyleGuide/.history/*
 
 # Miscellaneous
-StyleGuide/angular/cache
-StyleGuide/sass-cache/
+StyleGuide/.angular/cache
+StyleGuide/.sass-cache/
 StyleGuide/connect.lock
 StyleGuide/coverage
 StyleGuide/libpeerconnection.log
@@ -38,5 +38,5 @@ StyleGuide/testem.log
 StyleGuide/typings
 
 # System files
-StyleGuide/DS_Store
+StyleGuide/.DS_Store
 StyleGuide/Thumbs.db
