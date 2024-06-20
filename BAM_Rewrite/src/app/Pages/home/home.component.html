@@ -1,1 +1,36 @@
-<p>home works!</p>
+
+<app-header></app-header>
+<app-drawer title="GroupA" displayName="Default Drawer"
+drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
+<div class="grid gri-sm gap gap-md gri-justifyContent-center content con-lgMax margin mar-lgVr mar-autoHr">
+    <div *ngFor="let app of apps">        
+<app-card  [title]="app.title" (cardClicked)="test(app)" >
+    
+</app-card>
+<app-popup *ngIf="app.show"
+    (closePopup)="app.show = false">
+      <div class="title">
+        {{app.title}}
+      </div>
+      <div class="body-icon-header">
+        <span  class="icon ico-md ico-th ico-color"></span>
+      </div>
+      <div class="body-header">
+        Header
+      </div>
+      <div class="body-sub-header">
+        SubHeader
+      </div>
+      <div class="body">
+       {{app.description}}
+      </div>
+      <div class="foot padding pad-sm flex fle-end gap gap-sm">
+        <button class="but-square secondary pill pil-xs" >A</button>
+        <button class="but-square secondary  pill pil-xs" >B</button>
+        <button class=" but-md primary padding pad-mdHr pill pil-xs" >Launch App</button>
+      </div>
+    </app-popup>
+</div>
+</div>
+</app-drawer>
+<app-footer></app-footer>

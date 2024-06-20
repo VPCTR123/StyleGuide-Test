@@ -17,7 +17,7 @@
 <body class="theme-default">
     <div class="spacer spa-sm"></div>
     <div class="page-content hide-bg">
-        <img class="background-image" src="../assets/loginBackground.jpg">
+        <img class="background-image" src="../../../assets/images/loginBackground.jpg">
         <div class="menu men-lg pill pil-sm flex fle-column margin mar-autoHr mar-lgT mar-xlB">
             <header class="padding pad-md flex fle-space-between fle-centerVr">
                 <h4>Welcome to BOL!</h4>
@@ -66,10 +66,10 @@
             <footer class="padding pad-md flex fle-end gap gap-xs">
                 <div class="flex fle-centerVr gap  base90 padding pad-mdHr pill ghost gho-transXxs">
                     <label for="check-cacLogin">I Understand</label>
-                    <input type="checkbox" id="check-cacLogin" onchange="toggleDisable('btn-cacLogin')">
+                    <input type="checkbox" id="check-cacLogin" (change)="acceptedBanner = !acceptedBanner">
                 </div>
 
-                <button class="but-md primary padding pad-mdHr pill disabled" id="btn-cacLogin">CAC Login</button>
+                <button [ngClass]="{disabled:!acceptedBanner}" [disabled]="!acceptedBanner" class="but-md primary padding pad-mdHr pill"  id="btn-cacLogin" (click)="logon()">CAC Login</button>
             </footer>
 
         </div>
@@ -79,109 +79,10 @@
     <div class="spacer spa-xxl"></div>
     <div class="spacer spa-xxl"></div>
 
-    <footer>
-        <hr class="hr-sm hr-base90">
-        <div class="flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
-            <div class=" margin mar-autoHr mar-smVr">
-                <div class="flex">
-                    <div class="cell cel-sm text-align texa-r padding pad-xsVr position pos-relative">
-                        <div class="position pos-absolute flex gap gap-sm right-edge to-left">
-
-
-                            <h1>BUPERS <br> ONLINE</h1>
-                            <img src="../assets/Seal_of_the_Bureau_of_Naval_Personnel.png" style="height: 6rem;">
-                        </div>
-                    </div>
-                    <hr class="margin mar-smHr">
-                    <div class="flex fle-centerHr gap fle-column cell cel-sm padding pad-xsVr">
-                        <b><a href="applist.html">Application List</a></b>
-
-                        <b><a href="">Messages</a></b>
-
-                        <b><a href="../Pages/help.html">Help</a></b>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class=" margin mar-autoHr mar-smVr">
-                <div class="flex">
-                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
-                        <h4>Help Desk</h4>
-                    </div>
-                    <hr class="margin mar-smHr">
-                    <div class="cell cel-sm padding pad-xsVr">
-                        <p>
-                            1-800-951-NAVY
-                        </p>
-                        <b><a href="mailto:Bupers07_IT_EOC.FCT@navy.mil">
-                                Bupers07_IT_EOC.FCT<br>&#64;navy.mil
-                            </a></b>
-
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
-                        <h4>Hours</h4>
-                    </div>
-                    <hr class="margin mar-smHr">
-                    <div class="cell cel-sm padding pad-xsVr">
-                        <p>
-                            Monday - Friday <br>
-                            0600 - 1700 Central
-                        </p>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class=" margin mar-autoHr mar-smVr">
-                <div class="flex">
-                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
-                        <h4>User</h4>
-                    </div>
-                    <hr class="margin mar-smHr">
-                    <div class="cell cel-sm padding pad-xsVr">
-                        <b><a href="caclogin.html">End Session</a>
-                            <br>
-                            <a href="updateinfo.html">Update Info</a></b>
-                    </div>
-                </div>
-                <div class="flex">
-                    <div class="cell cel-sm text-align texa-r padding pad-xsVr">
-                        <h4>Last Seen</h4>
-                    </div>
-                    <hr class="margin mar-smHr">
-                    <div class="cell cel-sm padding pad-xsVr">
-                        <time>Month DDth, YYYY</time><br>
-                        <time>HH:MM:SS AM</time>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="div-base90 flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
-            <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c ">
-                <a class="text-wrap texw-nowrap margin mar-smHr">NCIS Tips</a>
-                <a class="text-wrap texw-nowrap margin mar-smHr">24/7 Suicide Prevention</a>
-                <a class="text-wrap texw-nowrap margin mar-smHr">Safe Helpline</a>
-            </div>
-            <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c">
-                <a class="text-wrap texw-nowrap margin mar-smHr">For Official Use Only</a>
-                <a class="text-wrap texw-nowrap margin mar-smHr">Privacy Policy</a>
-                <a class="text-wrap texw-nowrap margin mar-smHr">Accessibility/Section 508</a>
-            </div>
-            <div class=" text-align  margin mar-autoHr mar-mdVr texa-c">
-                <p>5720 Integrity Drive Millington, TN 38055-0000</p>
-            </div>
-        </div>
-        <div class="div-base90 text-align texa-c padding pad-mdVr">
-            <p>Version: 1.00.00.00</p>
-        </div>
-    </footer>
+    
 </body>
 
-
+<app-footer></app-footer>
 <!-- toggle dropdown -->
 <script src="../js/toggles/togglePopup.js"></script>
 
