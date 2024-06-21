@@ -475,6 +475,34 @@
           </code></pre>
         </div>
       </app-sample>
+      <app-sample *ngSwitchCase="'menus'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Menus</div>
+            <div class="description">They are like a popup mixed with a navigation tool.</div>
+            <div class="example w25p">
+              <app-menu username="John Doe">
+                <app-menu-item menuItemName="Messages" (menuItemClicked)="MenuItemTest('messages')"></app-menu-item>
+                <app-menu-item menuItemName="Update Info" (menuItemClicked)="MenuItemTest('update info')"></app-menu-item>
+                <app-menu-item menuItemName="Log Out" (menuItemClicked)="MenuItemTest('log out')"></app-menu-item>
+              </app-menu>
+            </div>
+            <div class="bestpractice">Menu best practice</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('menus') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('menus')"></span>
+            
+          </code></pre>
+        </div>
+      </app-sample>
     </ng-container>
   </div>
 </div>
