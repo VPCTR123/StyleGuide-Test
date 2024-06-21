@@ -1,5 +1,5 @@
 <label class="drawer-handle" class="{{drawer_handle()}}" for="Drawer" (click)="open=!open;handleToggled()">
-    <input type="checkbox" name="Drawer" [ngModel]="!open">
+    <input type="checkbox" name="Drawer" [(ngModel)]="!open">
         <span class="icon" class="{{icon()}}"></span>
     <h5>{{displayName()}}</h5>
 </label>

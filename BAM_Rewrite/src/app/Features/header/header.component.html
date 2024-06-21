@@ -6,17 +6,28 @@
         <div class="flex gap fle-centerVr">
 
             <!-- home button -->
-            <div class="flex gap">
+            <div *ngIf="!navigated"  class="flex gap">
                 <span class="icon ico-sm ico-home"></span>
                 <h5>Application List</h5>
             </div>
+            
+                <button *ngIf="navigated" (click)="router.navigate(['home'])" class="but-xxs primary ghost flex fle-alignItems-center fle-justifyContent-center fle-alignSelf-stretch gap padding pad-xsHr">
+                    <span class="icon ico-xs ico-carret-l"></span>
+                    <span class="icon ico-sm ico-home"></span>
+                </button>
+                <div  *ngIf="navigated" class="flex gap">
+
+                    <span class="icon ico-sm ico-th"></span>
+                    <h5>Help</h5>
+                </div>
+            
         </div>
 
 
         <!-- right wrapper -->
         <div class="flex gap">
             <div class="wrapper-button-popup-pair">
-                <button class="highlight user-color but-circle" title="User Profile"
+                <button class="highlight user-color base90 but-circle" title="User Profile"
                     (click)="showUserMenu = !showUserMenu">
                     <h3 class="user-first-initial">J</h3>
                 </button>
@@ -64,7 +75,7 @@
                         <hr class="margin mar-xsHr">
                         <div class=men-content>
                             <ul>
-                                <li><a href="../Pages/help.html" class="selector padding pad-xsHr">Help</a></li>
+                                <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['contact'])" class="selector padding pad-xsHr">Help</a></li>
                                 <hr>
                                 <li><a class="selector padding pad-xsHr">Contact</a></li>
                                 <hr>

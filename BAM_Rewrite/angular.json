@@ -30,9 +30,11 @@
               "src/assets"
             ],
             "styles": [
-              "../BOL Design System/styles/styles.scss"
+              "../BOL Design System/styles/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../BOL Design System/js/toggles/scrollFx.js"
+            ]
           },
           "configurations": {
             "production": {
