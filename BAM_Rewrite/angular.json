@@ -33,7 +33,8 @@
               "../BOL Design System/styles/styles.css"
             ],
             "scripts": [
-              "../BOL Design System/js/toggles/scrollFx.js"
+              "../BOL Design System/js/toggles/scrollFx.js",
+              "../BOL Design System/js/toggles/toggleDarkMode.js"
             ]
           },
           "configurations": {

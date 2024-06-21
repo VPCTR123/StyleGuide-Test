@@ -1,5 +1,5 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { Component, output } from '@angular/core';
+import { Component, Input, output } from '@angular/core';
 import { input} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 @Component({
@@ -28,10 +28,12 @@ export class DrawerComponent {
   //state = false => closed
   toggled = output<{state: boolean, displayName: string}>();
 
-  public open:boolean = true;
+  //public open:boolean = true;
+  @Input() open = false;
 
    handleToggled()
-  {
+  {  
+    this.open = !this.open;  
     this.toggled.emit({
       state: this.open,
       displayName: this.displayName()
