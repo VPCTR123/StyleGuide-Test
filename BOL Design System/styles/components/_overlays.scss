@@ -123,10 +123,12 @@
         width: calc(calc(100% - calc($celXxl * 2))/2);
     }
 
-    
+
 }
-.left-fade, .right-fade{
-   
+
+.left-fade,
+.right-fade {
+
     flex-grow: 1;
-   
+
 }

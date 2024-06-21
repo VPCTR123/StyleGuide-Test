@@ -18,7 +18,7 @@
 
     &.cel-md {
         width: $celMd;
-        
+
     }
 
     &.cel-lg {
@@ -184,7 +184,7 @@
     &.con-100pMax {
         max-width: 100%;
     }
- 
+
     &.con-90pMax {
         max-width: 90%;
     }
@@ -1229,7 +1229,7 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
         @if $i ==1 {
             @container magic (max-width: calc(#{$var} * 2)) {
                 .#{$class} {
-                  width: #{$var};
+                    width: #{$var};
                 }
             }
         }
@@ -1238,7 +1238,7 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
             @container magic (min-width: calc(#{$var} * #{$i})) {
                 .#{$class} {
                     max-width: calc(#{$var} * #{$i});
-                  
+
                 }
             }
         }
@@ -1246,8 +1246,8 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
         @else {
             @container magic (width > calc(#{$var} * #{$i})) and (max-width: calc(#{$var} * #{ $i + 1})) {
                 .#{$class} {
-                  width: calc(#{$var} * #{$i});
-                    
+                    width: calc(#{$var} * #{$i});
+
                 }
             }
         }
@@ -1257,8 +1257,8 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
                 @if $i >$max {
                     @container magic (width > calc(#{$var} * #{$max})) {
                         .#{$class} {
-                           width: calc(#{$var} * #{$max});
-                    
+                            width: calc(#{$var} * #{$max});
+
                         }
                     }
                 }
@@ -1274,11 +1274,31 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
 //     }
 // }
 .magic {
-    background-color: red;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
+}
+
+
+//** Put this on any flex classes with more than one horizontal element in magic containers. Partner this with the child.
+//** EG: Flex {<cell cel-md><cell cel-md>}
+.magic-flex-parent {
+    position: relative;
+    overflow: hidden;
+}
+
+//** put this directly under the above class without any contents inside.
+//** This functions as the background for the element, for example if your magic flex box is a bunch of cards with pill and padding, you would put that here.
+.magic-flex-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    z-index: -1;
+
 }
 
 //** Margin Modifier Component 
