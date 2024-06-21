@@ -115,9 +115,17 @@ button.but-square, .button.but-square {
 }
 
 .card {
-  border: 1px solid;
-  overflow: hidden;
   position: relative;
+}
+.card nav {
+  border-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.card footer {
+  border-radius: inherit;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 .card.car-xxs {
   width: 6rem;
@@ -176,6 +184,7 @@ button.but-square, .button.but-square {
   -webkit-clip-path: ellipse(var(--thumbW) var(--thumbH) at var(--thumbX) var(--thumbY));
           clip-path: ellipse(var(--thumbW) var(--thumbH) at var(--thumbX) var(--thumbY));
   background-color: rgb(0, 0, 0);
+  border-radius: inherit;
 }
 .thumb.thu-xs {
   --thumbW: .5rem;
@@ -298,14 +307,14 @@ footer, .footer {
 
 @font-face {
   font-family: "test";
-  src: url("../fonts/icon packs/test pack/abba.eot") format("embedded-opentype"), url("../fonts/icon packs/test pack/abba.ttf") format("truetype"), url("../fonts/icon packs/test pack/abba.woff") format("woff"), url("../fonts/icon packs/test pack/abba.svg") format("svg");
+  src: url("../../fonts/icon packs/test pack/abba.eot") format("embedded-opentype"), url("../../fonts/icon packs/test pack/abba.ttf") format("truetype"), url("../../fonts/icon packs/test pack/abba.woff") format("woff"), url("../../fonts/icon packs/test pack/abba.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 @font-face {
   font-family: "earlypack";
-  src: url("../fonts/icon packs/earlyIconPack/earlyiconpack.eot") format("embedded-opentype"), url("../fonts/icon packs/earlyIconPack/earlyiconpack.ttf") format("truetype"), url("../fonts/icon packs/earlyIconPack/earlyiconpack.woff") format("woff"), url("../fonts/icon packs/earlyIconPack/earlyiconpack.svg") format("svg");
+  src: url("../../fonts/icon packs/earlyIconPack/earlyiconpack.eot") format("embedded-opentype"), url("../../fonts/icon packs/earlyIconPack/earlyiconpack.ttf") format("truetype"), url("../../fonts/icon packs/earlyIconPack/earlyiconpack.woff") format("woff"), url("../../fonts/icon packs/earlyIconPack/earlyiconpack.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -683,7 +692,8 @@ hr.hr-xl,
   width: calc((100% - 150rem) / 2);
 }
 
-.left-fade, .right-fade {
+.left-fade,
+.right-fade {
   flex-grow: 1;
 }
 
@@ -786,19 +796,26 @@ hr.hr-xl,
   line-height: 2rem;
 }
 
-.wrapper-button-popup-pair {
+.popup-trigger-pair {
   position: relative;
   display: inline-block;
 }
-.wrapper-button-popup-pair > button {
+.popup-trigger-pair .popup-trigger {
   position: relative;
   z-index: 2;
 }
-.wrapper-button-popup-pair .overlay {
+.popup-trigger-pair .overlay {
   z-index: 1;
 }
-.wrapper-button-popup-pair .popup {
+.popup-trigger-pair .popup {
   z-index: 3;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: auto;
 }
 
 .navigation,
@@ -807,7 +824,6 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
 }
 .navigation.nav-fixed,
 nav.nav-fixed {
@@ -3187,11 +3203,24 @@ nav.nav-main {
 }
 
 .magic {
-  background-color: red;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+.magic-flex-parent {
+  position: relative;
+  overflow: hidden;
+}
+
+.magic-flex-child {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 .margin.mar-xxs {
@@ -3849,20 +3878,6 @@ nav.nav-main {
     max-width: 30rem;
   }
 }
-.vvv {
-  position: relative;
-  overflow: hidden;
-}
-
-.bbb {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
 .w25p {
   width: 25%;
 }
@@ -3947,16 +3962,20 @@ nav.nav-main {
   transition-property: color 0.2s;
   color: hsl(213, 100%, 64%);
 }
-.theme-default .nav,
-.theme-default nav {
+.theme-default .nav.nav-main,
+.theme-default nav.nav-main {
   transition: background-color 1s, box-shadow 0.25s;
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
-.theme-default .nav.scrolled,
-.theme-default nav.scrolled {
+.theme-default .nav.nav-main.scrolled,
+.theme-default nav.nav-main.scrolled {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
+}
+.theme-default .nav,
+.theme-default nav {
+  background-color: transparent;
 }
 .theme-default.theme-dark .nav.scrolled,
 .theme-default.theme-dark nav.scrolled {
@@ -4516,7 +4535,7 @@ nav.nav-main {
   background-color: color-mix(in srgb, var(--userColor) 60%, hsl(0, 0%, 0%) 40%);
 }
 .theme-default .card {
-  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+  box-shadow: 0px 0px 0px 1px color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%) inset;
   background-color: hsl(0, 0%, 100%);
 }
 .theme-default .thumb {
@@ -4634,16 +4653,20 @@ nav.nav-main {
   transition-property: color 0.2s;
   color: hsl(266, 57%, 49%);
 }
-.theme-dark .nav,
-.theme-dark nav {
+.theme-dark .nav.nav-main,
+.theme-dark nav.nav-main {
   transition: background-color 1s, box-shadow 0.25s;
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
-.theme-dark .nav.scrolled,
-.theme-dark nav.scrolled {
+.theme-dark .nav.nav-main.scrolled,
+.theme-dark nav.nav-main.scrolled {
   background-color: hsl(0, 0%, 3%);
   box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
+}
+.theme-dark .nav,
+.theme-dark nav {
+  background-color: transparent;
 }
 .theme-dark.theme-dark .nav.scrolled,
 .theme-dark.theme-dark nav.scrolled {
@@ -5203,7 +5226,7 @@ nav.nav-main {
   background-color: color-mix(in srgb, var(--userColor) 60%, hsl(0, 0%, 97%) 40%);
 }
 .theme-dark .card {
-  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
+  box-shadow: 0px 0px 0px 1px color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%) inset;
   background-color: hsl(0, 0%, 3%);
 }
 .theme-dark .thumb {
@@ -5282,11 +5305,16 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  height: auto;
+::-webkit-scrollbar {
+  width: 8px; /* width of the scrollbar */
+  background-color: rgba(245, 245, 245, 0); /* background color */
+  border-radius: 100%; /* rounder corners */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* color of the scrollbar thumb */
+  border-radius: 4px; /* rounder corners on the thumb */
+  height: 5px !important;
 }
 
 .user-name {

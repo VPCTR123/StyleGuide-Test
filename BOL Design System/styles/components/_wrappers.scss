@@ -6,14 +6,14 @@
 
 //** This pair binds a popup to a button to simulate a dropdown. It uses z-index to allow the button to remain
 //** visible above the overlay, so that it can be clicked again to toggle off.
-.wrapper-button-popup-pair {
+.popup-trigger-pair {
 
     //** Relative pos. to bind the popup to the button.
     position: relative;
     display: inline-block;
 
     //** Relative pos. to allow for a custom z-index.
-    &>button {
+    .popup-trigger {
         position: relative;
         z-index: 2;
     }
@@ -27,4 +27,10 @@
     .popup {
         z-index: 3;
     }
+}
+ .page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    height: auto;
 }

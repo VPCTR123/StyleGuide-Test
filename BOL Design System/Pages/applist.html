@@ -81,13 +81,13 @@
 
         <!-- right wrapper -->
         <div class="flex gap">
-            <div class="wrapper-button-popup-pair">
-                <button class="highlight user-color but-circle" title="User Profile"
+            <div class="popup-trigger-pair">
+                <button class="popup-trigger highlight user-color but-circle" title="User Profile"
                     onclick="togglePopup(event, 'AAA')">
                     <h3 class="user-first-initial"></h3>
                 </button>
                 <div class=overlay id="overlay AAA"></div>
-                <div id="target AAA" class="popup pop-dropdown edge-right to-left margin mar-mdVr">
+                <div id="target AAA" class="popup  edge-right to-left margin mar-mdVr">
 
                     <div class="menu men-sm pill pil-sm padding pad-smB">
                         <header class="padding pad-xs">
@@ -116,8 +116,8 @@
                     </div>
                 </div>
             </div>
-            <div class="wrapper-button-popup-pair">
-                <button class="secondary ghost but-circle" title="User Profile" onclick="togglePopup(event, 'BBB')">
+            <div class="popup-trigger-pair">
+                <button class="popup-trigger secondary ghost but-circle" title="User Profile" onclick="togglePopup(event, 'BBB')">
                     <span class = "icon ico-sm ico-ellipsis-vr"></span>
                 </button>
                 <div class=overlay id="overlay BBB"></div>
@@ -150,6 +150,7 @@
             </div>
         </div>
     </nav>
+    <div class = "page-wrapper">
     <div class=page-content>
         <!-- global nav -->
 
@@ -943,10 +944,7 @@
         </div>
         <div class="spacer spa-lg"></div>
     </div>
-
-    </div>
     <hr>
-
     <footer>
         <hr class="hr-sm hr-base90">
         <div class="flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
@@ -1047,6 +1045,7 @@
             <p>Version: 1.00.00.00</p>
         </div>
     </footer>
+</div>
 </body>
 
 
