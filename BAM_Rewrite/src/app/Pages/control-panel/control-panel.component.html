@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../../BOL Design System/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <title>Control Panel</title>
+
+</head>
+
+<!-- apply theme to link-nostyle body -->
+
+<body class="theme-default">
+    <div class="spacer spa-sm"></div>
+    <div class="user-name">Richard Murray</div>
+    <nav
+        class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr pad-noneL gap gap-sm">
+
+
+        <!-- left wrapper -->
+        <div class="flex gap gap-xs fle-centerVr h100p">
+
+            <!-- home button -->
+            <button
+                class="but-xxs primary ghost flex fle-alignItems-center fle-justifyContent-center fle-alignSelf-stretch gap padding pad-xsHr">
+                <span class="icon ico-xs ico-carret-l"></span>
+                <span class="icon ico-sm ico-home"></span>
+            </button>
+            <div class="flex gap">
+
+                <span class="icon ico-sm ico-th"></span>
+                <h5>Control Panel</h5>
+            </div>
+        </div>
+
+        <!-- right wrapper -->
+        <div class="flex gap">
+            <div class="popup-trigger-pair">
+                <button class="popup-trigger but-highlight user-color but-circle" title="User Profile"
+                    onclick="togglePopup(event, 'AAA')">
+                    <h3 class="user-first-initial"></h3>
+                </button>
+                <div class=overlay id="overlay AAA"></div>
+                <div id="target AAA" class="popup edge-right to-left margin mar-mdVr">
+
+                    <div class="menu men-sm pill pil-sm padding pad-smB">
+                        <header class="padding pad-xs">
+                            <h4>User</h4>
+
+                        </header>
+                        <hr class="margin mar-xsHr">
+
+                        <div class="padding pad-xs">
+                            <h4 class="user-full-name"></h4>
+                            <br>
+                            <p><b>Last Seen:</b><br>
+                                <time>Month DDth, YYYY</time><br>
+                                <time>HH:MM:SS AM</time>
+                            </p>
+                        </div>
+                        <hr class="hr-sm">
+                        <ul>
+                            <li><a class="selector padding pad-xsHr">Messages</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr" href="updateinfo.html">Update Info</a></li>
+                            <hr>
+                            <li><a class="selector padding pad-xsHr" href="caclogin.html">Log Out</a></li>
+                            <hr>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-trigger-pair">
+                <button class="popup-trigger secondary ghost but-circle" title="User Profile"
+                    onclick="togglePopup(event, 'BBB')">
+                    <span class="icon ico-sm ico-ellipsis-vr"></span>
+                </button>
+                <div class=overlay id="overlay BBB"></div>
+                <div id="target BBB" class="popup edge-right to-left margin mar-mdVr">
+                    <div class="menu men-sm pill pil-sm padding pad-smB">
+                        <header class="padding pad-xs">
+                            <h4>Options</h4>
+
+                        </header>
+                        <hr class="margin mar-xsHr">
+                        <div class=men-content>
+                            <ul>
+                                <li><a href="../Pages/help.html" class="selector padding pad-xsHr">Help</a></li>
+                                <hr>
+                                <li><a class="selector padding pad-xsHr">Contact</a></li>
+                                <hr>
+                                <li><label for="toggleDarkMode"
+                                        class="selector flex fle-space-between fle-centerVr padding pad-xsHr">
+                                        <p>Dark Mode</p>
+                                        <div class="toggle pill"><input type="checkbox" id="toggleDarkMode"
+                                                onclick="toggleDarkMode()"><span class="pill"></span></div>
+                                    </label>
+                                </li>
+
+                                <hr>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="page-wrapper">
+        <div class="page-content margin mar-xlB">
+            <div class="flex fle-justifyContent-spaceBetween margin mar-md ">
+                <h2>Modify App Details</h2>
+                <div class="flex gap gap-md">
+                    <button class="warn pill padding pad-mdHr pad-sm">Reset Changes</button>
+                    <button class="success pill padding pad-mdHr pad-sm">Save Changes</button>
+                </div>
+            </div>
+            <div class="magic-wrapper mag-4Max cell cel-mdMin base85  flex">
+
+
+
+                <div class="left-fade"></div>
+                <div class="magic mag-md padding pad-mdVr">
+                    <div class="flex cell cel-md fle-column">
+                        <div class="margin mar-xs pill pil-xs card">
+                            <nav
+                                class="nav-sm padding trans pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                                <div class="position pos-absolute" style="left: 0">
+                                    <div
+                                        class="circle cir-sm base25 margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                        <h3 class="base-color">1</h3>
+                                    </div>
+                                </div>
+                                <h3>Choose an app to modify:</h3>
+                            </nav>
+                            <div class="padding pad-md flex fle-column fle-alignItems-center">
+                                <p>Select an app from the dropdown.</p>
+                                <div class="popup-trigger-pair margin mar-mdVr" onclick="togglePopup(event, 'xxx')">
+                                    <div class="cell cel-sm">
+
+                                        <input type="text" aria-label="Select App" class="pop-trigger content con-100p pill padding pad-smHr">
+                                        <div class="popup content con-100p" id="target xxx">
+
+                                            <div
+                                                class="menu content con-100p margin mar-smT pill pil-sm ">
+                                                <div class = "spacer spa-xxs"></div>
+                                                <ul class = " content con-xxsMaxVr con-scrollY">
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                    <li><a class="selector padding pad-xsHr">Search Result</a></li>
+                                                    <hr>
+                                                </ul>
+                                                <div class = "spacer spa-xxs"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="margin mar-xs pill pil-xs card">
+                            <nav
+                                class="success nav-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center">
+                                <h4 class="base-color">Preview</h4>
+                            </nav>
+                            <div class="padding pad-md">
+                                <div
+                                    class=" card car-xxsVr car-sm pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-mdVr">
+
+                                    <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL"
+                                        id="appColorTile">
+                                        <span class="icon ico-sm ico-th"></span>
+                                    </div>
+
+                                    <a href=""
+                                        class="link-nostyle text-select texs-none content con-full position pos-absolute flex fle-centerVr">
+                                        <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                                            <h5>FLAG FITREPS</h5>
+                                        </div>
+                                    </a>
+                                    <!-- button should do the same as preview popup button below -->
+                                    <button class="base but-circle margin mar-smR position pos-absolute"><span
+                                            class="icon ico-sm ico-ellipsis-vr"></span></button>
+                                </div>
+
+                                <div class="flex fle-justifyContent-center"> <button
+                                        class="margin mar-autoHr mar-mdVr secondary padding pad-mdHr pad-sm pill ">Preview
+                                        Popup</button></div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex fle-column magic-flex-parent">
+                        <div class="magic-flex-child margin mar-xs pill pil-xs card">
+                            <nav
+                                class=" nav-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative padding pad-lgHr cell ">
+                                <div class="position pos-absolute" style="left: 0">
+                                    <div
+                                        class="circle cir-sm base25 margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                        <h3 class="base-color">2</h3>
+                                    </div>
+                                </div>
+                                <h3>Edit App Details:</h3>
+                            </nav>
+                        </div>
+                        <div class="spacer spa-sm"></div>
+                        <div class="flex fle-wrap content con-100pMax ">
+                            <div class=" cell cel-md">
+
+                                <div class="margin mar-xs padding pad-md">
+                                    test Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid error
+                                    aspernatur
+                                    excepturi aperiam corrupti eum, labore esse fuga nemo tempore ratione mollitia
+                                    impedit
+                                    sit? Totam porro explicabo odio accusamus veniam.
+                                </div>
+                            </div>
+                            <div class=" cell cel-md">
+                                <div class="margin mar-xs padding pad-md">
+                                    test Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi unde quia
+                                    maiores
+                                    magni. Magni, aliquam soluta commodi cum voluptatum dignissimos ut iusto quisquam
+                                    sint
+                                    nisi reprehenderit! Quidem velit provident voluptates!
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="flex cell cel-md">
+
+                        <div class="margin mar-xs pill pil-xs card">
+                            <nav
+                                class="nav-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                                <div class="position pos-absolute" style="left: 0">
+                                    <div
+                                        class="circle cir-sm base25 margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                        <h3 class="base-color">3</h3>
+                                    </div>
+                                </div>
+                                <h3>Add Aditional Buttons:</h3>
+                            </nav>
+                            <div class="padding pad-md">
+                                test Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo expedita porro
+                                tenetur sed illo fugit in veritatis sint quidem quos totam molestias voluptatem
+                                temporibus
+                                animi dicta soluta, deserunt eum eaque!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-fade"></div>
+
+            </div>
+            <div class="flex fle-justifyContent-spaceBetween margin mar-md ">
+                <h2>Maintenance</h2>
+            </div>
+            <div class="magic-wrapper mag-4Max cell cel-mdMin base85  flex">
+                <div class="left-fade"></div>
+                <div class="magic mag-md padding pad-mdVr">
+
+
+                    <div class="flex cell cel-md">
+
+                        <div class="margin mar-xs pill pil-xs card">
+                            <nav
+                                class="nav-sm padding pad-md flex fle-justifyContent-spaceBetween fle-alignItems-center">
+                                <div>
+                                    3
+                                </div>
+                                Step 3
+                            </nav>
+                            <div class="padding pad-md">
+                                test Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo expedita porro
+                                tenetur sed illo fugit in veritatis sint quidem quos totam molestias voluptatem
+                                temporibus
+                                animi dicta soluta, deserunt eum eaque!
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right-fade"></div>
+            </div>
+        </div>
+        <hr>
+    </div>
+</body>
+
+
+<script src="../js/toggles/togglePopup.js"></script>
+
+<!-- toggle Active class -->
+<script src="../js/toggles/toggleActive.js"></script>
+
+<!-- scroll Fx -->
+<script src="../js/toggles/scrollFx.js"></script>
+
+<!-- user color -->
+<script src="../js/colors/userColor.js"></script>
+
+<!-- dark mode -->
+<script src="../js/toggles/toggleDarkMode.js"></script>
+
+
+<!-- app tile color -->
+<script src="../js/colors/appTileColor.js"></script>
+
+</html>
