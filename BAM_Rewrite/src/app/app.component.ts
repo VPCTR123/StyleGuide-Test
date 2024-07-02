@@ -4,11 +4,12 @@ import { LoginComponent } from './Pages/login/login.component';
 import { HomeComponent } from './Pages/home/home.component';
 import { HeaderComponent } from './Features/header/header.component';
 import { FooterComponent } from './Features/footer/footer.component';
+import { ControlPanelComponent } from './Pages/control-panel/control-panel.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, HomeComponent, LoginComponent,HeaderComponent,FooterComponent],
+  imports: [RouterOutlet, RouterLink, HomeComponent, LoginComponent,HeaderComponent,FooterComponent, ControlPanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

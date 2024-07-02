@@ -1,62 +1,60 @@
-
 <app-header [navigated]="true"></app-header>
-<div class="page-wrapper">
-  <div class="spacer spa-sm"></div>
-  <div class="page-content">
-<form class="padding pad-sm margin mar-xlB" action="formdebug.html" method="GET">
-    <h2 class="text-align texa-c margin mar-mdT">Update Info</h2>
-    <hr class="margin mar-mdT mar-lgB">
-    <div class="content con-smMax margin mar-autoHr card padding pad-lg pill">
-        <div class="flex fle-column gap">
-            <h4 class="text-align texa-c">Contact Information</h4>
-            <hr class="margin mar-mdB">
-            <div>
-                <label for="updateInfo-phoneCommercial">
-                    <p class="text-wrap texw-nowrap">
-                        Commercial Phone: </p>
+<div class="spacer spa-sm"></div>
+<div class="page-content">
+    <form class="padding pad-sm margin mar-xlB" action="formdebug.html" method="GET">
+        <h2 class="text-align texa-c margin mar-mdT">Update Info</h2>
+        <hr class="margin mar-mdT mar-lgB">
+        <div class="content con-smMax margin mar-autoHr card padding pad-lg pill">
+            <div class="flex fle-column gap">
+                <h4 class="text-align texa-c">Contact Information</h4>
+                <hr class="margin mar-mdB">
+                <div>
+                    <label for="updateInfo-phoneCommercial">
+                        <p class="text-wrap texw-nowrap">
+                            Commercial Phone: </p>
+                    </label>
+                    <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
+                </div>
+                <div class="flex w100p gap">
+                    <input class="w25p pill ring padding pad-xsL" type="tel" name="Commercial Phone Extension"
+                        id="updateInfo-phoneCommercial-ext" title="Extension" placeholder="Ext.">
+                    <input class="w100p pill ring padding pad-xsL" type="tel" name="Commercial Phone"
+                        id="updateInfo-phoneCommercial">
+                </div>
+                <label for="updateInfo-phoneDSN">
+                    <p>DSN Phone:</p>
                 </label>
-                <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
-            </div>
-            <div class="flex w100p gap">
-                <input class="w25p pill ring padding pad-xsL" type="tel" name="Commercial Phone Extension"
-                    id="updateInfo-phoneCommercial-ext" title="Extension" placeholder="Ext.">
-                <input class="w100p pill ring padding pad-xsL" type="tel" name="Commercial Phone"
-                    id="updateInfo-phoneCommercial">
-            </div>
-            <label for="updateInfo-phoneDSN">
-                <p>DSN Phone:</p>
-            </label>
-            <input class="pill ring padding pad-xsL" type="tel" name="DSN Phone" id="updateInfo-phoneDSN">
-            <label for="updateInfo-emailPrimary">
-                <p>
-                    Primary Email:
-                </p>
-            </label>
-            <input class="pill ring padding pad-xsL" type="email" name="Primary Email" id="updateInfo-emailPrimary">
-            <label for="updateInfo-emailSecondary">
-                <p>
-                    Secondary Email:
-                </p>
-            </label>
-            <input class="pill ring padding pad-xsL" type="email" name="Primary Email" id="updateInfo-emailSecondary">
-            <h4 class="text-align texa-c margin mar-lgT">Command Information</h4>
-            <hr class="margin mar-mdB">
-            <label for="updateInfo-organization/command">
-                <p>Organization / Command:</p>
-            </label>
-            <input class="pill ring padding pad-xsL" type="text" name="Organization/Command"
-                id="updateInfo-organization/command">
-            <label for="updateInfo-billetTitle">
-                <p>Billet Title:</p>
-            </label>
-            <input class="pill ring padding pad-xsL" type="text" name="Billet Title" id="updateInfo-billetTitle">
-            <div class="flex gap margin mar-xlT">
-                <button class="w100p pill pil-xs but-warn" type="reset">Clear All</button>
-                <button class="w100p pill pil-xs but-primary" type="submit">Submit</button>
+                <input class="pill ring padding pad-xsL" type="tel" name="DSN Phone" id="updateInfo-phoneDSN">
+                <label for="updateInfo-emailPrimary">
+                    <p>
+                        Primary Email:
+                    </p>
+                </label>
+                <input class="pill ring padding pad-xsL" type="email" name="Primary Email" id="updateInfo-emailPrimary">
+                <label for="updateInfo-emailSecondary">
+                    <p>
+                        Secondary Email:
+                    </p>
+                </label>
+                <input class="pill ring padding pad-xsL" type="email" name="Primary Email"
+                    id="updateInfo-emailSecondary">
+                <h4 class="text-align texa-c margin mar-lgT">Command Information</h4>
+                <hr class="margin mar-mdB">
+                <label for="updateInfo-organization/command">
+                    <p>Organization / Command:</p>
+                </label>
+                <input class="pill ring padding pad-xsL" type="text" name="Organization/Command"
+                    id="updateInfo-organization/command">
+                <label for="updateInfo-billetTitle">
+                    <p>Billet Title:</p>
+                </label>
+                <input class="pill ring padding pad-xsL" type="text" name="Billet Title" id="updateInfo-billetTitle">
+                <div class="flex gap margin mar-xlT">
+                    <button class="w100p pill pil-xs base75" type="reset">Clear All</button>
+                    <button class="w100p pill pil-xs primary" type="submit">Submit</button>
+                </div>
             </div>
         </div>
-    </div>
-</form>
-<div class="spacer spa-lg"></div>
-  <app-footer></app-footer>
+    </form>
+
 </div>

@@ -31,7 +31,7 @@
                     (click)="showUserMenu = !showUserMenu">
                     <h3 class="user-first-initial">J</h3>
                 </button>
-                <div class=overlay id="overlay AAA" [ngClass]="showUserMenu ? 'visible':''" ></div>
+                <div class=overlay id="overlay AAA" (click)="showUserMenu = !showUserMenu" [ngClass]="showUserMenu ? 'visible':''" ></div>
                 <div  *ngIf="showUserMenu" [ngClass]="showUserMenu ? 'visible':''" class="popup pop-dropdown edge-right to-left margin mar-mdVr">
 
                     <div class="menu men-sm pill pil-sm padding pad-smB">
@@ -75,9 +75,9 @@
                         <hr class="margin mar-xsHr">
                         <div class=men-content>
                             <ul>
-                                <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['contact'])" class="selector padding pad-xsHr">Help</a></li>
+                                <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['faq'])" class="selector padding pad-xsHr">Help</a></li>
                                 <hr>
-                                <li><a class="selector padding pad-xsHr">Contact</a></li>
+                                <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['contact'])"  class="selector padding pad-xsHr">Contact</a></li>
                                 <hr>
                                 <li><label for="toggleDarkMode"
                                         class="selector flex fle-space-between fle-centerVr padding pad-xsHr">
