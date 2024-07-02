@@ -2,3 +2,44 @@ footer, .footer{
 z-index: 10;
 background-color: white;
 }
+
+
+.header,
+header {
+
+
+ 
+    width: 100%;
+
+    
+
+    //** Size Variants
+    &.hea-xxs {
+        height: 1rem;
+    }
+    &.hea-xs {
+        height: 2rem;
+    }
+
+    &.hea-sm {
+        height: 3rem;
+    }
+
+    &.hea-md {
+        height: 4rem;
+    }
+
+    &.hea-lg {
+        height: 5rem;
+    }
+
+    &.hea-xl {
+        height: 6rem;
+    }
+    
+    &.hea-xxl {
+        height: 7rem;
+    }
+   
+ 
+}

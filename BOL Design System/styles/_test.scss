@@ -26,6 +26,10 @@
     width: 30rem;
 
 }
+.testr:active{
+    background-color: red !important;
+}
+
 .testth{
     height: 100%;
     width: 3rem;
@@ -34,7 +38,12 @@
 .max100 {
     max-width: 100%;
 }
-
+.lowertest{
+    z-index: -1 ;
+}
+.tesz{
+    max-width: 100%;
+}
 .magicwrap {
     container: magic / inline-size;
     border: .1rem solid rgb(0, 0, 0) !important;

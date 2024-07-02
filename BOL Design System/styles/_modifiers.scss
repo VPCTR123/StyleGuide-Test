@@ -151,6 +151,35 @@
         max-width: calc($celXxl*2);
     }
 
+    //Min
+    &.con-xxsMin {
+        min-width: calc($celXxs*2);
+    }
+
+    &.con-xsMin {
+        min-width: calc($celXs*2);
+    }
+
+    &.con-smMin {
+        min-width: calc($celSm*2);
+    }
+
+    &.con-mdMin {
+        min-width: calc($celMd*2);
+    }
+
+    &.con-lgMin {
+        min-width: calc($celLg*2);
+    }
+
+    &.con-xlMin {
+        min-width: calc($celXl*2);
+    }
+
+    &.con-xxlMin {
+        min-width: calc($celXxl*2);
+    }
+
     //width
     &.con-xxs {
         width: calc($celXxs*2);
@@ -458,6 +487,35 @@
 
     &.con-xxlMaxVr {
         max-height: calc($celXxl*2);
+    }
+
+    //min height
+    &.con-xxsMinVr {
+        min-height: calc($celXxs*2);
+    }
+
+    &.con-xsMinVr {
+        min-height: calc($celXs*2);
+    }
+
+    &.con-smMinVr {
+        min-height: calc($celSm*2);
+    }
+
+    &.con-mdMinVr {
+        min-height: calc($celMd*2);
+    }
+
+    &.con-lgMinVr {
+        min-height: calc($celLg*2);
+    }
+
+    &.con-xlMinVr {
+        min-height: calc($celXl*2);
+    }
+
+    &.con-xxlMinVr {
+        min-height: calc($celXxl*2);
     }
 
     //height
@@ -1214,13 +1272,14 @@
     background-color: hsla(0, 0, 0, 0) !important;
 }
 
-.magic-wrapper {
+.magic {
     container: magic / inline-size;
 }
 
 $magic-classes: mag-xxs, mag-xs, mag-sm, mag-md, mag-lg, mag-xl, mag-xxl;
 $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
 
+//magic container widths
 @for $j from 1 through length($magic-classes) {
     $class: nth($magic-classes, $j);
     $var: nth($magic-vars, $j);
@@ -1228,7 +1287,8 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
     @for $i from 1 through 8 {
         @if $i ==1 {
             @container magic (max-width: calc(#{$var} * 2)) {
-                .#{$class} {
+                .#{$class}>.magic-parent {
+
                     width: #{$var};
                 }
             }
@@ -1236,7 +1296,7 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
 
         @else if $i ==8 {
             @container magic (min-width: calc(#{$var} * #{$i})) {
-                .#{$class} {
+                .#{$class}>.magic-parent {
                     max-width: calc(#{$var} * #{$i});
 
                 }
@@ -1245,7 +1305,7 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
 
         @else {
             @container magic (width > calc(#{$var} * #{$i})) and (max-width: calc(#{$var} * #{ $i + 1})) {
-                .#{$class} {
+                .#{$class}>.magic-parent {
                     width: calc(#{$var} * #{$i});
 
                 }
@@ -1256,7 +1316,68 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
             .mag-#{$max}Max {
                 @if $i >$max {
                     @container magic (width > calc(#{$var} * #{$max})) {
-                        .#{$class} {
+                        &.#{$class}>.magic-parent {
+                            width: calc(#{$var} * #{$max});
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//vars for forloops
+$size-class-names: (
+  'xxs': $celXxs,
+  'xs': $celXs,
+  'sm': $celSm,
+  'md': $celMd,
+  'lg': $celLg,
+  'xl': $celXl,
+  'xxl': $celXl
+);
+
+$magic-classes: mag-xxs, mag-xs, mag-sm, mag-md, mag-lg, mag-xl, mag-xxl;
+$magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
+
+//magic container widths
+@for $j from 1 through length($magic-classes) {
+    $class: nth($magic-classes, $j);
+    $var: nth($magic-vars, $j);
+
+    @for $i from 1 through 8 {
+        @if $i ==1 {
+            @container magic (max-width: calc(#{$var} * 2)) {
+                .#{$class}>.magic {
+
+                    width: #{$var};
+                }
+            }
+        }
+
+        @else if $i ==8 {
+            @container magic (min-width: calc(#{$var} * #{$i})) {
+                .#{$class}>.magic {
+                    max-width: calc(#{$var} * #{$i});
+
+                }
+            }
+        }
+
+        @else {
+            @container magic (width > calc(#{$var} * #{$i})) and (max-width: calc(#{$var} * #{ $i + 1})) {
+                .#{$class}>.magic {
+                    width: calc(#{$var} * #{$i});
+
+                }
+            }
+        }
+
+        @for $max from 1 through 8 {
+            .mag-#{$max}Max {
+                @if $i >$max {
+                    @container magic (width > calc(#{$var} * #{$max})) {
+                        &.#{$class}>.magic {
                             width: calc(#{$var} * #{$max});
 
                         }
@@ -1267,39 +1388,53 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
     }
 }
 
-// @container magic (max-width: 100vw) {
-//     .left-fade, .right-fade{
+// multi cells (magic-child2) FOR CONTENT
+@each $size, $width in $size-class-names {
+  .mag-#{$size} > .magic-parent > .magic-child {
+    width: $width;
+  }
 
-//         background-color: red !important;
-//     }
-// }
-.magic {
+  @for $i from 1 through 8 {
+    .mag-#{$size} > .magic-parent > .magic-child#{$i} {
+      width: $width * $i;
+    }
+  }
+}
+
+//  multi cells (cel-md2cells) FOR HEADERS
+@for $j from 1 through length($magic-vars) {
+    $var: nth($magic-vars, $j);
+    $size-class-name: nth(map-keys($size-class-names), $j);
+
+    @for $i from 2 through 8 {
+        .cel-#{$size-class-name}#{$i}cells {
+            max-width: $var * $i;
+            width: 100%;
+        }
+    }
+}
+$margin-class-names: (
+  'xxs': '--marXxs',
+  'xs': '--marXs',
+  'sm': '--marSm',
+  'md': '--marMd',
+  'lg': '--marLg',
+  'xl': '--marXl',
+  'xxl': '--marXxl'
+);
+
+@each $size, $var in $margin-class-names {
+    .mag-gap-#{$size} > .magic-parent > [class^="magic-child"] > * {
+      margin: var(#{$var});
+    }
+  }
+.magic-parent {
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-
-//** Put this on any flex classes with more than one horizontal element in magic containers. Partner this with the child.
-//** EG: Flex {<cell cel-md><cell cel-md>}
-.magic-flex-parent {
-    position: relative;
-    overflow: hidden;
-}
-
-//** put this directly under the above class without any contents inside.
-//** This functions as the background for the element, for example if your magic flex box is a bunch of cards with pill and padding, you would put that here.
-.magic-flex-child {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-
-    z-index: -1;
-
-}
 
 //** Margin Modifier Component 
 .margin {
@@ -2123,4 +2258,8 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
     &.texw-nowrap {
         text-wrap: nowrap !important;
     }
+}
+
+.display-none {
+    display: none;
 }

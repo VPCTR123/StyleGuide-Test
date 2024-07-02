@@ -63,11 +63,12 @@
     $base25: color-mix(in srgb, $base 25%, $baseInv 75%);
     $base50: color-mix(in srgb, $base 50%, $baseInv 50%);
     $base75: color-mix(in srgb, $base 75%, $baseInv 25%);
+    $base5: color-mix(in srgb, $base 5%, $baseInv 95%);
     $base10: color-mix(in srgb, $base 10%, $baseInv 90%);
     $base15: color-mix(in srgb, $base 15%, $baseInv 85%);
     $base85: color-mix(in srgb, $base 85%, $baseInv 15%);
     $base90: color-mix(in srgb, $base 90%, $baseInv 10%);
-
+    $base95: color-mix(in srgb, $base 95%, $baseInv 5%);
     $warn: hsl(39, 76%, 49%);
 
 
@@ -90,7 +91,8 @@
         opacity: 0 !important;
     }
 
-    .page-content {
+    .page-content,
+    .page-wrapper {
         background-color: $base;
     }
 
@@ -111,7 +113,7 @@
     }
 
     .overlay {
-        background-color: $base50;
+        background-color: hsla(0, 0%, 3%, 0.50);
     }
 
     .drawer-handle {
@@ -148,10 +150,18 @@
         }
     }
 
+    .foo.foo-main,
+    footer.foo-main {
+        background-color: $base;
+    }
+
     .nav,
-    nav {
+    nav,
+    .footer,
+    footer {
         background-color: transparent;
     }
+
 
     &.theme-dark {
 
@@ -161,90 +171,63 @@
                 background-color: $base90;
             }
         }
+
+
+
+
+
     }
 
-    footer {
+    & input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search"],
+    textarea {
         background-color: $base;
+        color: $baseInv;
+        border-color: $base75;
+
+        &:focus {
+            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
+            outline: none;
+        }
+
+        &:hover {
+            box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.383);
+
+            &:focus {
+                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
+            }
+
+            &:active {
+                box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.383);
+            }
+        }
     }
 
-    .div-highlight {
-        background-color: $primary;
-        @include textcolor($base);
+    .search-dropdown input[type="text"]:focus+.search-dropdown-icon {
+
+
+        & .icon {
+            color: $primary;
+        }
     }
 
-    .div-base90 {
-        background-color: $base90;
+    .search-dropdown input[type="text"]+.search-dropdown-icon {
+
+
+        & .icon {
+            color: $base85;
+        }
     }
 
-    .base {
-        background-color: $base;
-    }
 
-    .base-color {
-        color: $base;
-    }
 
-    .base10 {
-        background-color: $base10;
-    }
-
-    .base15 {
-        background-color: $base15;
-    }
-
-    .base25 {
-        background-color: $base25;
-    }
-
-    .base33 {
-        background-color: $base33;
-    }
-
-    .base50 {
-        background-color: $base50;
-    }
-
-    .base66 {
-        background-color: $base66;
-    }
-
-    .base75 {
-        background-color: $base75;
-    }
-
-    .base85 {
-        background-color: $base85;
-    }
-
-    .base90 {
-        background-color: $base90;
-    }
-
-    .baseInv {
-        background-color: $baseInv;
-    }
-
-    .success {
-        background-color: $success;
-    }
-
-    hr {
-        border-color: $base85;
-    }
-
-    .hr-highlight {
-        border-color: $primary;
-    }
-
-    .hr-base90 {
-        border-color: $base90;
-    }
-
-    .ico-color {
-        color: rgb(83, 83, 69) !important;
-    }
-
-    button {
+    button,
+    .button {
         &.base {
             background-color: $base;
             @include textcolor($base33);
@@ -259,6 +242,10 @@
                 background-color: color-mix(in srgb, $primary, $baseInv);
                 @include textcolor($base);
             }
+        }
+
+        &.but-bordered {
+            border-color: $base75;
         }
 
         &.secondary {
@@ -279,8 +266,7 @@
 
         }
 
-        &.primary,
-        .primary.link-as-button {
+        &.primary {
 
             background-color: color-mix(in srgb, $primary 55%, $base);
             @include textcolor($base10);
@@ -303,8 +289,8 @@
             }
 
         }
-        &.warn,
-        .warn.link-as-button {
+
+        &.warn {
             background-color: $warn;
             @include textcolor($base10);
             color: $base10;
@@ -361,13 +347,14 @@
     }
 
     .menu {
-        background-color: $base;
+        background-color: $base90;
         box-shadow: 0 0.1rem .8rem -0.3rem black;
     }
 
     .selector {
 
-        background-color: $base;
+        background-color: inherit;
+        color: $base33;
 
         &:hover {
             background-color: $primary;
@@ -398,6 +385,90 @@
         color: inherit;
     }
 
+    .div-highlight {
+        background-color: $primary;
+        @include textcolor($base);
+    }
+
+    .div-base90 {
+        background-color: $base90;
+    }
+
+    .base {
+        background-color: $base;
+    }
+
+    .base-color {
+        color: $base;
+    }
+
+    .base10 {
+        background-color: $base10;
+    }
+
+    .base15 {
+        background-color: $base15;
+    }
+
+    .base25 {
+        background-color: $base25;
+    }
+
+    .base33 {
+        background-color: $base33;
+    }
+
+    .base50 {
+        background-color: $base50;
+    }
+
+    .base66 {
+        background-color: $base66;
+    }
+
+    .base75 {
+        background-color: $base75;
+    }
+
+    .base85 {
+        background-color: $base85;
+    }
+
+    .base90 {
+        background-color: $base90;
+    }
+
+    .base15 {
+        background-color: $base5;
+    }
+
+    .base95 {
+        background-color: $base95;
+    }
+
+    .baseInv {
+        background-color: $baseInv;
+    }
+
+    .success {
+        background-color: $success;
+    }
+
+    hr {
+        border-color: $base85;
+    }
+
+    .hr-highlight {
+        border-color: $primary;
+    }
+
+    .hr-base90 {
+        border-color: $base90;
+    }
+
+    .ico-color {
+        color: rgb(83, 83, 69) !important;
+    }
 
 }
 

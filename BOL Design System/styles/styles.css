@@ -66,6 +66,9 @@ button.but-square, .button.but-square {
   height: var(--buttonW);
   border-radius: 0%;
 }
+button.but-bordered, .button.but-bordered {
+  border: 1px solid;
+}
 
 .toggle {
   background-color: black;
@@ -117,7 +120,7 @@ button.but-square, .button.but-square {
 .card {
   position: relative;
 }
-.card nav {
+.card header {
   border-radius: inherit;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -305,16 +308,49 @@ footer, .footer {
   background-color: white;
 }
 
+.header,
+header {
+  width: 100%;
+}
+.header.hea-xxs,
+header.hea-xxs {
+  height: 1rem;
+}
+.header.hea-xs,
+header.hea-xs {
+  height: 2rem;
+}
+.header.hea-sm,
+header.hea-sm {
+  height: 3rem;
+}
+.header.hea-md,
+header.hea-md {
+  height: 4rem;
+}
+.header.hea-lg,
+header.hea-lg {
+  height: 5rem;
+}
+.header.hea-xl,
+header.hea-xl {
+  height: 6rem;
+}
+.header.hea-xxl,
+header.hea-xxl {
+  height: 7rem;
+}
+
 @font-face {
   font-family: "test";
-  src: url("../../fonts/icon packs/test pack/abba.eot") format("embedded-opentype"), url("../../fonts/icon packs/test pack/abba.ttf") format("truetype"), url("../../fonts/icon packs/test pack/abba.woff") format("woff"), url("../../fonts/icon packs/test pack/abba.svg") format("svg");
+  src: url("../fonts/icon packs/test pack/abba.eot") format("embedded-opentype"), url("../fonts/icon packs/test pack/abba.ttf") format("truetype"), url("../fonts/icon packs/test pack/abba.woff") format("woff"), url("../fonts/icon packs/test pack/abba.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 @font-face {
   font-family: "earlypack";
-  src: url("../../fonts/icon packs/earlyIconPack/earlyiconpack.eot") format("embedded-opentype"), url("../../fonts/icon packs/earlyIconPack/earlyiconpack.ttf") format("truetype"), url("../../fonts/icon packs/earlyIconPack/earlyiconpack.woff") format("woff"), url("../../fonts/icon packs/earlyIconPack/earlyiconpack.svg") format("svg");
+  src: url("../fonts/icon packs/earlyIconPack/earlyiconpack.eot") format("embedded-opentype"), url("../fonts/icon packs/earlyIconPack/earlyiconpack.ttf") format("truetype"), url("../fonts/icon packs/earlyIconPack/earlyiconpack.woff") format("woff"), url("../fonts/icon packs/earlyIconPack/earlyiconpack.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -422,6 +458,11 @@ footer, .footer {
   height: 6rem;
 }
 
+.color-tile {
+  width: 100%;
+  height: 100%;
+}
+
 .background-image {
   position: fixed;
   top: 0;
@@ -442,6 +483,22 @@ input[type=search] {
   height: 1.9rem;
   border-style: solid;
   border-width: 1px;
+}
+
+textarea {
+  resize: none;
+  height: 100%;
+}
+
+input.inp-full, .input.inp-full {
+  width: 100%;
+  height: 100%;
+}
+input.inp-fullVr, .input.inp-fullVr {
+  height: 100%;
+}
+input.inp-fullHr, .input.inp-fullHr {
+  width: 100%;
 }
 
 :root {
@@ -641,11 +698,24 @@ hr.hr-xl,
   top: 0;
   left: 0;
   background-color: rgb(255, 255, 255);
-  opacity: 50%;
   display: none;
 }
 .overlay.visible {
   display: block;
+}
+.overlay.ove-cover {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+.overlay > .overlay-message {
+  z-index: 101;
+}
+
+.overlay-message {
+  height: 100%;
+  width: 100%;
 }
 
 .focus-overlay {
@@ -780,6 +850,13 @@ hr.hr-xl,
 .menu.men-fullVr {
   height: 100%;
 }
+.menu.men-fullHr {
+  width: 100%;
+}
+.menu.men-full {
+  width: 100%;
+  height: 100%;
+}
 
 .selector {
   -webkit-user-select: none;
@@ -794,6 +871,34 @@ hr.hr-xl,
   display: flex;
   height: 2rem;
   line-height: 2rem;
+}
+.selector.sel-xxs {
+  height: 1rem;
+  line-height: 1rem;
+}
+.selector.sel-xs {
+  height: 2rem;
+  line-height: 2rem;
+}
+.selector.sel-sm {
+  height: 3rem;
+  line-height: 3rem;
+}
+.selector.sel-md {
+  height: 4rem;
+  line-height: 4rem;
+}
+.selector.sel-lg {
+  height: 5rem;
+  line-height: 5rem;
+}
+.selector.sel-xl {
+  height: 6rem;
+  line-height: 6rem;
+}
+.selector.sel-xxl {
+  height: 7rem;
+  line-height: 7rem;
 }
 
 .popup-trigger-pair {
@@ -811,6 +916,37 @@ hr.hr-xl,
   z-index: 3;
 }
 
+.search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
+  transform: rotate(-90deg);
+}
+
+.search-dropdown input[type=text]:focus ~ .popup {
+  visibility: visible;
+}
+
+.search-dropdown input[type=text] + .search-dropdown-icon .icon {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.search-dropdown {
+  position: relative;
+}
+
+.search-dropdown-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -821,8 +957,6 @@ hr.hr-xl,
 .navigation,
 nav {
   height: 3rem;
-  top: 0;
-  left: 0;
   width: 100%;
 }
 .navigation.nav-fixed,
@@ -861,6 +995,8 @@ nav.nav-xxl {
 nav.nav-main {
   z-index: 50;
   position: fixed;
+  top: 0;
+  left: 0;
 }
 
 .nav-container {
@@ -997,6 +1133,27 @@ nav.nav-main {
 }
 .content.con-xxlMax {
   max-width: 150rem;
+}
+.content.con-xxsMin {
+  min-width: 12rem;
+}
+.content.con-xsMin {
+  min-width: 18rem;
+}
+.content.con-smMin {
+  min-width: 26rem;
+}
+.content.con-mdMin {
+  min-width: 50rem;
+}
+.content.con-lgMin {
+  min-width: 74rem;
+}
+.content.con-xlMin {
+  min-width: 100rem;
+}
+.content.con-xxlMin {
+  min-width: 150rem;
 }
 .content.con-xxs {
   width: 12rem;
@@ -1211,6 +1368,27 @@ nav.nav-main {
 }
 .content.con-xxlMaxVr {
   max-height: 150rem;
+}
+.content.con-xxsMinVr {
+  min-height: 12rem;
+}
+.content.con-xsMinVr {
+  min-height: 18rem;
+}
+.content.con-smMinVr {
+  min-height: 26rem;
+}
+.content.con-mdMinVr {
+  min-height: 50rem;
+}
+.content.con-lgMinVr {
+  min-height: 74rem;
+}
+.content.con-xlMinVr {
+  min-height: 100rem;
+}
+.content.con-xxlMinVr {
+  min-height: 150rem;
 }
 .content.con-xxsVr {
   height: 12rem;
@@ -1742,1485 +1920,3452 @@ nav.nav-main {
   background-color: hsla(0, 0%, 0%, 0) !important;
 }
 
-.magic-wrapper {
+.magic {
   container: magic/inline-size;
 }
 
 @container magic (max-width: calc(6rem * 2)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     width: 6rem;
   }
 }
 @container magic (width > calc(6rem * 2)) and (max-width: calc(6rem * 3)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     width: calc(6rem * 2);
   }
 }
 @container magic (width > calc(6rem * 1)) {
-  .mag-1Max .mag-xxs {
+  .mag-1Max.mag-xxs > .magic-parent {
     width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 3)) and (max-width: calc(6rem * 4)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     width: calc(6rem * 3);
   }
 }
 @container magic (width > calc(6rem * 1)) {
-  .mag-1Max .mag-xxs {
+  .mag-1Max.mag-xxs > .magic-parent {
     width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
-  .mag-2Max .mag-xxs {
+  .mag-2Max.mag-xxs > .magic-parent {
     width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 4)) and (max-width: calc(6rem * 5)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     width: calc(6rem * 4);
   }
 }
 @container magic (width > calc(6rem * 1)) {
-  .mag-1Max .mag-xxs {
+  .mag-1Max.mag-xxs > .magic-parent {
     width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
-  .mag-2Max .mag-xxs {
+  .mag-2Max.mag-xxs > .magic-parent {
     width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
-  .mag-3Max .mag-xxs {
+  .mag-3Max.mag-xxs > .magic-parent {
     width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 5)) and (max-width: calc(6rem * 6)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     width: calc(6rem * 5);
   }
 }
 @container magic (width > calc(6rem * 1)) {
-  .mag-1Max .mag-xxs {
+  .mag-1Max.mag-xxs > .magic-parent {
     width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
-  .mag-2Max .mag-xxs {
+  .mag-2Max.mag-xxs > .magic-parent {
     width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
-  .mag-3Max .mag-xxs {
+  .mag-3Max.mag-xxs > .magic-parent {
     width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
-  .mag-4Max .mag-xxs {
+  .mag-4Max.mag-xxs > .magic-parent {
     width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 6)) and (max-width: calc(6rem * 7)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     width: calc(6rem * 6);
   }
 }
 @container magic (width > calc(6rem * 1)) {
-  .mag-1Max .mag-xxs {
+  .mag-1Max.mag-xxs > .magic-parent {
     width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
-  .mag-2Max .mag-xxs {
+  .mag-2Max.mag-xxs > .magic-parent {
     width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
-  .mag-3Max .mag-xxs {
+  .mag-3Max.mag-xxs > .magic-parent {
     width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
-  .mag-4Max .mag-xxs {
+  .mag-4Max.mag-xxs > .magic-parent {
     width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 5)) {
-  .mag-5Max .mag-xxs {
+  .mag-5Max.mag-xxs > .magic-parent {
     width: calc(6rem * 5);
   }
 }
 
 @container magic (width > calc(6rem * 7)) and (max-width: calc(6rem * 8)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     width: calc(6rem * 7);
   }
 }
 @container magic (width > calc(6rem * 1)) {
-  .mag-1Max .mag-xxs {
+  .mag-1Max.mag-xxs > .magic-parent {
     width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
-  .mag-2Max .mag-xxs {
+  .mag-2Max.mag-xxs > .magic-parent {
     width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
-  .mag-3Max .mag-xxs {
+  .mag-3Max.mag-xxs > .magic-parent {
     width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
-  .mag-4Max .mag-xxs {
+  .mag-4Max.mag-xxs > .magic-parent {
     width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 5)) {
-  .mag-5Max .mag-xxs {
+  .mag-5Max.mag-xxs > .magic-parent {
     width: calc(6rem * 5);
   }
 }
 
 @container magic (width > calc(6rem * 6)) {
-  .mag-6Max .mag-xxs {
+  .mag-6Max.mag-xxs > .magic-parent {
     width: calc(6rem * 6);
   }
 }
 
 @container magic (min-width: calc(6rem * 8)) {
-  .mag-xxs {
+  .mag-xxs > .magic-parent {
     max-width: calc(6rem * 8);
   }
 }
 @container magic (width > calc(6rem * 1)) {
-  .mag-1Max .mag-xxs {
+  .mag-1Max.mag-xxs > .magic-parent {
     width: calc(6rem * 1);
   }
 }
 
 @container magic (width > calc(6rem * 2)) {
-  .mag-2Max .mag-xxs {
+  .mag-2Max.mag-xxs > .magic-parent {
     width: calc(6rem * 2);
   }
 }
 
 @container magic (width > calc(6rem * 3)) {
-  .mag-3Max .mag-xxs {
+  .mag-3Max.mag-xxs > .magic-parent {
     width: calc(6rem * 3);
   }
 }
 
 @container magic (width > calc(6rem * 4)) {
-  .mag-4Max .mag-xxs {
+  .mag-4Max.mag-xxs > .magic-parent {
     width: calc(6rem * 4);
   }
 }
 
 @container magic (width > calc(6rem * 5)) {
-  .mag-5Max .mag-xxs {
+  .mag-5Max.mag-xxs > .magic-parent {
     width: calc(6rem * 5);
   }
 }
 
 @container magic (width > calc(6rem * 6)) {
-  .mag-6Max .mag-xxs {
+  .mag-6Max.mag-xxs > .magic-parent {
     width: calc(6rem * 6);
   }
 }
 
 @container magic (width > calc(6rem * 7)) {
-  .mag-7Max .mag-xxs {
+  .mag-7Max.mag-xxs > .magic-parent {
     width: calc(6rem * 7);
   }
 }
 
 @container magic (max-width: calc(9rem * 2)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     width: 9rem;
   }
 }
 @container magic (width > calc(9rem * 2)) and (max-width: calc(9rem * 3)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     width: calc(9rem * 2);
   }
 }
 @container magic (width > calc(9rem * 1)) {
-  .mag-1Max .mag-xs {
+  .mag-1Max.mag-xs > .magic-parent {
     width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 3)) and (max-width: calc(9rem * 4)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     width: calc(9rem * 3);
   }
 }
 @container magic (width > calc(9rem * 1)) {
-  .mag-1Max .mag-xs {
+  .mag-1Max.mag-xs > .magic-parent {
     width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
-  .mag-2Max .mag-xs {
+  .mag-2Max.mag-xs > .magic-parent {
     width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 4)) and (max-width: calc(9rem * 5)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     width: calc(9rem * 4);
   }
 }
 @container magic (width > calc(9rem * 1)) {
-  .mag-1Max .mag-xs {
+  .mag-1Max.mag-xs > .magic-parent {
     width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
-  .mag-2Max .mag-xs {
+  .mag-2Max.mag-xs > .magic-parent {
     width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
-  .mag-3Max .mag-xs {
+  .mag-3Max.mag-xs > .magic-parent {
     width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 5)) and (max-width: calc(9rem * 6)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     width: calc(9rem * 5);
   }
 }
 @container magic (width > calc(9rem * 1)) {
-  .mag-1Max .mag-xs {
+  .mag-1Max.mag-xs > .magic-parent {
     width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
-  .mag-2Max .mag-xs {
+  .mag-2Max.mag-xs > .magic-parent {
     width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
-  .mag-3Max .mag-xs {
+  .mag-3Max.mag-xs > .magic-parent {
     width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
-  .mag-4Max .mag-xs {
+  .mag-4Max.mag-xs > .magic-parent {
     width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 6)) and (max-width: calc(9rem * 7)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     width: calc(9rem * 6);
   }
 }
 @container magic (width > calc(9rem * 1)) {
-  .mag-1Max .mag-xs {
+  .mag-1Max.mag-xs > .magic-parent {
     width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
-  .mag-2Max .mag-xs {
+  .mag-2Max.mag-xs > .magic-parent {
     width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
-  .mag-3Max .mag-xs {
+  .mag-3Max.mag-xs > .magic-parent {
     width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
-  .mag-4Max .mag-xs {
+  .mag-4Max.mag-xs > .magic-parent {
     width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 5)) {
-  .mag-5Max .mag-xs {
+  .mag-5Max.mag-xs > .magic-parent {
     width: calc(9rem * 5);
   }
 }
 
 @container magic (width > calc(9rem * 7)) and (max-width: calc(9rem * 8)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     width: calc(9rem * 7);
   }
 }
 @container magic (width > calc(9rem * 1)) {
-  .mag-1Max .mag-xs {
+  .mag-1Max.mag-xs > .magic-parent {
     width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
-  .mag-2Max .mag-xs {
+  .mag-2Max.mag-xs > .magic-parent {
     width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
-  .mag-3Max .mag-xs {
+  .mag-3Max.mag-xs > .magic-parent {
     width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
-  .mag-4Max .mag-xs {
+  .mag-4Max.mag-xs > .magic-parent {
     width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 5)) {
-  .mag-5Max .mag-xs {
+  .mag-5Max.mag-xs > .magic-parent {
     width: calc(9rem * 5);
   }
 }
 
 @container magic (width > calc(9rem * 6)) {
-  .mag-6Max .mag-xs {
+  .mag-6Max.mag-xs > .magic-parent {
     width: calc(9rem * 6);
   }
 }
 
 @container magic (min-width: calc(9rem * 8)) {
-  .mag-xs {
+  .mag-xs > .magic-parent {
     max-width: calc(9rem * 8);
   }
 }
 @container magic (width > calc(9rem * 1)) {
-  .mag-1Max .mag-xs {
+  .mag-1Max.mag-xs > .magic-parent {
     width: calc(9rem * 1);
   }
 }
 
 @container magic (width > calc(9rem * 2)) {
-  .mag-2Max .mag-xs {
+  .mag-2Max.mag-xs > .magic-parent {
     width: calc(9rem * 2);
   }
 }
 
 @container magic (width > calc(9rem * 3)) {
-  .mag-3Max .mag-xs {
+  .mag-3Max.mag-xs > .magic-parent {
     width: calc(9rem * 3);
   }
 }
 
 @container magic (width > calc(9rem * 4)) {
-  .mag-4Max .mag-xs {
+  .mag-4Max.mag-xs > .magic-parent {
     width: calc(9rem * 4);
   }
 }
 
 @container magic (width > calc(9rem * 5)) {
-  .mag-5Max .mag-xs {
+  .mag-5Max.mag-xs > .magic-parent {
     width: calc(9rem * 5);
   }
 }
 
 @container magic (width > calc(9rem * 6)) {
-  .mag-6Max .mag-xs {
+  .mag-6Max.mag-xs > .magic-parent {
     width: calc(9rem * 6);
   }
 }
 
 @container magic (width > calc(9rem * 7)) {
-  .mag-7Max .mag-xs {
+  .mag-7Max.mag-xs > .magic-parent {
     width: calc(9rem * 7);
   }
 }
 
 @container magic (max-width: calc(13rem * 2)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     width: 13rem;
   }
 }
 @container magic (width > calc(13rem * 2)) and (max-width: calc(13rem * 3)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     width: calc(13rem * 2);
   }
 }
 @container magic (width > calc(13rem * 1)) {
-  .mag-1Max .mag-sm {
+  .mag-1Max.mag-sm > .magic-parent {
     width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 3)) and (max-width: calc(13rem * 4)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     width: calc(13rem * 3);
   }
 }
 @container magic (width > calc(13rem * 1)) {
-  .mag-1Max .mag-sm {
+  .mag-1Max.mag-sm > .magic-parent {
     width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
-  .mag-2Max .mag-sm {
+  .mag-2Max.mag-sm > .magic-parent {
     width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 4)) and (max-width: calc(13rem * 5)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     width: calc(13rem * 4);
   }
 }
 @container magic (width > calc(13rem * 1)) {
-  .mag-1Max .mag-sm {
+  .mag-1Max.mag-sm > .magic-parent {
     width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
-  .mag-2Max .mag-sm {
+  .mag-2Max.mag-sm > .magic-parent {
     width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
-  .mag-3Max .mag-sm {
+  .mag-3Max.mag-sm > .magic-parent {
     width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 5)) and (max-width: calc(13rem * 6)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     width: calc(13rem * 5);
   }
 }
 @container magic (width > calc(13rem * 1)) {
-  .mag-1Max .mag-sm {
+  .mag-1Max.mag-sm > .magic-parent {
     width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
-  .mag-2Max .mag-sm {
+  .mag-2Max.mag-sm > .magic-parent {
     width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
-  .mag-3Max .mag-sm {
+  .mag-3Max.mag-sm > .magic-parent {
     width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
-  .mag-4Max .mag-sm {
+  .mag-4Max.mag-sm > .magic-parent {
     width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 6)) and (max-width: calc(13rem * 7)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     width: calc(13rem * 6);
   }
 }
 @container magic (width > calc(13rem * 1)) {
-  .mag-1Max .mag-sm {
+  .mag-1Max.mag-sm > .magic-parent {
     width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
-  .mag-2Max .mag-sm {
+  .mag-2Max.mag-sm > .magic-parent {
     width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
-  .mag-3Max .mag-sm {
+  .mag-3Max.mag-sm > .magic-parent {
     width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
-  .mag-4Max .mag-sm {
+  .mag-4Max.mag-sm > .magic-parent {
     width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 5)) {
-  .mag-5Max .mag-sm {
+  .mag-5Max.mag-sm > .magic-parent {
     width: calc(13rem * 5);
   }
 }
 
 @container magic (width > calc(13rem * 7)) and (max-width: calc(13rem * 8)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     width: calc(13rem * 7);
   }
 }
 @container magic (width > calc(13rem * 1)) {
-  .mag-1Max .mag-sm {
+  .mag-1Max.mag-sm > .magic-parent {
     width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
-  .mag-2Max .mag-sm {
+  .mag-2Max.mag-sm > .magic-parent {
     width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
-  .mag-3Max .mag-sm {
+  .mag-3Max.mag-sm > .magic-parent {
     width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
-  .mag-4Max .mag-sm {
+  .mag-4Max.mag-sm > .magic-parent {
     width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 5)) {
-  .mag-5Max .mag-sm {
+  .mag-5Max.mag-sm > .magic-parent {
     width: calc(13rem * 5);
   }
 }
 
 @container magic (width > calc(13rem * 6)) {
-  .mag-6Max .mag-sm {
+  .mag-6Max.mag-sm > .magic-parent {
     width: calc(13rem * 6);
   }
 }
 
 @container magic (min-width: calc(13rem * 8)) {
-  .mag-sm {
+  .mag-sm > .magic-parent {
     max-width: calc(13rem * 8);
   }
 }
 @container magic (width > calc(13rem * 1)) {
-  .mag-1Max .mag-sm {
+  .mag-1Max.mag-sm > .magic-parent {
     width: calc(13rem * 1);
   }
 }
 
 @container magic (width > calc(13rem * 2)) {
-  .mag-2Max .mag-sm {
+  .mag-2Max.mag-sm > .magic-parent {
     width: calc(13rem * 2);
   }
 }
 
 @container magic (width > calc(13rem * 3)) {
-  .mag-3Max .mag-sm {
+  .mag-3Max.mag-sm > .magic-parent {
     width: calc(13rem * 3);
   }
 }
 
 @container magic (width > calc(13rem * 4)) {
-  .mag-4Max .mag-sm {
+  .mag-4Max.mag-sm > .magic-parent {
     width: calc(13rem * 4);
   }
 }
 
 @container magic (width > calc(13rem * 5)) {
-  .mag-5Max .mag-sm {
+  .mag-5Max.mag-sm > .magic-parent {
     width: calc(13rem * 5);
   }
 }
 
 @container magic (width > calc(13rem * 6)) {
-  .mag-6Max .mag-sm {
+  .mag-6Max.mag-sm > .magic-parent {
     width: calc(13rem * 6);
   }
 }
 
 @container magic (width > calc(13rem * 7)) {
-  .mag-7Max .mag-sm {
+  .mag-7Max.mag-sm > .magic-parent {
     width: calc(13rem * 7);
   }
 }
 
 @container magic (max-width: calc(25rem * 2)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     width: 25rem;
   }
 }
 @container magic (width > calc(25rem * 2)) and (max-width: calc(25rem * 3)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     width: calc(25rem * 2);
   }
 }
 @container magic (width > calc(25rem * 1)) {
-  .mag-1Max .mag-md {
+  .mag-1Max.mag-md > .magic-parent {
     width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 3)) and (max-width: calc(25rem * 4)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     width: calc(25rem * 3);
   }
 }
 @container magic (width > calc(25rem * 1)) {
-  .mag-1Max .mag-md {
+  .mag-1Max.mag-md > .magic-parent {
     width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
-  .mag-2Max .mag-md {
+  .mag-2Max.mag-md > .magic-parent {
     width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 4)) and (max-width: calc(25rem * 5)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     width: calc(25rem * 4);
   }
 }
 @container magic (width > calc(25rem * 1)) {
-  .mag-1Max .mag-md {
+  .mag-1Max.mag-md > .magic-parent {
     width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
-  .mag-2Max .mag-md {
+  .mag-2Max.mag-md > .magic-parent {
     width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
-  .mag-3Max .mag-md {
+  .mag-3Max.mag-md > .magic-parent {
     width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 5)) and (max-width: calc(25rem * 6)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     width: calc(25rem * 5);
   }
 }
 @container magic (width > calc(25rem * 1)) {
-  .mag-1Max .mag-md {
+  .mag-1Max.mag-md > .magic-parent {
     width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
-  .mag-2Max .mag-md {
+  .mag-2Max.mag-md > .magic-parent {
     width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
-  .mag-3Max .mag-md {
+  .mag-3Max.mag-md > .magic-parent {
     width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
-  .mag-4Max .mag-md {
+  .mag-4Max.mag-md > .magic-parent {
     width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 6)) and (max-width: calc(25rem * 7)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     width: calc(25rem * 6);
   }
 }
 @container magic (width > calc(25rem * 1)) {
-  .mag-1Max .mag-md {
+  .mag-1Max.mag-md > .magic-parent {
     width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
-  .mag-2Max .mag-md {
+  .mag-2Max.mag-md > .magic-parent {
     width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
-  .mag-3Max .mag-md {
+  .mag-3Max.mag-md > .magic-parent {
     width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
-  .mag-4Max .mag-md {
+  .mag-4Max.mag-md > .magic-parent {
     width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 5)) {
-  .mag-5Max .mag-md {
+  .mag-5Max.mag-md > .magic-parent {
     width: calc(25rem * 5);
   }
 }
 
 @container magic (width > calc(25rem * 7)) and (max-width: calc(25rem * 8)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     width: calc(25rem * 7);
   }
 }
 @container magic (width > calc(25rem * 1)) {
-  .mag-1Max .mag-md {
+  .mag-1Max.mag-md > .magic-parent {
     width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
-  .mag-2Max .mag-md {
+  .mag-2Max.mag-md > .magic-parent {
     width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
-  .mag-3Max .mag-md {
+  .mag-3Max.mag-md > .magic-parent {
     width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
-  .mag-4Max .mag-md {
+  .mag-4Max.mag-md > .magic-parent {
     width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 5)) {
-  .mag-5Max .mag-md {
+  .mag-5Max.mag-md > .magic-parent {
     width: calc(25rem * 5);
   }
 }
 
 @container magic (width > calc(25rem * 6)) {
-  .mag-6Max .mag-md {
+  .mag-6Max.mag-md > .magic-parent {
     width: calc(25rem * 6);
   }
 }
 
 @container magic (min-width: calc(25rem * 8)) {
-  .mag-md {
+  .mag-md > .magic-parent {
     max-width: calc(25rem * 8);
   }
 }
 @container magic (width > calc(25rem * 1)) {
-  .mag-1Max .mag-md {
+  .mag-1Max.mag-md > .magic-parent {
     width: calc(25rem * 1);
   }
 }
 
 @container magic (width > calc(25rem * 2)) {
-  .mag-2Max .mag-md {
+  .mag-2Max.mag-md > .magic-parent {
     width: calc(25rem * 2);
   }
 }
 
 @container magic (width > calc(25rem * 3)) {
-  .mag-3Max .mag-md {
+  .mag-3Max.mag-md > .magic-parent {
     width: calc(25rem * 3);
   }
 }
 
 @container magic (width > calc(25rem * 4)) {
-  .mag-4Max .mag-md {
+  .mag-4Max.mag-md > .magic-parent {
     width: calc(25rem * 4);
   }
 }
 
 @container magic (width > calc(25rem * 5)) {
-  .mag-5Max .mag-md {
+  .mag-5Max.mag-md > .magic-parent {
     width: calc(25rem * 5);
   }
 }
 
 @container magic (width > calc(25rem * 6)) {
-  .mag-6Max .mag-md {
+  .mag-6Max.mag-md > .magic-parent {
     width: calc(25rem * 6);
   }
 }
 
 @container magic (width > calc(25rem * 7)) {
-  .mag-7Max .mag-md {
+  .mag-7Max.mag-md > .magic-parent {
     width: calc(25rem * 7);
   }
 }
 
 @container magic (max-width: calc(37rem * 2)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     width: 37rem;
   }
 }
 @container magic (width > calc(37rem * 2)) and (max-width: calc(37rem * 3)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     width: calc(37rem * 2);
   }
 }
 @container magic (width > calc(37rem * 1)) {
-  .mag-1Max .mag-lg {
+  .mag-1Max.mag-lg > .magic-parent {
     width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 3)) and (max-width: calc(37rem * 4)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     width: calc(37rem * 3);
   }
 }
 @container magic (width > calc(37rem * 1)) {
-  .mag-1Max .mag-lg {
+  .mag-1Max.mag-lg > .magic-parent {
     width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
-  .mag-2Max .mag-lg {
+  .mag-2Max.mag-lg > .magic-parent {
     width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 4)) and (max-width: calc(37rem * 5)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     width: calc(37rem * 4);
   }
 }
 @container magic (width > calc(37rem * 1)) {
-  .mag-1Max .mag-lg {
+  .mag-1Max.mag-lg > .magic-parent {
     width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
-  .mag-2Max .mag-lg {
+  .mag-2Max.mag-lg > .magic-parent {
     width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
-  .mag-3Max .mag-lg {
+  .mag-3Max.mag-lg > .magic-parent {
     width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 5)) and (max-width: calc(37rem * 6)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     width: calc(37rem * 5);
   }
 }
 @container magic (width > calc(37rem * 1)) {
-  .mag-1Max .mag-lg {
+  .mag-1Max.mag-lg > .magic-parent {
     width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
-  .mag-2Max .mag-lg {
+  .mag-2Max.mag-lg > .magic-parent {
     width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
-  .mag-3Max .mag-lg {
+  .mag-3Max.mag-lg > .magic-parent {
     width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
-  .mag-4Max .mag-lg {
+  .mag-4Max.mag-lg > .magic-parent {
     width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 6)) and (max-width: calc(37rem * 7)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     width: calc(37rem * 6);
   }
 }
 @container magic (width > calc(37rem * 1)) {
-  .mag-1Max .mag-lg {
+  .mag-1Max.mag-lg > .magic-parent {
     width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
-  .mag-2Max .mag-lg {
+  .mag-2Max.mag-lg > .magic-parent {
     width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
-  .mag-3Max .mag-lg {
+  .mag-3Max.mag-lg > .magic-parent {
     width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
-  .mag-4Max .mag-lg {
+  .mag-4Max.mag-lg > .magic-parent {
     width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 5)) {
-  .mag-5Max .mag-lg {
+  .mag-5Max.mag-lg > .magic-parent {
     width: calc(37rem * 5);
   }
 }
 
 @container magic (width > calc(37rem * 7)) and (max-width: calc(37rem * 8)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     width: calc(37rem * 7);
   }
 }
 @container magic (width > calc(37rem * 1)) {
-  .mag-1Max .mag-lg {
+  .mag-1Max.mag-lg > .magic-parent {
     width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
-  .mag-2Max .mag-lg {
+  .mag-2Max.mag-lg > .magic-parent {
     width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
-  .mag-3Max .mag-lg {
+  .mag-3Max.mag-lg > .magic-parent {
     width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
-  .mag-4Max .mag-lg {
+  .mag-4Max.mag-lg > .magic-parent {
     width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 5)) {
-  .mag-5Max .mag-lg {
+  .mag-5Max.mag-lg > .magic-parent {
     width: calc(37rem * 5);
   }
 }
 
 @container magic (width > calc(37rem * 6)) {
-  .mag-6Max .mag-lg {
+  .mag-6Max.mag-lg > .magic-parent {
     width: calc(37rem * 6);
   }
 }
 
 @container magic (min-width: calc(37rem * 8)) {
-  .mag-lg {
+  .mag-lg > .magic-parent {
     max-width: calc(37rem * 8);
   }
 }
 @container magic (width > calc(37rem * 1)) {
-  .mag-1Max .mag-lg {
+  .mag-1Max.mag-lg > .magic-parent {
     width: calc(37rem * 1);
   }
 }
 
 @container magic (width > calc(37rem * 2)) {
-  .mag-2Max .mag-lg {
+  .mag-2Max.mag-lg > .magic-parent {
     width: calc(37rem * 2);
   }
 }
 
 @container magic (width > calc(37rem * 3)) {
-  .mag-3Max .mag-lg {
+  .mag-3Max.mag-lg > .magic-parent {
     width: calc(37rem * 3);
   }
 }
 
 @container magic (width > calc(37rem * 4)) {
-  .mag-4Max .mag-lg {
+  .mag-4Max.mag-lg > .magic-parent {
     width: calc(37rem * 4);
   }
 }
 
 @container magic (width > calc(37rem * 5)) {
-  .mag-5Max .mag-lg {
+  .mag-5Max.mag-lg > .magic-parent {
     width: calc(37rem * 5);
   }
 }
 
 @container magic (width > calc(37rem * 6)) {
-  .mag-6Max .mag-lg {
+  .mag-6Max.mag-lg > .magic-parent {
     width: calc(37rem * 6);
   }
 }
 
 @container magic (width > calc(37rem * 7)) {
-  .mag-7Max .mag-lg {
+  .mag-7Max.mag-lg > .magic-parent {
     width: calc(37rem * 7);
   }
 }
 
 @container magic (max-width: calc(50rem * 2)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     width: 50rem;
   }
 }
 @container magic (width > calc(50rem * 2)) and (max-width: calc(50rem * 3)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     width: calc(50rem * 2);
   }
 }
 @container magic (width > calc(50rem * 1)) {
-  .mag-1Max .mag-xl {
+  .mag-1Max.mag-xl > .magic-parent {
     width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 3)) and (max-width: calc(50rem * 4)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     width: calc(50rem * 3);
   }
 }
 @container magic (width > calc(50rem * 1)) {
-  .mag-1Max .mag-xl {
+  .mag-1Max.mag-xl > .magic-parent {
     width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
-  .mag-2Max .mag-xl {
+  .mag-2Max.mag-xl > .magic-parent {
     width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 4)) and (max-width: calc(50rem * 5)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     width: calc(50rem * 4);
   }
 }
 @container magic (width > calc(50rem * 1)) {
-  .mag-1Max .mag-xl {
+  .mag-1Max.mag-xl > .magic-parent {
     width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
-  .mag-2Max .mag-xl {
+  .mag-2Max.mag-xl > .magic-parent {
     width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
-  .mag-3Max .mag-xl {
+  .mag-3Max.mag-xl > .magic-parent {
     width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 5)) and (max-width: calc(50rem * 6)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     width: calc(50rem * 5);
   }
 }
 @container magic (width > calc(50rem * 1)) {
-  .mag-1Max .mag-xl {
+  .mag-1Max.mag-xl > .magic-parent {
     width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
-  .mag-2Max .mag-xl {
+  .mag-2Max.mag-xl > .magic-parent {
     width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
-  .mag-3Max .mag-xl {
+  .mag-3Max.mag-xl > .magic-parent {
     width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
-  .mag-4Max .mag-xl {
+  .mag-4Max.mag-xl > .magic-parent {
     width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 6)) and (max-width: calc(50rem * 7)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     width: calc(50rem * 6);
   }
 }
 @container magic (width > calc(50rem * 1)) {
-  .mag-1Max .mag-xl {
+  .mag-1Max.mag-xl > .magic-parent {
     width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
-  .mag-2Max .mag-xl {
+  .mag-2Max.mag-xl > .magic-parent {
     width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
-  .mag-3Max .mag-xl {
+  .mag-3Max.mag-xl > .magic-parent {
     width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
-  .mag-4Max .mag-xl {
+  .mag-4Max.mag-xl > .magic-parent {
     width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 5)) {
-  .mag-5Max .mag-xl {
+  .mag-5Max.mag-xl > .magic-parent {
     width: calc(50rem * 5);
   }
 }
 
 @container magic (width > calc(50rem * 7)) and (max-width: calc(50rem * 8)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     width: calc(50rem * 7);
   }
 }
 @container magic (width > calc(50rem * 1)) {
-  .mag-1Max .mag-xl {
+  .mag-1Max.mag-xl > .magic-parent {
     width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
-  .mag-2Max .mag-xl {
+  .mag-2Max.mag-xl > .magic-parent {
     width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
-  .mag-3Max .mag-xl {
+  .mag-3Max.mag-xl > .magic-parent {
     width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
-  .mag-4Max .mag-xl {
+  .mag-4Max.mag-xl > .magic-parent {
     width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 5)) {
-  .mag-5Max .mag-xl {
+  .mag-5Max.mag-xl > .magic-parent {
     width: calc(50rem * 5);
   }
 }
 
 @container magic (width > calc(50rem * 6)) {
-  .mag-6Max .mag-xl {
+  .mag-6Max.mag-xl > .magic-parent {
     width: calc(50rem * 6);
   }
 }
 
 @container magic (min-width: calc(50rem * 8)) {
-  .mag-xl {
+  .mag-xl > .magic-parent {
     max-width: calc(50rem * 8);
   }
 }
 @container magic (width > calc(50rem * 1)) {
-  .mag-1Max .mag-xl {
+  .mag-1Max.mag-xl > .magic-parent {
     width: calc(50rem * 1);
   }
 }
 
 @container magic (width > calc(50rem * 2)) {
-  .mag-2Max .mag-xl {
+  .mag-2Max.mag-xl > .magic-parent {
     width: calc(50rem * 2);
   }
 }
 
 @container magic (width > calc(50rem * 3)) {
-  .mag-3Max .mag-xl {
+  .mag-3Max.mag-xl > .magic-parent {
     width: calc(50rem * 3);
   }
 }
 
 @container magic (width > calc(50rem * 4)) {
-  .mag-4Max .mag-xl {
+  .mag-4Max.mag-xl > .magic-parent {
     width: calc(50rem * 4);
   }
 }
 
 @container magic (width > calc(50rem * 5)) {
-  .mag-5Max .mag-xl {
+  .mag-5Max.mag-xl > .magic-parent {
     width: calc(50rem * 5);
   }
 }
 
 @container magic (width > calc(50rem * 6)) {
-  .mag-6Max .mag-xl {
+  .mag-6Max.mag-xl > .magic-parent {
     width: calc(50rem * 6);
   }
 }
 
 @container magic (width > calc(50rem * 7)) {
-  .mag-7Max .mag-xl {
+  .mag-7Max.mag-xl > .magic-parent {
     width: calc(50rem * 7);
   }
 }
 
 @container magic (max-width: calc(75rem * 2)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     width: 75rem;
   }
 }
 @container magic (width > calc(75rem * 2)) and (max-width: calc(75rem * 3)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     width: calc(75rem * 2);
   }
 }
 @container magic (width > calc(75rem * 1)) {
-  .mag-1Max .mag-xxl {
+  .mag-1Max.mag-xxl > .magic-parent {
     width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 3)) and (max-width: calc(75rem * 4)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     width: calc(75rem * 3);
   }
 }
 @container magic (width > calc(75rem * 1)) {
-  .mag-1Max .mag-xxl {
+  .mag-1Max.mag-xxl > .magic-parent {
     width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
-  .mag-2Max .mag-xxl {
+  .mag-2Max.mag-xxl > .magic-parent {
     width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 4)) and (max-width: calc(75rem * 5)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     width: calc(75rem * 4);
   }
 }
 @container magic (width > calc(75rem * 1)) {
-  .mag-1Max .mag-xxl {
+  .mag-1Max.mag-xxl > .magic-parent {
     width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
-  .mag-2Max .mag-xxl {
+  .mag-2Max.mag-xxl > .magic-parent {
     width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
-  .mag-3Max .mag-xxl {
+  .mag-3Max.mag-xxl > .magic-parent {
     width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 5)) and (max-width: calc(75rem * 6)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     width: calc(75rem * 5);
   }
 }
 @container magic (width > calc(75rem * 1)) {
-  .mag-1Max .mag-xxl {
+  .mag-1Max.mag-xxl > .magic-parent {
     width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
-  .mag-2Max .mag-xxl {
+  .mag-2Max.mag-xxl > .magic-parent {
     width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
-  .mag-3Max .mag-xxl {
+  .mag-3Max.mag-xxl > .magic-parent {
     width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
-  .mag-4Max .mag-xxl {
+  .mag-4Max.mag-xxl > .magic-parent {
     width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 6)) and (max-width: calc(75rem * 7)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     width: calc(75rem * 6);
   }
 }
 @container magic (width > calc(75rem * 1)) {
-  .mag-1Max .mag-xxl {
+  .mag-1Max.mag-xxl > .magic-parent {
     width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
-  .mag-2Max .mag-xxl {
+  .mag-2Max.mag-xxl > .magic-parent {
     width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
-  .mag-3Max .mag-xxl {
+  .mag-3Max.mag-xxl > .magic-parent {
     width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
-  .mag-4Max .mag-xxl {
+  .mag-4Max.mag-xxl > .magic-parent {
     width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 5)) {
-  .mag-5Max .mag-xxl {
+  .mag-5Max.mag-xxl > .magic-parent {
     width: calc(75rem * 5);
   }
 }
 
 @container magic (width > calc(75rem * 7)) and (max-width: calc(75rem * 8)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     width: calc(75rem * 7);
   }
 }
 @container magic (width > calc(75rem * 1)) {
-  .mag-1Max .mag-xxl {
+  .mag-1Max.mag-xxl > .magic-parent {
     width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
-  .mag-2Max .mag-xxl {
+  .mag-2Max.mag-xxl > .magic-parent {
     width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
-  .mag-3Max .mag-xxl {
+  .mag-3Max.mag-xxl > .magic-parent {
     width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
-  .mag-4Max .mag-xxl {
+  .mag-4Max.mag-xxl > .magic-parent {
     width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 5)) {
-  .mag-5Max .mag-xxl {
+  .mag-5Max.mag-xxl > .magic-parent {
     width: calc(75rem * 5);
   }
 }
 
 @container magic (width > calc(75rem * 6)) {
-  .mag-6Max .mag-xxl {
+  .mag-6Max.mag-xxl > .magic-parent {
     width: calc(75rem * 6);
   }
 }
 
 @container magic (min-width: calc(75rem * 8)) {
-  .mag-xxl {
+  .mag-xxl > .magic-parent {
     max-width: calc(75rem * 8);
   }
 }
 @container magic (width > calc(75rem * 1)) {
-  .mag-1Max .mag-xxl {
+  .mag-1Max.mag-xxl > .magic-parent {
     width: calc(75rem * 1);
   }
 }
 
 @container magic (width > calc(75rem * 2)) {
-  .mag-2Max .mag-xxl {
+  .mag-2Max.mag-xxl > .magic-parent {
     width: calc(75rem * 2);
   }
 }
 
 @container magic (width > calc(75rem * 3)) {
-  .mag-3Max .mag-xxl {
+  .mag-3Max.mag-xxl > .magic-parent {
     width: calc(75rem * 3);
   }
 }
 
 @container magic (width > calc(75rem * 4)) {
-  .mag-4Max .mag-xxl {
+  .mag-4Max.mag-xxl > .magic-parent {
     width: calc(75rem * 4);
   }
 }
 
 @container magic (width > calc(75rem * 5)) {
-  .mag-5Max .mag-xxl {
+  .mag-5Max.mag-xxl > .magic-parent {
     width: calc(75rem * 5);
   }
 }
 
 @container magic (width > calc(75rem * 6)) {
-  .mag-6Max .mag-xxl {
+  .mag-6Max.mag-xxl > .magic-parent {
     width: calc(75rem * 6);
   }
 }
 
 @container magic (width > calc(75rem * 7)) {
-  .mag-7Max .mag-xxl {
+  .mag-7Max.mag-xxl > .magic-parent {
     width: calc(75rem * 7);
   }
 }
 
-.magic {
+@container magic (max-width: calc(6rem * 2)) {
+  .mag-xxs > .magic {
+    width: 6rem;
+  }
+}
+@container magic (width > calc(6rem * 2)) and (max-width: calc(6rem * 3)) {
+  .mag-xxs > .magic {
+    width: calc(6rem * 2);
+  }
+}
+@container magic (width > calc(6rem * 1)) {
+  .mag-1Max.mag-xxs > .magic {
+    width: calc(6rem * 1);
+  }
+}
+
+@container magic (width > calc(6rem * 3)) and (max-width: calc(6rem * 4)) {
+  .mag-xxs > .magic {
+    width: calc(6rem * 3);
+  }
+}
+@container magic (width > calc(6rem * 1)) {
+  .mag-1Max.mag-xxs > .magic {
+    width: calc(6rem * 1);
+  }
+}
+
+@container magic (width > calc(6rem * 2)) {
+  .mag-2Max.mag-xxs > .magic {
+    width: calc(6rem * 2);
+  }
+}
+
+@container magic (width > calc(6rem * 4)) and (max-width: calc(6rem * 5)) {
+  .mag-xxs > .magic {
+    width: calc(6rem * 4);
+  }
+}
+@container magic (width > calc(6rem * 1)) {
+  .mag-1Max.mag-xxs > .magic {
+    width: calc(6rem * 1);
+  }
+}
+
+@container magic (width > calc(6rem * 2)) {
+  .mag-2Max.mag-xxs > .magic {
+    width: calc(6rem * 2);
+  }
+}
+
+@container magic (width > calc(6rem * 3)) {
+  .mag-3Max.mag-xxs > .magic {
+    width: calc(6rem * 3);
+  }
+}
+
+@container magic (width > calc(6rem * 5)) and (max-width: calc(6rem * 6)) {
+  .mag-xxs > .magic {
+    width: calc(6rem * 5);
+  }
+}
+@container magic (width > calc(6rem * 1)) {
+  .mag-1Max.mag-xxs > .magic {
+    width: calc(6rem * 1);
+  }
+}
+
+@container magic (width > calc(6rem * 2)) {
+  .mag-2Max.mag-xxs > .magic {
+    width: calc(6rem * 2);
+  }
+}
+
+@container magic (width > calc(6rem * 3)) {
+  .mag-3Max.mag-xxs > .magic {
+    width: calc(6rem * 3);
+  }
+}
+
+@container magic (width > calc(6rem * 4)) {
+  .mag-4Max.mag-xxs > .magic {
+    width: calc(6rem * 4);
+  }
+}
+
+@container magic (width > calc(6rem * 6)) and (max-width: calc(6rem * 7)) {
+  .mag-xxs > .magic {
+    width: calc(6rem * 6);
+  }
+}
+@container magic (width > calc(6rem * 1)) {
+  .mag-1Max.mag-xxs > .magic {
+    width: calc(6rem * 1);
+  }
+}
+
+@container magic (width > calc(6rem * 2)) {
+  .mag-2Max.mag-xxs > .magic {
+    width: calc(6rem * 2);
+  }
+}
+
+@container magic (width > calc(6rem * 3)) {
+  .mag-3Max.mag-xxs > .magic {
+    width: calc(6rem * 3);
+  }
+}
+
+@container magic (width > calc(6rem * 4)) {
+  .mag-4Max.mag-xxs > .magic {
+    width: calc(6rem * 4);
+  }
+}
+
+@container magic (width > calc(6rem * 5)) {
+  .mag-5Max.mag-xxs > .magic {
+    width: calc(6rem * 5);
+  }
+}
+
+@container magic (width > calc(6rem * 7)) and (max-width: calc(6rem * 8)) {
+  .mag-xxs > .magic {
+    width: calc(6rem * 7);
+  }
+}
+@container magic (width > calc(6rem * 1)) {
+  .mag-1Max.mag-xxs > .magic {
+    width: calc(6rem * 1);
+  }
+}
+
+@container magic (width > calc(6rem * 2)) {
+  .mag-2Max.mag-xxs > .magic {
+    width: calc(6rem * 2);
+  }
+}
+
+@container magic (width > calc(6rem * 3)) {
+  .mag-3Max.mag-xxs > .magic {
+    width: calc(6rem * 3);
+  }
+}
+
+@container magic (width > calc(6rem * 4)) {
+  .mag-4Max.mag-xxs > .magic {
+    width: calc(6rem * 4);
+  }
+}
+
+@container magic (width > calc(6rem * 5)) {
+  .mag-5Max.mag-xxs > .magic {
+    width: calc(6rem * 5);
+  }
+}
+
+@container magic (width > calc(6rem * 6)) {
+  .mag-6Max.mag-xxs > .magic {
+    width: calc(6rem * 6);
+  }
+}
+
+@container magic (min-width: calc(6rem * 8)) {
+  .mag-xxs > .magic {
+    max-width: calc(6rem * 8);
+  }
+}
+@container magic (width > calc(6rem * 1)) {
+  .mag-1Max.mag-xxs > .magic {
+    width: calc(6rem * 1);
+  }
+}
+
+@container magic (width > calc(6rem * 2)) {
+  .mag-2Max.mag-xxs > .magic {
+    width: calc(6rem * 2);
+  }
+}
+
+@container magic (width > calc(6rem * 3)) {
+  .mag-3Max.mag-xxs > .magic {
+    width: calc(6rem * 3);
+  }
+}
+
+@container magic (width > calc(6rem * 4)) {
+  .mag-4Max.mag-xxs > .magic {
+    width: calc(6rem * 4);
+  }
+}
+
+@container magic (width > calc(6rem * 5)) {
+  .mag-5Max.mag-xxs > .magic {
+    width: calc(6rem * 5);
+  }
+}
+
+@container magic (width > calc(6rem * 6)) {
+  .mag-6Max.mag-xxs > .magic {
+    width: calc(6rem * 6);
+  }
+}
+
+@container magic (width > calc(6rem * 7)) {
+  .mag-7Max.mag-xxs > .magic {
+    width: calc(6rem * 7);
+  }
+}
+
+@container magic (max-width: calc(9rem * 2)) {
+  .mag-xs > .magic {
+    width: 9rem;
+  }
+}
+@container magic (width > calc(9rem * 2)) and (max-width: calc(9rem * 3)) {
+  .mag-xs > .magic {
+    width: calc(9rem * 2);
+  }
+}
+@container magic (width > calc(9rem * 1)) {
+  .mag-1Max.mag-xs > .magic {
+    width: calc(9rem * 1);
+  }
+}
+
+@container magic (width > calc(9rem * 3)) and (max-width: calc(9rem * 4)) {
+  .mag-xs > .magic {
+    width: calc(9rem * 3);
+  }
+}
+@container magic (width > calc(9rem * 1)) {
+  .mag-1Max.mag-xs > .magic {
+    width: calc(9rem * 1);
+  }
+}
+
+@container magic (width > calc(9rem * 2)) {
+  .mag-2Max.mag-xs > .magic {
+    width: calc(9rem * 2);
+  }
+}
+
+@container magic (width > calc(9rem * 4)) and (max-width: calc(9rem * 5)) {
+  .mag-xs > .magic {
+    width: calc(9rem * 4);
+  }
+}
+@container magic (width > calc(9rem * 1)) {
+  .mag-1Max.mag-xs > .magic {
+    width: calc(9rem * 1);
+  }
+}
+
+@container magic (width > calc(9rem * 2)) {
+  .mag-2Max.mag-xs > .magic {
+    width: calc(9rem * 2);
+  }
+}
+
+@container magic (width > calc(9rem * 3)) {
+  .mag-3Max.mag-xs > .magic {
+    width: calc(9rem * 3);
+  }
+}
+
+@container magic (width > calc(9rem * 5)) and (max-width: calc(9rem * 6)) {
+  .mag-xs > .magic {
+    width: calc(9rem * 5);
+  }
+}
+@container magic (width > calc(9rem * 1)) {
+  .mag-1Max.mag-xs > .magic {
+    width: calc(9rem * 1);
+  }
+}
+
+@container magic (width > calc(9rem * 2)) {
+  .mag-2Max.mag-xs > .magic {
+    width: calc(9rem * 2);
+  }
+}
+
+@container magic (width > calc(9rem * 3)) {
+  .mag-3Max.mag-xs > .magic {
+    width: calc(9rem * 3);
+  }
+}
+
+@container magic (width > calc(9rem * 4)) {
+  .mag-4Max.mag-xs > .magic {
+    width: calc(9rem * 4);
+  }
+}
+
+@container magic (width > calc(9rem * 6)) and (max-width: calc(9rem * 7)) {
+  .mag-xs > .magic {
+    width: calc(9rem * 6);
+  }
+}
+@container magic (width > calc(9rem * 1)) {
+  .mag-1Max.mag-xs > .magic {
+    width: calc(9rem * 1);
+  }
+}
+
+@container magic (width > calc(9rem * 2)) {
+  .mag-2Max.mag-xs > .magic {
+    width: calc(9rem * 2);
+  }
+}
+
+@container magic (width > calc(9rem * 3)) {
+  .mag-3Max.mag-xs > .magic {
+    width: calc(9rem * 3);
+  }
+}
+
+@container magic (width > calc(9rem * 4)) {
+  .mag-4Max.mag-xs > .magic {
+    width: calc(9rem * 4);
+  }
+}
+
+@container magic (width > calc(9rem * 5)) {
+  .mag-5Max.mag-xs > .magic {
+    width: calc(9rem * 5);
+  }
+}
+
+@container magic (width > calc(9rem * 7)) and (max-width: calc(9rem * 8)) {
+  .mag-xs > .magic {
+    width: calc(9rem * 7);
+  }
+}
+@container magic (width > calc(9rem * 1)) {
+  .mag-1Max.mag-xs > .magic {
+    width: calc(9rem * 1);
+  }
+}
+
+@container magic (width > calc(9rem * 2)) {
+  .mag-2Max.mag-xs > .magic {
+    width: calc(9rem * 2);
+  }
+}
+
+@container magic (width > calc(9rem * 3)) {
+  .mag-3Max.mag-xs > .magic {
+    width: calc(9rem * 3);
+  }
+}
+
+@container magic (width > calc(9rem * 4)) {
+  .mag-4Max.mag-xs > .magic {
+    width: calc(9rem * 4);
+  }
+}
+
+@container magic (width > calc(9rem * 5)) {
+  .mag-5Max.mag-xs > .magic {
+    width: calc(9rem * 5);
+  }
+}
+
+@container magic (width > calc(9rem * 6)) {
+  .mag-6Max.mag-xs > .magic {
+    width: calc(9rem * 6);
+  }
+}
+
+@container magic (min-width: calc(9rem * 8)) {
+  .mag-xs > .magic {
+    max-width: calc(9rem * 8);
+  }
+}
+@container magic (width > calc(9rem * 1)) {
+  .mag-1Max.mag-xs > .magic {
+    width: calc(9rem * 1);
+  }
+}
+
+@container magic (width > calc(9rem * 2)) {
+  .mag-2Max.mag-xs > .magic {
+    width: calc(9rem * 2);
+  }
+}
+
+@container magic (width > calc(9rem * 3)) {
+  .mag-3Max.mag-xs > .magic {
+    width: calc(9rem * 3);
+  }
+}
+
+@container magic (width > calc(9rem * 4)) {
+  .mag-4Max.mag-xs > .magic {
+    width: calc(9rem * 4);
+  }
+}
+
+@container magic (width > calc(9rem * 5)) {
+  .mag-5Max.mag-xs > .magic {
+    width: calc(9rem * 5);
+  }
+}
+
+@container magic (width > calc(9rem * 6)) {
+  .mag-6Max.mag-xs > .magic {
+    width: calc(9rem * 6);
+  }
+}
+
+@container magic (width > calc(9rem * 7)) {
+  .mag-7Max.mag-xs > .magic {
+    width: calc(9rem * 7);
+  }
+}
+
+@container magic (max-width: calc(13rem * 2)) {
+  .mag-sm > .magic {
+    width: 13rem;
+  }
+}
+@container magic (width > calc(13rem * 2)) and (max-width: calc(13rem * 3)) {
+  .mag-sm > .magic {
+    width: calc(13rem * 2);
+  }
+}
+@container magic (width > calc(13rem * 1)) {
+  .mag-1Max.mag-sm > .magic {
+    width: calc(13rem * 1);
+  }
+}
+
+@container magic (width > calc(13rem * 3)) and (max-width: calc(13rem * 4)) {
+  .mag-sm > .magic {
+    width: calc(13rem * 3);
+  }
+}
+@container magic (width > calc(13rem * 1)) {
+  .mag-1Max.mag-sm > .magic {
+    width: calc(13rem * 1);
+  }
+}
+
+@container magic (width > calc(13rem * 2)) {
+  .mag-2Max.mag-sm > .magic {
+    width: calc(13rem * 2);
+  }
+}
+
+@container magic (width > calc(13rem * 4)) and (max-width: calc(13rem * 5)) {
+  .mag-sm > .magic {
+    width: calc(13rem * 4);
+  }
+}
+@container magic (width > calc(13rem * 1)) {
+  .mag-1Max.mag-sm > .magic {
+    width: calc(13rem * 1);
+  }
+}
+
+@container magic (width > calc(13rem * 2)) {
+  .mag-2Max.mag-sm > .magic {
+    width: calc(13rem * 2);
+  }
+}
+
+@container magic (width > calc(13rem * 3)) {
+  .mag-3Max.mag-sm > .magic {
+    width: calc(13rem * 3);
+  }
+}
+
+@container magic (width > calc(13rem * 5)) and (max-width: calc(13rem * 6)) {
+  .mag-sm > .magic {
+    width: calc(13rem * 5);
+  }
+}
+@container magic (width > calc(13rem * 1)) {
+  .mag-1Max.mag-sm > .magic {
+    width: calc(13rem * 1);
+  }
+}
+
+@container magic (width > calc(13rem * 2)) {
+  .mag-2Max.mag-sm > .magic {
+    width: calc(13rem * 2);
+  }
+}
+
+@container magic (width > calc(13rem * 3)) {
+  .mag-3Max.mag-sm > .magic {
+    width: calc(13rem * 3);
+  }
+}
+
+@container magic (width > calc(13rem * 4)) {
+  .mag-4Max.mag-sm > .magic {
+    width: calc(13rem * 4);
+  }
+}
+
+@container magic (width > calc(13rem * 6)) and (max-width: calc(13rem * 7)) {
+  .mag-sm > .magic {
+    width: calc(13rem * 6);
+  }
+}
+@container magic (width > calc(13rem * 1)) {
+  .mag-1Max.mag-sm > .magic {
+    width: calc(13rem * 1);
+  }
+}
+
+@container magic (width > calc(13rem * 2)) {
+  .mag-2Max.mag-sm > .magic {
+    width: calc(13rem * 2);
+  }
+}
+
+@container magic (width > calc(13rem * 3)) {
+  .mag-3Max.mag-sm > .magic {
+    width: calc(13rem * 3);
+  }
+}
+
+@container magic (width > calc(13rem * 4)) {
+  .mag-4Max.mag-sm > .magic {
+    width: calc(13rem * 4);
+  }
+}
+
+@container magic (width > calc(13rem * 5)) {
+  .mag-5Max.mag-sm > .magic {
+    width: calc(13rem * 5);
+  }
+}
+
+@container magic (width > calc(13rem * 7)) and (max-width: calc(13rem * 8)) {
+  .mag-sm > .magic {
+    width: calc(13rem * 7);
+  }
+}
+@container magic (width > calc(13rem * 1)) {
+  .mag-1Max.mag-sm > .magic {
+    width: calc(13rem * 1);
+  }
+}
+
+@container magic (width > calc(13rem * 2)) {
+  .mag-2Max.mag-sm > .magic {
+    width: calc(13rem * 2);
+  }
+}
+
+@container magic (width > calc(13rem * 3)) {
+  .mag-3Max.mag-sm > .magic {
+    width: calc(13rem * 3);
+  }
+}
+
+@container magic (width > calc(13rem * 4)) {
+  .mag-4Max.mag-sm > .magic {
+    width: calc(13rem * 4);
+  }
+}
+
+@container magic (width > calc(13rem * 5)) {
+  .mag-5Max.mag-sm > .magic {
+    width: calc(13rem * 5);
+  }
+}
+
+@container magic (width > calc(13rem * 6)) {
+  .mag-6Max.mag-sm > .magic {
+    width: calc(13rem * 6);
+  }
+}
+
+@container magic (min-width: calc(13rem * 8)) {
+  .mag-sm > .magic {
+    max-width: calc(13rem * 8);
+  }
+}
+@container magic (width > calc(13rem * 1)) {
+  .mag-1Max.mag-sm > .magic {
+    width: calc(13rem * 1);
+  }
+}
+
+@container magic (width > calc(13rem * 2)) {
+  .mag-2Max.mag-sm > .magic {
+    width: calc(13rem * 2);
+  }
+}
+
+@container magic (width > calc(13rem * 3)) {
+  .mag-3Max.mag-sm > .magic {
+    width: calc(13rem * 3);
+  }
+}
+
+@container magic (width > calc(13rem * 4)) {
+  .mag-4Max.mag-sm > .magic {
+    width: calc(13rem * 4);
+  }
+}
+
+@container magic (width > calc(13rem * 5)) {
+  .mag-5Max.mag-sm > .magic {
+    width: calc(13rem * 5);
+  }
+}
+
+@container magic (width > calc(13rem * 6)) {
+  .mag-6Max.mag-sm > .magic {
+    width: calc(13rem * 6);
+  }
+}
+
+@container magic (width > calc(13rem * 7)) {
+  .mag-7Max.mag-sm > .magic {
+    width: calc(13rem * 7);
+  }
+}
+
+@container magic (max-width: calc(25rem * 2)) {
+  .mag-md > .magic {
+    width: 25rem;
+  }
+}
+@container magic (width > calc(25rem * 2)) and (max-width: calc(25rem * 3)) {
+  .mag-md > .magic {
+    width: calc(25rem * 2);
+  }
+}
+@container magic (width > calc(25rem * 1)) {
+  .mag-1Max.mag-md > .magic {
+    width: calc(25rem * 1);
+  }
+}
+
+@container magic (width > calc(25rem * 3)) and (max-width: calc(25rem * 4)) {
+  .mag-md > .magic {
+    width: calc(25rem * 3);
+  }
+}
+@container magic (width > calc(25rem * 1)) {
+  .mag-1Max.mag-md > .magic {
+    width: calc(25rem * 1);
+  }
+}
+
+@container magic (width > calc(25rem * 2)) {
+  .mag-2Max.mag-md > .magic {
+    width: calc(25rem * 2);
+  }
+}
+
+@container magic (width > calc(25rem * 4)) and (max-width: calc(25rem * 5)) {
+  .mag-md > .magic {
+    width: calc(25rem * 4);
+  }
+}
+@container magic (width > calc(25rem * 1)) {
+  .mag-1Max.mag-md > .magic {
+    width: calc(25rem * 1);
+  }
+}
+
+@container magic (width > calc(25rem * 2)) {
+  .mag-2Max.mag-md > .magic {
+    width: calc(25rem * 2);
+  }
+}
+
+@container magic (width > calc(25rem * 3)) {
+  .mag-3Max.mag-md > .magic {
+    width: calc(25rem * 3);
+  }
+}
+
+@container magic (width > calc(25rem * 5)) and (max-width: calc(25rem * 6)) {
+  .mag-md > .magic {
+    width: calc(25rem * 5);
+  }
+}
+@container magic (width > calc(25rem * 1)) {
+  .mag-1Max.mag-md > .magic {
+    width: calc(25rem * 1);
+  }
+}
+
+@container magic (width > calc(25rem * 2)) {
+  .mag-2Max.mag-md > .magic {
+    width: calc(25rem * 2);
+  }
+}
+
+@container magic (width > calc(25rem * 3)) {
+  .mag-3Max.mag-md > .magic {
+    width: calc(25rem * 3);
+  }
+}
+
+@container magic (width > calc(25rem * 4)) {
+  .mag-4Max.mag-md > .magic {
+    width: calc(25rem * 4);
+  }
+}
+
+@container magic (width > calc(25rem * 6)) and (max-width: calc(25rem * 7)) {
+  .mag-md > .magic {
+    width: calc(25rem * 6);
+  }
+}
+@container magic (width > calc(25rem * 1)) {
+  .mag-1Max.mag-md > .magic {
+    width: calc(25rem * 1);
+  }
+}
+
+@container magic (width > calc(25rem * 2)) {
+  .mag-2Max.mag-md > .magic {
+    width: calc(25rem * 2);
+  }
+}
+
+@container magic (width > calc(25rem * 3)) {
+  .mag-3Max.mag-md > .magic {
+    width: calc(25rem * 3);
+  }
+}
+
+@container magic (width > calc(25rem * 4)) {
+  .mag-4Max.mag-md > .magic {
+    width: calc(25rem * 4);
+  }
+}
+
+@container magic (width > calc(25rem * 5)) {
+  .mag-5Max.mag-md > .magic {
+    width: calc(25rem * 5);
+  }
+}
+
+@container magic (width > calc(25rem * 7)) and (max-width: calc(25rem * 8)) {
+  .mag-md > .magic {
+    width: calc(25rem * 7);
+  }
+}
+@container magic (width > calc(25rem * 1)) {
+  .mag-1Max.mag-md > .magic {
+    width: calc(25rem * 1);
+  }
+}
+
+@container magic (width > calc(25rem * 2)) {
+  .mag-2Max.mag-md > .magic {
+    width: calc(25rem * 2);
+  }
+}
+
+@container magic (width > calc(25rem * 3)) {
+  .mag-3Max.mag-md > .magic {
+    width: calc(25rem * 3);
+  }
+}
+
+@container magic (width > calc(25rem * 4)) {
+  .mag-4Max.mag-md > .magic {
+    width: calc(25rem * 4);
+  }
+}
+
+@container magic (width > calc(25rem * 5)) {
+  .mag-5Max.mag-md > .magic {
+    width: calc(25rem * 5);
+  }
+}
+
+@container magic (width > calc(25rem * 6)) {
+  .mag-6Max.mag-md > .magic {
+    width: calc(25rem * 6);
+  }
+}
+
+@container magic (min-width: calc(25rem * 8)) {
+  .mag-md > .magic {
+    max-width: calc(25rem * 8);
+  }
+}
+@container magic (width > calc(25rem * 1)) {
+  .mag-1Max.mag-md > .magic {
+    width: calc(25rem * 1);
+  }
+}
+
+@container magic (width > calc(25rem * 2)) {
+  .mag-2Max.mag-md > .magic {
+    width: calc(25rem * 2);
+  }
+}
+
+@container magic (width > calc(25rem * 3)) {
+  .mag-3Max.mag-md > .magic {
+    width: calc(25rem * 3);
+  }
+}
+
+@container magic (width > calc(25rem * 4)) {
+  .mag-4Max.mag-md > .magic {
+    width: calc(25rem * 4);
+  }
+}
+
+@container magic (width > calc(25rem * 5)) {
+  .mag-5Max.mag-md > .magic {
+    width: calc(25rem * 5);
+  }
+}
+
+@container magic (width > calc(25rem * 6)) {
+  .mag-6Max.mag-md > .magic {
+    width: calc(25rem * 6);
+  }
+}
+
+@container magic (width > calc(25rem * 7)) {
+  .mag-7Max.mag-md > .magic {
+    width: calc(25rem * 7);
+  }
+}
+
+@container magic (max-width: calc(37rem * 2)) {
+  .mag-lg > .magic {
+    width: 37rem;
+  }
+}
+@container magic (width > calc(37rem * 2)) and (max-width: calc(37rem * 3)) {
+  .mag-lg > .magic {
+    width: calc(37rem * 2);
+  }
+}
+@container magic (width > calc(37rem * 1)) {
+  .mag-1Max.mag-lg > .magic {
+    width: calc(37rem * 1);
+  }
+}
+
+@container magic (width > calc(37rem * 3)) and (max-width: calc(37rem * 4)) {
+  .mag-lg > .magic {
+    width: calc(37rem * 3);
+  }
+}
+@container magic (width > calc(37rem * 1)) {
+  .mag-1Max.mag-lg > .magic {
+    width: calc(37rem * 1);
+  }
+}
+
+@container magic (width > calc(37rem * 2)) {
+  .mag-2Max.mag-lg > .magic {
+    width: calc(37rem * 2);
+  }
+}
+
+@container magic (width > calc(37rem * 4)) and (max-width: calc(37rem * 5)) {
+  .mag-lg > .magic {
+    width: calc(37rem * 4);
+  }
+}
+@container magic (width > calc(37rem * 1)) {
+  .mag-1Max.mag-lg > .magic {
+    width: calc(37rem * 1);
+  }
+}
+
+@container magic (width > calc(37rem * 2)) {
+  .mag-2Max.mag-lg > .magic {
+    width: calc(37rem * 2);
+  }
+}
+
+@container magic (width > calc(37rem * 3)) {
+  .mag-3Max.mag-lg > .magic {
+    width: calc(37rem * 3);
+  }
+}
+
+@container magic (width > calc(37rem * 5)) and (max-width: calc(37rem * 6)) {
+  .mag-lg > .magic {
+    width: calc(37rem * 5);
+  }
+}
+@container magic (width > calc(37rem * 1)) {
+  .mag-1Max.mag-lg > .magic {
+    width: calc(37rem * 1);
+  }
+}
+
+@container magic (width > calc(37rem * 2)) {
+  .mag-2Max.mag-lg > .magic {
+    width: calc(37rem * 2);
+  }
+}
+
+@container magic (width > calc(37rem * 3)) {
+  .mag-3Max.mag-lg > .magic {
+    width: calc(37rem * 3);
+  }
+}
+
+@container magic (width > calc(37rem * 4)) {
+  .mag-4Max.mag-lg > .magic {
+    width: calc(37rem * 4);
+  }
+}
+
+@container magic (width > calc(37rem * 6)) and (max-width: calc(37rem * 7)) {
+  .mag-lg > .magic {
+    width: calc(37rem * 6);
+  }
+}
+@container magic (width > calc(37rem * 1)) {
+  .mag-1Max.mag-lg > .magic {
+    width: calc(37rem * 1);
+  }
+}
+
+@container magic (width > calc(37rem * 2)) {
+  .mag-2Max.mag-lg > .magic {
+    width: calc(37rem * 2);
+  }
+}
+
+@container magic (width > calc(37rem * 3)) {
+  .mag-3Max.mag-lg > .magic {
+    width: calc(37rem * 3);
+  }
+}
+
+@container magic (width > calc(37rem * 4)) {
+  .mag-4Max.mag-lg > .magic {
+    width: calc(37rem * 4);
+  }
+}
+
+@container magic (width > calc(37rem * 5)) {
+  .mag-5Max.mag-lg > .magic {
+    width: calc(37rem * 5);
+  }
+}
+
+@container magic (width > calc(37rem * 7)) and (max-width: calc(37rem * 8)) {
+  .mag-lg > .magic {
+    width: calc(37rem * 7);
+  }
+}
+@container magic (width > calc(37rem * 1)) {
+  .mag-1Max.mag-lg > .magic {
+    width: calc(37rem * 1);
+  }
+}
+
+@container magic (width > calc(37rem * 2)) {
+  .mag-2Max.mag-lg > .magic {
+    width: calc(37rem * 2);
+  }
+}
+
+@container magic (width > calc(37rem * 3)) {
+  .mag-3Max.mag-lg > .magic {
+    width: calc(37rem * 3);
+  }
+}
+
+@container magic (width > calc(37rem * 4)) {
+  .mag-4Max.mag-lg > .magic {
+    width: calc(37rem * 4);
+  }
+}
+
+@container magic (width > calc(37rem * 5)) {
+  .mag-5Max.mag-lg > .magic {
+    width: calc(37rem * 5);
+  }
+}
+
+@container magic (width > calc(37rem * 6)) {
+  .mag-6Max.mag-lg > .magic {
+    width: calc(37rem * 6);
+  }
+}
+
+@container magic (min-width: calc(37rem * 8)) {
+  .mag-lg > .magic {
+    max-width: calc(37rem * 8);
+  }
+}
+@container magic (width > calc(37rem * 1)) {
+  .mag-1Max.mag-lg > .magic {
+    width: calc(37rem * 1);
+  }
+}
+
+@container magic (width > calc(37rem * 2)) {
+  .mag-2Max.mag-lg > .magic {
+    width: calc(37rem * 2);
+  }
+}
+
+@container magic (width > calc(37rem * 3)) {
+  .mag-3Max.mag-lg > .magic {
+    width: calc(37rem * 3);
+  }
+}
+
+@container magic (width > calc(37rem * 4)) {
+  .mag-4Max.mag-lg > .magic {
+    width: calc(37rem * 4);
+  }
+}
+
+@container magic (width > calc(37rem * 5)) {
+  .mag-5Max.mag-lg > .magic {
+    width: calc(37rem * 5);
+  }
+}
+
+@container magic (width > calc(37rem * 6)) {
+  .mag-6Max.mag-lg > .magic {
+    width: calc(37rem * 6);
+  }
+}
+
+@container magic (width > calc(37rem * 7)) {
+  .mag-7Max.mag-lg > .magic {
+    width: calc(37rem * 7);
+  }
+}
+
+@container magic (max-width: calc(50rem * 2)) {
+  .mag-xl > .magic {
+    width: 50rem;
+  }
+}
+@container magic (width > calc(50rem * 2)) and (max-width: calc(50rem * 3)) {
+  .mag-xl > .magic {
+    width: calc(50rem * 2);
+  }
+}
+@container magic (width > calc(50rem * 1)) {
+  .mag-1Max.mag-xl > .magic {
+    width: calc(50rem * 1);
+  }
+}
+
+@container magic (width > calc(50rem * 3)) and (max-width: calc(50rem * 4)) {
+  .mag-xl > .magic {
+    width: calc(50rem * 3);
+  }
+}
+@container magic (width > calc(50rem * 1)) {
+  .mag-1Max.mag-xl > .magic {
+    width: calc(50rem * 1);
+  }
+}
+
+@container magic (width > calc(50rem * 2)) {
+  .mag-2Max.mag-xl > .magic {
+    width: calc(50rem * 2);
+  }
+}
+
+@container magic (width > calc(50rem * 4)) and (max-width: calc(50rem * 5)) {
+  .mag-xl > .magic {
+    width: calc(50rem * 4);
+  }
+}
+@container magic (width > calc(50rem * 1)) {
+  .mag-1Max.mag-xl > .magic {
+    width: calc(50rem * 1);
+  }
+}
+
+@container magic (width > calc(50rem * 2)) {
+  .mag-2Max.mag-xl > .magic {
+    width: calc(50rem * 2);
+  }
+}
+
+@container magic (width > calc(50rem * 3)) {
+  .mag-3Max.mag-xl > .magic {
+    width: calc(50rem * 3);
+  }
+}
+
+@container magic (width > calc(50rem * 5)) and (max-width: calc(50rem * 6)) {
+  .mag-xl > .magic {
+    width: calc(50rem * 5);
+  }
+}
+@container magic (width > calc(50rem * 1)) {
+  .mag-1Max.mag-xl > .magic {
+    width: calc(50rem * 1);
+  }
+}
+
+@container magic (width > calc(50rem * 2)) {
+  .mag-2Max.mag-xl > .magic {
+    width: calc(50rem * 2);
+  }
+}
+
+@container magic (width > calc(50rem * 3)) {
+  .mag-3Max.mag-xl > .magic {
+    width: calc(50rem * 3);
+  }
+}
+
+@container magic (width > calc(50rem * 4)) {
+  .mag-4Max.mag-xl > .magic {
+    width: calc(50rem * 4);
+  }
+}
+
+@container magic (width > calc(50rem * 6)) and (max-width: calc(50rem * 7)) {
+  .mag-xl > .magic {
+    width: calc(50rem * 6);
+  }
+}
+@container magic (width > calc(50rem * 1)) {
+  .mag-1Max.mag-xl > .magic {
+    width: calc(50rem * 1);
+  }
+}
+
+@container magic (width > calc(50rem * 2)) {
+  .mag-2Max.mag-xl > .magic {
+    width: calc(50rem * 2);
+  }
+}
+
+@container magic (width > calc(50rem * 3)) {
+  .mag-3Max.mag-xl > .magic {
+    width: calc(50rem * 3);
+  }
+}
+
+@container magic (width > calc(50rem * 4)) {
+  .mag-4Max.mag-xl > .magic {
+    width: calc(50rem * 4);
+  }
+}
+
+@container magic (width > calc(50rem * 5)) {
+  .mag-5Max.mag-xl > .magic {
+    width: calc(50rem * 5);
+  }
+}
+
+@container magic (width > calc(50rem * 7)) and (max-width: calc(50rem * 8)) {
+  .mag-xl > .magic {
+    width: calc(50rem * 7);
+  }
+}
+@container magic (width > calc(50rem * 1)) {
+  .mag-1Max.mag-xl > .magic {
+    width: calc(50rem * 1);
+  }
+}
+
+@container magic (width > calc(50rem * 2)) {
+  .mag-2Max.mag-xl > .magic {
+    width: calc(50rem * 2);
+  }
+}
+
+@container magic (width > calc(50rem * 3)) {
+  .mag-3Max.mag-xl > .magic {
+    width: calc(50rem * 3);
+  }
+}
+
+@container magic (width > calc(50rem * 4)) {
+  .mag-4Max.mag-xl > .magic {
+    width: calc(50rem * 4);
+  }
+}
+
+@container magic (width > calc(50rem * 5)) {
+  .mag-5Max.mag-xl > .magic {
+    width: calc(50rem * 5);
+  }
+}
+
+@container magic (width > calc(50rem * 6)) {
+  .mag-6Max.mag-xl > .magic {
+    width: calc(50rem * 6);
+  }
+}
+
+@container magic (min-width: calc(50rem * 8)) {
+  .mag-xl > .magic {
+    max-width: calc(50rem * 8);
+  }
+}
+@container magic (width > calc(50rem * 1)) {
+  .mag-1Max.mag-xl > .magic {
+    width: calc(50rem * 1);
+  }
+}
+
+@container magic (width > calc(50rem * 2)) {
+  .mag-2Max.mag-xl > .magic {
+    width: calc(50rem * 2);
+  }
+}
+
+@container magic (width > calc(50rem * 3)) {
+  .mag-3Max.mag-xl > .magic {
+    width: calc(50rem * 3);
+  }
+}
+
+@container magic (width > calc(50rem * 4)) {
+  .mag-4Max.mag-xl > .magic {
+    width: calc(50rem * 4);
+  }
+}
+
+@container magic (width > calc(50rem * 5)) {
+  .mag-5Max.mag-xl > .magic {
+    width: calc(50rem * 5);
+  }
+}
+
+@container magic (width > calc(50rem * 6)) {
+  .mag-6Max.mag-xl > .magic {
+    width: calc(50rem * 6);
+  }
+}
+
+@container magic (width > calc(50rem * 7)) {
+  .mag-7Max.mag-xl > .magic {
+    width: calc(50rem * 7);
+  }
+}
+
+@container magic (max-width: calc(75rem * 2)) {
+  .mag-xxl > .magic {
+    width: 75rem;
+  }
+}
+@container magic (width > calc(75rem * 2)) and (max-width: calc(75rem * 3)) {
+  .mag-xxl > .magic {
+    width: calc(75rem * 2);
+  }
+}
+@container magic (width > calc(75rem * 1)) {
+  .mag-1Max.mag-xxl > .magic {
+    width: calc(75rem * 1);
+  }
+}
+
+@container magic (width > calc(75rem * 3)) and (max-width: calc(75rem * 4)) {
+  .mag-xxl > .magic {
+    width: calc(75rem * 3);
+  }
+}
+@container magic (width > calc(75rem * 1)) {
+  .mag-1Max.mag-xxl > .magic {
+    width: calc(75rem * 1);
+  }
+}
+
+@container magic (width > calc(75rem * 2)) {
+  .mag-2Max.mag-xxl > .magic {
+    width: calc(75rem * 2);
+  }
+}
+
+@container magic (width > calc(75rem * 4)) and (max-width: calc(75rem * 5)) {
+  .mag-xxl > .magic {
+    width: calc(75rem * 4);
+  }
+}
+@container magic (width > calc(75rem * 1)) {
+  .mag-1Max.mag-xxl > .magic {
+    width: calc(75rem * 1);
+  }
+}
+
+@container magic (width > calc(75rem * 2)) {
+  .mag-2Max.mag-xxl > .magic {
+    width: calc(75rem * 2);
+  }
+}
+
+@container magic (width > calc(75rem * 3)) {
+  .mag-3Max.mag-xxl > .magic {
+    width: calc(75rem * 3);
+  }
+}
+
+@container magic (width > calc(75rem * 5)) and (max-width: calc(75rem * 6)) {
+  .mag-xxl > .magic {
+    width: calc(75rem * 5);
+  }
+}
+@container magic (width > calc(75rem * 1)) {
+  .mag-1Max.mag-xxl > .magic {
+    width: calc(75rem * 1);
+  }
+}
+
+@container magic (width > calc(75rem * 2)) {
+  .mag-2Max.mag-xxl > .magic {
+    width: calc(75rem * 2);
+  }
+}
+
+@container magic (width > calc(75rem * 3)) {
+  .mag-3Max.mag-xxl > .magic {
+    width: calc(75rem * 3);
+  }
+}
+
+@container magic (width > calc(75rem * 4)) {
+  .mag-4Max.mag-xxl > .magic {
+    width: calc(75rem * 4);
+  }
+}
+
+@container magic (width > calc(75rem * 6)) and (max-width: calc(75rem * 7)) {
+  .mag-xxl > .magic {
+    width: calc(75rem * 6);
+  }
+}
+@container magic (width > calc(75rem * 1)) {
+  .mag-1Max.mag-xxl > .magic {
+    width: calc(75rem * 1);
+  }
+}
+
+@container magic (width > calc(75rem * 2)) {
+  .mag-2Max.mag-xxl > .magic {
+    width: calc(75rem * 2);
+  }
+}
+
+@container magic (width > calc(75rem * 3)) {
+  .mag-3Max.mag-xxl > .magic {
+    width: calc(75rem * 3);
+  }
+}
+
+@container magic (width > calc(75rem * 4)) {
+  .mag-4Max.mag-xxl > .magic {
+    width: calc(75rem * 4);
+  }
+}
+
+@container magic (width > calc(75rem * 5)) {
+  .mag-5Max.mag-xxl > .magic {
+    width: calc(75rem * 5);
+  }
+}
+
+@container magic (width > calc(75rem * 7)) and (max-width: calc(75rem * 8)) {
+  .mag-xxl > .magic {
+    width: calc(75rem * 7);
+  }
+}
+@container magic (width > calc(75rem * 1)) {
+  .mag-1Max.mag-xxl > .magic {
+    width: calc(75rem * 1);
+  }
+}
+
+@container magic (width > calc(75rem * 2)) {
+  .mag-2Max.mag-xxl > .magic {
+    width: calc(75rem * 2);
+  }
+}
+
+@container magic (width > calc(75rem * 3)) {
+  .mag-3Max.mag-xxl > .magic {
+    width: calc(75rem * 3);
+  }
+}
+
+@container magic (width > calc(75rem * 4)) {
+  .mag-4Max.mag-xxl > .magic {
+    width: calc(75rem * 4);
+  }
+}
+
+@container magic (width > calc(75rem * 5)) {
+  .mag-5Max.mag-xxl > .magic {
+    width: calc(75rem * 5);
+  }
+}
+
+@container magic (width > calc(75rem * 6)) {
+  .mag-6Max.mag-xxl > .magic {
+    width: calc(75rem * 6);
+  }
+}
+
+@container magic (min-width: calc(75rem * 8)) {
+  .mag-xxl > .magic {
+    max-width: calc(75rem * 8);
+  }
+}
+@container magic (width > calc(75rem * 1)) {
+  .mag-1Max.mag-xxl > .magic {
+    width: calc(75rem * 1);
+  }
+}
+
+@container magic (width > calc(75rem * 2)) {
+  .mag-2Max.mag-xxl > .magic {
+    width: calc(75rem * 2);
+  }
+}
+
+@container magic (width > calc(75rem * 3)) {
+  .mag-3Max.mag-xxl > .magic {
+    width: calc(75rem * 3);
+  }
+}
+
+@container magic (width > calc(75rem * 4)) {
+  .mag-4Max.mag-xxl > .magic {
+    width: calc(75rem * 4);
+  }
+}
+
+@container magic (width > calc(75rem * 5)) {
+  .mag-5Max.mag-xxl > .magic {
+    width: calc(75rem * 5);
+  }
+}
+
+@container magic (width > calc(75rem * 6)) {
+  .mag-6Max.mag-xxl > .magic {
+    width: calc(75rem * 6);
+  }
+}
+
+@container magic (width > calc(75rem * 7)) {
+  .mag-7Max.mag-xxl > .magic {
+    width: calc(75rem * 7);
+  }
+}
+
+.mag-xxs > .magic-parent > .magic-child {
+  width: 6rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child1 {
+  width: 6rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child2 {
+  width: 12rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child3 {
+  width: 18rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child4 {
+  width: 24rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child5 {
+  width: 30rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child6 {
+  width: 36rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child7 {
+  width: 42rem;
+}
+
+.mag-xxs > .magic-parent > .magic-child8 {
+  width: 48rem;
+}
+
+.mag-xs > .magic-parent > .magic-child {
+  width: 9rem;
+}
+
+.mag-xs > .magic-parent > .magic-child1 {
+  width: 9rem;
+}
+
+.mag-xs > .magic-parent > .magic-child2 {
+  width: 18rem;
+}
+
+.mag-xs > .magic-parent > .magic-child3 {
+  width: 27rem;
+}
+
+.mag-xs > .magic-parent > .magic-child4 {
+  width: 36rem;
+}
+
+.mag-xs > .magic-parent > .magic-child5 {
+  width: 45rem;
+}
+
+.mag-xs > .magic-parent > .magic-child6 {
+  width: 54rem;
+}
+
+.mag-xs > .magic-parent > .magic-child7 {
+  width: 63rem;
+}
+
+.mag-xs > .magic-parent > .magic-child8 {
+  width: 72rem;
+}
+
+.mag-sm > .magic-parent > .magic-child {
+  width: 13rem;
+}
+
+.mag-sm > .magic-parent > .magic-child1 {
+  width: 13rem;
+}
+
+.mag-sm > .magic-parent > .magic-child2 {
+  width: 26rem;
+}
+
+.mag-sm > .magic-parent > .magic-child3 {
+  width: 39rem;
+}
+
+.mag-sm > .magic-parent > .magic-child4 {
+  width: 52rem;
+}
+
+.mag-sm > .magic-parent > .magic-child5 {
+  width: 65rem;
+}
+
+.mag-sm > .magic-parent > .magic-child6 {
+  width: 78rem;
+}
+
+.mag-sm > .magic-parent > .magic-child7 {
+  width: 91rem;
+}
+
+.mag-sm > .magic-parent > .magic-child8 {
+  width: 104rem;
+}
+
+.mag-md > .magic-parent > .magic-child {
+  width: 25rem;
+}
+
+.mag-md > .magic-parent > .magic-child1 {
+  width: 25rem;
+}
+
+.mag-md > .magic-parent > .magic-child2 {
+  width: 50rem;
+}
+
+.mag-md > .magic-parent > .magic-child3 {
+  width: 75rem;
+}
+
+.mag-md > .magic-parent > .magic-child4 {
+  width: 100rem;
+}
+
+.mag-md > .magic-parent > .magic-child5 {
+  width: 125rem;
+}
+
+.mag-md > .magic-parent > .magic-child6 {
+  width: 150rem;
+}
+
+.mag-md > .magic-parent > .magic-child7 {
+  width: 175rem;
+}
+
+.mag-md > .magic-parent > .magic-child8 {
+  width: 200rem;
+}
+
+.mag-lg > .magic-parent > .magic-child {
+  width: 37rem;
+}
+
+.mag-lg > .magic-parent > .magic-child1 {
+  width: 37rem;
+}
+
+.mag-lg > .magic-parent > .magic-child2 {
+  width: 74rem;
+}
+
+.mag-lg > .magic-parent > .magic-child3 {
+  width: 111rem;
+}
+
+.mag-lg > .magic-parent > .magic-child4 {
+  width: 148rem;
+}
+
+.mag-lg > .magic-parent > .magic-child5 {
+  width: 185rem;
+}
+
+.mag-lg > .magic-parent > .magic-child6 {
+  width: 222rem;
+}
+
+.mag-lg > .magic-parent > .magic-child7 {
+  width: 259rem;
+}
+
+.mag-lg > .magic-parent > .magic-child8 {
+  width: 296rem;
+}
+
+.mag-xl > .magic-parent > .magic-child {
+  width: 50rem;
+}
+
+.mag-xl > .magic-parent > .magic-child1 {
+  width: 50rem;
+}
+
+.mag-xl > .magic-parent > .magic-child2 {
+  width: 100rem;
+}
+
+.mag-xl > .magic-parent > .magic-child3 {
+  width: 150rem;
+}
+
+.mag-xl > .magic-parent > .magic-child4 {
+  width: 200rem;
+}
+
+.mag-xl > .magic-parent > .magic-child5 {
+  width: 250rem;
+}
+
+.mag-xl > .magic-parent > .magic-child6 {
+  width: 300rem;
+}
+
+.mag-xl > .magic-parent > .magic-child7 {
+  width: 350rem;
+}
+
+.mag-xl > .magic-parent > .magic-child8 {
+  width: 400rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child {
+  width: 50rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child1 {
+  width: 50rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child2 {
+  width: 100rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child3 {
+  width: 150rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child4 {
+  width: 200rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child5 {
+  width: 250rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child6 {
+  width: 300rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child7 {
+  width: 350rem;
+}
+
+.mag-xxl > .magic-parent > .magic-child8 {
+  width: 400rem;
+}
+
+.cel-xxs2cells {
+  max-width: 12rem;
+  width: 100%;
+}
+
+.cel-xxs3cells {
+  max-width: 18rem;
+  width: 100%;
+}
+
+.cel-xxs4cells {
+  max-width: 24rem;
+  width: 100%;
+}
+
+.cel-xxs5cells {
+  max-width: 30rem;
+  width: 100%;
+}
+
+.cel-xxs6cells {
+  max-width: 36rem;
+  width: 100%;
+}
+
+.cel-xxs7cells {
+  max-width: 42rem;
+  width: 100%;
+}
+
+.cel-xxs8cells {
+  max-width: 48rem;
+  width: 100%;
+}
+
+.cel-xs2cells {
+  max-width: 18rem;
+  width: 100%;
+}
+
+.cel-xs3cells {
+  max-width: 27rem;
+  width: 100%;
+}
+
+.cel-xs4cells {
+  max-width: 36rem;
+  width: 100%;
+}
+
+.cel-xs5cells {
+  max-width: 45rem;
+  width: 100%;
+}
+
+.cel-xs6cells {
+  max-width: 54rem;
+  width: 100%;
+}
+
+.cel-xs7cells {
+  max-width: 63rem;
+  width: 100%;
+}
+
+.cel-xs8cells {
+  max-width: 72rem;
+  width: 100%;
+}
+
+.cel-sm2cells {
+  max-width: 26rem;
+  width: 100%;
+}
+
+.cel-sm3cells {
+  max-width: 39rem;
+  width: 100%;
+}
+
+.cel-sm4cells {
+  max-width: 52rem;
+  width: 100%;
+}
+
+.cel-sm5cells {
+  max-width: 65rem;
+  width: 100%;
+}
+
+.cel-sm6cells {
+  max-width: 78rem;
+  width: 100%;
+}
+
+.cel-sm7cells {
+  max-width: 91rem;
+  width: 100%;
+}
+
+.cel-sm8cells {
+  max-width: 104rem;
+  width: 100%;
+}
+
+.cel-md2cells {
+  max-width: 50rem;
+  width: 100%;
+}
+
+.cel-md3cells {
+  max-width: 75rem;
+  width: 100%;
+}
+
+.cel-md4cells {
+  max-width: 100rem;
+  width: 100%;
+}
+
+.cel-md5cells {
+  max-width: 125rem;
+  width: 100%;
+}
+
+.cel-md6cells {
+  max-width: 150rem;
+  width: 100%;
+}
+
+.cel-md7cells {
+  max-width: 175rem;
+  width: 100%;
+}
+
+.cel-md8cells {
+  max-width: 200rem;
+  width: 100%;
+}
+
+.cel-lg2cells {
+  max-width: 74rem;
+  width: 100%;
+}
+
+.cel-lg3cells {
+  max-width: 111rem;
+  width: 100%;
+}
+
+.cel-lg4cells {
+  max-width: 148rem;
+  width: 100%;
+}
+
+.cel-lg5cells {
+  max-width: 185rem;
+  width: 100%;
+}
+
+.cel-lg6cells {
+  max-width: 222rem;
+  width: 100%;
+}
+
+.cel-lg7cells {
+  max-width: 259rem;
+  width: 100%;
+}
+
+.cel-lg8cells {
+  max-width: 296rem;
+  width: 100%;
+}
+
+.cel-xl2cells {
+  max-width: 100rem;
+  width: 100%;
+}
+
+.cel-xl3cells {
+  max-width: 150rem;
+  width: 100%;
+}
+
+.cel-xl4cells {
+  max-width: 200rem;
+  width: 100%;
+}
+
+.cel-xl5cells {
+  max-width: 250rem;
+  width: 100%;
+}
+
+.cel-xl6cells {
+  max-width: 300rem;
+  width: 100%;
+}
+
+.cel-xl7cells {
+  max-width: 350rem;
+  width: 100%;
+}
+
+.cel-xl8cells {
+  max-width: 400rem;
+  width: 100%;
+}
+
+.cel-xxl2cells {
+  max-width: 150rem;
+  width: 100%;
+}
+
+.cel-xxl3cells {
+  max-width: 225rem;
+  width: 100%;
+}
+
+.cel-xxl4cells {
+  max-width: 300rem;
+  width: 100%;
+}
+
+.cel-xxl5cells {
+  max-width: 375rem;
+  width: 100%;
+}
+
+.cel-xxl6cells {
+  max-width: 450rem;
+  width: 100%;
+}
+
+.cel-xxl7cells {
+  max-width: 525rem;
+  width: 100%;
+}
+
+.cel-xxl8cells {
+  max-width: 600rem;
+  width: 100%;
+}
+
+.mag-gap-xxs > .magic-parent > [class^=magic-child] > * {
+  margin: var(--marXxs);
+}
+
+.mag-gap-xs > .magic-parent > [class^=magic-child] > * {
+  margin: var(--marXs);
+}
+
+.mag-gap-sm > .magic-parent > [class^=magic-child] > * {
+  margin: var(--marSm);
+}
+
+.mag-gap-md > .magic-parent > [class^=magic-child] > * {
+  margin: var(--marMd);
+}
+
+.mag-gap-lg > .magic-parent > [class^=magic-child] > * {
+  margin: var(--marLg);
+}
+
+.mag-gap-xl > .magic-parent > [class^=magic-child] > * {
+  margin: var(--marXl);
+}
+
+.mag-gap-xxl > .magic-parent > [class^=magic-child] > * {
+  margin: var(--marXxl);
+}
+
+.magic-parent {
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
-}
-
-.magic-flex-parent {
-  position: relative;
-  overflow: hidden;
-}
-
-.magic-flex-child {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
 }
 
 .margin.mar-xxs {
@@ -3810,6 +5955,10 @@ nav.nav-main {
   text-wrap: nowrap !important;
 }
 
+.display-none {
+  display: none;
+}
+
 .red {
   background-color: red !important;
 }
@@ -3838,6 +5987,10 @@ nav.nav-main {
   width: 30rem;
 }
 
+.testr:active {
+  background-color: red !important;
+}
+
 .testth {
   height: 100%;
   width: 3rem;
@@ -3845,6 +5998,14 @@ nav.nav-main {
 }
 
 .max100 {
+  max-width: 100%;
+}
+
+.lowertest {
+  z-index: -1;
+}
+
+.tesz {
   max-width: 100%;
 }
 
@@ -3929,7 +6090,8 @@ nav.nav-main {
 .theme-default .spacer {
   opacity: 0 !important;
 }
-.theme-default .page-content {
+.theme-default .page-content,
+.theme-default .page-wrapper {
   background-color: hsl(0, 0%, 100%);
 }
 .theme-default .left-fade {
@@ -3945,7 +6107,7 @@ nav.nav-main {
   background-image: linear-gradient(to right, hsl(0, 0%, 100%), transparent);
 }
 .theme-default .overlay {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  background-color: hsla(0, 0%, 3%, 0.5);
 }
 .theme-default .drawer-handle {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
@@ -3973,97 +6135,81 @@ nav.nav-main {
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
 }
+.theme-default .foo.foo-main,
+.theme-default footer.foo-main {
+  background-color: hsl(0, 0%, 100%);
+}
 .theme-default .nav,
-.theme-default nav {
+.theme-default nav,
+.theme-default .footer,
+.theme-default footer {
   background-color: transparent;
 }
 .theme-default.theme-dark .nav.scrolled,
 .theme-default.theme-dark nav.scrolled {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
 }
-.theme-default footer {
+.theme-default input[type=text],
+.theme-default input[type=password],
+.theme-default input[type=email],
+.theme-default input[type=url],
+.theme-default input[type=tel],
+.theme-default input[type=number],
+.theme-default input[type=search],
+.theme-default textarea {
   background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
 }
-.theme-default .div-highlight {
-  background-color: hsl(213, 100%, 64%);
+.theme-default input[type=text]:focus,
+.theme-default input[type=password]:focus,
+.theme-default input[type=email]:focus,
+.theme-default input[type=url]:focus,
+.theme-default input[type=tel]:focus,
+.theme-default input[type=number]:focus,
+.theme-default input[type=search]:focus,
+.theme-default textarea:focus {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
+  outline: none;
 }
-.theme-default .div-highlight h1,
-.theme-default .div-highlight h2,
-.theme-default .div-highlight h3,
-.theme-default .div-highlight h4,
-.theme-default .div-highlight h5,
-.theme-default .div-highlight h6,
-.theme-default .div-highlight p,
-.theme-default .div-highlight a,
-.theme-default .div-highlight strong,
-.theme-default .div-highlight i,
-.theme-default .div-highlight em,
-.theme-default .div-highlight mark,
-.theme-default .div-highlight small,
-.theme-default .div-highlight del,
-.theme-default .div-highlight ins,
-.theme-default .div-highlight sub,
-.theme-default .div-highlight sup,
-.theme-default .div-highlight time,
-.theme-default .div-highlight .icon,
-.theme-default .div-highlight button {
-  color: hsl(0, 0%, 100%);
+.theme-default input[type=text]:hover,
+.theme-default input[type=password]:hover,
+.theme-default input[type=email]:hover,
+.theme-default input[type=url]:hover,
+.theme-default input[type=tel]:hover,
+.theme-default input[type=number]:hover,
+.theme-default input[type=search]:hover,
+.theme-default textarea:hover {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.383);
 }
-.theme-default .div-base90 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+.theme-default input[type=text]:hover:focus,
+.theme-default input[type=password]:hover:focus,
+.theme-default input[type=email]:hover:focus,
+.theme-default input[type=url]:hover:focus,
+.theme-default input[type=tel]:hover:focus,
+.theme-default input[type=number]:hover:focus,
+.theme-default input[type=search]:hover:focus,
+.theme-default textarea:hover:focus {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
 }
-.theme-default .base {
-  background-color: hsl(0, 0%, 100%);
+.theme-default input[type=text]:hover:active,
+.theme-default input[type=password]:hover:active,
+.theme-default input[type=email]:hover:active,
+.theme-default input[type=url]:hover:active,
+.theme-default input[type=tel]:hover:active,
+.theme-default input[type=number]:hover:active,
+.theme-default input[type=search]:hover:active,
+.theme-default textarea:hover:active {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.383);
 }
-.theme-default .base-color {
-  color: hsl(0, 0%, 100%);
+.theme-default .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
+  color: hsl(213, 100%, 64%);
 }
-.theme-default .base10 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+.theme-default .search-dropdown input[type=text] + .search-dropdown-icon .icon {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
 }
-.theme-default .base15 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 15%, hsl(0, 0%, 0%) 85%);
-}
-.theme-default .base25 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 25%, hsl(0, 0%, 0%) 75%);
-}
-.theme-default .base33 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
-}
-.theme-default .base50 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
-}
-.theme-default .base66 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 66%, hsl(0, 0%, 0%) 33%);
-}
-.theme-default .base75 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
-}
-.theme-default .base85 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
-}
-.theme-default .base90 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
-}
-.theme-default .baseInv {
-  background-color: hsl(0, 0%, 0%);
-}
-.theme-default .success {
-  background-color: hsl(129, 67%, 41%);
-}
-.theme-default hr {
-  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
-}
-.theme-default .hr-highlight {
-  border-color: hsl(213, 100%, 64%);
-}
-.theme-default .hr-base90 {
-  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
-}
-.theme-default .ico-color {
-  color: rgb(83, 83, 69) !important;
-}
-.theme-default button.base {
+.theme-default button.base,
+.theme-default .button.base {
   background-color: hsl(0, 0%, 100%);
 }
 .theme-default button.base h1,
@@ -4085,10 +6231,31 @@ nav.nav-main {
 .theme-default button.base sup,
 .theme-default button.base time,
 .theme-default button.base .icon,
-.theme-default button.base button {
+.theme-default button.base button,
+.theme-default .button.base h1,
+.theme-default .button.base h2,
+.theme-default .button.base h3,
+.theme-default .button.base h4,
+.theme-default .button.base h5,
+.theme-default .button.base h6,
+.theme-default .button.base p,
+.theme-default .button.base a,
+.theme-default .button.base strong,
+.theme-default .button.base i,
+.theme-default .button.base em,
+.theme-default .button.base mark,
+.theme-default .button.base small,
+.theme-default .button.base del,
+.theme-default .button.base ins,
+.theme-default .button.base sub,
+.theme-default .button.base sup,
+.theme-default .button.base time,
+.theme-default .button.base .icon,
+.theme-default .button.base button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
 }
-.theme-default button.base:hover {
+.theme-default button.base:hover,
+.theme-default .button.base:hover {
   background-color: hsl(213, 100%, 64%);
 }
 .theme-default button.base:hover h1,
@@ -4110,10 +6277,31 @@ nav.nav-main {
 .theme-default button.base:hover sup,
 .theme-default button.base:hover time,
 .theme-default button.base:hover .icon,
-.theme-default button.base:hover button {
+.theme-default button.base:hover button,
+.theme-default .button.base:hover h1,
+.theme-default .button.base:hover h2,
+.theme-default .button.base:hover h3,
+.theme-default .button.base:hover h4,
+.theme-default .button.base:hover h5,
+.theme-default .button.base:hover h6,
+.theme-default .button.base:hover p,
+.theme-default .button.base:hover a,
+.theme-default .button.base:hover strong,
+.theme-default .button.base:hover i,
+.theme-default .button.base:hover em,
+.theme-default .button.base:hover mark,
+.theme-default .button.base:hover small,
+.theme-default .button.base:hover del,
+.theme-default .button.base:hover ins,
+.theme-default .button.base:hover sub,
+.theme-default .button.base:hover sup,
+.theme-default .button.base:hover time,
+.theme-default .button.base:hover .icon,
+.theme-default .button.base:hover button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default button.base:active {
+.theme-default button.base:active,
+.theme-default .button.base:active {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%), hsl(0, 0%, 0%));
 }
 .theme-default button.base:active h1,
@@ -4135,10 +6323,35 @@ nav.nav-main {
 .theme-default button.base:active sup,
 .theme-default button.base:active time,
 .theme-default button.base:active .icon,
-.theme-default button.base:active button {
+.theme-default button.base:active button,
+.theme-default .button.base:active h1,
+.theme-default .button.base:active h2,
+.theme-default .button.base:active h3,
+.theme-default .button.base:active h4,
+.theme-default .button.base:active h5,
+.theme-default .button.base:active h6,
+.theme-default .button.base:active p,
+.theme-default .button.base:active a,
+.theme-default .button.base:active strong,
+.theme-default .button.base:active i,
+.theme-default .button.base:active em,
+.theme-default .button.base:active mark,
+.theme-default .button.base:active small,
+.theme-default .button.base:active del,
+.theme-default .button.base:active ins,
+.theme-default .button.base:active sub,
+.theme-default .button.base:active sup,
+.theme-default .button.base:active time,
+.theme-default .button.base:active .icon,
+.theme-default .button.base:active button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default button.secondary {
+.theme-default button.but-bordered,
+.theme-default .button.but-bordered {
+  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default button.secondary,
+.theme-default .button.secondary {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
 }
 .theme-default button.secondary h1,
@@ -4160,10 +6373,31 @@ nav.nav-main {
 .theme-default button.secondary sup,
 .theme-default button.secondary time,
 .theme-default button.secondary .icon,
-.theme-default button.secondary button {
+.theme-default button.secondary button,
+.theme-default .button.secondary h1,
+.theme-default .button.secondary h2,
+.theme-default .button.secondary h3,
+.theme-default .button.secondary h4,
+.theme-default .button.secondary h5,
+.theme-default .button.secondary h6,
+.theme-default .button.secondary p,
+.theme-default .button.secondary a,
+.theme-default .button.secondary strong,
+.theme-default .button.secondary i,
+.theme-default .button.secondary em,
+.theme-default .button.secondary mark,
+.theme-default .button.secondary small,
+.theme-default .button.secondary del,
+.theme-default .button.secondary ins,
+.theme-default .button.secondary sub,
+.theme-default .button.secondary sup,
+.theme-default .button.secondary time,
+.theme-default .button.secondary .icon,
+.theme-default .button.secondary button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
-.theme-default button.secondary:hover {
+.theme-default button.secondary:hover,
+.theme-default .button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%) 75%, hsl(0, 0%, 0%));
 }
 .theme-default button.secondary:hover h1,
@@ -4185,10 +6419,31 @@ nav.nav-main {
 .theme-default button.secondary:hover sup,
 .theme-default button.secondary:hover time,
 .theme-default button.secondary:hover .icon,
-.theme-default button.secondary:hover button {
+.theme-default button.secondary:hover button,
+.theme-default .button.secondary:hover h1,
+.theme-default .button.secondary:hover h2,
+.theme-default .button.secondary:hover h3,
+.theme-default .button.secondary:hover h4,
+.theme-default .button.secondary:hover h5,
+.theme-default .button.secondary:hover h6,
+.theme-default .button.secondary:hover p,
+.theme-default .button.secondary:hover a,
+.theme-default .button.secondary:hover strong,
+.theme-default .button.secondary:hover i,
+.theme-default .button.secondary:hover em,
+.theme-default .button.secondary:hover mark,
+.theme-default .button.secondary:hover small,
+.theme-default .button.secondary:hover del,
+.theme-default .button.secondary:hover ins,
+.theme-default .button.secondary:hover sub,
+.theme-default .button.secondary:hover sup,
+.theme-default .button.secondary:hover time,
+.theme-default .button.secondary:hover .icon,
+.theme-default .button.secondary:hover button {
   color: hsl(0, 0%, 100%);
 }
-.theme-default button.secondary:active {
+.theme-default button.secondary:active,
+.theme-default .button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%), hsl(0, 0%, 0%));
 }
 .theme-default button.secondary:active h1,
@@ -4210,11 +6465,31 @@ nav.nav-main {
 .theme-default button.secondary:active sup,
 .theme-default button.secondary:active time,
 .theme-default button.secondary:active .icon,
-.theme-default button.secondary:active button {
+.theme-default button.secondary:active button,
+.theme-default .button.secondary:active h1,
+.theme-default .button.secondary:active h2,
+.theme-default .button.secondary:active h3,
+.theme-default .button.secondary:active h4,
+.theme-default .button.secondary:active h5,
+.theme-default .button.secondary:active h6,
+.theme-default .button.secondary:active p,
+.theme-default .button.secondary:active a,
+.theme-default .button.secondary:active strong,
+.theme-default .button.secondary:active i,
+.theme-default .button.secondary:active em,
+.theme-default .button.secondary:active mark,
+.theme-default .button.secondary:active small,
+.theme-default .button.secondary:active del,
+.theme-default .button.secondary:active ins,
+.theme-default .button.secondary:active sub,
+.theme-default .button.secondary:active sup,
+.theme-default .button.secondary:active time,
+.theme-default .button.secondary:active .icon,
+.theme-default .button.secondary:active button {
   color: hsl(0, 0%, 100%);
 }
 .theme-default button.primary,
-.theme-default button .primary.link-as-button {
+.theme-default .button.primary {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%) 55%, hsl(0, 0%, 100%));
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
@@ -4238,30 +6513,30 @@ nav.nav-main {
 .theme-default button.primary time,
 .theme-default button.primary .icon,
 .theme-default button.primary button,
-.theme-default button .primary.link-as-button h1,
-.theme-default button .primary.link-as-button h2,
-.theme-default button .primary.link-as-button h3,
-.theme-default button .primary.link-as-button h4,
-.theme-default button .primary.link-as-button h5,
-.theme-default button .primary.link-as-button h6,
-.theme-default button .primary.link-as-button p,
-.theme-default button .primary.link-as-button a,
-.theme-default button .primary.link-as-button strong,
-.theme-default button .primary.link-as-button i,
-.theme-default button .primary.link-as-button em,
-.theme-default button .primary.link-as-button mark,
-.theme-default button .primary.link-as-button small,
-.theme-default button .primary.link-as-button del,
-.theme-default button .primary.link-as-button ins,
-.theme-default button .primary.link-as-button sub,
-.theme-default button .primary.link-as-button sup,
-.theme-default button .primary.link-as-button time,
-.theme-default button .primary.link-as-button .icon,
-.theme-default button .primary.link-as-button button {
+.theme-default .button.primary h1,
+.theme-default .button.primary h2,
+.theme-default .button.primary h3,
+.theme-default .button.primary h4,
+.theme-default .button.primary h5,
+.theme-default .button.primary h6,
+.theme-default .button.primary p,
+.theme-default .button.primary a,
+.theme-default .button.primary strong,
+.theme-default .button.primary i,
+.theme-default .button.primary em,
+.theme-default .button.primary mark,
+.theme-default .button.primary small,
+.theme-default .button.primary del,
+.theme-default .button.primary ins,
+.theme-default .button.primary sub,
+.theme-default .button.primary sup,
+.theme-default .button.primary time,
+.theme-default .button.primary .icon,
+.theme-default .button.primary button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
 .theme-default button.primary:hover,
-.theme-default button .primary.link-as-button:hover {
+.theme-default .button.primary:hover {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%) 75%, hsl(0, 0%, 0%));
   color: hsl(0, 0%, 100%);
 }
@@ -4285,30 +6560,30 @@ nav.nav-main {
 .theme-default button.primary:hover time,
 .theme-default button.primary:hover .icon,
 .theme-default button.primary:hover button,
-.theme-default button .primary.link-as-button:hover h1,
-.theme-default button .primary.link-as-button:hover h2,
-.theme-default button .primary.link-as-button:hover h3,
-.theme-default button .primary.link-as-button:hover h4,
-.theme-default button .primary.link-as-button:hover h5,
-.theme-default button .primary.link-as-button:hover h6,
-.theme-default button .primary.link-as-button:hover p,
-.theme-default button .primary.link-as-button:hover a,
-.theme-default button .primary.link-as-button:hover strong,
-.theme-default button .primary.link-as-button:hover i,
-.theme-default button .primary.link-as-button:hover em,
-.theme-default button .primary.link-as-button:hover mark,
-.theme-default button .primary.link-as-button:hover small,
-.theme-default button .primary.link-as-button:hover del,
-.theme-default button .primary.link-as-button:hover ins,
-.theme-default button .primary.link-as-button:hover sub,
-.theme-default button .primary.link-as-button:hover sup,
-.theme-default button .primary.link-as-button:hover time,
-.theme-default button .primary.link-as-button:hover .icon,
-.theme-default button .primary.link-as-button:hover button {
+.theme-default .button.primary:hover h1,
+.theme-default .button.primary:hover h2,
+.theme-default .button.primary:hover h3,
+.theme-default .button.primary:hover h4,
+.theme-default .button.primary:hover h5,
+.theme-default .button.primary:hover h6,
+.theme-default .button.primary:hover p,
+.theme-default .button.primary:hover a,
+.theme-default .button.primary:hover strong,
+.theme-default .button.primary:hover i,
+.theme-default .button.primary:hover em,
+.theme-default .button.primary:hover mark,
+.theme-default .button.primary:hover small,
+.theme-default .button.primary:hover del,
+.theme-default .button.primary:hover ins,
+.theme-default .button.primary:hover sub,
+.theme-default .button.primary:hover sup,
+.theme-default .button.primary:hover time,
+.theme-default .button.primary:hover .icon,
+.theme-default .button.primary:hover button {
   color: hsl(0, 0%, 100%);
 }
 .theme-default button.primary:active,
-.theme-default button .primary.link-as-button:active {
+.theme-default .button.primary:active {
   background-color: color-mix(in srgb, hsl(213, 100%, 64%), hsl(0, 0%, 0%));
   color: hsl(0, 0%, 100%);
 }
@@ -4332,34 +6607,34 @@ nav.nav-main {
 .theme-default button.primary:active time,
 .theme-default button.primary:active .icon,
 .theme-default button.primary:active button,
-.theme-default button .primary.link-as-button:active h1,
-.theme-default button .primary.link-as-button:active h2,
-.theme-default button .primary.link-as-button:active h3,
-.theme-default button .primary.link-as-button:active h4,
-.theme-default button .primary.link-as-button:active h5,
-.theme-default button .primary.link-as-button:active h6,
-.theme-default button .primary.link-as-button:active p,
-.theme-default button .primary.link-as-button:active a,
-.theme-default button .primary.link-as-button:active strong,
-.theme-default button .primary.link-as-button:active i,
-.theme-default button .primary.link-as-button:active em,
-.theme-default button .primary.link-as-button:active mark,
-.theme-default button .primary.link-as-button:active small,
-.theme-default button .primary.link-as-button:active del,
-.theme-default button .primary.link-as-button:active ins,
-.theme-default button .primary.link-as-button:active sub,
-.theme-default button .primary.link-as-button:active sup,
-.theme-default button .primary.link-as-button:active time,
-.theme-default button .primary.link-as-button:active .icon,
-.theme-default button .primary.link-as-button:active button {
+.theme-default .button.primary:active h1,
+.theme-default .button.primary:active h2,
+.theme-default .button.primary:active h3,
+.theme-default .button.primary:active h4,
+.theme-default .button.primary:active h5,
+.theme-default .button.primary:active h6,
+.theme-default .button.primary:active p,
+.theme-default .button.primary:active a,
+.theme-default .button.primary:active strong,
+.theme-default .button.primary:active i,
+.theme-default .button.primary:active em,
+.theme-default .button.primary:active mark,
+.theme-default .button.primary:active small,
+.theme-default .button.primary:active del,
+.theme-default .button.primary:active ins,
+.theme-default .button.primary:active sub,
+.theme-default .button.primary:active sup,
+.theme-default .button.primary:active time,
+.theme-default .button.primary:active .icon,
+.theme-default .button.primary:active button {
   color: hsl(0, 0%, 100%);
 }
 .theme-default button.primary.disabled,
-.theme-default button .primary.link-as-button.disabled {
+.theme-default .button.primary.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
 }
 .theme-default button.warn,
-.theme-default button .warn.link-as-button {
+.theme-default .button.warn {
   background-color: hsl(39, 76%, 49%);
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
@@ -4383,30 +6658,30 @@ nav.nav-main {
 .theme-default button.warn time,
 .theme-default button.warn .icon,
 .theme-default button.warn button,
-.theme-default button .warn.link-as-button h1,
-.theme-default button .warn.link-as-button h2,
-.theme-default button .warn.link-as-button h3,
-.theme-default button .warn.link-as-button h4,
-.theme-default button .warn.link-as-button h5,
-.theme-default button .warn.link-as-button h6,
-.theme-default button .warn.link-as-button p,
-.theme-default button .warn.link-as-button a,
-.theme-default button .warn.link-as-button strong,
-.theme-default button .warn.link-as-button i,
-.theme-default button .warn.link-as-button em,
-.theme-default button .warn.link-as-button mark,
-.theme-default button .warn.link-as-button small,
-.theme-default button .warn.link-as-button del,
-.theme-default button .warn.link-as-button ins,
-.theme-default button .warn.link-as-button sub,
-.theme-default button .warn.link-as-button sup,
-.theme-default button .warn.link-as-button time,
-.theme-default button .warn.link-as-button .icon,
-.theme-default button .warn.link-as-button button {
+.theme-default .button.warn h1,
+.theme-default .button.warn h2,
+.theme-default .button.warn h3,
+.theme-default .button.warn h4,
+.theme-default .button.warn h5,
+.theme-default .button.warn h6,
+.theme-default .button.warn p,
+.theme-default .button.warn a,
+.theme-default .button.warn strong,
+.theme-default .button.warn i,
+.theme-default .button.warn em,
+.theme-default .button.warn mark,
+.theme-default .button.warn small,
+.theme-default .button.warn del,
+.theme-default .button.warn ins,
+.theme-default .button.warn sub,
+.theme-default .button.warn sup,
+.theme-default .button.warn time,
+.theme-default .button.warn .icon,
+.theme-default .button.warn button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
 .theme-default button.warn:hover,
-.theme-default button .warn.link-as-button:hover {
+.theme-default .button.warn:hover {
   background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 0%));
   color: hsl(0, 0%, 100%);
 }
@@ -4430,30 +6705,30 @@ nav.nav-main {
 .theme-default button.warn:hover time,
 .theme-default button.warn:hover .icon,
 .theme-default button.warn:hover button,
-.theme-default button .warn.link-as-button:hover h1,
-.theme-default button .warn.link-as-button:hover h2,
-.theme-default button .warn.link-as-button:hover h3,
-.theme-default button .warn.link-as-button:hover h4,
-.theme-default button .warn.link-as-button:hover h5,
-.theme-default button .warn.link-as-button:hover h6,
-.theme-default button .warn.link-as-button:hover p,
-.theme-default button .warn.link-as-button:hover a,
-.theme-default button .warn.link-as-button:hover strong,
-.theme-default button .warn.link-as-button:hover i,
-.theme-default button .warn.link-as-button:hover em,
-.theme-default button .warn.link-as-button:hover mark,
-.theme-default button .warn.link-as-button:hover small,
-.theme-default button .warn.link-as-button:hover del,
-.theme-default button .warn.link-as-button:hover ins,
-.theme-default button .warn.link-as-button:hover sub,
-.theme-default button .warn.link-as-button:hover sup,
-.theme-default button .warn.link-as-button:hover time,
-.theme-default button .warn.link-as-button:hover .icon,
-.theme-default button .warn.link-as-button:hover button {
+.theme-default .button.warn:hover h1,
+.theme-default .button.warn:hover h2,
+.theme-default .button.warn:hover h3,
+.theme-default .button.warn:hover h4,
+.theme-default .button.warn:hover h5,
+.theme-default .button.warn:hover h6,
+.theme-default .button.warn:hover p,
+.theme-default .button.warn:hover a,
+.theme-default .button.warn:hover strong,
+.theme-default .button.warn:hover i,
+.theme-default .button.warn:hover em,
+.theme-default .button.warn:hover mark,
+.theme-default .button.warn:hover small,
+.theme-default .button.warn:hover del,
+.theme-default .button.warn:hover ins,
+.theme-default .button.warn:hover sub,
+.theme-default .button.warn:hover sup,
+.theme-default .button.warn:hover time,
+.theme-default .button.warn:hover .icon,
+.theme-default .button.warn:hover button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
 .theme-default button.warn:active,
-.theme-default button .warn.link-as-button:active {
+.theme-default .button.warn:active {
   background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 0%));
   color: hsl(0, 0%, 100%);
 }
@@ -4477,30 +6752,30 @@ nav.nav-main {
 .theme-default button.warn:active time,
 .theme-default button.warn:active .icon,
 .theme-default button.warn:active button,
-.theme-default button .warn.link-as-button:active h1,
-.theme-default button .warn.link-as-button:active h2,
-.theme-default button .warn.link-as-button:active h3,
-.theme-default button .warn.link-as-button:active h4,
-.theme-default button .warn.link-as-button:active h5,
-.theme-default button .warn.link-as-button:active h6,
-.theme-default button .warn.link-as-button:active p,
-.theme-default button .warn.link-as-button:active a,
-.theme-default button .warn.link-as-button:active strong,
-.theme-default button .warn.link-as-button:active i,
-.theme-default button .warn.link-as-button:active em,
-.theme-default button .warn.link-as-button:active mark,
-.theme-default button .warn.link-as-button:active small,
-.theme-default button .warn.link-as-button:active del,
-.theme-default button .warn.link-as-button:active ins,
-.theme-default button .warn.link-as-button:active sub,
-.theme-default button .warn.link-as-button:active sup,
-.theme-default button .warn.link-as-button:active time,
-.theme-default button .warn.link-as-button:active .icon,
-.theme-default button .warn.link-as-button:active button {
+.theme-default .button.warn:active h1,
+.theme-default .button.warn:active h2,
+.theme-default .button.warn:active h3,
+.theme-default .button.warn:active h4,
+.theme-default .button.warn:active h5,
+.theme-default .button.warn:active h6,
+.theme-default .button.warn:active p,
+.theme-default .button.warn:active a,
+.theme-default .button.warn:active strong,
+.theme-default .button.warn:active i,
+.theme-default .button.warn:active em,
+.theme-default .button.warn:active mark,
+.theme-default .button.warn:active small,
+.theme-default .button.warn:active del,
+.theme-default .button.warn:active ins,
+.theme-default .button.warn:active sub,
+.theme-default .button.warn:active sup,
+.theme-default .button.warn:active time,
+.theme-default .button.warn:active .icon,
+.theme-default .button.warn:active button {
   color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
 }
 .theme-default button.warn.disabled,
-.theme-default button .warn.link-as-button.disabled {
+.theme-default .button.warn.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
 }
 .theme-default button.user-color {
@@ -4564,11 +6839,12 @@ nav.nav-main {
   color: hsl(0, 0%, 100%);
 }
 .theme-default .menu {
-  background-color: hsl(0, 0%, 100%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
   box-shadow: 0 0.1rem 0.8rem -0.3rem black;
 }
 .theme-default .selector {
-  background-color: hsl(0, 0%, 100%);
+  background-color: inherit;
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
 }
 .theme-default .selector:hover {
   background-color: hsl(213, 100%, 64%);
@@ -4587,6 +6863,91 @@ nav.nav-main {
 }
 .theme-default .icon:before {
   color: inherit;
+}
+.theme-default .div-highlight {
+  background-color: hsl(213, 100%, 64%);
+}
+.theme-default .div-highlight h1,
+.theme-default .div-highlight h2,
+.theme-default .div-highlight h3,
+.theme-default .div-highlight h4,
+.theme-default .div-highlight h5,
+.theme-default .div-highlight h6,
+.theme-default .div-highlight p,
+.theme-default .div-highlight a,
+.theme-default .div-highlight strong,
+.theme-default .div-highlight i,
+.theme-default .div-highlight em,
+.theme-default .div-highlight mark,
+.theme-default .div-highlight small,
+.theme-default .div-highlight del,
+.theme-default .div-highlight ins,
+.theme-default .div-highlight sub,
+.theme-default .div-highlight sup,
+.theme-default .div-highlight time,
+.theme-default .div-highlight .icon,
+.theme-default .div-highlight button {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .div-base90 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+}
+.theme-default .base {
+  background-color: hsl(0, 0%, 100%);
+}
+.theme-default .base-color {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .base10 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+}
+.theme-default .base15 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 15%, hsl(0, 0%, 0%) 85%);
+}
+.theme-default .base25 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 25%, hsl(0, 0%, 0%) 75%);
+}
+.theme-default .base33 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
+}
+.theme-default .base50 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .base66 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 66%, hsl(0, 0%, 0%) 33%);
+}
+.theme-default .base75 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default .base85 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+}
+.theme-default .base90 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+}
+.theme-default .base15 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 5%, hsl(0, 0%, 0%) 95%);
+}
+.theme-default .base95 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(0, 0%, 0%) 5%);
+}
+.theme-default .baseInv {
+  background-color: hsl(0, 0%, 0%);
+}
+.theme-default .success {
+  background-color: hsl(129, 67%, 41%);
+}
+.theme-default hr {
+  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+}
+.theme-default .hr-highlight {
+  border-color: hsl(213, 100%, 64%);
+}
+.theme-default .hr-base90 {
+  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+}
+.theme-default .ico-color {
+  color: rgb(83, 83, 69) !important;
 }
 
 .theme-dark h1,
@@ -4620,7 +6981,8 @@ nav.nav-main {
 .theme-dark .spacer {
   opacity: 0 !important;
 }
-.theme-dark .page-content {
+.theme-dark .page-content,
+.theme-dark .page-wrapper {
   background-color: hsl(0, 0%, 3%);
 }
 .theme-dark .left-fade {
@@ -4636,7 +6998,7 @@ nav.nav-main {
   background-image: linear-gradient(to right, hsl(0, 0%, 3%), transparent);
 }
 .theme-dark .overlay {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
+  background-color: hsla(0, 0%, 3%, 0.5);
 }
 .theme-dark .drawer-handle {
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
@@ -4664,97 +7026,81 @@ nav.nav-main {
   background-color: hsl(0, 0%, 3%);
   box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
 }
+.theme-dark .foo.foo-main,
+.theme-dark footer.foo-main {
+  background-color: hsl(0, 0%, 3%);
+}
 .theme-dark .nav,
-.theme-dark nav {
+.theme-dark nav,
+.theme-dark .footer,
+.theme-dark footer {
   background-color: transparent;
 }
 .theme-dark.theme-dark .nav.scrolled,
 .theme-dark.theme-dark nav.scrolled {
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
 }
-.theme-dark footer {
+.theme-dark input[type=text],
+.theme-dark input[type=password],
+.theme-dark input[type=email],
+.theme-dark input[type=url],
+.theme-dark input[type=tel],
+.theme-dark input[type=number],
+.theme-dark input[type=search],
+.theme-dark textarea {
   background-color: hsl(0, 0%, 3%);
+  color: hsl(0, 0%, 97%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
 }
-.theme-dark .div-highlight {
-  background-color: hsl(266, 57%, 49%);
+.theme-dark input[type=text]:focus,
+.theme-dark input[type=password]:focus,
+.theme-dark input[type=email]:focus,
+.theme-dark input[type=url]:focus,
+.theme-dark input[type=tel]:focus,
+.theme-dark input[type=number]:focus,
+.theme-dark input[type=search]:focus,
+.theme-dark textarea:focus {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
+  outline: none;
 }
-.theme-dark .div-highlight h1,
-.theme-dark .div-highlight h2,
-.theme-dark .div-highlight h3,
-.theme-dark .div-highlight h4,
-.theme-dark .div-highlight h5,
-.theme-dark .div-highlight h6,
-.theme-dark .div-highlight p,
-.theme-dark .div-highlight a,
-.theme-dark .div-highlight strong,
-.theme-dark .div-highlight i,
-.theme-dark .div-highlight em,
-.theme-dark .div-highlight mark,
-.theme-dark .div-highlight small,
-.theme-dark .div-highlight del,
-.theme-dark .div-highlight ins,
-.theme-dark .div-highlight sub,
-.theme-dark .div-highlight sup,
-.theme-dark .div-highlight time,
-.theme-dark .div-highlight .icon,
-.theme-dark .div-highlight button {
-  color: hsl(0, 0%, 3%);
+.theme-dark input[type=text]:hover,
+.theme-dark input[type=password]:hover,
+.theme-dark input[type=email]:hover,
+.theme-dark input[type=url]:hover,
+.theme-dark input[type=tel]:hover,
+.theme-dark input[type=number]:hover,
+.theme-dark input[type=search]:hover,
+.theme-dark textarea:hover {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.383);
 }
-.theme-dark .div-base90 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+.theme-dark input[type=text]:hover:focus,
+.theme-dark input[type=password]:hover:focus,
+.theme-dark input[type=email]:hover:focus,
+.theme-dark input[type=url]:hover:focus,
+.theme-dark input[type=tel]:hover:focus,
+.theme-dark input[type=number]:hover:focus,
+.theme-dark input[type=search]:hover:focus,
+.theme-dark textarea:hover:focus {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
 }
-.theme-dark .base {
-  background-color: hsl(0, 0%, 3%);
+.theme-dark input[type=text]:hover:active,
+.theme-dark input[type=password]:hover:active,
+.theme-dark input[type=email]:hover:active,
+.theme-dark input[type=url]:hover:active,
+.theme-dark input[type=tel]:hover:active,
+.theme-dark input[type=number]:hover:active,
+.theme-dark input[type=search]:hover:active,
+.theme-dark textarea:hover:active {
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.383);
 }
-.theme-dark .base-color {
-  color: hsl(0, 0%, 3%);
+.theme-dark .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
+  color: hsl(266, 57%, 49%);
 }
-.theme-dark .base10 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+.theme-dark .search-dropdown input[type=text] + .search-dropdown-icon .icon {
+  color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
 }
-.theme-dark .base15 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 15%, hsl(0, 0%, 97%) 85%);
-}
-.theme-dark .base25 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 25%, hsl(0, 0%, 97%) 75%);
-}
-.theme-dark .base33 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
-}
-.theme-dark .base50 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
-}
-.theme-dark .base66 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 66%, hsl(0, 0%, 97%) 33%);
-}
-.theme-dark .base75 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
-}
-.theme-dark .base85 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
-}
-.theme-dark .base90 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
-}
-.theme-dark .baseInv {
-  background-color: hsl(0, 0%, 97%);
-}
-.theme-dark .success {
-  background-color: hsl(129, 67%, 41%);
-}
-.theme-dark hr {
-  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
-}
-.theme-dark .hr-highlight {
-  border-color: hsl(266, 57%, 49%);
-}
-.theme-dark .hr-base90 {
-  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
-}
-.theme-dark .ico-color {
-  color: rgb(83, 83, 69) !important;
-}
-.theme-dark button.base {
+.theme-dark button.base,
+.theme-dark .button.base {
   background-color: hsl(0, 0%, 3%);
 }
 .theme-dark button.base h1,
@@ -4776,10 +7122,31 @@ nav.nav-main {
 .theme-dark button.base sup,
 .theme-dark button.base time,
 .theme-dark button.base .icon,
-.theme-dark button.base button {
+.theme-dark button.base button,
+.theme-dark .button.base h1,
+.theme-dark .button.base h2,
+.theme-dark .button.base h3,
+.theme-dark .button.base h4,
+.theme-dark .button.base h5,
+.theme-dark .button.base h6,
+.theme-dark .button.base p,
+.theme-dark .button.base a,
+.theme-dark .button.base strong,
+.theme-dark .button.base i,
+.theme-dark .button.base em,
+.theme-dark .button.base mark,
+.theme-dark .button.base small,
+.theme-dark .button.base del,
+.theme-dark .button.base ins,
+.theme-dark .button.base sub,
+.theme-dark .button.base sup,
+.theme-dark .button.base time,
+.theme-dark .button.base .icon,
+.theme-dark .button.base button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
 }
-.theme-dark button.base:hover {
+.theme-dark button.base:hover,
+.theme-dark .button.base:hover {
   background-color: hsl(266, 57%, 49%);
 }
 .theme-dark button.base:hover h1,
@@ -4801,10 +7168,31 @@ nav.nav-main {
 .theme-dark button.base:hover sup,
 .theme-dark button.base:hover time,
 .theme-dark button.base:hover .icon,
-.theme-dark button.base:hover button {
+.theme-dark button.base:hover button,
+.theme-dark .button.base:hover h1,
+.theme-dark .button.base:hover h2,
+.theme-dark .button.base:hover h3,
+.theme-dark .button.base:hover h4,
+.theme-dark .button.base:hover h5,
+.theme-dark .button.base:hover h6,
+.theme-dark .button.base:hover p,
+.theme-dark .button.base:hover a,
+.theme-dark .button.base:hover strong,
+.theme-dark .button.base:hover i,
+.theme-dark .button.base:hover em,
+.theme-dark .button.base:hover mark,
+.theme-dark .button.base:hover small,
+.theme-dark .button.base:hover del,
+.theme-dark .button.base:hover ins,
+.theme-dark .button.base:hover sub,
+.theme-dark .button.base:hover sup,
+.theme-dark .button.base:hover time,
+.theme-dark .button.base:hover .icon,
+.theme-dark .button.base:hover button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark button.base:active {
+.theme-dark button.base:active,
+.theme-dark .button.base:active {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%), hsl(0, 0%, 97%));
 }
 .theme-dark button.base:active h1,
@@ -4826,10 +7214,35 @@ nav.nav-main {
 .theme-dark button.base:active sup,
 .theme-dark button.base:active time,
 .theme-dark button.base:active .icon,
-.theme-dark button.base:active button {
+.theme-dark button.base:active button,
+.theme-dark .button.base:active h1,
+.theme-dark .button.base:active h2,
+.theme-dark .button.base:active h3,
+.theme-dark .button.base:active h4,
+.theme-dark .button.base:active h5,
+.theme-dark .button.base:active h6,
+.theme-dark .button.base:active p,
+.theme-dark .button.base:active a,
+.theme-dark .button.base:active strong,
+.theme-dark .button.base:active i,
+.theme-dark .button.base:active em,
+.theme-dark .button.base:active mark,
+.theme-dark .button.base:active small,
+.theme-dark .button.base:active del,
+.theme-dark .button.base:active ins,
+.theme-dark .button.base:active sub,
+.theme-dark .button.base:active sup,
+.theme-dark .button.base:active time,
+.theme-dark .button.base:active .icon,
+.theme-dark .button.base:active button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark button.secondary {
+.theme-dark button.but-bordered,
+.theme-dark .button.but-bordered {
+  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
+}
+.theme-dark button.secondary,
+.theme-dark .button.secondary {
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
 }
 .theme-dark button.secondary h1,
@@ -4851,10 +7264,31 @@ nav.nav-main {
 .theme-dark button.secondary sup,
 .theme-dark button.secondary time,
 .theme-dark button.secondary .icon,
-.theme-dark button.secondary button {
+.theme-dark button.secondary button,
+.theme-dark .button.secondary h1,
+.theme-dark .button.secondary h2,
+.theme-dark .button.secondary h3,
+.theme-dark .button.secondary h4,
+.theme-dark .button.secondary h5,
+.theme-dark .button.secondary h6,
+.theme-dark .button.secondary p,
+.theme-dark .button.secondary a,
+.theme-dark .button.secondary strong,
+.theme-dark .button.secondary i,
+.theme-dark .button.secondary em,
+.theme-dark .button.secondary mark,
+.theme-dark .button.secondary small,
+.theme-dark .button.secondary del,
+.theme-dark .button.secondary ins,
+.theme-dark .button.secondary sub,
+.theme-dark .button.secondary sup,
+.theme-dark .button.secondary time,
+.theme-dark .button.secondary .icon,
+.theme-dark .button.secondary button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
-.theme-dark button.secondary:hover {
+.theme-dark button.secondary:hover,
+.theme-dark .button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%) 75%, hsl(0, 0%, 97%));
 }
 .theme-dark button.secondary:hover h1,
@@ -4876,10 +7310,31 @@ nav.nav-main {
 .theme-dark button.secondary:hover sup,
 .theme-dark button.secondary:hover time,
 .theme-dark button.secondary:hover .icon,
-.theme-dark button.secondary:hover button {
+.theme-dark button.secondary:hover button,
+.theme-dark .button.secondary:hover h1,
+.theme-dark .button.secondary:hover h2,
+.theme-dark .button.secondary:hover h3,
+.theme-dark .button.secondary:hover h4,
+.theme-dark .button.secondary:hover h5,
+.theme-dark .button.secondary:hover h6,
+.theme-dark .button.secondary:hover p,
+.theme-dark .button.secondary:hover a,
+.theme-dark .button.secondary:hover strong,
+.theme-dark .button.secondary:hover i,
+.theme-dark .button.secondary:hover em,
+.theme-dark .button.secondary:hover mark,
+.theme-dark .button.secondary:hover small,
+.theme-dark .button.secondary:hover del,
+.theme-dark .button.secondary:hover ins,
+.theme-dark .button.secondary:hover sub,
+.theme-dark .button.secondary:hover sup,
+.theme-dark .button.secondary:hover time,
+.theme-dark .button.secondary:hover .icon,
+.theme-dark .button.secondary:hover button {
   color: hsl(0, 0%, 3%);
 }
-.theme-dark button.secondary:active {
+.theme-dark button.secondary:active,
+.theme-dark .button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%), hsl(0, 0%, 97%));
 }
 .theme-dark button.secondary:active h1,
@@ -4901,11 +7356,31 @@ nav.nav-main {
 .theme-dark button.secondary:active sup,
 .theme-dark button.secondary:active time,
 .theme-dark button.secondary:active .icon,
-.theme-dark button.secondary:active button {
+.theme-dark button.secondary:active button,
+.theme-dark .button.secondary:active h1,
+.theme-dark .button.secondary:active h2,
+.theme-dark .button.secondary:active h3,
+.theme-dark .button.secondary:active h4,
+.theme-dark .button.secondary:active h5,
+.theme-dark .button.secondary:active h6,
+.theme-dark .button.secondary:active p,
+.theme-dark .button.secondary:active a,
+.theme-dark .button.secondary:active strong,
+.theme-dark .button.secondary:active i,
+.theme-dark .button.secondary:active em,
+.theme-dark .button.secondary:active mark,
+.theme-dark .button.secondary:active small,
+.theme-dark .button.secondary:active del,
+.theme-dark .button.secondary:active ins,
+.theme-dark .button.secondary:active sub,
+.theme-dark .button.secondary:active sup,
+.theme-dark .button.secondary:active time,
+.theme-dark .button.secondary:active .icon,
+.theme-dark .button.secondary:active button {
   color: hsl(0, 0%, 3%);
 }
 .theme-dark button.primary,
-.theme-dark button .primary.link-as-button {
+.theme-dark .button.primary {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%) 55%, hsl(0, 0%, 3%));
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
@@ -4929,30 +7404,30 @@ nav.nav-main {
 .theme-dark button.primary time,
 .theme-dark button.primary .icon,
 .theme-dark button.primary button,
-.theme-dark button .primary.link-as-button h1,
-.theme-dark button .primary.link-as-button h2,
-.theme-dark button .primary.link-as-button h3,
-.theme-dark button .primary.link-as-button h4,
-.theme-dark button .primary.link-as-button h5,
-.theme-dark button .primary.link-as-button h6,
-.theme-dark button .primary.link-as-button p,
-.theme-dark button .primary.link-as-button a,
-.theme-dark button .primary.link-as-button strong,
-.theme-dark button .primary.link-as-button i,
-.theme-dark button .primary.link-as-button em,
-.theme-dark button .primary.link-as-button mark,
-.theme-dark button .primary.link-as-button small,
-.theme-dark button .primary.link-as-button del,
-.theme-dark button .primary.link-as-button ins,
-.theme-dark button .primary.link-as-button sub,
-.theme-dark button .primary.link-as-button sup,
-.theme-dark button .primary.link-as-button time,
-.theme-dark button .primary.link-as-button .icon,
-.theme-dark button .primary.link-as-button button {
+.theme-dark .button.primary h1,
+.theme-dark .button.primary h2,
+.theme-dark .button.primary h3,
+.theme-dark .button.primary h4,
+.theme-dark .button.primary h5,
+.theme-dark .button.primary h6,
+.theme-dark .button.primary p,
+.theme-dark .button.primary a,
+.theme-dark .button.primary strong,
+.theme-dark .button.primary i,
+.theme-dark .button.primary em,
+.theme-dark .button.primary mark,
+.theme-dark .button.primary small,
+.theme-dark .button.primary del,
+.theme-dark .button.primary ins,
+.theme-dark .button.primary sub,
+.theme-dark .button.primary sup,
+.theme-dark .button.primary time,
+.theme-dark .button.primary .icon,
+.theme-dark .button.primary button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
 .theme-dark button.primary:hover,
-.theme-dark button .primary.link-as-button:hover {
+.theme-dark .button.primary:hover {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%) 75%, hsl(0, 0%, 97%));
   color: hsl(0, 0%, 3%);
 }
@@ -4976,30 +7451,30 @@ nav.nav-main {
 .theme-dark button.primary:hover time,
 .theme-dark button.primary:hover .icon,
 .theme-dark button.primary:hover button,
-.theme-dark button .primary.link-as-button:hover h1,
-.theme-dark button .primary.link-as-button:hover h2,
-.theme-dark button .primary.link-as-button:hover h3,
-.theme-dark button .primary.link-as-button:hover h4,
-.theme-dark button .primary.link-as-button:hover h5,
-.theme-dark button .primary.link-as-button:hover h6,
-.theme-dark button .primary.link-as-button:hover p,
-.theme-dark button .primary.link-as-button:hover a,
-.theme-dark button .primary.link-as-button:hover strong,
-.theme-dark button .primary.link-as-button:hover i,
-.theme-dark button .primary.link-as-button:hover em,
-.theme-dark button .primary.link-as-button:hover mark,
-.theme-dark button .primary.link-as-button:hover small,
-.theme-dark button .primary.link-as-button:hover del,
-.theme-dark button .primary.link-as-button:hover ins,
-.theme-dark button .primary.link-as-button:hover sub,
-.theme-dark button .primary.link-as-button:hover sup,
-.theme-dark button .primary.link-as-button:hover time,
-.theme-dark button .primary.link-as-button:hover .icon,
-.theme-dark button .primary.link-as-button:hover button {
+.theme-dark .button.primary:hover h1,
+.theme-dark .button.primary:hover h2,
+.theme-dark .button.primary:hover h3,
+.theme-dark .button.primary:hover h4,
+.theme-dark .button.primary:hover h5,
+.theme-dark .button.primary:hover h6,
+.theme-dark .button.primary:hover p,
+.theme-dark .button.primary:hover a,
+.theme-dark .button.primary:hover strong,
+.theme-dark .button.primary:hover i,
+.theme-dark .button.primary:hover em,
+.theme-dark .button.primary:hover mark,
+.theme-dark .button.primary:hover small,
+.theme-dark .button.primary:hover del,
+.theme-dark .button.primary:hover ins,
+.theme-dark .button.primary:hover sub,
+.theme-dark .button.primary:hover sup,
+.theme-dark .button.primary:hover time,
+.theme-dark .button.primary:hover .icon,
+.theme-dark .button.primary:hover button {
   color: hsl(0, 0%, 3%);
 }
 .theme-dark button.primary:active,
-.theme-dark button .primary.link-as-button:active {
+.theme-dark .button.primary:active {
   background-color: color-mix(in srgb, hsl(266, 57%, 49%), hsl(0, 0%, 97%));
   color: hsl(0, 0%, 3%);
 }
@@ -5023,34 +7498,34 @@ nav.nav-main {
 .theme-dark button.primary:active time,
 .theme-dark button.primary:active .icon,
 .theme-dark button.primary:active button,
-.theme-dark button .primary.link-as-button:active h1,
-.theme-dark button .primary.link-as-button:active h2,
-.theme-dark button .primary.link-as-button:active h3,
-.theme-dark button .primary.link-as-button:active h4,
-.theme-dark button .primary.link-as-button:active h5,
-.theme-dark button .primary.link-as-button:active h6,
-.theme-dark button .primary.link-as-button:active p,
-.theme-dark button .primary.link-as-button:active a,
-.theme-dark button .primary.link-as-button:active strong,
-.theme-dark button .primary.link-as-button:active i,
-.theme-dark button .primary.link-as-button:active em,
-.theme-dark button .primary.link-as-button:active mark,
-.theme-dark button .primary.link-as-button:active small,
-.theme-dark button .primary.link-as-button:active del,
-.theme-dark button .primary.link-as-button:active ins,
-.theme-dark button .primary.link-as-button:active sub,
-.theme-dark button .primary.link-as-button:active sup,
-.theme-dark button .primary.link-as-button:active time,
-.theme-dark button .primary.link-as-button:active .icon,
-.theme-dark button .primary.link-as-button:active button {
+.theme-dark .button.primary:active h1,
+.theme-dark .button.primary:active h2,
+.theme-dark .button.primary:active h3,
+.theme-dark .button.primary:active h4,
+.theme-dark .button.primary:active h5,
+.theme-dark .button.primary:active h6,
+.theme-dark .button.primary:active p,
+.theme-dark .button.primary:active a,
+.theme-dark .button.primary:active strong,
+.theme-dark .button.primary:active i,
+.theme-dark .button.primary:active em,
+.theme-dark .button.primary:active mark,
+.theme-dark .button.primary:active small,
+.theme-dark .button.primary:active del,
+.theme-dark .button.primary:active ins,
+.theme-dark .button.primary:active sub,
+.theme-dark .button.primary:active sup,
+.theme-dark .button.primary:active time,
+.theme-dark .button.primary:active .icon,
+.theme-dark .button.primary:active button {
   color: hsl(0, 0%, 3%);
 }
 .theme-dark button.primary.disabled,
-.theme-dark button .primary.link-as-button.disabled {
+.theme-dark .button.primary.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
 }
 .theme-dark button.warn,
-.theme-dark button .warn.link-as-button {
+.theme-dark .button.warn {
   background-color: hsl(39, 76%, 49%);
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
@@ -5074,30 +7549,30 @@ nav.nav-main {
 .theme-dark button.warn time,
 .theme-dark button.warn .icon,
 .theme-dark button.warn button,
-.theme-dark button .warn.link-as-button h1,
-.theme-dark button .warn.link-as-button h2,
-.theme-dark button .warn.link-as-button h3,
-.theme-dark button .warn.link-as-button h4,
-.theme-dark button .warn.link-as-button h5,
-.theme-dark button .warn.link-as-button h6,
-.theme-dark button .warn.link-as-button p,
-.theme-dark button .warn.link-as-button a,
-.theme-dark button .warn.link-as-button strong,
-.theme-dark button .warn.link-as-button i,
-.theme-dark button .warn.link-as-button em,
-.theme-dark button .warn.link-as-button mark,
-.theme-dark button .warn.link-as-button small,
-.theme-dark button .warn.link-as-button del,
-.theme-dark button .warn.link-as-button ins,
-.theme-dark button .warn.link-as-button sub,
-.theme-dark button .warn.link-as-button sup,
-.theme-dark button .warn.link-as-button time,
-.theme-dark button .warn.link-as-button .icon,
-.theme-dark button .warn.link-as-button button {
+.theme-dark .button.warn h1,
+.theme-dark .button.warn h2,
+.theme-dark .button.warn h3,
+.theme-dark .button.warn h4,
+.theme-dark .button.warn h5,
+.theme-dark .button.warn h6,
+.theme-dark .button.warn p,
+.theme-dark .button.warn a,
+.theme-dark .button.warn strong,
+.theme-dark .button.warn i,
+.theme-dark .button.warn em,
+.theme-dark .button.warn mark,
+.theme-dark .button.warn small,
+.theme-dark .button.warn del,
+.theme-dark .button.warn ins,
+.theme-dark .button.warn sub,
+.theme-dark .button.warn sup,
+.theme-dark .button.warn time,
+.theme-dark .button.warn .icon,
+.theme-dark .button.warn button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
 .theme-dark button.warn:hover,
-.theme-dark button .warn.link-as-button:hover {
+.theme-dark .button.warn:hover {
   background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 97%));
   color: hsl(0, 0%, 3%);
 }
@@ -5121,30 +7596,30 @@ nav.nav-main {
 .theme-dark button.warn:hover time,
 .theme-dark button.warn:hover .icon,
 .theme-dark button.warn:hover button,
-.theme-dark button .warn.link-as-button:hover h1,
-.theme-dark button .warn.link-as-button:hover h2,
-.theme-dark button .warn.link-as-button:hover h3,
-.theme-dark button .warn.link-as-button:hover h4,
-.theme-dark button .warn.link-as-button:hover h5,
-.theme-dark button .warn.link-as-button:hover h6,
-.theme-dark button .warn.link-as-button:hover p,
-.theme-dark button .warn.link-as-button:hover a,
-.theme-dark button .warn.link-as-button:hover strong,
-.theme-dark button .warn.link-as-button:hover i,
-.theme-dark button .warn.link-as-button:hover em,
-.theme-dark button .warn.link-as-button:hover mark,
-.theme-dark button .warn.link-as-button:hover small,
-.theme-dark button .warn.link-as-button:hover del,
-.theme-dark button .warn.link-as-button:hover ins,
-.theme-dark button .warn.link-as-button:hover sub,
-.theme-dark button .warn.link-as-button:hover sup,
-.theme-dark button .warn.link-as-button:hover time,
-.theme-dark button .warn.link-as-button:hover .icon,
-.theme-dark button .warn.link-as-button:hover button {
+.theme-dark .button.warn:hover h1,
+.theme-dark .button.warn:hover h2,
+.theme-dark .button.warn:hover h3,
+.theme-dark .button.warn:hover h4,
+.theme-dark .button.warn:hover h5,
+.theme-dark .button.warn:hover h6,
+.theme-dark .button.warn:hover p,
+.theme-dark .button.warn:hover a,
+.theme-dark .button.warn:hover strong,
+.theme-dark .button.warn:hover i,
+.theme-dark .button.warn:hover em,
+.theme-dark .button.warn:hover mark,
+.theme-dark .button.warn:hover small,
+.theme-dark .button.warn:hover del,
+.theme-dark .button.warn:hover ins,
+.theme-dark .button.warn:hover sub,
+.theme-dark .button.warn:hover sup,
+.theme-dark .button.warn:hover time,
+.theme-dark .button.warn:hover .icon,
+.theme-dark .button.warn:hover button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
 .theme-dark button.warn:active,
-.theme-dark button .warn.link-as-button:active {
+.theme-dark .button.warn:active {
   background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 97%));
   color: hsl(0, 0%, 3%);
 }
@@ -5168,30 +7643,30 @@ nav.nav-main {
 .theme-dark button.warn:active time,
 .theme-dark button.warn:active .icon,
 .theme-dark button.warn:active button,
-.theme-dark button .warn.link-as-button:active h1,
-.theme-dark button .warn.link-as-button:active h2,
-.theme-dark button .warn.link-as-button:active h3,
-.theme-dark button .warn.link-as-button:active h4,
-.theme-dark button .warn.link-as-button:active h5,
-.theme-dark button .warn.link-as-button:active h6,
-.theme-dark button .warn.link-as-button:active p,
-.theme-dark button .warn.link-as-button:active a,
-.theme-dark button .warn.link-as-button:active strong,
-.theme-dark button .warn.link-as-button:active i,
-.theme-dark button .warn.link-as-button:active em,
-.theme-dark button .warn.link-as-button:active mark,
-.theme-dark button .warn.link-as-button:active small,
-.theme-dark button .warn.link-as-button:active del,
-.theme-dark button .warn.link-as-button:active ins,
-.theme-dark button .warn.link-as-button:active sub,
-.theme-dark button .warn.link-as-button:active sup,
-.theme-dark button .warn.link-as-button:active time,
-.theme-dark button .warn.link-as-button:active .icon,
-.theme-dark button .warn.link-as-button:active button {
+.theme-dark .button.warn:active h1,
+.theme-dark .button.warn:active h2,
+.theme-dark .button.warn:active h3,
+.theme-dark .button.warn:active h4,
+.theme-dark .button.warn:active h5,
+.theme-dark .button.warn:active h6,
+.theme-dark .button.warn:active p,
+.theme-dark .button.warn:active a,
+.theme-dark .button.warn:active strong,
+.theme-dark .button.warn:active i,
+.theme-dark .button.warn:active em,
+.theme-dark .button.warn:active mark,
+.theme-dark .button.warn:active small,
+.theme-dark .button.warn:active del,
+.theme-dark .button.warn:active ins,
+.theme-dark .button.warn:active sub,
+.theme-dark .button.warn:active sup,
+.theme-dark .button.warn:active time,
+.theme-dark .button.warn:active .icon,
+.theme-dark .button.warn:active button {
   color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
 }
 .theme-dark button.warn.disabled,
-.theme-dark button .warn.link-as-button.disabled {
+.theme-dark .button.warn.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
 }
 .theme-dark button.user-color {
@@ -5255,11 +7730,12 @@ nav.nav-main {
   color: hsl(0, 0%, 3%);
 }
 .theme-dark .menu {
-  background-color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
   box-shadow: 0 0.1rem 0.8rem -0.3rem black;
 }
 .theme-dark .selector {
-  background-color: hsl(0, 0%, 3%);
+  background-color: inherit;
+  color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
 }
 .theme-dark .selector:hover {
   background-color: hsl(266, 57%, 49%);
@@ -5278,6 +7754,91 @@ nav.nav-main {
 }
 .theme-dark .icon:before {
   color: inherit;
+}
+.theme-dark .div-highlight {
+  background-color: hsl(266, 57%, 49%);
+}
+.theme-dark .div-highlight h1,
+.theme-dark .div-highlight h2,
+.theme-dark .div-highlight h3,
+.theme-dark .div-highlight h4,
+.theme-dark .div-highlight h5,
+.theme-dark .div-highlight h6,
+.theme-dark .div-highlight p,
+.theme-dark .div-highlight a,
+.theme-dark .div-highlight strong,
+.theme-dark .div-highlight i,
+.theme-dark .div-highlight em,
+.theme-dark .div-highlight mark,
+.theme-dark .div-highlight small,
+.theme-dark .div-highlight del,
+.theme-dark .div-highlight ins,
+.theme-dark .div-highlight sub,
+.theme-dark .div-highlight sup,
+.theme-dark .div-highlight time,
+.theme-dark .div-highlight .icon,
+.theme-dark .div-highlight button {
+  color: hsl(0, 0%, 3%);
+}
+.theme-dark .div-base90 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+}
+.theme-dark .base {
+  background-color: hsl(0, 0%, 3%);
+}
+.theme-dark .base-color {
+  color: hsl(0, 0%, 3%);
+}
+.theme-dark .base10 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+}
+.theme-dark .base15 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 15%, hsl(0, 0%, 97%) 85%);
+}
+.theme-dark .base25 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 25%, hsl(0, 0%, 97%) 75%);
+}
+.theme-dark .base33 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
+}
+.theme-dark .base50 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
+}
+.theme-dark .base66 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 66%, hsl(0, 0%, 97%) 33%);
+}
+.theme-dark .base75 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
+}
+.theme-dark .base85 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
+}
+.theme-dark .base90 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+}
+.theme-dark .base15 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 5%, hsl(0, 0%, 97%) 95%);
+}
+.theme-dark .base95 {
+  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 95%, hsl(0, 0%, 97%) 5%);
+}
+.theme-dark .baseInv {
+  background-color: hsl(0, 0%, 97%);
+}
+.theme-dark .success {
+  background-color: hsl(129, 67%, 41%);
+}
+.theme-dark hr {
+  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
+}
+.theme-dark .hr-highlight {
+  border-color: hsl(266, 57%, 49%);
+}
+.theme-dark .hr-base90 {
+  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+}
+.theme-dark .ico-color {
+  color: rgb(83, 83, 69) !important;
 }
 
 :root {

@@ -5,8 +5,7 @@ nav {
 
     //default height, as well as positioning data incase of fixed nav.
     height: 3rem;
-    top: 0;
-    left: 0;
+ 
     width: 100%;
 
     
@@ -46,6 +45,8 @@ nav {
     &.nav-main {
         z-index: 50;
         position: fixed;
+        top: 0;
+        left: 0;
     }
  
 }

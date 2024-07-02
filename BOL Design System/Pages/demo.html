@@ -15,126 +15,27 @@
 <!-- apply theme to link-nostyle body -->
 
 <body class="theme-default">
-    <div class="spacer spa-sm"></div>
-    <div class="user-name">Richard Murray</div>
-    <nav
-        class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr pad-noneL gap gap-sm">
 
-
-        <!-- left wrapper -->
-        <div class="flex gap gap-xs fle-centerVr h100p">
-
-            <!-- home button -->
-            <button
-                class="but-xxs primary ghost flex fle-alignItems-center fle-justifyContent-center fle-alignSelf-stretch gap padding pad-xsHr">
-                <span class="icon ico-xs ico-carret-l"></span>
-                <span class="icon ico-sm ico-home"></span>
-            </button>
-            <div class="flex gap">
-
-                <span class="icon ico-sm ico-th"></span>
-                <h5>Control Panel</h5>
-            </div>
-        </div>
-
-        <!-- right wrapper -->
-        <div class="flex gap">
-            <div class="popup-trigger-pair">
-                <button class="popup-trigger but-highlight user-color but-circle" title="User Profile"
-                    onclick="togglePopup(event, 'AAA')">
-                    <h3 class="user-first-initial"></h3>
-                </button>
-                <div class=overlay id="overlay AAA"></div>
-                <div id="target AAA" class="popup edge-right to-left margin mar-mdVr">
-
-                    <div class="menu men-sm pill pil-sm padding pad-smB">
-                        <header class="padding pad-xs">
-                            <h4>User</h4>
-
-                        </header>
-                        <hr class="margin mar-xsHr">
-
-                        <div class="padding pad-xs">
-                            <h4 class="user-full-name"></h4>
-                            <br>
-                            <p><b>Last Seen:</b><br>
-                                <time>Month DDth, YYYY</time><br>
-                                <time>HH:MM:SS AM</time>
-                            </p>
-                        </div>
-                        <hr class="hr-sm">
-                        <ul>
-                            <li><a class="selector padding pad-xsHr">Messages</a></li>
-                            <hr>
-                            <li><a class="selector padding pad-xsHr" href="updateinfo.html">Update Info</a></li>
-                            <hr>
-                            <li><a class="selector padding pad-xsHr" href="caclogin.html">Log Out</a></li>
-                            <hr>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="popup-trigger-pair">
-                <button class="popup-trigger secondary ghost but-circle" title="User Profile"
-                    onclick="togglePopup(event, 'BBB')">
-                    <span class="icon ico-sm ico-ellipsis-vr"></span>
-                </button>
-                <div class=overlay id="overlay BBB"></div>
-                <div id="target BBB" class="popup edge-right to-left margin mar-mdVr">
-                    <div class="menu men-sm pill pil-sm padding pad-smB">
-                        <header class="padding pad-xs">
-                            <h4>Options</h4>
-
-                        </header>
-                        <hr class="margin mar-xsHr">
-                        <div class=men-content>
-                            <ul>
-                                <li><a href="../Pages/help.html" class="selector padding pad-xsHr">Help</a></li>
-                                <hr>
-                                <li><a class="selector padding pad-xsHr">Contact</a></li>
-                                <hr>
-                                <li><label for="toggleDarkMode"
-                                        class="selector flex fle-space-between fle-centerVr padding pad-xsHr">
-                                        <p>Dark Mode</p>
-                                        <div class="toggle pill"><input type="checkbox" id="toggleDarkMode"
-                                                onclick="toggleDarkMode()"><span class="pill"></span></div>
-                                    </label>
-                                </li>
-
-                                <hr>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
     <div class="page-wrapper">
         <div class="page-content margin mar-xlB">
 
 
-            <!-- modify app details -->
-            <header class="flex base95">
-                <div class="left-fade"></div>
-                <div class="cell cel-md4cells flex fle-justifyContent-spaceBetween padding pad-md">
-                    <h2>Modify App Details</h2>
-                    <div class="flex gap gap-md">
-                        <button class="warn pill padding pad-mdHr pad-sm">Reset Changes</button>
-                        <button class="success pill padding pad-mdHr pad-sm">Save Changes</button>
-                    </div>
-                </div>
-                <div class="right-fade"></div>
-            </header>
 
-            <div class="magic mag-4Max mag-md mag-gap-xs cell cel-mdMin flex base90 text-select texs-none">
+
+
+
+
+
+
+            <div class="magic-wrapper mag-4Max cell cel-mdMin flex base90 text-select texs-none">
 
                 <div class="left-fade"></div>
 
-                <div class="magic-parent padding pad-mdVr">
+                <div class="magic mag-md padding pad-mdVr">
 
-                    <div class="magic-child flex fle-column">
+                    <div class="cell cel-md flex fle-column text-select texs-none ">
 
-                        <div class="card grow gro-one pill pil-xs base95">
+                        <div class="card grow gro-one margin mar-xs pill pil-xs base95">
 
                             <header
                                 class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
@@ -147,8 +48,7 @@
                                 <h3>Choose an app to modify:</h3>
                             </header>
 
-                            <div
-                                class="margin mar-mdVr padding pad-md flex fle-column fle-alignItems-center gap gap-md">
+                            <div class="margin mar-mdVr padding pad-md flex fle-column fle-alignItems-center gap gap-md">
                                 <label for="Select App">
                                     <p>
                                         Select an app from the dropdown:
@@ -204,7 +104,7 @@
 
                         </div>
 
-                        <div class="card grow gro-one pill pil-xs base95">
+                        <div class="card grow gro-one margin mar-xs pill pil-xs base95">
                             <header
                                 class="success hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center ">
                                 <h4 class="base-color">Preview</h4>
@@ -238,9 +138,9 @@
 
                     </div>
 
-                    <div class="magic-child2 flex">
+                    <div class="cell cel-md2cells flex text-select texs-none">
 
-                        <div class="card grow gro-one pill pil-xs base95">
+                        <div class="card grow gro-one margin mar-xs pill pil-xs base95">
 
                             <header
                                 class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
@@ -386,9 +286,9 @@
 
                     </div>
 
-                    <div class="magic-child flex">
+                    <div class="cell cel-md flex text-select texs-none">
 
-                        <div class="card grow gro-one pill pil-xs base95">
+                        <div class="card grow gro-one margin mar-xs pill pil-xs base95">
                             <header
                                 class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
                                 <div class="position pos-absolute" style="left: 0">
@@ -551,178 +451,18 @@
 
             </div>
 
-            <!-- maintenance -->
-            <header class="flex base95 ">
-                <div class="left-fade"></div>
-                <div class="cell cel-md4cells flex fle-justifyContent-spaceBetween padding pad-md">
-                    <h2>Maintenance</h2>
-                </div>
-                <div class="right-fade"></div>
-            </header>
-
-            <div class="magic mag-4Max mag-md mag-gap-xs cell cel-mdMin flex base90 text-select texs-none">
-
-                <div class="left-fade"></div>
-
-                <div class="magic-parent padding pad-mdVr">
-
-                    <div class="magic-child flex">
-
-                        <div class="card grow gro-one pill pil-xs base95">
-
-                            <div class="padding pad-md flex fle-column gap gap-md">
-
-                                <label for="Redirect Link">
-                                    <p>
-                                        Redirect Link:
-                                    </p>
-                                </label>
-                                <div class="flex fle-alignItems-center gap gap-md">
-                                    <input type="text" id="Redirect Link" autocomplete="off" class="pill grow gro-one">
-                                    <span
-                                        class="margin mar-smR button primary flex fle-alignItems-center fle-justifyContent-center ghost circle">?</span>
-                                </div>
-                                <p>App State:</p>
-                                <div
-                                    class="flex fle-nowrap fle-justifyContent-spaceAround base90 padding pad-sm pill margin mar-mdB">
-
-                                    <label for="enabled" class="button primary padding pad-xs ghost pill">
-                                        <input type="radio" id="enabled" name="app_state" value="enabled">
-                                        Enabled</label>
-
-                                    <label for="disabled" class="button primary padding pad-xs ghost pill">
-                                        <input type="radio" id="disabled" name="app_state" value="disabled">
-                                        Disabled</label><br>
+         
 
 
-                                    <label for="hidden" class="button primary padding pad-xs ghost pill">
-                                        <input type="radio" id="hidden" name="app_state" value="hidden">
-                                        Hidden</label>
 
 
-                                </div>
 
-                                <label for="Disabled Message">
-                                    <p>
-                                        Disabled Message:
-                                    </p>
-                                </label>
-                                <textarea id="Disabled Message"
-                                    class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>
 
-                            </div>
-                        </div>
 
-                    </div>
 
-                </div>
-
-                <div class="right-fade"></div>
-
-            </div>
 
         </div>
-        <hr>
-        <footer class="foo-main">
-            <hr class="hr-sm hr-base90">
-            <div class="flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
-                <div class=" margin mar-autoHr mar-smVr">
-                    <div class="flex">
-                        <div class="cell cel-md text-align texa-r padding pad-xsVr position pos-relative">
-                            <div class="position pos-absolute flex gap gap-sm edge-right to-left">
 
-
-                                <h1>BUPERS <br> ONLINE</h1>
-                                <img src="../assets/Seal_of_the_Bureau_of_Naval_Personnel.png" style="height: 6rem;">
-                            </div>
-                        </div>
-                        <hr class="margin mar-smHr">
-                        <div class="flex fle-centerHr gap fle-column cell cel-md padding pad-xsVr">
-                            <b><a href="applist.html">Application List</a></b>
-
-                            <b><a href="">Messages</a></b>
-
-                            <b><a href="../Pages/help.html">Help</a></b>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class=" margin mar-autoHr mar-smVr">
-                    <div class="flex">
-                        <div class="cell cel-md text-align texa-r padding pad-xsVr">
-                            <h4>Help Desk</h4>
-                        </div>
-                        <hr class="margin mar-smHr">
-                        <div class="cell cel-md padding pad-xsVr">
-                            <p>
-                                1-800-951-NAVY
-                            </p>
-                            <b><a href="mailto:Bupers07_IT_EOC.FCT@navy.mil">
-                                    Bupers07_IT_EOC.FCT<br>@navy.mil
-                                </a></b>
-
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="cell cel-md text-align texa-r padding pad-xsVr">
-                            <h4>Hours</h4>
-                        </div>
-                        <hr class="margin mar-smHr">
-                        <div class="cell cel-md padding pad-xsVr">
-                            <p>
-                                Monday - Friday <br>
-                                0600 - 1700 Central
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class=" margin mar-autoHr mar-smVr">
-                    <div class="flex">
-                        <div class="cell cel-md text-align texa-r padding pad-xsVr">
-                            <h4>User</h4>
-                        </div>
-                        <hr class="margin mar-smHr">
-                        <div class="cell cel-md padding pad-xsVr">
-                            <b><a href="caclogin.html">End Session</a>
-                                <br>
-                                <a href="updateinfo.html">Update Info</a></b>
-                        </div>
-                    </div>
-                    <div class="flex">
-                        <div class="cell cel-md text-align texa-r padding pad-xsVr">
-                            <h4>Last Seen</h4>
-                        </div>
-                        <hr class="margin mar-smHr">
-                        <div class="cell cel-md padding pad-xsVr">
-                            <time>Month DDth, YYYY</time><br>
-                            <time>HH:MM:SS AM</time>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="div-base90 flex fle-space-between fle-wrap margin mar-autoHr padding pad-mdHr">
-                <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c ">
-                    <a class="text-wrap texw-nowrap margin mar-smHr">NCIS Tips</a>
-                    <a class="text-wrap texw-nowrap margin mar-smHr">24/7 Suicide Prevention</a>
-                    <a class="text-wrap texw-nowrap margin mar-smHr">Safe Helpline</a>
-                </div>
-                <div class="flex  flex  fle-space-between margin mar-autoHr mar-mdVr text-align texa-c">
-                    <a class="text-wrap texw-nowrap margin mar-smHr">For Official Use Only</a>
-                    <a class="text-wrap texw-nowrap margin mar-smHr">Privacy Policy</a>
-                    <a class="text-wrap texw-nowrap margin mar-smHr">Accessibility/Section 508</a>
-                </div>
-                <div class=" text-align  margin mar-autoHr mar-mdVr texa-c">
-                    <p>5720 Integrity Drive Millington, TN 38055-0000</p>
-                </div>
-            </div>
-            <div class="div-base90 text-align texa-c padding pad-mdVr">
-                <p>Version: 1.00.00.00</p>
-            </div>
-        </footer>
     </div>
 </body>
 
