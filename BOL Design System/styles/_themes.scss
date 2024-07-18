@@ -162,6 +162,9 @@
         background-color: transparent;
     }
 
+    .red {
+        background-color: red;
+    }
 
     &.theme-dark {
 
@@ -170,6 +173,11 @@
             &.scrolled {
                 background-color: $base90;
             }
+        }
+
+        .menu, .card {
+            background-color: $base90;
+            box-shadow: 0 0.1rem .8rem -0.3rem black;
         }
 
 
@@ -340,6 +348,26 @@
 
     }
 
+    .car-borderless {
+        box-shadow: none;
+    }
+
+    .selector-grid {
+        border: 1px solid $base50;
+        background-color: $base90;
+
+        &>.selector {
+            background-color: $base;
+
+            >.icon {
+                color: $base50;
+            }
+        }
+
+        & .selector:has(> input:checked) {
+            background-color: color-mix(in srgb, $base 33%, $primary 66%);
+        }
+    }
 
     .thumb {
         background-color: rgb(94, 205, 142);
@@ -347,8 +375,9 @@
     }
 
     .menu {
-        background-color: $base90;
+        background-color: $base;
         box-shadow: 0 0.1rem .8rem -0.3rem black;
+
     }
 
     .selector {
@@ -359,6 +388,8 @@
         &:hover {
             background-color: $primary;
         }
+
+
     }
 
     .toggle {
@@ -455,7 +486,7 @@
     }
 
     hr {
-        border-color: $base85;
+        border-color: $base95;
     }
 
     .hr-highlight {

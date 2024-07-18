@@ -40,12 +40,12 @@
 
 }
 
-.search-dropdown input[type="text"]:focus~.popup {
-
-    visibility: visible;
-
-
-
+.search-dropdown:focus-within .popup {
+    display:block;
+    & ~ .overlay{
+        display: block;
+        z-index: -1;
+    }
 }
 
 .search-dropdown input[type="text"]+.search-dropdown-icon {

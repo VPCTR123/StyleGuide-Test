@@ -1425,7 +1425,7 @@ $margin-class-names: (
 
 @each $size, $var in $margin-class-names {
     .mag-gap-#{$size} > .magic-parent > [class^="magic-child"] > * {
-      margin: var(#{$var});
+      margin: calc(var(#{$var})/2);
     }
   }
 .magic-parent {
@@ -2262,4 +2262,8 @@ $margin-class-names: (
 
 .display-none {
     display: none;
+}
+
+.noscroll{
+    overflow: hidden;
 }

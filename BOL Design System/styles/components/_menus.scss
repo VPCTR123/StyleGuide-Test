@@ -73,13 +73,16 @@
     &.men-fullVr {
         height: 100%;
     }
+
     &.men-fullHr {
         width: 100%;
     }
-    &.men-full{
+
+    &.men-full {
         width: 100%;
         height: 100%;
     }
+
 }
 
 .selector {
@@ -87,8 +90,6 @@
     background-color: lightgray;
     list-style: none;
     font-size: 0.8125rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
 
     text-decoration: none;
     display: flex;
@@ -98,37 +99,76 @@
 
     //** Size Variants
     &.sel-xxs {
-        height: 1rem;
+        --selectorH: 1rem;
         line-height: 1rem;
     }
 
     &.sel-xs {
-        height: 2rem;
+        --selectorH: 2rem;
         line-height: 2rem;
     }
 
     &.sel-sm {
-        height: 3rem;
+        --selectorH: 3rem;
         line-height: 3rem;
     }
 
     &.sel-md {
-        height: 4rem;
+        --selectorH: 4rem;
         line-height: 4rem;
     }
 
     &.sel-lg {
-        height: 5rem;
+        --selectorH: 5rem;
         line-height: 5rem;
     }
 
     &.sel-xl {
-        height: 6rem;
+        --selectorH: 6rem;
         line-height: 6rem;
     }
 
     &.sel-xxl {
-        height: 7rem;
+        --selectorH: 7rem;
         line-height: 7rem;
     }
+
+    height: var(--selectorH);
+
+    &.sel-square {
+        width: var(--selectorH);
+    }
+
+    &.sel-bordered {
+        border: 1px solid;
+    }
+
+
+}
+
+
+.selector-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    overflow: hidden;
+    flex-wrap: wrap;
+    gap: 1px;
+
+    & .selector {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &>input {
+            display: none;
+        }
+
+
+    }
+
+
+
 }
