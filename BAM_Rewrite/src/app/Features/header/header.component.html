@@ -51,11 +51,12 @@
                         </div>
                         <hr class="hr-sm">
                         <ul>
-                            <li><a class="selector padding pad-xsHr">Messages</a></li>
+                            <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['messages'])" class="selector padding pad-xsHr">Messages</a></li>
                             <hr>
-                            <li><a class="selector padding pad-xsHr" href="updateinfo.html">Update Info</a></li>
+                            <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['contact'])" class="selector padding pad-xsHr">Update Info</a></li>
                             <hr>
-                            <li><a class="selector padding pad-xsHr" href="caclogin.html">Log Out</a></li>
+                            <!--This will have to eventually be made to *actually* log someone out, not just take them to the login-->
+                            <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['messages'])" class="selector padding pad-xsHr">Log Out</a></li>
                             <hr>
                         </ul>
                     </div>

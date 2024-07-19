@@ -503,6 +503,34 @@
           </code></pre>
         </div>
       </app-sample>
+      <app-sample *ngSwitchCase="'dropdowns'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Dropdowns</div>
+            <div class="description">
+              Used to give a list of preselected options.
+            </div>
+            <div class="example w25p">
+              <div class="margin mar-mdB">
+              <app-dropdown [options]="dropdownOptions"></app-dropdown>
+            </div>
+            </div>
+            <div class="bestpractice">Dropdown best practice</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('dropdowns') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('dropdowns')"></span>
+            
+          </code></pre>
+        </div>
+      </app-sample>
     </ng-container>
   </div>
 </div>

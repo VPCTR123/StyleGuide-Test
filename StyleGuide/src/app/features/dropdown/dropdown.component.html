@@ -1,0 +1,18 @@
+<div class="search-dropdown content con-100p">
+    <input type="text" aria-label="Select App" autocomplete="off" class="inp-fullHr pill padding pad-smHr ">
+    <div class="search-dropdown-icon padding pad-smHr">
+        <span class="icon ico-sm ico-carret-l"></span>
+    </div>
+    <div class="popup content con-100p">
+        <div class="menu men-full margin mar-smT pill pil-sm">
+            <div class="spacer spa-xxs"></div>
+            <ul class=" content con-xxsMaxVr con-scrollY">
+                <li *ngFor="let option of options()">
+                    <a class="selector padding pad-xsHr">{{option}}</a>
+                    <hr>
+                </li>
+            </ul>
+            <div class="spacer spa-xxs"></div>
+        </div>
+    </div>
+</div>
