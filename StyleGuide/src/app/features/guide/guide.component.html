@@ -71,6 +71,11 @@
             <div class="title">Input</div>
             <div class="description">Text input with validation messages. Uses Vest validation. </div>
             <div class="example w25p">
+              <h3>Basic Input Field</h3>
+              <input type="text" autocomplete="off" class="pill content con-100p margin mar-smVr padding pad-smHr">
+              <h3>Large Text Area</h3>
+              <textarea id="App Descrpition" class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>                                  
+              <h3>Input Forms Validation</h3>
               <div class=" flex fle-column gap gap-sm">
                 <app-forms></app-forms>
               </div>
@@ -499,6 +504,34 @@
         </div>
         <div class="typescript">
           <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('menus')"></span>
+            
+          </code></pre>
+        </div>
+      </app-sample>
+      <app-sample *ngSwitchCase="'dropdowns'" class="w100p">
+        <div class="docs">
+          <app-docs>
+            <div class="title">Dropdowns</div>
+            <div class="description">
+              Used to give a list of preselected options.
+            </div>
+            <div class="example w25p">
+              <div class="margin mar-mdB">
+              <app-dropdown [options]="dropdownOptions"></app-dropdown>
+            </div>
+            </div>
+            <div class="bestpractice">Dropdown best practice</div>
+          </app-docs>
+        </div>
+        <div class="html">
+          <pre><code  class="language-xml highlight"><span [innerHtml]=" 
+              findSample('dropdowns') | sanitizeHtml">
+              
+            </span>
+          </code></pre>
+        </div>
+        <div class="typescript">
+          <pre><code  class="language-typescript highlight"><span [innerHtml]="findScript('dropdowns')"></span>
             
           </code></pre>
         </div>

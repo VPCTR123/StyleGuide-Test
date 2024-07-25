@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './Pages/contact/contact.component';
 import { FAQComponent } from './Pages/faq/faq.component';
 import { ControlPanelComponent } from './Pages/control-panel/control-panel.component';
+import { MessagesComponent } from './Pages/messages/messages.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent},
     { path: 'faq', component: FAQComponent},
     { path: 'controlpanel', component: ControlPanelComponent},
+    { path: 'messages', component: MessagesComponent},
     { path: '**', redirectTo: 'login', pathMatch: 'full' }
 ];
