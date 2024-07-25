@@ -1326,15 +1326,16 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
         }
     }
 }
+
 //vars for forloops
 $size-class-names: (
-  'xxs': $celXxs,
-  'xs': $celXs,
-  'sm': $celSm,
-  'md': $celMd,
-  'lg': $celLg,
-  'xl': $celXl,
-  'xxl': $celXl
+    'xxs': $celXxs,
+    'xs': $celXs,
+    'sm': $celSm,
+    'md': $celMd,
+    'lg': $celLg,
+    'xl': $celXl,
+    'xxl': $celXl
 );
 
 $magic-classes: mag-xxs, mag-xs, mag-sm, mag-md, mag-lg, mag-xl, mag-xxl;
@@ -1346,30 +1347,44 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
     $var: nth($magic-vars, $j);
 
     @for $i from 1 through 8 {
+
         @if $i ==1 {
             @container magic (max-width: calc(#{$var} * 2)) {
-                .#{$class}>.magic {
+                .#{$class} {
 
                     width: #{$var};
+
+                    &>.magic-parent *.fle-flipflop {
+
+                        flex-direction: column;
+                    }
                 }
+
+
             }
+
+
         }
 
         @else if $i ==8 {
             @container magic (min-width: calc(#{$var} * #{$i})) {
-                .#{$class}>.magic {
+                .#{$class} {
                     max-width: calc(#{$var} * #{$i});
 
                 }
+
+
+
             }
         }
 
         @else {
             @container magic (width > calc(#{$var} * #{$i})) and (max-width: calc(#{$var} * #{ $i + 1})) {
-                .#{$class}>.magic {
+                .#{$class} {
                     width: calc(#{$var} * #{$i});
 
                 }
+
             }
         }
 
@@ -1390,15 +1405,15 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
 
 // multi cells (magic-child2) FOR CONTENT
 @each $size, $width in $size-class-names {
-  .mag-#{$size} > .magic-parent > .magic-child {
-    width: $width;
-  }
-
-  @for $i from 1 through 8 {
-    .mag-#{$size} > .magic-parent > .magic-child#{$i} {
-      width: $width * $i;
+    .mag-#{$size}>.magic-parent>.magic-child {
+        width: $width;
     }
-  }
+
+    @for $i from 1 through 8 {
+        .mag-#{$size}>.magic-parent>.magic-child#{$i} {
+            width: $width * $i;
+        }
+    }
 }
 
 //  multi cells (cel-md2cells) FOR HEADERS
@@ -1413,28 +1428,34 @@ $magic-vars: $celXxs, $celXs, $celSm, $celMd, $celLg, $celXl, $celXxl;
         }
     }
 }
+
 $margin-class-names: (
-  'xxs': '--marXxs',
-  'xs': '--marXs',
-  'sm': '--marSm',
-  'md': '--marMd',
-  'lg': '--marLg',
-  'xl': '--marXl',
-  'xxl': '--marXxl'
+    'xxs': '--marXxs',
+    'xs': '--marXs',
+    'sm': '--marSm',
+    'md': '--marMd',
+    'lg': '--marLg',
+    'xl': '--marXl',
+    'xxl': '--marXxl'
 );
 
 @each $size, $var in $margin-class-names {
-    .mag-gap-#{$size} > .magic-parent > [class^="magic-child"] > * {
-      margin: calc(var(#{$var})/2);
+    .mag-gap-#{$size}>.magic-parent>[class^="magic-child"]>* {
+        margin: calc(var(#{$var})/2);
     }
-  }
+}
+
 .magic-parent {
     margin-left: auto;
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
+   
 }
-
+.magic.mag-standardFlow>.magic-parent{
+    width: 100% ;
+    
+}
 
 //** Margin Modifier Component 
 .margin {
@@ -2264,6 +2285,6 @@ $margin-class-names: (
     display: none;
 }
 
-.noscroll{
+.noscroll {
     overflow: hidden;
 }

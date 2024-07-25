@@ -41,21 +41,29 @@
     //and indicate if no theme is applied
 
     $base: null;
-    $primary: null;
+
+    $highlight: null;
 
     @if $theme==default {
         $base: hsl(0, 0%, 100%);
 
-        $primary: hsl(213, 100%, 64%);
+        $highlight: hsl(213, 100%, 64%);
+        // $highlight: hsl(325, 86%, 47%);
     }
 
     @if $theme==dark {
-        $base: hsl(0, 0%, 3%);
+        $base: hsl(0, 0%, 0%);
 
-        $primary: hsl(266, 57%, 49%);
+        $highlight: hsl(266, 57%, 49%);
+        // $highlight: hsl(325, 86%, 47%);
+
     }
 
-    $success: hsl(129, 67%, 41%);
+.redd{
+    color: red !important;
+}
+
+    $success: hsl(129, 69%, 41%);
 
     $baseInv: invert-lightness($base);
     $base33: color-mix(in srgb, $base 33%, $baseInv 66%);
@@ -69,15 +77,373 @@
     $base85: color-mix(in srgb, $base 85%, $baseInv 15%);
     $base90: color-mix(in srgb, $base 90%, $baseInv 10%);
     $base95: color-mix(in srgb, $base 95%, $baseInv 5%);
-    $warn: hsl(39, 76%, 49%);
 
+    $primary: color-mix(in srgb, $baseInv 40%, $highlight 100%);
+    $warn: color-mix(in srgb, $baseInv 10%, hsl(26, 100%, 36%) 100%);
+    $secondary: color-mix(in srgb, $base33 90%, $highlight 10%);
+    // valid colors for contrast ratios DO NOT DELETE
+    // $warn: color-mix(in srgb, $baseInv 10%, hsl(26, 100%, 36%) 100%);
+    // $primary: color-mix(in srgb, $baseInv 40%, $highlight 100%);
 
 
 
     $userColor: null;
     $userColor: var(--userColor);
 
-    @include textcolor($baseInv);
+    // @include textcolor($baseInv);
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: $base33;
+    }
+
+    a.selector {
+        color: $base33;
+    }
+
+    button,
+    .button {
+
+        transition: background-color .15s;
+
+        &:active {
+            transition: background-color 0s;
+        }
+
+
+        &.base {
+            background-color: $base;
+            @include textcolor($base33);
+
+            &:hover {
+                background-color: $primary;
+                @include textcolor($base);
+
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $primary, $baseInv);
+                @include textcolor($base);
+            }
+        }
+
+        &.but-bordered {
+            border-color: $base75;
+        }
+
+
+
+
+        &.primary {
+            box-shadow: 0px 0px 0 2px $primary inset;
+            background-color: color-mix(in srgb, $primary 20%, $base);
+            color: color-mix(in srgb, $primary 90%, $baseInv);
+
+            &>.icon,
+            .element {
+                color: color-mix(in srgb, $primary 90%, $baseInv);
+            }
+
+
+            &.ghost {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background-color: $primary;
+                color: color-mix(in srgb, $primary 20%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 20%, $base);
+                }
+
+            }
+
+            &.test-hover {
+                background-color: $primary;
+                color: color-mix(in srgb, $primary 10%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 20%, $base);
+                }
+
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $primary 60%, $base);
+                color: color-mix(in srgb, $primary 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $primary inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 40%, $baseInv);
+                }
+
+            }
+
+            &.test-active {
+                background-color: color-mix(in srgb, $primary 60%, $base);
+                color: color-mix(in srgb, $primary 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $primary inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 40%, $baseInv);
+                }
+
+            }
+
+            &.disabled {
+                background-color: $base50;
+                pointer-events: none;
+            }
+
+        }
+
+        &.secondary {
+            box-shadow: 0px 0px 0px 2px $secondary inset;
+            background-color: color-mix(in srgb, $secondary 20%, $base);
+            color: color-mix(in srgb, $secondary 90%, $baseInv);
+
+            &>.icon,
+            .element {
+                color: color-mix(in srgb, $secondary 90%, $baseInv);
+            }
+
+            &.ghost {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background-color: $secondary;
+                color: color-mix(in srgb, $secondary 20%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $secondary 20%, $base);
+                }
+            }
+
+            &.test-hover {
+                background-color: $secondary;
+                color: color-mix(in srgb, $secondary 10%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $secondary 10%, $base);
+                }
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $secondary 60%, $base);
+                color: color-mix(in srgb, $secondary 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $secondary inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $secondary 40%, $baseInv);
+                }
+
+            }
+
+            &.test-active {
+                background-color: color-mix(in srgb, $secondary 60%, $base);
+                color: color-mix(in srgb, $secondary 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $secondary inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $secondary 40%, $baseInv);
+                }
+            }
+
+            &.disabled {
+                background-color: $base50;
+                pointer-events: none;
+            }
+
+
+        }
+
+        &.secondary-alt {
+            box-shadow: 0px 0px 0px 2px $primary inset;
+            background-color: color-mix(in srgb, $secondary 20%, $base);
+            color: color-mix(in srgb, $secondary 90%, $baseInv);
+
+            &>.icon,
+            .element {
+                color: color-mix(in srgb, $secondary 90%, $baseInv);
+            }
+
+            &.ghost {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background-color: $primary;
+                color: color-mix(in srgb, $primary 20%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 20%, $base);
+                }
+            }
+
+            &.test-hover {
+                background-color: $primary;
+                color: color-mix(in srgb, $primary 10%, $base);
+
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 10%, $base);
+                }
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $primary 60%, $base);
+                color: color-mix(in srgb, $primary 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $primary inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 40%, $baseInv);
+                }
+
+            }
+
+            &.test-active {
+                background-color: color-mix(in srgb, $primary 60%, $base);
+                color: color-mix(in srgb, $primary 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $primary inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 40%, $baseInv);
+                }
+            }
+
+            &.disabled {
+                background-color: $base50;
+                pointer-events: none;
+            }
+
+
+        }
+
+        &.warn {
+            box-shadow: 0px 0px 0px 2px $warn inset;
+            background-color: color-mix(in srgb, $warn 20%, $base);
+            color: color-mix(in srgb, $warn 90%, $baseInv);
+
+            &>.icon,
+            .element {
+                color: color-mix(in srgb, $warn 90%, $baseInv);
+            }
+
+            &.ghost {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background-color: $warn;
+                color: color-mix(in srgb, $warn 20%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $warn 20%, $base);
+                }
+            }
+
+            &.test-hover {
+                background-color: $warn;
+                color: color-mix(in srgb, $warn 10%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $warn 10%, $base);
+                }
+            }
+
+            &:active {
+                background-color: color-mix(in srgb, $warn 60%, $base);
+                color: color-mix(in srgb, $warn 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $warn inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $warn 40%, $baseInv);
+                }
+
+            }
+
+            &.test-active {
+                background-color: color-mix(in srgb, $warn 60%, $base);
+                color: color-mix(in srgb, $warn 40%, $baseInv);
+                box-shadow: 0px 0px 4px 2px $warn inset;
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $warn 40%, $baseInv);
+                }
+            }
+
+            &.disabled {
+                background-color: $base50;
+                pointer-events: none;
+            }
+        }
+
+        // &.warn {
+
+        //     background-color: $warn;
+        //     color: $base;
+
+        //     &>.icon {
+        //         color: $base;
+        //     }
+
+        //     &:hover {
+        //         background-color: color-mix(in srgb, $warn 75%, $baseInv);
+        //         color: $base;
+
+        //         &>.icon {
+        //             color: $baseInv;
+        //         }
+        //     }
+
+        //     &:active {
+        //         background-color: color-mix(in srgb, $warn 60%, $base);
+        //         color: $baseInv;
+
+        //         &>.icon {
+        //             color: $baseInv;
+        //         }
+
+        //     }
+
+        //     &.disabled {
+        //         background-color: $base50;
+        //         pointer-events: none;
+        //     }
+        // }
+    }
+
+    .test-hover,
+    .test-active {
+        padding: .2rem;
+    }
+
+
+
+
+
 
     a {
         color: $primary;
@@ -96,6 +462,9 @@
         background-color: $base;
     }
 
+    .left-fade,
+    .right-fade {}
+
     .left-fade {
         background-image: linear-gradient(to right, $base, transparent);
     }
@@ -113,7 +482,10 @@
     }
 
     .overlay {
-        background-color: hsla(0, 0%, 3%, 0.50);
+        background-color: $base50;
+        transition: opacity .5s;
+        opacity: 40%;
+
     }
 
     .drawer-handle {
@@ -131,7 +503,7 @@
 
         &>input:checked+.icon {
             transition-property: color .2s;
-            color: $primary;
+            color: $highlight;
         }
     }
 
@@ -140,13 +512,23 @@
         transition: background-color 1s, box-shadow .25s;
 
 
-        background-color: $base85;
+        background-color: $base90;
         color: $base10;
+
+        &.tint {
+            &.tint {
+                background-color: color-mix(in srgb, $base85 95%, $highlight 5%);
+            }
+        }
 
         &.scrolled {
             background-color: $base;
 
             box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
+
+            &.tint {
+                background-color: color-mix(in srgb, $base 95%, $highlight 5%);
+            }
         }
     }
 
@@ -166,23 +548,25 @@
         background-color: red;
     }
 
-    &.theme-dark {
-
-        .nav,
-        nav {
-            &.scrolled {
-                background-color: $base90;
-            }
-        }
-
-        .menu, .card {
-            background-color: $base90;
-            box-shadow: 0 0.1rem .8rem -0.3rem black;
-        }
+    input[type='radio']:after {
+        width: .75rem;
+        aspect-ratio: 1/1;
+        border-radius: 100%;
 
 
+        background-color: $base85;
+        content: '';
+        display: inline-block;
+        position: relative;
+        top: -2px;
+        border: 2px solid $base;
+        outline: 2px solid $base66;
+    }
 
-
+    input[type='radio']:checked:after {
+        outline: 2px solid color-mix(in srgb, $base66 66%, $highlight 33%);
+        background-color: $highlight;
+        border: 2px solid color-mix(in srgb, $base 66%, $highlight 33%);
 
     }
 
@@ -194,24 +578,25 @@
     input[type="number"],
     input[type="search"],
     textarea {
-        background-color: $base;
-        color: $baseInv;
+        background-color: $base95;
+        color: $base33;
         border-color: $base75;
+        border: 2px solid $base75;
 
         &:focus {
-            box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
+            box-shadow: 0 0 5px 0 $base75;
             outline: none;
         }
 
         &:hover {
-            box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.383);
+            box-shadow: 0 0 3px 0 $base75;
 
             &:focus {
-                box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
+                box-shadow: 0 0 5px 0 $base75;
             }
 
             &:active {
-                box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.383);
+                box-shadow: 0 0 2px 0 $base75;
             }
         }
     }
@@ -234,138 +619,118 @@
 
 
 
-    button,
-    .button {
-        &.base {
-            background-color: $base;
-            @include textcolor($base33);
-
-            &:hover {
-                background-color: $primary;
-                @include textcolor($base);
-
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $primary, $baseInv);
-                @include textcolor($base);
-            }
-        }
-
-        &.but-bordered {
-            border-color: $base75;
-        }
-
-        &.secondary {
-
-            background-color: $base75;
-            @include textcolor($base10);
-
-            &:hover {
-                background-color: color-mix(in srgb, $base75 75%, $baseInv);
-                @include textcolor($base);
-
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $base75, $baseInv);
-                @include textcolor($base);
-            }
-
-        }
-
-        &.primary {
-
-            background-color: color-mix(in srgb, $primary 55%, $base);
-            @include textcolor($base10);
-            color: $base10;
-
-            &:hover {
-                background-color: color-mix(in srgb, $primary 75%, $baseInv);
-                @include textcolor($base);
-                color: $base;
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $primary, $baseInv);
-                @include textcolor($base);
-                color: $base;
-            }
-
-            &.disabled {
-                background-color: $base50;
-            }
-
-        }
-
-        &.warn {
-            background-color: $warn;
-            @include textcolor($base10);
-            color: $base10;
-
-            &:hover {
-                background-color: color-mix(in srgb, $warn 75%, $baseInv);
-                @include textcolor($base10);
-                color: $base;
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $warn, $baseInv);
-                @include textcolor($base10);
-                color: $base;
-            }
-
-            &.disabled {
-                background-color: $base50;
-            }
-        }
-    }
-
-
-
-
-
-
 
 
     button.user-color {
-        background-color: $userColor;
-        @include textcolor(white);
+        box-shadow: 0px 0px 0 2px $userColor inset;
+        background-color: color-mix(in srgb, $userColor 20%, $base);
+        color: color-mix(in srgb, $userColor 90%, $baseInv);
+
+        &>.icon,
+        .element {
+            color: color-mix(in srgb, $userColor 90%, $baseInv);
+        }
+
 
         &:hover {
-            background-color: color-mix(in srgb, $userColor 80%, $baseInv 20%);
+            background-color: $userColor;
+            color: color-mix(in srgb, $userColor 20%, $base);
+
+            &>.element {
+                color: color-mix(in srgb, $userColor 20%, $base);
+            }
+
+            &>.icon {
+                color: color-mix(in srgb, $userColor 20%, $base);
+            }
         }
 
         &:active {
-            background-color: color-mix(in srgb, $userColor 60%, $baseInv 40%);
+            background-color: color-mix(in srgb, $userColor 60%, $base);
+            color: color-mix(in srgb, $userColor 40%, $baseInv);
+            box-shadow: 0px 0px 4px 2px $userColor inset;
+
+            &>.icon {
+                color: color-mix(in srgb, $userColor 40%, $baseInv);
+            }
+
+            &>.element {
+                color: color-mix(in srgb, $userColor 40%, $baseInv);
+            }
+
         }
     }
 
     .card {
-        box-shadow: 0px 0px 0px 1px $base75 inset;
-        background-color: $base;
+        background-color: $base90;
+    }
+
+    .car-border {
+        box-shadow: 0px 0px 0px 2px $base75 inset;
+
         // @include textcolor($base15);
 
     }
 
-    .car-borderless {
-        box-shadow: none;
+    .car-shadow {
+        box-shadow: 0 0 5px 0 color-mix(in srgb, black 50%, $base 50%);
     }
 
+
     .selector-grid {
-        border: 1px solid $base50;
-        background-color: $base90;
+        border: 4px solid $base75;
+        display: grid;
+        gap: .2rem;
+        background-color: $base75;
 
         &>.selector {
-            background-color: $base;
 
-            >.icon {
-                color: $base50;
+
+            background-color: $base85;
+
+
+            &>.icon,
+            .element {
+                color: $base33;
+            }
+
+
+
+            &:hover {
+                background-color: $primary;
+                color: color-mix(in srgb, $primary 20%, $base);
+
+                &>.icon,
+                .element {
+                    color: color-mix(in srgb, $primary 20%, $base);
+                }
+
+            }
+
+
+            &.ghost {
+                box-shadow: none;
+            }
+
+
+
+            &.disabled {
+                background-color: $base50;
+                pointer-events: none;
             }
         }
 
-        & .selector:has(> input:checked) {
-            background-color: color-mix(in srgb, $base 33%, $primary 66%);
+        & .selector:has(> input:checked),
+        .selector:active {
+            background-color: color-mix(in srgb, $primary 60%, $base);
+            color: color-mix(in srgb, $primary 40%, $baseInv);
+            box-shadow: 0px 0px 4px 2px $primary inset;
+
+            &>.icon,
+            .element {
+                color: color-mix(in srgb, $primary 40%, $baseInv);
+            }
+
         }
     }
 
@@ -375,25 +740,52 @@
     }
 
     .menu {
-        background-color: $base;
+        background-color: $base85;
         box-shadow: 0 0.1rem .8rem -0.3rem black;
+
 
     }
 
     .selector {
 
         background-color: inherit;
-        color: $base33;
 
         &:hover {
             background-color: $primary;
+            color: color-mix(in srgb, $primary 20%, $base);
+
+            &>.element {
+                color: color-mix(in srgb, $primary 20%, $base);
+            }
+
+            &>.icon {
+                color: color-mix(in srgb, $primary 20%, $base);
+            }
         }
+
+        &:active {
+            background-color: color-mix(in srgb, $primary 60%, $base);
+            color: color-mix(in srgb, $primary 40%, $baseInv);
+            box-shadow: 0px 0px 4px 2px $primary inset;
+
+            &>.icon {
+                color: color-mix(in srgb, $primary 40%, $baseInv);
+            }
+
+            &>.element {
+                color: color-mix(in srgb, $primary 40%, $baseInv);
+            }
+
+        }
+
+
+
 
 
     }
 
     .toggle {
-        background-color: $base85;
+        background-color: $base75;
 
         &>span {
             background-color: $base;
@@ -431,62 +823,126 @@
 
     .base-color {
         color: $base;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base 95%, $highlight 5%);
+        }
     }
 
     .base10 {
         background-color: $base10;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base10 95%, $highlight 5%);
+        }
     }
 
     .base15 {
         background-color: $base15;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base15 95%, $highlight 5%);
+        }
     }
 
     .base25 {
         background-color: $base25;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base25 95%, $highlight 5%);
+        }
     }
 
     .base33 {
         background-color: $base33;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base33 95%, $highlight 5%);
+        }
     }
 
     .base50 {
         background-color: $base50;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base50 95%, $highlight 5%);
+        }
     }
 
     .base66 {
         background-color: $base66;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base66 95%, $highlight 5%);
+        }
     }
 
     .base75 {
         background-color: $base75;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base75 95%, $highlight 5%);
+        }
     }
 
     .base85 {
         background-color: $base85;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base85 95%, $highlight 5%);
+        }
     }
 
     .base90 {
         background-color: $base90;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base90 95%, $highlight 5%);
+        }
     }
 
     .base15 {
         background-color: $base5;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base15 95%, $highlight 5%);
+        }
     }
 
     .base95 {
         background-color: $base95;
+
+        &.tint {
+            background-color: color-mix(in srgb, $base95 95%, $highlight 5%);
+        }
     }
 
     .baseInv {
         background-color: $baseInv;
+
+        &.tint {
+            background-color: color-mix(in srgb, $baseInv 95%, $highlight 5%);
+        }
     }
 
     .success {
         background-color: $success;
+
+        &.tint {
+            background-color: color-mix(in srgb, $success 75%, $highlight 25%);
+        }
+
+        &>.element {
+            color: color-mix(in srgb, $success 25%, $base 75%);
+        }
+
+        // &>.element-alt {
+        //     color: color-mix(in srgb, $success 35%, $baseInv 65%);
+        // }
     }
 
     hr {
-        border-color: $base95;
+        border-color: $base75;
     }
 
     .hr-highlight {

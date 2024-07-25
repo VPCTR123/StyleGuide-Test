@@ -3,10 +3,7 @@
 //** Menu Component - A (div) frame that pairs with different components to create a variety of different menu styles.
 .menu {
     //** Max width prevents modal style menus from exceeding the bounds of the monitor.
-    max-width: 90vw;
-    //** Max height calc also stops very long text bodies from extending forever,
-    //** eventually forcing scroll. 
-    max-height: calc(min(90vh, 100rem));
+   
 
     //** Basic properties
     background-color: white;

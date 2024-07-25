@@ -684,6 +684,10 @@ hr.hr-xl,
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.popup.menu, .popup .card {
+  max-width: 90vw;
+  max-height: min(90vh, 100rem);
+}
 .popup.pop-debug {
   background-color: red;
   width: 2rem;
@@ -804,8 +808,6 @@ hr.hr-xl,
 }
 
 .menu {
-  max-width: 90vw;
-  max-height: min(90vh, 100rem);
   background-color: white;
   overflow: hidden;
 }
@@ -3414,12 +3416,15 @@ nav.nav-main {
 }
 
 @container magic (max-width: calc(6rem * 2)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     width: 6rem;
+  }
+  .mag-xxs > .magic-parent *.fle-flipflop {
+    flex-direction: column;
   }
 }
 @container magic (width > calc(6rem * 2)) and (max-width: calc(6rem * 3)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     width: calc(6rem * 2);
   }
 }
@@ -3430,7 +3435,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(6rem * 3)) and (max-width: calc(6rem * 4)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     width: calc(6rem * 3);
   }
 }
@@ -3447,7 +3452,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(6rem * 4)) and (max-width: calc(6rem * 5)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     width: calc(6rem * 4);
   }
 }
@@ -3470,7 +3475,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(6rem * 5)) and (max-width: calc(6rem * 6)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     width: calc(6rem * 5);
   }
 }
@@ -3499,7 +3504,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(6rem * 6)) and (max-width: calc(6rem * 7)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     width: calc(6rem * 6);
   }
 }
@@ -3534,7 +3539,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(6rem * 7)) and (max-width: calc(6rem * 8)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     width: calc(6rem * 7);
   }
 }
@@ -3575,7 +3580,7 @@ nav.nav-main {
 }
 
 @container magic (min-width: calc(6rem * 8)) {
-  .mag-xxs > .magic {
+  .mag-xxs {
     max-width: calc(6rem * 8);
   }
 }
@@ -3622,12 +3627,15 @@ nav.nav-main {
 }
 
 @container magic (max-width: calc(9rem * 2)) {
-  .mag-xs > .magic {
+  .mag-xs {
     width: 9rem;
+  }
+  .mag-xs > .magic-parent *.fle-flipflop {
+    flex-direction: column;
   }
 }
 @container magic (width > calc(9rem * 2)) and (max-width: calc(9rem * 3)) {
-  .mag-xs > .magic {
+  .mag-xs {
     width: calc(9rem * 2);
   }
 }
@@ -3638,7 +3646,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(9rem * 3)) and (max-width: calc(9rem * 4)) {
-  .mag-xs > .magic {
+  .mag-xs {
     width: calc(9rem * 3);
   }
 }
@@ -3655,7 +3663,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(9rem * 4)) and (max-width: calc(9rem * 5)) {
-  .mag-xs > .magic {
+  .mag-xs {
     width: calc(9rem * 4);
   }
 }
@@ -3678,7 +3686,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(9rem * 5)) and (max-width: calc(9rem * 6)) {
-  .mag-xs > .magic {
+  .mag-xs {
     width: calc(9rem * 5);
   }
 }
@@ -3707,7 +3715,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(9rem * 6)) and (max-width: calc(9rem * 7)) {
-  .mag-xs > .magic {
+  .mag-xs {
     width: calc(9rem * 6);
   }
 }
@@ -3742,7 +3750,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(9rem * 7)) and (max-width: calc(9rem * 8)) {
-  .mag-xs > .magic {
+  .mag-xs {
     width: calc(9rem * 7);
   }
 }
@@ -3783,7 +3791,7 @@ nav.nav-main {
 }
 
 @container magic (min-width: calc(9rem * 8)) {
-  .mag-xs > .magic {
+  .mag-xs {
     max-width: calc(9rem * 8);
   }
 }
@@ -3830,12 +3838,15 @@ nav.nav-main {
 }
 
 @container magic (max-width: calc(13rem * 2)) {
-  .mag-sm > .magic {
+  .mag-sm {
     width: 13rem;
+  }
+  .mag-sm > .magic-parent *.fle-flipflop {
+    flex-direction: column;
   }
 }
 @container magic (width > calc(13rem * 2)) and (max-width: calc(13rem * 3)) {
-  .mag-sm > .magic {
+  .mag-sm {
     width: calc(13rem * 2);
   }
 }
@@ -3846,7 +3857,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(13rem * 3)) and (max-width: calc(13rem * 4)) {
-  .mag-sm > .magic {
+  .mag-sm {
     width: calc(13rem * 3);
   }
 }
@@ -3863,7 +3874,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(13rem * 4)) and (max-width: calc(13rem * 5)) {
-  .mag-sm > .magic {
+  .mag-sm {
     width: calc(13rem * 4);
   }
 }
@@ -3886,7 +3897,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(13rem * 5)) and (max-width: calc(13rem * 6)) {
-  .mag-sm > .magic {
+  .mag-sm {
     width: calc(13rem * 5);
   }
 }
@@ -3915,7 +3926,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(13rem * 6)) and (max-width: calc(13rem * 7)) {
-  .mag-sm > .magic {
+  .mag-sm {
     width: calc(13rem * 6);
   }
 }
@@ -3950,7 +3961,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(13rem * 7)) and (max-width: calc(13rem * 8)) {
-  .mag-sm > .magic {
+  .mag-sm {
     width: calc(13rem * 7);
   }
 }
@@ -3991,7 +4002,7 @@ nav.nav-main {
 }
 
 @container magic (min-width: calc(13rem * 8)) {
-  .mag-sm > .magic {
+  .mag-sm {
     max-width: calc(13rem * 8);
   }
 }
@@ -4038,12 +4049,15 @@ nav.nav-main {
 }
 
 @container magic (max-width: calc(25rem * 2)) {
-  .mag-md > .magic {
+  .mag-md {
     width: 25rem;
+  }
+  .mag-md > .magic-parent *.fle-flipflop {
+    flex-direction: column;
   }
 }
 @container magic (width > calc(25rem * 2)) and (max-width: calc(25rem * 3)) {
-  .mag-md > .magic {
+  .mag-md {
     width: calc(25rem * 2);
   }
 }
@@ -4054,7 +4068,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(25rem * 3)) and (max-width: calc(25rem * 4)) {
-  .mag-md > .magic {
+  .mag-md {
     width: calc(25rem * 3);
   }
 }
@@ -4071,7 +4085,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(25rem * 4)) and (max-width: calc(25rem * 5)) {
-  .mag-md > .magic {
+  .mag-md {
     width: calc(25rem * 4);
   }
 }
@@ -4094,7 +4108,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(25rem * 5)) and (max-width: calc(25rem * 6)) {
-  .mag-md > .magic {
+  .mag-md {
     width: calc(25rem * 5);
   }
 }
@@ -4123,7 +4137,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(25rem * 6)) and (max-width: calc(25rem * 7)) {
-  .mag-md > .magic {
+  .mag-md {
     width: calc(25rem * 6);
   }
 }
@@ -4158,7 +4172,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(25rem * 7)) and (max-width: calc(25rem * 8)) {
-  .mag-md > .magic {
+  .mag-md {
     width: calc(25rem * 7);
   }
 }
@@ -4199,7 +4213,7 @@ nav.nav-main {
 }
 
 @container magic (min-width: calc(25rem * 8)) {
-  .mag-md > .magic {
+  .mag-md {
     max-width: calc(25rem * 8);
   }
 }
@@ -4246,12 +4260,15 @@ nav.nav-main {
 }
 
 @container magic (max-width: calc(37rem * 2)) {
-  .mag-lg > .magic {
+  .mag-lg {
     width: 37rem;
+  }
+  .mag-lg > .magic-parent *.fle-flipflop {
+    flex-direction: column;
   }
 }
 @container magic (width > calc(37rem * 2)) and (max-width: calc(37rem * 3)) {
-  .mag-lg > .magic {
+  .mag-lg {
     width: calc(37rem * 2);
   }
 }
@@ -4262,7 +4279,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(37rem * 3)) and (max-width: calc(37rem * 4)) {
-  .mag-lg > .magic {
+  .mag-lg {
     width: calc(37rem * 3);
   }
 }
@@ -4279,7 +4296,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(37rem * 4)) and (max-width: calc(37rem * 5)) {
-  .mag-lg > .magic {
+  .mag-lg {
     width: calc(37rem * 4);
   }
 }
@@ -4302,7 +4319,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(37rem * 5)) and (max-width: calc(37rem * 6)) {
-  .mag-lg > .magic {
+  .mag-lg {
     width: calc(37rem * 5);
   }
 }
@@ -4331,7 +4348,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(37rem * 6)) and (max-width: calc(37rem * 7)) {
-  .mag-lg > .magic {
+  .mag-lg {
     width: calc(37rem * 6);
   }
 }
@@ -4366,7 +4383,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(37rem * 7)) and (max-width: calc(37rem * 8)) {
-  .mag-lg > .magic {
+  .mag-lg {
     width: calc(37rem * 7);
   }
 }
@@ -4407,7 +4424,7 @@ nav.nav-main {
 }
 
 @container magic (min-width: calc(37rem * 8)) {
-  .mag-lg > .magic {
+  .mag-lg {
     max-width: calc(37rem * 8);
   }
 }
@@ -4454,12 +4471,15 @@ nav.nav-main {
 }
 
 @container magic (max-width: calc(50rem * 2)) {
-  .mag-xl > .magic {
+  .mag-xl {
     width: 50rem;
+  }
+  .mag-xl > .magic-parent *.fle-flipflop {
+    flex-direction: column;
   }
 }
 @container magic (width > calc(50rem * 2)) and (max-width: calc(50rem * 3)) {
-  .mag-xl > .magic {
+  .mag-xl {
     width: calc(50rem * 2);
   }
 }
@@ -4470,7 +4490,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(50rem * 3)) and (max-width: calc(50rem * 4)) {
-  .mag-xl > .magic {
+  .mag-xl {
     width: calc(50rem * 3);
   }
 }
@@ -4487,7 +4507,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(50rem * 4)) and (max-width: calc(50rem * 5)) {
-  .mag-xl > .magic {
+  .mag-xl {
     width: calc(50rem * 4);
   }
 }
@@ -4510,7 +4530,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(50rem * 5)) and (max-width: calc(50rem * 6)) {
-  .mag-xl > .magic {
+  .mag-xl {
     width: calc(50rem * 5);
   }
 }
@@ -4539,7 +4559,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(50rem * 6)) and (max-width: calc(50rem * 7)) {
-  .mag-xl > .magic {
+  .mag-xl {
     width: calc(50rem * 6);
   }
 }
@@ -4574,7 +4594,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(50rem * 7)) and (max-width: calc(50rem * 8)) {
-  .mag-xl > .magic {
+  .mag-xl {
     width: calc(50rem * 7);
   }
 }
@@ -4615,7 +4635,7 @@ nav.nav-main {
 }
 
 @container magic (min-width: calc(50rem * 8)) {
-  .mag-xl > .magic {
+  .mag-xl {
     max-width: calc(50rem * 8);
   }
 }
@@ -4662,12 +4682,15 @@ nav.nav-main {
 }
 
 @container magic (max-width: calc(75rem * 2)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     width: 75rem;
+  }
+  .mag-xxl > .magic-parent *.fle-flipflop {
+    flex-direction: column;
   }
 }
 @container magic (width > calc(75rem * 2)) and (max-width: calc(75rem * 3)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     width: calc(75rem * 2);
   }
 }
@@ -4678,7 +4701,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(75rem * 3)) and (max-width: calc(75rem * 4)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     width: calc(75rem * 3);
   }
 }
@@ -4695,7 +4718,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(75rem * 4)) and (max-width: calc(75rem * 5)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     width: calc(75rem * 4);
   }
 }
@@ -4718,7 +4741,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(75rem * 5)) and (max-width: calc(75rem * 6)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     width: calc(75rem * 5);
   }
 }
@@ -4747,7 +4770,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(75rem * 6)) and (max-width: calc(75rem * 7)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     width: calc(75rem * 6);
   }
 }
@@ -4782,7 +4805,7 @@ nav.nav-main {
 }
 
 @container magic (width > calc(75rem * 7)) and (max-width: calc(75rem * 8)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     width: calc(75rem * 7);
   }
 }
@@ -4823,7 +4846,7 @@ nav.nav-main {
 }
 
 @container magic (min-width: calc(75rem * 8)) {
-  .mag-xxl > .magic {
+  .mag-xxl {
     max-width: calc(75rem * 8);
   }
 }
@@ -5399,6 +5422,10 @@ nav.nav-main {
   margin-right: auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+.magic.mag-standardFlow > .magic-parent {
+  width: 100%;
 }
 
 .margin.mar-xxs {
@@ -6104,161 +6131,28 @@ nav.nav-main {
   height: 100%;
 }
 
+.theme-default .redd {
+  color: red !important;
+}
+.theme-default p,
 .theme-default h1,
 .theme-default h2,
 .theme-default h3,
 .theme-default h4,
 .theme-default h5,
-.theme-default h6,
-.theme-default p,
-.theme-default a,
-.theme-default strong,
-.theme-default i,
-.theme-default em,
-.theme-default mark,
-.theme-default small,
-.theme-default del,
-.theme-default ins,
-.theme-default sub,
-.theme-default sup,
-.theme-default time,
-.theme-default .icon,
-.theme-default button {
-  color: hsl(0, 0%, 0%);
+.theme-default h6 {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
 }
-.theme-default a {
-  color: hsl(213, 100%, 64%);
+.theme-default a.selector {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
 }
-.theme-default .text-danger {
-  color: red;
+.theme-default button,
+.theme-default .button {
+  transition: background-color 0.15s;
 }
-.theme-default .spacer {
-  opacity: 0 !important;
-}
-.theme-default .page-content,
-.theme-default .page-wrapper {
-  background-color: hsl(0, 0%, 100%);
-}
-.theme-default .left-fade {
-  background-image: linear-gradient(to right, hsl(0, 0%, 100%), transparent);
-}
-.theme-default .right-fade {
-  background-image: linear-gradient(to left, hsl(0, 0%, 100%), transparent);
-}
-.theme-default [class*=foco-][class$=R] {
-  background-image: linear-gradient(to left, hsl(0, 0%, 100%), transparent);
-}
-.theme-default [class*=foco-][class$=L] {
-  background-image: linear-gradient(to right, hsl(0, 0%, 100%), transparent);
-}
-.theme-default .overlay {
-  background-color: hsla(0, 0%, 3%, 0.5);
-}
-.theme-default .drawer-handle {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
-  box-shadow: 0px 2px 0.15rem 0px rgba(0, 0, 0, 0.228);
-}
-.theme-default .drawer-handle:hover {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
-}
-.theme-default .drawer-handle:active {
-  transition-property: background-color 0.2s;
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
-}
-.theme-default .drawer-handle > input:checked + .icon {
-  transition-property: color 0.2s;
-  color: hsl(213, 100%, 64%);
-}
-.theme-default .nav.nav-main,
-.theme-default nav.nav-main {
-  transition: background-color 1s, box-shadow 0.25s;
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
-}
-.theme-default .nav.nav-main.scrolled,
-.theme-default nav.nav-main.scrolled {
-  background-color: hsl(0, 0%, 100%);
-  box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
-}
-.theme-default .foo.foo-main,
-.theme-default footer.foo-main {
-  background-color: hsl(0, 0%, 100%);
-}
-.theme-default .nav,
-.theme-default nav,
-.theme-default .footer,
-.theme-default footer {
-  background-color: transparent;
-}
-.theme-default .red {
-  background-color: red;
-}
-.theme-default.theme-dark .nav.scrolled,
-.theme-default.theme-dark nav.scrolled {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
-}
-.theme-default.theme-dark .menu, .theme-default.theme-dark .card {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
-  box-shadow: 0 0.1rem 0.8rem -0.3rem black;
-}
-.theme-default input[type=text],
-.theme-default input[type=password],
-.theme-default input[type=email],
-.theme-default input[type=url],
-.theme-default input[type=tel],
-.theme-default input[type=number],
-.theme-default input[type=search],
-.theme-default textarea {
-  background-color: hsl(0, 0%, 100%);
-  color: hsl(0, 0%, 0%);
-  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
-}
-.theme-default input[type=text]:focus,
-.theme-default input[type=password]:focus,
-.theme-default input[type=email]:focus,
-.theme-default input[type=url]:focus,
-.theme-default input[type=tel]:focus,
-.theme-default input[type=number]:focus,
-.theme-default input[type=search]:focus,
-.theme-default textarea:focus {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
-  outline: none;
-}
-.theme-default input[type=text]:hover,
-.theme-default input[type=password]:hover,
-.theme-default input[type=email]:hover,
-.theme-default input[type=url]:hover,
-.theme-default input[type=tel]:hover,
-.theme-default input[type=number]:hover,
-.theme-default input[type=search]:hover,
-.theme-default textarea:hover {
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.383);
-}
-.theme-default input[type=text]:hover:focus,
-.theme-default input[type=password]:hover:focus,
-.theme-default input[type=email]:hover:focus,
-.theme-default input[type=url]:hover:focus,
-.theme-default input[type=tel]:hover:focus,
-.theme-default input[type=number]:hover:focus,
-.theme-default input[type=search]:hover:focus,
-.theme-default textarea:hover:focus {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
-}
-.theme-default input[type=text]:hover:active,
-.theme-default input[type=password]:hover:active,
-.theme-default input[type=email]:hover:active,
-.theme-default input[type=url]:hover:active,
-.theme-default input[type=tel]:hover:active,
-.theme-default input[type=number]:hover:active,
-.theme-default input[type=search]:hover:active,
-.theme-default textarea:hover:active {
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.383);
-}
-.theme-default .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
-  color: hsl(213, 100%, 64%);
-}
-.theme-default .search-dropdown input[type=text] + .search-dropdown-icon .icon {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+.theme-default button:active,
+.theme-default .button:active {
+  transition: background-color 0s;
 }
 .theme-default button.base,
 .theme-default .button.base {
@@ -6308,7 +6202,7 @@ nav.nav-main {
 }
 .theme-default button.base:hover,
 .theme-default .button.base:hover {
-  background-color: hsl(213, 100%, 64%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
 }
 .theme-default button.base:hover h1,
 .theme-default button.base:hover h2,
@@ -6354,7 +6248,7 @@ nav.nav-main {
 }
 .theme-default button.base:active,
 .theme-default .button.base:active {
-  background-color: color-mix(in srgb, hsl(213, 100%, 64%), hsl(0, 0%, 0%));
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%), hsl(0, 0%, 0%));
 }
 .theme-default button.base:active h1,
 .theme-default button.base:active h2,
@@ -6402,484 +6296,510 @@ nav.nav-main {
 .theme-default .button.but-bordered {
   border-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
 }
-.theme-default button.secondary,
-.theme-default .button.secondary {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
-}
-.theme-default button.secondary h1,
-.theme-default button.secondary h2,
-.theme-default button.secondary h3,
-.theme-default button.secondary h4,
-.theme-default button.secondary h5,
-.theme-default button.secondary h6,
-.theme-default button.secondary p,
-.theme-default button.secondary a,
-.theme-default button.secondary strong,
-.theme-default button.secondary i,
-.theme-default button.secondary em,
-.theme-default button.secondary mark,
-.theme-default button.secondary small,
-.theme-default button.secondary del,
-.theme-default button.secondary ins,
-.theme-default button.secondary sub,
-.theme-default button.secondary sup,
-.theme-default button.secondary time,
-.theme-default button.secondary .icon,
-.theme-default button.secondary button,
-.theme-default .button.secondary h1,
-.theme-default .button.secondary h2,
-.theme-default .button.secondary h3,
-.theme-default .button.secondary h4,
-.theme-default .button.secondary h5,
-.theme-default .button.secondary h6,
-.theme-default .button.secondary p,
-.theme-default .button.secondary a,
-.theme-default .button.secondary strong,
-.theme-default .button.secondary i,
-.theme-default .button.secondary em,
-.theme-default .button.secondary mark,
-.theme-default .button.secondary small,
-.theme-default .button.secondary del,
-.theme-default .button.secondary ins,
-.theme-default .button.secondary sub,
-.theme-default .button.secondary sup,
-.theme-default .button.secondary time,
-.theme-default .button.secondary .icon,
-.theme-default .button.secondary button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
-}
-.theme-default button.secondary:hover,
-.theme-default .button.secondary:hover {
-  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%) 75%, hsl(0, 0%, 0%));
-}
-.theme-default button.secondary:hover h1,
-.theme-default button.secondary:hover h2,
-.theme-default button.secondary:hover h3,
-.theme-default button.secondary:hover h4,
-.theme-default button.secondary:hover h5,
-.theme-default button.secondary:hover h6,
-.theme-default button.secondary:hover p,
-.theme-default button.secondary:hover a,
-.theme-default button.secondary:hover strong,
-.theme-default button.secondary:hover i,
-.theme-default button.secondary:hover em,
-.theme-default button.secondary:hover mark,
-.theme-default button.secondary:hover small,
-.theme-default button.secondary:hover del,
-.theme-default button.secondary:hover ins,
-.theme-default button.secondary:hover sub,
-.theme-default button.secondary:hover sup,
-.theme-default button.secondary:hover time,
-.theme-default button.secondary:hover .icon,
-.theme-default button.secondary:hover button,
-.theme-default .button.secondary:hover h1,
-.theme-default .button.secondary:hover h2,
-.theme-default .button.secondary:hover h3,
-.theme-default .button.secondary:hover h4,
-.theme-default .button.secondary:hover h5,
-.theme-default .button.secondary:hover h6,
-.theme-default .button.secondary:hover p,
-.theme-default .button.secondary:hover a,
-.theme-default .button.secondary:hover strong,
-.theme-default .button.secondary:hover i,
-.theme-default .button.secondary:hover em,
-.theme-default .button.secondary:hover mark,
-.theme-default .button.secondary:hover small,
-.theme-default .button.secondary:hover del,
-.theme-default .button.secondary:hover ins,
-.theme-default .button.secondary:hover sub,
-.theme-default .button.secondary:hover sup,
-.theme-default .button.secondary:hover time,
-.theme-default .button.secondary:hover .icon,
-.theme-default .button.secondary:hover button {
-  color: hsl(0, 0%, 100%);
-}
-.theme-default button.secondary:active,
-.theme-default .button.secondary:active {
-  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%), hsl(0, 0%, 0%));
-}
-.theme-default button.secondary:active h1,
-.theme-default button.secondary:active h2,
-.theme-default button.secondary:active h3,
-.theme-default button.secondary:active h4,
-.theme-default button.secondary:active h5,
-.theme-default button.secondary:active h6,
-.theme-default button.secondary:active p,
-.theme-default button.secondary:active a,
-.theme-default button.secondary:active strong,
-.theme-default button.secondary:active i,
-.theme-default button.secondary:active em,
-.theme-default button.secondary:active mark,
-.theme-default button.secondary:active small,
-.theme-default button.secondary:active del,
-.theme-default button.secondary:active ins,
-.theme-default button.secondary:active sub,
-.theme-default button.secondary:active sup,
-.theme-default button.secondary:active time,
-.theme-default button.secondary:active .icon,
-.theme-default button.secondary:active button,
-.theme-default .button.secondary:active h1,
-.theme-default .button.secondary:active h2,
-.theme-default .button.secondary:active h3,
-.theme-default .button.secondary:active h4,
-.theme-default .button.secondary:active h5,
-.theme-default .button.secondary:active h6,
-.theme-default .button.secondary:active p,
-.theme-default .button.secondary:active a,
-.theme-default .button.secondary:active strong,
-.theme-default .button.secondary:active i,
-.theme-default .button.secondary:active em,
-.theme-default .button.secondary:active mark,
-.theme-default .button.secondary:active small,
-.theme-default .button.secondary:active del,
-.theme-default .button.secondary:active ins,
-.theme-default .button.secondary:active sub,
-.theme-default .button.secondary:active sup,
-.theme-default .button.secondary:active time,
-.theme-default .button.secondary:active .icon,
-.theme-default .button.secondary:active button {
-  color: hsl(0, 0%, 100%);
-}
 .theme-default button.primary,
 .theme-default .button.primary {
-  background-color: color-mix(in srgb, hsl(213, 100%, 64%) 55%, hsl(0, 0%, 100%));
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+  box-shadow: 0px 0px 0 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 90%, hsl(0, 0%, 0%));
 }
-.theme-default button.primary h1,
-.theme-default button.primary h2,
-.theme-default button.primary h3,
-.theme-default button.primary h4,
-.theme-default button.primary h5,
-.theme-default button.primary h6,
-.theme-default button.primary p,
-.theme-default button.primary a,
-.theme-default button.primary strong,
-.theme-default button.primary i,
-.theme-default button.primary em,
-.theme-default button.primary mark,
-.theme-default button.primary small,
-.theme-default button.primary del,
-.theme-default button.primary ins,
-.theme-default button.primary sub,
-.theme-default button.primary sup,
-.theme-default button.primary time,
-.theme-default button.primary .icon,
-.theme-default button.primary button,
-.theme-default .button.primary h1,
-.theme-default .button.primary h2,
-.theme-default .button.primary h3,
-.theme-default .button.primary h4,
-.theme-default .button.primary h5,
-.theme-default .button.primary h6,
-.theme-default .button.primary p,
-.theme-default .button.primary a,
-.theme-default .button.primary strong,
-.theme-default .button.primary i,
-.theme-default .button.primary em,
-.theme-default .button.primary mark,
-.theme-default .button.primary small,
-.theme-default .button.primary del,
-.theme-default .button.primary ins,
-.theme-default .button.primary sub,
-.theme-default .button.primary sup,
-.theme-default .button.primary time,
-.theme-default .button.primary .icon,
-.theme-default .button.primary button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+.theme-default button.primary > .icon,
+.theme-default button.primary .element,
+.theme-default .button.primary > .icon,
+.theme-default .button.primary .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.primary.ghost,
+.theme-default .button.primary.ghost {
+  box-shadow: none;
 }
 .theme-default button.primary:hover,
 .theme-default .button.primary:hover {
-  background-color: color-mix(in srgb, hsl(213, 100%, 64%) 75%, hsl(0, 0%, 0%));
-  color: hsl(0, 0%, 100%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
 }
-.theme-default button.primary:hover h1,
-.theme-default button.primary:hover h2,
-.theme-default button.primary:hover h3,
-.theme-default button.primary:hover h4,
-.theme-default button.primary:hover h5,
-.theme-default button.primary:hover h6,
-.theme-default button.primary:hover p,
-.theme-default button.primary:hover a,
-.theme-default button.primary:hover strong,
-.theme-default button.primary:hover i,
-.theme-default button.primary:hover em,
-.theme-default button.primary:hover mark,
-.theme-default button.primary:hover small,
-.theme-default button.primary:hover del,
-.theme-default button.primary:hover ins,
-.theme-default button.primary:hover sub,
-.theme-default button.primary:hover sup,
-.theme-default button.primary:hover time,
-.theme-default button.primary:hover .icon,
-.theme-default button.primary:hover button,
-.theme-default .button.primary:hover h1,
-.theme-default .button.primary:hover h2,
-.theme-default .button.primary:hover h3,
-.theme-default .button.primary:hover h4,
-.theme-default .button.primary:hover h5,
-.theme-default .button.primary:hover h6,
-.theme-default .button.primary:hover p,
-.theme-default .button.primary:hover a,
-.theme-default .button.primary:hover strong,
-.theme-default .button.primary:hover i,
-.theme-default .button.primary:hover em,
-.theme-default .button.primary:hover mark,
-.theme-default .button.primary:hover small,
-.theme-default .button.primary:hover del,
-.theme-default .button.primary:hover ins,
-.theme-default .button.primary:hover sub,
-.theme-default .button.primary:hover sup,
-.theme-default .button.primary:hover time,
-.theme-default .button.primary:hover .icon,
-.theme-default .button.primary:hover button {
-  color: hsl(0, 0%, 100%);
+.theme-default button.primary:hover > .icon,
+.theme-default button.primary:hover .element,
+.theme-default .button.primary:hover > .icon,
+.theme-default .button.primary:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.primary.test-hover,
+.theme-default .button.primary.test-hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 10%, hsl(0, 0%, 100%));
+}
+.theme-default button.primary.test-hover > .icon,
+.theme-default button.primary.test-hover .element,
+.theme-default .button.primary.test-hover > .icon,
+.theme-default .button.primary.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
 }
 .theme-default button.primary:active,
 .theme-default .button.primary:active {
-  background-color: color-mix(in srgb, hsl(213, 100%, 64%), hsl(0, 0%, 0%));
-  color: hsl(0, 0%, 100%);
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
 }
-.theme-default button.primary:active h1,
-.theme-default button.primary:active h2,
-.theme-default button.primary:active h3,
-.theme-default button.primary:active h4,
-.theme-default button.primary:active h5,
-.theme-default button.primary:active h6,
-.theme-default button.primary:active p,
-.theme-default button.primary:active a,
-.theme-default button.primary:active strong,
-.theme-default button.primary:active i,
-.theme-default button.primary:active em,
-.theme-default button.primary:active mark,
-.theme-default button.primary:active small,
-.theme-default button.primary:active del,
-.theme-default button.primary:active ins,
-.theme-default button.primary:active sub,
-.theme-default button.primary:active sup,
-.theme-default button.primary:active time,
-.theme-default button.primary:active .icon,
-.theme-default button.primary:active button,
-.theme-default .button.primary:active h1,
-.theme-default .button.primary:active h2,
-.theme-default .button.primary:active h3,
-.theme-default .button.primary:active h4,
-.theme-default .button.primary:active h5,
-.theme-default .button.primary:active h6,
-.theme-default .button.primary:active p,
-.theme-default .button.primary:active a,
-.theme-default .button.primary:active strong,
-.theme-default .button.primary:active i,
-.theme-default .button.primary:active em,
-.theme-default .button.primary:active mark,
-.theme-default .button.primary:active small,
-.theme-default .button.primary:active del,
-.theme-default .button.primary:active ins,
-.theme-default .button.primary:active sub,
-.theme-default .button.primary:active sup,
-.theme-default .button.primary:active time,
-.theme-default .button.primary:active .icon,
-.theme-default .button.primary:active button {
-  color: hsl(0, 0%, 100%);
+.theme-default button.primary:active > .icon,
+.theme-default button.primary:active .element,
+.theme-default .button.primary:active > .icon,
+.theme-default .button.primary:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default button.primary.test-active,
+.theme-default .button.primary.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
+}
+.theme-default button.primary.test-active > .icon,
+.theme-default button.primary.test-active .element,
+.theme-default .button.primary.test-active > .icon,
+.theme-default .button.primary.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
 }
 .theme-default button.primary.disabled,
 .theme-default .button.primary.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  pointer-events: none;
+}
+.theme-default button.secondary,
+.theme-default .button.secondary {
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 20%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary > .icon,
+.theme-default button.secondary .element,
+.theme-default .button.secondary > .icon,
+.theme-default .button.secondary .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary.ghost,
+.theme-default .button.secondary.ghost {
+  box-shadow: none;
+}
+.theme-default button.secondary:hover,
+.theme-default .button.secondary:hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%);
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary:hover > .icon,
+.theme-default button.secondary:hover .element,
+.theme-default .button.secondary:hover > .icon,
+.theme-default .button.secondary:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary.test-hover,
+.theme-default .button.secondary.test-hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%);
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 10%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary.test-hover > .icon,
+.theme-default button.secondary.test-hover .element,
+.theme-default .button.secondary.test-hover > .icon,
+.theme-default .button.secondary.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 10%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary:active,
+.theme-default .button.secondary:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) inset;
+}
+.theme-default button.secondary:active > .icon,
+.theme-default button.secondary:active .element,
+.theme-default .button.secondary:active > .icon,
+.theme-default .button.secondary:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary.test-active,
+.theme-default .button.secondary.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) inset;
+}
+.theme-default button.secondary.test-active > .icon,
+.theme-default button.secondary.test-active .element,
+.theme-default .button.secondary.test-active > .icon,
+.theme-default .button.secondary.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary.disabled,
+.theme-default .button.secondary.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  pointer-events: none;
+}
+.theme-default button.secondary-alt,
+.theme-default .button.secondary-alt {
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 20%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary-alt > .icon,
+.theme-default button.secondary-alt .element,
+.theme-default .button.secondary-alt > .icon,
+.theme-default .button.secondary-alt .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 90%, hsl(213, 100%, 64%) 10%) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary-alt.ghost,
+.theme-default .button.secondary-alt.ghost {
+  box-shadow: none;
+}
+.theme-default button.secondary-alt:hover,
+.theme-default .button.secondary-alt:hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary-alt:hover > .icon,
+.theme-default button.secondary-alt:hover .element,
+.theme-default .button.secondary-alt:hover > .icon,
+.theme-default .button.secondary-alt:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary-alt.test-hover,
+.theme-default .button.secondary-alt.test-hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 10%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary-alt.test-hover > .icon,
+.theme-default button.secondary-alt.test-hover .element,
+.theme-default .button.secondary-alt.test-hover > .icon,
+.theme-default .button.secondary-alt.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 10%, hsl(0, 0%, 100%));
+}
+.theme-default button.secondary-alt:active,
+.theme-default .button.secondary-alt:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
+}
+.theme-default button.secondary-alt:active > .icon,
+.theme-default button.secondary-alt:active .element,
+.theme-default .button.secondary-alt:active > .icon,
+.theme-default .button.secondary-alt:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary-alt.test-active,
+.theme-default .button.secondary-alt.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
+}
+.theme-default button.secondary-alt.test-active > .icon,
+.theme-default button.secondary-alt.test-active .element,
+.theme-default .button.secondary-alt.test-active > .icon,
+.theme-default .button.secondary-alt.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default button.secondary-alt.disabled,
+.theme-default .button.secondary-alt.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  pointer-events: none;
 }
 .theme-default button.warn,
 .theme-default .button.warn {
-  background-color: hsl(39, 76%, 49%);
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 20%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 90%, hsl(0, 0%, 0%));
 }
-.theme-default button.warn h1,
-.theme-default button.warn h2,
-.theme-default button.warn h3,
-.theme-default button.warn h4,
-.theme-default button.warn h5,
-.theme-default button.warn h6,
-.theme-default button.warn p,
-.theme-default button.warn a,
-.theme-default button.warn strong,
-.theme-default button.warn i,
-.theme-default button.warn em,
-.theme-default button.warn mark,
-.theme-default button.warn small,
-.theme-default button.warn del,
-.theme-default button.warn ins,
-.theme-default button.warn sub,
-.theme-default button.warn sup,
-.theme-default button.warn time,
-.theme-default button.warn .icon,
-.theme-default button.warn button,
-.theme-default .button.warn h1,
-.theme-default .button.warn h2,
-.theme-default .button.warn h3,
-.theme-default .button.warn h4,
-.theme-default .button.warn h5,
-.theme-default .button.warn h6,
-.theme-default .button.warn p,
-.theme-default .button.warn a,
-.theme-default .button.warn strong,
-.theme-default .button.warn i,
-.theme-default .button.warn em,
-.theme-default .button.warn mark,
-.theme-default .button.warn small,
-.theme-default .button.warn del,
-.theme-default .button.warn ins,
-.theme-default .button.warn sub,
-.theme-default .button.warn sup,
-.theme-default .button.warn time,
-.theme-default .button.warn .icon,
-.theme-default .button.warn button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+.theme-default button.warn > .icon,
+.theme-default button.warn .element,
+.theme-default .button.warn > .icon,
+.theme-default .button.warn .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.warn.ghost,
+.theme-default .button.warn.ghost {
+  box-shadow: none;
 }
 .theme-default button.warn:hover,
 .theme-default .button.warn:hover {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 0%));
-  color: hsl(0, 0%, 100%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 20%, hsl(0, 0%, 100%));
 }
-.theme-default button.warn:hover h1,
-.theme-default button.warn:hover h2,
-.theme-default button.warn:hover h3,
-.theme-default button.warn:hover h4,
-.theme-default button.warn:hover h5,
-.theme-default button.warn:hover h6,
-.theme-default button.warn:hover p,
-.theme-default button.warn:hover a,
-.theme-default button.warn:hover strong,
-.theme-default button.warn:hover i,
-.theme-default button.warn:hover em,
-.theme-default button.warn:hover mark,
-.theme-default button.warn:hover small,
-.theme-default button.warn:hover del,
-.theme-default button.warn:hover ins,
-.theme-default button.warn:hover sub,
-.theme-default button.warn:hover sup,
-.theme-default button.warn:hover time,
-.theme-default button.warn:hover .icon,
-.theme-default button.warn:hover button,
-.theme-default .button.warn:hover h1,
-.theme-default .button.warn:hover h2,
-.theme-default .button.warn:hover h3,
-.theme-default .button.warn:hover h4,
-.theme-default .button.warn:hover h5,
-.theme-default .button.warn:hover h6,
-.theme-default .button.warn:hover p,
-.theme-default .button.warn:hover a,
-.theme-default .button.warn:hover strong,
-.theme-default .button.warn:hover i,
-.theme-default .button.warn:hover em,
-.theme-default .button.warn:hover mark,
-.theme-default .button.warn:hover small,
-.theme-default .button.warn:hover del,
-.theme-default .button.warn:hover ins,
-.theme-default .button.warn:hover sub,
-.theme-default .button.warn:hover sup,
-.theme-default .button.warn:hover time,
-.theme-default .button.warn:hover .icon,
-.theme-default .button.warn:hover button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+.theme-default button.warn:hover > .icon,
+.theme-default button.warn:hover .element,
+.theme-default .button.warn:hover > .icon,
+.theme-default .button.warn:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.warn.test-hover,
+.theme-default .button.warn.test-hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 10%, hsl(0, 0%, 100%));
+}
+.theme-default button.warn.test-hover > .icon,
+.theme-default button.warn.test-hover .element,
+.theme-default .button.warn.test-hover > .icon,
+.theme-default .button.warn.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 10%, hsl(0, 0%, 100%));
 }
 .theme-default button.warn:active,
 .theme-default .button.warn:active {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 0%));
-  color: hsl(0, 0%, 100%);
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) inset;
 }
-.theme-default button.warn:active h1,
-.theme-default button.warn:active h2,
-.theme-default button.warn:active h3,
-.theme-default button.warn:active h4,
-.theme-default button.warn:active h5,
-.theme-default button.warn:active h6,
-.theme-default button.warn:active p,
-.theme-default button.warn:active a,
-.theme-default button.warn:active strong,
-.theme-default button.warn:active i,
-.theme-default button.warn:active em,
-.theme-default button.warn:active mark,
-.theme-default button.warn:active small,
-.theme-default button.warn:active del,
-.theme-default button.warn:active ins,
-.theme-default button.warn:active sub,
-.theme-default button.warn:active sup,
-.theme-default button.warn:active time,
-.theme-default button.warn:active .icon,
-.theme-default button.warn:active button,
-.theme-default .button.warn:active h1,
-.theme-default .button.warn:active h2,
-.theme-default .button.warn:active h3,
-.theme-default .button.warn:active h4,
-.theme-default .button.warn:active h5,
-.theme-default .button.warn:active h6,
-.theme-default .button.warn:active p,
-.theme-default .button.warn:active a,
-.theme-default .button.warn:active strong,
-.theme-default .button.warn:active i,
-.theme-default .button.warn:active em,
-.theme-default .button.warn:active mark,
-.theme-default .button.warn:active small,
-.theme-default .button.warn:active del,
-.theme-default .button.warn:active ins,
-.theme-default .button.warn:active sub,
-.theme-default .button.warn:active sup,
-.theme-default .button.warn:active time,
-.theme-default .button.warn:active .icon,
-.theme-default .button.warn:active button {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+.theme-default button.warn:active > .icon,
+.theme-default button.warn:active .element,
+.theme-default .button.warn:active > .icon,
+.theme-default .button.warn:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default button.warn.test-active,
+.theme-default .button.warn.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) inset;
+}
+.theme-default button.warn.test-active > .icon,
+.theme-default button.warn.test-active .element,
+.theme-default .button.warn.test-active > .icon,
+.theme-default .button.warn.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 0%));
 }
 .theme-default button.warn.disabled,
 .theme-default .button.warn.disabled {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  pointer-events: none;
 }
-.theme-default button.user-color {
-  background-color: var(--userColor);
+.theme-default .test-hover,
+.theme-default .test-active {
+  padding: 0.2rem;
 }
-.theme-default button.user-color h1,
-.theme-default button.user-color h2,
-.theme-default button.user-color h3,
-.theme-default button.user-color h4,
-.theme-default button.user-color h5,
-.theme-default button.user-color h6,
-.theme-default button.user-color p,
-.theme-default button.user-color a,
-.theme-default button.user-color strong,
-.theme-default button.user-color i,
-.theme-default button.user-color em,
-.theme-default button.user-color mark,
-.theme-default button.user-color small,
-.theme-default button.user-color del,
-.theme-default button.user-color ins,
-.theme-default button.user-color sub,
-.theme-default button.user-color sup,
-.theme-default button.user-color time,
-.theme-default button.user-color .icon,
-.theme-default button.user-color button {
-  color: white;
+.theme-default a {
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
 }
-.theme-default button.user-color:hover {
-  background-color: color-mix(in srgb, var(--userColor) 80%, hsl(0, 0%, 0%) 20%);
+.theme-default .text-danger {
+  color: red;
 }
-.theme-default button.user-color:active {
-  background-color: color-mix(in srgb, var(--userColor) 60%, hsl(0, 0%, 0%) 40%);
+.theme-default .spacer {
+  opacity: 0 !important;
 }
-.theme-default .card {
-  box-shadow: 0px 0px 0px 1px color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%) inset;
+.theme-default .page-content,
+.theme-default .page-wrapper {
   background-color: hsl(0, 0%, 100%);
 }
-.theme-default .car-borderless {
-  box-shadow: none;
+.theme-default .left-fade {
+  background-image: linear-gradient(to right, hsl(0, 0%, 100%), transparent);
 }
-.theme-default .selector-grid {
-  border: 1px solid color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+.theme-default .right-fade {
+  background-image: linear-gradient(to left, hsl(0, 0%, 100%), transparent);
+}
+.theme-default [class*=foco-][class$=R] {
+  background-image: linear-gradient(to left, hsl(0, 0%, 100%), transparent);
+}
+.theme-default [class*=foco-][class$=L] {
+  background-image: linear-gradient(to right, hsl(0, 0%, 100%), transparent);
+}
+.theme-default .overlay {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  transition: opacity 0.5s;
+  opacity: 40%;
+}
+.theme-default .drawer-handle {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+  box-shadow: 0px 2px 0.15rem 0px rgba(0, 0, 0, 0.228);
+}
+.theme-default .drawer-handle:hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+}
+.theme-default .drawer-handle:active {
+  transition-property: background-color 0.2s;
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
 }
-.theme-default .selector-grid > .selector {
+.theme-default .drawer-handle > input:checked + .icon {
+  transition-property: color 0.2s;
+  color: hsl(213, 100%, 64%);
+}
+.theme-default .nav.nav-main,
+.theme-default nav.nav-main {
+  transition: background-color 1s, box-shadow 0.25s;
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+}
+.theme-default .nav.nav-main.tint.tint,
+.theme-default nav.nav-main.tint.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%) 95%, hsl(213, 100%, 64%) 5%);
+}
+.theme-default .nav.nav-main.scrolled,
+.theme-default nav.nav-main.scrolled {
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
+}
+.theme-default .nav.nav-main.scrolled.tint,
+.theme-default nav.nav-main.scrolled.tint {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(213, 100%, 64%) 5%);
+}
+.theme-default .foo.foo-main,
+.theme-default footer.foo-main {
   background-color: hsl(0, 0%, 100%);
 }
-.theme-default .selector-grid > .selector > .icon {
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+.theme-default .nav,
+.theme-default nav,
+.theme-default .footer,
+.theme-default footer {
+  background-color: transparent;
 }
-.theme-default .selector-grid .selector:has(> input:checked) {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(213, 100%, 64%) 66%);
+.theme-default .red {
+  background-color: red;
+}
+.theme-default input[type=radio]:after {
+  width: 0.75rem;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  border: 2px solid hsl(0, 0%, 100%);
+  outline: 2px solid color-mix(in srgb, hsl(0, 0%, 100%) 66%, hsl(0, 0%, 0%) 33%);
+}
+.theme-default input[type=radio]:checked:after {
+  outline: 2px solid color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 66%, hsl(0, 0%, 0%) 33%) 66%, hsl(213, 100%, 64%) 33%);
+  background-color: hsl(213, 100%, 64%);
+  border: 2px solid color-mix(in srgb, hsl(0, 0%, 100%) 66%, hsl(213, 100%, 64%) 33%);
+}
+.theme-default input[type=text],
+.theme-default input[type=password],
+.theme-default input[type=email],
+.theme-default input[type=url],
+.theme-default input[type=tel],
+.theme-default input[type=number],
+.theme-default input[type=search],
+.theme-default textarea {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(0, 0%, 0%) 5%);
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+  border: 2px solid color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default input[type=text]:focus,
+.theme-default input[type=password]:focus,
+.theme-default input[type=email]:focus,
+.theme-default input[type=url]:focus,
+.theme-default input[type=tel]:focus,
+.theme-default input[type=number]:focus,
+.theme-default input[type=search]:focus,
+.theme-default textarea:focus {
+  box-shadow: 0 0 5px 0 color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+  outline: none;
+}
+.theme-default input[type=text]:hover,
+.theme-default input[type=password]:hover,
+.theme-default input[type=email]:hover,
+.theme-default input[type=url]:hover,
+.theme-default input[type=tel]:hover,
+.theme-default input[type=number]:hover,
+.theme-default input[type=search]:hover,
+.theme-default textarea:hover {
+  box-shadow: 0 0 3px 0 color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default input[type=text]:hover:focus,
+.theme-default input[type=password]:hover:focus,
+.theme-default input[type=email]:hover:focus,
+.theme-default input[type=url]:hover:focus,
+.theme-default input[type=tel]:hover:focus,
+.theme-default input[type=number]:hover:focus,
+.theme-default input[type=search]:hover:focus,
+.theme-default textarea:hover:focus {
+  box-shadow: 0 0 5px 0 color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default input[type=text]:hover:active,
+.theme-default input[type=password]:hover:active,
+.theme-default input[type=email]:hover:active,
+.theme-default input[type=url]:hover:active,
+.theme-default input[type=tel]:hover:active,
+.theme-default input[type=number]:hover:active,
+.theme-default input[type=search]:hover:active,
+.theme-default textarea:hover:active {
+  box-shadow: 0 0 2px 0 color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
+}
+.theme-default .search-dropdown input[type=text] + .search-dropdown-icon .icon {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+}
+.theme-default button.user-color {
+  box-shadow: 0px 0px 0 2px var(--userColor) inset;
+  background-color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, var(--userColor) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.user-color > .icon,
+.theme-default button.user-color .element {
+  color: color-mix(in srgb, var(--userColor) 90%, hsl(0, 0%, 0%));
+}
+.theme-default button.user-color:hover {
+  background-color: var(--userColor);
+  color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.user-color:hover > .element {
+  color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.user-color:hover > .icon {
+  color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 100%));
+}
+.theme-default button.user-color:active {
+  background-color: color-mix(in srgb, var(--userColor) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, var(--userColor) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px var(--userColor) inset;
+}
+.theme-default button.user-color:active > .icon {
+  color: color-mix(in srgb, var(--userColor) 40%, hsl(0, 0%, 0%));
+}
+.theme-default button.user-color:active > .element {
+  color: color-mix(in srgb, var(--userColor) 40%, hsl(0, 0%, 0%));
+}
+.theme-default .card {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+}
+.theme-default .car-border {
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%) inset;
+}
+.theme-default .car-shadow {
+  box-shadow: 0 0 5px 0 color-mix(in srgb, black 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-default .selector-grid {
+  border: 4px solid color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+  display: grid;
+  gap: 0.2rem;
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default .selector-grid > .selector {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+}
+.theme-default .selector-grid > .selector > .icon,
+.theme-default .selector-grid > .selector .element {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
+}
+.theme-default .selector-grid > .selector:hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default .selector-grid > .selector:hover > .icon,
+.theme-default .selector-grid > .selector:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default .selector-grid > .selector.ghost {
+  box-shadow: none;
+}
+.theme-default .selector-grid > .selector.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  pointer-events: none;
+}
+.theme-default .selector-grid .selector:has(> input:checked),
+.theme-default .selector-grid .selector:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
+}
+.theme-default .selector-grid .selector:has(> input:checked) > .icon,
+.theme-default .selector-grid .selector:has(> input:checked) .element,
+.theme-default .selector-grid .selector:active > .icon,
+.theme-default .selector-grid .selector:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
 }
 .theme-default .thumb {
   background-color: rgb(94, 205, 142);
@@ -6907,33 +6827,50 @@ nav.nav-main {
   color: hsl(0, 0%, 100%);
 }
 .theme-default .menu {
-  background-color: hsl(0, 0%, 100%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
   box-shadow: 0 0.1rem 0.8rem -0.3rem black;
 }
 .theme-default .selector {
   background-color: inherit;
-  color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
 }
 .theme-default .selector:hover {
-  background-color: hsl(213, 100%, 64%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default .selector:hover > .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default .selector:hover > .icon {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default .selector:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) inset;
+}
+.theme-default .selector:active > .icon {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default .selector:active > .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%) 40%, hsl(0, 0%, 0%));
 }
 .theme-default .toggle {
-  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
 }
 .theme-default .toggle > span {
   background-color: hsl(0, 0%, 100%);
 }
 .theme-default .toggle input[type=checkbox]:checked + span {
-  background-color: hsl(213, 100%, 64%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
 }
 .theme-default .ring {
-  outline-color: hsl(213, 100%, 64%);
+  outline-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
 }
 .theme-default .icon:before {
   color: inherit;
 }
 .theme-default .div-highlight {
-  background-color: hsl(213, 100%, 64%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
 }
 .theme-default .div-highlight h1,
 .theme-default .div-highlight h2,
@@ -6966,50 +6903,95 @@ nav.nav-main {
 .theme-default .base-color {
   color: hsl(0, 0%, 100%);
 }
+.theme-default .base-color.tint {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(213, 100%, 64%) 5%);
+}
 .theme-default .base10 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%);
+}
+.theme-default .base10.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 95%, hsl(213, 100%, 64%) 5%);
 }
 .theme-default .base15 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 15%, hsl(0, 0%, 0%) 85%);
 }
+.theme-default .base15.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 15%, hsl(0, 0%, 0%) 85%) 95%, hsl(213, 100%, 64%) 5%);
+}
 .theme-default .base25 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 25%, hsl(0, 0%, 0%) 75%);
+}
+.theme-default .base25.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 25%, hsl(0, 0%, 0%) 75%) 95%, hsl(213, 100%, 64%) 5%);
 }
 .theme-default .base33 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%);
 }
+.theme-default .base33.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 33%, hsl(0, 0%, 0%) 66%) 95%, hsl(213, 100%, 64%) 5%);
+}
 .theme-default .base50 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .base50.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 95%, hsl(213, 100%, 64%) 5%);
 }
 .theme-default .base66 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 66%, hsl(0, 0%, 0%) 33%);
 }
+.theme-default .base66.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 66%, hsl(0, 0%, 0%) 33%) 95%, hsl(213, 100%, 64%) 5%);
+}
 .theme-default .base75 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default .base75.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%) 95%, hsl(213, 100%, 64%) 5%);
 }
 .theme-default .base85 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
 }
+.theme-default .base85.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%) 95%, hsl(213, 100%, 64%) 5%);
+}
 .theme-default .base90 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
+}
+.theme-default .base90.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 95%, hsl(213, 100%, 64%) 5%);
 }
 .theme-default .base15 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 5%, hsl(0, 0%, 0%) 95%);
 }
+.theme-default .base15.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 15%, hsl(0, 0%, 0%) 85%) 95%, hsl(213, 100%, 64%) 5%);
+}
 .theme-default .base95 {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(0, 0%, 0%) 5%);
+}
+.theme-default .base95.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(0, 0%, 0%) 5%) 95%, hsl(213, 100%, 64%) 5%);
 }
 .theme-default .baseInv {
   background-color: hsl(0, 0%, 0%);
 }
+.theme-default .baseInv.tint {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 95%, hsl(213, 100%, 64%) 5%);
+}
 .theme-default .success {
-  background-color: hsl(129, 67%, 41%);
+  background-color: hsl(129, 69%, 41%);
+}
+.theme-default .success.tint {
+  background-color: color-mix(in srgb, hsl(129, 69%, 41%) 75%, hsl(213, 100%, 64%) 25%);
+}
+.theme-default .success > .element {
+  color: color-mix(in srgb, hsl(129, 69%, 41%) 25%, hsl(0, 0%, 100%) 75%);
 }
 .theme-default hr {
-  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(0, 0%, 0%) 5%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
 }
 .theme-default .hr-highlight {
-  border-color: hsl(213, 100%, 64%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 0%) 40%, hsl(213, 100%, 64%) 100%);
 }
 .theme-default .hr-base90 {
   border-color: color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%);
@@ -7018,165 +7000,32 @@ nav.nav-main {
   color: rgb(83, 83, 69) !important;
 }
 
+.theme-dark .redd {
+  color: red !important;
+}
+.theme-dark p,
 .theme-dark h1,
 .theme-dark h2,
 .theme-dark h3,
 .theme-dark h4,
 .theme-dark h5,
-.theme-dark h6,
-.theme-dark p,
-.theme-dark a,
-.theme-dark strong,
-.theme-dark i,
-.theme-dark em,
-.theme-dark mark,
-.theme-dark small,
-.theme-dark del,
-.theme-dark ins,
-.theme-dark sub,
-.theme-dark sup,
-.theme-dark time,
-.theme-dark .icon,
-.theme-dark button {
-  color: hsl(0, 0%, 97%);
+.theme-dark h6 {
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%);
 }
-.theme-dark a {
-  color: hsl(266, 57%, 49%);
+.theme-dark a.selector {
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%);
 }
-.theme-dark .text-danger {
-  color: red;
+.theme-dark button,
+.theme-dark .button {
+  transition: background-color 0.15s;
 }
-.theme-dark .spacer {
-  opacity: 0 !important;
-}
-.theme-dark .page-content,
-.theme-dark .page-wrapper {
-  background-color: hsl(0, 0%, 3%);
-}
-.theme-dark .left-fade {
-  background-image: linear-gradient(to right, hsl(0, 0%, 3%), transparent);
-}
-.theme-dark .right-fade {
-  background-image: linear-gradient(to left, hsl(0, 0%, 3%), transparent);
-}
-.theme-dark [class*=foco-][class$=R] {
-  background-image: linear-gradient(to left, hsl(0, 0%, 3%), transparent);
-}
-.theme-dark [class*=foco-][class$=L] {
-  background-image: linear-gradient(to right, hsl(0, 0%, 3%), transparent);
-}
-.theme-dark .overlay {
-  background-color: hsla(0, 0%, 3%, 0.5);
-}
-.theme-dark .drawer-handle {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
-  box-shadow: 0px 2px 0.15rem 0px rgba(0, 0, 0, 0.228);
-}
-.theme-dark .drawer-handle:hover {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
-}
-.theme-dark .drawer-handle:active {
-  transition-property: background-color 0.2s;
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
-}
-.theme-dark .drawer-handle > input:checked + .icon {
-  transition-property: color 0.2s;
-  color: hsl(266, 57%, 49%);
-}
-.theme-dark .nav.nav-main,
-.theme-dark nav.nav-main {
-  transition: background-color 1s, box-shadow 0.25s;
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
-}
-.theme-dark .nav.nav-main.scrolled,
-.theme-dark nav.nav-main.scrolled {
-  background-color: hsl(0, 0%, 3%);
-  box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
-}
-.theme-dark .foo.foo-main,
-.theme-dark footer.foo-main {
-  background-color: hsl(0, 0%, 3%);
-}
-.theme-dark .nav,
-.theme-dark nav,
-.theme-dark .footer,
-.theme-dark footer {
-  background-color: transparent;
-}
-.theme-dark .red {
-  background-color: red;
-}
-.theme-dark.theme-dark .nav.scrolled,
-.theme-dark.theme-dark nav.scrolled {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
-}
-.theme-dark.theme-dark .menu, .theme-dark.theme-dark .card {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
-  box-shadow: 0 0.1rem 0.8rem -0.3rem black;
-}
-.theme-dark input[type=text],
-.theme-dark input[type=password],
-.theme-dark input[type=email],
-.theme-dark input[type=url],
-.theme-dark input[type=tel],
-.theme-dark input[type=number],
-.theme-dark input[type=search],
-.theme-dark textarea {
-  background-color: hsl(0, 0%, 3%);
-  color: hsl(0, 0%, 97%);
-  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
-}
-.theme-dark input[type=text]:focus,
-.theme-dark input[type=password]:focus,
-.theme-dark input[type=email]:focus,
-.theme-dark input[type=url]:focus,
-.theme-dark input[type=tel]:focus,
-.theme-dark input[type=number]:focus,
-.theme-dark input[type=search]:focus,
-.theme-dark textarea:focus {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
-  outline: none;
-}
-.theme-dark input[type=text]:hover,
-.theme-dark input[type=password]:hover,
-.theme-dark input[type=email]:hover,
-.theme-dark input[type=url]:hover,
-.theme-dark input[type=tel]:hover,
-.theme-dark input[type=number]:hover,
-.theme-dark input[type=search]:hover,
-.theme-dark textarea:hover {
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.383);
-}
-.theme-dark input[type=text]:hover:focus,
-.theme-dark input[type=password]:hover:focus,
-.theme-dark input[type=email]:hover:focus,
-.theme-dark input[type=url]:hover:focus,
-.theme-dark input[type=tel]:hover:focus,
-.theme-dark input[type=number]:hover:focus,
-.theme-dark input[type=search]:hover:focus,
-.theme-dark textarea:hover:focus {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.383);
-}
-.theme-dark input[type=text]:hover:active,
-.theme-dark input[type=password]:hover:active,
-.theme-dark input[type=email]:hover:active,
-.theme-dark input[type=url]:hover:active,
-.theme-dark input[type=tel]:hover:active,
-.theme-dark input[type=number]:hover:active,
-.theme-dark input[type=search]:hover:active,
-.theme-dark textarea:hover:active {
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.383);
-}
-.theme-dark .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
-  color: hsl(266, 57%, 49%);
-}
-.theme-dark .search-dropdown input[type=text] + .search-dropdown-icon .icon {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
+.theme-dark button:active,
+.theme-dark .button:active {
+  transition: background-color 0s;
 }
 .theme-dark button.base,
 .theme-dark .button.base {
-  background-color: hsl(0, 0%, 3%);
+  background-color: hsl(0, 0%, 0%);
 }
 .theme-dark button.base h1,
 .theme-dark button.base h2,
@@ -7218,11 +7067,11 @@ nav.nav-main {
 .theme-dark .button.base time,
 .theme-dark .button.base .icon,
 .theme-dark .button.base button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%);
 }
 .theme-dark button.base:hover,
 .theme-dark .button.base:hover {
-  background-color: hsl(266, 57%, 49%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
 }
 .theme-dark button.base:hover h1,
 .theme-dark button.base:hover h2,
@@ -7264,11 +7113,11 @@ nav.nav-main {
 .theme-dark .button.base:hover time,
 .theme-dark .button.base:hover .icon,
 .theme-dark .button.base:hover button {
-  color: hsl(0, 0%, 3%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.base:active,
 .theme-dark .button.base:active {
-  background-color: color-mix(in srgb, hsl(266, 57%, 49%), hsl(0, 0%, 97%));
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%), hsl(0, 0%, 100%));
 }
 .theme-dark button.base:active h1,
 .theme-dark button.base:active h2,
@@ -7310,490 +7159,516 @@ nav.nav-main {
 .theme-dark .button.base:active time,
 .theme-dark .button.base:active .icon,
 .theme-dark .button.base:active button {
-  color: hsl(0, 0%, 3%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.but-bordered,
 .theme-dark .button.but-bordered {
-  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
-}
-.theme-dark button.secondary,
-.theme-dark .button.secondary {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
-}
-.theme-dark button.secondary h1,
-.theme-dark button.secondary h2,
-.theme-dark button.secondary h3,
-.theme-dark button.secondary h4,
-.theme-dark button.secondary h5,
-.theme-dark button.secondary h6,
-.theme-dark button.secondary p,
-.theme-dark button.secondary a,
-.theme-dark button.secondary strong,
-.theme-dark button.secondary i,
-.theme-dark button.secondary em,
-.theme-dark button.secondary mark,
-.theme-dark button.secondary small,
-.theme-dark button.secondary del,
-.theme-dark button.secondary ins,
-.theme-dark button.secondary sub,
-.theme-dark button.secondary sup,
-.theme-dark button.secondary time,
-.theme-dark button.secondary .icon,
-.theme-dark button.secondary button,
-.theme-dark .button.secondary h1,
-.theme-dark .button.secondary h2,
-.theme-dark .button.secondary h3,
-.theme-dark .button.secondary h4,
-.theme-dark .button.secondary h5,
-.theme-dark .button.secondary h6,
-.theme-dark .button.secondary p,
-.theme-dark .button.secondary a,
-.theme-dark .button.secondary strong,
-.theme-dark .button.secondary i,
-.theme-dark .button.secondary em,
-.theme-dark .button.secondary mark,
-.theme-dark .button.secondary small,
-.theme-dark .button.secondary del,
-.theme-dark .button.secondary ins,
-.theme-dark .button.secondary sub,
-.theme-dark .button.secondary sup,
-.theme-dark .button.secondary time,
-.theme-dark .button.secondary .icon,
-.theme-dark .button.secondary button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
-}
-.theme-dark button.secondary:hover,
-.theme-dark .button.secondary:hover {
-  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%) 75%, hsl(0, 0%, 97%));
-}
-.theme-dark button.secondary:hover h1,
-.theme-dark button.secondary:hover h2,
-.theme-dark button.secondary:hover h3,
-.theme-dark button.secondary:hover h4,
-.theme-dark button.secondary:hover h5,
-.theme-dark button.secondary:hover h6,
-.theme-dark button.secondary:hover p,
-.theme-dark button.secondary:hover a,
-.theme-dark button.secondary:hover strong,
-.theme-dark button.secondary:hover i,
-.theme-dark button.secondary:hover em,
-.theme-dark button.secondary:hover mark,
-.theme-dark button.secondary:hover small,
-.theme-dark button.secondary:hover del,
-.theme-dark button.secondary:hover ins,
-.theme-dark button.secondary:hover sub,
-.theme-dark button.secondary:hover sup,
-.theme-dark button.secondary:hover time,
-.theme-dark button.secondary:hover .icon,
-.theme-dark button.secondary:hover button,
-.theme-dark .button.secondary:hover h1,
-.theme-dark .button.secondary:hover h2,
-.theme-dark .button.secondary:hover h3,
-.theme-dark .button.secondary:hover h4,
-.theme-dark .button.secondary:hover h5,
-.theme-dark .button.secondary:hover h6,
-.theme-dark .button.secondary:hover p,
-.theme-dark .button.secondary:hover a,
-.theme-dark .button.secondary:hover strong,
-.theme-dark .button.secondary:hover i,
-.theme-dark .button.secondary:hover em,
-.theme-dark .button.secondary:hover mark,
-.theme-dark .button.secondary:hover small,
-.theme-dark .button.secondary:hover del,
-.theme-dark .button.secondary:hover ins,
-.theme-dark .button.secondary:hover sub,
-.theme-dark .button.secondary:hover sup,
-.theme-dark .button.secondary:hover time,
-.theme-dark .button.secondary:hover .icon,
-.theme-dark .button.secondary:hover button {
-  color: hsl(0, 0%, 3%);
-}
-.theme-dark button.secondary:active,
-.theme-dark .button.secondary:active {
-  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%), hsl(0, 0%, 97%));
-}
-.theme-dark button.secondary:active h1,
-.theme-dark button.secondary:active h2,
-.theme-dark button.secondary:active h3,
-.theme-dark button.secondary:active h4,
-.theme-dark button.secondary:active h5,
-.theme-dark button.secondary:active h6,
-.theme-dark button.secondary:active p,
-.theme-dark button.secondary:active a,
-.theme-dark button.secondary:active strong,
-.theme-dark button.secondary:active i,
-.theme-dark button.secondary:active em,
-.theme-dark button.secondary:active mark,
-.theme-dark button.secondary:active small,
-.theme-dark button.secondary:active del,
-.theme-dark button.secondary:active ins,
-.theme-dark button.secondary:active sub,
-.theme-dark button.secondary:active sup,
-.theme-dark button.secondary:active time,
-.theme-dark button.secondary:active .icon,
-.theme-dark button.secondary:active button,
-.theme-dark .button.secondary:active h1,
-.theme-dark .button.secondary:active h2,
-.theme-dark .button.secondary:active h3,
-.theme-dark .button.secondary:active h4,
-.theme-dark .button.secondary:active h5,
-.theme-dark .button.secondary:active h6,
-.theme-dark .button.secondary:active p,
-.theme-dark .button.secondary:active a,
-.theme-dark .button.secondary:active strong,
-.theme-dark .button.secondary:active i,
-.theme-dark .button.secondary:active em,
-.theme-dark .button.secondary:active mark,
-.theme-dark .button.secondary:active small,
-.theme-dark .button.secondary:active del,
-.theme-dark .button.secondary:active ins,
-.theme-dark .button.secondary:active sub,
-.theme-dark .button.secondary:active sup,
-.theme-dark .button.secondary:active time,
-.theme-dark .button.secondary:active .icon,
-.theme-dark .button.secondary:active button {
-  color: hsl(0, 0%, 3%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
 }
 .theme-dark button.primary,
 .theme-dark .button.primary {
-  background-color: color-mix(in srgb, hsl(266, 57%, 49%) 55%, hsl(0, 0%, 3%));
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+  box-shadow: 0px 0px 0 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 90%, hsl(0, 0%, 100%));
 }
-.theme-dark button.primary h1,
-.theme-dark button.primary h2,
-.theme-dark button.primary h3,
-.theme-dark button.primary h4,
-.theme-dark button.primary h5,
-.theme-dark button.primary h6,
-.theme-dark button.primary p,
-.theme-dark button.primary a,
-.theme-dark button.primary strong,
-.theme-dark button.primary i,
-.theme-dark button.primary em,
-.theme-dark button.primary mark,
-.theme-dark button.primary small,
-.theme-dark button.primary del,
-.theme-dark button.primary ins,
-.theme-dark button.primary sub,
-.theme-dark button.primary sup,
-.theme-dark button.primary time,
-.theme-dark button.primary .icon,
-.theme-dark button.primary button,
-.theme-dark .button.primary h1,
-.theme-dark .button.primary h2,
-.theme-dark .button.primary h3,
-.theme-dark .button.primary h4,
-.theme-dark .button.primary h5,
-.theme-dark .button.primary h6,
-.theme-dark .button.primary p,
-.theme-dark .button.primary a,
-.theme-dark .button.primary strong,
-.theme-dark .button.primary i,
-.theme-dark .button.primary em,
-.theme-dark .button.primary mark,
-.theme-dark .button.primary small,
-.theme-dark .button.primary del,
-.theme-dark .button.primary ins,
-.theme-dark .button.primary sub,
-.theme-dark .button.primary sup,
-.theme-dark .button.primary time,
-.theme-dark .button.primary .icon,
-.theme-dark .button.primary button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+.theme-dark button.primary > .icon,
+.theme-dark button.primary .element,
+.theme-dark .button.primary > .icon,
+.theme-dark .button.primary .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 90%, hsl(0, 0%, 100%));
+}
+.theme-dark button.primary.ghost,
+.theme-dark .button.primary.ghost {
+  box-shadow: none;
 }
 .theme-dark button.primary:hover,
 .theme-dark .button.primary:hover {
-  background-color: color-mix(in srgb, hsl(266, 57%, 49%) 75%, hsl(0, 0%, 97%));
-  color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
 }
-.theme-dark button.primary:hover h1,
-.theme-dark button.primary:hover h2,
-.theme-dark button.primary:hover h3,
-.theme-dark button.primary:hover h4,
-.theme-dark button.primary:hover h5,
-.theme-dark button.primary:hover h6,
-.theme-dark button.primary:hover p,
-.theme-dark button.primary:hover a,
-.theme-dark button.primary:hover strong,
-.theme-dark button.primary:hover i,
-.theme-dark button.primary:hover em,
-.theme-dark button.primary:hover mark,
-.theme-dark button.primary:hover small,
-.theme-dark button.primary:hover del,
-.theme-dark button.primary:hover ins,
-.theme-dark button.primary:hover sub,
-.theme-dark button.primary:hover sup,
-.theme-dark button.primary:hover time,
-.theme-dark button.primary:hover .icon,
-.theme-dark button.primary:hover button,
-.theme-dark .button.primary:hover h1,
-.theme-dark .button.primary:hover h2,
-.theme-dark .button.primary:hover h3,
-.theme-dark .button.primary:hover h4,
-.theme-dark .button.primary:hover h5,
-.theme-dark .button.primary:hover h6,
-.theme-dark .button.primary:hover p,
-.theme-dark .button.primary:hover a,
-.theme-dark .button.primary:hover strong,
-.theme-dark .button.primary:hover i,
-.theme-dark .button.primary:hover em,
-.theme-dark .button.primary:hover mark,
-.theme-dark .button.primary:hover small,
-.theme-dark .button.primary:hover del,
-.theme-dark .button.primary:hover ins,
-.theme-dark .button.primary:hover sub,
-.theme-dark .button.primary:hover sup,
-.theme-dark .button.primary:hover time,
-.theme-dark .button.primary:hover .icon,
-.theme-dark .button.primary:hover button {
-  color: hsl(0, 0%, 3%);
+.theme-dark button.primary:hover > .icon,
+.theme-dark button.primary:hover .element,
+.theme-dark .button.primary:hover > .icon,
+.theme-dark .button.primary:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.primary.test-hover,
+.theme-dark .button.primary.test-hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 10%, hsl(0, 0%, 0%));
+}
+.theme-dark button.primary.test-hover > .icon,
+.theme-dark button.primary.test-hover .element,
+.theme-dark .button.primary.test-hover > .icon,
+.theme-dark .button.primary.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
 }
 .theme-dark button.primary:active,
 .theme-dark .button.primary:active {
-  background-color: color-mix(in srgb, hsl(266, 57%, 49%), hsl(0, 0%, 97%));
-  color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
 }
-.theme-dark button.primary:active h1,
-.theme-dark button.primary:active h2,
-.theme-dark button.primary:active h3,
-.theme-dark button.primary:active h4,
-.theme-dark button.primary:active h5,
-.theme-dark button.primary:active h6,
-.theme-dark button.primary:active p,
-.theme-dark button.primary:active a,
-.theme-dark button.primary:active strong,
-.theme-dark button.primary:active i,
-.theme-dark button.primary:active em,
-.theme-dark button.primary:active mark,
-.theme-dark button.primary:active small,
-.theme-dark button.primary:active del,
-.theme-dark button.primary:active ins,
-.theme-dark button.primary:active sub,
-.theme-dark button.primary:active sup,
-.theme-dark button.primary:active time,
-.theme-dark button.primary:active .icon,
-.theme-dark button.primary:active button,
-.theme-dark .button.primary:active h1,
-.theme-dark .button.primary:active h2,
-.theme-dark .button.primary:active h3,
-.theme-dark .button.primary:active h4,
-.theme-dark .button.primary:active h5,
-.theme-dark .button.primary:active h6,
-.theme-dark .button.primary:active p,
-.theme-dark .button.primary:active a,
-.theme-dark .button.primary:active strong,
-.theme-dark .button.primary:active i,
-.theme-dark .button.primary:active em,
-.theme-dark .button.primary:active mark,
-.theme-dark .button.primary:active small,
-.theme-dark .button.primary:active del,
-.theme-dark .button.primary:active ins,
-.theme-dark .button.primary:active sub,
-.theme-dark .button.primary:active sup,
-.theme-dark .button.primary:active time,
-.theme-dark .button.primary:active .icon,
-.theme-dark .button.primary:active button {
-  color: hsl(0, 0%, 3%);
+.theme-dark button.primary:active > .icon,
+.theme-dark button.primary:active .element,
+.theme-dark .button.primary:active > .icon,
+.theme-dark .button.primary:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark button.primary.test-active,
+.theme-dark .button.primary.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
+}
+.theme-dark button.primary.test-active > .icon,
+.theme-dark button.primary.test-active .element,
+.theme-dark .button.primary.test-active > .icon,
+.theme-dark .button.primary.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
 }
 .theme-dark button.primary.disabled,
 .theme-dark .button.primary.disabled {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+  pointer-events: none;
+}
+.theme-dark button.secondary,
+.theme-dark .button.secondary {
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 20%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 90%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary > .icon,
+.theme-dark button.secondary .element,
+.theme-dark .button.secondary > .icon,
+.theme-dark .button.secondary .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 90%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary.ghost,
+.theme-dark .button.secondary.ghost {
+  box-shadow: none;
+}
+.theme-dark button.secondary:hover,
+.theme-dark .button.secondary:hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%);
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary:hover > .icon,
+.theme-dark button.secondary:hover .element,
+.theme-dark .button.secondary:hover > .icon,
+.theme-dark .button.secondary:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary.test-hover,
+.theme-dark .button.secondary.test-hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%);
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 10%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary.test-hover > .icon,
+.theme-dark button.secondary.test-hover .element,
+.theme-dark .button.secondary.test-hover > .icon,
+.theme-dark .button.secondary.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 10%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary:active,
+.theme-dark .button.secondary:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) inset;
+}
+.theme-dark button.secondary:active > .icon,
+.theme-dark button.secondary:active .element,
+.theme-dark .button.secondary:active > .icon,
+.theme-dark .button.secondary:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary.test-active,
+.theme-dark .button.secondary.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) inset;
+}
+.theme-dark button.secondary.test-active > .icon,
+.theme-dark button.secondary.test-active .element,
+.theme-dark .button.secondary.test-active > .icon,
+.theme-dark .button.secondary.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary.disabled,
+.theme-dark .button.secondary.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+  pointer-events: none;
+}
+.theme-dark button.secondary-alt,
+.theme-dark .button.secondary-alt {
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 20%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 90%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary-alt > .icon,
+.theme-dark button.secondary-alt .element,
+.theme-dark .button.secondary-alt > .icon,
+.theme-dark .button.secondary-alt .element {
+  color: color-mix(in srgb, color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 90%, hsl(266, 57%, 49%) 10%) 90%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary-alt.ghost,
+.theme-dark .button.secondary-alt.ghost {
+  box-shadow: none;
+}
+.theme-dark button.secondary-alt:hover,
+.theme-dark .button.secondary-alt:hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary-alt:hover > .icon,
+.theme-dark button.secondary-alt:hover .element,
+.theme-dark .button.secondary-alt:hover > .icon,
+.theme-dark .button.secondary-alt:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary-alt.test-hover,
+.theme-dark .button.secondary-alt.test-hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 10%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary-alt.test-hover > .icon,
+.theme-dark button.secondary-alt.test-hover .element,
+.theme-dark .button.secondary-alt.test-hover > .icon,
+.theme-dark .button.secondary-alt.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 10%, hsl(0, 0%, 0%));
+}
+.theme-dark button.secondary-alt:active,
+.theme-dark .button.secondary-alt:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
+}
+.theme-dark button.secondary-alt:active > .icon,
+.theme-dark button.secondary-alt:active .element,
+.theme-dark .button.secondary-alt:active > .icon,
+.theme-dark .button.secondary-alt:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary-alt.test-active,
+.theme-dark .button.secondary-alt.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
+}
+.theme-dark button.secondary-alt.test-active > .icon,
+.theme-dark button.secondary-alt.test-active .element,
+.theme-dark .button.secondary-alt.test-active > .icon,
+.theme-dark .button.secondary-alt.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark button.secondary-alt.disabled,
+.theme-dark .button.secondary-alt.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+  pointer-events: none;
 }
 .theme-dark button.warn,
 .theme-dark .button.warn {
-  background-color: hsl(39, 76%, 49%);
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) inset;
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 20%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 90%, hsl(0, 0%, 100%));
 }
-.theme-dark button.warn h1,
-.theme-dark button.warn h2,
-.theme-dark button.warn h3,
-.theme-dark button.warn h4,
-.theme-dark button.warn h5,
-.theme-dark button.warn h6,
-.theme-dark button.warn p,
-.theme-dark button.warn a,
-.theme-dark button.warn strong,
-.theme-dark button.warn i,
-.theme-dark button.warn em,
-.theme-dark button.warn mark,
-.theme-dark button.warn small,
-.theme-dark button.warn del,
-.theme-dark button.warn ins,
-.theme-dark button.warn sub,
-.theme-dark button.warn sup,
-.theme-dark button.warn time,
-.theme-dark button.warn .icon,
-.theme-dark button.warn button,
-.theme-dark .button.warn h1,
-.theme-dark .button.warn h2,
-.theme-dark .button.warn h3,
-.theme-dark .button.warn h4,
-.theme-dark .button.warn h5,
-.theme-dark .button.warn h6,
-.theme-dark .button.warn p,
-.theme-dark .button.warn a,
-.theme-dark .button.warn strong,
-.theme-dark .button.warn i,
-.theme-dark .button.warn em,
-.theme-dark .button.warn mark,
-.theme-dark .button.warn small,
-.theme-dark .button.warn del,
-.theme-dark .button.warn ins,
-.theme-dark .button.warn sub,
-.theme-dark .button.warn sup,
-.theme-dark .button.warn time,
-.theme-dark .button.warn .icon,
-.theme-dark .button.warn button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+.theme-dark button.warn > .icon,
+.theme-dark button.warn .element,
+.theme-dark .button.warn > .icon,
+.theme-dark .button.warn .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 90%, hsl(0, 0%, 100%));
+}
+.theme-dark button.warn.ghost,
+.theme-dark .button.warn.ghost {
+  box-shadow: none;
 }
 .theme-dark button.warn:hover,
 .theme-dark .button.warn:hover {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%) 75%, hsl(0, 0%, 97%));
-  color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 20%, hsl(0, 0%, 0%));
 }
-.theme-dark button.warn:hover h1,
-.theme-dark button.warn:hover h2,
-.theme-dark button.warn:hover h3,
-.theme-dark button.warn:hover h4,
-.theme-dark button.warn:hover h5,
-.theme-dark button.warn:hover h6,
-.theme-dark button.warn:hover p,
-.theme-dark button.warn:hover a,
-.theme-dark button.warn:hover strong,
-.theme-dark button.warn:hover i,
-.theme-dark button.warn:hover em,
-.theme-dark button.warn:hover mark,
-.theme-dark button.warn:hover small,
-.theme-dark button.warn:hover del,
-.theme-dark button.warn:hover ins,
-.theme-dark button.warn:hover sub,
-.theme-dark button.warn:hover sup,
-.theme-dark button.warn:hover time,
-.theme-dark button.warn:hover .icon,
-.theme-dark button.warn:hover button,
-.theme-dark .button.warn:hover h1,
-.theme-dark .button.warn:hover h2,
-.theme-dark .button.warn:hover h3,
-.theme-dark .button.warn:hover h4,
-.theme-dark .button.warn:hover h5,
-.theme-dark .button.warn:hover h6,
-.theme-dark .button.warn:hover p,
-.theme-dark .button.warn:hover a,
-.theme-dark .button.warn:hover strong,
-.theme-dark .button.warn:hover i,
-.theme-dark .button.warn:hover em,
-.theme-dark .button.warn:hover mark,
-.theme-dark .button.warn:hover small,
-.theme-dark .button.warn:hover del,
-.theme-dark .button.warn:hover ins,
-.theme-dark .button.warn:hover sub,
-.theme-dark .button.warn:hover sup,
-.theme-dark .button.warn:hover time,
-.theme-dark .button.warn:hover .icon,
-.theme-dark .button.warn:hover button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+.theme-dark button.warn:hover > .icon,
+.theme-dark button.warn:hover .element,
+.theme-dark .button.warn:hover > .icon,
+.theme-dark .button.warn:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.warn.test-hover,
+.theme-dark .button.warn.test-hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 10%, hsl(0, 0%, 0%));
+}
+.theme-dark button.warn.test-hover > .icon,
+.theme-dark button.warn.test-hover .element,
+.theme-dark .button.warn.test-hover > .icon,
+.theme-dark .button.warn.test-hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 10%, hsl(0, 0%, 0%));
 }
 .theme-dark button.warn:active,
 .theme-dark .button.warn:active {
-  background-color: color-mix(in srgb, hsl(39, 76%, 49%), hsl(0, 0%, 97%));
-  color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) inset;
 }
-.theme-dark button.warn:active h1,
-.theme-dark button.warn:active h2,
-.theme-dark button.warn:active h3,
-.theme-dark button.warn:active h4,
-.theme-dark button.warn:active h5,
-.theme-dark button.warn:active h6,
-.theme-dark button.warn:active p,
-.theme-dark button.warn:active a,
-.theme-dark button.warn:active strong,
-.theme-dark button.warn:active i,
-.theme-dark button.warn:active em,
-.theme-dark button.warn:active mark,
-.theme-dark button.warn:active small,
-.theme-dark button.warn:active del,
-.theme-dark button.warn:active ins,
-.theme-dark button.warn:active sub,
-.theme-dark button.warn:active sup,
-.theme-dark button.warn:active time,
-.theme-dark button.warn:active .icon,
-.theme-dark button.warn:active button,
-.theme-dark .button.warn:active h1,
-.theme-dark .button.warn:active h2,
-.theme-dark .button.warn:active h3,
-.theme-dark .button.warn:active h4,
-.theme-dark .button.warn:active h5,
-.theme-dark .button.warn:active h6,
-.theme-dark .button.warn:active p,
-.theme-dark .button.warn:active a,
-.theme-dark .button.warn:active strong,
-.theme-dark .button.warn:active i,
-.theme-dark .button.warn:active em,
-.theme-dark .button.warn:active mark,
-.theme-dark .button.warn:active small,
-.theme-dark .button.warn:active del,
-.theme-dark .button.warn:active ins,
-.theme-dark .button.warn:active sub,
-.theme-dark .button.warn:active sup,
-.theme-dark .button.warn:active time,
-.theme-dark .button.warn:active .icon,
-.theme-dark .button.warn:active button {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+.theme-dark button.warn:active > .icon,
+.theme-dark button.warn:active .element,
+.theme-dark .button.warn:active > .icon,
+.theme-dark .button.warn:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark button.warn.test-active,
+.theme-dark .button.warn.test-active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) inset;
+}
+.theme-dark button.warn.test-active > .icon,
+.theme-dark button.warn.test-active .element,
+.theme-dark .button.warn.test-active > .icon,
+.theme-dark .button.warn.test-active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(26, 100%, 36%) 100%) 40%, hsl(0, 0%, 100%));
 }
 .theme-dark button.warn.disabled,
 .theme-dark .button.warn.disabled {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+  pointer-events: none;
+}
+.theme-dark .test-hover,
+.theme-dark .test-active {
+  padding: 0.2rem;
+}
+.theme-dark a {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+}
+.theme-dark .text-danger {
+  color: red;
+}
+.theme-dark .spacer {
+  opacity: 0 !important;
+}
+.theme-dark .page-content,
+.theme-dark .page-wrapper {
+  background-color: hsl(0, 0%, 0%);
+}
+.theme-dark .left-fade {
+  background-image: linear-gradient(to right, hsl(0, 0%, 0%), transparent);
+}
+.theme-dark .right-fade {
+  background-image: linear-gradient(to left, hsl(0, 0%, 0%), transparent);
+}
+.theme-dark [class*=foco-][class$=R] {
+  background-image: linear-gradient(to left, hsl(0, 0%, 0%), transparent);
+}
+.theme-dark [class*=foco-][class$=L] {
+  background-image: linear-gradient(to right, hsl(0, 0%, 0%), transparent);
+}
+.theme-dark .overlay {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+  transition: opacity 0.5s;
+  opacity: 40%;
+}
+.theme-dark .drawer-handle {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%);
+  box-shadow: 0px 2px 0.15rem 0px rgba(0, 0, 0, 0.228);
+}
+.theme-dark .drawer-handle:hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%);
+}
+.theme-dark .drawer-handle:active {
+  transition-property: background-color 0.2s;
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%);
+}
+.theme-dark .drawer-handle > input:checked + .icon {
+  transition-property: color 0.2s;
+  color: hsl(266, 57%, 49%);
+}
+.theme-dark .nav.nav-main,
+.theme-dark nav.nav-main {
+  transition: background-color 1s, box-shadow 0.25s;
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%);
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%);
+}
+.theme-dark .nav.nav-main.tint.tint,
+.theme-dark nav.nav-main.tint.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%) 95%, hsl(266, 57%, 49%) 5%);
+}
+.theme-dark .nav.nav-main.scrolled,
+.theme-dark nav.nav-main.scrolled {
+  background-color: hsl(0, 0%, 0%);
+  box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
+}
+.theme-dark .nav.nav-main.scrolled.tint,
+.theme-dark nav.nav-main.scrolled.tint {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 95%, hsl(266, 57%, 49%) 5%);
+}
+.theme-dark .foo.foo-main,
+.theme-dark footer.foo-main {
+  background-color: hsl(0, 0%, 0%);
+}
+.theme-dark .nav,
+.theme-dark nav,
+.theme-dark .footer,
+.theme-dark footer {
+  background-color: transparent;
+}
+.theme-dark .red {
+  background-color: red;
+}
+.theme-dark input[type=radio]:after {
+  width: 0.75rem;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%);
+  content: "";
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  border: 2px solid hsl(0, 0%, 0%);
+  outline: 2px solid color-mix(in srgb, hsl(0, 0%, 0%) 66%, hsl(0, 0%, 100%) 33%);
+}
+.theme-dark input[type=radio]:checked:after {
+  outline: 2px solid color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 66%, hsl(0, 0%, 100%) 33%) 66%, hsl(266, 57%, 49%) 33%);
+  background-color: hsl(266, 57%, 49%);
+  border: 2px solid color-mix(in srgb, hsl(0, 0%, 0%) 66%, hsl(266, 57%, 49%) 33%);
+}
+.theme-dark input[type=text],
+.theme-dark input[type=password],
+.theme-dark input[type=email],
+.theme-dark input[type=url],
+.theme-dark input[type=tel],
+.theme-dark input[type=number],
+.theme-dark input[type=search],
+.theme-dark textarea {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 95%, hsl(0, 0%, 100%) 5%);
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+  border: 2px solid color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+}
+.theme-dark input[type=text]:focus,
+.theme-dark input[type=password]:focus,
+.theme-dark input[type=email]:focus,
+.theme-dark input[type=url]:focus,
+.theme-dark input[type=tel]:focus,
+.theme-dark input[type=number]:focus,
+.theme-dark input[type=search]:focus,
+.theme-dark textarea:focus {
+  box-shadow: 0 0 5px 0 color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+  outline: none;
+}
+.theme-dark input[type=text]:hover,
+.theme-dark input[type=password]:hover,
+.theme-dark input[type=email]:hover,
+.theme-dark input[type=url]:hover,
+.theme-dark input[type=tel]:hover,
+.theme-dark input[type=number]:hover,
+.theme-dark input[type=search]:hover,
+.theme-dark textarea:hover {
+  box-shadow: 0 0 3px 0 color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+}
+.theme-dark input[type=text]:hover:focus,
+.theme-dark input[type=password]:hover:focus,
+.theme-dark input[type=email]:hover:focus,
+.theme-dark input[type=url]:hover:focus,
+.theme-dark input[type=tel]:hover:focus,
+.theme-dark input[type=number]:hover:focus,
+.theme-dark input[type=search]:hover:focus,
+.theme-dark textarea:hover:focus {
+  box-shadow: 0 0 5px 0 color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+}
+.theme-dark input[type=text]:hover:active,
+.theme-dark input[type=password]:hover:active,
+.theme-dark input[type=email]:hover:active,
+.theme-dark input[type=url]:hover:active,
+.theme-dark input[type=tel]:hover:active,
+.theme-dark input[type=number]:hover:active,
+.theme-dark input[type=search]:hover:active,
+.theme-dark textarea:hover:active {
+  box-shadow: 0 0 2px 0 color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+}
+.theme-dark .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+}
+.theme-dark .search-dropdown input[type=text] + .search-dropdown-icon .icon {
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%);
 }
 .theme-dark button.user-color {
-  background-color: var(--userColor);
+  box-shadow: 0px 0px 0 2px var(--userColor) inset;
+  background-color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, var(--userColor) 90%, hsl(0, 0%, 100%));
 }
-.theme-dark button.user-color h1,
-.theme-dark button.user-color h2,
-.theme-dark button.user-color h3,
-.theme-dark button.user-color h4,
-.theme-dark button.user-color h5,
-.theme-dark button.user-color h6,
-.theme-dark button.user-color p,
-.theme-dark button.user-color a,
-.theme-dark button.user-color strong,
-.theme-dark button.user-color i,
-.theme-dark button.user-color em,
-.theme-dark button.user-color mark,
-.theme-dark button.user-color small,
-.theme-dark button.user-color del,
-.theme-dark button.user-color ins,
-.theme-dark button.user-color sub,
-.theme-dark button.user-color sup,
-.theme-dark button.user-color time,
-.theme-dark button.user-color .icon,
-.theme-dark button.user-color button {
-  color: white;
+.theme-dark button.user-color > .icon,
+.theme-dark button.user-color .element {
+  color: color-mix(in srgb, var(--userColor) 90%, hsl(0, 0%, 100%));
 }
 .theme-dark button.user-color:hover {
-  background-color: color-mix(in srgb, var(--userColor) 80%, hsl(0, 0%, 97%) 20%);
+  background-color: var(--userColor);
+  color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.user-color:hover > .element {
+  color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark button.user-color:hover > .icon {
+  color: color-mix(in srgb, var(--userColor) 20%, hsl(0, 0%, 0%));
 }
 .theme-dark button.user-color:active {
-  background-color: color-mix(in srgb, var(--userColor) 60%, hsl(0, 0%, 97%) 40%);
+  background-color: color-mix(in srgb, var(--userColor) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, var(--userColor) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px var(--userColor) inset;
+}
+.theme-dark button.user-color:active > .icon {
+  color: color-mix(in srgb, var(--userColor) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark button.user-color:active > .element {
+  color: color-mix(in srgb, var(--userColor) 40%, hsl(0, 0%, 100%));
 }
 .theme-dark .card {
-  box-shadow: 0px 0px 0px 1px color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%) inset;
-  background-color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%);
 }
-.theme-dark .car-borderless {
-  box-shadow: none;
+.theme-dark .car-border {
+  box-shadow: 0px 0px 0px 2px color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%) inset;
+}
+.theme-dark .car-shadow {
+  box-shadow: 0 0 5px 0 color-mix(in srgb, black 50%, hsl(0, 0%, 0%) 50%);
 }
 .theme-dark .selector-grid {
-  border: 1px solid color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+  border: 4px solid color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+  display: grid;
+  gap: 0.2rem;
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
 }
 .theme-dark .selector-grid > .selector {
-  background-color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%);
 }
-.theme-dark .selector-grid > .selector > .icon {
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
+.theme-dark .selector-grid > .selector > .icon,
+.theme-dark .selector-grid > .selector .element {
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%);
 }
-.theme-dark .selector-grid .selector:has(> input:checked) {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(266, 57%, 49%) 66%);
+.theme-dark .selector-grid > .selector:hover {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark .selector-grid > .selector:hover > .icon,
+.theme-dark .selector-grid > .selector:hover .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark .selector-grid > .selector.ghost {
+  box-shadow: none;
+}
+.theme-dark .selector-grid > .selector.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+  pointer-events: none;
+}
+.theme-dark .selector-grid .selector:has(> input:checked),
+.theme-dark .selector-grid .selector:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
+}
+.theme-dark .selector-grid .selector:has(> input:checked) > .icon,
+.theme-dark .selector-grid .selector:has(> input:checked) .element,
+.theme-dark .selector-grid .selector:active > .icon,
+.theme-dark .selector-grid .selector:active .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
 }
 .theme-dark .thumb {
   background-color: rgb(94, 205, 142);
@@ -7818,36 +7693,53 @@ nav.nav-main {
 .theme-dark .thumb time,
 .theme-dark .thumb .icon,
 .theme-dark .thumb button {
-  color: hsl(0, 0%, 3%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .menu {
-  background-color: hsl(0, 0%, 3%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%);
   box-shadow: 0 0.1rem 0.8rem -0.3rem black;
 }
 .theme-dark .selector {
   background-color: inherit;
-  color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
 }
 .theme-dark .selector:hover {
-  background-color: hsl(266, 57%, 49%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark .selector:hover > .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark .selector:hover > .icon {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark .selector:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+  box-shadow: 0px 0px 4px 2px color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) inset;
+}
+.theme-dark .selector:active > .icon {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark .selector:active > .element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%) 40%, hsl(0, 0%, 100%));
 }
 .theme-dark .toggle {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
 }
 .theme-dark .toggle > span {
-  background-color: hsl(0, 0%, 3%);
+  background-color: hsl(0, 0%, 0%);
 }
 .theme-dark .toggle input[type=checkbox]:checked + span {
-  background-color: hsl(266, 57%, 49%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
 }
 .theme-dark .ring {
-  outline-color: hsl(266, 57%, 49%);
+  outline-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
 }
 .theme-dark .icon:before {
   color: inherit;
 }
 .theme-dark .div-highlight {
-  background-color: hsl(266, 57%, 49%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
 }
 .theme-dark .div-highlight h1,
 .theme-dark .div-highlight h2,
@@ -7869,64 +7761,109 @@ nav.nav-main {
 .theme-dark .div-highlight time,
 .theme-dark .div-highlight .icon,
 .theme-dark .div-highlight button {
-  color: hsl(0, 0%, 3%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .div-base90 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%);
 }
 .theme-dark .base {
-  background-color: hsl(0, 0%, 3%);
+  background-color: hsl(0, 0%, 0%);
 }
 .theme-dark .base-color {
-  color: hsl(0, 0%, 3%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .base-color.tint {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base10 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 10%, hsl(0, 0%, 97%) 90%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%);
+}
+.theme-dark .base10.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base15 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 15%, hsl(0, 0%, 97%) 85%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 15%, hsl(0, 0%, 100%) 85%);
+}
+.theme-dark .base15.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 15%, hsl(0, 0%, 100%) 85%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base25 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 25%, hsl(0, 0%, 97%) 75%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 25%, hsl(0, 0%, 100%) 75%);
+}
+.theme-dark .base25.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 25%, hsl(0, 0%, 100%) 75%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base33 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 33%, hsl(0, 0%, 97%) 66%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%);
+}
+.theme-dark .base33.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 33%, hsl(0, 0%, 100%) 66%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base50 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 50%, hsl(0, 0%, 97%) 50%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .base50.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base66 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 66%, hsl(0, 0%, 97%) 33%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 66%, hsl(0, 0%, 100%) 33%);
+}
+.theme-dark .base66.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 66%, hsl(0, 0%, 100%) 33%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base75 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 75%, hsl(0, 0%, 97%) 25%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+}
+.theme-dark .base75.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base85 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 85%, hsl(0, 0%, 97%) 15%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%);
+}
+.theme-dark .base85.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base90 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%);
+}
+.theme-dark .base90.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base15 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 5%, hsl(0, 0%, 97%) 95%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 5%, hsl(0, 0%, 100%) 95%);
+}
+.theme-dark .base15.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 15%, hsl(0, 0%, 100%) 85%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .base95 {
-  background-color: color-mix(in srgb, hsl(0, 0%, 3%) 95%, hsl(0, 0%, 97%) 5%);
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 95%, hsl(0, 0%, 100%) 5%);
+}
+.theme-dark .base95.tint {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 95%, hsl(0, 0%, 100%) 5%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .baseInv {
-  background-color: hsl(0, 0%, 97%);
+  background-color: hsl(0, 0%, 100%);
+}
+.theme-dark .baseInv.tint {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 95%, hsl(266, 57%, 49%) 5%);
 }
 .theme-dark .success {
-  background-color: hsl(129, 67%, 41%);
+  background-color: hsl(129, 69%, 41%);
+}
+.theme-dark .success.tint {
+  background-color: color-mix(in srgb, hsl(129, 69%, 41%) 75%, hsl(266, 57%, 49%) 25%);
+}
+.theme-dark .success > .element {
+  color: color-mix(in srgb, hsl(129, 69%, 41%) 25%, hsl(0, 0%, 0%) 75%);
 }
 .theme-dark hr {
-  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 95%, hsl(0, 0%, 97%) 5%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
 }
 .theme-dark .hr-highlight {
-  border-color: hsl(266, 57%, 49%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 100%) 40%, hsl(266, 57%, 49%) 100%);
 }
 .theme-dark .hr-base90 {
-  border-color: color-mix(in srgb, hsl(0, 0%, 3%) 90%, hsl(0, 0%, 97%) 10%);
+  border-color: color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%);
 }
 .theme-dark .ico-color {
   color: rgb(83, 83, 69) !important;
