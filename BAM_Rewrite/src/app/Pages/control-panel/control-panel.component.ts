@@ -18,7 +18,10 @@ export class ControlPanelComponent implements OnInit {
   ngOnInit() {
     this.mockDataService.getApps().subscribe((apps) => {
       this.appsList = apps;
-    })
+      this.appsList.forEach(app => {
+        console.log(app.title);
+      });
+    });
   }
 
 }
