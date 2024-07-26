@@ -10,11 +10,13 @@ import { Component, input, output } from '@angular/core';
 })
 export class DropdownComponent {
 
-  options = input<string[]>();
+  names = input<string[]>();
+
+  values = input<any[]>();
 
   selection = output<any>();
 
-  optionSelected($event:any)
+  onSelect($event:any)
   {
 
   }
