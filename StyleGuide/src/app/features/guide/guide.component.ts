@@ -13,7 +13,7 @@ import { FormsComponent } from '../forms/forms.component';
 import { PopupComponent } from '../popup/popup.component';
 import { MenuComponent } from '../menu/menu.component';
 import { MenuItemComponent } from '../menu/menu-item/menu-item.component';
-import { DropdownComponent } from '../dropdown/dropdown.component';
+import { DropdownComponent, DropdownOption } from '../dropdown/dropdown.component';
 
 
 
@@ -50,12 +50,14 @@ export class GuideComponent {
     {name: "Dropdowns",link:"dropdowns",sample:'',script:''}
   ]
 
-  public dropdownOptions = [
-    "option1",
-    "option2",
-    "option3",
-    "option4"
+  public dropdownOptions: DropdownOption[] = [
+    {name:'option1', value: 1},
+    {name:'option2', value: 2},
+    {name:'option3', value: 3},
+    {name:'option4', value: 4},
+    {name:'option5', value: 5},
   ]
+
 
   showExampleDialog:boolean = false;
   showConfirmDialog:boolean = false;
@@ -69,7 +71,6 @@ export class GuideComponent {
     var result =  this.links.find(x => x.link == link)?.script ?? ""
     return result;
   }
-
 
   // Example function for consuming the Drawer toggle emitter
   public toggled($event:any)
@@ -101,5 +102,9 @@ export class GuideComponent {
     console.log(s+" clicked")
   }
 
+  public consumeDropdownEmission(event:DropdownOption)
+  {
+    console.log(event);
+  }
 }
 

@@ -9,16 +9,25 @@ import { Component, input, output } from '@angular/core';
   styleUrl: './dropdown.component.scss'
 })
 export class DropdownComponent {
+  showdropdown: boolean = false;
 
-  names = input<string[]>();
+  options = input<DropdownOption[]>();
 
-  values = input<any[]>();
+  selected = output<DropdownOption>();
+  currentSelection: DropdownOption = new DropdownOption();
 
-  selection = output<any>();
-
-  onSelect($event:any)
+  public onSelect(option:DropdownOption)
   {
-
+    this.showdropdown = false;
+    this.currentSelection = option;
+    this.selected.emit(option);
   }
 
+}
+
+//Make a list of these, and pass them into the options input
+export class DropdownOption
+{
+  name: string = "";
+  value: any;
 }
