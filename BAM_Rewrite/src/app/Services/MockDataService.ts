@@ -22,17 +22,42 @@ export class MockDataService
 
     public putApp(app:Application)
     {
-        this.mockData.Applications.forEach(a => {
-            if(a.id == app.id)
+        // this.mockData.Applications.forEach(a => {
+        //     console.log("FROM SERVICE: " + a.id + "  ==? "+ app.id);
+        //     if(a.id == app.id)
+        //     {
+        //         console.log("FROM SERVICE: match found");
+        //         a = app;
+        //         break;
+        //     }
+        // });
+
+        for (var i = 0, len = this.mockData.Applications.length; i < len; i++)
+        {
+            //console.log("FROM SERVICE: " + this.mockData.Applications[i].id + "  ==? "+ app.id);
+            if(this.mockData.Applications[i].id == app.id)
             {
-                a = app;
+                //console.log("FROM SERVICE: match found");
+                this.mockData.Applications[i] = app;
+                break;
             }
-        });
+        }
         this.applicationSubject.next(this.mockData.Applications);
+        //this.mockData.Applications.forEach(x => {console.log(x)});
     }
 
     public postApp(app:Application)
     {
-
+        for (var i = 0, len = this.mockData.Applications.length; i < len; i++)
+        {
+            //console.log("FROM SERVICE: " + this.mockData.Applications[i].id + "  ==? "+ app.id);
+            if(this.mockData.Applications[i].id == app.id)
+            {
+                console.log("FROM SERVICE: Cant add new App, ID collision");
+                return;
+            }
+        }
+        this.mockData.Applications.push(app);
+        this.applicationSubject.next(this.mockData.Applications);
     }
 }
