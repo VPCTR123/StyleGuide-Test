@@ -162,9 +162,10 @@
             <div class="example">
               <h3>Default Drawer Example</h3>
               <div class="margin mar-mdB">
-                <app-drawer (toggled)="toggled($event)" displayName="Default Drawer"
+                <app-drawer (toggled)="toggled($event)" drawerName="Default Drawer"
                   drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
-                  <div class="padding pad-smVr pad-smHr">
+                  <span class="drawer-handle-content">Default Drawer</span>
+                  <div class="padding pad-smVr pad-smHr drawer-content">
                     <div class="card pill pil-sm w25p"><span class="flex fle-centerHr">Short Card</span></div>
                     <div class="card pill pil-sm w50p"><span class="flex fle-centerHr">Medium Card</span></div>
                     <div class="card pill pil-sm w75p"><span class="flex fle-centerHr">Long Card</span></div>
@@ -177,7 +178,8 @@
               <div class="w50p">
                 <app-drawer (toggled)="toggled($event)" displayName="Short Drawer"
                   drawer_handle="padding pad-smVr pad-smHr gap gap-sm" drawer="" icon="ico-sm ico-carret-d">
-                  <div class="grid gri-halves padding pad-smVr pad-smVr pad-smHr w75p">
+                  <span class="drawer-handle-content">Short Drawer</span>
+                  <div class="grid gri-halves padding pad-smVr pad-smVr pad-smHr w75p drawer-content">
                     <app-forms></app-forms>
                   </div>
                 </app-drawer>

@@ -23,7 +23,7 @@ export class DrawerComponent {
   icon = input<string>("");
 
 
-  displayName = input<string>("");
+  drawerName = input<string>("");
   
   //state = true => Open
   //state = false => closed
@@ -37,7 +37,7 @@ export class DrawerComponent {
     this.open = !this.open;  
     this.toggled.emit({
       state: this.open,
-      displayName: this.displayName()
+      displayName: this.drawerName()
     });
   }
 
