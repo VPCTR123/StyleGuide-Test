@@ -23,6 +23,11 @@ export class DropdownComponent {
     this.selected.emit(option);
   }
 
+  public blur()
+  {
+    console.log("blurred");
+  }
+
 }
 
 //Make a list of these, and pass them into the options input

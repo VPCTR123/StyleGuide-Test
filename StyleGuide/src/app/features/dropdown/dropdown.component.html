@@ -1,9 +1,10 @@
+
 <div class="search-dropdown content con-100p">
     <input type="text" autocomplete="off" class="inp-fullHr pill padding pad-smHr" (click)="showdropdown = true" value="{{this.currentSelection.name}}">
     <div class="search-dropdown-icon padding pad-smHr">
         <span class="icon ico-sm ico-carret-l"></span>
     </div>
-    <div class="position pos-absolute content con-100p" *ngIf="showdropdown">
+    <div class="position pos-absolute content con-100p" *ngIf="showdropdown" style="z-index: 99;">
         <div class="menu men-full margin mar-xsT pill pil-sm">
             <div class="spacer spa-xxs"></div>
             <ul class="content con-xxsMaxVr con-scrollY">
@@ -16,3 +17,9 @@
         </div>
     </div>
 </div>
+@if(showdropdown)
+{
+    <div class="overlay visible" style="z-index: 98;" (click)="showdropdown = false;">
+
+    </div>
+}
