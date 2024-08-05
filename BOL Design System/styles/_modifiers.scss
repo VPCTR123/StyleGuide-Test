@@ -817,7 +817,9 @@
     &.dis-inline-block {
         display: inline-block;
     }
-
+    &.dis-none{
+        display: none;
+    }
 }
 
 //** Align left edge
@@ -1103,7 +1105,7 @@
     }
 
     &.fle-justifyContent-end {
-        justify-content: end;
+        justify-content: flex-end;
     }
 
     &.fle-justifyContent-start {
@@ -1140,6 +1142,10 @@
 //** Gap Modifier
 .gap {
     gap: $gap;
+
+    &.gap-inherit {
+        gap: inherit;
+    }
 
     &.gap-xxs {
 
@@ -1178,14 +1184,7 @@
 }
 
 //** A ghost element will only show its Background when on hover. Good for certain buttons.
-.ghost:not(:hover) {
 
-    background-color: hsla(0, 0, 0, 0) !important;
-
-    &.gho-transXxs {
-        transition: background-color .1s;
-    }
-}
 
 //** Flex Grow
 .grow {
@@ -1450,11 +1449,12 @@ $margin-class-names: (
     margin-right: auto;
     display: flex;
     flex-wrap: wrap;
-   
+
 }
-.magic.mag-standardFlow>.magic-parent{
-    width: 100% ;
-    
+
+.magic.mag-standardFlow>.magic-parent {
+    width: 100%;
+
 }
 
 //** Margin Modifier Component 
@@ -2113,6 +2113,10 @@ $margin-class-names: (
 
     &.pil-xl {
         border-radius: 3rem;
+    }
+
+    &.pil-xxl {
+        border-radius: 5rem;
     }
 }
 

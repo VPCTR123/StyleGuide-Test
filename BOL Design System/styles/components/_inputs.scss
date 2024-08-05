@@ -5,7 +5,7 @@ input[type="url"],
 input[type="tel"],
 input[type="number"],
 input[type="search"] {
-
+    padding: 0 .5rem;
     height: 1.9rem;
     border-style: solid;
     border-width: 1px;
@@ -16,18 +16,65 @@ textarea {
     height: 100%;
 
 }
-input, .input {
-    &.inp-full{
+
+input,
+.input {
+    &.inp-full {
         width: 100%;
         height: 100%;
     }
-    &.inp-fullVr{
+
+    &.inp-fullVr {
         height: 100%;
     }
-    &.inp-fullHr{
+
+    &.inp-fullHr {
         width: 100%;
     }
 }
+
+
+.input-text-component {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    &>.result{
+        display: none;
+    }
+    margin-bottom: 1rem;
+}
+
+
+
+
+// .radio-button {
+//     display: flex;
+//     align-items: center;
+//     gap: .1rem;
+//     padding: 0.25rem .75rem;
+// }
+
+// input[type='radio']:after {
+//     width: .75rem;
+//     aspect-ratio: 1/1;
+//     border-radius: 100%;
+
+
+//     background-color: $shade85;
+//     content: '';
+//     display: inline-block;
+//     position: relative;
+//     top: -2px;
+//     border: 2px solid $shade;
+//     outline: 2px solid $shade66;
+// }
+
+// input[type='radio']:checked:after {
+//     outline: 2px solid color-mix(in srgb, $shade66 66%, $highlight 33%);
+//     background-color: $highlight;
+//     border: 2px solid color-mix(in srgb, $shade 66%, $highlight 33%);
+
+// }
 // .search-icon-pair-rotate input[type="text"]:focus + .rotate-icon-wrapper {
 
 //     & .icon{
@@ -55,4 +102,3 @@ input, .input {
 //     position: relative;
 
 // }
-

@@ -31,14 +31,17 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
-     
+
     }
-&.menu, .card{
-    max-width: 90vw;
-    //** Max height calc also stops very long text bodies from extending forever,
-    //** eventually forcing scroll. 
-    max-height: calc(min(90vh, 100rem));
-}
+
+    &.menu,
+    .card {
+        max-width: 90vw;
+        //** Max height calc also stops very long text bodies from extending forever,
+        //** eventually forcing scroll. 
+        max-height: calc(min(90vh, 100rem));
+    }
+
     //** Debug Class - Remove before release
     &.pop-debug {
         background-color: red;

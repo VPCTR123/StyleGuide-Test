@@ -1,9 +1,9 @@
-.background-image{
+.background-image {
     position: fixed;
-    top: 0;
+    top: -70%;
     left: 0;
     z-index: -1;
-   min-width: 100vw;
-    height: 100vh;
-    min-height: 1000px;
+    min-width: 100vw;
+    
+    aspect-ratio: 1/1;
 }

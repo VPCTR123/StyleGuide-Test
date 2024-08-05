@@ -1,94 +1,103 @@
 @import "../variables";
 
-//** Menu Component - A (div) frame that pairs with different components to create a variety of different menu styles.
-.menu {
-    //** Max width prevents modal style menus from exceeding the bounds of the monitor.
-   
+//MENU IS REMOVED SEE README.TXT
+// .menu {
+//     //** Max width prevents modal style menus from exceeding the bounds of the monitor.
 
-    //** Basic properties
-    background-color: white;
 
-    overflow: hidden;
+//     //** Basic properties
+//     background-color: white;
 
-    //** Width Variants 
-    &.men-xxs {
-        width: $celXxs;
-    }
+//     overflow: hidden;
 
-    &.men-xs {
-        width: $celXs;
-    }
+//     //** Width Variants 
+//     &.men-xxs {
+//         width: $celXxs;
+//     }
 
-    &.men-sm {
-        width: $celSm;
-    }
+//     &.men-xs {
+//         width: $celXs;
+//     }
 
-    &.men-md {
-        width: $celMd;
-    }
+//     &.men-sm {
+//         width: $celSm;
+//     }
 
-    &.men-lg {
-        width: $celLg;
-    }
+//     &.men-md {
+//         width: $celMd;
+//     }
 
-    &.men-xl {
-        width: $celXl;
-    }
+//     &.men-lg {
+//         width: $celLg;
+//     }
 
-    &.men-xxl {
-        width: $celXxl;
-    }
+//     &.men-xl {
+//         width: $celXl;
+//     }
 
-    &.men-xxsVr {
-        height: $celXxs;
-    }
+//     &.men-xxl {
+//         width: $celXxl;
+//     }
 
-    &.men-xsVr {
-        height: $celXs;
-    }
+//     &.men-xxsVr {
+//         height: $celXxs;
+//     }
 
-    &.men-smVr {
-        height: $celSm;
-    }
+//     &.men-xsVr {
+//         height: $celXs;
+//     }
 
-    &.men-mdVr {
-        height: $celMd;
-    }
+//     &.men-smVr {
+//         height: $celSm;
+//     }
 
-    &.men-lgVr {
-        height: $celLg;
-    }
+//     &.men-mdVr {
+//         height: $celMd;
+//     }
 
-    &.men-xlVr {
-        height: $celXl;
-    }
+//     &.men-lgVr {
+//         height: $celLg;
+//     }
 
-    &.men-xxlVr {
-        height: $celXxl;
-    }
+//     &.men-xlVr {
+//         height: $celXl;
+//     }
 
-    &.men-fullVr {
-        height: 100%;
-    }
+//     &.men-xxlVr {
+//         height: $celXxl;
+//     }
 
-    &.men-fullHr {
-        width: 100%;
-    }
+//     &.men-fullVr {
+//         height: 100%;
+//     }
 
-    &.men-full {
-        width: 100%;
-        height: 100%;
-    }
+//     &.men-fullHr {
+//         width: 100%;
+//     }
 
+//     &.men-full {
+//         width: 100%;
+//         height: 100%;
+//     }
+
+// }
+
+.selector-list {
+    &>li{
+        list-style: none;
+    } 
+    
 }
 
 .selector {
+    a {
+        text-decoration: none;
+    }
+
     user-select: none;
     background-color: lightgray;
-    list-style: none;
     font-size: 0.8125rem;
 
-    text-decoration: none;
     display: flex;
 
     height: 2rem;

@@ -1,4 +1,683 @@
-//functions
+// $$\    $$\                    $$\           $$\       $$\                     
+// $$ |   $$ |                   \__|          $$ |      $$ |                    
+// $$ |   $$ |$$$$$$\   $$$$$$\  $$\  $$$$$$\  $$$$$$$\  $$ | $$$$$$\   $$$$$$$\ 
+// \$$\  $$  |\____$$\ $$  __$$\ $$ | \____$$\ $$  __$$\ $$ |$$  __$$\ $$  _____|
+//  \$$\$$  / $$$$$$$ |$$ |  \__|$$ | $$$$$$$ |$$ |  $$ |$$ |$$$$$$$$ |\$$$$$$\  
+//   \$$$  / $$  __$$ |$$ |      $$ |$$  __$$ |$$ |  $$ |$$ |$$   ____| \____$$\ 
+//    \$  /  \$$$$$$$ |$$ |      $$ |\$$$$$$$ |$$$$$$$  |$$ |\$$$$$$$\ $$$$$$$  |
+//     \_/    \_______|\__|      \__| \_______|\_______/ \__| \_______|\_______/ 
+
+
+//1 set the base color and primary color of a theme here - referenced by apply-theme mixin
+$theme-sheet: (
+    //shade100 = white for light theme, = black for dark theme.
+    //colors should have maximum saturation and 50% lightness.
+    light: (shade100: hsl(0, 0%, 100%),
+        primary: hsl(206, 100%, 50%)),
+    dark: (shade100: hsl(0, 0%, 0%),
+        primary: hsl(266, 100%, 50%))
+);
+
+//Variable Instantiate 
+$primary: null;
+$shade0: null;
+$shade5: null;
+$shade10: null;
+$shade15: null;
+$shade20: null;
+$shade25: null;
+$shade30: null;
+$shade35: null;
+$shade40: null;
+$shade45: null;
+$shade50: null;
+$shade55: null;
+$shade60: null;
+$shade65: null;
+$shade70: null;
+$shade75: null;
+$shade80: null;
+$shade85: null;
+$shade90: null;
+$shade95: null;
+$shade100: null;
+
+$button-px-width: 0.15rem;
+$colorTransitionMd: .5s;
+// $$\      $$\ $$\           $$\                     
+// $$$\    $$$ |\__|          \__|                    
+// $$$$\  $$$$ |$$\ $$\   $$\ $$\ $$$$$$$\   $$$$$$$\ 
+// $$\$$\$$ $$ |$$ |\$$\ $$  |$$ |$$  __$$\ $$  _____|
+// $$ \$$$  $$ |$$ | \$$$$  / $$ |$$ |  $$ |\$$$$$$\  
+// $$ |\$  /$$ |$$ | $$  $$<  $$ |$$ |  $$ | \____$$\ 
+// $$ | \_/ $$ |$$ |$$  /\$$\ $$ |$$ |  $$ |$$$$$$$  |
+// \__|     \__|\__|\__/  \__|\__|\__|  \__|\_______/ 
+
+//Top Mixin!! Stores classes for everything that is themed!!
+@mixin apply-theme($theme) {
+
+    // ░█░█░█▀█░█▀▄░▀█▀░█▀█░█▀▄░█░░░█▀▀░█▀▀
+    // ░▀▄▀░█▀█░█▀▄░░█░░█▀█░█▀▄░█░░░█▀▀░▀▀█
+    // ░░▀░░▀░▀░▀░▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀▀▀░▀▀▀
+
+    //store values from current selected theme into theme-colors
+    $theme-colors: map-get($theme-sheet, $theme);
+    //assign values to root variables
+    $primary: map-get($theme-colors, primary) !global;
+    $shade100: map-get($theme-colors, shade100) !global;
+    $shade0: invert-lightness($shade100) !global;
+
+    //aditional colors
+    $warn: orange !global;
+    $error: red !global;
+    $success: green !global;
+
+    //generates shades!!
+    $shade0: invert-lightness($shade100) !global;
+    $shade5: color-mix(in srgb, $shade100 5%, $shade0 95%) !global;
+    $shade10: color-mix(in srgb, $shade100 10%, $shade0 90%) !global;
+    $shade15: color-mix(in srgb, $shade100 15%, $shade0 85%) !global;
+    $shade20: color-mix(in srgb, $shade100 20%, $shade0 80%) !global;
+    $shade25: color-mix(in srgb, $shade100 25%, $shade0 75%) !global;
+    $shade30: color-mix(in srgb, $shade100 30%, $shade0 70%) !global;
+    $shade35: color-mix(in srgb, $shade100 35%, $shade0 65%) !global;
+    $shade40: color-mix(in srgb, $shade100 40%, $shade0 60%) !global;
+    $shade45: color-mix(in srgb, $shade100 45%, $shade0 55%) !global;
+    $shade50: color-mix(in srgb, $shade100 50%, $shade0 50%) !global;
+    $shade55: color-mix(in srgb, $shade100 55%, $shade0 45%) !global;
+    $shade60: color-mix(in srgb, $shade100 60%, $shade0 40%) !global;
+    $shade65: color-mix(in srgb, $shade100 65%, $shade0 35%) !global;
+    $shade70: color-mix(in srgb, $shade100 70%, $shade0 30%) !global;
+    $shade75: color-mix(in srgb, $shade100 75%, $shade0 25%) !global;
+    $shade80: color-mix(in srgb, $shade100 80%, $shade0 20%) !global;
+    $shade85: color-mix(in srgb, $shade100 85%, $shade0 15%) !global;
+    $shade90: color-mix(in srgb, $shade100 90%, $shade0 10%) !global;
+    $shade95: color-mix(in srgb, $shade100 95%, $shade0 5%) !global;
+
+    $secondary: $shade50;
+
+    //indexes shades for loops!!
+    $shades: (
+        0: $shade0,
+        5: $shade5,
+        10: $shade10,
+        15: $shade15,
+        20: $shade20,
+        25: $shade25,
+        30: $shade30,
+        35: $shade35,
+        40: $shade40,
+        45: $shade45,
+        50: $shade50,
+        55: $shade55,
+        60: $shade60,
+        65: $shade65,
+        70: $shade70,
+        75: $shade75,
+        80: $shade80,
+        85: $shade85,
+        90: $shade90,
+        95: $shade95,
+        100: $shade100
+    );
+
+//List of hues that will be used to append classes and give them a modified color.
+//Items with two variables are handled differently depending on the component.
+$hues: (
+    primary: ($primary),
+    success: ($success),
+    secondary: ($secondary),
+    secondary-alt: ($secondary, $primary),
+    warn: ($warn),
+    error: ($error)
+);
+
+// ░█▀▄░█▀█░█▀▀░▀█▀░█▀▀░█▀▀
+// ░█▀▄░█▀█░▀▀█░░█░░█░░░▀▀█
+// ░▀▀░░▀░▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀
+
+//Elements on nonspecific shades will be the default contrasting color!!
+//Ideally this will be overriden if classes are used correctly. 
+//Hence this property is first!!
+.element {
+    color: $shade0;
+}
+
+.shade100-color {
+    color: $shade100;
+}
+
+.ring {
+    outline-color: $primary;
+}
+
+[class*='foco-'][class$='R'] {
+    background-image: linear-gradient(to left, $shade100, transparent);
+}
+
+[class*='foco-'][class$='L'] {
+    background-image: linear-gradient(to right, $shade100, transparent);
+}
+
+//WARN WARN WARN - Use sparingly!! Prioritize specific classes - WARN WARN WARN 
+
+// Generates shade shade/tint shade/colorize and element classes
+@for $i from 0 through 20 {
+    $shadeIndex: $i * 5;
+    $shade: map-get($shades, $shadeIndex );
+    $foreground: null;
+
+
+
+    .shade#{$shadeIndex} {
+        // Call the function and store the returned values as result, then send result to a mixin
+        // to apply the properties
+        $shadePostFx: shadeFx($shade, null);
+        @include apply-bg($shadePostFx);
+
+        @if $i < 10 {
+            &>.element {
+                color: $shade100;
+            }
+
+        }
+
+        @else if $i >9 {
+            &>.element {
+                color: $shade0;
+            }
+        }
+
+        // Tinted shade classes
+        &.fade {
+            $shadePostFx: shadeFx($shade, 'fade', $primary);
+            @include apply-bg($shadePostFx);
+        }
+
+        // Colorize shade classes
+        &.colorize {
+            $shadePostFx: shadeFx($shade, 'colorize', $primary);
+            @include apply-bg($shadePostFx);
+        }
+
+        &.tint {
+            $shadePostFx: shadeFx($shade, 'tint', $primary);
+            @include apply-bg($shadePostFx);
+        }
+
+        // Add other classes and change the middle param to mix shades in different ways
+    }
+
+}
+
+//HR needs to become a borderless element where its color is defined by color not border color to work with element
+hr {
+    border-color: $shade80;
+}
+
+.link {
+    color: color-mix(in srgb, $primary 50%, $shade50 50%);
+    font-weight: bold;
+    text-decoration: none;
+    padding: .33rem 0;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.page-content {
+    background-color: $shade90;
+}
+
+
+
+.field {
+    $fieldLayers: fieldLayers(map-get($hues, secondary));
+    @include fieldStyles($fieldLayers);
+}
+
+@each $name, $color in $hues {
+
+
+    .field.#{$name} {
+        $fieldLayers: null;
+
+        @if length($color)>1 {
+            $fieldLayers: fieldLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $fieldLayers: fieldLayers(nth($color, 1));
+        }
+
+        @include fieldStyles($fieldLayers);
+    }
+}
+
+
+.field-alt {
+    $fieldAltLayers: fieldAltLayers(map-get($hues, secondary));
+
+    @include fieldAltStyles($fieldAltLayers);
+}
+
+@each $name, $color in $hues {
+
+
+    .field-alt.#{$name} {
+        $fieldAltLayers: null;
+
+        @if length($color)>1 {
+            $fieldAltLayers: fieldAltLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $fieldAltLayers: fieldAltLayers(nth($color, 1));
+        }
+
+
+        @include fieldAltStyles($fieldAltLayers);
+    }
+}
+
+// ░█▀▄░█░█░▀█▀░▀█▀░█▀█░█▀█░█▀▀
+// ░█▀▄░█░█░░█░░░█░░█░█░█░█░▀▀█
+// ░▀▀░░▀▀▀░░▀░░░▀░░▀▀▀░▀░▀░▀▀▀
+
+//generate button classes for each listed hue
+
+button,
+.button {
+    $buttonLayers: buttonLayers(map-get($hues, secondary));
+    @include buttonStyles($buttonLayers);
+}
+
+@each $name, $color in $hues {
+
+    button.#{$name},
+    .button.#{$name} {
+        $buttonLayers: null;
+
+        @if length($color)>1 {
+            $buttonLayers: buttonLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $buttonLayers: buttonLayers(nth($color, 1));
+        }
+
+        @include buttonStyles($buttonLayers);
+    }
+}
+
+
+// ░█▀▀░█▀▀░█░░░█▀▀░█▀▀░▀█▀░█▀█░█▀▄░█▀▀
+// ░▀▀█░█▀▀░█░░░█▀▀░█░░░░█░░█░█░█▀▄░▀▀█
+// ░▀▀▀░▀▀▀░▀▀▀░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀
+
+
+.selector {
+    $selectorLayers: buttonLayers(map-get($hues, secondary));
+    @include selectorStyles($selectorLayers);
+}
+
+@each $name, $color in $hues {
+
+    .selector.#{$name} {
+        $selectorLayers: null;
+
+        @if length($color)>1 {
+            $selectorLayers: buttonLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $selectorLayers: buttonLayers(nth($color, 1));
+        }
+
+        @include selectorStyles($selectorLayers);
+    }
+}
+
+
+
+// ░█▀▀░█▀█░█▀▄░█▀▄░█▀▀
+// ░█░░░█▀█░█▀▄░█░█░▀▀█
+// ░▀▀▀░▀░▀░▀░▀░▀▀░░▀▀▀
+
+
+.card {
+    $cardLayers: fieldLayers($secondary);
+    @include cardStyles($cardLayers);
+}
+
+@each $name, $color in $hues {
+
+
+    .card.#{$name} {
+        $cardLayers: null;
+
+        @if length($color)>1 {
+            $cardLayers: fieldLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $cardLayers: fieldLayers(nth($color, 1));
+        }
+
+        @include cardStyles($cardLayers);
+    }
+}
+
+
+// ░█▀█░█▀█░█░█░▀█▀░█▀▀░█▀█░▀█▀░▀█▀░█▀█░█▀█
+// ░█░█░█▀█░▀▄▀░░█░░█░█░█▀█░░█░░░█░░█░█░█░█
+// ░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀
+
+
+.navigation,
+nav {
+    $navigationLayers: fieldAltLayers(map-get($hues, secondary));
+    @include navigationStyles($navigationLayers);
+}
+
+@each $name, $color in $hues {
+
+
+    .navigation.#{$name},
+    nav.#{$name} {
+        $navigationLayers: null;
+
+        @if length($color)>1 {
+            $navigationLayers: fieldAltLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $navigationLayers: fieldAltLayers(nth($color, 1));
+        }
+
+        @include navigationStyles($navigationLayers);
+    }
+}
+
+// ░▀█▀░█▀█░█▀█░█░█░▀█▀░█▀▀
+// ░░█░░█░█░█▀▀░█░█░░█░░▀▀█
+// ░▀▀▀░▀░▀░▀░░░▀▀▀░░▀░░▀▀▀
+
+
+.radio-button {
+    $radioButtonLayers: buttonLayers(nth(map-get($hues, secondary-alt), 1), nth(map-get($hues, secondary-alt), 2));
+    @include radioButtonStyles($radioButtonLayers);
+}
+
+@each $name, $color in $hues {
+
+
+    .radio-button.#{$name} {
+        $radioButtonLayers: null;
+
+        @if length($color)>1 {
+            $radioButtonLayers: buttonLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $radioButtonLayers: buttonLayers(nth($color, 1));
+        }
+
+        @include radioButtonStyles($radioButtonLayers);
+    }
+}
+
+.toggle {
+    background-color: $shade60;
+}
+
+.text-input,
+input[type="text"], textarea {
+    $textInputLayers: textInputLayers($secondary);
+    @include textInputStyles($textInputLayers);
+}
+
+@each $name, $color in $hues {
+
+
+    .text-input.#{$name},
+    input[type="text"].#{$name} {
+        $textInputLayers: null;
+
+        @if length($color)>1 {
+            $textInputLayers: textInputLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $textInputLayers: textInputLayers(nth($color, 1));
+        }
+
+        @include textInputStyles($textInputLayers);
+    }
+}
+
+
+
+// ░█▀█░█░█░█▀▀░█▀▄░█░░░█▀█░█░█░█▀▀
+// ░█░█░▀▄▀░█▀▀░█▀▄░█░░░█▀█░░█░░▀▀█
+// ░▀▀▀░░▀░░▀▀▀░▀░▀░▀▀▀░▀░▀░░▀░░▀▀▀
+
+.overlay {
+    opacity: 20%;
+    background-color: $shade0;
+}
+
+.left-fade {
+    background-image: linear-gradient(to right, $shade100, transparent);
+}
+
+.right-fade {
+    background-image: linear-gradient(to left, $shade100, transparent);
+}
+}
+
+//component mixins
+@mixin buttonStyles($buttonLayers) {
+    background-color: map-get($buttonLayers, but-base);
+    color: map-get($buttonLayers, but-base-text);
+    border: map-get($buttonLayers, but-border) solid $button-px-width;
+
+    & .but-element {
+        color: map-get($buttonLayers, but-base-text);
+    }
+
+    &:hover {
+        background-color: map-get($buttonLayers, but-hover);
+        color: map-get($buttonLayers, but-hover-text);
+        border: map-get($buttonLayers, but-border-hover) solid $button-px-width;
+
+        & .but-element {
+            color: map-get($buttonLayers, but-hover-text);
+        }
+    }
+
+    &:active {
+        background-color: map-get($buttonLayers, but-active);
+        color: map-get($buttonLayers, but-active-text);
+        border: map-get($buttonLayers, but-border-active) solid $button-px-width;
+
+        & .but-element {
+            color: map-get($buttonLayers, but-active-text);
+        }
+    }
+
+    &.but-borderless {
+        border: transparent $button-px-width solid;
+    }
+}
+
+@mixin cardStyles($cardLayers) {
+    background-color: map-get($cardLayers, field-background);
+    color: map-get($cardLayers, field-foreground);
+
+    & .car-element {
+        color: map-get($cardLayers, field-foreground);
+    }
+
+    &.car-border {
+        border: map-get($cardLayers, field-border) $button-px-width solid;
+    }
+
+    &.car-shadow {
+        box-shadow: 0 1px 3px 0 map-get($cardLayers, field-shadow);
+    }
+
+    &.car-inset {
+        box-shadow: 0px 0px 0px $button-px-width map-get($cardLayers, field-border) inset;
+    }
+
+    &.section {
+        background-color: map-get($cardLayers, field-section);
+        color: map-get($cardLayers, field-section-foreground);
+
+        & .car-element {
+            color: map-get($cardLayers, field-section-foreground);
+        }
+
+        &.car-border {
+            border: map-get($cardLayers, field-section-border) $button-px-width solid;
+        }
+
+        &.car-shadow {
+            box-shadow: 0 1px 3px 0 map-get($cardLayers, field-section-shadow);
+        }
+
+        &.car-inset {
+            box-shadow: 0px 0px 0px $button-px-width map-get($cardLayers, field-section-border) inset;
+        }
+    }
+
+
+}
+
+@mixin selectorStyles($selectorLayers) {
+
+    background-color: transparent;
+    color: map-get($selectorLayers, but-base-text);
+
+
+    & .sel-element {
+        color: map-get($selectorLayers, but-base-text);
+    }
+
+    &:hover {
+        background-color: map-get($selectorLayers, but-hover);
+        color: map-get($selectorLayers, but-hover-text);
+
+
+        & .sel-element {
+            color: map-get($selectorLayers, but-hover-text);
+        }
+    }
+
+    &:active {
+        background-color: map-get($selectorLayers, but-active);
+        color: map-get($selectorLayers, but-active-text);
+
+        & .sel-element {
+            color: map-get($selectorLayers, but-active-text);
+        }
+    }
+
+}
+
+@mixin radioButtonStyles($radioButtonLayers) {
+
+    background-color: transparent;
+    color: map-get($radioButtonLayers, but-base-text);
+
+
+    & .sel-element {
+        color: map-get($radioButtonLayers, but-base-text);
+    }
+
+    &:hover {
+        background-color: map-get($radioButtonLayers, but-hover);
+        color: map-get($radioButtonLayers, but-hover-text);
+
+
+        & .sel-element {
+            color: map-get($radioButtonLayers, but-hover-text);
+        }
+    }
+
+    &:active {
+        background-color: map-get($radioButtonLayers, but-active);
+        color: map-get($radioButtonLayers, but-active-text);
+
+        & .sel-element {
+            color: map-get($radioButtonLayers, but-active-text);
+        }
+    }
+}
+
+@mixin navigationStyles($navigationLayers) {
+    transition: background-color $colorTransitionMd;
+    transition: box-shadow $colorTransitionMd ease-in-out;
+    background-color: map-get($navigationLayers, field-alt-section);
+
+    &.scrolled {
+        background-color: map-get($navigationLayers, field-alt-background);
+        box-shadow: 0 0px .5rem 0 map-get($navigationLayers, field-alt-shadow);
+    }
+}
+
+@mixin fieldStyles($fieldLayers) {
+    background-color: map-get($fieldLayers, field-background);
+}
+
+@mixin fieldAltStyles($fieldAltLayers) {
+    background-color: map-get($fieldAltLayers, field-alt-background);
+}
+
+@mixin textInputStyles($textInputLayers) {
+    background-color: map-get($textInputLayers, text-input-background);
+    border: map-get($textInputLayers, text-input-border) $button-px-width solid;
+    color: map-get($textInputLayers, text-input-foreground);
+
+    &::placeholder {
+        color: map-get($textInputLayers, text-input-placeholder);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 4px 0 map-get($textInputLayers, text-input-outline-focus);
+
+        &:hover {
+            box-shadow: 0 0 4px 0 map-get($textInputLayers, text-input-outline-focus);
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 3px 0 map-get($textInputLayers, text-input-outline-focus);
+
+    }
+}
+
+@mixin apply-bg($shadePostFx) {
+    background-color: $shadePostFx;
+}
+
+@mixin apply-fg($shadePostFx) {
+    color: $shadePostFx;
+}
+
+// $$$$$$$$\                              $$\     $$\                               
+// $$  _____|                             $$ |    \__|                              
+// $$ |   $$\   $$\ $$$$$$$\   $$$$$$$\ $$$$$$\   $$\  $$$$$$\  $$$$$$$\   $$$$$$$\ 
+// $$$$$\ $$ |  $$ |$$  __$$\ $$  _____|\_$$  _|  $$ |$$  __$$\ $$  __$$\ $$  _____|
+// $$  __|$$ |  $$ |$$ |  $$ |$$ /        $$ |    $$ |$$ /  $$ |$$ |  $$ |\$$$$$$\  
+// $$ |   $$ |  $$ |$$ |  $$ |$$ |        $$ |$$\ $$ |$$ |  $$ |$$ |  $$ | \____$$\ 
+// $$ |   \$$$$$$  |$$ |  $$ |\$$$$$$$\   \$$$$  |$$ |\$$$$$$  |$$ |  $$ |$$$$$$$  |
+// \__|    \______/ \__|  \__| \_______|   \____/ \__| \______/ \__|  \__|\_______/ 
+
+//Invert the lightness of passed color. Used to create inverse of base shade to build gradients.
 @function invert-lightness($fcolor) {
     $h: hue($fcolor);
     $s: saturation($fcolor);
@@ -7,964 +686,1338 @@
     @return hsl($h, $s, $invL);
 }
 
-//mixins (color schemes)
-@mixin textcolor($c: pink) {
+@function buttonLayers($modifierColor: null, $modifierColor2: null) {
+    $but-base: null;
+    $but-hover: null;
+    $but-active: null;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    a,
-    strong,
-    i,
-    em,
-    mark,
-    small,
-    del,
-    ins,
-    sub,
-    sup,
-    time,
-    .icon,
-    button {
-        color: $c;
+    $but-base-text: null;
+    $but-hover-text: null;
+    $but-active-text: null;
+
+    $but-border: null;
+    $but-border-hover: null;
+    $but-border-active: null;
+
+    $but-base: color-mix(in srgb, $modifierColor 20%, $shade100 80%);
+    $but-hover: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
+    $but-active: color-mix(in srgb, $modifierColor 20%, $shade0 80%);
+
+    $but-base-text: color-mix(in srgb, $modifierColor 50%, $shade0 50%);
+    $but-hover-text: color-mix(in srgb, $modifierColor 50%, $shade100 50%);
+    $but-active-text: color-mix(in srgb, $modifierColor 50%, $shade100 50%);
+
+    $but-border: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
+    $but-border-hover: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
+    $but-border-active: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
+
+
+
+    @if $modifierColor2 {
+
+        $but-hover: color-mix(in srgb, $modifierColor2 50%, $shade10 50%);
+        $but-active: color-mix(in srgb, $modifierColor2 20%, $shade0 80%);
+
+
+        $but-hover-text: color-mix(in srgb, $modifierColor2 50%, $shade100 50%);
+        $but-active-text: color-mix(in srgb, $modifierColor2 50%, $shade100 50%);
+
+
+        $but-border-hover: color-mix(in srgb, $modifierColor2 50%, $shade10 50%);
+        $but-border-active: color-mix(in srgb, $modifierColor2 50%, $shade10 50%);
     }
 
+    @return (but-base: $but-base,
+        but-hover: $but-hover,
+        but-active: $but-active,
+        but-base-text: $but-base-text,
+        but-hover-text: $but-hover-text,
+        but-active-text: $but-active-text,
+        but-border: $but-border,
+        but-border-hover: $but-border-hover,
+        but-border-active: $but-border-active );
 }
 
-@mixin theme($theme: default) {
+@function fieldLayers($modifierColor: null, $modifierColor2: null) {
+    $field-bg: null;
+    $field-fg: null;
 
-    //default null all colors to prevent error
-    //and indicate if no theme is applied
+    $field-section: null;
+    $field-section-fg: null;
 
-    $base: null;
+    $field-border: null;
+    $field-shadow: null;
 
-    $highlight: null;
+    $field-section-border: null;
+    $field-section-shadow: null;
 
-    @if $theme==default {
-        $base: hsl(0, 0%, 100%);
+    $field-bg: color-mix(in srgb, $modifierColor 5%, $shade100 95%);
+    $field-fg: color-mix(in srgb, $modifierColor 20%, $shade0 80%);
+    $field-section: color-mix(in srgb, $modifierColor 15%, $shade100 85%);
+    $field-section-fg: color-mix(in srgb, $modifierColor 10%, $shade0 90%);
 
-        $highlight: hsl(213, 100%, 64%);
-        // $highlight: hsl(325, 86%, 47%);
-    }
+    $field-border: color-mix(in srgb, $modifierColor 15%, $shade100 85%);
+    $field-section-border: color-mix(in srgb, $modifierColor 25%, $shade100 75%);
 
-    @if $theme==dark {
-        $base: hsl(0, 0%, 0%);
+    $field-section-shadow: black;
+    $field-shadow: black;
 
-        $highlight: hsl(266, 57%, 49%);
-        // $highlight: hsl(325, 86%, 47%);
+    @if $modifierColor2 {}
 
-    }
+    @return(field-background: $field-bg,
+        field-foreground: $field-fg,
 
-.redd{
-    color: red !important;
+        field-section: $field-section,
+        field-section-foreground: $field-section-fg,
+
+        field-border: $field-border,
+        field-shadow: $field-shadow,
+
+        field-section-border: $field-section-border,
+        field-section-shadow: $field-section-shadow);
 }
 
-    $success: hsl(129, 69%, 41%);
+@function fieldAltLayers($modifierColor: null, $modifierColor2: null) {
+    $field-alt-bg: null;
+    $field-alt-fg: null;
 
-    $baseInv: invert-lightness($base);
-    $base33: color-mix(in srgb, $base 33%, $baseInv 66%);
-    $base66: color-mix(in srgb, $base 66%, $baseInv 33%);
-    $base25: color-mix(in srgb, $base 25%, $baseInv 75%);
-    $base50: color-mix(in srgb, $base 50%, $baseInv 50%);
-    $base75: color-mix(in srgb, $base 75%, $baseInv 25%);
-    $base5: color-mix(in srgb, $base 5%, $baseInv 95%);
-    $base10: color-mix(in srgb, $base 10%, $baseInv 90%);
-    $base15: color-mix(in srgb, $base 15%, $baseInv 85%);
-    $base85: color-mix(in srgb, $base 85%, $baseInv 15%);
-    $base90: color-mix(in srgb, $base 90%, $baseInv 10%);
-    $base95: color-mix(in srgb, $base 95%, $baseInv 5%);
+    $field-alt-section: null;
+    $field-alt-section-fg: null;
 
-    $primary: color-mix(in srgb, $baseInv 40%, $highlight 100%);
-    $warn: color-mix(in srgb, $baseInv 10%, hsl(26, 100%, 36%) 100%);
-    $secondary: color-mix(in srgb, $base33 90%, $highlight 10%);
-    // valid colors for contrast ratios DO NOT DELETE
-    // $warn: color-mix(in srgb, $baseInv 10%, hsl(26, 100%, 36%) 100%);
-    // $primary: color-mix(in srgb, $baseInv 40%, $highlight 100%);
+    $field-alt-border: null;
+    $field-alt-shadow: null;
 
+    $field-alt-section-border: null;
+    $field-alt-section-shadow: null;
 
+    $field-alt-bg: color-mix(in srgb, $modifierColor 5%, $shade95 95%);
+    $field-alt-fg: color-mix(in srgb, $modifierColor 15%, $shade0 85%);
+    $field-alt-section: color-mix(in srgb, $modifierColor 15%, $shade95 85%);
+    $field-alt-section-fg: color-mix(in srgb, $modifierColor 5%, $shade0 95%);
 
-    $userColor: null;
-    $userColor: var(--userColor);
+    $field-alt-border: color-mix(in srgb, $modifierColor 15%, $shade95 85%);
+    $field-alt-section-border: color-mix(in srgb, $modifierColor 25%, $shade95 75%);
 
-    // @include textcolor($baseInv);
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $base33;
-    }
+    $field-alt-section-shadow: black;
+    $field-alt-shadow: black;
 
-    a.selector {
-        color: $base33;
-    }
+    @if $modifierColor2 {}
 
-    button,
-    .button {
+    @return(field-alt-background: $field-alt-bg,
+        field-alt-foreground: $field-alt-fg,
 
-        transition: background-color .15s;
+        field-alt-section: $field-alt-section,
+        field-alt-section-foreground: $field-alt-section-fg,
 
-        &:active {
-            transition: background-color 0s;
-        }
+        field-alt-border: $field-alt-border,
+        field-alt-shadow: $field-alt-shadow,
 
-
-        &.base {
-            background-color: $base;
-            @include textcolor($base33);
-
-            &:hover {
-                background-color: $primary;
-                @include textcolor($base);
-
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $primary, $baseInv);
-                @include textcolor($base);
-            }
-        }
-
-        &.but-bordered {
-            border-color: $base75;
-        }
-
-
-
-
-        &.primary {
-            box-shadow: 0px 0px 0 2px $primary inset;
-            background-color: color-mix(in srgb, $primary 20%, $base);
-            color: color-mix(in srgb, $primary 90%, $baseInv);
-
-            &>.icon,
-            .element {
-                color: color-mix(in srgb, $primary 90%, $baseInv);
-            }
-
-
-            &.ghost {
-                box-shadow: none;
-            }
-
-            &:hover {
-                background-color: $primary;
-                color: color-mix(in srgb, $primary 20%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 20%, $base);
-                }
-
-            }
-
-            &.test-hover {
-                background-color: $primary;
-                color: color-mix(in srgb, $primary 10%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 20%, $base);
-                }
-
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $primary 60%, $base);
-                color: color-mix(in srgb, $primary 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $primary inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 40%, $baseInv);
-                }
-
-            }
-
-            &.test-active {
-                background-color: color-mix(in srgb, $primary 60%, $base);
-                color: color-mix(in srgb, $primary 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $primary inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 40%, $baseInv);
-                }
-
-            }
-
-            &.disabled {
-                background-color: $base50;
-                pointer-events: none;
-            }
-
-        }
-
-        &.secondary {
-            box-shadow: 0px 0px 0px 2px $secondary inset;
-            background-color: color-mix(in srgb, $secondary 20%, $base);
-            color: color-mix(in srgb, $secondary 90%, $baseInv);
-
-            &>.icon,
-            .element {
-                color: color-mix(in srgb, $secondary 90%, $baseInv);
-            }
-
-            &.ghost {
-                box-shadow: none;
-            }
-
-            &:hover {
-                background-color: $secondary;
-                color: color-mix(in srgb, $secondary 20%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $secondary 20%, $base);
-                }
-            }
-
-            &.test-hover {
-                background-color: $secondary;
-                color: color-mix(in srgb, $secondary 10%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $secondary 10%, $base);
-                }
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $secondary 60%, $base);
-                color: color-mix(in srgb, $secondary 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $secondary inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $secondary 40%, $baseInv);
-                }
-
-            }
-
-            &.test-active {
-                background-color: color-mix(in srgb, $secondary 60%, $base);
-                color: color-mix(in srgb, $secondary 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $secondary inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $secondary 40%, $baseInv);
-                }
-            }
-
-            &.disabled {
-                background-color: $base50;
-                pointer-events: none;
-            }
-
-
-        }
-
-        &.secondary-alt {
-            box-shadow: 0px 0px 0px 2px $primary inset;
-            background-color: color-mix(in srgb, $secondary 20%, $base);
-            color: color-mix(in srgb, $secondary 90%, $baseInv);
-
-            &>.icon,
-            .element {
-                color: color-mix(in srgb, $secondary 90%, $baseInv);
-            }
-
-            &.ghost {
-                box-shadow: none;
-            }
-
-            &:hover {
-                background-color: $primary;
-                color: color-mix(in srgb, $primary 20%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 20%, $base);
-                }
-            }
-
-            &.test-hover {
-                background-color: $primary;
-                color: color-mix(in srgb, $primary 10%, $base);
-
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 10%, $base);
-                }
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $primary 60%, $base);
-                color: color-mix(in srgb, $primary 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $primary inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 40%, $baseInv);
-                }
-
-            }
-
-            &.test-active {
-                background-color: color-mix(in srgb, $primary 60%, $base);
-                color: color-mix(in srgb, $primary 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $primary inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 40%, $baseInv);
-                }
-            }
-
-            &.disabled {
-                background-color: $base50;
-                pointer-events: none;
-            }
-
-
-        }
-
-        &.warn {
-            box-shadow: 0px 0px 0px 2px $warn inset;
-            background-color: color-mix(in srgb, $warn 20%, $base);
-            color: color-mix(in srgb, $warn 90%, $baseInv);
-
-            &>.icon,
-            .element {
-                color: color-mix(in srgb, $warn 90%, $baseInv);
-            }
-
-            &.ghost {
-                box-shadow: none;
-            }
-
-            &:hover {
-                background-color: $warn;
-                color: color-mix(in srgb, $warn 20%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $warn 20%, $base);
-                }
-            }
-
-            &.test-hover {
-                background-color: $warn;
-                color: color-mix(in srgb, $warn 10%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $warn 10%, $base);
-                }
-            }
-
-            &:active {
-                background-color: color-mix(in srgb, $warn 60%, $base);
-                color: color-mix(in srgb, $warn 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $warn inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $warn 40%, $baseInv);
-                }
-
-            }
-
-            &.test-active {
-                background-color: color-mix(in srgb, $warn 60%, $base);
-                color: color-mix(in srgb, $warn 40%, $baseInv);
-                box-shadow: 0px 0px 4px 2px $warn inset;
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $warn 40%, $baseInv);
-                }
-            }
-
-            &.disabled {
-                background-color: $base50;
-                pointer-events: none;
-            }
-        }
-
-        // &.warn {
-
-        //     background-color: $warn;
-        //     color: $base;
-
-        //     &>.icon {
-        //         color: $base;
-        //     }
-
-        //     &:hover {
-        //         background-color: color-mix(in srgb, $warn 75%, $baseInv);
-        //         color: $base;
-
-        //         &>.icon {
-        //             color: $baseInv;
-        //         }
-        //     }
-
-        //     &:active {
-        //         background-color: color-mix(in srgb, $warn 60%, $base);
-        //         color: $baseInv;
-
-        //         &>.icon {
-        //             color: $baseInv;
-        //         }
-
-        //     }
-
-        //     &.disabled {
-        //         background-color: $base50;
-        //         pointer-events: none;
-        //     }
-        // }
-    }
-
-    .test-hover,
-    .test-active {
-        padding: .2rem;
-    }
-
-
-
-
-
-
-    a {
-        color: $primary;
-    }
-
-    .text-danger {
-        color: red;
-    }
-
-    .spacer {
-        opacity: 0 !important;
-    }
-
-    .page-content,
-    .page-wrapper {
-        background-color: $base;
-    }
-
-    .left-fade,
-    .right-fade {}
-
-    .left-fade {
-        background-image: linear-gradient(to right, $base, transparent);
-    }
-
-    .right-fade {
-        background-image: linear-gradient(to left, $base, transparent);
-    }
-
-    [class*='foco-'][class$='R'] {
-        background-image: linear-gradient(to left, $base, transparent);
-    }
-
-    [class*='foco-'][class$='L'] {
-        background-image: linear-gradient(to right, $base, transparent);
-    }
-
-    .overlay {
-        background-color: $base50;
-        transition: opacity .5s;
-        opacity: 40%;
-
-    }
-
-    .drawer-handle {
-        background-color: $base90;
-        box-shadow: 0px 2px .15rem 0px rgba(0, 0, 0, 0.228);
-
-        &:hover {
-            background-color: $base85;
-        }
-
-        &:active {
-            transition-property: background-color .2s;
-            background-color: $base90;
-        }
-
-        &>input:checked+.icon {
-            transition-property: color .2s;
-            color: $highlight;
-        }
-    }
-
-    .nav.nav-main,
-    nav.nav-main {
-        transition: background-color 1s, box-shadow .25s;
-
-
-        background-color: $base90;
-        color: $base10;
-
-        &.tint {
-            &.tint {
-                background-color: color-mix(in srgb, $base85 95%, $highlight 5%);
-            }
-        }
-
-        &.scrolled {
-            background-color: $base;
-
-            box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
-
-            &.tint {
-                background-color: color-mix(in srgb, $base 95%, $highlight 5%);
-            }
-        }
-    }
-
-    .foo.foo-main,
-    footer.foo-main {
-        background-color: $base;
-    }
-
-    .nav,
-    nav,
-    .footer,
-    footer {
-        background-color: transparent;
-    }
-
-    .red {
-        background-color: red;
-    }
-
-    input[type='radio']:after {
-        width: .75rem;
-        aspect-ratio: 1/1;
-        border-radius: 100%;
-
-
-        background-color: $base85;
-        content: '';
-        display: inline-block;
-        position: relative;
-        top: -2px;
-        border: 2px solid $base;
-        outline: 2px solid $base66;
-    }
-
-    input[type='radio']:checked:after {
-        outline: 2px solid color-mix(in srgb, $base66 66%, $highlight 33%);
-        background-color: $highlight;
-        border: 2px solid color-mix(in srgb, $base 66%, $highlight 33%);
-
-    }
-
-    & input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="url"],
-    input[type="tel"],
-    input[type="number"],
-    input[type="search"],
-    textarea {
-        background-color: $base95;
-        color: $base33;
-        border-color: $base75;
-        border: 2px solid $base75;
-
-        &:focus {
-            box-shadow: 0 0 5px 0 $base75;
-            outline: none;
-        }
-
-        &:hover {
-            box-shadow: 0 0 3px 0 $base75;
-
-            &:focus {
-                box-shadow: 0 0 5px 0 $base75;
-            }
-
-            &:active {
-                box-shadow: 0 0 2px 0 $base75;
-            }
-        }
-    }
-
-    .search-dropdown input[type="text"]:focus+.search-dropdown-icon {
-
-
-        & .icon {
-            color: $primary;
-        }
-    }
-
-    .search-dropdown input[type="text"]+.search-dropdown-icon {
-
-
-        & .icon {
-            color: $base85;
-        }
-    }
-
-
-
-
-
-    button.user-color {
-        box-shadow: 0px 0px 0 2px $userColor inset;
-        background-color: color-mix(in srgb, $userColor 20%, $base);
-        color: color-mix(in srgb, $userColor 90%, $baseInv);
-
-        &>.icon,
-        .element {
-            color: color-mix(in srgb, $userColor 90%, $baseInv);
-        }
-
-
-        &:hover {
-            background-color: $userColor;
-            color: color-mix(in srgb, $userColor 20%, $base);
-
-            &>.element {
-                color: color-mix(in srgb, $userColor 20%, $base);
-            }
-
-            &>.icon {
-                color: color-mix(in srgb, $userColor 20%, $base);
-            }
-        }
-
-        &:active {
-            background-color: color-mix(in srgb, $userColor 60%, $base);
-            color: color-mix(in srgb, $userColor 40%, $baseInv);
-            box-shadow: 0px 0px 4px 2px $userColor inset;
-
-            &>.icon {
-                color: color-mix(in srgb, $userColor 40%, $baseInv);
-            }
-
-            &>.element {
-                color: color-mix(in srgb, $userColor 40%, $baseInv);
-            }
-
-        }
-    }
-
-    .card {
-        background-color: $base90;
-    }
-
-    .car-border {
-        box-shadow: 0px 0px 0px 2px $base75 inset;
-
-        // @include textcolor($base15);
-
-    }
-
-    .car-shadow {
-        box-shadow: 0 0 5px 0 color-mix(in srgb, black 50%, $base 50%);
-    }
-
-
-    .selector-grid {
-        border: 4px solid $base75;
-        display: grid;
-        gap: .2rem;
-        background-color: $base75;
-
-        &>.selector {
-
-
-            background-color: $base85;
-
-
-            &>.icon,
-            .element {
-                color: $base33;
-            }
-
-
-
-            &:hover {
-                background-color: $primary;
-                color: color-mix(in srgb, $primary 20%, $base);
-
-                &>.icon,
-                .element {
-                    color: color-mix(in srgb, $primary 20%, $base);
-                }
-
-            }
-
-
-            &.ghost {
-                box-shadow: none;
-            }
-
-
-
-            &.disabled {
-                background-color: $base50;
-                pointer-events: none;
-            }
-        }
-
-        & .selector:has(> input:checked),
-        .selector:active {
-            background-color: color-mix(in srgb, $primary 60%, $base);
-            color: color-mix(in srgb, $primary 40%, $baseInv);
-            box-shadow: 0px 0px 4px 2px $primary inset;
-
-            &>.icon,
-            .element {
-                color: color-mix(in srgb, $primary 40%, $baseInv);
-            }
-
-        }
-    }
-
-    .thumb {
-        background-color: rgb(94, 205, 142);
-        @include textcolor($base);
-    }
-
-    .menu {
-        background-color: $base85;
-        box-shadow: 0 0.1rem .8rem -0.3rem black;
-
-
-    }
-
-    .selector {
-
-        background-color: inherit;
-
-        &:hover {
-            background-color: $primary;
-            color: color-mix(in srgb, $primary 20%, $base);
-
-            &>.element {
-                color: color-mix(in srgb, $primary 20%, $base);
-            }
-
-            &>.icon {
-                color: color-mix(in srgb, $primary 20%, $base);
-            }
-        }
-
-        &:active {
-            background-color: color-mix(in srgb, $primary 60%, $base);
-            color: color-mix(in srgb, $primary 40%, $baseInv);
-            box-shadow: 0px 0px 4px 2px $primary inset;
-
-            &>.icon {
-                color: color-mix(in srgb, $primary 40%, $baseInv);
-            }
-
-            &>.element {
-                color: color-mix(in srgb, $primary 40%, $baseInv);
-            }
-
-        }
-
-
-
-
-
-    }
-
-    .toggle {
-        background-color: $base75;
-
-        &>span {
-            background-color: $base;
-        }
-
-        input[type="checkbox"]:checked+span {
-            background-color: $primary;
-        }
-
-    }
-
-    .ring {
-        outline-color: $primary;
-    }
-
-
-
-    //IMPORTANT 
-    .icon:before {
-        color: inherit;
-    }
-
-    .div-highlight {
-        background-color: $primary;
-        @include textcolor($base);
-    }
-
-    .div-base90 {
-        background-color: $base90;
-    }
-
-    .base {
-        background-color: $base;
-    }
-
-    .base-color {
-        color: $base;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base 95%, $highlight 5%);
-        }
-    }
-
-    .base10 {
-        background-color: $base10;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base10 95%, $highlight 5%);
-        }
-    }
-
-    .base15 {
-        background-color: $base15;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base15 95%, $highlight 5%);
-        }
-    }
-
-    .base25 {
-        background-color: $base25;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base25 95%, $highlight 5%);
-        }
-    }
-
-    .base33 {
-        background-color: $base33;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base33 95%, $highlight 5%);
-        }
-    }
-
-    .base50 {
-        background-color: $base50;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base50 95%, $highlight 5%);
-        }
-    }
-
-    .base66 {
-        background-color: $base66;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base66 95%, $highlight 5%);
-        }
-    }
-
-    .base75 {
-        background-color: $base75;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base75 95%, $highlight 5%);
-        }
-    }
-
-    .base85 {
-        background-color: $base85;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base85 95%, $highlight 5%);
-        }
-    }
-
-    .base90 {
-        background-color: $base90;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base90 95%, $highlight 5%);
-        }
-    }
-
-    .base15 {
-        background-color: $base5;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base15 95%, $highlight 5%);
-        }
-    }
-
-    .base95 {
-        background-color: $base95;
-
-        &.tint {
-            background-color: color-mix(in srgb, $base95 95%, $highlight 5%);
-        }
-    }
-
-    .baseInv {
-        background-color: $baseInv;
-
-        &.tint {
-            background-color: color-mix(in srgb, $baseInv 95%, $highlight 5%);
-        }
-    }
-
-    .success {
-        background-color: $success;
-
-        &.tint {
-            background-color: color-mix(in srgb, $success 75%, $highlight 25%);
-        }
-
-        &>.element {
-            color: color-mix(in srgb, $success 25%, $base 75%);
-        }
-
-        // &>.element-alt {
-        //     color: color-mix(in srgb, $success 35%, $baseInv 65%);
-        // }
-    }
-
-    hr {
-        border-color: $base75;
-    }
-
-    .hr-highlight {
-        border-color: $primary;
-    }
-
-    .hr-base90 {
-        border-color: $base90;
-    }
-
-    .ico-color {
-        color: rgb(83, 83, 69) !important;
-    }
-
+        field-alt-section-border: $field-alt-section-border,
+        field-alt-section-shadow: $field-alt-section-shadow);
 }
 
-//classes - used to bind class name to theme in mixin
-//blank results in default theme
+@function textInputLayers($modifierColor: null, $modifierColor2: null) {
+    $text-input-bg: null;
+    $text-input-fg: null;
+    $text-input-placeholder: null;
+    $text-input-border: null;
+    $text-input-outline-focus: null;
+    $text-input-shadow: null;
+
+    $text-input-bg: color-mix(in srgb, $modifierColor 5%, $shade100 95%);
+    $text-input-fg: color-mix(in srgb, $modifierColor 10%, $shade0 90%);
+    $text-input-placeholder: color-mix(in srgb, $modifierColor 30%, $shade60 70%);
+    $text-input-border: color-mix(in srgb, $modifierColor 50%, $shade50 50%);
+    $text-input-outline-focus: color-mix(in srgb, $modifierColor 50%, $shade60 50%);
+    $text-input-shadow: black;
+
+    @if $modifierColor2 {}
+
+    @return(text-input-background: $text-input-bg,
+        text-input-foreground: $text-input-fg,
+        text-input-placeholder: $text-input-placeholder,
+        text-input-border: $text-input-border,
+        text-input-outline-focus: $text-input-outline-focus,
+        text-input-shadow: $text-input-shadow );
+}
+
+//Mixes passed color in passed ratio with a passed shade. Used to create color varients. 
+@function shadeFx($shadeValue, $modifier: null, $modifierColor: null) {
+    $s: $shadeValue;
+
+    @if $modifier =='fade' {
+        $s: color-mix(in srgb, $shadeValue 60%, color-mix(in srgb, $shade50 60%, $modifierColor 40%) 40%);
+    }
+
+    @if $modifier =='tint' {
+        $s: color-mix(in srgb, $shadeValue 90%, color-mix(in srgb, $shade50 10%, $modifierColor 90%) 10%);
+    }
+
+    @if $modifier =='colorize' {
+        $s: color-mix(in srgb, $shadeValue 50%, $modifierColor 50%);
+    }
+
+    @return ($s);
+}
+
+//does this belong here?
+.ghost:not(:hover) {
+    background-color: hsla(0, 0, 0, 0) !important;
+    border: $button-px-width solid hsla(0, 0, 0, 0) !important;
+}
+
+// $$$$$$$$\ $$\                                                   
+// \__$$  __|$$ |                                                  
+//    $$ |   $$$$$$$\   $$$$$$\  $$$$$$\$$$$\   $$$$$$\   $$$$$$$\ 
+//    $$ |   $$  __$$\ $$  __$$\ $$  _$$  _$$\ $$  __$$\ $$  _____|
+//    $$ |   $$ |  $$ |$$$$$$$$ |$$ / $$ / $$ |$$$$$$$$ |\$$$$$$\  
+//    $$ |   $$ |  $$ |$$   ____|$$ | $$ | $$ |$$   ____| \____$$\ 
+//    $$ |   $$ |  $$ |\$$$$$$$\ $$ | $$ | $$ |\$$$$$$$\ $$$$$$$  |
+//    \__|   \__|  \__| \_______|\__| \__| \__| \_______|\_______/ 
+
 .theme-default {
-    @include theme();
+    @include apply-theme(light);
 }
 
 .theme-dark {
-    @include theme(dark);
+    @include apply-theme(dark);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//           ___________     _____                       ______                
+// |        |             .-~     ~.        .'.        .~      ~. ``..     ..''
+// |        |______      :                .''```.     |               ``.''    
+// |        |            :     _____    .'       `.   |                 |      
+// |_______ |___________  `-._____.'| .'           `.  `.______.'       |      
+
+//       _____                      ______                 ___________                
+// |  .-~     ~.  |..          |  .~      ~.  |`````````, |                    
+// | :            |  ``..      | |          | |'''|'''''  |______              
+// | :     _____  |      ``..  | |          | |    `.     |                    
+// |  `-._____.'| |          ``|  `.______.'  |      `.   |___________         
+
+
+
+//legacy
+
+//this is where themes are applied, also where modifiers are calculated!! 
+// @mixin shadeFx($shadeValue, $modifier: null, $foregroundColor: null) {
+//     $s: $shadeValue;
+
+//     //mixes shade with primary color by 10%!!
+//     @if $modifier =='tint' {
+//         $s: color-mix(in srgb, $shadeValue 90%, $primary 10%);
+//     }
+
+//     //mixes shade with primary color by 50%!!
+//     @if $modifier =='colorize' {
+//         $s: color-mix(in srgb, $shadeValue 50%, $primary 50%);
+//     }
+
+//     //apply bg color
+//     background-color: $s;
+
+//     //appy fg color
+//     &>.element {
+//         color: $foregroundColor;
+//     }
+// }
+
+
+
+
+
+// Calls mixin using params!! 1.) shade 2.) modifier 3.) .element color (top color)
+// .shade#{$value} {
+//     // Shade classes!!
+//     @include shadeFx($shade, null, $foreground);
+
+//     // Tinted shade classes!!
+//     &.tint {
+//         @include shadeFx($shade, tint, $foreground);
+//     }
+
+//     // Colorize shade classes!!
+//     &.colorize {
+//         @include shadeFx($shade, colorize, $foreground);
+//     }
+
+//     // Add other classes and change the middle param to mix shades in different ways!!
+// }
+
+
+// //functions
+// @function invert-lightness($fcolor) {
+//     $h: hue($fcolor);
+//     $s: saturation($fcolor);
+//     $l: lightness($fcolor);
+//     $invL: 100% - $l;
+//     @return hsl($h, $s, $invL);
+// }
+// $shade: null;
+
+// $highlight: null;
+
+
+// @mixin theme($theme: default) {
+
+//     //default null all colors to prevent error
+//     //and indicate if no theme is applied
+
+
+//     @if $theme==default {
+//         $shade: hsl(0, 0%, 100%);
+
+//         $highlight: hsl(213, 100%, 64%);
+//         // $highlight: hsl(325, 86%, 47%);
+//     }
+
+//     @if $theme==dark {
+//         $shade: hsl(0, 0%, 0%);
+
+//         $highlight: hsl(266, 57%, 49%);
+//         // $highlight: hsl(325, 86%, 47%);
+
+//     }
+
+// .redd{
+//     color: red !important;
+// }
+
+//     $success: hsl(129, 69%, 41%);
+
+//     $shade0: invert-lightness($shade);
+//     $shade33: color-mix(in srgb, $shade 33%, $shade0 66%);
+//     $shade66: color-mix(in srgb, $shade 66%, $shade0 33%);
+//     $shade25: color-mix(in srgb, $shade 25%, $shade0 75%);
+//     $shade50: color-mix(in srgb, $shade 50%, $shade0 50%);
+//     $shade75: color-mix(in srgb, $shade 75%, $shade0 25%);
+//     $shade5: color-mix(in srgb, $shade 5%, $shade0 95%);
+//     $shade10: color-mix(in srgb, $shade 10%, $shade0 90%);
+//     $shade15: color-mix(in srgb, $shade 15%, $shade0 85%);
+//     $shade85: color-mix(in srgb, $shade 85%, $shade0 15%);
+//     $shade90: color-mix(in srgb, $shade 90%, $shade0 10%);
+//     $shade95: color-mix(in srgb, $shade 95%, $shade0 5%);
+
+//     $primary: color-mix(in srgb, $shade0 40%, $highlight 100%);
+//     $warn: color-mix(in srgb, $shade0 10%, hsl(26, 100%, 36%) 100%);
+//     $secondary: color-mix(in srgb, $shade33 90%, $highlight 10%);
+//     // valid colors for contrast ratios DO NOT DELETE
+//     // $warn: color-mix(in srgb, $shade0 10%, hsl(26, 100%, 36%) 100%);
+//     // $primary: color-mix(in srgb, $shade0 40%, $highlight 100%);
+
+
+
+//     $userColor: null;
+//     $userColor: var(--userColor);
+
+
+
+
+
+
+
+
+
+
+
+//     // @include textcolor($shade0);
+
+//     a.selector {
+//         color: $shade33;
+//     }
+
+//     button,
+//     .button {
+
+//         transition: background-color .15s;
+
+//         &:active {
+//             transition: background-color 0s;
+//         }
+
+
+//         &.shade {
+//             background-color: $shade;
+
+
+//             &:hover {
+//                 background-color: $primary;
+
+
+//             }
+
+//             &:active {
+//                 background-color: color-mix(in srgb, $primary, $shade0);
+
+//             }
+//         }
+
+//         &.but-bordered {
+//             border-color: $shade75;
+//         }
+
+
+
+
+//         &.primary {
+//             box-shadow: 0px 0px 0 2px $primary inset;
+//             background-color: color-mix(in srgb, $primary 20%, $shade);
+//             color: color-mix(in srgb, $primary 90%, $shade0);
+
+//             &>.icon,
+//             .element {
+//                 color: color-mix(in srgb, $primary 90%, $shade0);
+//             }
+
+
+//             &.ghost {
+//                 box-shadow: none;
+//             }
+
+//             &:hover {
+//                 background-color: $primary;
+//                 color: color-mix(in srgb, $primary 20%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 20%, $shade);
+//                 }
+
+//             }
+
+//             &.test-hover {
+//                 background-color: $primary;
+//                 color: color-mix(in srgb, $primary 10%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 20%, $shade);
+//                 }
+
+//             }
+
+//             &:active {
+//                 background-color: color-mix(in srgb, $primary 60%, $shade);
+//                 color: color-mix(in srgb, $primary 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $primary inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 40%, $shade0);
+//                 }
+
+//             }
+
+//             &.test-active {
+//                 background-color: color-mix(in srgb, $primary 60%, $shade);
+//                 color: color-mix(in srgb, $primary 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $primary inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 40%, $shade0);
+//                 }
+
+//             }
+
+//             &.disabled {
+//                 background-color: $shade50;
+//                 pointer-events: none;
+//             }
+
+//         }
+
+//         &.secondary {
+//             box-shadow: 0px 0px 0px 2px $secondary inset;
+//             background-color: color-mix(in srgb, $secondary 20%, $shade);
+//             color: color-mix(in srgb, $secondary 90%, $shade0);
+
+//             &>.icon,
+//             .element {
+//                 color: color-mix(in srgb, $secondary 90%, $shade0);
+//             }
+
+//             &.ghost {
+//                 box-shadow: none;
+//             }
+
+//             &:hover {
+//                 background-color: $secondary;
+//                 color: color-mix(in srgb, $secondary 20%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $secondary 20%, $shade);
+//                 }
+//             }
+
+//             &.test-hover {
+//                 background-color: $secondary;
+//                 color: color-mix(in srgb, $secondary 10%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $secondary 10%, $shade);
+//                 }
+//             }
+
+//             &:active {
+//                 background-color: color-mix(in srgb, $secondary 60%, $shade);
+//                 color: color-mix(in srgb, $secondary 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $secondary inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $secondary 40%, $shade0);
+//                 }
+
+//             }
+
+//             &.test-active {
+//                 background-color: color-mix(in srgb, $secondary 60%, $shade);
+//                 color: color-mix(in srgb, $secondary 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $secondary inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $secondary 40%, $shade0);
+//                 }
+//             }
+
+//             &.disabled {
+//                 background-color: $shade50;
+//                 pointer-events: none;
+//             }
+
+
+//         }
+
+//         &.secondary-alt {
+//             box-shadow: 0px 0px 0px 2px $primary inset;
+//             background-color: color-mix(in srgb, $secondary 20%, $shade);
+//             color: color-mix(in srgb, $secondary 90%, $shade0);
+
+//             &>.icon,
+//             .element {
+//                 color: color-mix(in srgb, $secondary 90%, $shade0);
+//             }
+
+//             &.ghost {
+//                 box-shadow: none;
+//             }
+
+//             &:hover {
+//                 background-color: $primary;
+//                 color: color-mix(in srgb, $primary 20%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 20%, $shade);
+//                 }
+//             }
+
+//             &.test-hover {
+//                 background-color: $primary;
+//                 color: color-mix(in srgb, $primary 10%, $shade);
+
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 10%, $shade);
+//                 }
+//             }
+
+//             &:active {
+//                 background-color: color-mix(in srgb, $primary 60%, $shade);
+//                 color: color-mix(in srgb, $primary 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $primary inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 40%, $shade0);
+//                 }
+
+//             }
+
+//             &.test-active {
+//                 background-color: color-mix(in srgb, $primary 60%, $shade);
+//                 color: color-mix(in srgb, $primary 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $primary inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 40%, $shade0);
+//                 }
+//             }
+
+//             &.disabled {
+//                 background-color: $shade50;
+//                 pointer-events: none;
+//             }
+
+
+//         }
+
+//         &.warn {
+//             box-shadow: 0px 0px 0px 2px $warn inset;
+//             background-color: color-mix(in srgb, $warn 20%, $shade);
+//             color: color-mix(in srgb, $warn 90%, $shade0);
+
+//             &>.icon,
+//             .element {
+//                 color: color-mix(in srgb, $warn 90%, $shade0);
+//             }
+
+//             &.ghost {
+//                 box-shadow: none;
+//             }
+
+//             &:hover {
+//                 background-color: $warn;
+//                 color: color-mix(in srgb, $warn 20%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $warn 20%, $shade);
+//                 }
+//             }
+
+//             &.test-hover {
+//                 background-color: $warn;
+//                 color: color-mix(in srgb, $warn 10%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $warn 10%, $shade);
+//                 }
+//             }
+
+//             &:active {
+//                 background-color: color-mix(in srgb, $warn 60%, $shade);
+//                 color: color-mix(in srgb, $warn 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $warn inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $warn 40%, $shade0);
+//                 }
+
+//             }
+
+//             &.test-active {
+//                 background-color: color-mix(in srgb, $warn 60%, $shade);
+//                 color: color-mix(in srgb, $warn 40%, $shade0);
+//                 box-shadow: 0px 0px 4px 2px $warn inset;
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $warn 40%, $shade0);
+//                 }
+//             }
+
+//             &.disabled {
+//                 background-color: $shade50;
+//                 pointer-events: none;
+//             }
+//         }
+
+//         // &.warn {
+
+//         //     background-color: $warn;
+//         //     color: $shade;
+
+//         //     &>.icon {
+//         //         color: $shade;
+//         //     }
+
+//         //     &:hover {
+//         //         background-color: color-mix(in srgb, $warn 75%, $shade0);
+//         //         color: $shade;
+
+//         //         &>.icon {
+//         //             color: $shade0;
+//         //         }
+//         //     }
+
+//         //     &:active {
+//         //         background-color: color-mix(in srgb, $warn 60%, $shade);
+//         //         color: $shade0;
+
+//         //         &>.icon {
+//         //             color: $shade0;
+//         //         }
+
+//         //     }
+
+//         //     &.disabled {
+//         //         background-color: $shade50;
+//         //         pointer-events: none;
+//         //     }
+//         // }
+//     }
+
+//     .test-hover,
+//     .test-active {
+//         padding: .2rem;
+//     }
+
+
+
+
+
+
+//     a {
+//         color: $primary;
+//     }
+
+//     .text-danger {
+//         color: red;
+//     }
+
+//     .spacer {
+//         opacity: 0 !important;
+//     }
+
+//     .page-content,
+//     .page-wrapper {
+//         background-color: $shade;
+//     }
+
+//     .left-fade,
+//     .right-fade {}
+
+//     .left-fade {
+//         background-image: linear-gradient(to right, $shade, transparent);
+//     }
+
+//     .right-fade {
+//         background-image: linear-gradient(to left, $shade, transparent);
+//     }
+
+//     [class*='foco-'][class$='R'] {
+//         background-image: linear-gradient(to left, $shade, transparent);
+//     }
+
+//     [class*='foco-'][class$='L'] {
+//         background-image: linear-gradient(to right, $shade, transparent);
+//     }
+
+//     .overlay {
+//         background-color: $shade50;
+//         transition: opacity .5s;
+//         opacity: 40%;
+
+//     }
+
+//     .drawer-handle {
+//         background-color: $shade90;
+//         box-shadow: 0px 2px .15rem 0px rgba(0, 0, 0, 0.228);
+
+//         &:hover {
+//             background-color: $shade85;
+//         }
+
+//         &:active {
+//             transition-property: background-color .2s;
+//             background-color: $shade90;
+//         }
+
+//         &>input:checked+.icon {
+//             transition-property: color .2s;
+//             color: $highlight;
+//         }
+//     }
+
+//     .nav.nav-main,
+//     nav.nav-main {
+//         transition: background-color 1s, box-shadow .25s;
+
+
+//         background-color: $shade90;
+//         color: $shade10;
+
+//         &.tint {
+//             &.tint {
+//                 background-color: color-mix(in srgb, $shade85 95%, $highlight 5%);
+//             }
+//         }
+
+//         &.scrolled {
+//             background-color: $shade;
+
+//             box-shadow: 0px 2px 1rem 0px rgba(0, 0, 0, 0.383);
+
+//             &.tint {
+//                 background-color: color-mix(in srgb, $shade 95%, $highlight 5%);
+//             }
+//         }
+//     }
+
+//     .foo.foo-main,
+//     footer.foo-main {
+//         background-color: $shade;
+//     }
+
+//     .nav,
+//     nav,
+//     .footer,
+//     footer {
+//         background-color: transparent;
+//     }
+
+//     .red {
+//         background-color: red;
+//     }
+
+//     input[type='radio']:after {
+//         width: .75rem;
+//         aspect-ratio: 1/1;
+//         border-radius: 100%;
+
+
+//         background-color: $shade85;
+//         content: '';
+//         display: inline-block;
+//         position: relative;
+//         top: -2px;
+//         border: 2px solid $shade;
+//         outline: 2px solid $shade66;
+//     }
+
+//     input[type='radio']:checked:after {
+//         outline: 2px solid color-mix(in srgb, $shade66 66%, $highlight 33%);
+//         background-color: $highlight;
+//         border: 2px solid color-mix(in srgb, $shade 66%, $highlight 33%);
+
+//     }
+
+//     & input[type="text"],
+//     input[type="password"],
+//     input[type="email"],
+//     input[type="url"],
+//     input[type="tel"],
+//     input[type="number"],
+//     input[type="search"],
+//     textarea {
+//         background-color: $shade95;
+//         color: $shade33;
+//         border-color: $shade75;
+//         border: 2px solid $shade75;
+
+//         &:focus {
+//             box-shadow: 0 0 5px 0 $shade75;
+//             outline: none;
+//         }
+
+//         &:hover {
+//             box-shadow: 0 0 3px 0 $shade75;
+
+//             &:focus {
+//                 box-shadow: 0 0 5px 0 $shade75;
+//             }
+
+//             &:active {
+//                 box-shadow: 0 0 2px 0 $shade75;
+//             }
+//         }
+//     }
+
+//     .search-dropdown input[type="text"]:focus+.search-dropdown-icon {
+
+
+//         & .icon {
+//             color: $primary;
+//         }
+//     }
+
+//     .search-dropdown input[type="text"]+.search-dropdown-icon {
+
+
+//         & .icon {
+//             color: $shade85;
+//         }
+//     }
+
+
+
+
+
+//     button.user-color {
+//         box-shadow: 0px 0px 0 2px $userColor inset;
+//         background-color: color-mix(in srgb, $userColor 20%, $shade);
+//         color: color-mix(in srgb, $userColor 90%, $shade0);
+
+//         &>.icon,
+//         .element {
+//             color: color-mix(in srgb, $userColor 90%, $shade0);
+//         }
+
+
+//         &:hover {
+//             background-color: $userColor;
+//             color: color-mix(in srgb, $userColor 20%, $shade);
+
+//             &>.element {
+//                 color: color-mix(in srgb, $userColor 20%, $shade);
+//             }
+
+//             &>.icon {
+//                 color: color-mix(in srgb, $userColor 20%, $shade);
+//             }
+//         }
+
+//         &:active {
+//             background-color: color-mix(in srgb, $userColor 60%, $shade);
+//             color: color-mix(in srgb, $userColor 40%, $shade0);
+//             box-shadow: 0px 0px 4px 2px $userColor inset;
+
+//             &>.icon {
+//                 color: color-mix(in srgb, $userColor 40%, $shade0);
+//             }
+
+//             &>.element {
+//                 color: color-mix(in srgb, $userColor 40%, $shade0);
+//             }
+
+//         }
+//     }
+
+//     .card {
+//         background-color: $shade90;
+//     }
+
+//     .car-border {
+//         box-shadow: 0px 0px 0px 2px $shade75 inset;
+
+//         // @include textcolor($shade15);
+
+//     }
+
+//     .car-shadow {
+//         box-shadow: 0 0 5px 0 color-mix(in srgb, black 50%, $shade 50%);
+//     }
+
+
+//     .selector-grid {
+//         border: 4px solid $shade75;
+//         display: grid;
+//         gap: .2rem;
+//         background-color: $shade75;
+
+//         &>.selector {
+
+
+//             background-color: $shade85;
+
+
+//             &>.icon,
+//             .element {
+//                 color: $shade33;
+//             }
+
+
+
+//             &:hover {
+//                 background-color: $primary;
+//                 color: color-mix(in srgb, $primary 20%, $shade);
+
+//                 &>.icon,
+//                 .element {
+//                     color: color-mix(in srgb, $primary 20%, $shade);
+//                 }
+
+//             }
+
+
+//             &.ghost {
+//                 box-shadow: none;
+//             }
+
+
+
+//             &.disabled {
+//                 background-color: $shade50;
+//                 pointer-events: none;
+//             }
+//         }
+
+//         & .selector:has(> input:checked),
+//         .selector:active {
+//             background-color: color-mix(in srgb, $primary 60%, $shade);
+//             color: color-mix(in srgb, $primary 40%, $shade0);
+//             box-shadow: 0px 0px 4px 2px $primary inset;
+
+//             &>.icon,
+//             .element {
+//                 color: color-mix(in srgb, $primary 40%, $shade0);
+//             }
+
+//         }
+//     }
+
+//     .thumb {
+//         background-color: rgb(94, 205, 142);
+
+//     }
+
+//     .menu {
+//         background-color: $shade85;
+//         box-shadow: 0 0.1rem .8rem -0.3rem black;
+
+
+//     }
+
+//     .selector {
+
+//         background-color: inherit;
+//         & >.element{
+//             color: $shade33;
+//         }
+//         &:hover {
+//             background-color: $primary;
+//             color: color-mix(in srgb, $primary 20%, $shade);
+
+//             &>.element {
+//                 color: color-mix(in srgb, $primary 20%, $shade);
+//             }
+
+//             &>.icon {
+//                 color: color-mix(in srgb, $primary 20%, $shade);
+//             }
+//         }
+
+//         &:active {
+//             background-color: color-mix(in srgb, $primary 60%, $shade);
+//             color: color-mix(in srgb, $primary 40%, $shade0);
+//             box-shadow: 0px 0px 4px 2px $primary inset;
+
+//             &>.icon {
+//                 color: color-mix(in srgb, $primary 40%, $shade0);
+//             }
+
+//             &>.element {
+//                 color: color-mix(in srgb, $primary 40%, $shade0);
+//             }
+
+//         }
+
+
+
+
+
+//     }
+
+//     .toggle {
+//         background-color: $shade75;
+
+//         &>span {
+//             background-color: $shade;
+//         }
+
+//         input[type="checkbox"]:checked+span {
+//             background-color: $primary;
+//         }
+
+//     }
+
+//     .ring {
+//         outline-color: $primary;
+//     }
+
+
+
+//     //IMPORTANT 
+//     .icon:before {
+//         color: inherit;
+//     }
+
+//     .div-highlight {
+//         background-color: $primary;
+
+//     }
+
+//     .div-shade90 {
+//         background-color: $shade90;
+//     }
+
+//     .shade {
+//         background-color: $shade;
+//     }
+
+//     .shade-color {
+//         color: $shade;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade10 {
+//         background-color: $shade10;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade10 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade15 {
+//         background-color: $shade15;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade15 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade25 {
+//         background-color: $shade25;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade25 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade33 {
+//         background-color: $shade33;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade33 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade50 {
+//         background-color: $shade50;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade50 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade66 {
+//         background-color: $shade66;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade66 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade75 {
+//         background-color: $shade75;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade75 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade85 {
+//         background-color: $shade85;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade85 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade90 {
+//         background-color: $shade90;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade90 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade15 {
+//         background-color: $shade5;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade15 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shade95 {
+//         background-color: $shade95;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade95 95%, $highlight 5%);
+//         }
+//     }
+
+//     .shadeInv {
+//         background-color: $shade0;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $shade0 95%, $highlight 5%);
+//         }
+//     }
+
+//     .success {
+//         background-color: $success;
+
+//         &.tint {
+//             background-color: color-mix(in srgb, $success 75%, $highlight 25%);
+//         }
+
+//         &>.element {
+//             color: color-mix(in srgb, $success 25%, $shade 75%);
+//         }
+
+//         // &>.element-alt {
+//         //     color: color-mix(in srgb, $success 35%, $shade0 65%);
+//         // }
+//     }
+
+//     hr {
+//         border-color: $shade75;
+//     }
+
+//     .hr-highlight {
+//         border-color: $primary;
+//     }
+
+//     .hr-shade90 {
+//         border-color: $shade90;
+//     }
+
+//     .ico-color {
+//         color: rgb(83, 83, 69) !important;
+//     }
+
+// }
+
+// //classes - used to bind class name to theme in mixin
+// //blank results in default theme
+// .theme-default {
+//     @include theme();
+// }
+
+// .theme-dark {
+//     @include theme(dark);
+// }
+
+
+// @mixin navigation($modifierColor: null) {
+//     $c: $modifierColor;
+
+//     $bg: shadeFx($shade100, 'tint', $c);
+//     $fg: shadeFx($shade0, 'colorize', $c);
+
+//     background-color: $bg;
+
+//     & .nav-element {
+//         color: $fg;
+//     }
+// }
+
+// //Basic mixins for basic properties
+// @mixin apply-border($shadePostFx) {
+//     border: $shadePostFx 2px solid;
+// }
+
+
+// a {
+//     color: shadeFx($shade10, 'colorize', $primary);
+// }
+
+//buttons
+// @each $name, $color in $hues {
+
+
+//     .radio-button.#{$name} {
+//         @include radio-button($color);
+//     }
+// }
+
+// //default button{
+// .radio-button {
+//     @include radio-button($shade50);
+// }

@@ -1,6 +1,7 @@
 //** Button Component Base (.button or button)
 button, .button{
-
+    user-select: none;
+    padding: .5rem;
     text-wrap: nowrap;
     border: none;
     background-color: black;
@@ -48,20 +49,20 @@ button, .button{
     }
 
     min-width: var(--buttonW);
-    line-height: var(--buttonW);
+    // line-height: var(--buttonW);
 
     &.but-circle {
         height: var(--buttonW);
         border-radius: 100%;
+        padding: 0;
     }
 
     &.but-square {
         height: var(--buttonW);
         border-radius: 0%;
+        padding: 0;
     }
-    &.but-bordered{
-        border: 1px solid;
-    }
+
 }
 
 

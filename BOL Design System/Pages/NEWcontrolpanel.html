@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Control Panel</title>
+</head>
+<!-- envelops all page elements -->
+
+<body class="page-wrapper theme-default">
+
+    <!-- Inject User Name here, JS will use it accordingly (Profile Button / Full Name etc)-->
+    <span class="user-name" aria-hidden="true">Richard Murray</span>
+
+    <!--░█▀█░█▀█░█░█░▀█▀░█▀▀░█▀█░▀█▀░▀█▀░█▀█░█▀█
+        ░█░█░█▀█░▀▄▀░░█░░█░█░█▀█░░█░░░█░░█░█░█░█
+        ░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀ -->
+
+    <nav class="nav-main flex fle-space-between gap fle-centerVr scroll-fx">
+
+        <!-- Nav left wrapper -->
+        <div class="flex fle-centerVr content con-100pVr">
+
+            <!-- back to home button (visible anywhere but home) -->
+            <button class="but-borderless secondary-alt ghost flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display" aria-label="Back to Home" title="Back to Home">
+                <span class="but-element icon ico-xs ico-carret-l"></span>
+                <span class="but-element icon ico-sm ico-home"></span>
+            </button>
+
+            <!-- home title (only visible on home) -->
+            <div class="flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display dis-none">
+                <span class="element icon ico-sm ico-home"></span>
+                <h5 class = element>App List</h5>
+            </div>
+
+            <!-- \/\/\/\/ additional elements such as tabs here \/\/\/\/ -->
+
+        </div>
+
+        <!-- Nav right wrapper -->
+        <div class="flex fle-centerVr gap margin mar-smR content con-100pVr ">
+
+            <!-- user profile button and dropdown-->
+            <div class="popup-trigger-pair">
+                <!-- button -->
+                <button class="popup-trigger but-xxs but-circle primary" title="User Profile" onclick="togglePopup(event, 'user-profile')" aria-label="User Profile Button">
+                    <h3 class="user-first-initial but-element element"></h3>
+                </button>
+                <!-- overlay -->
+                <div class=overlay id="overlay user-profile"></div>
+                <!-- dropdown wrapper -->
+                <div id="target user-profile" class="popup edge-right to-left margin mar-mdVr">
+                    <!-- dropdown -->
+                    <div class="card car-sm pill pil-sm padding pad-smB">
+
+                        <!-- Header -->
+                        <header class="car-element padding pad-xs">
+                            <h4>User</h4>
+                        </header>
+
+                        <hr class="margin mar-xsHr">
+
+                        <!-- Drop down text content -->
+                        <div class="car-element padding pad-xs flex fle-column gap">
+
+                            <h4 class="user-full-name"></h4>
+                            <br>
+                            <b>Last Seen:</b>
+                            <time>Month DDth, YYYY</time>
+                            <time>HH:MM:SS AM</time>
+
+                        </div>
+
+                        <hr class="hr-sm">
+
+                        <!-- options list -->
+                        <ul class="selector-list">
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Messages">Messages</a></li>
+                            <hr>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Update Info">Update Info</a></li>
+                            <hr>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Log Out">Log Out</a>
+                            </li>
+                            <hr>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- global options button and dropdown -->
+            <div class="popup-trigger-pair">
+                <!-- button -->
+                <button class="popup-trigger but-xxs but-circle secondary ghost" title="User Profile" onclick="togglePopup(event, 'user-options')" aria-label="User Options Button">
+                    <span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                </button>
+                <!-- overlay -->
+                <div class=overlay id="overlay user-options"></div>
+                <!-- dropdown wrapper -->
+                <div id="target user-options" class="popup edge-right to-left margin mar-mdVr">
+                    <!-- dropdown -->
+                    <div class="card car-sm pill pil-sm padding pad-smB">
+
+                        <!-- header -->
+                        <header class="car-element padding pad-xs">
+                            <h4>Options</h4>
+                        </header>
+
+                        <hr class="margin mar-xsHr">
+
+                        <!-- options list -->
+                        <ul class="selector-list">
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Help">Help</a></li>
+                            <hr>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Contact">Contact</a></li>
+                            <hr>
+                            <!-- toggle dark mode -->
+                            <li><label class="selector secondary-alt flex fle-space-between fle-centerVr padding pad-xsHr" for="toggleDarkMode" aria-label="Toggle Dark Mode">
+                                    <p class="car-element sel-element">Dark Mode</p>
+                                    <div class="toggle pill"><input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()"><span class="pill"></span></div>
+                                </label>
+                            </li>
+                            <hr>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- space content down from behind nav (PACKAGE WITH NAV) -->
+    <div class="spacer spa-sm"></div>
+
+
+    <!-- envelops all content outside of nav / footer / modals / scripts-->
+    <main class="page-content">
+          <!-- modify app details -->
+          <header class="flex ">
+            <div class="left-fade"></div>
+            <div
+                class="field cell cel-md4cells flex fle-wrap gap gap-md fle-justifyContent-spaceBetween fle-alignItems-center padding pad-md">
+                <h2 class = "element">Modify App Details</h2>
+                <div class="flex fle-wrap gap gap-md">
+                    <button class="but-xs warn padding pad-mdHr pill">Reset Changes</button>
+                    <button class="but-xs primary padding pad-mdHr pill">Save Changes</button>
+                </div>
+
+            </div>
+            <div class="right-fade"></div>
+        </header>
+
+        <div class="magic mag-4Max mag-md mag-gap-sm cell cel-mdMin flex  text-select texs-none">
+
+            <div class="left-fade"></div>
+
+            <div class="magic-parent  margin mar-mdVr">
+
+                <div class="magic-child flex fle-column">
+
+                    <div class="card car-shadow grow gro-one pill pil-xs  ">
+
+                        <header
+                            class="hea-sm  car-element padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                            <div class="position pos-absolute" style="left: 0">
+                                <div
+                                    class="circle cir-sm margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                    <h3 class="">1</h3>
+                                </div>
+                            </div>
+                            <h3>Choose an app to modify:</h3>
+                        </header>
+
+                        <div
+                            class="car-element margin mar-mdVr padding pad-md flex fle-column fle-alignItems-center gap gap-md">
+                            <label for="Select App ">
+                                <p>
+                                    Select an app from the dropdown:
+                                </p>
+                            </label>
+                            <div class="search-dropdown content con-100p">
+                                <input type="text" aria-label="Select App" autocomplete="off"
+                                    class="inp-fullHr pill padding pad-smHr ">
+                                <div class="search-dropdown-icon padding pad-smHr">
+                                    <span class="icon ico-sm ico-carret-l"></span>
+                                </div>
+                                <div class="popup content con-100p">
+                                    <div class="card  car-shadow margin mar-smT pill pil-sm">
+                                        <div class="spacer spa-xxs"></div>
+                                        <ul class=" content con-xxsMaxVr con-scrollY">
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                            <li>
+                                                <p class="selector padding pad-xsHr">Search
+                                                    Result</p>
+                                            </li>
+                                            <hr>
+                                        </ul>
+                                        <div class="spacer spa-xxs"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="card car-shadow  grow gro-one pill pil-xs ">
+                        <header
+                            class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center ">
+                            <h4 class="">Preview</h4>
+                        </header>
+                        <div class="padding pad-md ">
+                            <div
+                                class=" card car-shadow car-xxsVr car-sm pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-mdVr">
+
+                                <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL"
+                                    id="appColorTile">
+                                    <span class="icon ico-sm ico-closeX"></span>
+                                </div>
+
+                                <a href=""
+                                    class="link-nostyle   content con-full position pos-absolute flex fle-centerVr">
+                                    <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
+                                        <h5>[DATA: (App Title)]</h5>
+                                    </div>
+                                </a>
+                                <!-- button should do the same as preview popup button below -->
+                                <button
+                                    class=" secondary-alt ghost but-circle margin mar-smR position pos-absolute"><span
+                                        class="but-element icon ico-sm ico-ellipsis-vr"></span></button>
+                            </div>
+
+                            <div class="flex fle-justifyContent-center"> <button
+                                    class="margin mar-autoHr mar-mdVr secondary but-xs padding pad-mdHr pill ">Preview
+                                    Popup</button></div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="magic-child2 flex">
+
+                    <div class="card car-shadow  grow gro-one pill pil-xs">
+
+                        <header
+                            class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                            <div class="position pos-absolute" style="left: 0">
+                                <div
+                                    class="circle cir-sm  margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                    <h3 class="">2</h3>
+                                </div>
+                            </div>
+                            <h3>Edit App Details:</h3>
+                        </header>
+
+                        <div class="flex fle-wrap">
+                            <div class=" cell cel-mdMax grow gro-one">
+                                <div class="margin mar-xs padding pad-md  content con-100pVr  flex fle-column">
+                                    <div>
+                                        <label for="App Card Name">
+                                            <p class="">
+                                                App Card Name:
+                                            </p>
+                                        </label>
+
+                                        <input type="text" id="App Card Name" autocomplete="off"
+                                            class="pill content con-100p margin mar-smVr padding pad-smHr">
+
+                                    </div>
+                                    <label for="App Descrpition">
+                                        <p>
+                                            App Descrpition:
+                                        </p>
+                                    </label>
+                                    <textarea id="App Descrpition"
+                                        class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>
+
+
+                                </div>
+
+                            </div>
+                            <div class=" cell cel-mdMax grow gro-one">
+                                <div class="margin mar-xs padding pad-md">
+                                    <label for="App Details Heading">
+                                        <p>
+                                            App Details Heading:
+                                        </p>
+                                    </label>
+                                    <input type="text" id="App Details Heading" autocomplete="off"
+                                        class="pill content con-100p margin mar-smVr padding pad-smHr">
+                                    <label for="App Details Sub-Heading">
+                                        <p>
+                                            App Details Sub-Heading:
+                                        </p>
+                                    </label>
+                                    <input type="text" id="App Details Sub-Heading" autocomplete="off"
+                                        class="pill content con-100p margin mar-smVr padding pad-smHr">
+
+
+
+
+
+                                    <label for="App Group">
+                                        <p>
+                                            App Group:
+                                        </p>
+                                    </label>
+                                    <div class="flex margin mar-mdVr gap">
+                                        <div class="search-dropdown content con-100p">
+                                            <input type="text" aria-label="Select App" autocomplete="off"
+                                                class="content con-100p pill padding pad-smHr">
+                                            <div class="search-dropdown-icon  padding pad-smHr ">
+                                                <span class="icon ico-sm ico-carret-l"></span>
+                                            </div>
+                                            <div class="popup content  con-100p">
+                                                <div class="card  con-100p margin mar-smT pill pil-sm ">
+                                                    <div class="spacer spa-xxs"></div>
+                                                    <ul class=" content con-xxsMaxVr con-scrollY">
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                        <li><a class="selector padding pad-xsHr">Search
+                                                                Result</a></li>
+                                                        <hr>
+                                                    </ul>
+                                                    <div class="spacer spa-xxs"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <span
+                                            class="icon ico-sm margin button primary flex fle-alignItems-center fle-justifyContent-center ghost pill">
+                                            <b class="but-element">?</b></span>
+
+
+                                    </div>
+
+
+                                    <div class="flex fle-justifyContent-spaceBetween padding pad-mdR ">
+                                        <div>
+                                            <p>Select an app icon:</p>
+                                            <button onclick="togglePopup(event, 'selectAppIcon')"
+                                                class="secondary-alt pill pil-xs but-sm but-square margin mar-smVr padding pad-sm ">
+                                                <span class="but-element  icon ico-sm ico-home"></span></button>
+                                        </div>
+                                        <div>
+                                            <p>Select an app color:</p>
+                                            <button onclick="togglePopup(event, 'selectAppColor')"
+                                                class="secondary-alt but-bordered pill pil-xs but-sm but-square margin mar-smVr padding pad-sm">
+                                                <div class="but-element  content con-full red pill pil-xs"></div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="magic-child flex">
+
+                    <div class="card car-shadow  grow gro-one pill pil-xs">
+                        <header
+                            class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                            <div class="position pos-absolute" style="left: 0">
+                                <div
+                                    class="circle cir-sm  margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                    <h3 class="">3</h3>
+                                </div>
+                            </div>
+                            <h3>Add Aditional Buttons:</h3>
+                        </header>
+                        <div class="padding pad-md pad-lgHr flex fle-column fle-alignItems-center">
+                            <p class="text-align texa-c">Modify buttons in the app popup:
+                            <p>
+                            <div class="margin mar-mdVr content con-100p">
+                                <div class="sortable-list car-section pill pil-sm card secondary section">
+                                    <div class="spacer spa-xxs"></div>
+                                    <ul
+                                        class=" flex fle-column gap gap-sm padding pad-mdL pad-xsR  content con-scrollY con-100pMinVr con-xsMaxVr">
+                                        <!-- THERE SHOULD BE SOME DATA BIND TO EACH OF THESE AND THE MODAL CURRENTLY THEY ARE ALL BLANK -->
+                                        <li draggable="true" onclick="togglePopup(event, 'editButton')"
+                                            class="selector secondary-alt sel-md pill pil-xs flex  fle-alignItems-center  gap  padding pad-smHr">
+
+                                            <span class="sel-element icon ico-closeX ico-sm element"></span>
+                                            <p class="sel-element">[DATA: (BUTTON TITLE)]</p>
+                                        </li>
+                                        <li draggable="true" onclick="togglePopup(event, 'editButton')"
+                                            class="selector secondary-alt  sel-md pill pil-xs flex  fle-alignItems-center  gap padding pad-smHr">
+
+                                            <span class="sel-element icon ico-closeX ico-sm element"></span>
+                                            <p class="sel-element">[DATA: (BUTTON TITLE)]</p>
+                                        </li>
+                                        <!-- THE NEW BUTTON OPTION SHOULD CREATE A NEW LI ELEMENT AND BIND IT TO NEW DATA IN A BLANK MODAL-->
+                                        <li draggable="true" onclick="togglePopup(event, 'editButton')"
+                                            class="selector secondary-alt \ sel-md pill pil-xs flex gap fle-alignItems-center  padding pad-smHr">
+
+                                            <span class="sel-element icon ico-closeX ico-sm element"></span>
+                                            <p class="sel-element element">Add New Button</p>
+
+                                        </li>
+                                    </ul>
+                                    <div class="spacer spa-xxs"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="right-fade"></div>
+
+        </div>
+
+        <!-- maintenance -->
+        <header class="flex ">
+            <div class="left-fade"></div>
+            <div class="field cell cel-md4cells flex fle-justifyContent-spaceBetween padding pad-md">
+                <h2 class = "element">Maintenance</h2>
+            </div>
+            <div class="right-fade"></div>
+        </header>
+
+        <div class="magic mag-4Max mag-md mag-gap-sm cell cel-mdMin flex  text-select texs-none">
+
+            <div class="left-fade"></div>
+
+            <div class="magic-parent padding pad-mdVr">
+
+                <div class="magic-child flex">
+
+                    <div class="card car-shadow  grow gro-one pill pil-xs  ">
+
+                        <div class="padding pad-md flex fle-column gap gap-md">
+
+                            <label for="Redirect Link">
+                                <p>
+                                    Redirect Link:
+                                </p>
+                            </label>
+                            <div class="flex fle-alignItems-center gap gap-md">
+                                <input type="text" id="Redirect Link" autocomplete="off"
+                                    class="pill grow gro-one padding pad-smHr">
+                                <span
+                                    class="margin mar-smR button primary flex fle-alignItems-center fle-justifyContent-center ghost circle ">
+                                    <span class="but-element  icon ico-closeX ico-sm"></span></span>
+                            </div>
+                            <p>App State:</p>
+                            <div
+                                class="flex car-section fle-nowrap fle-justifyContent-spaceBetween padding pad-xxs pill gap">
+
+                                <label for="enabled"
+                                    class="radio-button secondary ghost padding pad-xxs pad-xsHr ghost pill flex gap">
+                                    <input type="radio" id="enabled" name="app_state" value="enabled">
+                                    <p class="but-element ">Enabled</p>
+                                </label>
+
+                                <label for="disabled"
+                                    class="radio-button secondary ghost padding pad-xxs pad-xsHr ghost pill flex gap">
+                                    <input type="radio" id="disabled" name="app_state" value="disabled">
+                                    <p class="but-element ">Disabled</p>
+                                </label>
+
+
+                                <label for="hidden"
+                                    class="radio-button secondary ghost padding pad-xxs pad-xsHr ghost pill flex gap">
+                                    <input type="radio" id="hidden" name="app_state" value="hidden">
+                                    <p class="but-element ">Hidden</p>
+                                </label>
+
+
+                            </div>
+
+                            <label for="Disabled Message">
+                                <p>
+                                    Disabled Message:
+                                </p>
+                            </label>
+                            <textarea id="Disabled Message"
+                                class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="right-fade"></div>
+
+        </div>
+        <div class="spacer spa-xl"></div>
+
+    </main>
+
+    <!-- ░█▀▀░█▀█░█▀█░▀█▀░█▀▀░█▀▄
+         ░█▀▀░█░█░█░█░░█░░█▀▀░█▀▄
+         ░▀░░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀ -->
+
+    <footer class="field">
+        <hr class="hr-xs">
+        <!-- footer top section -->
+        <div class="element magic mag-3Max mag-lg mag-standardFlow">
+            <div class="magic-parent flex fle-justifyContent-spaceAround gap padding pad-md">
+
+                <!-- section left (Application List, Messages, Help)-->
+                <div class="magic-child flex fle-flipflop">
+                    <!-- logo -->
+                    <header class="content con-100p flex fle-justifyContent-end fle-wrap gap padding pad-sm">
+                        <h1>BUPERS <br> ONLINE</h1>
+                        <img src="../assets/Seal_of_the_Bureau_of_Naval_Personnel.png" alt="Seal of the Bureau of Naval Personnel" style="height: 6rem;">
+                    </header>
+                    <hr>
+                    <!-- right links -->
+                    <div class="content con-100p flex fle-column fle-justifyContent-spaceAround padding pad-sm">
+                        <a href="" class="link">Application List</a>
+
+                        <a href="" class="link">Messages</a>
+
+                        <a href="" class="link">Help</a>
+                    </div>
+                </div>
+                <!-- section center (Help Desk, Hours)-->
+                <div class="magic-child flex fle-column">
+                    <!-- top half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm ">
+                            <h4>Help Desk</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p flex fle-column fle-justifyContent-spaceAround padding pad-sm ">
+                            <p>1-800-951-NAVY</p>
+                            <a class="link word-break" href="">Bupers07_IT_EOC.FTC@navy.mil</a>
+                        </div>
+                    </div>
+                    <!-- bottom half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm">
+                            <h4>Hours</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p padding pad-sm ">
+                            <p>Monday - Friday</p>
+                            <p>0600 - 1700 Central</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section right (User, Last Seen)-->
+                <div class="magic-child flex fle-column">
+                    <!-- top half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm">
+                            <h4>User</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p flex fle-column fle-justifyContent-spaceAround padding pad-sm">
+                            <a href="" class="link">End Session</a>
+                            <a href="" class="link">Update Info</a>
+                        </div>
+                    </div>
+                    <!-- bottom half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm">
+                            <h4>Last Seen</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p padding pad-sm">
+                            <p>Month DDth, YYYY</p>
+                            <p>HH:MM:SS AM</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- footer bottom section -->
+        <div class="field-alt">
+
+            <div class="element magic mag-3Max mag-lg mag-standardFlow text-align texa-c">
+                <div class="magic-parent flex fle-justifyContent-spaceAround gap gap-lg padding pad-md">
+
+                    <!-- section left -->
+                    <div class="magic-child flex fle-flipflop fle-justifyContent-center gap gap-md">
+                        <a href="" class="link">NCIS Tips</a>
+                        <a href="" class="link">24/7 Suicide Prevention</a>
+                        <a href="" class="link">Safe Helpline</a>
+                    </div>
+                    <!-- section middle -->
+                    <div class="magic-child flex fle-flipflop fle-justifyContent-center gap gap-md">
+                        <a href="" class="link">For Official Use Only</a>
+                        <a href="" class="link">Privacy Policy</a>
+                        <a href="" class="link">Accessibility/Section 508</a>
+                    </div>
+                    <!-- section right -->
+                    <div class="magic-child flex fle-justifyContent-center">
+                        <p>5720 Integrity Drive Millington, TN 38055-0000</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- version number -->
+            <p class="element margin mar-md text-align texa-r">Version 0.000.000</p>
+            <hr class="hr-md">
+        </div>
+
+    </footer>
+
+    <!-- 
+    ░█▄█░█▀█░█▀▄░█▀█░█░░░█▀▀
+    ░█░█░█░█░█░█░█▀█░█░░░▀▀█
+    ░▀░▀░▀▀▀░▀▀░░▀░▀░▀▀▀░▀▀▀ -->
+
+</body>
+
+
+<!-- 
+    ░█▀▀░█▀▀░█▀▄░▀█▀░█▀█░▀█▀░█▀▀
+    ░▀▀█░█░░░█▀▄░░█░░█▀▀░░█░░▀▀█
+    ░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░░▀░░▀▀▀ -->
+
+<!-- toggle Popup -->
+<script src="../js/toggles/togglePopup.js"></script>
+
+<!-- toggle Active class -->
+<script src="../js/toggles/toggleActive.js"></script>
+
+<!-- scroll Fx -->
+<script src="../js/toggles/scrollFx.js"></script>
+
+<!-- user color -->
+<script src="../js/colors/userColor.js"></script>
+
+<!-- dark mode -->
+<script src="../js/toggles/toggleDarkMode.js"></script>
+
+
+<!-- app tile color -->
+<script src="../js/colors/appTileColor.js"></script>
+
+<!-- disable -->
+<script src="../js/toggles/toggleDisplay.js"></script>
+
+</html>

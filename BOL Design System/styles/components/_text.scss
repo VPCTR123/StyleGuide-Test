@@ -16,11 +16,23 @@ h6 {}
 
 a {}
 
-.link-nostyle{
+.link-nostyle {
     text-decoration: none;
 }
-.word-break{
-    &.worB-breakAll{
-        word-break: break-all;
-    }
+
+.word-break {
+
+    word-break: break-all;
+
 }
+
+// a {
+//     text-decoration: none;
+//     padding: .3rem 0 ;
+//     font-weight: bold;
+// }
+
+// a:hover,
+// a:focus {
+//     text-decoration: underline;
+// }

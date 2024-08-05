@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Bupers Online</title>
+</head>
+<!-- envelops all page elements -->
+
+<body class="page-wrapper theme-default">
+
+    <!-- Inject User Name here, JS will use it accordingly (Profile Button / Full Name etc)-->
+    <span class="user-name" aria-hidden="true">Richard Murray</span>
+
+    <!--░█▀█░█▀█░█░█░▀█▀░█▀▀░█▀█░▀█▀░▀█▀░█▀█░█▀█
+        ░█░█░█▀█░▀▄▀░░█░░█░█░█▀█░░█░░░█░░█░█░█░█
+        ░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀ -->
+
+    <nav class="nav-main flex fle-space-between gap fle-centerVr scroll-fx">
+
+        <!-- Nav left wrapper -->
+        <div class="flex fle-centerVr content con-100pVr">
+
+            <!-- back to home button (visible anywhere but home) -->
+            <button class="but-borderless secondary-alt ghost flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display" aria-label="Back to Home" title="Back to Home">
+                <span class="but-element icon ico-xs ico-carret-l"></span>
+                <span class="but-element icon ico-sm ico-home"></span>
+            </button>
+
+            <!-- home title (only visible on home) -->
+            <div class="flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display ">
+                <span class="element icon ico-sm ico-home"></span>
+                <h5 class = element>App List</h5>
+            </div>
+
+            <!-- \/\/\/\/ additional elements such as tabs here \/\/\/\/ -->
+
+        </div>
+
+        <!-- Nav right wrapper -->
+        <div class="flex fle-centerVr gap margin mar-smR content con-100pVr ">
+
+            <!-- user profile button and dropdown-->
+            <div class="popup-trigger-pair">
+                <!-- button -->
+                <button class="popup-trigger but-xxs but-circle primary" title="User Profile" onclick="togglePopup(event, 'user-profile')" aria-label="User Profile Button">
+                    <h3 class="user-first-initial but-element element"></h3>
+                </button>
+                <!-- overlay -->
+                <div class=overlay id="overlay user-profile"></div>
+                <!-- dropdown wrapper -->
+                <div id="target user-profile" class="popup edge-right to-left margin mar-mdVr">
+                    <!-- dropdown -->
+                    <div class="card car-sm pill pil-sm padding pad-smB">
+
+                        <!-- Header -->
+                        <header class="car-element padding pad-xs">
+                            <h4>User</h4>
+                        </header>
+
+                        <hr class="margin mar-xsHr">
+
+                        <!-- Drop down text content -->
+                        <div class="car-element padding pad-xs flex fle-column gap">
+
+                            <h4 class="user-full-name"></h4>
+                            <br>
+                            <b>Last Seen:</b>
+                            <time>Month DDth, YYYY</time>
+                            <time>HH:MM:SS AM</time>
+
+                        </div>
+
+                        <hr class="hr-sm">
+
+                        <!-- options list -->
+                        <ul class="selector-list">
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Messages">Messages</a></li>
+                            <hr>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Update Info">Update Info</a></li>
+                            <hr>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Log Out">Log Out</a>
+                            </li>
+                            <hr>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- global options button and dropdown -->
+            <div class="popup-trigger-pair">
+                <!-- button -->
+                <button class="popup-trigger but-xxs but-circle secondary ghost" title="User Profile" onclick="togglePopup(event, 'user-options')" aria-label="User Options Button">
+                    <span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                </button>
+                <!-- overlay -->
+                <div class=overlay id="overlay user-options"></div>
+                <!-- dropdown wrapper -->
+                <div id="target user-options" class="popup edge-right to-left margin mar-mdVr">
+                    <!-- dropdown -->
+                    <div class="card car-sm pill pil-sm padding pad-smB">
+
+                        <!-- header -->
+                        <header class="car-element padding pad-xs">
+                            <h4>Options</h4>
+                        </header>
+
+                        <hr class="margin mar-xsHr">
+
+                        <!-- options list -->
+                        <ul class="selector-list">
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Help">Help</a></li>
+                            <hr>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Contact">Contact</a></li>
+                            <hr>
+                            <!-- toggle dark mode -->
+                            <li><label class="selector secondary-alt flex fle-space-between fle-centerVr padding pad-xsHr" for="toggleDarkMode" aria-label="Toggle Dark Mode">
+                                    <p class="car-element sel-element">Dark Mode</p>
+                                    <div class="toggle pill"><input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()"><span class="pill"></span></div>
+                                </label>
+                            </li>
+                            <hr>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- space content down from behind nav (PACKAGE WITH NAV) -->
+    <div class="spacer spa-sm"></div>
+
+
+    <!-- envelops all content outside of nav / footer / modals / scripts-->
+    <main class="page-content">
+
+        <div class="magic mag-4Max mag-md mag-gap-sm">
+            <div class="magic-parent">
+                <div class="magic-child">
+                    <div class="card pill  pil-sm padding pad-sm">
+                        <div class="car-element flex fle-column gap gap-md">
+                            <header>
+                                <h3>Buttons</h3>
+                            </header>
+                            <div class="flex fle-column gap gap-sm">
+
+                                <button class="pill flex fle-justifyContent-spaceBetween padding pad-smHr">
+                                    <p>Default</p><span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                                </button>
+                                <button class="primary pill flex fle-justifyContent-spaceBetween padding pad-smHr">
+                                    <p>Primary</p><span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                                </button>
+                                <button class="secondary pill flex fle-justifyContent-spaceBetween padding pad-smHr">
+                                    <p>Secondary</p><span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                                </button>
+                                <button class="secondary-alt pill flex fle-justifyContent-spaceBetween padding pad-smHr">
+                                    <p>Secondary-Alt</p><span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                                </button>
+                                <button class="pill success flex fle-justifyContent-spaceBetween padding pad-smHr">
+                                    <p>Success</p><span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                                </button>
+                                <button class="warn pill flex fle-justifyContent-spaceBetween padding pad-smHr">
+                                    <p>Warn</p><span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                                </button>
+                                <button class="error pill flex fle-justifyContent-spaceBetween padding pad-smHr">
+                                    <p>Error</p><span class="but-element icon ico-sm ico-ellipsis-vr"></span>
+                                </button>
+
+                            </div>
+                            <header>
+                                <h3>Radio Buttons</h3>
+                            </header>
+                            <div class="flex fle-column gap gap-sm">
+                                <div class="radio-group card car-border pill flex fle-column gap padding pad-sm">
+                                    <p>Title</p>
+                                    <div class="card section pill flex gap gap-md padding pad-xxs">
+                                        <label class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs" for="rad1.1">
+                                            <input type="radio" name="test1" id="rad1.1" value="sample value 1" aria-label="sample value 1">
+                                            <p>Title</p>
+                                        </label>
+                                        <label class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs" for="rad1.2">
+                                            <input type="radio" name="test1" id="rad1.2" value="sample value 2" aria-label="sample value 2">
+                                            <p>Title</p>
+                                        </label>
+                                    </div>
+                                    <p class="feedback"></p>
+                                </div>
+                                <div class="radio-group card car-border success pill flex fle-column gap padding pad-sm">
+                                    <p>Title</p>
+                                    <div class="card section success pill flex gap gap-md padding pad-xxs">
+                                        <label class="radio-button success pill flex fle-alignItems-center gap gap-xxs padding pad-xs" for="rad2.1">
+                                            <input type="radio" name="test1" id="rad2.1" value="sample value 1" aria-label="sample value 1">
+                                            <p>Title</p>
+                                        </label>
+                                        <label class="radio-button success pill flex fle-alignItems-center gap gap-xxs padding pad-xs" for="rad2.2">
+                                            <input type="radio" name="test1" id="rad2.2" value="sample value 2" aria-label="sample value 2">
+                                            <p>Title</p>
+                                        </label>
+                                    </div>
+                                    <p class="feedback"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="magic-child">
+                    <div class="card pill pil-sm padding pad-sm">
+                        <div class="car-element">
+                            <header>
+                                <h3>Cards</h3>
+                            </header>
+                            <div class="flex fle-column gap">
+                                <div class="card section pill padding pad-xs">
+                                    <p>Card Section</p>
+                                </div>
+                                <div class="card flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Default</h3>
+                                    </header>
+                                    <div class="card section pill padding pad-xs">
+                                        <p>Card Section</p>
+                                    </div>
+                                </div>
+                                <div class="card primary flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Primary</h3>
+                                    </header>
+                                    <div class="card primary section pill padding pad-xs">
+                                        <p>Card Section</p>
+                                    </div>
+                                </div>
+                                <div class="card secondary flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Secondary</h3>
+                                    </header>
+                                    <div class="card secondary section pill padding pad-xs">
+                                        <p>Card Section</p>
+                                    </div>
+                                </div>
+                                <div class="card success flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Success</h3>
+                                    </header>
+                                    <div class="card success section pill padding pad-xs">
+                                        <p>Card Section</p>
+                                    </div>
+                                </div>
+                                <div class="card warn flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Warn</h3>
+                                    </header>
+                                    <div class="card warn section pill padding pad-xs">
+                                        <p>Card Section</p>
+                                    </div>
+                                </div>
+                                <div class="card error flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Error</h3>
+                                    </header>
+                                    <div class="card error section pill padding pad-xs">
+                                        <p>Card Section</p>
+                                    </div>
+                                </div>
+                                <div class="card car-shadow flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Card Shadow</h3>
+                                    </header>
+                                    <div class="card section car-shadow pill padding pad-xs">
+                                        <p>Section Shadow</p>
+                                    </div>
+                                </div>
+                                <div class="card car-border flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Card Border</h3>
+                                    </header>
+                                    <div class="card section car-border pill padding pad-xs">
+                                        <p>Section Border</p>
+                                    </div>
+                                </div>
+                                <div class="card car-inset flex fle-column gap pill padding pad-sm">
+                                    <header>
+                                        <h3>Card Inset</h3>
+                                    </header>
+                                    <div class="card section car-inset pill padding pad-xs">
+                                        <p>Section Inset</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="magic-child">
+                    <div class="card pill pil-sm padding pad-sm">
+                        <div class="car-element">
+                            <header>
+                                <h3>Inputs</h3>
+                            </header>
+                            <div class="input-group flex fle-column gap">
+                                <label for="inp1.1">
+                                    Input Group
+                                </label>
+                                <input type="text" class="text-input pill" name="test1" id="inp1.1" placeholder="Default" aria-label="sample value 1">
+
+                                <p class="feedback"></p>
+                            </div>
+                            <div class="input-group flex fle-column gap">
+                                <label for="inp1.2">
+                                    Input Group
+                                </label>
+                                <input type="text" class="text-input pill primary" name="test1" id="inp1.2" placeholder="Primary" aria-label="sample value 1">
+
+                                <p class="feedback"></p>
+                            </div>
+                            <div class="input-group flex fle-column gap">
+                                <label for="inp1.3">
+                                    Input Group
+                                </label>
+                                <input type="text" class="text-input pill secondary" name="test1" id="inp1.3" placeholder="Secondary" aria-label="sample value 1">
+
+                                <p class="feedback"></p>
+                            </div>
+                            <div class="input-group flex fle-column gap">
+                                <label for="inp1.4">
+                                    Input Group
+                                </label>
+                                <input type="text" class="text-input pill success" name="test1" id="inp1.4" placeholder="Success" aria-label="sample value 1">
+
+                                <p class="feedback"></p>
+                            </div>
+                            <div class="input-group flex fle-column gap">
+                                <label for="inp1.5">
+                                    Input Group
+                                </label>
+                                <input type="text" class="text-input pill warn" name="test1" id="inp1.5" placeholder="W\arn" aria-label="sample value 1">
+
+                                <p class="feedback"></p>
+                            </div>
+                            <div class="input-group flex fle-column gap">
+                                <label for="inp1.7">
+                                    Input Group
+                                </label>
+                                <input type="text" class="text-input pill error" name="test1" id="inp1.7" placeholder="Error" aria-label="sample value 1">
+
+                                <p class="feedback"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="magic-child">
+                    <div class="card pill pil-sm padding pad-sm">
+                        <div class="car-element">
+                            <header>
+                                <h3>Drawer</h3>
+                            </header>
+                            <div>
+                                <label class="drawer-handle drah-mdH gap gap-sm" for="drawerOne">
+                                    <input type="checkbox" id="drawerOne" onclick="toggleActive('drawerOne')">
+                                    <span class="icon ico-sm ico-carret-d"></span>
+                                    <h5>Group Title</h5>
+                                </label>
+                                <div class="drawer active" id="target-drawerOne">
+                                    <div class = "card">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque natus consectetur porro. Deserunt consequatur, repellendus quaerat veniam quidem nam, esse eos fugiat maxime minus at molestias architecto sapiente. Possimus, voluptatem!
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+
+
+    </main>
+
+    <!-- ░█▀▀░█▀█░█▀█░▀█▀░█▀▀░█▀▄
+         ░█▀▀░█░█░█░█░░█░░█▀▀░█▀▄
+         ░▀░░░▀▀▀░▀▀▀░░▀░░▀▀▀░▀░▀ -->
+
+    <footer class="field">
+        <hr class="hr-xs">
+        <!-- footer top section -->
+        <div class="element magic mag-3Max mag-lg mag-standardFlow">
+            <div class="magic-parent flex fle-justifyContent-spaceAround gap padding pad-md">
+
+                <!-- section left (Application List, Messages, Help)-->
+                <div class="magic-child flex fle-flipflop">
+                    <!-- logo -->
+                    <header class="content con-100p flex fle-justifyContent-end fle-wrap gap padding pad-sm">
+                        <h1>BUPERS <br> ONLINE</h1>
+                        <img src="../assets/Seal_of_the_Bureau_of_Naval_Personnel.png" alt="Seal of the Bureau of Naval Personnel" style="height: 6rem;">
+                    </header>
+                    <hr>
+                    <!-- right links -->
+                    <div class="content con-100p flex fle-column fle-justifyContent-spaceAround padding pad-sm">
+                        <a href="" class="link">Application List</a>
+
+                        <a href="" class="link">Messages</a>
+
+                        <a href="" class="link">Help</a>
+                    </div>
+                </div>
+                <!-- section center (Help Desk, Hours)-->
+                <div class="magic-child flex fle-column">
+                    <!-- top half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm ">
+                            <h4>Help Desk</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p flex fle-column fle-justifyContent-spaceAround padding pad-sm ">
+                            <p>1-800-951-NAVY</p>
+                            <a class="link word-break" href="">Bupers07_IT_EOC.FTC@navy.mil</a>
+                        </div>
+                    </div>
+                    <!-- bottom half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm">
+                            <h4>Hours</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p padding pad-sm ">
+                            <p>Monday - Friday</p>
+                            <p>0600 - 1700 Central</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- section right (User, Last Seen)-->
+                <div class="magic-child flex fle-column">
+                    <!-- top half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm">
+                            <h4>User</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p flex fle-column fle-justifyContent-spaceAround padding pad-sm">
+                            <a href="" class="link">End Session</a>
+                            <a href="" class="link">Update Info</a>
+                        </div>
+                    </div>
+                    <!-- bottom half -->
+                    <div class="flex fle-flipflop">
+                        <!-- left header -->
+                        <header class="content con-100p text-align texa-r padding pad-sm">
+                            <h4>Last Seen</h4>
+                        </header>
+                        <hr>
+                        <!-- right text -->
+                        <div class="content con-100p padding pad-sm">
+                            <p>Month DDth, YYYY</p>
+                            <p>HH:MM:SS AM</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- footer bottom section -->
+        <div class="field-alt">
+
+            <div class="element magic mag-3Max mag-lg mag-standardFlow text-align texa-c">
+                <div class="magic-parent flex fle-justifyContent-spaceAround gap gap-lg padding pad-md">
+
+                    <!-- section left -->
+                    <div class="magic-child flex fle-flipflop fle-justifyContent-center gap gap-md">
+                        <a href="" class="link">NCIS Tips</a>
+                        <a href="" class="link">24/7 Suicide Prevention</a>
+                        <a href="" class="link">Safe Helpline</a>
+                    </div>
+                    <!-- section middle -->
+                    <div class="magic-child flex fle-flipflop fle-justifyContent-center gap gap-md">
+                        <a href="" class="link">For Official Use Only</a>
+                        <a href="" class="link">Privacy Policy</a>
+                        <a href="" class="link">Accessibility/Section 508</a>
+                    </div>
+                    <!-- section right -->
+                    <div class="magic-child flex fle-justifyContent-center">
+                        <p>5720 Integrity Drive Millington, TN 38055-0000</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- version number -->
+            <p class="element margin mar-md text-align texa-r">Version 0.000.000</p>
+            <hr class="hr-md">
+        </div>
+
+    </footer>
+
+    <!-- 
+    ░█▄█░█▀█░█▀▄░█▀█░█░░░█▀▀
+    ░█░█░█░█░█░█░█▀█░█░░░▀▀█
+    ░▀░▀░▀▀▀░▀▀░░▀░▀░▀▀▀░▀▀▀ -->
+
+</body>
+
+
+<!-- 
+    ░█▀▀░█▀▀░█▀▄░▀█▀░█▀█░▀█▀░█▀▀
+    ░▀▀█░█░░░█▀▄░░█░░█▀▀░░█░░▀▀█
+    ░▀▀▀░▀▀▀░▀░▀░▀▀▀░▀░░░░▀░░▀▀▀ -->
+
+<!-- toggle Popup -->
+<script src="../js/toggles/togglePopup.js"></script>
+
+<!-- toggle Active class -->
+<script src="../js/toggles/toggleActive.js"></script>
+
+<!-- scroll Fx -->
+<script src="../js/toggles/scrollFx.js"></script>
+
+<!-- user color -->
+<script src="../js/colors/userColor.js"></script>
+
+<!-- dark mode -->
+<script src="../js/toggles/toggleDarkMode.js"></script>
+
+
+<!-- app tile color -->
+<script src="../js/colors/appTileColor.js"></script>
+
+<!-- disable -->
+<script src="../js/toggles/toggleDisplay.js"></script>
+
+</html>
