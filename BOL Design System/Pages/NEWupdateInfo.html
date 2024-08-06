@@ -21,10 +21,10 @@
     <nav class="nav-main flex fle-space-between gap fle-centerVr scroll-fx">
 
         <!-- Nav left wrapper -->
-        <div class="flex fle-centerVr content con-100pVr">
+        <div class="flex  fle-centerVr content con-100pVr gap">
 
             <!-- back to home button (visible anywhere but home) -->
-            <button class="but-borderless primary-alt ghost flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display" aria-label="Back to Home" title="Back to Home">
+            <button class="but-borderless secondary-alt ghost flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display" aria-label="Back to Home" title="Back to Home">
                 <span class="but-element icon ico-xs ico-carret-l"></span>
                 <span class="but-element icon ico-sm ico-home"></span>
             </button>
@@ -35,7 +35,9 @@
                 <h5>App List</h5>
             </div>
             <!-- \/\/\/\/ additional elements such as tabs here \/\/\/\/ -->
-
+            <div class="card pill padding pad-xs pad-mdHr">
+                <h5>Update Info</h5>
+            </div>
         </div>
 
         <!-- Nav right wrapper -->
@@ -52,7 +54,7 @@
                 <!-- dropdown wrapper -->
                 <div id="target user-profile" class="popup edge-right to-left margin mar-mdVr">
                     <!-- dropdown -->
-                    <div class="card car-sm pill pil-sm padding pad-smB">
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
 
                         <!-- Header -->
                         <header class="car-element padding pad-xs">
@@ -77,13 +79,13 @@
                         <!-- options list -->
                         <ul class="selector-list">
                             <!-- option -->
-                            <li class="selector padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Messages">Messages</a></li>
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Messages">Messages</a></li>
                             <hr>
                             <!-- option -->
-                            <li class="selector padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Update Info">Update Info</a></li>
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Update Info">Update Info</a></li>
                             <hr>
                             <!-- option -->
-                            <li class="selector padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Log Out">Log Out</a>
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Log Out">Log Out</a>
                             </li>
                             <hr>
                         </ul>
@@ -103,7 +105,7 @@
                 <!-- dropdown wrapper -->
                 <div id="target user-options" class="popup edge-right to-left margin mar-mdVr">
                     <!-- dropdown -->
-                    <div class="card car-sm pill pil-sm padding pad-smB">
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
 
                         <!-- header -->
                         <header class="car-element padding pad-xs">
@@ -115,13 +117,13 @@
                         <!-- options list -->
                         <ul class="selector-list">
                             <!-- option -->
-                            <li class="selector padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Help">Help</a></li>
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Help">Help</a></li>
                             <hr>
                             <!-- option -->
-                            <li class="selector padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Contact">Contact</a></li>
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Contact">Contact</a></li>
                             <hr>
                             <!-- toggle dark mode -->
-                            <li><label class="selector flex fle-space-between fle-centerVr padding pad-xsHr" for="toggleDarkMode" aria-label="Toggle Dark Mode">
+                            <li><label class="selector secondary-alt flex fle-space-between fle-centerVr padding pad-xsHr" for="toggleDarkMode" aria-label="Toggle Dark Mode">
                                     <p class="car-element sel-element">Dark Mode</p>
                                     <div class="toggle pill"><input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()"><span class="pill"></span></div>
                                 </label>
@@ -141,77 +143,73 @@
 
     <!-- envelops all content outside of nav / footer / modals / scripts-->
     <main class="page-content">
-        <div class="focus-overlay">
-            <div class="foco-mdL"></div>
-            <div class="foco-mdR"></div>
-        </div>
-        <h2 class="text-align texa-c margin mar-mdT">Update Info</h2>
-        <hr class="margin mar-mdT mar-lgB">
-        <div class="magic mag-1Max mag-lg">
-          
-            <div class="magic-parent">
-                <div class="magic-child">
-                   
-                    <div class="page-content">
-                
-                        <div class="padding pad-sm margin mar-xlB" action="formdebug.html" method="GET">
-                           
-                            <div class="content con-smMax margin mar-autoHr card car-shadow padding pad-lg pill">
-                                <div class="flex fle-column gap">
-                                    <h4 class="text-align texa-c">Contact Information</h4>
-                                    <hr class="margin mar-mdB">
-                                    <div>
-                                        <label for="updateInfo-phoneCommercial">
-                                            <p class="text-wrap texw-nowrap">
-                                                Commercial Phone: </p>
-                                        </label>
-                                        <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
-                                    </div>
-                                    <div class="flex w100p gap">
-                                        <input class="w25p pill  padding pad-xsL" type="text" name="Commercial Phone Extension"
-                                            id="updateInfo-phoneCommercial-ext" title="Extension" placeholder="Ext.">
-                                        <input class="w100p pill  padding pad-xsL" type="text" name="Commercial Phone"
-                                            id="updateInfo-phoneCommercial">
-                                    </div>
-                                    <label for="updateInfo-phoneDSN">
-                                        <p>DSN Phone:</p>
-                                    </label>
-                                    <input class="pill  padding pad-xsL" type="text" name="DSN Phone" id="updateInfo-phoneDSN">
-                                    <label for="updateInfo-emailPrimary">
-                                        <p>
-                                            Primary Email:
-                                        </p>
-                                    </label>
-                                    <input class="pill  padding pad-xsL" type="text" name="Primary Email" id="updateInfo-emailPrimary">
-                                    <label for="updateInfo-emailSecondary">
-                                        <p>
-                                            Secondary Email:
-                                        </p>
-                                    </label>
-                                    <input class="pill  padding pad-xsL" type="text" name="Primary Email" id="updateInfo-emailSecondary">
-                                    <h4 class="text-align texa-c margin mar-lgT">Command Information</h4>
-                                    <hr class="margin mar-mdB">
-                                    <label for="updateInfo-organization/command">
-                                        <p>Organization / Command:</p>
-                                    </label>
-                                    <input class="pill  padding pad-xsL" type="text" name="Organization/Command"
-                                        id="updateInfo-organization/command">
-                                    <label for="updateInfo-billetTitle">
-                                        <p>Billet Title:</p>
-                                    </label>
-                                    <input class="pill  padding pad-xsL" type="text" name="Billet Title" id="updateInfo-billetTitle">
-                                    <div class="flex gap margin mar-mdT">
-                                        <button class="w100p pill  warn" >Clear All</button>
-                                        <button class="w100p pill primary" >Submit</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                    </div>
-                </div>
+        <div class="card car-inset cell cel-lg pill pil-sm flex fle-column limit-frameHr margin mar-autoHr mar-lgT mar-xlB">
+            <!-- modal header -->
+            <div class="content con-scrollY-auto padding pad-lgHr pad-lgT pad-mdB ">
 
+                <!-- title -->
+
+             
+                <div class="flex fle-column gap">
+                    <h4 class="">Contact Information</h4>
+                    <hr class="margin mar-mdB">
+                    <div>
+                        <label for="updateInfo-phoneCommercial">
+                            <p class="text-wrap texw-nowrap">
+                                Commercial Phone: </p>
+                        </label>
+                        <label for="updateInfo-phoneCommercial-ext" aria-label="Commercial Phone Extension"></label>
+                    </div>
+                    <div class="flex w100p gap">
+                        <input class="w25p pill  padding pad-xsL" type="text" name="Commercial Phone Extension" id="updateInfo-phoneCommercial-ext" title="Extension" placeholder="Ext.">
+                        <input class="w100p pill  padding pad-xsL" type="text" name="Commercial Phone" id="updateInfo-phoneCommercial">
+                    </div>
+                    <label for="updateInfo-phoneDSN">
+                        <p>DSN Phone:</p>
+                    </label>
+                    <input class="pill  padding pad-xsL" type="text" name="DSN Phone" id="updateInfo-phoneDSN">
+                    <label for="updateInfo-emailPrimary">
+                        <p>
+                            Primary Email:
+                        </p>
+                    </label>
+                    <input class="pill  padding pad-xsL" type="text" name="Primary Email" id="updateInfo-emailPrimary">
+                    <label for="updateInfo-emailSecondary">
+                        <p>
+                            Secondary Email:
+                        </p>
+                    </label>
+                    <input class="pill  padding pad-xsL" type="text" name="Primary Email" id="updateInfo-emailSecondary">
+                    <h4 class=" margin mar-lgT">Command Information</h4>
+                    <hr class="margin mar-mdB">
+                    <label for="updateInfo-organization/command">
+                        <p>Organization / Command:</p>
+                    </label>
+                    <input class="pill  padding pad-xsL" type="text" name="Organization/Command" id="updateInfo-organization/command">
+                    <label for="updateInfo-billetTitle">
+                        <p>Billet Title:</p>
+                    </label>
+                    <input class="pill  padding pad-xsL" type="text" name="Billet Title" id="updateInfo-billetTitle">
+
+                </div>
+                <div class="spacer spa-xs"></div>
+                <hr >
+
+                <!-- Modal Footer -->
+                <footer class="padding pad-md flex fle-end gap gap-xs fle-wrap">
+                    <div class="flex gap margin mar-mdT fle-wrap">
+                        <button class="but-md pill  warn">Clear All</button>
+                        <button class="but-md pill primary">Submit</button>
+                    </div>
+                </footer>
             </div>
+
+
+
+        </div>
+
+
+
         </div>
 
 

@@ -143,8 +143,104 @@ $hues: (
     color: $shade0;
 }
 
+@each $name, $color in $hues {
+
+
+    .element.#{$name} {
+        $elementLayers: null;
+
+        @if length($color)>1 {
+            $elementLayers: elementLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $elementLayers: elementLayers(nth($color, 1));
+        }
+
+        @include elementStyles($elementLayers);
+    }
+}
+
+//temp
 .shade100-color {
     color: $shade100;
+}
+
+//temp
+.search-dropdown input[type="text"]:focus+.search-dropdown-icon {
+
+
+    & .icon {
+        color: $primary;
+    }
+}
+
+//temp
+.success {
+    background-color: $success;
+}
+
+//temp
+.white {
+    color: white;
+}
+
+//temp
+.selector-grid {
+    border: 4px solid $shade75;
+    display: grid;
+    gap: .2rem;
+    background-color: $shade75;
+
+    &>.selector {
+
+
+        background-color: $shade85;
+
+
+        &>.icon,
+        .element {
+            color: $shade30;
+        }
+
+
+
+        &:hover {
+            background-color: $primary;
+            color: color-mix(in srgb, $primary 20%, $shade100);
+
+            &>.icon,
+            .element {
+                color: color-mix(in srgb, $primary 20%, $shade100);
+            }
+
+        }
+
+
+        &.ghost {
+            box-shadow: none;
+        }
+
+
+
+        &.disabled {
+            background-color: $shade50;
+            pointer-events: none;
+        }
+    }
+
+    & .selector:has(> input:checked),
+    .selector:active {
+        background-color: color-mix(in srgb, $primary 60%, $shade100);
+        color: color-mix(in srgb, $primary 40%, $shade0);
+        // box-shadow: 0px 0px 0px 2px $primary inset;
+
+        &>.icon,
+        .element {
+            color: color-mix(in srgb, $primary 40%, $shade0);
+        }
+
+    }
 }
 
 .ring {
@@ -339,7 +435,28 @@ button,
     }
 }
 
+//drawer
+.drawer-handle {
+    $drawerLayers: buttonLayers(map-get($hues, secondary));
+    @include selectorStyles($drawerLayers);
+}
 
+@each $name, $color in $hues {
+
+    .drawer-handle.#{$name} {
+        $drawerLayers: null;
+
+        @if length($color)>1 {
+            $drawerLayers: buttonLayers(nth($color, 1), nth($color, 2));
+        }
+
+        @else {
+            $drawerLayers: buttonLayers(nth($color, 1));
+        }
+
+        @include drawerStyles($drawerLayers);
+    }
+}
 
 // ░█▀▀░█▀█░█▀▄░█▀▄░█▀▀
 // ░█░░░█▀█░█▀▄░█░█░▀▀█
@@ -433,7 +550,8 @@ nav {
 }
 
 .text-input,
-input[type="text"], textarea {
+input[type="text"],
+textarea {
     $textInputLayers: textInputLayers($secondary);
     @include textInputStyles($textInputLayers);
 }
@@ -478,6 +596,11 @@ input[type="text"], textarea {
 }
 
 //component mixins
+@mixin elementStyles($elementLayers) {
+    color: map-get($elementLayers, element-color);
+
+}
+
 @mixin buttonStyles($buttonLayers) {
     background-color: map-get($buttonLayers, but-base);
     color: map-get($buttonLayers, but-base-text);
@@ -530,6 +653,12 @@ input[type="text"], textarea {
 
     &.car-inset {
         box-shadow: 0px 0px 0px $button-px-width map-get($cardLayers, field-border) inset;
+    }
+
+    &.car-semitransparent {
+        opacity: 70%;
+
+        &>.car-element {}
     }
 
     &.section {
@@ -585,6 +714,39 @@ input[type="text"], textarea {
         }
     }
 
+}
+
+@mixin drawerStyles($drawerLayers) {
+    background-color: map-get($drawerLayers, but-base-ultralite);
+    color: map-get($drawerLayers, but-base-text);
+
+
+    & .dra-element {
+        color: map-get($drawerLayers, but-base-text);
+    }
+
+    &:hover {
+        background-color: map-get($drawerLayers, but-hover);
+        color: map-get($drawerLayers, but-hover-text);
+
+
+        & .dra-element {
+            color: map-get($drawerLayers, but-hover-text);
+        }
+    }
+
+    &:active {
+        background-color: map-get($drawerLayers, but-active);
+        color: map-get($drawerLayers, but-active-text);
+
+        & .dra-element {
+            color: map-get($drawerLayers, but-active-text);
+        }
+    }
+
+    &>input:checked+.dra-element.dra-state-change {
+        color: $primary;
+    }
 }
 
 @mixin radioButtonStyles($radioButtonLayers) {
@@ -686,11 +848,17 @@ input[type="text"], textarea {
     @return hsl($h, $s, $invL);
 }
 
+@function elementLayers($modifierColor: null, $modifierColor2: null) {
+    $element-color: null;
+    $element-color: color-mix(in srgb, $modifierColor 70%, $shade0 30%);
+    @return (element-color: $element-color);
+}
+
 @function buttonLayers($modifierColor: null, $modifierColor2: null) {
     $but-base: null;
     $but-hover: null;
     $but-active: null;
-
+    $but-base-ultralite: null;
     $but-base-text: null;
     $but-hover-text: null;
     $but-active-text: null;
@@ -699,18 +867,22 @@ input[type="text"], textarea {
     $but-border-hover: null;
     $but-border-active: null;
 
+
     $but-base: color-mix(in srgb, $modifierColor 20%, $shade100 80%);
+    $but-base-ultralite: color-mix(in srgb, $modifierColor 5%, $shade100 95%);
     $but-hover: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
     $but-active: color-mix(in srgb, $modifierColor 20%, $shade0 80%);
 
     $but-base-text: color-mix(in srgb, $modifierColor 50%, $shade0 50%);
-    $but-hover-text: color-mix(in srgb, $modifierColor 50%, $shade100 50%);
-    $but-active-text: color-mix(in srgb, $modifierColor 50%, $shade100 50%);
+    // $but-hover-text: color-mix(in srgb, $modifierColor 50%, $shade100 50%);
+    // $but-active-text: color-mix(in srgb, $modifierColor 50%, $shade100 50%);
 
     $but-border: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
     $but-border-hover: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
     $but-border-active: color-mix(in srgb, $modifierColor 50%, $shade10 50%);
 
+    $but-hover-text: $shade100;
+    $but-active-text: $shade100;
 
 
     @if $modifierColor2 {
@@ -719,15 +891,15 @@ input[type="text"], textarea {
         $but-active: color-mix(in srgb, $modifierColor2 20%, $shade0 80%);
 
 
-        $but-hover-text: color-mix(in srgb, $modifierColor2 50%, $shade100 50%);
-        $but-active-text: color-mix(in srgb, $modifierColor2 50%, $shade100 50%);
-
+        $but-hover-text: $shade100;
+        $but-active-text: $shade100;
 
         $but-border-hover: color-mix(in srgb, $modifierColor2 50%, $shade10 50%);
         $but-border-active: color-mix(in srgb, $modifierColor2 50%, $shade10 50%);
     }
 
     @return (but-base: $but-base,
+        but-base-ultralite: $but-base-ultralite,
         but-hover: $but-hover,
         but-active: $but-active,
         but-base-text: $but-base-text,
@@ -756,7 +928,7 @@ input[type="text"], textarea {
     $field-section: color-mix(in srgb, $modifierColor 15%, $shade100 85%);
     $field-section-fg: color-mix(in srgb, $modifierColor 10%, $shade0 90%);
 
-    $field-border: color-mix(in srgb, $modifierColor 15%, $shade100 85%);
+    $field-border: color-mix(in srgb, $modifierColor 40%, $shade90 60%);
     $field-section-border: color-mix(in srgb, $modifierColor 25%, $shade100 75%);
 
     $field-section-shadow: black;

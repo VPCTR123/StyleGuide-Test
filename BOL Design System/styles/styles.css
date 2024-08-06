@@ -466,13 +466,30 @@ header.hea-xxl {
   height: 100%;
 }
 
+.background-wrapper {
+  position: relative;
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+}
+
 .background-image {
-  position: fixed;
-  top: -70%;
+  position: absolute;
+  top: 0;
   left: 0;
-  z-index: -1;
-  min-width: 100vw;
-  aspect-ratio: 1/1;
+  right: 0;
+  bottom: 0;
+  background-image: url("/assets/loginBackground.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.background-fade-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 100%);
 }
 
 input[type=text],
@@ -571,6 +588,19 @@ input.inp-fullHr,
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+.limit-frameHr {
+  max-width: 90vw;
+}
+
+.limit-frameVr {
+  max-width: 90vh;
+}
+
+.limit-frame {
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
 .grid {
@@ -1417,7 +1447,7 @@ nav.nav-main {
   max-height: 90%;
 }
 .content.con-80pMaxVr {
-  max-height: 80%;
+  max-height: 80% !important;
 }
 .content.con-70pMaxVr {
   max-height: 70%;
@@ -6108,8 +6138,74 @@ nav.nav-main {
 .theme-default .element {
   color: hsl(0, 0%, 0%);
 }
+.theme-default .element.primary {
+  color: color-mix(in srgb, hsl(206, 100%, 50%) 70%, hsl(0, 0%, 0%) 30%);
+}
+.theme-default .element.success {
+  color: color-mix(in srgb, green 70%, hsl(0, 0%, 0%) 30%);
+}
+.theme-default .element.secondary {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 70%, hsl(0, 0%, 0%) 30%);
+}
+.theme-default .element.secondary-alt {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 70%, hsl(0, 0%, 0%) 30%);
+}
+.theme-default .element.warn {
+  color: color-mix(in srgb, orange 70%, hsl(0, 0%, 0%) 30%);
+}
+.theme-default .element.error {
+  color: color-mix(in srgb, red 70%, hsl(0, 0%, 0%) 30%);
+}
 .theme-default .shade100-color {
   color: hsl(0, 0%, 100%);
+}
+.theme-default .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
+  color: hsl(206, 100%, 50%);
+}
+.theme-default .success {
+  background-color: green;
+}
+.theme-default .white {
+  color: white;
+}
+.theme-default .selector-grid {
+  border: 4px solid color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+  display: grid;
+  gap: 0.2rem;
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 75%, hsl(0, 0%, 0%) 25%);
+}
+.theme-default .selector-grid > .selector {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 85%, hsl(0, 0%, 0%) 15%);
+}
+.theme-default .selector-grid > .selector > .icon,
+.theme-default .selector-grid > .selector .element {
+  color: color-mix(in srgb, hsl(0, 0%, 100%) 30%, hsl(0, 0%, 0%) 70%);
+}
+.theme-default .selector-grid > .selector:hover {
+  background-color: hsl(206, 100%, 50%);
+  color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default .selector-grid > .selector:hover > .icon,
+.theme-default .selector-grid > .selector:hover .element {
+  color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 100%));
+}
+.theme-default .selector-grid > .selector.ghost {
+  box-shadow: none;
+}
+.theme-default .selector-grid > .selector.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%);
+  pointer-events: none;
+}
+.theme-default .selector-grid .selector:has(> input:checked),
+.theme-default .selector-grid .selector:active {
+  background-color: color-mix(in srgb, hsl(206, 100%, 50%) 60%, hsl(0, 0%, 100%));
+  color: color-mix(in srgb, hsl(206, 100%, 50%) 40%, hsl(0, 0%, 0%));
+}
+.theme-default .selector-grid .selector:has(> input:checked) > .icon,
+.theme-default .selector-grid .selector:has(> input:checked) .element,
+.theme-default .selector-grid .selector:active > .icon,
+.theme-default .selector-grid .selector:active .element {
+  color: color-mix(in srgb, hsl(206, 100%, 50%) 40%, hsl(0, 0%, 0%));
 }
 .theme-default .ring {
   outline-color: hsl(206, 100%, 50%);
@@ -6505,22 +6601,22 @@ nav.nav-main {
 .theme-default button:hover,
 .theme-default .button:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button:hover .but-element,
 .theme-default .button:hover .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button:active,
 .theme-default .button:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button:active .but-element,
 .theme-default .button:active .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.but-borderless,
 .theme-default .button.but-borderless {
@@ -6539,22 +6635,22 @@ nav.nav-main {
 .theme-default button.primary:hover,
 .theme-default .button.primary:hover {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.primary:hover .but-element,
 .theme-default .button.primary:hover .but-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.primary:active,
 .theme-default .button.primary:active {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.primary:active .but-element,
 .theme-default .button.primary:active .but-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.primary.but-borderless,
 .theme-default .button.primary.but-borderless {
@@ -6573,22 +6669,22 @@ nav.nav-main {
 .theme-default button.success:hover,
 .theme-default .button.success:hover {
   background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.success:hover .but-element,
 .theme-default .button.success:hover .but-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.success:active,
 .theme-default .button.success:active {
   background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.success:active .but-element,
 .theme-default .button.success:active .but-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.success.but-borderless,
 .theme-default .button.success.but-borderless {
@@ -6607,22 +6703,22 @@ nav.nav-main {
 .theme-default button.secondary:hover,
 .theme-default .button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.secondary:hover .but-element,
 .theme-default .button.secondary:hover .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.secondary:active,
 .theme-default .button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.secondary:active .but-element,
 .theme-default .button.secondary:active .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.secondary.but-borderless,
 .theme-default .button.secondary.but-borderless {
@@ -6641,22 +6737,22 @@ nav.nav-main {
 .theme-default button.secondary-alt:hover,
 .theme-default .button.secondary-alt:hover {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.secondary-alt:hover .but-element,
 .theme-default .button.secondary-alt:hover .but-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.secondary-alt:active,
 .theme-default .button.secondary-alt:active {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.secondary-alt:active .but-element,
 .theme-default .button.secondary-alt:active .but-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.secondary-alt.but-borderless,
 .theme-default .button.secondary-alt.but-borderless {
@@ -6675,22 +6771,22 @@ nav.nav-main {
 .theme-default button.warn:hover,
 .theme-default .button.warn:hover {
   background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.warn:hover .but-element,
 .theme-default .button.warn:hover .but-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.warn:active,
 .theme-default .button.warn:active {
   background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.warn:active .but-element,
 .theme-default .button.warn:active .but-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.warn.but-borderless,
 .theme-default .button.warn.but-borderless {
@@ -6709,22 +6805,22 @@ nav.nav-main {
 .theme-default button.error:hover,
 .theme-default .button.error:hover {
   background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.error:hover .but-element,
 .theme-default .button.error:hover .but-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.error:active,
 .theme-default .button.error:active {
   background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
   border: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%) solid 0.15rem;
 }
 .theme-default button.error:active .but-element,
 .theme-default .button.error:active .but-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default button.error.but-borderless,
 .theme-default .button.error.but-borderless {
@@ -6739,17 +6835,17 @@ nav.nav-main {
 }
 .theme-default .selector:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector:hover .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector:active .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.primary {
   background-color: transparent;
@@ -6760,17 +6856,17 @@ nav.nav-main {
 }
 .theme-default .selector.primary:hover {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.primary:hover .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.primary:active {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.primary:active .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.success {
   background-color: transparent;
@@ -6781,17 +6877,17 @@ nav.nav-main {
 }
 .theme-default .selector.success:hover {
   background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.success:hover .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.success:active {
   background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.success:active .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary {
   background-color: transparent;
@@ -6802,17 +6898,17 @@ nav.nav-main {
 }
 .theme-default .selector.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary:hover .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary:active .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary-alt {
   background-color: transparent;
@@ -6823,17 +6919,17 @@ nav.nav-main {
 }
 .theme-default .selector.secondary-alt:hover {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary-alt:hover .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary-alt:active {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.secondary-alt:active .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.warn {
   background-color: transparent;
@@ -6844,17 +6940,17 @@ nav.nav-main {
 }
 .theme-default .selector.warn:hover {
   background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.warn:hover .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.warn:active {
   background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.warn:active .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.error {
   background-color: transparent;
@@ -6865,17 +6961,182 @@ nav.nav-main {
 }
 .theme-default .selector.error:hover {
   background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.error:hover .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.error:active {
   background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .selector.error:active .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle {
+  background-color: transparent;
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle .sel-element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle:hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle:hover .sel-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle:active .sel-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.primary {
+  background-color: color-mix(in srgb, hsl(206, 100%, 50%) 5%, hsl(0, 0%, 100%) 95%);
+  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.primary .dra-element {
+  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.primary:hover {
+  background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.primary:hover .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.primary:active {
+  background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.primary:active .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.primary > input:checked + .dra-element.dra-state-change {
+  color: hsl(206, 100%, 50%);
+}
+.theme-default .drawer-handle.success {
+  background-color: color-mix(in srgb, green 5%, hsl(0, 0%, 100%) 95%);
+  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.success .dra-element {
+  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.success:hover {
+  background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.success:hover .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.success:active {
+  background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 0%) 80%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.success:active .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.success > input:checked + .dra-element.dra-state-change {
+  color: hsl(206, 100%, 50%);
+}
+.theme-default .drawer-handle.secondary {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 5%, hsl(0, 0%, 100%) 95%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.secondary .dra-element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.secondary:hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary:hover .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary:active .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary > input:checked + .dra-element.dra-state-change {
+  color: hsl(206, 100%, 50%);
+}
+.theme-default .drawer-handle.secondary-alt {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 5%, hsl(0, 0%, 100%) 95%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.secondary-alt .dra-element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.secondary-alt:hover {
+  background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary-alt:hover .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary-alt:active {
+  background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary-alt:active .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.secondary-alt > input:checked + .dra-element.dra-state-change {
+  color: hsl(206, 100%, 50%);
+}
+.theme-default .drawer-handle.warn {
+  background-color: color-mix(in srgb, orange 5%, hsl(0, 0%, 100%) 95%);
+  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.warn .dra-element {
+  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.warn:hover {
+  background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.warn:hover .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.warn:active {
+  background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 0%) 80%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.warn:active .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.warn > input:checked + .dra-element.dra-state-change {
+  color: hsl(206, 100%, 50%);
+}
+.theme-default .drawer-handle.error {
+  background-color: color-mix(in srgb, red 5%, hsl(0, 0%, 100%) 95%);
+  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.error .dra-element {
+  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+}
+.theme-default .drawer-handle.error:hover {
+  background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.error:hover .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.error:active {
+  background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 0%) 80%);
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.error:active .dra-element {
+  color: hsl(0, 0%, 100%);
+}
+.theme-default .drawer-handle.error > input:checked + .dra-element.dra-state-change {
+  color: hsl(206, 100%, 50%);
 }
 .theme-default .card {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 5%, hsl(0, 0%, 100%) 95%);
@@ -6885,13 +7146,16 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
 }
 .theme-default .card.car-border {
-  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) 0.15rem solid;
 }
 .theme-default .card.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-default .card.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) inset;
+}
+.theme-default .card.car-semitransparent {
+  opacity: 70%;
 }
 .theme-default .card.section {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%);
@@ -6917,13 +7181,16 @@ nav.nav-main {
   color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
 }
 .theme-default .card.primary.car-border {
-  border: color-mix(in srgb, hsl(206, 100%, 50%) 15%, hsl(0, 0%, 100%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, hsl(206, 100%, 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) 0.15rem solid;
 }
 .theme-default .card.primary.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-default .card.primary.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, hsl(206, 100%, 50%) 15%, hsl(0, 0%, 100%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, hsl(206, 100%, 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) inset;
+}
+.theme-default .card.primary.car-semitransparent {
+  opacity: 70%;
 }
 .theme-default .card.primary.section {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 15%, hsl(0, 0%, 100%) 85%);
@@ -6949,13 +7216,16 @@ nav.nav-main {
   color: color-mix(in srgb, green 20%, hsl(0, 0%, 0%) 80%);
 }
 .theme-default .card.success.car-border {
-  border: color-mix(in srgb, green 15%, hsl(0, 0%, 100%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, green 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) 0.15rem solid;
 }
 .theme-default .card.success.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-default .card.success.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, green 15%, hsl(0, 0%, 100%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, green 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) inset;
+}
+.theme-default .card.success.car-semitransparent {
+  opacity: 70%;
 }
 .theme-default .card.success.section {
   background-color: color-mix(in srgb, green 15%, hsl(0, 0%, 100%) 85%);
@@ -6981,13 +7251,16 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
 }
 .theme-default .card.secondary.car-border {
-  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) 0.15rem solid;
 }
 .theme-default .card.secondary.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-default .card.secondary.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) inset;
+}
+.theme-default .card.secondary.car-semitransparent {
+  opacity: 70%;
 }
 .theme-default .card.secondary.section {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%);
@@ -7013,13 +7286,16 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
 }
 .theme-default .card.secondary-alt.car-border {
-  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) 0.15rem solid;
 }
 .theme-default .card.secondary-alt.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-default .card.secondary-alt.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) inset;
+}
+.theme-default .card.secondary-alt.car-semitransparent {
+  opacity: 70%;
 }
 .theme-default .card.secondary-alt.section {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 15%, hsl(0, 0%, 100%) 85%);
@@ -7045,13 +7321,16 @@ nav.nav-main {
   color: color-mix(in srgb, orange 20%, hsl(0, 0%, 0%) 80%);
 }
 .theme-default .card.warn.car-border {
-  border: color-mix(in srgb, orange 15%, hsl(0, 0%, 100%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, orange 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) 0.15rem solid;
 }
 .theme-default .card.warn.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-default .card.warn.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, orange 15%, hsl(0, 0%, 100%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, orange 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) inset;
+}
+.theme-default .card.warn.car-semitransparent {
+  opacity: 70%;
 }
 .theme-default .card.warn.section {
   background-color: color-mix(in srgb, orange 15%, hsl(0, 0%, 100%) 85%);
@@ -7077,13 +7356,16 @@ nav.nav-main {
   color: color-mix(in srgb, red 20%, hsl(0, 0%, 0%) 80%);
 }
 .theme-default .card.error.car-border {
-  border: color-mix(in srgb, red 15%, hsl(0, 0%, 100%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, red 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) 0.15rem solid;
 }
 .theme-default .card.error.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-default .card.error.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, red 15%, hsl(0, 0%, 100%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, red 40%, color-mix(in srgb, hsl(0, 0%, 100%) 90%, hsl(0, 0%, 0%) 10%) 60%) inset;
+}
+.theme-default .card.error.car-semitransparent {
+  opacity: 70%;
 }
 .theme-default .card.error.section {
   background-color: color-mix(in srgb, red 15%, hsl(0, 0%, 100%) 85%);
@@ -7187,17 +7469,17 @@ nav.nav-main {
 }
 .theme-default .radio-button:hover {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button:hover .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button:active {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button:active .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.primary {
   background-color: transparent;
@@ -7208,17 +7490,17 @@ nav.nav-main {
 }
 .theme-default .radio-button.primary:hover {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.primary:hover .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.primary:active {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.primary:active .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.success {
   background-color: transparent;
@@ -7229,17 +7511,17 @@ nav.nav-main {
 }
 .theme-default .radio-button.success:hover {
   background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.success:hover .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.success:active {
   background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.success:active .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary {
   background-color: transparent;
@@ -7250,17 +7532,17 @@ nav.nav-main {
 }
 .theme-default .radio-button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary:hover .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary:active .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary-alt {
   background-color: transparent;
@@ -7271,17 +7553,17 @@ nav.nav-main {
 }
 .theme-default .radio-button.secondary-alt:hover {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary-alt:hover .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary-alt:active {
   background-color: color-mix(in srgb, hsl(206, 100%, 50%) 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.secondary-alt:active .sel-element {
-  color: color-mix(in srgb, hsl(206, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.warn {
   background-color: transparent;
@@ -7292,17 +7574,17 @@ nav.nav-main {
 }
 .theme-default .radio-button.warn:hover {
   background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.warn:hover .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.warn:active {
   background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.warn:active .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.error {
   background-color: transparent;
@@ -7313,23 +7595,24 @@ nav.nav-main {
 }
 .theme-default .radio-button.error:hover {
   background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 0%) 90%) 50%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.error:hover .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.error:active {
   background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 0%) 80%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .radio-button.error:active .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+  color: hsl(0, 0%, 100%);
 }
 .theme-default .toggle {
   background-color: color-mix(in srgb, hsl(0, 0%, 100%) 60%, hsl(0, 0%, 0%) 40%);
 }
 .theme-default .text-input,
-.theme-default input[type=text], .theme-default textarea {
+.theme-default input[type=text],
+.theme-default textarea {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 5%, hsl(0, 0%, 100%) 95%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%) 0.15rem solid;
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 10%, hsl(0, 0%, 0%) 90%);
@@ -7338,20 +7621,24 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 30%, color-mix(in srgb, hsl(0, 0%, 100%) 60%, hsl(0, 0%, 0%) 40%) 70%);
 }
 .theme-default .text-input::placeholder,
-.theme-default input[type=text]::placeholder, .theme-default textarea::placeholder {
+.theme-default input[type=text]::placeholder,
+.theme-default textarea::placeholder {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 30%, color-mix(in srgb, hsl(0, 0%, 100%) 60%, hsl(0, 0%, 0%) 40%) 70%);
 }
 .theme-default .text-input:focus,
-.theme-default input[type=text]:focus, .theme-default textarea:focus {
+.theme-default input[type=text]:focus,
+.theme-default textarea:focus {
   outline: none;
   box-shadow: 0 0 4px 0 color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 60%, hsl(0, 0%, 0%) 40%) 50%);
 }
 .theme-default .text-input:focus:hover,
-.theme-default input[type=text]:focus:hover, .theme-default textarea:focus:hover {
+.theme-default input[type=text]:focus:hover,
+.theme-default textarea:focus:hover {
   box-shadow: 0 0 4px 0 color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 60%, hsl(0, 0%, 0%) 40%) 50%);
 }
 .theme-default .text-input:hover,
-.theme-default input[type=text]:hover, .theme-default textarea:hover {
+.theme-default input[type=text]:hover,
+.theme-default textarea:hover {
   box-shadow: 0 0 3px 0 color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 100%) 50%, hsl(0, 0%, 0%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 100%) 60%, hsl(0, 0%, 0%) 40%) 50%);
 }
 .theme-default .text-input.primary,
@@ -7524,8 +7811,74 @@ nav.nav-main {
 .theme-dark .element {
   color: hsl(0, 0%, 100%);
 }
+.theme-dark .element.primary {
+  color: color-mix(in srgb, hsl(266, 100%, 50%) 70%, hsl(0, 0%, 100%) 30%);
+}
+.theme-dark .element.success {
+  color: color-mix(in srgb, green 70%, hsl(0, 0%, 100%) 30%);
+}
+.theme-dark .element.secondary {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 70%, hsl(0, 0%, 100%) 30%);
+}
+.theme-dark .element.secondary-alt {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 70%, hsl(0, 0%, 100%) 30%);
+}
+.theme-dark .element.warn {
+  color: color-mix(in srgb, orange 70%, hsl(0, 0%, 100%) 30%);
+}
+.theme-dark .element.error {
+  color: color-mix(in srgb, red 70%, hsl(0, 0%, 100%) 30%);
+}
 .theme-dark .shade100-color {
   color: hsl(0, 0%, 0%);
+}
+.theme-dark .search-dropdown input[type=text]:focus + .search-dropdown-icon .icon {
+  color: hsl(266, 100%, 50%);
+}
+.theme-dark .success {
+  background-color: green;
+}
+.theme-dark .white {
+  color: white;
+}
+.theme-dark .selector-grid {
+  border: 4px solid color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+  display: grid;
+  gap: 0.2rem;
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 75%, hsl(0, 0%, 100%) 25%);
+}
+.theme-dark .selector-grid > .selector {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 85%, hsl(0, 0%, 100%) 15%);
+}
+.theme-dark .selector-grid > .selector > .icon,
+.theme-dark .selector-grid > .selector .element {
+  color: color-mix(in srgb, hsl(0, 0%, 0%) 30%, hsl(0, 0%, 100%) 70%);
+}
+.theme-dark .selector-grid > .selector:hover {
+  background-color: hsl(266, 100%, 50%);
+  color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark .selector-grid > .selector:hover > .icon,
+.theme-dark .selector-grid > .selector:hover .element {
+  color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 0%));
+}
+.theme-dark .selector-grid > .selector.ghost {
+  box-shadow: none;
+}
+.theme-dark .selector-grid > .selector.disabled {
+  background-color: color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+  pointer-events: none;
+}
+.theme-dark .selector-grid .selector:has(> input:checked),
+.theme-dark .selector-grid .selector:active {
+  background-color: color-mix(in srgb, hsl(266, 100%, 50%) 60%, hsl(0, 0%, 0%));
+  color: color-mix(in srgb, hsl(266, 100%, 50%) 40%, hsl(0, 0%, 100%));
+}
+.theme-dark .selector-grid .selector:has(> input:checked) > .icon,
+.theme-dark .selector-grid .selector:has(> input:checked) .element,
+.theme-dark .selector-grid .selector:active > .icon,
+.theme-dark .selector-grid .selector:active .element {
+  color: color-mix(in srgb, hsl(266, 100%, 50%) 40%, hsl(0, 0%, 100%));
 }
 .theme-dark .ring {
   outline-color: hsl(266, 100%, 50%);
@@ -7921,22 +8274,22 @@ nav.nav-main {
 .theme-dark button:hover,
 .theme-dark .button:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button:hover .but-element,
 .theme-dark .button:hover .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button:active,
 .theme-dark .button:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button:active .but-element,
 .theme-dark .button:active .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.but-borderless,
 .theme-dark .button.but-borderless {
@@ -7955,22 +8308,22 @@ nav.nav-main {
 .theme-dark button.primary:hover,
 .theme-dark .button.primary:hover {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.primary:hover .but-element,
 .theme-dark .button.primary:hover .but-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.primary:active,
 .theme-dark .button.primary:active {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.primary:active .but-element,
 .theme-dark .button.primary:active .but-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.primary.but-borderless,
 .theme-dark .button.primary.but-borderless {
@@ -7989,22 +8342,22 @@ nav.nav-main {
 .theme-dark button.success:hover,
 .theme-dark .button.success:hover {
   background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.success:hover .but-element,
 .theme-dark .button.success:hover .but-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.success:active,
 .theme-dark .button.success:active {
   background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.success:active .but-element,
 .theme-dark .button.success:active .but-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.success.but-borderless,
 .theme-dark .button.success.but-borderless {
@@ -8023,22 +8376,22 @@ nav.nav-main {
 .theme-dark button.secondary:hover,
 .theme-dark .button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.secondary:hover .but-element,
 .theme-dark .button.secondary:hover .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.secondary:active,
 .theme-dark .button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.secondary:active .but-element,
 .theme-dark .button.secondary:active .but-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.secondary.but-borderless,
 .theme-dark .button.secondary.but-borderless {
@@ -8057,22 +8410,22 @@ nav.nav-main {
 .theme-dark button.secondary-alt:hover,
 .theme-dark .button.secondary-alt:hover {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.secondary-alt:hover .but-element,
 .theme-dark .button.secondary-alt:hover .but-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.secondary-alt:active,
 .theme-dark .button.secondary-alt:active {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.secondary-alt:active .but-element,
 .theme-dark .button.secondary-alt:active .but-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.secondary-alt.but-borderless,
 .theme-dark .button.secondary-alt.but-borderless {
@@ -8091,22 +8444,22 @@ nav.nav-main {
 .theme-dark button.warn:hover,
 .theme-dark .button.warn:hover {
   background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.warn:hover .but-element,
 .theme-dark .button.warn:hover .but-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.warn:active,
 .theme-dark .button.warn:active {
   background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.warn:active .but-element,
 .theme-dark .button.warn:active .but-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.warn.but-borderless,
 .theme-dark .button.warn.but-borderless {
@@ -8125,22 +8478,22 @@ nav.nav-main {
 .theme-dark button.error:hover,
 .theme-dark .button.error:hover {
   background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.error:hover .but-element,
 .theme-dark .button.error:hover .but-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.error:active,
 .theme-dark .button.error:active {
   background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
   border: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%) solid 0.15rem;
 }
 .theme-dark button.error:active .but-element,
 .theme-dark .button.error:active .but-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark button.error.but-borderless,
 .theme-dark .button.error.but-borderless {
@@ -8155,17 +8508,17 @@ nav.nav-main {
 }
 .theme-dark .selector:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector:hover .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector:active .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.primary {
   background-color: transparent;
@@ -8176,17 +8529,17 @@ nav.nav-main {
 }
 .theme-dark .selector.primary:hover {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.primary:hover .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.primary:active {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.primary:active .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.success {
   background-color: transparent;
@@ -8197,17 +8550,17 @@ nav.nav-main {
 }
 .theme-dark .selector.success:hover {
   background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.success:hover .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.success:active {
   background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.success:active .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary {
   background-color: transparent;
@@ -8218,17 +8571,17 @@ nav.nav-main {
 }
 .theme-dark .selector.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary:hover .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary:active .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary-alt {
   background-color: transparent;
@@ -8239,17 +8592,17 @@ nav.nav-main {
 }
 .theme-dark .selector.secondary-alt:hover {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary-alt:hover .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary-alt:active {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.secondary-alt:active .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.warn {
   background-color: transparent;
@@ -8260,17 +8613,17 @@ nav.nav-main {
 }
 .theme-dark .selector.warn:hover {
   background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.warn:hover .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.warn:active {
   background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.warn:active .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.error {
   background-color: transparent;
@@ -8281,17 +8634,182 @@ nav.nav-main {
 }
 .theme-dark .selector.error:hover {
   background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.error:hover .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.error:active {
   background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .selector.error:active .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle {
+  background-color: transparent;
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle .sel-element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle:hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle:hover .sel-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle:active .sel-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.primary {
+  background-color: color-mix(in srgb, hsl(266, 100%, 50%) 5%, hsl(0, 0%, 0%) 95%);
+  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.primary .dra-element {
+  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.primary:hover {
+  background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.primary:hover .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.primary:active {
+  background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.primary:active .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.primary > input:checked + .dra-element.dra-state-change {
+  color: hsl(266, 100%, 50%);
+}
+.theme-dark .drawer-handle.success {
+  background-color: color-mix(in srgb, green 5%, hsl(0, 0%, 0%) 95%);
+  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.success .dra-element {
+  color: color-mix(in srgb, green 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.success:hover {
+  background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.success:hover .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.success:active {
+  background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 100%) 80%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.success:active .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.success > input:checked + .dra-element.dra-state-change {
+  color: hsl(266, 100%, 50%);
+}
+.theme-dark .drawer-handle.secondary {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 5%, hsl(0, 0%, 0%) 95%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.secondary .dra-element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.secondary:hover {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary:hover .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary:active {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary:active .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary > input:checked + .dra-element.dra-state-change {
+  color: hsl(266, 100%, 50%);
+}
+.theme-dark .drawer-handle.secondary-alt {
+  background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 5%, hsl(0, 0%, 0%) 95%);
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.secondary-alt .dra-element {
+  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.secondary-alt:hover {
+  background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary-alt:hover .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary-alt:active {
+  background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary-alt:active .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.secondary-alt > input:checked + .dra-element.dra-state-change {
+  color: hsl(266, 100%, 50%);
+}
+.theme-dark .drawer-handle.warn {
+  background-color: color-mix(in srgb, orange 5%, hsl(0, 0%, 0%) 95%);
+  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.warn .dra-element {
+  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.warn:hover {
+  background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.warn:hover .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.warn:active {
+  background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 100%) 80%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.warn:active .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.warn > input:checked + .dra-element.dra-state-change {
+  color: hsl(266, 100%, 50%);
+}
+.theme-dark .drawer-handle.error {
+  background-color: color-mix(in srgb, red 5%, hsl(0, 0%, 0%) 95%);
+  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.error .dra-element {
+  color: color-mix(in srgb, red 50%, hsl(0, 0%, 100%) 50%);
+}
+.theme-dark .drawer-handle.error:hover {
+  background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.error:hover .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.error:active {
+  background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 100%) 80%);
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.error:active .dra-element {
+  color: hsl(0, 0%, 0%);
+}
+.theme-dark .drawer-handle.error > input:checked + .dra-element.dra-state-change {
+  color: hsl(266, 100%, 50%);
 }
 .theme-dark .card {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 5%, hsl(0, 0%, 0%) 95%);
@@ -8301,13 +8819,16 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
 }
 .theme-dark .card.car-border {
-  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) 0.15rem solid;
 }
 .theme-dark .card.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-dark .card.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) inset;
+}
+.theme-dark .card.car-semitransparent {
+  opacity: 70%;
 }
 .theme-dark .card.section {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%);
@@ -8333,13 +8854,16 @@ nav.nav-main {
   color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
 }
 .theme-dark .card.primary.car-border {
-  border: color-mix(in srgb, hsl(266, 100%, 50%) 15%, hsl(0, 0%, 0%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, hsl(266, 100%, 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) 0.15rem solid;
 }
 .theme-dark .card.primary.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-dark .card.primary.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, hsl(266, 100%, 50%) 15%, hsl(0, 0%, 0%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, hsl(266, 100%, 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) inset;
+}
+.theme-dark .card.primary.car-semitransparent {
+  opacity: 70%;
 }
 .theme-dark .card.primary.section {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 15%, hsl(0, 0%, 0%) 85%);
@@ -8365,13 +8889,16 @@ nav.nav-main {
   color: color-mix(in srgb, green 20%, hsl(0, 0%, 100%) 80%);
 }
 .theme-dark .card.success.car-border {
-  border: color-mix(in srgb, green 15%, hsl(0, 0%, 0%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, green 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) 0.15rem solid;
 }
 .theme-dark .card.success.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-dark .card.success.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, green 15%, hsl(0, 0%, 0%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, green 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) inset;
+}
+.theme-dark .card.success.car-semitransparent {
+  opacity: 70%;
 }
 .theme-dark .card.success.section {
   background-color: color-mix(in srgb, green 15%, hsl(0, 0%, 0%) 85%);
@@ -8397,13 +8924,16 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
 }
 .theme-dark .card.secondary.car-border {
-  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) 0.15rem solid;
 }
 .theme-dark .card.secondary.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-dark .card.secondary.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) inset;
+}
+.theme-dark .card.secondary.car-semitransparent {
+  opacity: 70%;
 }
 .theme-dark .card.secondary.section {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%);
@@ -8429,13 +8959,16 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
 }
 .theme-dark .card.secondary-alt.car-border {
-  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) 0.15rem solid;
 }
 .theme-dark .card.secondary-alt.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-dark .card.secondary-alt.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) inset;
+}
+.theme-dark .card.secondary-alt.car-semitransparent {
+  opacity: 70%;
 }
 .theme-dark .card.secondary-alt.section {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 15%, hsl(0, 0%, 0%) 85%);
@@ -8461,13 +8994,16 @@ nav.nav-main {
   color: color-mix(in srgb, orange 20%, hsl(0, 0%, 100%) 80%);
 }
 .theme-dark .card.warn.car-border {
-  border: color-mix(in srgb, orange 15%, hsl(0, 0%, 0%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, orange 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) 0.15rem solid;
 }
 .theme-dark .card.warn.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-dark .card.warn.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, orange 15%, hsl(0, 0%, 0%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, orange 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) inset;
+}
+.theme-dark .card.warn.car-semitransparent {
+  opacity: 70%;
 }
 .theme-dark .card.warn.section {
   background-color: color-mix(in srgb, orange 15%, hsl(0, 0%, 0%) 85%);
@@ -8493,13 +9029,16 @@ nav.nav-main {
   color: color-mix(in srgb, red 20%, hsl(0, 0%, 100%) 80%);
 }
 .theme-dark .card.error.car-border {
-  border: color-mix(in srgb, red 15%, hsl(0, 0%, 0%) 85%) 0.15rem solid;
+  border: color-mix(in srgb, red 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) 0.15rem solid;
 }
 .theme-dark .card.error.car-shadow {
   box-shadow: 0 1px 3px 0 black;
 }
 .theme-dark .card.error.car-inset {
-  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, red 15%, hsl(0, 0%, 0%) 85%) inset;
+  box-shadow: 0px 0px 0px 0.15rem color-mix(in srgb, red 40%, color-mix(in srgb, hsl(0, 0%, 0%) 90%, hsl(0, 0%, 100%) 10%) 60%) inset;
+}
+.theme-dark .card.error.car-semitransparent {
+  opacity: 70%;
 }
 .theme-dark .card.error.section {
   background-color: color-mix(in srgb, red 15%, hsl(0, 0%, 0%) 85%);
@@ -8603,17 +9142,17 @@ nav.nav-main {
 }
 .theme-dark .radio-button:hover {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button:hover .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button:active {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button:active .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.primary {
   background-color: transparent;
@@ -8624,17 +9163,17 @@ nav.nav-main {
 }
 .theme-dark .radio-button.primary:hover {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.primary:hover .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.primary:active {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.primary:active .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.success {
   background-color: transparent;
@@ -8645,17 +9184,17 @@ nav.nav-main {
 }
 .theme-dark .radio-button.success:hover {
   background-color: color-mix(in srgb, green 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.success:hover .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.success:active {
   background-color: color-mix(in srgb, green 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.success:active .sel-element {
-  color: color-mix(in srgb, green 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary {
   background-color: transparent;
@@ -8666,17 +9205,17 @@ nav.nav-main {
 }
 .theme-dark .radio-button.secondary:hover {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary:hover .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary:active {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary:active .sel-element {
-  color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary-alt {
   background-color: transparent;
@@ -8687,17 +9226,17 @@ nav.nav-main {
 }
 .theme-dark .radio-button.secondary-alt:hover {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary-alt:hover .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary-alt:active {
   background-color: color-mix(in srgb, hsl(266, 100%, 50%) 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.secondary-alt:active .sel-element {
-  color: color-mix(in srgb, hsl(266, 100%, 50%) 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.warn {
   background-color: transparent;
@@ -8708,17 +9247,17 @@ nav.nav-main {
 }
 .theme-dark .radio-button.warn:hover {
   background-color: color-mix(in srgb, orange 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.warn:hover .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.warn:active {
   background-color: color-mix(in srgb, orange 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.warn:active .sel-element {
-  color: color-mix(in srgb, orange 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.error {
   background-color: transparent;
@@ -8729,23 +9268,24 @@ nav.nav-main {
 }
 .theme-dark .radio-button.error:hover {
   background-color: color-mix(in srgb, red 50%, color-mix(in srgb, hsl(0, 0%, 0%) 10%, hsl(0, 0%, 100%) 90%) 50%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.error:hover .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.error:active {
   background-color: color-mix(in srgb, red 20%, hsl(0, 0%, 100%) 80%);
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .radio-button.error:active .sel-element {
-  color: color-mix(in srgb, red 50%, hsl(0, 0%, 0%) 50%);
+  color: hsl(0, 0%, 0%);
 }
 .theme-dark .toggle {
   background-color: color-mix(in srgb, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 100%) 40%);
 }
 .theme-dark .text-input,
-.theme-dark input[type=text], .theme-dark textarea {
+.theme-dark input[type=text],
+.theme-dark textarea {
   background-color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 5%, hsl(0, 0%, 0%) 95%);
   border: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%) 0.15rem solid;
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 10%, hsl(0, 0%, 100%) 90%);
@@ -8754,20 +9294,24 @@ nav.nav-main {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 30%, color-mix(in srgb, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 100%) 40%) 70%);
 }
 .theme-dark .text-input::placeholder,
-.theme-dark input[type=text]::placeholder, .theme-dark textarea::placeholder {
+.theme-dark input[type=text]::placeholder,
+.theme-dark textarea::placeholder {
   color: color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 30%, color-mix(in srgb, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 100%) 40%) 70%);
 }
 .theme-dark .text-input:focus,
-.theme-dark input[type=text]:focus, .theme-dark textarea:focus {
+.theme-dark input[type=text]:focus,
+.theme-dark textarea:focus {
   outline: none;
   box-shadow: 0 0 4px 0 color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 100%) 40%) 50%);
 }
 .theme-dark .text-input:focus:hover,
-.theme-dark input[type=text]:focus:hover, .theme-dark textarea:focus:hover {
+.theme-dark input[type=text]:focus:hover,
+.theme-dark textarea:focus:hover {
   box-shadow: 0 0 4px 0 color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 100%) 40%) 50%);
 }
 .theme-dark .text-input:hover,
-.theme-dark input[type=text]:hover, .theme-dark textarea:hover {
+.theme-dark input[type=text]:hover,
+.theme-dark textarea:hover {
   box-shadow: 0 0 3px 0 color-mix(in srgb, color-mix(in srgb, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%) 50%, color-mix(in srgb, hsl(0, 0%, 0%) 60%, hsl(0, 0%, 100%) 40%) 50%);
 }
 .theme-dark .text-input.primary,

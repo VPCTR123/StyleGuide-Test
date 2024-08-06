@@ -11,86 +11,80 @@
 
 <body class="page-wrapper theme-default">
 
-    <!-- Inject User Name here, JS will use it accordingly (Profile Button / Full Name etc)-->
-    <span class="user-name" aria-hidden="true">Richard Murray</span>
-
-    <!--░█▀█░█▀█░█░█░▀█▀░█▀▀░█▀█░▀█▀░▀█▀░█▀█░█▀█
-        ░█░█░█▀█░▀▄▀░░█░░█░█░█▀█░░█░░░█░░█░█░█░█
-        ░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀ -->
-
-
-
+<!--     
+        ░█▀▀░█▀█░█▀█░▀█▀░█▀▀░█▀█░▀█▀
+        ░█░░░█░█░█░█░░█░░█▀▀░█░█░░█░
+        ░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀░▀░░▀░ -->
+        
     <!-- envelops all content outside of nav / footer / modals / scripts-->
-    <main class="page-content">
+    <main class="page-content background-wrapper">
 
-        <div class="magic mag-1Max mag-lg">
-            <img class="background-image" src="../assets/loginBackground.jpg">
+        <!-- image -->
+        <div class="background-image"></div>
+        <div class="background-fade-up"></div>
 
-            <div class="magic-parent">
-                <div class="magic-child">
-                    <div class="card pill car-shadow pil-sm flex fle-column margin mar-autoHr mar-lgT mar-xlB">
-                        <header class="padding pad-md flex fle-space-between fle-centerVr">
-                            <h4>Welcome to BOL!</h4>
-                        </header>
-                        <hr class="margin mar-mdHr">
+        <!-- welcome / login modal -->
+        <div class="card car-shadow cell cel-lg pill pil-sm flex fle-column limit-frameHr content con-80vhMax margin mar-autoHr mar-lgT mar-xlB">
+            <!-- modal header -->
+            <header class="padding pad-md">
+                <h4>Welcome to BOL!</h4>
+            </header>
+            <hr class="margin mar-mdHr">
 
-                        <div class="link-nostyle content con-scrollY-auto padding pad-lgHr pad-mdVr">
+            <!-- warning body -->
+            <div class="content con-scrollY-auto padding pad-lgHr pad-mdVr">
 
-                            <h2 class="text-align texa-c padding pad-lgHr redd">US DEPARTMENT OF DEFENSE
-                                WARNING STATEMENT </h2>
+                <!-- title -->
+                <h2 class="text-align texa-c element error margin mar-mdB">US DEPARTMENT OF DEFENSE <br>
+                    WARNING STATEMENT </h2>
 
-                            <p class="margin mar-md mar-noneHr">
-                                You are accessing a U.S. Government (USG) Information System (IS) that is provided for
-                                USG-authorized use only. By using this IS (which includes any device attached to this IS), you
-                                consent to the following conditions
-                                <br>
-                                <br>
-                                • The USG routinely intercepts and monitors communications on this IS for purposes including, but
-                                not
-                                limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel
-                                misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
-                                <br>
-                                <br>
-                                • At any time, the USG may inspect and seize data stored on this IS.
-                                <br>
-                                <br>
-                                • Communications using, or data stored on, this IS are not private, are subject to routine
-                                monitoring, interception, and search, and may be disclosed or used for any USG -authorized purpose.
-                                <br>
-                                <br>
-                                • This IS includes security measures (e.g., authentication and access controls) to protect USG
-                                interests--not for your personal benefit or privacy.
-                                <br>
-                                <br>
-                                • Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative
-                                searching or monitoring of the content of privileged communications, or work product, related to
-                                personal representation or services by attorneys, psychotherapists, or clergy, and their assistants.
-                                Such communications and work product are private and confidential. See User Agreement for details.
-                            </p>
-
-
-                        </div>
-
-                        <hr class="margin mar-mdHr">
-
-                        <footer class="padding pad-md flex fle-end gap gap-xs">
-
-                            <label for="check-cacLogin" class = "flex fle-centerVr gap button ghost secondary-alt pill">
-                                <p>I Understand</p>
-                                <input type="checkbox" id="check-cacLogin">
-                            </label>
-
-
-                            <button class="but-md primary padding pad-mdHr pill " id="btn-cacLogin">CAC Login</button>
-                        </footer>
-
-                    </div>
-                </div>
+                <!-- message -->
+                <p class="element">
+                    You are accessing a U.S. Government (USG) Information System (IS) that is provided for
+                    USG-authorized use only. By using this IS (which includes any device attached to this IS), you
+                    consent to the following conditions
+                    <br>
+                    <br>
+                    • The USG routinely intercepts and monitors communications on this IS for purposes including, but
+                    not
+                    limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel
+                    misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
+                    <br>
+                    <br>
+                    • At any time, the USG may inspect and seize data stored on this IS.
+                    <br>
+                    <br>
+                    • Communications using, or data stored on, this IS are not private, are subject to routine
+                    monitoring, interception, and search, and may be disclosed or used for any USG -authorized purpose.
+                    <br>
+                    <br>
+                    • This IS includes security measures (e.g., authentication and access controls) to protect USG
+                    interests--not for your personal benefit or privacy.
+                    <br>
+                    <br>
+                    • Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative
+                    searching or monitoring of the content of privileged communications, or work product, related to
+                    personal representation or services by attorneys, psychotherapists, or clergy, and their assistants.
+                    Such communications and work product are private and confidential. See User Agreement for details.
+                </p>
 
             </div>
+
+            <hr class="margin mar-mdHr">
+
+            <!-- Modal Footer -->
+            <footer class="padding pad-md flex fle-end gap gap-xs fle-wrap">
+
+                <!-- I understand check -->
+                <label for="check-cacLogin" class="button secondary-alt pill ghost flex fle-centerVr gap">
+                    <p>I Understand</p>
+                    <input type="checkbox" id="check-cacLogin">
+                </label>
+
+                <!-- Log in button -->
+                <button class="but-md primary pill " id="btn-cacLogin">CAC Login</button>
+            </footer>
         </div>
-
-
 
     </main>
 
@@ -215,10 +209,6 @@
 
     </footer>
 
-    <!-- 
-    ░█▄█░█▀█░█▀▄░█▀█░█░░░█▀▀
-    ░█░█░█░█░█░█░█▀█░█░░░▀▀█
-    ░▀░▀░▀▀▀░▀▀░░▀░▀░▀▀▀░▀▀▀ -->
 
 </body>
 

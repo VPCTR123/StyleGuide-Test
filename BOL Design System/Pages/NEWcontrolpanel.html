@@ -21,7 +21,7 @@
     <nav class="nav-main flex fle-space-between gap fle-centerVr scroll-fx">
 
         <!-- Nav left wrapper -->
-        <div class="flex fle-centerVr content con-100pVr">
+        <div class="flex fle-centerVr content con-100pVr gap">
 
             <!-- back to home button (visible anywhere but home) -->
             <button class="but-borderless secondary-alt ghost flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display" aria-label="Back to Home" title="Back to Home">
@@ -32,11 +32,13 @@
             <!-- home title (only visible on home) -->
             <div class="flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display dis-none">
                 <span class="element icon ico-sm ico-home"></span>
-                <h5 class = element>App List</h5>
+                <h5 class=element>App List</h5>
             </div>
 
             <!-- \/\/\/\/ additional elements such as tabs here \/\/\/\/ -->
-
+            <div class="card pill padding pad-xs pad-mdHr">
+                <h5>Control Panel</h5>
+            </div>
         </div>
 
         <!-- Nav right wrapper -->
@@ -53,7 +55,7 @@
                 <!-- dropdown wrapper -->
                 <div id="target user-profile" class="popup edge-right to-left margin mar-mdVr">
                     <!-- dropdown -->
-                    <div class="card car-sm pill pil-sm padding pad-smB">
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
 
                         <!-- Header -->
                         <header class="car-element padding pad-xs">
@@ -104,7 +106,7 @@
                 <!-- dropdown wrapper -->
                 <div id="target user-options" class="popup edge-right to-left margin mar-mdVr">
                     <!-- dropdown -->
-                    <div class="card car-sm pill pil-sm padding pad-smB">
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
 
                         <!-- header -->
                         <header class="car-element padding pad-xs">
@@ -142,57 +144,52 @@
 
     <!-- envelops all content outside of nav / footer / modals / scripts-->
     <main class="page-content">
-          <!-- modify app details -->
-          <header class="flex ">
-            <div class="left-fade"></div>
-            <div
-                class="field cell cel-md4cells flex fle-wrap gap gap-md fle-justifyContent-spaceBetween fle-alignItems-center padding pad-md">
-                <h2 class = "element">Modify App Details</h2>
+        <!-- modify app details -->
+        <header class="field flex fle-justifyContent-center">
+            <!-- <div class="left-fade"></div> -->
+            <div class=" cell cel-md4cells flex fle-wrap gap gap-md fle-justifyContent-spaceBetween fle-alignItems-center padding pad-md">
+                <h2 class="element">Modify App Details</h2>
                 <div class="flex fle-wrap gap gap-md">
                     <button class="but-xs warn padding pad-mdHr pill">Reset Changes</button>
                     <button class="but-xs primary padding pad-mdHr pill">Save Changes</button>
                 </div>
 
             </div>
-            <div class="right-fade"></div>
+            <!-- <div class="right-fade"></div> -->
         </header>
 
         <div class="magic mag-4Max mag-md mag-gap-sm cell cel-mdMin flex  text-select texs-none">
 
-            <div class="left-fade"></div>
+            <!-- <div class="left-fade"></div> -->
 
             <div class="magic-parent  margin mar-mdVr">
 
                 <div class="magic-child flex fle-column">
 
-                    <div class="card car-shadow grow gro-one pill pil-xs  ">
+                    <div class="card car-inset grow gro-one pill pil-xs  ">
 
-                        <header
-                            class="hea-sm  car-element padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                        <header class="hea-sm  car-element padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
                             <div class="position pos-absolute" style="left: 0">
-                                <div
-                                    class="circle cir-sm margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
-                                    <h3 class="">1</h3>
+                                <div class="circle cir-sm shade55 margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                    <h3 class="shade100-color">1</h3>
                                 </div>
                             </div>
                             <h3>Choose an app to modify:</h3>
                         </header>
 
-                        <div
-                            class="car-element margin mar-mdVr padding pad-md flex fle-column fle-alignItems-center gap gap-md">
+                        <div class="car-element margin mar-mdVr padding pad-md flex fle-column fle-alignItems-center gap gap-md">
                             <label for="Select App ">
                                 <p>
                                     Select an app from the dropdown:
                                 </p>
                             </label>
                             <div class="search-dropdown content con-100p">
-                                <input type="text" aria-label="Select App" autocomplete="off"
-                                    class="inp-fullHr pill padding pad-smHr ">
+                                <input type="text" aria-label="Select App" autocomplete="off" class="inp-fullHr pill padding pad-smHr ">
                                 <div class="search-dropdown-icon padding pad-smHr">
                                     <span class="icon ico-sm ico-carret-l"></span>
                                 </div>
                                 <div class="popup content con-100p">
-                                    <div class="card  car-shadow margin mar-smT pill pil-sm">
+                                    <div class="card car-border car-shadow margin mar-smT pill pil-sm">
                                         <div class="spacer spa-xxs"></div>
                                         <ul class=" content con-xxsMaxVr con-scrollY">
                                             <li>
@@ -255,34 +252,27 @@
 
                     </div>
 
-                    <div class="card car-shadow  grow gro-one pill pil-xs ">
-                        <header
-                            class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center ">
-                            <h4 class="">Preview</h4>
+                    <div class="card car-inset  grow gro-one pill pil-xs ">
+                        <header class="hea-sm  success padding pad-md flex fle-justifyContent-center fle-alignItems-center ">
+                            <h4 class="white">Preview</h4>
                         </header>
                         <div class="padding pad-md ">
-                            <div
-                                class=" card car-shadow car-xxsVr car-sm pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-mdVr">
+                            <div class=" card car-inset car-xxsVr car-sm pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse margin mar-autoHr mar-mdVr">
 
-                                <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL"
-                                    id="appColorTile">
-                                    <span class="icon ico-sm ico-closeX"></span>
+                                <div class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
+                                    <span class="shade100-color icon ico-sm ico-closeX"></span>
                                 </div>
 
-                                <a href=""
-                                    class="link-nostyle   content con-full position pos-absolute flex fle-centerVr">
+                                <a href="" class="link-nostyle   content con-full position pos-absolute flex fle-centerVr">
                                     <div class="cell cel-sm padding pad-lgHr margin mar-xxsL">
-                                        <h5>[DATA: (App Title)]</h5>
+                                        <h5 class="car-element ">[DATA: (App Title)]</h5>
                                     </div>
                                 </a>
                                 <!-- button should do the same as preview popup button below -->
-                                <button
-                                    class=" secondary-alt ghost but-circle margin mar-smR position pos-absolute"><span
-                                        class="but-element icon ico-sm ico-ellipsis-vr"></span></button>
+                                <button class=" secondary-alt ghost but-circle margin mar-smR position pos-absolute"><span class="but-element icon ico-sm ico-ellipsis-vr"></span></button>
                             </div>
 
-                            <div class="flex fle-justifyContent-center"> <button
-                                    class="margin mar-autoHr mar-mdVr secondary but-xs padding pad-mdHr pill ">Preview
+                            <div class="flex fle-justifyContent-center"> <button class="margin mar-autoHr mar-mdVr secondary but-xs padding pad-mdHr pill ">Preview
                                     Popup</button></div>
 
 
@@ -293,14 +283,12 @@
 
                 <div class="magic-child2 flex">
 
-                    <div class="card car-shadow  grow gro-one pill pil-xs">
+                    <div class="card car-inset  grow gro-one pill pil-xs">
 
-                        <header
-                            class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                        <header class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
                             <div class="position pos-absolute" style="left: 0">
-                                <div
-                                    class="circle cir-sm  margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
-                                    <h3 class="">2</h3>
+                                <div class="circle cir-sm shade55 margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                    <h3 class="shade100-color">2</h3>
                                 </div>
                             </div>
                             <h3>Edit App Details:</h3>
@@ -316,8 +304,7 @@
                                             </p>
                                         </label>
 
-                                        <input type="text" id="App Card Name" autocomplete="off"
-                                            class="pill content con-100p margin mar-smVr padding pad-smHr">
+                                        <input type="text" id="App Card Name" autocomplete="off" class="pill content con-100p margin mar-smVr padding pad-smHr">
 
                                     </div>
                                     <label for="App Descrpition">
@@ -325,8 +312,7 @@
                                             App Descrpition:
                                         </p>
                                     </label>
-                                    <textarea id="App Descrpition"
-                                        class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>
+                                    <textarea id="App Descrpition" class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>
 
 
                                 </div>
@@ -339,15 +325,13 @@
                                             App Details Heading:
                                         </p>
                                     </label>
-                                    <input type="text" id="App Details Heading" autocomplete="off"
-                                        class="pill content con-100p margin mar-smVr padding pad-smHr">
+                                    <input type="text" id="App Details Heading" autocomplete="off" class="pill content con-100p margin mar-smVr padding pad-smHr">
                                     <label for="App Details Sub-Heading">
                                         <p>
                                             App Details Sub-Heading:
                                         </p>
                                     </label>
-                                    <input type="text" id="App Details Sub-Heading" autocomplete="off"
-                                        class="pill content con-100p margin mar-smVr padding pad-smHr">
+                                    <input type="text" id="App Details Sub-Heading" autocomplete="off" class="pill content con-100p margin mar-smVr padding pad-smHr">
 
 
 
@@ -360,13 +344,12 @@
                                     </label>
                                     <div class="flex margin mar-mdVr gap">
                                         <div class="search-dropdown content con-100p">
-                                            <input type="text" aria-label="Select App" autocomplete="off"
-                                                class="content con-100p pill padding pad-smHr">
+                                            <input type="text" aria-label="Select App" autocomplete="off" class="content con-100p pill padding pad-smHr">
                                             <div class="search-dropdown-icon  padding pad-smHr ">
                                                 <span class="icon ico-sm ico-carret-l"></span>
                                             </div>
                                             <div class="popup content  con-100p">
-                                                <div class="card  con-100p margin mar-smT pill pil-sm ">
+                                                <div class="card car-border  con-100p margin mar-smT pill pil-sm ">
                                                     <div class="spacer spa-xxs"></div>
                                                     <ul class=" content con-xxsMaxVr con-scrollY">
                                                         <li><a class="selector padding pad-xsHr">Search
@@ -405,8 +388,7 @@
                                             </div>
                                         </div>
 
-                                        <span
-                                            class="icon ico-sm margin button primary flex fle-alignItems-center fle-justifyContent-center ghost pill">
+                                        <span class="button but-xxs but-circle primary flex fle-alignItems-center fle-justifyContent-center ghost pill">
                                             <b class="but-element">?</b></span>
 
 
@@ -416,14 +398,12 @@
                                     <div class="flex fle-justifyContent-spaceBetween padding pad-mdR ">
                                         <div>
                                             <p>Select an app icon:</p>
-                                            <button onclick="togglePopup(event, 'selectAppIcon')"
-                                                class="secondary-alt pill pil-xs but-sm but-square margin mar-smVr padding pad-sm ">
+                                            <button onclick="togglePopup(event, 'selectAppIcon')" class="secondary-alt pill pil-xs but-sm but-square margin mar-smVr padding pad-sm ">
                                                 <span class="but-element  icon ico-sm ico-home"></span></button>
                                         </div>
                                         <div>
                                             <p>Select an app color:</p>
-                                            <button onclick="togglePopup(event, 'selectAppColor')"
-                                                class="secondary-alt but-bordered pill pil-xs but-sm but-square margin mar-smVr padding pad-sm">
+                                            <button onclick="togglePopup(event, 'selectAppColor')" class="secondary-alt but-bordered pill pil-xs but-sm but-square margin mar-smVr padding pad-sm">
                                                 <div class="but-element  content con-full red pill pil-xs"></div>
                                             </button>
                                         </div>
@@ -438,13 +418,11 @@
 
                 <div class="magic-child flex">
 
-                    <div class="card car-shadow  grow gro-one pill pil-xs">
-                        <header
-                            class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
+                    <div class="card car-inset  grow gro-one pill pil-xs">
+                        <header class="hea-sm padding pad-md flex fle-justifyContent-center fle-alignItems-center position pos-relative">
                             <div class="position pos-absolute" style="left: 0">
-                                <div
-                                    class="circle cir-sm  margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
-                                    <h3 class="">3</h3>
+                                <div class="circle cir-sm shade55 margin mar-xsL flex fle-alignItems-center fle-justifyContent-center">
+                                    <h3 class="shade100-color">3</h3>
                                 </div>
                             </div>
                             <h3>Add Aditional Buttons:</h3>
@@ -453,26 +431,22 @@
                             <p class="text-align texa-c">Modify buttons in the app popup:
                             <p>
                             <div class="margin mar-mdVr content con-100p">
-                                <div class="sortable-list car-section pill pil-sm card secondary section">
+                                <div class="sortable-list field car-inset pill pil-xs card secondary section">
                                     <div class="spacer spa-xxs"></div>
-                                    <ul
-                                        class=" flex fle-column gap gap-sm padding pad-mdL pad-xsR  content con-scrollY con-100pMinVr con-xsMaxVr">
+                                    <ul class=" flex fle-column gap gap-sm padding pad-mdL pad-xsR  content con-scrollY con-100pMinVr con-xsMaxVr">
                                         <!-- THERE SHOULD BE SOME DATA BIND TO EACH OF THESE AND THE MODAL CURRENTLY THEY ARE ALL BLANK -->
-                                        <li draggable="true" onclick="togglePopup(event, 'editButton')"
-                                            class="selector secondary-alt sel-md pill pil-xs flex  fle-alignItems-center  gap  padding pad-smHr">
+                                        <li draggable="true" onclick="togglePopup(event, 'editButton')" class="selector secondary-alt sel-border sel-md pill pil-xs flex  fle-alignItems-center  gap  padding pad-smHr">
 
                                             <span class="sel-element icon ico-closeX ico-sm element"></span>
-                                            <p class="sel-element">[DATA: (BUTTON TITLE)]</p>
+                                            <p class="sel-element">Sample Button</p>
                                         </li>
-                                        <li draggable="true" onclick="togglePopup(event, 'editButton')"
-                                            class="selector secondary-alt  sel-md pill pil-xs flex  fle-alignItems-center  gap padding pad-smHr">
+                                        <li draggable="true" onclick="togglePopup(event, 'editButton')" class="selector secondary-alt sel-border sel-md pill pil-xs flex  fle-alignItems-center  gap padding pad-smHr">
 
                                             <span class="sel-element icon ico-closeX ico-sm element"></span>
-                                            <p class="sel-element">[DATA: (BUTTON TITLE)]</p>
+                                            <p class="sel-element">Sample Button</p>
                                         </li>
                                         <!-- THE NEW BUTTON OPTION SHOULD CREATE A NEW LI ELEMENT AND BIND IT TO NEW DATA IN A BLANK MODAL-->
-                                        <li draggable="true" onclick="togglePopup(event, 'editButton')"
-                                            class="selector secondary-alt \ sel-md pill pil-xs flex gap fle-alignItems-center  padding pad-smHr">
+                                        <li draggable="true" onclick="togglePopup(event, 'editButton')" class="selector secondary-alt sel-border sel-md pill pil-xs flex gap fle-alignItems-center  padding pad-smHr">
 
                                             <span class="sel-element icon ico-closeX ico-sm element"></span>
                                             <p class="sel-element element">Add New Button</p>
@@ -488,28 +462,29 @@
                 </div>
             </div>
 
-            <div class="right-fade"></div>
+            <!-- <div class="right-fade"></div> -->
 
         </div>
 
         <!-- maintenance -->
-        <header class="flex ">
-            <div class="left-fade"></div>
-            <div class="field cell cel-md4cells flex fle-justifyContent-spaceBetween padding pad-md">
-                <h2 class = "element">Maintenance</h2>
-            </div>
-            <div class="right-fade"></div>
-        </header>
+        <header class="field flex fle-justifyContent-center">
+            <!-- <div class="left-fade"></div> -->
+            <div class=" cell cel-md4cells flex fle-wrap gap gap-md fle-justifyContent-spaceBetween fle-alignItems-center padding pad-md">
+                <h2 class="element">Maintenance</h2>
 
+
+            </div>
+            <!-- <div class="right-fade"></div> -->
+        </header>
         <div class="magic mag-4Max mag-md mag-gap-sm cell cel-mdMin flex  text-select texs-none">
 
-            <div class="left-fade"></div>
+            <!-- <div class="left-fade"></div> -->
 
             <div class="magic-parent padding pad-mdVr">
 
                 <div class="magic-child flex">
 
-                    <div class="card car-shadow  grow gro-one pill pil-xs  ">
+                    <div class="card car-inset  grow gro-one pill pil-xs  ">
 
                         <div class="padding pad-md flex fle-column gap gap-md">
 
@@ -518,37 +493,29 @@
                                     Redirect Link:
                                 </p>
                             </label>
-                            <div class="flex fle-alignItems-center gap gap-md">
-                                <input type="text" id="Redirect Link" autocomplete="off"
-                                    class="pill grow gro-one padding pad-smHr">
-                                <span
-                                    class="margin mar-smR button primary flex fle-alignItems-center fle-justifyContent-center ghost circle ">
-                                    <span class="but-element  icon ico-closeX ico-sm"></span></span>
+                            <div class="flex fle-alignItems-center gap gap-xs">
+                                <input type="text" id="Redirect Link" autocomplete="off" class="pill grow gro-one padding pad-smHr">
+                                <span class="button but-xxs but-circle primary flex fle-alignItems-center fle-justifyContent-center ghost pill">
+                                    <b class="but-element">?</b></span>
                             </div>
-                            <p>App State:</p>
-                            <div
-                                class="flex car-section fle-nowrap fle-justifyContent-spaceBetween padding pad-xxs pill gap">
 
-                                <label for="enabled"
-                                    class="radio-button secondary ghost padding pad-xxs pad-xsHr ghost pill flex gap">
-                                    <input type="radio" id="enabled" name="app_state" value="enabled">
-                                    <p class="but-element ">Enabled</p>
-                                </label>
-
-                                <label for="disabled"
-                                    class="radio-button secondary ghost padding pad-xxs pad-xsHr ghost pill flex gap">
-                                    <input type="radio" id="disabled" name="app_state" value="disabled">
-                                    <p class="but-element ">Disabled</p>
-                                </label>
-
-
-                                <label for="hidden"
-                                    class="radio-button secondary ghost padding pad-xxs pad-xsHr ghost pill flex gap">
-                                    <input type="radio" id="hidden" name="app_state" value="hidden">
-                                    <p class="but-element ">Hidden</p>
-                                </label>
-
-
+                            <div class="radio-group card  pill flex fle-column gap ">
+                                <p>App State:</p>
+                                <div class="card section pill flex fle-space-between gap gap-md padding pad-xxs">
+                                    <label class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs" for="rad1.1">
+                                        <input type="radio" name="test1" id="rad1.1" value="sample value 1" aria-label="sample value 1">
+                                        <p>Enabled</p>
+                                    </label>
+                                    <label class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs" for="rad1.2">
+                                        <input type="radio" name="test1" id="rad1.2" value="sample value 2" aria-label="sample value 2">
+                                        <p>Disabled</p>
+                                    </label>
+                                    <label class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs" for="rad1.3">
+                                        <input type="radio" name="test1" id="rad1.3" value="sample value 2" aria-label="sample value 2">
+                                        <p>Hidden</p>
+                                    </label>
+                                </div>
+                                <p class="feedback"></p>
                             </div>
 
                             <label for="Disabled Message">
@@ -556,8 +523,7 @@
                                     Disabled Message:
                                 </p>
                             </label>
-                            <textarea id="Disabled Message"
-                                class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>
+                            <textarea id="Disabled Message" class="  pill pil-xs content con-100p grow gro-one margin mar-mdVr content con-xxsMinVr padding pad-sm"></textarea>
 
                         </div>
                     </div>
@@ -566,7 +532,7 @@
 
             </div>
 
-            <div class="right-fade"></div>
+            <!-- <div class="right-fade"></div> -->
 
         </div>
         <div class="spacer spa-xl"></div>
@@ -698,6 +664,463 @@
     ░█▄█░█▀█░█▀▄░█▀█░█░░░█▀▀
     ░█░█░█░█░█░█░█▀█░█░░░▀▀█
     ░▀░▀░▀▀▀░▀▀░░▀░▀░▀▀▀░▀▀▀ -->
+
+    <!-- SELECT ICON MODAL -->
+    <div class="overlay" id="overlay selectAppIcon"></div>
+    <div class="popup pop-center" id="target selectAppIcon">
+        <div class="card car-xl pill pil-sm flex fle-column">
+            <header class="padding pad-sm flex fle-space-between fle-centerVr">
+                <h4>Select Icon</h4>
+                <button class="but-xxs secondary ghost but-circle" id="close selectAppIcon"><span class="but-element icon ico-sm ico-closeX "></span></button>
+
+            </header>
+            <hr class="margin mar-mdHr">
+
+            <div class=" content con-scrollY-auto padding pad-lgHr ">
+
+                <div class="flex fle-centerVr gap gap-sm  margin mar-lgVr">
+
+                    <span class="icon ico-md ico-closeX ico-color"></span>
+                    <div>
+                        <h4>Current Icon</h4>
+                        <p>(DATA: [ICON NAME])</p>
+                    </div>
+
+                </div>
+
+                <div class="selector-grid card car section car-border margin mar-mdB pill pil-md content con-100pMinVr">
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+
+                </div>
+
+
+            </div>
+
+            <hr class="margin mar-mdHr">
+
+            <footer class=" padding pad-sm flex fle-end gap gap-sm ">
+
+                <button class="but-xs primary padding pad-mdHr pill">Apply Icon</button>
+
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- SELECT COLOR MODAL -->
+    <div class="overlay" id="overlay selectAppColor"></div>
+    <div class="popup pop-center" id="target selectAppColor">
+        <div class="card car-xl pill pil-sm flex fle-column">
+            <header class="padding pad-sm flex fle-space-between fle-centerVr">
+                <h4>Select Color</h4>
+                <button class="but-xxs secondary ghost but-circle" id="close selectAppColor"><span class="but-element icon ico-sm ico-closeX "></span></button>
+
+            </header>
+            <hr class="margin mar-mdHr">
+
+            <div class="content con-scrollY-auto padding pad-lgHr ">
+
+                <div class="flex fle-centerVr gap gap-sm  margin mar-lgVr">
+
+                    <span class="icon ico-md ico-closeX ico-color"></span>
+                    <div>
+                        <h4>Current Color</h4>
+                        <p>(DATA: "#"[HEX VALUE])</p>
+                    </div>
+
+                </div>
+
+
+                <div class="selector-grid card car section car-border margin mar-mdB pill pil-md content con-100pMinVr">
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+                    <label class="selector">
+                        <input type="radio" name="radio-selectAppIcon">
+                        <span class="sel-element icon ico-md ico-closeX "></span>
+                    </label>
+
+                </div>
+
+
+            </div>
+
+            <hr class="margin mar-mdHr">
+
+            <footer class=" padding pad-sm flex fle-end gap gap-sm ">
+
+                <button class="but-xs primary padding pad-mdHr pill">Apply Color</button>
+
+            </footer>
+
+        </div>
+    </div>
+    <!-- EDIT BUTTON MODAL -->
+    <div class="overlay" id="overlay editButton"></div>
+    <div class="popup pop-center" id="target editButton">
+        <div class="card car-xxl pill pil-sm flex fle-column">
+            <header class="padding pad-sm flex fle-space-between fle-centerVr">
+                <h4>Aditional Buttons</h4>
+                <button class="but-xxs secondary ghost but-circle" id="close editButton"><span class="but-element icon ico-sm ico-closeX "></span></button>
+
+            </header>
+            <hr class="margin mar-mdHr">
+
+            <div class="content con-scrollY-auto padding pad-lgHr flex fle-wrap fle-justifyContent-center gap gap-md padding pad-mdVr">
+                <div class=" flex fle-column gap  grow">
+                    <div class="card section  pill  pil-sm grow gro-one padding pad-md flex fle-column fle-alignItems-center gap gap-md">
+
+                        <p>Choose the functionality of the button.</p>
+
+                        <div class="flex fle-nowrap card  fle-justifyContent-spaceBetween  padding pad-xxs pill gap">
+
+                            <label for="rad-link" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-link" name="button-function" value="link">
+                                <p class="rad-element ">Link</p>
+                            </label>
+
+                            <label for="rad-download" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-download" name="button-function" value="download">
+                                <p class="rad-element">Download</p>
+                            </label>
+
+
+
+
+
+                        </div>
+                        <div class="flex fle-alignItems-center gap content con-100p padding pad-lgHr cell cel-mdMax">
+                            <!-- THIS ICON WILL BE A LINK ICON IF LINK IS SELECTED, AND A DOWNLOAD ICON IF DOWNLOAD IS SELECTED -->
+                            <span class="icon ico-sm ico-closeX"></span>
+                            <input type="text" class="padding pad-smHr pill grow gro-one" placeholder="Enter link here">
+                        </div>
+                    </div>
+                    <div class="card section  pill  pil-sm grow gro-one padding pad-md flex fle-column fle-alignItems-center gap gap-md">
+                        <p>Enter the text that will appear in the button.</p>
+                        <div class="flex content con-100p padding pad-lgHr fle-column gap gap-md cell cel-mdMax">
+                            <input type="text" class=" padding pad-smHr  pill grow gro-one" placeholder="Enter title here">
+                            <div class="flex">
+                                <p>*</p>
+                                <p>Even if you select to hide text, this title is important for screen readers and other
+                                    purposes.</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class=" flex grow">
+                    <div class="card section  pill  pil-sm grow gro-one padding pad-md flex fle-column fle-alignItems-center gap gap-md">
+                        <p>Choose the appearance of the button.</p>
+                        <p class="margin mar-smT">Style:</p>
+                        <div class="flex fle-wrap card padding pad-xxs pill gap">
+
+                            <label for="rad-showIcon" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-showIcon" name="button-style" value="show icon">
+                                <p class="rad-element">Show Icon</p>
+                            </label>
+
+                            <label for="rad-showName" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-showName" name="button-style" value="show name">
+                                <p class="rad-element"> Show Name</p>
+                            </label>
+                            <label for="rad-showBoth" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-showBoth" name="button-style" value="show both">
+                                <p class="rad-element"> Show Both</p>
+                            </label>
+                        </div>
+                        <p class="margin mar-smT">Color:</p>
+                        <div class="flex fle-wrap card padding pad-xxs pill gap">
+
+                            <label for="rad-primary" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-primary" name="button-color" value="primary">
+                                <p class="rad-element">Primary</p>
+                            </label>
+                            <label for="rad-secondary" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-secondary" name="button-color" value="secondary">
+                                <p class="rad-element"> Secondary</p>
+                            </label>
+                            <label for="rad-warn" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-warn" name="button-color" value="warn">
+                                <p class="rad-element">Warn</p>
+                            </label>
+                            <label for="rad-error" class="radio-button pill flex fle-alignItems-center gap gap-xxs padding pad-xs">
+                                <input type="radio" id="rad-error" name="button-color" value="error">
+                                <p class="rad-element">Error</p>
+                            </label>
+                        </div>
+                        <p class="margin mar-smT">Preview:</p>
+                        <!-- DATA BIND TO MATCH USER SELECTIONS -->
+                        <button class="but-xs primary padding pad-mdHr pill">SAMPLE BUTTON</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="margin mar-mdHr">
+
+            <footer class=" padding pad-sm flex fle-space-between gap gap-sm ">
+                <button class="but-xs warn padding pad-mdHr pill">Delete Button</button>
+                <div class="flex gap">
+                    <button class="but-xs secondary padding pad-mdHr pill">Cancel</button>
+                    <button class="but-xs primary padding pad-mdHr pill">Apply Changes</button>
+                </div>
+
+
+            </footer>
+
+        </div>
+    </div>
+
+
+
 
 </body>
 

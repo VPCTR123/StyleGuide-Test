@@ -42,7 +42,16 @@
     flex-direction: column;
     flex-grow: 1;
 }
-
+.limit-frameHr{
+    max-width: 90vw;
+}
+.limit-frameVr{
+max-width: 90vh;
+}
+.limit-frame{
+max-width: 90vw;
+max-height: 90vh;
+}
 //** Grid Component - (div)
 .grid {
 

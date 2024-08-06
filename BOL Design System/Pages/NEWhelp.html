@@ -21,7 +21,7 @@
     <nav class="nav-main flex fle-space-between gap fle-centerVr scroll-fx">
 
         <!-- Nav left wrapper -->
-        <div class="flex fle-centerVr content con-100pVr">
+        <div class="flex fle-centerVr content con-100pVr gap">
 
             <!-- back to home button (visible anywhere but home) -->
             <button class="but-borderless secondary-alt ghost flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display" aria-label="Back to Home" title="Back to Home">
@@ -32,11 +32,13 @@
             <!-- home title (only visible on home) -->
             <div class="flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display dis-none">
                 <span class="element icon ico-sm ico-home"></span>
-                <h5 class = element>App List</h5>
+                <h5 class=element>App List</h5>
             </div>
 
             <!-- \/\/\/\/ additional elements such as tabs here \/\/\/\/ -->
-
+            <div class="card pill padding pad-xs pad-mdHr">
+                <h5>BOL Help</h5>
+            </div>
         </div>
 
         <!-- Nav right wrapper -->
@@ -53,7 +55,7 @@
                 <!-- dropdown wrapper -->
                 <div id="target user-profile" class="popup edge-right to-left margin mar-mdVr">
                     <!-- dropdown -->
-                    <div class="card car-sm pill pil-sm padding pad-smB">
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
 
                         <!-- Header -->
                         <header class="car-element padding pad-xs">
@@ -104,7 +106,7 @@
                 <!-- dropdown wrapper -->
                 <div id="target user-options" class="popup edge-right to-left margin mar-mdVr">
                     <!-- dropdown -->
-                    <div class="card car-sm pill pil-sm padding pad-smB">
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
 
                         <!-- header -->
                         <header class="car-element padding pad-xs">
@@ -147,48 +149,43 @@
             <div class="foco-lgL"></div>
             <div class="foco-lgR"></div>
         </div>
-        <div class = "field-alt">
+        <div class="field-alt">
             <h2 class="text-align texa-c margin mar-lgT element">Frequently Asked Questions</h2>
             <hr class="margin mar-mdT mar-lgB">
-            <div class="content con-mdMax margin mar-autoHr">
-                <p class = "element">Welcome to our Frequently Asked Questions section. Here, we address common queries to provide you with
+            <div class="content con-mdMax margin mar-autoHr padding pad-lg">
+                <p class="element">Welcome to our Frequently Asked Questions section. Here, we address common queries to provide you with
                     swift answers and clarity. If you don't find what you're looking for, feel free to reach out to our
                     support team.</p>
                 <br>
-                <a href="" class = "link">Contact Support</a>
+                <a href="" class="link">Contact Support</a>
             </div>
             <div class="spacer spa-md"></div>
         </div>
- 
-        <!-- link-nostyle body app list -->
-        <label class="drawer-handle shade100 drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerOne">
+        <label class="drawer-handle secondary-alt drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerOne">
             <input type="checkbox" checked id="drawerOne" onclick="toggleActive('drawerOne')">
-            <span class="icon ico-sm ico-carret-d"></span>
-            <h3 class = "element">Q: Example Question</h3>
+            <span class="icon dra-element dra-state-change ico-sm ico-carret-d"></span>
+            <h3 class="dra-element">Q: Example Question</h3>
         </label>
-        <div class="drawer dra-mdH" id="target-drawerOne">
+        <div class="drawer field-alt" id="target-drawerOne">
             <div class="content con-mdMax margin mar-autoHr mar-lgVr padding pad-xlHr">
-                <h2 class = "element">A: Sample Answer</h2>
+                <h2 class="element">A: Sample Answer</h2>
                 <div class="spacer spa-sm"></div>
-                <p class = "element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                <p class="element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
                     necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
                     officiis repudiandae. Earum, minus dolor.</p>
             </div>
-
-
-
         </div>
         <hr>
-        <label class="drawer-handle shade100 drah-md  gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerTwo">
+        <label class="drawer-handle secondary-alt drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerTwo">
             <input type="checkbox" checked id="drawerTwo" onclick="toggleActive('drawerTwo')">
-            <span class="icon ico-sm ico-carret-d"></span>
-            <h3 class = "element">Q: Example Question</h3>
+            <span class="icon dra-element dra-state-change ico-sm ico-carret-d"></span>
+            <h3 class="dra-element">Q: Example Question</h3>
         </label>
-        <div class="drawer dra-mdH" id="target-drawerTwo">
+        <div class="drawer field-alt" id="target-drawerTwo">
             <div class="content con-mdMax margin mar-autoHr mar-lgVr  padding pad-xlHr">
-                <h2 class = "element">A: Sample Answer</h2>
+                <h2 class="element">A: Sample Answer</h2>
                 <div class="spacer spa-sm"></div>
-                <p class = "element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                <p class="element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
                     necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
                     officiis repudiandae. Earum, minus dolor.</p>
             </div>
@@ -198,16 +195,16 @@
         </div>
 
         <hr>
-        <label class="drawer-handle shade100 drah-md  gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerThree">
+        <label class="drawer-handle secondary-alt drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerThree">
             <input type="checkbox" checked id="drawerThree" onclick="toggleActive('drawerThree')">
-            <span class="icon ico-sm ico-carret-d"></span>
-            <h3 class = "element">Q: Example Question</h3>
+            <span class="icon dra-element dra-state-change ico-sm ico-carret-d"></span>
+            <h3 class="dra-element">Q: Example Question</h3>
         </label>
-        <div class="drawer dra-mdH" id="target-drawerThree">
+        <div class="drawer field-alt" id="target-drawerThree">
             <div class="content con-mdMax margin mar-autoHr mar-lgVr  padding pad-xlHr">
-                <h2 class = "element">A: Sample Answer</h2>
+                <h2 class="element">A: Sample Answer</h2>
                 <div class="spacer spa-sm"></div>
-                <p class = "element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                <p class="element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
                     necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
                     officiis repudiandae. Earum, minus dolor.</p>
             </div>
@@ -216,16 +213,16 @@
 
         </div>
         <hr>
-        <label class="drawer-handle shade100 drah-md  gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerFour">
+        <label class="drawer-handle secondary-alt drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerFour">
             <input type="checkbox" checked id="drawerFour" onclick="toggleActive('drawerFour')">
-            <span class="icon ico-sm ico-carret-d"></span>
-            <h3 class = "element">Q: Example Question</h3>
+            <span class="icon dra-element dra-state-change ico-sm ico-carret-d"></span>
+            <h3 class="dra-element">Q: Example Question</h3>
         </label>
-        <div class="drawer dra-mdH" id="target-drawerFour">
+        <div class="drawer field-alt" id="target-drawerFour">
             <div class="content con-mdMax margin mar-autoHr mar-lgVr  padding pad-xlHr">
-                <h2 class = "element">A: Sample Answer</h2>
+                <h2 class="element">A: Sample Answer</h2>
                 <div class="spacer spa-sm"></div>
-                <p class = "element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                <p class="element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
                     necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
                     officiis repudiandae. Earum, minus dolor.</p>
             </div>
@@ -234,16 +231,16 @@
 
         </div>
         <hr>
-        <label class="drawer-handle shade100 drah-md  gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerFive">
+        <label class="drawer-handle secondary-alt drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerFive">
             <input type="checkbox" checked id="drawerFive" onclick="toggleActive('drawerFive')">
-            <span class="icon ico-sm ico-carret-d"></span>
-            <h3 class = "element">Q: Example Question</h3>
+            <span class="icon dra-element dra-state-change ico-sm ico-carret-d"></span>
+            <h3 class="dra-element">Q: Example Question</h3>
         </label>
-        <div class="drawer dra-mdH" id="target-drawerFive">
+        <div class="drawer field-alt" id="target-drawerFive">
             <div class="content con-mdMax margin mar-autoHr mar-lgVr  padding pad-xlHr">
-                <h2 class = "element">A: Sample Answer</h2>
+                <h2 class="element">A: Sample Answer</h2>
                 <div class="spacer spa-sm"></div>
-                <p class = "element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                <p class="element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
                     necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
                     officiis repudiandae. Earum, minus dolor.</p>
             </div>
@@ -252,16 +249,16 @@
 
         </div>
         <hr>
-        <label class="drawer-handle shade100 drah-md  gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerSix">
+        <label class="drawer-handle secondary-alt drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" for="drawerSix">
             <input type="checkbox" checked id="drawerSix" onclick="toggleActive('drawerSix')">
-            <span class="icon ico-sm ico-carret-d"></span>
-            <h3 class = "element">Q: Example Question</h3>
+            <span class="icon dra-element dra-state-change ico-sm ico-carret-d"></span>
+            <h3 class="dra-element">Q: Example Question</h3>
         </label>
-        <div class="drawer dra-mdH" id="target-drawerSix">
+        <div class="drawer field-alt" id="target-drawerSix">
             <div class="content con-mdMax margin mar-autoHr mar-lgVr  padding pad-xlHr">
-                <h2 class = "element">A: Sample Answer</h2>
+                <h2 class="element">A: Sample Answer</h2>
                 <div class="spacer spa-sm"></div>
-                <p class = "element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
+                <p class="element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit dicta possimus dolorem,
                     necessitatibus corrupti rem veritatis tempore earum deserunt placeat labore modi commodi, harum ad
                     officiis repudiandae. Earum, minus dolor.</p>
             </div>
@@ -269,6 +266,7 @@
 
 
         </div>
+        <hr>
         <div class="spacer spa-lg"></div>
     </main>
 
