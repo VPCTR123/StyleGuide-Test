@@ -29,14 +29,16 @@ export class DrawerComponent {
   //state = false => closed
   toggled = output<{state: boolean, displayName: string}>();
 
-  //public open:boolean = true;
-  @Input() open = false;
+  //initial value
+  closed = input<boolean>(true);
+  public closedValue = this.closed();
 
    handleToggled()
   {  
-    this.open = !this.open;  
+    this.closedValue = !this.closedValue;
+
     this.toggled.emit({
-      state: this.open,
+      state: this.closedValue,
       displayName: this.drawerName()
     });
   }

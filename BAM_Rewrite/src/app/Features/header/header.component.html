@@ -1,98 +1,124 @@
-<nav
-        class="navigation nav-main scroll-fx position pos-fixed flex fle-space-between fle-centerVr padding pad-mdHr gap gap-sm ">
+    <!-- Inject User Name here, JS will use it accordingly (Profile Button / Full Name etc)-->
+    <span class="user-name" aria-hidden="true">Richard Murray</span>
 
+    <!--░█▀█░█▀█░█░█░▀█▀░█▀▀░█▀█░▀█▀░▀█▀░█▀█░█▀█
+        ░█░█░█▀█░▀▄▀░░█░░█░█░█▀█░░█░░░█░░█░█░█░█
+        ░▀░▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀░░▀░░▀▀▀░▀▀▀░▀░▀ -->
 
-        <!-- left wrapper -->
-        <div class="flex gap fle-centerVr">
+    <nav class="nav-main flex fle-space-between gap fle-centerVr scroll-fx">
+        <!-- Nav left wrapper -->
+        <div class="flex fle-centerVr content con-100pVr">
 
-            <!-- home button -->
-            <div *ngIf="!navigated"  class="flex gap">
-                <span class="icon ico-sm ico-home"></span>
-                <h5>Application List</h5>
+            <!-- back to home button (visible anywhere but home) -->
+            <button class="but-borderless secondary-alt ghost flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display dis-none" aria-label="Back to Home" title="Back to Home">
+                <span class="but-element icon ico-xs ico-carret-l"></span>
+                <span class="but-element icon ico-sm ico-home"></span>
+            </button>
+
+            <!-- home title (only visible on home) -->
+            <div class="flex fle-centerVr gap gap-xs padding pad-smHr content con-100pVr display ">
+                <span class="element icon ico-sm ico-home"></span>
+                <h5 class=element>App List</h5>
             </div>
-            
-                <button *ngIf="navigated" (click)="router.navigate(['home'])" class="but-xxs primary ghost flex fle-alignItems-center fle-justifyContent-center fle-alignSelf-stretch gap padding pad-xsHr">
-                    <span class="icon ico-xs ico-carret-l"></span>
-                    <span class="icon ico-sm ico-home"></span>
-                </button>
-                <div  *ngIf="navigated" class="flex gap">
 
-                    <span class="icon ico-sm ico-th"></span>
-                    <h5>Help</h5>
-                </div>
-            
+            <!-- \/\/\/\/ additional elements such as tabs here \/\/\/\/ -->
+
         </div>
 
+        <!-- Nav right wrapper -->
+        <div class="flex fle-centerVr gap margin mar-smR content con-100pVr ">
 
-        <!-- right wrapper -->
-        <div class="flex gap">
-            <div class="wrapper-button-popup-pair">
-                <button class="highlight user-color base90 but-circle" title="User Profile"
-                    (click)="showUserMenu = !showUserMenu">
-                    <h3 class="user-first-initial">J</h3>
+            <!-- user profile button and dropdown-->
+            <div class="popup-trigger-pair">
+                <!-- button -->
+                <button class="popup-trigger but-xxs but-circle primary" title="User Profile" onclick="togglePopup(event, 'user-profile')" aria-label="User Profile Button">
+                    <h3 class="user-first-initial but-element element"></h3>
                 </button>
-                <div class=overlay id="overlay AAA" (click)="showUserMenu = !showUserMenu" [ngClass]="showUserMenu ? 'visible':''" ></div>
-                <div  *ngIf="showUserMenu" [ngClass]="showUserMenu ? 'visible':''" class="popup pop-dropdown edge-right to-left margin mar-mdVr">
+                <!-- overlay -->
+                <div class=overlay id="overlay user-profile"></div>
+                <!-- dropdown wrapper -->
+                <div id="target user-profile" class="popup edge-right to-left margin mar-mdVr">
+                    <!-- dropdown -->
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
 
-                    <div class="menu men-sm pill pil-sm padding pad-smB">
-                        <header class="padding pad-xs">
+                        <!-- Header -->
+                        <header class="car-element padding pad-xs">
                             <h4>User</h4>
-
                         </header>
+
                         <hr class="margin mar-xsHr">
 
-                        <div class="padding pad-xs">
+                        <!-- Drop down text content -->
+                        <div class="car-element padding pad-xs flex fle-column gap">
+
                             <h4 class="user-full-name"></h4>
                             <br>
-                            <p><b>Last Seen:</b><br>
-                                <time>Month DDth, YYYY</time><br>
-                                <time>HH:MM:SS AM</time>
-                            </p>
+                            <b>Last Seen:</b>
+                            <time>Month DDth, YYYY</time>
+                            <time>HH:MM:SS AM</time>
+
                         </div>
+
                         <hr class="hr-sm">
-                        <ul>
-                            <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['messages'])" class="selector padding pad-xsHr">Messages</a></li>
+
+                        <!-- options list -->
+                        <ul class="selector-list">
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Messages">Messages</a></li>
                             <hr>
-                            <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['contact'])" class="selector padding pad-xsHr">Update Info</a></li>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Update Info">Update Info</a></li>
                             <hr>
-                            <!--This will have to eventually be made to *actually* log someone out, not just take them to the login-->
-                            <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['messages'])" class="selector padding pad-xsHr">Log Out</a></li>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Log Out">Log Out</a>
+                            </li>
                             <hr>
                         </ul>
+
                     </div>
+
                 </div>
             </div>
-            <div class="wrapper-button-popup-pair">
-                <button class="secondary ghost but-circle" title="User Profile" (click)="showOptionsMenu = !showOptionsMenu">
-                    <span class = "icon ico-sm ico-ellipsis-vr"></span>
+            <!-- global options button and dropdown -->
+            <div class="popup-trigger-pair">
+                <!-- button -->
+                <button class="popup-trigger but-xxs but-circle secondary ghost" title="User Profile" onclick="togglePopup(event, 'user-options')" aria-label="User Options Button">
+                    <span class="but-element icon ico-sm ico-ellipsis-vr"></span>
                 </button>
-                <div class=overlay id="overlay BBB" [ngClass]="showOptionsMenu ? 'visible':''" (click)="showOptionsMenu = !showOptionsMenu"></div>
-                <div id="target BBB" [ngClass]="showOptionsMenu ? 'visible':''" class="popup edge-right to-left margin mar-mdVr">
-                    <div class="menu men-sm pill pil-sm padding pad-smB">
-                        <header class="padding pad-xs">
+                <!-- overlay -->
+                <div class=overlay id="overlay user-options"></div>
+                <!-- dropdown wrapper -->
+                <div id="target user-options" class="popup edge-right to-left margin mar-mdVr">
+                    <!-- dropdown -->
+                    <div class="card car-shadow car-sm pill pil-sm padding pad-smB">
+
+                        <!-- header -->
+                        <header class="car-element padding pad-xs">
                             <h4>Options</h4>
-
                         </header>
-                        <hr class="margin mar-xsHr">
-                        <div class=men-content>
-                            <ul>
-                                <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['faq'])" class="selector padding pad-xsHr">Help</a></li>
-                                <hr>
-                                <li><a (click)="navigated = !navigated; showOptionsMenu=false;router.navigate(['contact'])"  class="selector padding pad-xsHr">Contact</a></li>
-                                <hr>
-                                <li><label for="toggleDarkMode"
-                                        class="selector flex fle-space-between fle-centerVr padding pad-xsHr">
-                                        <p>Dark Mode</p>
-                                        <div class="toggle pill"><input type="checkbox" id="toggleDarkMode"
-                                                onclick="toggleDarkMode()"><span class="pill"></span></div>
-                                    </label>
-                                </li>
 
-                                <hr>
-                            </ul>
-                        </div>
+                        <hr class="margin mar-xsHr">
+
+                        <!-- options list -->
+                        <ul class="selector-list">
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Help">Help</a></li>
+                            <hr>
+                            <!-- option -->
+                            <li class="selector secondary-alt padding pad-xsHr"><a class="car-element sel-element" href="" aria-label="Contact">Contact</a></li>
+                            <hr>
+                            <!-- toggle dark mode -->
+                            <li><label class="selector secondary-alt flex fle-space-between fle-centerVr padding pad-xsHr" for="toggleDarkMode" aria-label="Toggle Dark Mode">
+                                    <p class="car-element sel-element">Dark Mode</p>
+                                    <div class="toggle pill"><input type="checkbox" id="toggleDarkMode" onclick="toggleDarkMode()"><span class="pill"></span></div>
+                                </label>
+                            </li>
+                            <hr>
+                        </ul>
+
                     </div>
                 </div>
             </div>
+
         </div>
     </nav>

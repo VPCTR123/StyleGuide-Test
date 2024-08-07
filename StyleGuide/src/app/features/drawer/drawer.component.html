@@ -1,8 +1,8 @@
 <label class="drawer-handle" class="{{drawer_handle()}}" for="Drawer" (click)="handleToggled()">
-    <input type="checkbox" name="Drawer" [(ngModel)]="!open">
+    <input type="checkbox" name="Drawer" [(ngModel)]="closedValue">
         <span class="icon" class="{{icon()}}"></span>    
     <ng-content select=".drawer-handle-content"></ng-content>
 </label>
-<div class="drawer active" class="{{drawer()}}" [ngClass]="{'active':open == true}" id="target-Drawer">
+<div class="drawer active" class="{{drawer()}}" [ngClass]="{'active':closedValue != true}" id="target-Drawer">
     <ng-content select=".drawer-content"> </ng-content>
 </div>

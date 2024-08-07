@@ -1,4 +1,4 @@
-
+<!-- 
 <div class="search-dropdown content con-100p">
     <input type="text" autocomplete="off" class="inp-fullHr pill padding pad-smHr" (click)="showdropdown = true" value="{{this.currentSelection.name}}">
     <div class="search-dropdown-icon padding pad-smHr">
@@ -22,4 +22,11 @@
     <div class="overlay visible" style="z-index: 98;" (click)="showdropdown = false;">
 
     </div>
-}
+} -->
+
+<select class="pill">
+    @for(option of options(); track option)
+    {
+        <option class="pill" value="{{option.value}}">{{option.name}}</option>
+    }
+</select>
