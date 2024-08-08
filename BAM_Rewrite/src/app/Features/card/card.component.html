@@ -1,7 +1,7 @@
-<div class="card car-xxsVr pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
-  
+<div class="card car-xxsVr car-inset pill pill-sm ring position pos-relative flex fle-centerVr fle-rowreverse">
+
     <div [ngStyle]="{'background-color':(thumbcolor())}" class="thumb thu-ml thu-lg thu-fullH flex fle-centerVr padding pad-mdL" id="appColorTile">
-        <span class="icon ico-sm ico-th"></span> 
+        <span class="icon ico-sm ico-th shade100-color"></span>
     </div>
 
     <a href=""
@@ -11,7 +11,7 @@
         </div>
     </a>
 
-    <button class="base but-circle margin mar-smR position pos-absolute"
+    <button class="secondary-alt but-circle ghost margin mar-smR position pos-absolute"
         (click) = "cardClicked.emit()"><span
-            class="icon ico-sm ico-ellipsis-vr"></span></button>
+            class="icon ico-sm ico-ellipsis-vr but-element"></span></button>
 </div>

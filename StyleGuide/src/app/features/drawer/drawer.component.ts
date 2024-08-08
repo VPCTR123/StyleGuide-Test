@@ -30,7 +30,7 @@ export class DrawerComponent {
   toggled = output<{state: boolean, displayName: string}>();
 
   //initial value
-  closed = input<boolean>(true);
+  closed = input<boolean>();
   public closedValue = this.closed();
 
    handleToggled()

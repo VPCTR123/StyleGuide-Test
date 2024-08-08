@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, output, input } from '@angular/core';
 
 @Component({
   selector: 'app-popup',
@@ -14,5 +14,9 @@ export class PopupComponent {
   // (emit closed, confirm, deny, etc)
   closePopup = output();
 
+  popupTitle = input<string>();
+  bodyTitle = input<string>();
+  bodySubtitle = input<string>();
+  icon = input<string>();
 
 }

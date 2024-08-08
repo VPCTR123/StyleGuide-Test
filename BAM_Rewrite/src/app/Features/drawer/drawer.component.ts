@@ -2,6 +2,7 @@ import { CommonModule, NgIf } from '@angular/common';
 import { Component, Input, output } from '@angular/core';
 import { input} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-drawer',
   standalone: true,
@@ -22,21 +23,23 @@ export class DrawerComponent {
   icon = input<string>("");
 
 
-  displayName = input<string>("");
+  drawerName = input<string>("");
   
   //state = true => Open
   //state = false => closed
   toggled = output<{state: boolean, displayName: string}>();
 
-  //public open:boolean = true;
-  @Input() open = false;
+  //initial value
+  closed = input<boolean>();
+  public closedValue = this.closed();
 
    handleToggled()
   {  
-    this.open = !this.open;  
+    this.closedValue = !this.closedValue;
+
     this.toggled.emit({
-      state: this.open,
-      displayName: this.displayName()
+      state: this.closedValue,
+      displayName: this.drawerName()
     });
   }
 

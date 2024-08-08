@@ -1,31 +1,30 @@
-<div class="overlay visible" (click)="this.closePopup.emit()">
+<div class="overlay" (click)="this.closePopup.emit()"></div>
+<div class="popup visible pop-center">
 
-</div>
-
-<div class="popup pop-center visible">
-
-    <div class="menu men-lg pill pil-sm flex fle-column">
+    <div class="card car-lg car-shadow pill pil-sm flex fle-column">
         <header class="padding pad-sm flex fle-space-between fle-centerVr">
-            <h4><ng-content select=".title"></ng-content></h4>
-            <button class="but-xxs secondary ghost but-circle" (click)="this.closePopup.emit()"><span
-                    class="icon ico-sm ico-closeX "></span></button>
+            <h4>{{this.popupTitle()}}</h4>
+            <button class="but-xxs secondary ghost but-circle" (click)="this.closePopup.emit()"><span class="but-element icon ico-sm ico-closeX "></span></button>
 
         </header>
         <hr class="margin mar-mdHr">
 
         <div class="link-nostyle content con-scrollY-auto padding pad-lgHr pad-mdVr">
 
-            <div class="flex fle-centerVr gap gap-sm">
-                
-                <ng-content select=".body-icon-header"> </ng-content>
+            <div class="flex fle-centerVr gap gap-sm fle-wrap">
+
+                <!-- <span class="icon ico-md ico-th ico-color"></span> -->
+                <span class="icon" class="{{icon()}}"></span>
+
                 <div>
-                    <h4><ng-content select=".body-header"></ng-content></h4>
-                    <h4><ng-content select=".body-sub-header"></ng-content></h4>
+                    <h4>{{this.bodyTitle()}}</h4>
+                    <h4>{{this.bodySubtitle()}}</h4>
                 </div>
+
             </div>
 
             <p class="margin mar-md mar-noneHr">
-                <ng-content select=".body"> </ng-content>
+                <ng-content select=".popup-body"></ng-content>
             </p>
 
 
@@ -33,13 +32,12 @@
 
         <hr class="margin mar-mdHr">
 
-        <footer>
-            <!-- <button class="but-square secondary pill pil-xs">A</button>
-            <button class="but-square secondary  pill pil-xs ">B</button>
-            <button class=" but-md primary padding pad-mdHr pill pil-xs">Launch App</button> -->
-            <ng-content select=".foot"> </ng-content>
+        <footer class=" padding pad-sm flex fle-end gap gap-sm ">
 
-            </footer>
+            <!-- <button class=" but-sm primary padding pad-mdHr pill">Launch App</button> -->
+            <ng-content select=".popup-footer"></ng-content>
+
+        </footer>
 
     </div>
 

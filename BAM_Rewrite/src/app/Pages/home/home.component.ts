@@ -46,13 +46,20 @@ export class HomeComponent implements OnInit {
     // Convert the groupedApps object into an array of records
     const result: { group: string; apps: Application[] }[] = [];
     for (const group in groupedApps) {
-      result.push({ group, apps: groupedApps[group] });
+      if(group == "")
+      {
+        result.push({ group:"Ungrouped", apps: groupedApps[group] });
+      }
+      else
+      {
+        result.push({ group, apps: groupedApps[group] });
+      }
     }
 
     return result;
   }
 
-  public test(app: Application) {
+  public showApp(app: Application) {
     console.warn('clicked');
     app.show = true;
   }

@@ -60,13 +60,16 @@
                 <footer class="padding pad-md flex fle-end gap gap-xs fle-wrap">
     
                     <!-- I understand check -->
-                    <label for="check-cacLogin" class="button secondary-alt pill ghost flex fle-centerVr gap">
+                    <label class="button secondary-alt pill ghost flex fle-centerVr gap">
                         <p>I Understand</p>
-                        <input type="checkbox" id="check-cacLogin">
+                        <input type="checkbox" id="check-cacLogin" (change)="acceptedBanner = !acceptedBanner">
                     </label>
     
                     <!-- Log in button -->
-                    <button class="but-md primary pill " id="btn-cacLogin">CAC Login</button>
+                    <button [ngClass]="{disabled:!acceptedBanner}" [disabled]="!acceptedBanner" (click)="logon()"
+                    class="but-md primary pill " id="btn-cacLogin">
+                    CAC Login
+                    </button>
                 </footer>
             </div>
     

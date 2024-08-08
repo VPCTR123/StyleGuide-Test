@@ -70,7 +70,7 @@
   <div class="spacer spa-md"></div>
   
 
-  <app-drawer [open]="false" *ngFor="let question of questions" title="" displayName=""
+  <app-drawer [closed]="true" *ngFor="let question of questions" title="" displayName=""
     drawer_handle="drah-md gap gap-sm padding-focus padf-mdHr padf-lgMinHr" drawer="" icon="ico-sm ico-carret-d">
     <div class="drawer-handle-content">
       <h3>Q:{{ question.question }}</h3>
